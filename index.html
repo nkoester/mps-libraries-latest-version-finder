@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPS Latest Library Version Extractor 3000</title>
+    <style>
+        :root {
+            --accent-color: #0d6efd;
+            --text-color: #212529;
+            --light-text-color: #6c757d;
+            --bg-color: #f0f2f5;
+            --content-bg-color: #ffffff;
+            --border-color: #dee2e6;
+            --hover-bg-color: #e9ecef;
+            --success-color: #198754;
+            --error-color: #dc3545;
+            --warning-color: #ffc107;
+        }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6; 
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-template-columns: 280px 1fr;
+            grid-template-areas:
+                "header header"
+                "toc    main";
+            height: 100vh;
+        }
+        #page-header {
+            grid-area: header;
+            background-color: var(--content-bg-color);
+            padding: 1rem 2em;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        #page-header h1 {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-size: 1.5rem;
+        }
+        #toc {
+            grid-area: toc;
+            position: sticky;
+            top: 2em;
+            align-self: start;
+            max-height: calc(100vh - 4em);
+            overflow-y: auto;
+            padding: 0 2em;
+        }
+        #main-content {
+            grid-area: main;
+            min-width: 0;
+            padding: 2em;
+            overflow-y: auto;
+        }
+        #main-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h2, h3 { 
+            border-bottom: 1px solid var(--border-color); 
+            padding-bottom: 0.5em; 
+        }
+        ul { list-style-type: none; padding-left: 0; margin-top: 1.5rem; }
+        li { 
+            padding: 1rem 0; 
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        li:last-child { border-bottom: none; }
+        .version-info { font-weight: 500; overflow-wrap: anywhere; font-size: 1rem; }
+        .version-info strong { font-weight: 600; }
+        
+        .version-group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5em;
+        }
+        .version-group-header h2 {
+            margin: 0;
+            padding: 0;
+            border: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .button-group { display: flex; gap: 0.5rem; flex-shrink: 0; }
+        .action-btn {
+            background-color: var(--hover-bg-color);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            height: 36px;
+            padding: 0 10px;
+            display: inline-flex;
+            align-items: center; justify-content: center;
+            font-size: 1rem;
+            transition: background-color 0.2s, opacity 0.2s;
+            color: var(--light-text-color);
+            white-space: nowrap;
+        }
+        .action-btn:hover { background-color: #dbe0e4; color: var(--text-color); }
+        .action-btn:disabled { opacity: 0.5; cursor: wait; }
+        .action-btn.copied { background-color: var(--success-color); color: white; }
+        
+        .button-separator {
+            margin-left: 0.5rem;
+        }
+
+        #status-container {
+            background-color: var(--content-bg-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        #status-container h3 { margin-top: 0; border: none; font-size: 1.2rem; }
+        .status-item {
+            display: grid;
+            grid-template-columns: auto 250px 1fr auto;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+        .status-label-group {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0.75rem;
+            overflow: hidden;
+        }
+        .status-item-label {
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--light-text-color);
+            text-decoration: none;
+            text-align: left;
+        }
+        .status-line { font-weight: 600; }
+        .status-loading { color: var(--accent-color); }
+        .status-success { color: var(--success-color); }
+        .status-error { color: var(--error-color); }
+        
+        #toc ul { margin-top: 1rem; }
+        #toc li {
+            display: block;
+            padding: 0.5rem 0;
+        }
+        #toc a {
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-color);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+        #toc a:hover { color: var(--accent-color); }
+        
+        #stats-placeholder { margin-top: 2rem; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .stat-item { background-color: var(--bg-color); padding: 1rem; border-radius: 6px; }
+        .stat-item .label { font-size: 0.9rem; color: var(--light-text-color); }
+        .stat-item .value { font-size: 1.25rem; font-weight: 600; }
+
+        .version-group-container {
+            background-color: var(--content-bg-color);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="page-header">
+        <h1>MPS Latest Library Version Extractor 3000</h1>
+    </header>
+
+    <nav id="toc"></nav>
+    <main id="main-content">
+        <div id="status-container"></div>
+        <div id="main-container">
+            <div id="results"></div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const libraries = [
+                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml', groupId: 'de.itemis.mps', artifactId: 'extensions' },
+                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml', groupId: 'com.mbeddr', artifactId: 'mbeddr' },
+                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml', groupId: 'com.mbeddr', artifactId: 'platform' },
+                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml', groupId: 'org.iets3', artifactId: 'opensource' },
+                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml', groupId: 'org.mpsqa', artifactId: 'all-in-one' },
+                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml', groupId: 'com.jetbrains.mps', artifactId: 'mps' }
+            ];
+            const proxies = [
+                { name: 'P1', url: 'https://api.allorigins.win/raw?url=', requiresEncoding: true },
+                { name: 'P2', url: 'https://corsproxy.io/?', requiresEncoding: false }
+            ];
+
+            const tocDiv = document.getElementById('toc');
+            const statusDiv = document.getElementById('status-container');
+            const resultsDiv = document.getElementById('results');
+            
+            let processedLibraries = [];
+            let startTime = 0;
+
+            function setupInitialUI() {
+                let statusHTML = '<h3>🔄 Library Status</h3>';
+                for (const lib of libraries) {
+                    const label = `${lib.groupId}:${lib.artifactId}`;
+                    const folderUrl = lib.metadataUrl.substring(0, lib.metadataUrl.lastIndexOf('/') + 1);
+                    const browseFolderUrl = folderUrl.replace('/repository/', '/service/rest/repository/browse/');
+
+                    statusHTML += `
+                        <div class="status-item" id="status-item-${lib.artifactId}">
+                            <div class="button-group">
+                                <a href="${browseFolderUrl}" target="_blank" rel="noopener noreferrer" class="action-btn" style="height: 28px; width: 28px;" title="Browse parent folder">📁</a>
+                                <a href="${lib.metadataUrl}" target="_blank" rel="noopener noreferrer" class="action-btn" style="height: 28px; width: 28px;" title="View maven-metadata.xml">📄</a>
+                            </div>
+                            <span class="status-item-label" title="${label}">${label}</span>
+                            <div class="status-line" id="status-${lib.artifactId}">Waiting...</div>
+                            <div class="button-group">
+                                <button class="action-btn reload-btn" data-artifact-id="${lib.artifactId}" data-proxy-index="0" title="Reload via Proxy 1" disabled>${proxies[0].name} 🔄</button>
+                                <button class="action-btn reload-btn" data-artifact-id="${lib.artifactId}" data-proxy-index="1" title="Reload via Proxy 2" disabled>${proxies[1].name} 🔄</button>
+                            </div>
+                        </div>
+                    `;
+                }
+                statusHTML += '<div id="stats-placeholder"></div>';
+                statusDiv.innerHTML = statusHTML;
+            }
+
+            function updateStatus(artifactId, message, className) {
+                const statusEl = document.getElementById(`status-${artifactId}`);
+                if (statusEl) {
+                    statusEl.innerHTML = message;
+                    statusEl.className = `status-line ${className}`;
+                }
+            }
+            
+            async function fetchLibraryData(lib, proxyIndex = 0) {
+                const fetchStartTime = performance.now();
+                updateStatus(lib.artifactId, 'Fetching...', 'status-loading');
+                const proxy = proxies[proxyIndex];
+                const targetUrl = proxy.requiresEncoding ? encodeURIComponent(lib.metadataUrl) : lib.metadataUrl;
+                const fetchUrl = `${proxy.url}${targetUrl}`;
+
+                try {
+                    const response = await fetch(fetchUrl);
+                    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                    const xmlText = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(xmlText, 'application/xml');
+                    if (doc.querySelector('parsererror')) throw new Error('Failed to parse XML.');
+                    const versions = Array.from(doc.querySelectorAll('version')).map(v => v.textContent);
+                    const versionGroups = {};
+                    const versionRegex = /^(\d+\.\d+|^\d{4}.\d+)/;
+                    for (const version of versions) {
+                        const match = version.match(versionRegex);
+                        if (match) {
+                            const key = match[1];
+                            if (!versionGroups[key]) versionGroups[key] = [];
+                            versionGroups[key].push(version);
+                        }
+                    }
+                    const duration = ((performance.now() - fetchStartTime) / 1000).toFixed(2);
+                    updateStatus(lib.artifactId, `✅ Success (${duration}s)`, 'status-success');
+                    return { ...lib, versionGroups, allVersions: versions, error: false };
+                } catch (error) {
+                    console.error(`Failed to fetch for ${lib.artifactId} via ${proxy.name}:`, error);
+                    const duration = ((performance.now() - fetchStartTime) / 1000).toFixed(2);
+                    updateStatus(lib.artifactId, `❌ Failed (${duration}s)`, 'status-error');
+                    return { ...lib, error: true, errorMessage: error.message };
+                }
+            }
+            
+            function updateAndRenderUI() {
+                const successfulLibs = processedLibraries.filter(lib => !lib.error);
+                const masterVersionMap = {};
+                for (const lib of successfulLibs) {
+                    for (const versionKey in lib.versionGroups) {
+                        if (!masterVersionMap[versionKey]) masterVersionMap[versionKey] = [];
+                        const latestInGroup = lib.versionGroups[versionKey].sort().reverse()[0];
+                        masterVersionMap[versionKey].push({ libInfo: lib, fullVersion: latestInGroup });
+                    }
+                }
+                
+                tocDiv.innerHTML = renderTOC(masterVersionMap);
+                renderStatistics(successfulLibs, processedLibraries, startTime);
+                resultsDiv.innerHTML = renderVersionGroups(masterVersionMap);
+            }
+
+            function renderTOC(masterVersionMap) {
+                const sortedVersionKeys = Object.keys(masterVersionMap).sort().reverse();
+                let tocHTML = '<ul>';
+                for (const versionKey of sortedVersionKeys) {
+                    tocHTML += `<li><a href="#version-${versionKey}">${versionKey}</a></li>`;
+                }
+                tocHTML += '</ul>';
+                return tocHTML;
+            }
+
+            function renderStatistics(successfulLibs, allLibs, startTime) {
+                const statsPlaceholder = document.getElementById('stats-placeholder');
+                if (!statsPlaceholder) return;
+                const endTime = performance.now();
+                const duration = ((endTime - startTime) / 1000).toFixed(2);
+                const masterVersionMap = {};
+                for (const lib of successfulLibs) {
+                    for (const versionKey in lib.versionGroups) {
+                        if (!masterVersionMap[versionKey]) masterVersionMap[versionKey] = [];
+                        masterVersionMap[versionKey].push(lib);
+                    }
+                }
+                const totalVersionGroups = Object.keys(masterVersionMap).length;
+                let maxVersions = 0, libWithMostVersions = 'N/A';
+                successfulLibs.forEach(lib => {
+                    if (lib.allVersions && lib.allVersions.length > maxVersions) {
+                        maxVersions = lib.allVersions.length;
+                        libWithMostVersions = lib.artifactId;
+                    }
+                });
+                let mostCommonGroup = 'N/A', maxLibsInGroup = 0;
+                for (const [group, libs] of Object.entries(masterVersionMap)) {
+                    if (libs.length > maxLibsInGroup) {
+                        maxLibsInGroup = libs.length;
+                        mostCommonGroup = group;
+                    }
+                }
+                statsPlaceholder.innerHTML = `
+                    <h3 style="margin-top: 2rem;">📊 Extraction Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item"><div class="label">Total Time</div><div class="value">${duration}s</div></div>
+                        <div class="stat-item"><div class="label">Libraries Processed</div><div class="value">${successfulLibs.length} / ${allLibs.length}</div></div>
+                        <div class="stat-item"><div class="label">Unique Version Groups</div><div class="value">${totalVersionGroups}</div></div>
+                        <div class="stat-item"><div class="label">Most Common Group</div><div class="value">${mostCommonGroup} <small>(${maxLibsInGroup} libs)</small></div></div>
+                        <div class="stat-item"><div class="label">Library with Most Versions</div><div class="value">${libWithMostVersions} <small>(${maxVersions} total)</small></div></div>
+                    </div>
+                `;
+            }
+
+            function renderVersionGroups(masterVersionMap) {
+                const sortedVersionKeys = Object.keys(masterVersionMap).sort().reverse();
+                let resultsHTML = '';
+                if (sortedVersionKeys.length === 0) {
+                    return '<p style="text-align: center; margin-top: 2rem;">No versions found for any library.</p>';
+                }
+                for (const versionKey of sortedVersionKeys) {
+                    const librariesForVersion = masterVersionMap[versionKey];
+                    librariesForVersion.sort((a, b) => a.libInfo.artifactId.localeCompare(b.libInfo.artifactId));
+                    
+                    const allVersionsText = librariesForVersion.map(e => e.fullVersion).join('\n');
+                    const allMavensText = librariesForVersion.map(e => `${e.libInfo.groupId}:${e.libInfo.artifactId}:${e.fullVersion}`).join('\n');
+
+                    resultsHTML += `
+                        <div class="version-group-container">
+                            <div class="version-group-header" id="version-${versionKey}">
+                                <h2>${versionKey}</h2>
+                                <div class="button-group">
+                                    <button class="action-btn" data-action="copy" data-text="${allVersionsText}" title="Copy all versions:\n${allVersionsText}">📋</button>
+                                    <button class="action-btn" data-action="copy" data-text="${allMavensText}" title="Copy all Maven strings:\n${allMavensText}">📦</button>
+                                </div>
+                            </div>
+                            <ul>`;
+                    
+                    for (const entry of librariesForVersion) {
+                        const { libInfo, fullVersion } = entry;
+                        const contentBaseUrl = libInfo.metadataUrl.replace('maven-metadata.xml', '');
+                        const browseBaseUrl = contentBaseUrl.replace('/repository/', '/service/rest/repository/browse/');
+                        const versionBrowseUrl = `${browseBaseUrl}${fullVersion}`;
+                        const downloadUrl = `${contentBaseUrl}${fullVersion}/${libInfo.artifactId}-${fullVersion}.zip`;
+                        const pomUrl = `${contentBaseUrl}${fullVersion}/${libInfo.artifactId}-${fullVersion}.pom`;
+                        const mavenString = `${libInfo.groupId}:${libInfo.artifactId}:${fullVersion}`;
+                        resultsHTML += `
+                            <li>
+                                <span class="version-info">${libInfo.groupId}:${libInfo.artifactId}: <strong>${fullVersion}</strong></span>
+                                <div class="button-group">
+                                    <button class="action-btn" data-action="copy" data-text="${fullVersion}" title="Copy: ${fullVersion}">📋</button>
+                                    <button class="action-btn" data-action="copy" data-text="${mavenString}" title="Copy: ${mavenString}">📦</button>
+                                    <a href="${pomUrl}" class="action-btn button-separator" target="_blank" rel="noopener noreferrer" title="View POM file">📄</a>
+                                    <a href="${downloadUrl}" class="action-btn" target="_blank" rel="noopener noreferrer" title="Download ZIP">⬇️</a>
+                                    <a href="${versionBrowseUrl}" class="action-btn" target="_blank" rel="noopener noreferrer" title="Go to Repository">🔗</a>
+                                </div>
+                            </li>`;
+                    }
+                    resultsHTML += '</ul></div>';
+                }
+                return resultsHTML;
+            }
+
+            async function runWithConcurrency(concurrency, tasks) {
+                const results = []; let taskIndex = 0;
+                async function worker() {
+                    while (taskIndex < tasks.length) {
+                        const currentIndex = taskIndex++;
+                        const task = tasks[currentIndex];
+                        results[currentIndex] = await task();
+                    }
+                }
+                await Promise.all(Array(concurrency).fill(null).map(() => worker()));
+                return results;
+            }
+
+            async function main() {
+                try {
+                    startTime = performance.now();
+                    setupInitialUI();
+                    const tasks = libraries.map(lib => () => fetchLibraryData(lib));
+                    processedLibraries = await runWithConcurrency(2, tasks);
+                    document.querySelectorAll('.reload-btn').forEach(btn => btn.disabled = false);
+                    updateAndRenderUI();
+                } catch (error) {
+                    console.error("A critical error occurred:", error);
+                    resultsDiv.innerHTML = `<p class="error-message">Could not load library data: ${error.message}</p>`;
+                }
+            }
+
+            async function handleCopyClick(button, textToCopy) {
+                const originalContent = button.innerHTML;
+                try {
+                    await navigator.clipboard.writeText(textToCopy);
+                    button.innerHTML = '✅';
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.innerHTML = originalContent;
+                        button.classList.remove('copied');
+                    }, 2000);
+                } catch (err) { console.error('Failed to copy text: ', err); }
+            }
+            
+            document.body.addEventListener('click', async (event) => {
+                const button = event.target.closest('.action-btn');
+                if (!button) return;
+
+                if (button.dataset.action === 'copy') {
+                    handleCopyClick(button, button.dataset.text);
+                    return;
+                }
+
+                if (button.classList.contains('reload-btn')) {
+                    const { artifactId, proxyIndex } = button.dataset;
+                    const libToReload = libraries.find(l => l.artifactId === artifactId);
+                    const indexToUpdate = processedLibraries.findIndex(l => l.artifactId === artifactId);
+                    
+                    if (libToReload && indexToUpdate !== -1) {
+                        document.querySelectorAll(`.reload-btn[data-artifact-id="${artifactId}"]`).forEach(btn => btn.disabled = true);
+                        const result = await fetchLibraryData(libToReload, parseInt(proxyIndex));
+                        processedLibraries[indexToUpdate] = result;
+                        document.querySelectorAll(`.reload-btn[data-artifact-id="${artifactId}"]`).forEach(btn => btn.disabled = false);
+                        updateAndRenderUI();
+                    }
+                }
+            });
+
+            main();
+        });
+    </script>
+</body>
+</html>
