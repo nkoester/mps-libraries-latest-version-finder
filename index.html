@@ -291,6 +291,9 @@
         /* state                                                               */
         /* ------------------------------------------------------------------ */
 
+        const REPO_URL = 'https://github.com/nkoester/mps-libraries-latest-version-finder';
+        const WORKFLOW_URL = `${REPO_URL}/actions/workflows/update-versions.yml`;
+
         const state = {
             generatedAt: null,
             libraries: [],          // summary entries, latest-per-line only
@@ -399,7 +402,7 @@
             headerMeta.innerHTML = `
                 Data updated ${esc(relativeTime(state.generatedAt))}
                 <span title="${esc(state.generatedAt)}">ⓘ</span><br>
-                <a href="https://github.com/nkoester/mps-libraries-latest-version-finder/commits/main/versions.json"
+                <a href="${REPO_URL}/commits/main/versions.json"
                    target="_blank" rel="noopener noreferrer">history</a>`;
         }
 
@@ -407,9 +410,16 @@
             let html = `
                 <h3>
                     <span>📚 Libraries</span>
-                    <button class="action-btn small" id="refresh-all" title="Re-fetch all metadata directly from the repository">
-                        🔄 Check live
-                    </button>
+                    <span class="button-group">
+                        <button class="action-btn small" id="refresh-all"
+                                title="Best-effort live fetch via a public CORS proxy. Slow and often rate-limited.">
+                            🔄 Check live
+                        </button>
+                        <a class="action-btn small" href="${WORKFLOW_URL}" target="_blank" rel="noopener noreferrer"
+                           title="Open the update workflow on GitHub and press 'Run workflow' to refresh the stored data">
+                            ⚙️ Refresh stored data ↗
+                        </a>
+                    </span>
                 </h3>`;
 
             for (const library of state.libraries) {
@@ -714,20 +724,33 @@
         /* ------------------------------------------------------------------ */
 
         /**
-         * Fetches metadata straight from the repository, falling back to public
-         * CORS proxies. The pre-generated data is the fast path; this is the
-         * escape hatch for someone who needs a version published minutes ago.
+         * Fetches metadata straight from the repository, falling back to a public
+         * CORS proxy.
+         *
+         * The direct attempt only succeeds if artifacts.itemis.cloud sends
+         * `Access-Control-Allow-Origin`; as of now it does not, so the browser
+         * blocks it and logs a CORS error that cannot be suppressed from script.
+         * That is expected — the proxy fallback is what normally does the work,
+         * and it is slow (~15s for the larger metadata files) and frequently
+         * rate-limited. Live checking is best-effort; the stored data is the
+         * reliable path.
          */
+        const LIVE_TIMEOUT_MS = 30000;
+
         async function fetchLive(library) {
+            const encoded = encodeURIComponent(library.metadataUrl);
             const attempts = [
                 { name: 'direct', url: library.metadataUrl },
-                { name: 'allorigins', url: `https://api.allorigins.win/raw?url=${encodeURIComponent(library.metadataUrl)}` },
-                { name: 'corsproxy', url: `https://corsproxy.io/?url=${encodeURIComponent(library.metadataUrl)}` },
+                { name: 'allorigins', url: `https://api.allorigins.win/raw?url=${encoded}` },
+                { name: 'allorigins (retry)', url: `https://api.allorigins.win/raw?url=${encoded}` },
             ];
             const errors = [];
-            for (const attempt of attempts) {
+            for (const [index, attempt] of attempts.entries()) {
+                if (index > 0) await new Promise((resolve) => setTimeout(resolve, 600));
                 try {
-                    const response = await fetch(attempt.url, { signal: AbortSignal.timeout(8000) });
+                    const response = await fetch(attempt.url, {
+                        signal: AbortSignal.timeout(LIVE_TIMEOUT_MS),
+                    });
                     if (!response.ok) throw new Error(`HTTP ${response.status}`);
                     const versions = parseMetadata(await response.text());
                     if (versions.length === 0) throw new Error('no versions in response');
@@ -736,17 +759,32 @@
                     errors.push(`${attempt.name}: ${error.message}`);
                 }
             }
-            throw new Error(errors.join('; '));
+            throw new Error(errors.join(' · '));
         }
 
         async function refresh(slugs) {
             const targets = state.libraries.filter((library) => slugs.includes(library.slug));
             for (const library of targets) {
                 const row = statusDiv.querySelector(`.status-item[data-slug="${CSS.escape(library.slug)}"] div`);
-                if (row) row.innerHTML = '<span class="status-line status-loading">Fetching…</span>';
+                if (row) row.innerHTML = '<span class="status-line status-loading">Queued…</span>';
             }
 
-            const results = await Promise.allSettled(targets.map((library) => fetchLive(library)));
+            // Strictly sequential: the proxy returns 5xx when several requests
+            // from one origin overlap, so firing all six in parallel fails most
+            // of them.
+            const results = [];
+            for (const library of targets) {
+                const row = statusDiv.querySelector(`.status-item[data-slug="${CSS.escape(library.slug)}"] div`);
+                if (row) {
+                    row.innerHTML =
+                        '<span class="status-line status-loading">Fetching… (can take ~20s)</span>';
+                }
+                try {
+                    results.push({ status: 'fulfilled', value: await fetchLive(library) });
+                } catch (error) {
+                    results.push({ status: 'rejected', reason: error });
+                }
+            }
 
             results.forEach((result, index) => {
                 const library = targets[index];
@@ -775,6 +813,23 @@
             render();
 
             const failed = targets.filter((library) => library.liveError);
+            if (failed.length === targets.length) {
+                statusDiv.insertAdjacentHTML('afterbegin', `
+                    <div class="notice">
+                        <strong>Live check unavailable.</strong>
+                        <p class="muted">
+                            <code>artifacts.itemis.cloud</code> does not send CORS headers, so the browser
+                            cannot read it directly, and the public proxies used as a fallback are currently
+                            rate-limited or down. The versions shown below are the stored ones and are still
+                            valid — they are just as fresh as the last daily update.
+                        </p>
+                        <p class="muted">
+                            To refresh them now, run the
+                            <a href="${WORKFLOW_URL}" target="_blank" rel="noopener noreferrer">update workflow</a>
+                            and reload this page in a minute or two.
+                        </p>
+                    </div>`);
+            }
             if (failed.length > 0) {
                 for (const library of failed) {
                     const row = statusDiv.querySelector(`.status-item[data-slug="${CSS.escape(library.slug)}"] div`);

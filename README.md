@@ -21,8 +21,35 @@ same-origin JSON file.
 
 Earlier versions of this page fetched `maven-metadata.xml` in the browser through
 public CORS proxies. That was slow and unreliable; the proxies are no longer in
-the critical path. The **Check live** button still offers an on-demand live fetch
-(direct first, CORS proxies as fallback) when you need a version published minutes ago.
+the critical path.
+
+### On the "Check live" button
+
+It is **best-effort and usually fails.** `artifacts.itemis.cloud` sends no
+`Access-Control-Allow-Origin` header, so a browser cannot read it directly, and
+the public CORS proxies that used to fill that gap are effectively gone:
+
+| Proxy | State (checked 2026-10-07) |
+| --- | --- |
+| `corsproxy.io` | `401` / `403` — paid API key now required |
+| `api.codetabs.com` | `503` |
+| `api.cors.lol` | `429` |
+| `whateverorigin.org` | `500` |
+| `crossorigin.me` | `520` |
+| `cors-anywhere` | `403` — permanently gated |
+| `r.jina.ai` | `200`, correct CORS headers, but strips XML to an empty document |
+| `api.allorigins.win` | works intermittently; ~15 s for the 188 KB file, `520`/`522` under any concurrency |
+
+Only allorigins works at all, so requests go through it strictly sequentially
+with a 30 s timeout. When it fails the page says so and keeps showing stored data.
+
+**To actually refresh the data, run the update workflow** — the
+**⚙️ Refresh stored data** button links straight to it. Allow a minute or two
+for the commit and the Pages rebuild, then reload.
+
+The durable fix would be a single `Access-Control-Allow-Origin` header on the
+Nexus repository, which would make direct browser fetches work in ~0.3 s and
+retire the proxy path entirely.
 
 ## Version handling
 

@@ -24,14 +24,13 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      # No actions/setup-node: ubuntu-latest ships a current Node, and the
+      # script only uses stable built-ins (fetch, node:fs). Skipping it keeps a
+      # manual "Run workflow" round trip as short as possible.
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - name: Fetch maven metadata
-        run: node scripts/fetch-versions.mjs
+        run: node --version && node scripts/fetch-versions.mjs
 
       - name: Commit if changed
         run: |
