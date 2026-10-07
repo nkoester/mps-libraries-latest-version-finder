@@ -211,6 +211,63 @@
         .stamp .ago::before { content: "("; }
         .stamp .ago::after  { content: ")"; }
 
+        /* ------------------------------------------------------------- finder */
+
+        .finder { padding: 34px 0 0; }
+        #q {
+            width: 100%;
+            font-family: var(--mono);
+            font-size: 15px;
+            color: var(--ink);
+            padding: 13px 16px;
+            border: 1px solid var(--rule);
+            border-radius: var(--radius);
+            background: var(--surface);
+        }
+        #q::placeholder { color: var(--ink-3); font-family: var(--display); }
+        #q:focus { border-color: var(--accent); outline-offset: 1px; }
+        .finder-note { margin: 8px 2px 0; font-size: 12px; color: var(--ink-2); min-height: 1em; }
+
+        .hits { padding: 22px 0 56px; }
+        .hit-group { margin-bottom: 22px; }
+        .hit-group h2 {
+            margin: 0 0 6px;
+            font-family: var(--mono);
+            font-size: 13px;
+            font-weight: 700;
+            border: 0;
+            padding: 0;
+        }
+        .hit-group h2 span { font-family: var(--display); font-weight: 400; color: var(--ink-3); font-size: 11.5px; margin-left: 8px; }
+        .hit {
+            display: grid;
+            grid-template-columns: minmax(0,1fr) auto;
+            align-items: center;
+            gap: 14px;
+            background: var(--surface);
+            border: 1px solid var(--rule);
+            border-radius: var(--radius);
+            padding: 7px 10px 7px 0;
+            margin-bottom: 4px;
+        }
+        .hit:hover { border-color: var(--rule-strong); }
+        .hit-v {
+            font-family: var(--mono);
+            font-size: 13.5px;
+            padding: 3px 11px;
+            border-left: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            flex-wrap: wrap;
+        }
+        /* The version lives in its own box: marks inside a flex container would
+           each become a flex item and inherit the gap. */
+        .hit-text { overflow-wrap: anywhere; min-width: 0; }
+        .hit-v mark { background: var(--accent-soft); color: var(--accent); border-radius: 2px; }
+        .hit-v.pre { border-left-color: var(--signal); }
+        .hit-v.pre mark { background: var(--signal-soft); color: var(--signal); }
+
         /* ------------------------------------------------------------- picker */
 
         .picker { padding: 40px 0 0; }
@@ -507,7 +564,7 @@
         .notice p { margin: 0 0 8px; font-size: 13px; color: var(--ink-2); }
         code { font-family: var(--mono); font-size: .92em; }
 
-        /* -------------------------------------------------------------- dialog */
+    /* -------------------------------------------------------------- dialog */
 
         dialog {
             width: min(820px, 94vw);
@@ -616,6 +673,15 @@
 
 <main id="main">
     <div class="wrap">
+        <section class="finder" id="finder" hidden>
+            <input type="search" id="q" autocomplete="off" spellcheck="false"
+                   aria-label="Search every version"
+                   placeholder="Search everything — group, artifact, version. Space-separated terms all have to match.">
+            <p class="finder-note" id="q-note"></p>
+        </section>
+
+        <section class="hits" id="hits" hidden></section>
+
         <section class="picker" id="picker" hidden>
             <h2 class="ask">Building against MPS <em id="ask-line"></em></h2>
             <div class="lines" id="lines" role="group" aria-label="MPS release line"></div>
@@ -678,6 +744,7 @@
         mavenCoordinate,
         lineLabel,
         isDevelopmentLine,
+        compareVersions,
     } from './versions-lib.js';
 
     const REPO = 'https://github.com/nkoester/mps-libraries-latest-version-finder';
@@ -793,6 +860,7 @@
         renderBoard();
         renderInventory();
         renderColophon();
+        $('finder').hidden = false;
         $('picker').hidden = false;
         $('board').hidden = false;
         $('inventory-slab').hidden = false;
@@ -875,7 +943,6 @@
                 .sort(byStack),
         ];
 
-        copyRegistry.length = 0;
         $('nodes').innerHTML = ordered.map((entry, index) => renderNode(entry, index)).join('');
 
         const live = entries.map((entry) => entry);
@@ -964,6 +1031,143 @@
             <p class="figures">${total.toLocaleString('en-US')} versions · ${ok.length}/${state.libraries.length} libraries · ${state.lineMap.size} release lines</p>`;
     }
 
+        /* -------------------------------------------------------------- search */
+
+    const HIT_LIMIT = 250;
+    let searchIndex = null;
+    let indexing = null;
+
+    /**
+     * Every version of every library, flattened. Pulled on demand -- the whole
+     * corpus is ~90 KB gzipped, which is not worth spending on page load for a
+     * feature most visits never touch.
+     */
+    async function buildIndex() {
+        if (searchIndex) return searchIndex;
+        if (indexing) return indexing;
+        indexing = (async () => {
+            const loaded = await Promise.all(state.libraries.map(async (library) => {
+                if (!state.fullData.has(library.slug)) {
+                    const response = await fetch(library.dataFile ?? `./data/${library.slug}.json`);
+                    if (!response.ok) throw new Error(`${library.artifactId}: HTTP ${response.status}`);
+                    state.fullData.set(library.slug, await response.json());
+                }
+                return { library, data: state.fullData.get(library.slug) };
+            }));
+            const index = [];
+            for (const { library, data } of loaded) {
+                const prefix = `${library.groupId}:${library.artifactId}:`;
+                for (const line of data.lines) {
+                    for (const entry of line.versions) {
+                        index.push({ library, v: entry.v, pre: entry.pre, line: line.line,
+                                     hay: (prefix + entry.v).toLowerCase() });
+                    }
+                }
+                for (const entry of data.branchBuilds ?? []) {
+                    index.push({ library, v: entry.v, pre: entry.pre, branch: entry.branch,
+                                 hay: (prefix + entry.v).toLowerCase() });
+                }
+            }
+            searchIndex = index;
+            indexing = null;
+            return index;
+        })();
+        return indexing;
+    }
+
+    /** Highlights each matched term inside the version string. */
+    function mark(text, terms) {
+        let html = esc(text);
+        for (const term of terms) {
+            const re = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            html = html.replace(re, '\u0001$1\u0002');
+        }
+        return html.replace(/\u0001/g, '<mark>').replace(/\u0002/g, '</mark>');
+    }
+
+    function renderHits(terms) {
+        const matches = searchIndex.filter((entry) => terms.every((term) => entry.hay.includes(term)));
+        const rank = new Map(state.libraries.map((library, i) => [library.slug, i]));
+        matches.sort((a, b) =>
+            rank.get(a.library.slug) - rank.get(b.library.slug) || compareDesc(a.v, b.v));
+
+        const shown = matches.slice(0, HIT_LIMIT);
+        $('q-note').textContent = matches.length === 0
+            ? 'Nothing matches.'
+            : `${matches.length} match${matches.length === 1 ? '' : 'es'}` +
+              (matches.length > shown.length ? ` — showing the first ${shown.length}` : '');
+
+        const groups = new Map();
+        for (const entry of shown) {
+            if (!groups.has(entry.library.slug)) groups.set(entry.library.slug, []);
+            groups.get(entry.library.slug).push(entry);
+        }
+
+        $('hits').innerHTML = [...groups.values()].map((entries) => {
+            const library = entries[0].library;
+            return `
+                <div class="hit-group">
+                    <h2>${esc(library.groupId)}:${esc(library.artifactId)}
+                        <span>${entries.length} shown</span></h2>
+                    ${entries.map((entry) => {
+                        const urls = artifactUrls(library, entry.v);
+                        const tag = entry.branch
+                            ? `<span class="tag quiet">${esc(entry.branch)}</span>`
+                            : entry.pre ? '<span class="tag">pre-release</span>' : '';
+                        return `
+                            <div class="hit">
+                                <span class="hit-v${entry.pre ? ' pre' : ''}"><span class="hit-text">${mark(entry.v, terms)}</span>${tag}</span>
+                                <span class="acts">
+                                    <button class="btn btn--out" data-copy="${copyRef(entry.v)}">Copy</button>
+                                    <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
+                                    <a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
+                                    <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>
+                                </span>
+                            </div>`;
+                    }).join('')}
+                </div>`;
+        }).join('');
+    }
+
+    /** Descending version order, reusing the shared comparator. */
+    const compareDesc = (a, b) => compareVersions(b, a);
+
+    function setSearching(active) {
+        $('hits').hidden = !active;
+        $('picker').hidden = active;
+        $('board').hidden = active;
+        $('inventory-slab').hidden = active;
+    }
+
+    async function runSearch() {
+        const query = $('q').value.trim().toLowerCase();
+        const terms = query.split(/\s+/).filter(Boolean);
+        if (terms.length === 0) {
+            setSearching(false);
+            $('q-note').textContent = '';
+            $('hits').innerHTML = '';
+            return;
+        }
+        setSearching(true);
+        if (!searchIndex) {
+            $('q-note').textContent = 'Loading every version…';
+            try {
+                await buildIndex();
+            } catch (error) {
+                $('q-note').textContent = `Could not load the full version data (${error.message}).`;
+                return;
+            }
+            // The box may have been cleared or changed while loading.
+            if ($('q').value.trim().toLowerCase() !== query) return;
+        }
+        renderHits(terms);
+    }
+
+    $('q').addEventListener('input', runSearch);
+    $('q').addEventListener('focus', () => { buildIndex().catch(() => {}); }, { once: true });
+    $('q').addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') { $('q').value = ''; runSearch(); }
+    });
     /* -------------------------------------------------------------- dialog */
 
     const dlg = $('all-versions');
