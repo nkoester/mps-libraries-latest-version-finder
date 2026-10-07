@@ -3,12 +3,12 @@ name: Monthly release
 # Publishes one consolidated version list per month.
 #
 # Besides being useful on its own (a stable, citable snapshot you can pin
-# against), this counts as repository activity and keeps the daily scheduled
+# against), this counts as repository activity and keeps the scheduled update
 # workflow from being auto-disabled after 60 days of quiet.
 
 on:
   schedule:
-    # 06:00 UTC on the 1st of each month, after the daily fetch has run.
+    # 06:00 UTC on the 1st of each month, after the 05:00 UTC fetch has run.
     - cron: '0 6 1 * *'
   workflow_dispatch:
 

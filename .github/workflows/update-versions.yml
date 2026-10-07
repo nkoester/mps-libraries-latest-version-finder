@@ -2,9 +2,9 @@ name: Update versions
 
 on:
   schedule:
-    # 05:00 UTC daily = 07:00 CEST (summer) / 06:00 CET (winter).
-    # Change to '0 6 * * *' if you would rather have 07:00 in winter.
-    - cron: '0 5 * * *'
+    # Every 6 hours at 05:00, 11:00, 17:00, 23:00 UTC.
+    # The 05:00 slot lands at 07:00 CEST (summer) / 06:00 CET (winter).
+    - cron: '0 5,11,17,23 * * *'
   workflow_dispatch:
   push:
     branches: [main]

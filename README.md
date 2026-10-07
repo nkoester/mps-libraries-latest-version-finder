@@ -11,7 +11,7 @@ Tracks `de.itemis.mps:extensions`, `com.mbeddr:mbeddr`, `com.mbeddr:platform`,
 ## How it works
 
 The page does **not** fetch from Nexus on load. A GitHub Action fetches the
-metadata once a day and commits the result, so the page only loads a small
+metadata every six hours and commits the result, so the page only loads a small
 same-origin JSON file.
 
 | File | Size | Loaded |
@@ -72,10 +72,10 @@ through **All versions**.
 
 | Workflow | Schedule | Does |
 | --- | --- | --- |
-| `update-versions.yml` | daily, 05:00 UTC (07:00 CEST / 06:00 CET) | fetch metadata, commit `versions.json` + `data/` **only if versions changed** |
+| `update-versions.yml` | every 6 h — 05:00, 11:00, 17:00, 23:00 UTC | fetch metadata, commit `versions.json` + `data/` **only if versions changed** |
 | `monthly-release.yml` | 1st of month, 06:00 UTC | publish one consolidated version list as a GitHub Release |
 
-The daily job skips the commit when only the timestamp would change, so
+The update job skips the commit when only the timestamp would change, so
 `git log versions.json` reads as a changelog of MPS library releases rather than
 a wall of noise.
 
