@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-07T14:58:36.513Z",
-  "total": 3025,
+  "generatedAt": "2026-10-07T21:47:21.648Z",
+  "total": 3026,
   "released": 1712,
   "stable": 1705,
   "preRelease": 7,
-  "branchCount": 1313,
+  "branchCount": 1314,
   "branches": 275,
   "lines": [
     {
@@ -12596,6 +12596,11 @@
       "v": "bugfix-quick_workaround_numberliteral_editor_exception_1541.2024.1.9476.3c997d5-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-quick_workaround_numberliteral_editor_exception_1541"
+    },
+    {
+      "v": "bugfix-publishTestExecutor.2025.1.11288.627d4c1-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-publishTestExecutor"
     },
     {
       "v": "bugfix-publishTestExecutor.2025.1.11264.9b3edfc-SNAPSHOT",
