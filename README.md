@@ -51,6 +51,18 @@ The durable fix would be a single `Access-Control-Allow-Origin` header on the
 Nexus repository: direct browser fetches would then work in ~0.3 s and a live
 refresh could come back.
 
+## Reading the page
+
+Pick an MPS release line; the six libraries' latest versions for that line appear
+as coordinate cells. Each coordinate is split into `group : artifact : version`
+and every cell copies on click, so you can take just the version or the whole
+coordinate. Libraries that published nothing for the selected line are listed too,
+marked **no build for this line** — the absence is often the answer you needed.
+
+Libraries are ordered by the dependency stack (MPS first, then what builds on it),
+not alphabetically. Development builds (`9999.9`, `999.9`) sort last and are
+labelled as not being releases.
+
 ## Version handling
 
 - **Release lines** are the leading `major.minor`, e.g. `2024.1`.

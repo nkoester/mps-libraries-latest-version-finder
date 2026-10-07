@@ -3,774 +3,1132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPS Latest Library Version Extractor 3000</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E">
+    <title>MPS Library Versions</title>
+    <meta name="description" content="Latest versions of the core MPS ecosystem libraries, by MPS release line.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232F49C9'/%3E%3Crect x='22' y='30' width='56' height='13' fill='white'/%3E%3Crect x='22' y='52' width='34' height='13' fill='white' opacity='.6'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
     <style>
         :root {
-            --accent-color: #0d6efd;
-            --text-color: #212529;
-            --light-text-color: #6c757d;
-            --bg-color: #f0f2f5;
-            --content-bg-color: #ffffff;
-            --border-color: #dee2e6;
-            --hover-bg-color: #e9ecef;
-            --success-color: #198754;
-            --error-color: #dc3545;
-            --warning-color: #b8860b;
+            --ink:          #0F1419;
+            --ink-2:        #5A6675;
+            --ink-3:        #8C97A6;
+            --ground:       #E8ECF2;
+            --surface:      #FFFFFF;
+            --rule:         #D2DAE5;
+            --rule-soft:    #E6EBF2;
+            --accent:       #2F49C9;
+            --accent-soft:  #E4E8FB;
+            --signal:       #B4164F;
+            --signal-soft:  #FBE6EE;
+
+            --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+            --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+            --step: 4px;
+            --radius: 3px;
+
+            --on-accent:    #FFFFFF;
+            --rule-strong:  #B9C5D6;
+            --grid-line:    rgba(47,73,201,.045);
+            --masthead-bg:  rgba(255,255,255,.72);
+            --tools-bg:     #F7F9FC;
+            --shadow:       rgba(15,20,25,.22);
+            --backdrop:     rgba(15,20,25,.42);
+
+            --ext-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M3 1h6v6H7.5V3.56L2.3 8.76 1.24 7.7 6.44 2.5H3z'/%3E%3C/svg%3E");
         }
+
+        /* Follows the operating system; every value above is overridden here. */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --ink:          #E4E9F2;
+                --ink-2:        #98A5B8;
+                --ink-3:        #68758A;
+                --ground:       #0D1218;
+                --surface:      #151B24;
+                --rule:         #28313F;
+                --rule-soft:    #1F2733;
+                --rule-strong:  #3B4657;
+                --accent:       #8094FF;
+                --accent-soft:  #1D2540;
+                --signal:       #FF76A8;
+                --signal-soft:  #331A27;
+                --on-accent:    #0D1218;
+                --grid-line:    rgba(128,148,255,.055);
+                --masthead-bg:  rgba(21,27,36,.78);
+                --tools-bg:     #11161E;
+                --shadow:       rgba(0,0,0,.6);
+                --backdrop:     rgba(0,0,0,.62);
+            }
+        }
+
         * { box-sizing: border-box; }
+
+        /* The hidden attribute is only display:none in the UA sheet, so any
+           author display rule beats it. Several elements here set display. */
+        [hidden] { display: none !important; }
+
+        html { -webkit-text-size-adjust: 100%; color-scheme: light dark; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: grid;
-            grid-template-rows: auto 1fr;
-            grid-template-columns: 280px 1fr;
-            grid-template-areas:
-                "header header"
-                "toc    main";
-            height: 100vh;
+            font-family: var(--display);
+            font-size: 15px;
+            line-height: 1.55;
+            color: var(--ink);
+            background-color: var(--ground);
+            /* Faint 24px grid: the structured editing surface MPS works on. */
+            background-image:
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
-        #page-header {
-            grid-area: header;
-            background-color: var(--content-bg-color);
-            padding: 1rem 2em;
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-        #page-header h1 { margin: 0; padding: 0; border: none; font-size: 1.5rem; }
-        #header-meta { font-size: 0.85rem; color: var(--light-text-color); text-align: right; }
-        #header-meta a { color: var(--light-text-color); }
-        #header-meta time {
-            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-            color: var(--text-color);
-        }
-        /* Parentheses live in CSS so the periodic textContent refresh keeps them. */
-        .meta-ago::before { content: "("; }
-        .meta-ago::after { content: ")"; }
-        #toc {
-            grid-area: toc;
-            align-self: start;
-            max-height: calc(100vh - 5.5em);
-            overflow-y: auto;
-            padding: 0 2em;
-        }
-        #main-content { grid-area: main; min-width: 0; padding: 2em; overflow-y: auto; }
-        #main-container { max-width: 900px; margin: 0 auto; }
-        h2, h3 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.5em; }
-        ul { list-style-type: none; padding-left: 0; margin-top: 1.5rem; }
-        li {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-        li:last-child { border-bottom: none; }
-        .version-info { font-weight: 500; overflow-wrap: anywhere; font-size: 1rem; }
-        .version-info strong { font-weight: 600; }
 
-        .version-group-header {
+        .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+        a { color: var(--accent); }
+
+        /* Anything that leaves the page says so; buttons that open the dialog
+           stay unmarked. */
+        a[target="_blank"]::after {
+            content: "";
+            display: inline-block;
+            width: .62em;
+            height: .62em;
+            margin-left: .34em;
+            background: currentColor;
+            opacity: .5;
+            /* Drawn, not a glyph: U+2197 is missing from plenty of font stacks
+               and falls back to tofu. */
+            -webkit-mask: var(--ext-arrow) center / contain no-repeat;
+            mask: var(--ext-arrow) center / contain no-repeat;
+        }
+        a[target="_blank"]:hover::after { opacity: .9; }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* ---------------------------------------------------------- masthead */
+
+        .masthead {
+            border-bottom: 1px solid var(--rule);
+            background: var(--masthead-bg);
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        .masthead .wrap {
             display: flex;
+            align-items: baseline;
             justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5em;
+            gap: 24px;
+            flex-wrap: wrap;
+            padding-top: 14px;
+            padding-bottom: 14px;
         }
-        .version-group-header h2 { margin: 0; padding: 0; border: none; font-size: 1.5rem; font-weight: 600; }
+        .wordmark {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -.01em;
+            margin: 0;
+        }
+        .wordmark span {
+            font-family: var(--mono);
+            font-weight: 400;
+            color: var(--ink-3);
+            font-size: 12px;
+            letter-spacing: .02em;
+            margin-left: 10px;
+        }
+        .stamp {
+            font-size: 12px;
+            color: var(--ink-2);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1px;
+        }
+        .stamp-line { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+        .stamp-repo { font-family: var(--mono); font-size: 11px; }
+        .stamp time { font-family: var(--mono); color: var(--ink); }
 
-        .button-group { display: flex; gap: 0.5rem; flex-shrink: 0; align-items: center; }
-        .action-btn {
-            background-color: var(--hover-bg-color);
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            height: 36px;
-            padding: 0 10px;
-            display: inline-flex;
-            align-items: center; justify-content: center;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: background-color 0.2s, opacity 0.2s;
-            color: var(--light-text-color);
-            white-space: nowrap;
-        }
-        .action-btn:hover { background-color: #dbe0e4; color: var(--text-color); }
-        .action-btn:disabled { opacity: 0.5; cursor: wait; }
-        .action-btn.copied { background-color: var(--success-color); color: white; }
-        .action-btn.small { height: 28px; padding: 0 8px; font-size: 0.85rem; }
-        .button-separator { margin-left: 0.5rem; }
-
-        #status-container {
-            background-color: var(--content-bg-color);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        #status-container h3 { margin-top: 0; border: none; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-        .status-item {
-            display: grid;
-            grid-template-columns: 250px 1fr auto;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.4rem 0;
-            font-size: 0.9rem;
-            border-bottom: 1px solid var(--bg-color);
-        }
-        .status-item:last-of-type { border-bottom: none; }
-        .status-item-label {
-            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-            white-space: nowrap;
+        /* Crosses the gap between the wordmark and the stamp, then the trail
+           retreats from the left until the track is clear again. */
+        .nyan-track {
+            flex: 1 1 140px;
+            position: relative;
+            align-self: center;
+            height: 26px;
             overflow: hidden;
-            text-overflow: ellipsis;
-            color: var(--light-text-color);
+            pointer-events: none;
         }
-        .status-line { font-weight: 600; font-size: 0.85rem; }
-        .status-success { color: var(--success-color); }
-        .status-error { color: var(--error-color); }
+        /* The trail is exactly the viewable space, so its length never depends
+           on a guessed pixel width. Both ends are driven by clip-path: the
+           right edge follows the cat out, then the left edge chases it. */
+        .nyan-trail {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin-top: -7.75px;
+            height: 15.5px;
+            clip-path: inset(0 100% 0 0);
+            background: linear-gradient(to bottom,
+                #FF2A2A 0 16.667%, #FF9F2A 0 33.333%, #FFF32A 0 50%,
+                #44E03C 0 66.667%, #2A9FFF 0 83.333%, #8F57FF 0 100%);
+        }
+        .nyan-cat {
+            position: absolute;
+            top: 1px;
+            left: -45px;
+            height: 24px;
+            width: auto;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+            .nyan-cat   { animation: nyan-cat   20s linear infinite; }
+            .nyan-trail { animation: nyan-trail 20s linear infinite; }
+        }
+        @keyframes nyan-cat {
+            0%   { left: -45px; }   /* just off-stage left */
+            15%  { left: 100%; }    /* just off-stage right */
+            100% { left: 100%; }
+        }
+        @keyframes nyan-trail {
+            0%   { clip-path: inset(0 100% 0 0); }   /* nothing drawn */
+            15%  { clip-path: inset(0 0 0 0); }      /* full width, cat at the right */
+            35%  { clip-path: inset(0 0 0 100%); }   /* retreats from the left */
+            100% { clip-path: inset(0 0 0 100%); }
+        }
+        @media (max-width: 720px) { .nyan-track { display: none; } }
+        .stamp .ago::before { content: "("; }
+        .stamp .ago::after  { content: ")"; }
 
-        .badge {
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            padding: 0.1rem 0.4rem;
-            border-radius: 4px;
-            background: var(--hover-bg-color);
-            color: var(--light-text-color);
+        /* ------------------------------------------------------------- picker */
+
+        .picker { padding: 40px 0 0; }
+
+        .ask {
+            font-size: clamp(26px, 4.4vw, 42px);
+            font-weight: 700;
+            letter-spacing: -.025em;
+            line-height: 1.1;
+            margin: 0 0 20px;
+            max-width: 22ch;
+        }
+        .ask em {
+            font-style: normal;
+            font-family: var(--mono);
+            font-weight: 500;
+            font-size: .82em;
+            letter-spacing: -.01em;
+            color: var(--accent);
+        }
+
+        .lines { display: flex; flex-direction: column; gap: 5px; margin-bottom: 4px; }
+        .year { display: grid; grid-template-columns: 5ch 1fr; align-items: center; gap: 12px; }
+        .year-label {
+            font-family: var(--mono);
+            font-size: 11px;
+            color: var(--ink-3);
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+        .year-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+        .line-chip {
+            flex: 0 0 auto;
+            font-family: var(--mono);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 7px 13px;
+            border: 1px solid var(--rule);
+            border-radius: var(--radius);
+            background: var(--surface);
+            color: var(--ink-2);
+            cursor: pointer;
+            white-space: nowrap;
+            font-feature-settings: "tnum";
+        }
+        .line-chip:hover { border-color: var(--accent); color: var(--accent); }
+        .line-chip[aria-pressed="true"] {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--on-accent);
+        }
+        .line-chip .n {
+            font-size: 11px;
+            opacity: .62;
+            margin-left: 7px;
+        }
+
+        /* Key lines: marked rather than merely coloured, so the distinction
+           survives for anyone who cannot separate the two blues. */
+        .line-chip.key {
+            border-color: var(--accent);
+            color: var(--accent);
+            font-weight: 700;
+        }
+        /* Must follow .line-chip.key: equal specificity, so order decides, and
+           without this the selected key chip is indigo text on indigo. */
+        .line-chip.key[aria-pressed="true"] { color: var(--on-accent); }
+        .line-chip.key::before {
+            content: "";
+            display: inline-block;
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: currentColor;
+            margin-right: 7px;
             vertical-align: middle;
         }
-        .badge.pre { background: #fff3cd; color: var(--warning-color); }
-        .badge.stale { background: #f8d7da; color: var(--error-color); }
+        .key-note {
+            font-size: 11.5px;
+            color: var(--ink-3);
+            margin: 10px 0 0 calc(5ch + 12px);
+            display: flex; align-items: center; gap: 6px;
+        }
+        .key-note::before {
+            content: "";
+            width: 5px; height: 5px; border-radius: 50%;
+            background: var(--accent);
+        }
 
-        #toc ul { margin-top: 1rem; }
-        #toc li { display: block; padding: 0.4rem 0; border: none; }
-        #toc a {
-            font-weight: 600;
-            text-decoration: none;
-            color: var(--text-color);
+        /* -------------------------------------------------------------- nodes */
+
+        .board { padding: 26px 0 56px; }
+
+        .board-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .board-title {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: -.01em;
+            color: var(--ink-2);
+        }
+        .board-title .lead {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -.03em;
+            margin-right: 2px;
+        }
+        .board-title .dim { color: var(--ink-3); }
+        .board-note { font-size: 12.5px; color: var(--ink-2); margin: 2px 0 0; }
+        .board-note strong { color: var(--signal); font-weight: 500; }
+
+        .legend {
+            display: grid;
+            grid-template-columns: 20ch 13ch minmax(0, 1fr);
+            font-family: var(--mono);
+            font-size: 14px;          /* sizes the ch tracks, not the text */
+            color: var(--ink-3);
+            padding: 0 0 6px 1px;     /* 1px = the node border */
+        }
+        .legend span {
+            font-size: 10px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding-left: 11px;       /* matches .seg horizontal padding */
+        }
+
+        .node {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 16px;
+            background: var(--surface);
+            border: 1px solid var(--rule);
+            border-radius: var(--radius);
+            padding: 9px 12px 9px 0;
+            margin-bottom: 6px;
+        }
+        .node:hover { border-color: var(--rule-strong); }
+        .node.absent { background: transparent; border-style: dashed; border-color: var(--rule); }
+
+        /* The coordinate, projected: three bounded cells rather than a string. */
+        /* Fixed group/artifact columns so every version starts at the same x
+           and the six of them read as one column. */
+        .coord {
+            display: grid;
+            grid-template-columns: 20ch 13ch minmax(0, 1fr) auto;
+            align-items: center;
+            font-family: var(--mono);
+            font-size: 14px;
+            min-width: 0;
+        }
+        .seg {
+            font: inherit;
+            border: 0;
+            background: none;
+            padding: 5px 11px;
+            margin: 0;
+            color: var(--ink-2);
+            cursor: copy;
+            text-align: left;
+            border-left: 1px solid var(--rule-soft);
+            position: relative;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            display: block;
         }
-        #toc a:hover { color: var(--accent-color); }
-        #toc .count { font-weight: 400; color: var(--light-text-color); font-size: 0.85rem; }
+        .seg:first-child { border-left: 3px solid var(--accent); }
+        .seg:hover { background: var(--accent-soft); color: var(--accent); }
+        .seg--version {
+            color: var(--ink);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .seg--version::after {
+            content: "copy";
+            font-size: 9.5px;
+            font-family: var(--display);
+            font-weight: 500;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            color: var(--accent);
+            opacity: 0;
+        }
+        .node:hover .seg--version::after { opacity: .5; }
+        .seg--version:hover::after { opacity: 1; }
+        .node.absent .seg--version::after { content: none; }
+        .seg--version.pre { color: var(--signal); }
+        .node.absent .seg:first-child { border-left-color: var(--rule); }
+        .node.absent .seg { color: var(--ink-3); cursor: default; }
+        .node.absent .seg:hover { background: none; color: var(--ink-3); }
 
-        #stats-placeholder { margin-top: 1.5rem; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-        .stat-item { background-color: var(--bg-color); padding: 1rem; border-radius: 6px; }
-        .stat-item .label { font-size: 0.9rem; color: var(--light-text-color); }
-        .stat-item .value { font-size: 1.25rem; font-weight: 600; }
+        .tag {
+            font-family: var(--mono);
+            font-size: 9.5px;
+            font-weight: 500;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            border-radius: 2px;
+            background: var(--signal-soft);
+            color: var(--signal);
+            white-space: nowrap;
+            align-self: center;
+            margin-left: 8px;
+        }
+        .tag.quiet { background: var(--rule-soft); color: var(--ink-3); }
 
-        .version-group-container {
-            background-color: var(--content-bg-color);
-            padding: 2em;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-            scroll-margin-top: 1rem;
-        }
+        .acts { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
 
-        /* All-versions dialog */
-        dialog#all-versions {
-            width: min(860px, 92vw);
-            max-height: 86vh;
-            padding: 0;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
-            overflow: hidden;
-        }
-        dialog::backdrop { background: rgba(0,0,0,0.4); }
-        #dialog-layout { display: flex; flex-direction: column; max-height: 86vh; }
-        #dialog-head {
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
-        }
-        #dialog-head h2 { margin: 0; border: none; padding: 0; font-size: 1.15rem; font-family: Menlo, Monaco, Consolas, monospace; }
-        #dialog-head .sub { font-size: 0.85rem; color: var(--light-text-color); }
-        #dialog-controls {
-            padding: 0.75rem 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
-            background: var(--bg-color);
-        }
-        #dialog-search {
-            flex: 1 1 220px;
-            min-width: 180px;
-            padding: 0.45rem 0.7rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-family: inherit;
-        }
-        #dialog-controls label { font-size: 0.85rem; color: var(--light-text-color); display: flex; align-items: center; gap: 0.35rem; cursor: pointer; }
-        #dialog-body { overflow-y: auto; padding: 0.5rem 1.5rem 1.5rem; }
-        #dialog-body details { border-bottom: 1px solid var(--border-color); }
-        #dialog-body summary {
+        .btn {
+            font-family: var(--display);
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1;
+            padding: 8px 10px;
+            border: 1px solid transparent;
+            border-radius: var(--radius);
+            background: none;
+            color: var(--ink-2);
             cursor: pointer;
-            padding: 0.7rem 0;
-            font-weight: 600;
-            display: flex; align-items: center; gap: 0.6rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
         }
-        #dialog-body summary .count { font-weight: 400; color: var(--light-text-color); font-size: 0.85rem; }
-        .vrow {
-            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-            padding: 0.3rem 0 0.3rem 1rem;
-            font-size: 0.9rem;
+        .btn:hover { background: var(--accent-soft); color: var(--accent); }
+        .btn--solid {
+            background: var(--ink);
+            color: var(--ground);
+            border-color: var(--ink);
         }
-        .vrow .v { font-family: Menlo, Monaco, Consolas, monospace; overflow-wrap: anywhere; }
-        .vrow .actions { display: flex; gap: 0.3rem; flex-shrink: 0; }
-        .muted { color: var(--light-text-color); font-size: 0.9rem; }
-        .notice {
-            background: var(--content-bg-color);
-            border-left: 4px solid var(--warning-color);
-            padding: 1rem 1.25rem;
-            border-radius: 6px;
-            margin-bottom: 2rem;
-        }
-        .notice.error { border-left-color: var(--error-color); }
+        .btn--solid:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+        .btn--out { border-color: var(--rule); background: var(--surface); }
+        .btn--out:hover { border-color: var(--accent); }
+        .btn.copied { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 
-        @media (max-width: 860px) {
-            body { grid-template-columns: 1fr; grid-template-areas: "header" "main"; height: auto; }
-            #toc { display: none; }
+        /* ------------------------------------------------------------ sections */
+
+        .slab {
+            border-top: 1px solid var(--rule);
+            padding: 36px 0;
+        }
+        .slab h2 {
+            margin: 0 0 4px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+        }
+        .slab p.lede { margin: 0 0 18px; font-size: 13px; color: var(--ink-2); max-width: 62ch; }
+
+        .inventory { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+        .inv-row {
+            display: grid;
+            grid-template-columns: minmax(0,1.4fr) minmax(0,1.6fr) auto;
+            gap: 16px;
+            align-items: center;
+            background: var(--surface);
+            padding: 10px 14px;
+        }
+        .inv-name { font-family: var(--mono); font-size: 13px; overflow: hidden; text-overflow: ellipsis; }
+        .inv-facts { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+        .inv-facts b { color: var(--ink); font-weight: 700; }
+        .inv-row.bad .inv-facts { color: var(--signal); }
+
+        .colophon {
+            border-top: 1px solid var(--rule);
+            padding: 26px 0 60px;
+            font-size: 12px;
+            color: var(--ink-2);
+        }
+        .colophon p { margin: 0 0 8px; max-width: 70ch; }
+        .figures { font-family: var(--mono); color: var(--ink); font-variant-numeric: tabular-nums; }
+
+        .notice {
+            background: var(--surface);
+            border: 1px solid var(--rule);
+            border-left: 3px solid var(--signal);
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            margin: 40px 0;
+        }
+        .notice h2 { margin: 0 0 6px; font-size: 15px; }
+        .notice p { margin: 0 0 8px; font-size: 13px; color: var(--ink-2); }
+        code { font-family: var(--mono); font-size: .92em; }
+
+        /* -------------------------------------------------------------- dialog */
+
+        dialog {
+            width: min(820px, 94vw);
+            max-height: 88vh;
+            padding: 0;
+            border: 1px solid var(--rule);
+            border-radius: var(--radius);
+            box-shadow: 0 24px 64px var(--shadow);
+            color: var(--ink);
+            background: var(--surface);
+        }
+        dialog::backdrop { background: var(--backdrop); }
+        .dlg { display: flex; flex-direction: column; max-height: 88vh; }
+        .dlg-head {
+            padding: 18px 20px 14px;
+            border-bottom: 1px solid var(--rule);
+            display: flex; justify-content: space-between; gap: 16px; align-items: flex-start;
+        }
+        .dlg-head h2 { margin: 0; font-family: var(--mono); font-size: 15px; font-weight: 700; }
+        .dlg-head p { margin: 4px 0 0; font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+        .dlg-tools {
+            padding: 10px 20px;
+            border-bottom: 1px solid var(--rule);
+            display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+            background: var(--tools-bg);
+        }
+        .dlg-tools input[type=search] {
+            flex: 1 1 200px; min-width: 150px;
+            font-family: var(--mono); font-size: 13px;
+            padding: 7px 10px;
+            border: 1px solid var(--rule); border-radius: var(--radius);
+            background: var(--surface); color: var(--ink);
+        }
+        .dlg-tools label { font-size: 12px; color: var(--ink-2); display: flex; align-items: center; gap: 6px; cursor: pointer; }
+        .dlg-tools .count { font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; margin-left: auto; }
+        .dlg-body { overflow-y: auto; padding: 4px 20px 20px; }
+        .dlg-body details { border-bottom: 1px solid var(--rule-soft); }
+        .dlg-body summary {
+            cursor: pointer; padding: 9px 0; font-size: 13px; font-weight: 700;
+            font-family: var(--mono);
+            display: flex; align-items: baseline; gap: 10px;
+        }
+        .dlg-body summary .count { font-family: var(--display); font-weight: 400; font-size: 11.5px; color: var(--ink-3); }
+        .vrow {
+            display: flex; justify-content: space-between; align-items: center; gap: 14px;
+            padding: 3px 0 3px 14px;
+        }
+        .vrow .v { font-family: var(--mono); font-size: 12.5px; overflow-wrap: anywhere; }
+        .vrow .v.pre { color: var(--signal); }
+        .muted { color: var(--ink-2); font-size: 13px; }
+
+        /* --------------------------------------------------------------- motion */
+
+        @media (prefers-reduced-motion: no-preference) {
+            .btn, .seg, .line-chip, .node { transition: background-color .13s, color .13s, border-color .13s; }
+            .node { animation: settle .22s ease-out backwards; }
+            @keyframes settle {
+                from { opacity: 0; transform: translateY(3px); }
+            }
+        }
+
+        /* ----------------------------------------------------------- responsive */
+
+        @media (max-width: 720px) {
+            .wrap { padding: 0 16px; }
+            .node { grid-template-columns: 1fr; gap: 8px; padding: 10px 12px; }
+            .coord { font-size: 13px; grid-template-columns: 1fr; }
+            .seg { border-left: 0; padding: 2px 0; }
+            .seg:first-child { border-left: 0; padding-left: 0; }
+            .acts { flex-wrap: wrap; }
+            .legend { display: none; }
+            .inv-row { grid-template-columns: 1fr; gap: 6px; }
         }
     </style>
 </head>
 <body>
 
-    <header id="page-header">
-        <h1>MPS Latest Library Version Extractor 3000</h1>
-        <div id="header-meta"></div>
-    </header>
+<header class="masthead">
+    <div class="wrap">
+        <h1 class="wordmark">MPS Library Versions <span>extractor 3000</span></h1>
 
-    <nav id="toc"></nav>
-    <main id="main-content">
-        <div id="main-container">
-            <div id="status-container"></div>
-            <div id="results"></div>
+        <div class="nyan-track" aria-hidden="true">
+            <span class="nyan-trail"></span>
+            <svg class="nyan-cat" viewBox="50 0 46 28" shape-rendering="crispEdges">
+                    <rect x="52" y="5"  width="26" height="20" fill="#FF9EC8"/>
+                    <rect x="55" y="8"  width="20" height="14" fill="#FFD3E8"/>
+                    <rect x="59" y="11" width="2"  height="2"  fill="#FF5FA2"/>
+                    <rect x="66" y="14" width="2"  height="2"  fill="#FF5FA2"/>
+                    <rect x="62" y="17" width="2"  height="2"  fill="#FF5FA2"/>
+                    <rect x="76" y="4"  width="4"  height="4"  fill="#C9C9C9"/>
+                    <rect x="86" y="4"  width="4"  height="4"  fill="#C9C9C9"/>
+                    <rect x="74" y="7"  width="18" height="16" fill="#C9C9C9"/>
+                    <rect x="79" y="12" width="3"  height="3"  fill="#1A1A1A"/>
+                    <rect x="86" y="12" width="3"  height="3"  fill="#1A1A1A"/>
+                    <rect x="76" y="16" width="3"  height="3"  fill="#FF8FB8"/>
+                    <rect x="88" y="16" width="3"  height="3"  fill="#FF8FB8"/>
+                    <rect x="83" y="17" width="2"  height="2"  fill="#1A1A1A"/>
+                    <rect x="56" y="25" width="4"  height="2"  fill="#C9C9C9"/>
+                    <rect x="68" y="25" width="4"  height="2"  fill="#C9C9C9"/>
+            </svg>
         </div>
-    </main>
 
-    <dialog id="all-versions">
-        <div id="dialog-layout">
-            <div id="dialog-head">
+        <div class="stamp" id="stamp"></div>
+    </div>
+</header>
+
+<main id="main">
+    <div class="wrap">
+        <section class="picker" id="picker" hidden>
+            <h2 class="ask">Building against MPS <em id="ask-line"></em></h2>
+            <div class="lines" id="lines" role="group" aria-label="MPS release line"></div>
+            <p class="key-note" id="key-note" hidden>key versions</p>
+        </section>
+
+        <section class="board" id="board" hidden>
+            <div class="board-head">
                 <div>
-                    <h2 id="dialog-title"></h2>
-                    <div class="sub" id="dialog-sub"></div>
+                    <h2 class="board-title" id="board-title"></h2>
+                    <p class="board-note" id="board-note"></p>
                 </div>
-                <button class="action-btn" id="dialog-close" title="Close">✕</button>
+                <div class="acts">
+                    <button class="btn btn--out" id="copy-versions">Copy versions</button>
+                    <button class="btn btn--solid" id="copy-coords">Copy coordinates</button>
+                </div>
             </div>
-            <div id="dialog-controls">
-                <input type="search" id="dialog-search" placeholder="Filter versions…" autocomplete="off">
-                <label><input type="checkbox" id="dialog-pre"> pre-releases</label>
-                <label><input type="checkbox" id="dialog-branch"> branch builds</label>
-                <span class="muted" id="dialog-count"></span>
-            </div>
-            <div id="dialog-body"></div>
+            <div class="legend"><span>group</span><span>artifact</span><span>version</span></div>
+            <div id="nodes"></div>
+        </section>
+
+        <div id="bootstrap"></div>
+    </div>
+
+    <section class="slab" id="inventory-slab" hidden>
+        <div class="wrap">
+            <h2>Libraries</h2>
+            <p class="lede">Every version ever published, including pre-releases and feature-branch builds.</p>
+            <div class="inventory" id="inventory"></div>
         </div>
-    </dialog>
+    </section>
 
-    <script type="module">
-        import {
-            artifactUrls,
-            mavenCoordinate,
-            lineLabel,
-            isDevelopmentLine,
-        } from './versions-lib.js';
+    <footer class="colophon">
+        <div class="wrap" id="colophon"></div>
+    </footer>
+</main>
 
-        /* ------------------------------------------------------------------ */
-        /* state                                                               */
-        /* ------------------------------------------------------------------ */
+<dialog id="all-versions">
+    <div class="dlg">
+        <div class="dlg-head">
+            <div>
+                <h2 id="dlg-title"></h2>
+                <p id="dlg-sub"></p>
+            </div>
+            <button class="btn btn--out" id="dlg-close" aria-label="Close">Close</button>
+        </div>
+        <div class="dlg-tools">
+            <input type="search" id="dlg-search" placeholder="Filter versions…" autocomplete="off">
+            <label><input type="checkbox" id="dlg-pre" checked> pre-releases</label>
+            <label><input type="checkbox" id="dlg-branch" checked> branch builds</label>
+            <span class="count" id="dlg-count"></span>
+        </div>
+        <div class="dlg-body" id="dlg-body"></div>
+    </div>
+</dialog>
 
-        const REPO_URL = 'https://github.com/nkoester/mps-libraries-latest-version-finder';
+<script type="module">
+    import {
+        artifactUrls,
+        mavenCoordinate,
+        lineLabel,
+        isDevelopmentLine,
+    } from './versions-lib.js';
 
-        const state = {
-            generatedAt: null,
-            libraries: [],          // summary entries, latest-per-line only
-            fullData: new Map(),    // slug -> full version data, loaded on demand
-            dialogLibrary: null,
-        };
+    const REPO = 'https://github.com/nkoester/mps-libraries-latest-version-finder';
 
-        /** Copy payloads live here, not in HTML attributes. */
-        const copyRegistry = [];
-        function copyRef(text) {
-            copyRegistry.push(text);
-            return copyRegistry.length - 1;
-        }
+    /** Release lines given visual priority in the picker. Edit to taste. */
+    const KEY_LINES = new Set(['2026.1', '2025.1', '2024.1', '9999.9']);
 
-        const tocDiv = document.getElementById('toc');
-        const statusDiv = document.getElementById('status-container');
-        const resultsDiv = document.getElementById('results');
-        const headerMeta = document.getElementById('header-meta');
+    /** Release line selected when the page loads. */
+    const DEFAULT_LINE = '2025.1';
 
-        const esc = (value) =>
-            String(value).replace(/[&<>"']/g, (char) =>
-                ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+    const state = {
+        generatedAt: null,
+        libraries: [],
+        lineMap: new Map(),
+        selected: null,
+        fullData: new Map(),
+        dialog: null,
+    };
 
-        /**
-         * Full local timestamp, e.g. "2026-10-07 14:29:35 CEST".
-         *
-         * Forced to sv-SE rather than the browser locale: it is the one common
-         * locale that formats as ISO-ordered `YYYY-MM-DD HH:MM:SS`, so the date
-         * is never ambiguous the way a locale-default `10/07/2026` would be.
-         * The clock and zone name still follow the reader's own timezone.
-         */
-        function absoluteTime(iso) {
-            const date = new Date(iso);
-            if (Number.isNaN(date.getTime())) return 'unknown';
-            return date.toLocaleString('sv-SE', {
-                year: 'numeric', month: '2-digit', day: '2-digit',
-                hour: '2-digit', minute: '2-digit', second: '2-digit',
-                hour12: false,
-                timeZoneName: 'short',
-            });
-        }
+    const copyRegistry = [];
+    const copyRef = (text) => copyRegistry.push(text) - 1;
 
-        function relativeTime(iso) {
-            const then = new Date(iso).getTime();
-            if (Number.isNaN(then)) return 'unknown';
-            const seconds = Math.round((Date.now() - then) / 1000);
-            if (seconds < 60) return 'just now';
-            const minutes = Math.round(seconds / 60);
-            if (minutes < 60) return `${minutes} min ago`;
-            const hours = Math.round(minutes / 60);
-            if (hours < 36) return `${hours} h ago`;
-            const days = Math.round(hours / 24);
-            return `${days} day${days === 1 ? '' : 's'} ago`;
-        }
+    const $ = (id) => document.getElementById(id);
+    const esc = (value) => String(value).replace(/[&<>"']/g, (c) =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-        /* ------------------------------------------------------------------ */
-        /* initial load                                                        */
-        /* ------------------------------------------------------------------ */
+    /* ---------------------------------------------------------------- time */
 
-        async function load() {
-            try {
-                const response = await fetch('./versions.json');
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                const summary = await response.json();
-                state.generatedAt = summary.generatedAt;
-                state.libraries = summary.libraries;
-                render();
-            } catch (error) {
-                renderBootstrapError(error);
-            }
-        }
+    function absoluteTime(iso) {
+        const date = new Date(iso);
+        if (Number.isNaN(date.getTime())) return 'unknown';
+        // sv-SE is the one common locale that yields ISO-ordered YYYY-MM-DD HH:MM,
+        // so the date is never ambiguous. Clock and zone stay local to the reader.
+        return date.toLocaleString('sv-SE', {
+            year: 'numeric', month: '2-digit', day: '2-digit',
+            hour: '2-digit', minute: '2-digit', hour12: false, timeZoneName: 'short',
+        });
+    }
 
-        function renderBootstrapError(error) {
-            headerMeta.innerHTML = '';
-            resultsDiv.innerHTML = `
-                <div class="notice error">
-                    <strong>No version data available.</strong>
-                    <p class="muted">
-                        <code>versions.json</code> could not be loaded (${esc(error.message)}).
-                        It is produced by the <code>Update versions</code> GitHub Action — run that
-                        workflow once, or generate it locally with
-                        <code>node scripts/fetch-versions.mjs</code>.
-                    </p>
-                    <p class="muted">
-                        Opening this page from the filesystem will not work either; serve it over
-                        HTTP (<code>npm run serve</code>).
-                    </p>
+    function relativeTime(iso) {
+        const then = new Date(iso).getTime();
+        if (Number.isNaN(then)) return 'unknown';
+        const seconds = Math.round((Date.now() - then) / 1000);
+        if (seconds < 60) return 'just now';
+        const minutes = Math.round(seconds / 60);
+        if (minutes < 60) return `${minutes} min ago`;
+        const hours = Math.round(minutes / 60);
+        if (hours < 36) return `${hours} h ago`;
+        const days = Math.round(hours / 24);
+        return `${days} day${days === 1 ? '' : 's'} ago`;
+    }
+
+    /* ---------------------------------------------------------------- load */
+
+    async function load() {
+        try {
+            const response = await fetch('./versions.json');
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const summary = await response.json();
+            state.generatedAt = summary.generatedAt;
+            state.libraries = summary.libraries;
+            state.lineMap = buildLineMap(summary.libraries.filter((l) => l.ok));
+            state.selected = defaultLine();
+            renderAll();
+        } catch (error) {
+            $('bootstrap').innerHTML = `
+                <div class="notice">
+                    <h2>No version data</h2>
+                    <p><code>versions.json</code> could not be loaded (${esc(error.message)}).
+                    It is produced by the <em>Update versions</em> workflow — run that once, or
+                    generate it locally with <code>node scripts/fetch-versions.mjs</code>.</p>
+                    <p>Serve this page over HTTP; opening the file directly will not work.</p>
                 </div>`;
         }
+    }
 
-        /* ------------------------------------------------------------------ */
-        /* rendering                                                           */
-        /* ------------------------------------------------------------------ */
-
-        function render() {
-            copyRegistry.length = 0;
-            const ok = state.libraries.filter((library) => library.ok);
-            const lineMap = buildLineMap(ok);
-
-            renderHeaderMeta();
-            renderStatus();
-            renderStats(ok, lineMap);
-            tocDiv.innerHTML = renderToc(lineMap);
-            resultsDiv.innerHTML = renderLineCards(lineMap);
-        }
-
-        /** line -> [{library, latest, latestIsPreRelease}], newest line first. */
-        function buildLineMap(libraries) {
-            const map = new Map();
-            for (const library of libraries) {
-                for (const line of library.lines ?? []) {
-                    if (!map.has(line.line)) map.set(line.line, []);
-                    map.get(line.line).push({ library, ...line });
-                }
+    /** line -> entries, newest first. */
+    function buildLineMap(libraries) {
+        const map = new Map();
+        for (const library of libraries) {
+            for (const line of library.lines ?? []) {
+                if (!map.has(line.line)) map.set(line.line, []);
+                map.get(line.line).push({ library, ...line });
             }
-            return new Map(
-                [...map.entries()].sort((a, b) => {
-                    const [aMajor, aMinor] = a[0].split('.').map(Number);
-                    const [bMajor, bMinor] = b[0].split('.').map(Number);
-                    return bMajor - aMajor || bMinor - aMinor;
-                }),
-            );
+        }
+        return new Map([...map.entries()].sort((a, b) => {
+            const aDev = isDevelopmentLine(a[0]);
+            const bDev = isDevelopmentLine(b[0]);
+            if (aDev !== bDev) return aDev ? 1 : -1;
+            const [aMaj, aMin] = a[0].split('.').map(Number);
+            const [bMaj, bMin] = b[0].split('.').map(Number);
+            return bMaj - aMaj || bMin - aMin;
+        }));
+    }
+
+    /**
+     * The line selected on load. Falls back to the newest real release line —
+     * never the synthetic development line — if DEFAULT_LINE stops being
+     * published.
+     */
+    function defaultLine() {
+        const keys = [...state.lineMap.keys()];
+        if (keys.includes(DEFAULT_LINE)) return DEFAULT_LINE;
+        return keys.find((line) => !isDevelopmentLine(line)) ?? keys[0] ?? null;
+    }
+
+    /* -------------------------------------------------------------- render */
+
+    function renderAll() {
+        renderStamp();
+        renderLines();
+        $('key-note').hidden = ![...state.lineMap.keys()].some((line) => KEY_LINES.has(line));
+        renderBoard();
+        renderInventory();
+        renderColophon();
+        $('picker').hidden = false;
+        $('board').hidden = false;
+        $('inventory-slab').hidden = false;
+    }
+
+    function renderStamp() {
+        $('stamp').innerHTML = `
+            <span class="stamp-line">
+                <span>updated</span>
+                <time datetime="${esc(state.generatedAt)}" title="${esc(state.generatedAt)}">${esc(absoluteTime(state.generatedAt))}</time>
+                <span class="ago" id="ago">${esc(relativeTime(state.generatedAt))}</span>
+            </span>
+            <a class="stamp-repo" href="${REPO}" target="_blank" rel="noopener noreferrer">nkoester/mps-libraries-latest-version-finder</a>`;
+    }
+
+    setInterval(() => {
+        const ago = $('ago');
+        if (ago && state.generatedAt) ago.textContent = relativeTime(state.generatedAt);
+    }, 60000);
+
+    function chip(line, entries) {
+        const classes = ['line-chip'];
+        if (KEY_LINES.has(line)) classes.push('key');
+        return `
+            <button class="${classes.join(' ')}" data-line="${esc(line)}"
+                    aria-pressed="${line === state.selected}">
+                ${esc(isDevelopmentLine(line) ? `master ${line}` : line)}<span class="n">${entries.length}</span>
+            </button>`;
+    }
+
+    /** One row per year, so the eye can jump straight to the right block. */
+    function renderLines() {
+        const years = new Map();
+        for (const [line, entries] of state.lineMap) {
+            const year = isDevelopmentLine(line) ? 'dev' : line.split('.')[0];
+            if (!years.has(year)) years.set(year, []);
+            years.get(year).push([line, entries]);
+        }
+        // Newest year on top, but versions left-to-right ascending within it.
+        for (const lines of years.values()) {
+            lines.reverse();
+        }
+        $('lines').innerHTML = [...years.entries()].map(([year, lines]) => `
+            <div class="year" role="group" aria-label="${year === 'dev' ? 'Development builds' : `MPS ${year}`}">
+                <span class="year-label">${esc(year)}</span>
+                <div class="year-chips">${lines.map(([line, entries]) => chip(line, entries)).join('')}</div>
+            </div>`).join('');
+    }
+
+    function renderBoard() {
+        const line = state.selected;
+        if (!line) return;
+        const entries = state.lineMap.get(line) ?? [];
+        const present = new Map(entries.map((entry) => [entry.library.slug, entry]));
+
+        $('ask-line').textContent = isDevelopmentLine(line) ? lineLabel(line) : line;
+        $('board-title').innerHTML = isDevelopmentLine(line)
+            ? `<span class="lead">Development</span> builds <span class="dim">(${esc(line)})</span>`
+            : `<span class="lead">Latest</span> for MPS ${esc(line)}`;
+
+        const missing = state.libraries.filter((library) => library.ok && !present.has(library.slug));
+        const notes = [];
+        if (isDevelopmentLine(line)) {
+            notes.push('<strong>Not a release.</strong> Builds off the development branch, published under a synthetic version.');
+        }
+        if (missing.length) {
+            notes.push(`${missing.length} of ${state.libraries.length} libraries publish nothing for this line.`);
+        }
+        $('board-note').innerHTML = notes.join(' ');
+
+        // Ordered by the dependency stack (MPS, then what builds on it), which is
+        // the order libraries.json declares. Libraries with no build for this line
+        // come last -- the negative answer is information too.
+        const rank = new Map(state.libraries.map((library, index) => [library.slug, index]));
+        const byStack = (a, b) => rank.get(a.library.slug) - rank.get(b.library.slug);
+        const ordered = [
+            ...entries.slice().sort(byStack),
+            ...missing
+                .map((library) => ({ library, absent: true }))
+                .sort(byStack),
+        ];
+
+        copyRegistry.length = 0;
+        $('nodes').innerHTML = ordered.map((entry, index) => renderNode(entry, index)).join('');
+
+        const live = entries.map((entry) => entry);
+        $('copy-versions').dataset.copy = copyRef(live.map((e) => e.latest).join('\n'));
+        $('copy-coords').dataset.copy = copyRef(live.map((e) => mavenCoordinate(e.library, e.latest)).join('\n'));
+        const n = live.length;
+        $('copy-versions').textContent = `Copy ${n} version${n === 1 ? '' : 's'}`;
+        $('copy-coords').textContent = `Copy ${n} coordinate${n === 1 ? '' : 's'}`;
+    }
+
+    function renderNode(entry, index) {
+        const { library } = entry;
+        const delay = `style="animation-delay:${Math.min(index * 22, 180)}ms"`;
+
+        if (entry.absent) {
+            return `
+                <article class="node absent" ${delay}>
+                    <div class="coord">
+                        <span class="seg">${esc(library.groupId)}</span>
+                        <span class="seg">${esc(library.artifactId)}</span>
+                        <span class="seg seg--version">no build for this line</span>
+                    </div>
+                    <div class="acts">
+                        <button class="btn" data-act="all" data-slug="${esc(library.slug)}">Show all versions</button>
+                    </div>
+                </article>`;
         }
 
-        function renderHeaderMeta() {
-            if (!state.generatedAt) return;
-            headerMeta.innerHTML = `
-                <span class="meta-label">Data updated</span>
-                <time datetime="${esc(state.generatedAt)}" title="${esc(state.generatedAt)}"
-                      >${esc(absoluteTime(state.generatedAt))}</time>
-                <span class="meta-ago" id="meta-ago">${esc(relativeTime(state.generatedAt))}</span><br>
-                <a href="${REPO_URL}/commits/main/versions.json"
-                   target="_blank" rel="noopener noreferrer">history</a>`;
-        }
+        const { latest, latestIsPreRelease } = entry;
+        const urls = artifactUrls(library, latest);
+        return `
+            <article class="node" ${delay}>
+                <div class="coord">
+                    <button class="seg" data-copy="${copyRef(library.groupId)}"
+                            title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</button>
+                    <button class="seg" data-copy="${copyRef(library.artifactId)}"
+                            title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</button>
+                    <button class="seg seg--version${latestIsPreRelease ? ' pre' : ''}"
+                            data-copy="${copyRef(latest)}"
+                            title="Copy version ${esc(latest)}">${esc(latest)}</button>
+                    ${latestIsPreRelease ? '<span class="tag">pre-release</span>' : ''}
+                </div>
+                <div class="acts">
+                    <button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}"
+                            data-line="${esc(entry.line)}"
+                            title="Every ${esc(entry.line)} version of ${esc(library.artifactId)}">Show ${entry.total} previous</button>
+                    <a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
+                    <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>
+                    <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, latest))}"
+                    title="Copy ${esc(mavenCoordinate(library, latest))}">Copy</button>
+                </div>
+            </article>`;
+    }
 
-        // Keep the "… ago" honest on a page left open for hours.
-        setInterval(() => {
-            const element = document.getElementById('meta-ago');
-            if (element && state.generatedAt) {
-                element.textContent = relativeTime(state.generatedAt);
-            }
-        }, 60000);
-
-        function renderStatus() {
-            let html = '<h3><span>📚 Libraries</span></h3>';
-
-            for (const library of state.libraries) {
-                const label = `${library.groupId}:${library.artifactId}`;
-                const urls = artifactUrls(library, '');
-                let status;
-                if (!library.ok) {
-                    status = `<span class="status-line status-error">❌ ${esc(library.error ?? 'unavailable')}</span>
-                              <span class="badge stale">stale</span>`;
-                } else {
-                    const extras = [`${library.lines.length} release lines`];
-                    if (library.preRelease) extras.push(`${library.preRelease} pre-release`);
-                    if (library.branchCount) extras.push(`${library.branchCount} branch builds`);
-                    status = `<span class="status-line status-success">${library.released ?? library.total} releases</span>
-                              <span class="muted">${esc(extras.join(' · '))}</span>`;
-                }
-
-                html += `
-                    <div class="status-item" data-slug="${esc(library.slug)}">
-                        <span class="status-item-label" title="${esc(label)}">${esc(label)}</span>
-                        <div>${status}</div>
-                        <div class="button-group">
-                            <button class="action-btn small" data-action="show-all" data-slug="${esc(library.slug)}"
-                                    title="Show every published version of ${esc(label)}">
-                                📜 All versions
-                            </button>
-                            <a href="${esc(urls.folder)}" target="_blank" rel="noopener noreferrer"
-                               class="action-btn small button-separator" title="Browse in Nexus">📁</a>
-                            <a href="${esc(library.metadataUrl)}" target="_blank" rel="noopener noreferrer"
-                               class="action-btn small" title="View maven-metadata.xml">📄</a>
-                        </div>
+    function renderInventory() {
+        $('inventory').innerHTML = state.libraries.map((library) => {
+            const urls = artifactUrls(library, '');
+            if (!library.ok) {
+                return `
+                    <div class="inv-row bad">
+                        <span class="inv-name">${esc(library.groupId)}:${esc(library.artifactId)}</span>
+                        <span class="inv-facts">unavailable — ${esc(library.error ?? 'fetch failed')}, showing last known data</span>
+                        <span class="acts"><button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}">Show all versions</button></span>
                     </div>`;
             }
-
-            html += '<div id="stats-placeholder"></div>';
-            statusDiv.innerHTML = html;
-        }
-
-        function renderStats(libraries, lineMap) {
-            const placeholder = document.getElementById('stats-placeholder');
-            if (!placeholder) return;
-
-            const totalVersions = libraries.reduce((sum, library) => sum + (library.total ?? 0), 0);
-            let mostCommonLine = 'N/A';
-            let maxLibraries = 0;
-            for (const [line, entries] of lineMap) {
-                if (entries.length > maxLibraries) {
-                    maxLibraries = entries.length;
-                    mostCommonLine = line;
-                }
-            }
-            const biggest = libraries.reduce(
-                (best, library) => ((library.total ?? 0) > (best?.total ?? 0) ? library : best),
-                null,
-            );
-
-            placeholder.innerHTML = `
-                <h3 style="margin-top: 1.5rem;">📊 Statistics</h3>
-                <div class="stats-grid">
-                    <div class="stat-item"><div class="label">Libraries</div><div class="value">${libraries.length} / ${state.libraries.length}</div></div>
-                    <div class="stat-item"><div class="label">Release lines</div><div class="value">${lineMap.size}</div></div>
-                    <div class="stat-item"><div class="label">Versions indexed</div><div class="value">${totalVersions}</div></div>
-                    <div class="stat-item"><div class="label">Most covered line</div><div class="value">${esc(mostCommonLine)} <small>(${maxLibraries} libs)</small></div></div>
-                    <div class="stat-item"><div class="label">Most versions</div><div class="value">${esc(biggest?.artifactId ?? 'N/A')} <small>(${biggest?.total ?? 0})</small></div></div>
-                </div>`;
-        }
-
-        function renderToc(lineMap) {
-            let html = '<ul>';
-            for (const [line, entries] of lineMap) {
-                // The full "master / nightly (9999.9)" label does not fit the sidebar.
-                const label = isDevelopmentLine(line) ? `master ${line}` : line;
-                html += `<li><a href="#version-${esc(line)}">${esc(label)}
-                    <span class="count">${entries.length} libs</span></a></li>`;
-            }
-            return `${html}</ul>`;
-        }
-
-        function renderLineCards(lineMap) {
-            if (lineMap.size === 0) {
-                return '<p style="text-align:center;margin-top:2rem;">No versions found.</p>';
-            }
-
-            let html = '';
-            for (const [line, entries] of lineMap) {
-                entries.sort((a, b) => a.library.artifactId.localeCompare(b.library.artifactId));
-
-                const versionsText = entries.map((entry) => entry.latest).join('\n');
-                const coordsText = entries
-                    .map((entry) => mavenCoordinate(entry.library, entry.latest))
-                    .join('\n');
-
-                html += `
-                    <div class="version-group-container" id="version-${esc(line)}">
-                        <div class="version-group-header">
-                            <h2>${esc(lineLabel(line))}${
-                                isDevelopmentLine(line)
-                                    ? ' <span class="badge pre" title="Builds off the development branch, published under a synthetic version number">not a release</span>'
-                                    : ''
-                            }</h2>
-                            <div class="button-group">
-                                <button class="action-btn" data-copy="${copyRef(versionsText)}"
-                                        title="Copy all ${entries.length} versions">📋</button>
-                                <button class="action-btn" data-copy="${copyRef(coordsText)}"
-                                        title="Copy all ${entries.length} Maven coordinates">📦</button>
-                            </div>
-                        </div>
-                        <ul>`;
-
-                for (const entry of entries) {
-                    const { library, latest, latestIsPreRelease } = entry;
-                    const urls = artifactUrls(library, latest);
-                    const coordinate = mavenCoordinate(library, latest);
-                    const preBadge = latestIsPreRelease
-                        ? ' <span class="badge pre">pre-release</span>'
-                        : '';
-                    const staleBadge = library.ok ? '' : ' <span class="badge stale">stale</span>';
-
-                    html += `
-                        <li>
-                            <span class="version-info">${esc(library.groupId)}:${esc(library.artifactId)}:
-                                <strong>${esc(latest)}</strong>${preBadge}${staleBadge}</span>
-                            <div class="button-group">
-                                <button class="action-btn" data-copy="${copyRef(latest)}" title="Copy ${esc(latest)}">📋</button>
-                                <button class="action-btn" data-copy="${copyRef(coordinate)}" title="Copy ${esc(coordinate)}">📦</button>
-                                <a href="${esc(urls.pom)}" class="action-btn button-separator" target="_blank" rel="noopener noreferrer" title="View POM">📄</a>
-                                <a href="${esc(urls.zip)}" class="action-btn" target="_blank" rel="noopener noreferrer" title="Download ZIP">⬇️</a>
-                                <a href="${esc(urls.browse)}" class="action-btn" target="_blank" rel="noopener noreferrer" title="Browse in Nexus">🔗</a>
-                            </div>
-                        </li>`;
-                }
-                html += '</ul></div>';
-            }
-            return html;
-        }
-
-        /* ------------------------------------------------------------------ */
-        /* all-versions dialog                                                 */
-        /* ------------------------------------------------------------------ */
-
-        const dialog = document.getElementById('all-versions');
-        const dialogTitle = document.getElementById('dialog-title');
-        const dialogSub = document.getElementById('dialog-sub');
-        const dialogBody = document.getElementById('dialog-body');
-        const dialogSearch = document.getElementById('dialog-search');
-        const dialogPre = document.getElementById('dialog-pre');
-        const dialogBranch = document.getElementById('dialog-branch');
-        const dialogCount = document.getElementById('dialog-count');
-
-        /** Full version lists are fetched lazily, so the initial page load stays small. */
-        async function loadFullData(slug) {
-            if (state.fullData.has(slug)) return state.fullData.get(slug);
-            const library = state.libraries.find((entry) => entry.slug === slug);
-            const response = await fetch(library.dataFile ?? `./data/${slug}.json`);
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            const data = await response.json();
-            state.fullData.set(slug, data);
-            return data;
-        }
-
-        async function openAllVersions(slug) {
-            const library = state.libraries.find((entry) => entry.slug === slug);
-            dialogTitle.textContent = `${library.groupId}:${library.artifactId}`;
-            dialogSub.textContent = 'Loading…';
-            dialogBody.innerHTML = '';
-            dialogSearch.value = '';
-            dialogCount.textContent = '';
-            if (!dialog.open) dialog.showModal();
-
-            try {
-                const data = await loadFullData(slug);
-                state.dialogLibrary = { library, data };
-                dialogSub.textContent =
-                    `${data.released} releases (${data.stable} stable, ${data.preRelease} pre-release) ` +
-                    `across ${data.lines.length} lines · ${data.branchCount} branch builds` +
-                    (data.branches ? ` from ${data.branches} branches` : '');
-                renderDialogBody();
-            } catch (error) {
-                state.dialogLibrary = null;
-                dialogSub.textContent = '';
-                dialogBody.innerHTML = `<p class="muted">Could not load the full version list
-                    (${esc(error.message)}).</p>`;
-            }
-        }
-
-        function versionRow(library, entry) {
-            const urls = artifactUrls(library, entry.v);
-            const coordinate = mavenCoordinate(library, entry.v);
+            const facts = [`<b>${library.released ?? library.total}</b> releases`, `${library.lines.length} lines`];
+            if (library.preRelease) facts.push(`${library.preRelease} pre-release`);
+            if (library.branchCount) facts.push(`${library.branchCount} branch builds`);
             return `
-                <div class="vrow">
-                    <span class="v">${esc(entry.v)}${entry.pre ? ' <span class="badge pre">pre</span>' : ''}${
-                        entry.branch ? ` <span class="badge">${esc(entry.branch)}</span>` : ''}</span>
-                    <span class="actions">
-                        <button class="action-btn small" data-copy="${copyRef(entry.v)}" title="Copy version">📋</button>
-                        <button class="action-btn small" data-copy="${copyRef(coordinate)}" title="Copy ${esc(coordinate)}">📦</button>
-                        <a href="${esc(urls.pom)}" class="action-btn small" target="_blank" rel="noopener noreferrer" title="View POM">📄</a>
-                        <a href="${esc(urls.zip)}" class="action-btn small" target="_blank" rel="noopener noreferrer" title="Download ZIP">⬇️</a>
-                        <a href="${esc(urls.browse)}" class="action-btn small" target="_blank" rel="noopener noreferrer" title="Browse in Nexus">🔗</a>
+                <div class="inv-row">
+                    <span class="inv-name">${esc(library.groupId)}:${esc(library.artifactId)}</span>
+                    <span class="inv-facts">${facts.join(' · ')}</span>
+                    <span class="acts">
+                        <button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}">Show all versions</button>
+                        <a class="btn" href="${esc(urls.folder)}" target="_blank" rel="noopener noreferrer">nexus</a>
+                        <a class="btn" href="${esc(library.metadataUrl)}" target="_blank" rel="noopener noreferrer">xml</a>
                     </span>
                 </div>`;
+        }).join('');
+    }
+
+    function renderColophon() {
+        const ok = state.libraries.filter((l) => l.ok);
+        const total = ok.reduce((sum, l) => sum + (l.total ?? 0), 0);
+        $('colophon').innerHTML = `
+            <p class="figures">${total.toLocaleString('en-US')} versions · ${ok.length}/${state.libraries.length} libraries · ${state.lineMap.size} release lines</p>`;
+    }
+
+    /* -------------------------------------------------------------- dialog */
+
+    const dlg = $('all-versions');
+
+    async function openAll(slug, scope = null) {
+        const library = state.libraries.find((entry) => entry.slug === slug);
+        $('dlg-title').textContent = `${library.groupId}:${library.artifactId}`;
+        $('dlg-sub').textContent = 'Loading…';
+        $('dlg-body').innerHTML = '';
+        $('dlg-search').value = '';
+        $('dlg-count').textContent = '';
+        if (!dlg.open) dlg.showModal();
+        try {
+            if (!state.fullData.has(slug)) {
+                const response = await fetch(library.dataFile ?? `./data/${slug}.json`);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                state.fullData.set(slug, await response.json());
+            }
+            const data = state.fullData.get(slug);
+            state.dialog = { library, data, scope };
+            const scoped = scope ? data.lines.find((line) => line.line === scope) : null;
+            $('dlg-sub').textContent = scoped
+                ? `${lineLabel(scope)} · ${scoped.total} versions · ${scoped.stable} stable · ` +
+                  `${scoped.total - scoped.stable} pre-release`
+                : `${data.released} releases · ${data.stable} stable · ${data.preRelease} pre-release · ` +
+                  `${data.lines.length} lines · ${data.branchCount} branch builds`;
+            // Branch builds do not belong to a release line, so the toggle is
+            // meaningless while scoped.
+            $('dlg-branch').closest('label').hidden = Boolean(scope);
+            renderDialog();
+            $('dlg-search').focus();
+        } catch (error) {
+            state.dialog = null;
+            $('dlg-sub').textContent = '';
+            $('dlg-body').innerHTML = `<p class="muted">Could not load the full version list (${esc(error.message)}).</p>`;
+        }
+    }
+
+    function vrow(library, entry) {
+        const urls = artifactUrls(library, entry.v);
+        return `
+            <div class="vrow">
+                <span class="v${entry.pre ? ' pre' : ''}">${esc(entry.v)}</span>
+                <span class="acts">
+                    <button class="btn" data-copy="${copyRef(entry.v)}">copy</button>
+                    <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
+                    <a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
+                    <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>
+                </span>
+            </div>`;
+    }
+
+    const SEARCH_LIMIT = 400;
+
+    function renderDialog() {
+        if (!state.dialog) return;
+        const { library, data, scope } = state.dialog;
+        const query = $('dlg-search').value.trim().toLowerCase();
+        const pre = $('dlg-pre').checked;
+        const branch = $('dlg-branch').checked && !scope;
+        const lines = scope ? data.lines.filter((line) => line.line === scope) : data.lines;
+        const keep = (entry) => (pre || !entry.pre) && (!query || entry.v.toLowerCase().includes(query));
+
+        if (query) {
+            const pool = lines.flatMap((line) => line.versions);
+            if (branch) pool.push(...(data.branchBuilds ?? []));
+            const matches = pool.filter(keep);
+            $('dlg-count').textContent = `${matches.length} match${matches.length === 1 ? '' : 'es'}`;
+            const shown = matches.slice(0, SEARCH_LIMIT);
+            $('dlg-body').innerHTML =
+                (shown.map((entry) => vrow(library, entry)).join('') || '<p class="muted">No matching versions.</p>') +
+                (matches.length > shown.length
+                    ? `<p class="muted">…and ${matches.length - shown.length} more. Narrow the filter.</p>` : '');
+            return;
         }
 
-        const SEARCH_LIMIT = 400;
+        const total = lines.reduce((sum, line) => sum + line.versions.filter(keep).length, 0);
+        $('dlg-count').textContent = `${total} shown`;
 
-        function renderDialogBody() {
-            if (!state.dialogLibrary) return;
-            const { library, data } = state.dialogLibrary;
-            const query = dialogSearch.value.trim().toLowerCase();
-            const includePre = dialogPre.checked;
-            const keep = (entry) =>
-                (includePre || !entry.pre) && (!query || entry.v.toLowerCase().includes(query));
-
-            if (query) {
-                // Flat result list while searching; lines are not useful here.
-                const pool = data.lines.flatMap((line) => line.versions);
-                if (dialogBranch.checked) pool.push(...(data.branchBuilds ?? []));
-                const matches = pool.filter(keep);
-                dialogCount.textContent = `${matches.length} match${matches.length === 1 ? '' : 'es'}`;
-                const shown = matches.slice(0, SEARCH_LIMIT);
-                dialogBody.innerHTML =
-                    (shown.map((entry) => versionRow(library, entry)).join('') ||
-                        '<p class="muted">No matching versions.</p>') +
-                    (matches.length > shown.length
-                        ? `<p class="muted">…and ${matches.length - shown.length} more. Narrow the filter.</p>`
-                        : '');
-                return;
-            }
-
-            const total = data.lines.reduce(
-                (sum, line) => sum + line.versions.filter(keep).length,
-                0,
-            );
-            dialogCount.textContent = `${total} version${total === 1 ? '' : 's'} shown`;
-
-            // Rows are rendered when a line is expanded, so opening a library with
-            // thousands of versions stays instant.
-            let html = '';
-            for (const line of data.lines) {
-                const count = line.versions.filter(keep).length;
-                if (count === 0) continue;
+        // Rows render when a line is expanded, so libraries with thousands of
+        // versions open instantly.
+        let html = '';
+        for (const line of lines) {
+            const count = line.versions.filter(keep).length;
+            if (!count) continue;
+            html += `
+                <details data-line="${esc(line.line)}">
+                    <summary>${esc(lineLabel(line.line))}
+                        <span class="count">${count} · latest ${esc(line.latest)}</span></summary>
+                    <div class="body"></div>
+                </details>`;
+        }
+        if (branch && data.branchBuilds?.length) {
+            const count = data.branchBuilds.filter(keep).length;
+            if (count) {
                 html += `
-                    <details data-line="${esc(line.line)}">
-                        <summary>${esc(lineLabel(line.line))}
-                            <span class="count">${count} version${count === 1 ? '' : 's'} ·
-                            latest ${esc(line.latest)}</span></summary>
-                        <div class="line-body"></div>
+                    <details data-line="__branch">
+                        <summary>branch builds <span class="count">${count} · not released</span></summary>
+                        <div class="body"></div>
                     </details>`;
             }
-            if (dialogBranch.checked && data.branchBuilds?.length) {
-                const count = data.branchBuilds.filter(keep).length;
-                if (count > 0) {
-                    html += `
-                        <details data-line="__branch">
-                            <summary>Branch builds
-                                <span class="count">${count} build${count === 1 ? '' : 's'} ·
-                                not published releases</span></summary>
-                            <div class="line-body"></div>
-                        </details>`;
-                }
-            }
-            dialogBody.innerHTML = html || '<p class="muted">No versions match the current filter.</p>';
-
-            const first = dialogBody.querySelector('details');
-            if (first) first.open = true;
         }
+        $('dlg-body').innerHTML = html || '<p class="muted">No versions match the current filter.</p>';
+        const first = $('dlg-body').querySelector('details');
+        if (first) first.open = true;
+    }
 
-        function fillLineBody(details) {
-            const body = details.querySelector('.line-body');
-            if (!body || body.dataset.filled === 'true') return;
-            const { library, data } = state.dialogLibrary;
-            const includePre = dialogPre.checked;
-            const key = details.dataset.line;
-            const source =
-                key === '__branch'
-                    ? data.branchBuilds ?? []
-                    : data.lines.find((line) => line.line === key)?.versions ?? [];
-            body.innerHTML = source
-                .filter((entry) => includePre || !entry.pre)
-                .map((entry) => versionRow(library, entry))
-                .join('');
-            body.dataset.filled = 'true';
+    function fillBody(details) {
+        const body = details.querySelector('.body');
+        if (!body || body.dataset.filled === 'true') return;
+        const { library, data } = state.dialog;
+        const pre = $('dlg-pre').checked;
+        const key = details.dataset.line;
+        const source = key === '__branch'
+            ? data.branchBuilds ?? []
+            : data.lines.find((line) => line.line === key)?.versions ?? [];
+        body.innerHTML = source.filter((entry) => pre || !entry.pre).map((entry) => vrow(library, entry)).join('');
+        body.dataset.filled = 'true';
+    }
+
+    $('dlg-body').addEventListener('toggle', (event) => {
+        const details = event.target.closest('details');
+        if (details?.open) fillBody(details);
+    }, true);
+
+    for (const id of ['dlg-search', 'dlg-pre', 'dlg-branch']) {
+        $(id).addEventListener(id === 'dlg-search' ? 'input' : 'change', renderDialog);
+    }
+    $('dlg-close').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', (event) => { if (event.target === dlg) dlg.close(); });
+
+    /* -------------------------------------------------------------- events */
+
+    async function copy(button, text) {
+        const original = button.textContent;
+        try {
+            await navigator.clipboard.writeText(text);
+            button.textContent = 'Copied';
+            button.classList.add('copied');
+            setTimeout(() => { button.textContent = original; button.classList.remove('copied'); }, 1200);
+        } catch (error) {
+            console.error('Copy failed:', error);
+            button.textContent = 'Press ⌘C';
+            setTimeout(() => { button.textContent = original; }, 1600);
         }
+    }
 
-        dialogBody.addEventListener('toggle', (event) => {
-            const details = event.target.closest('details');
-            if (details?.open) fillLineBody(details);
-        }, true);
-
-        dialogSearch.addEventListener('input', renderDialogBody);
-        dialogPre.addEventListener('change', renderDialogBody);
-        dialogBranch.addEventListener('change', renderDialogBody);
-        document.getElementById('dialog-close').addEventListener('click', () => dialog.close());
-        dialog.addEventListener('click', (event) => {
-            if (event.target === dialog) dialog.close();
-        });
-
-        /* ------------------------------------------------------------------ */
-        /* events                                                              */
-        /* ------------------------------------------------------------------ */
-
-        async function copyToClipboard(button, text) {
-            const original = button.innerHTML;
-            try {
-                await navigator.clipboard.writeText(text);
-                button.innerHTML = '✅';
-                button.classList.add('copied');
-                setTimeout(() => {
-                    button.innerHTML = original;
-                    button.classList.remove('copied');
-                }, 1500);
-            } catch (error) {
-                console.error('Copy failed:', error);
-                button.innerHTML = '⚠️';
-                setTimeout(() => { button.innerHTML = original; }, 1500);
-            }
+    document.addEventListener('click', (event) => {
+        const chip = event.target.closest('.line-chip');
+        if (chip) {
+            state.selected = chip.dataset.line;
+            renderLines();
+            renderBoard();
+            return;
         }
+        const target = event.target.closest('[data-copy], [data-act]');
+        if (!target) return;
+        if (target.dataset.copy !== undefined) {
+            copy(target, copyRegistry[Number(target.dataset.copy)]);
+            return;
+        }
+        if (target.dataset.act === 'all') openAll(target.dataset.slug, target.dataset.line ?? null);
+    });
 
-        document.body.addEventListener('click', async (event) => {
-            const target = event.target.closest('[data-copy], [data-action]');
-            if (!target) return;
-
-            if (target.dataset.copy !== undefined) {
-                copyToClipboard(target, copyRegistry[Number(target.dataset.copy)]);
-                return;
-            }
-
-            if (target.dataset.action === 'show-all') {
-                openAllVersions(target.dataset.slug);
-            }
-        });
-
-        load();
-    </script>
+    load();
+</script>
 </body>
 </html>

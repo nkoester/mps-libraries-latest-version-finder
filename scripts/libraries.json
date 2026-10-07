@@ -1,18 +1,23 @@
 [
   {
+    "groupId": "com.jetbrains.mps",
+    "artifactId": "mps",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml"
+  },
+  {
     "groupId": "de.itemis.mps",
     "artifactId": "extensions",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml"
   },
   {
     "groupId": "com.mbeddr",
-    "artifactId": "mbeddr",
-    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml"
+    "artifactId": "platform",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml"
   },
   {
     "groupId": "com.mbeddr",
-    "artifactId": "platform",
-    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml"
+    "artifactId": "mbeddr",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml"
   },
   {
     "groupId": "org.iets3",
@@ -23,10 +28,5 @@
     "groupId": "org.mpsqa",
     "artifactId": "all-in-one",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml"
-  },
-  {
-    "groupId": "com.jetbrains.mps",
-    "artifactId": "mps",
-    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml"
   }
 ]
