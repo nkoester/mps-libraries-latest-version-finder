@@ -676,7 +676,7 @@
         <section class="finder" id="finder" hidden>
             <input type="search" id="q" autocomplete="off" spellcheck="false"
                    aria-label="Search every version"
-                   placeholder="Search everything — group, artifact, version. Space-separated terms all have to match.">
+                   placeholder="One Serach to find it all — group, artifact, version. Space-separated terms all have to match.">
             <p class="finder-note" id="q-note"></p>
         </section>
 
@@ -861,6 +861,7 @@
         renderInventory();
         renderColophon();
         $('finder').hidden = false;
+        $('q').focus({ preventScroll: true });
         $('picker').hidden = false;
         $('board').hidden = false;
         $('inventory-slab').hidden = false;
@@ -1164,8 +1165,11 @@
     }
 
     $('q').addEventListener('input', runSearch);
-    $('q').addEventListener('focus', () => { buildIndex().catch(() => {}); }, { once: true });
     $('q').addEventListener('keydown', (event) => {
+        // Warm the corpus on the first real keystroke. Deliberately not on
+        // focus: the field is focused on load, so that would pull the whole
+        // corpus on every visit whether or not anyone searches.
+        buildIndex().catch(() => {});
         if (event.key === 'Escape') { $('q').value = ''; runSearch(); }
     });
     /* -------------------------------------------------------------- dialog */
