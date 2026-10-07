@@ -47,6 +47,13 @@
         #page-header h1 { margin: 0; padding: 0; border: none; font-size: 1.5rem; }
         #header-meta { font-size: 0.85rem; color: var(--light-text-color); text-align: right; }
         #header-meta a { color: var(--light-text-color); }
+        #header-meta time {
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            color: var(--text-color);
+        }
+        /* Parentheses live in CSS so the periodic textContent refresh keeps them. */
+        .meta-ago::before { content: "("; }
+        .meta-ago::after { content: ")"; }
         #toc {
             grid-area: toc;
             align-self: start;
@@ -317,15 +324,36 @@
             String(value).replace(/[&<>"']/g, (char) =>
                 ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 
+        /**
+         * Full local timestamp, e.g. "2026-10-07 14:29:35 CEST".
+         *
+         * Forced to sv-SE rather than the browser locale: it is the one common
+         * locale that formats as ISO-ordered `YYYY-MM-DD HH:MM:SS`, so the date
+         * is never ambiguous the way a locale-default `10/07/2026` would be.
+         * The clock and zone name still follow the reader's own timezone.
+         */
+        function absoluteTime(iso) {
+            const date = new Date(iso);
+            if (Number.isNaN(date.getTime())) return 'unknown';
+            return date.toLocaleString('sv-SE', {
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', second: '2-digit',
+                hour12: false,
+                timeZoneName: 'short',
+            });
+        }
+
         function relativeTime(iso) {
             const then = new Date(iso).getTime();
             if (Number.isNaN(then)) return 'unknown';
-            const minutes = Math.round((Date.now() - then) / 60000);
-            if (minutes < 2) return 'just now';
+            const seconds = Math.round((Date.now() - then) / 1000);
+            if (seconds < 60) return 'just now';
+            const minutes = Math.round(seconds / 60);
             if (minutes < 60) return `${minutes} min ago`;
             const hours = Math.round(minutes / 60);
             if (hours < 36) return `${hours} h ago`;
-            return `${Math.round(hours / 24)} days ago`;
+            const days = Math.round(hours / 24);
+            return `${days} day${days === 1 ? '' : 's'} ago`;
         }
 
         /* ------------------------------------------------------------------ */
@@ -400,11 +428,21 @@
         function renderHeaderMeta() {
             if (!state.generatedAt) return;
             headerMeta.innerHTML = `
-                Data updated ${esc(relativeTime(state.generatedAt))}
-                <span title="${esc(state.generatedAt)}">ⓘ</span><br>
+                <span class="meta-label">Data updated</span>
+                <time datetime="${esc(state.generatedAt)}" title="${esc(state.generatedAt)}"
+                      >${esc(absoluteTime(state.generatedAt))}</time>
+                <span class="meta-ago" id="meta-ago">${esc(relativeTime(state.generatedAt))}</span><br>
                 <a href="${REPO_URL}/commits/main/versions.json"
                    target="_blank" rel="noopener noreferrer">history</a>`;
         }
+
+        // Keep the "… ago" honest on a page left open for hours.
+        setInterval(() => {
+            const element = document.getElementById('meta-ago');
+            if (element && state.generatedAt) {
+                element.textContent = relativeTime(state.generatedAt);
+            }
+        }, 60000);
 
         function renderStatus() {
             let html = `
