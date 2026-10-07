@@ -1,0 +1,46 @@
+name: Update versions
+
+on:
+  schedule:
+    # 05:00 UTC daily = 07:00 CEST (summer) / 06:00 CET (winter).
+    # Change to '0 6 * * *' if you would rather have 07:00 in winter.
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'versions-lib.js'
+      - '.github/workflows/update-versions.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-versions
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch maven metadata
+        run: node scripts/fetch-versions.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- versions.json data/; then
+            echo "No version changes."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add versions.json data/
+          git commit -m "data: update MPS library versions ($(date -u +%Y-%m-%d))"
+          git push

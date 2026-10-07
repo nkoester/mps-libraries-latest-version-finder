@@ -1,0 +1,418 @@
+{
+  "groupId": "com.jetbrains.mps",
+  "artifactId": "mps",
+  "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml",
+  "slug": "com.jetbrains.mps_mps",
+  "generatedAt": "2026-10-07T12:33:45.364Z",
+  "total": 60,
+  "released": 60,
+  "stable": 52,
+  "preRelease": 8,
+  "branchCount": 0,
+  "branches": 0,
+  "lines": [
+    {
+      "line": "2026.1",
+      "latest": "2026.1.1",
+      "latestIsPreRelease": false,
+      "total": 3,
+      "stable": 2,
+      "versions": [
+        {
+          "v": "2026.1.1",
+          "pre": false
+        },
+        {
+          "v": "2026.1",
+          "pre": false
+        },
+        {
+          "v": "2026.1-RC1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2025.3",
+      "latest": "2025.3",
+      "latestIsPreRelease": false,
+      "total": 2,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2025.3",
+          "pre": false
+        },
+        {
+          "v": "2025.3-EAP1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2025.2",
+      "latest": "2025.2.1",
+      "latestIsPreRelease": false,
+      "total": 1,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2025.2.1",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2025.1",
+      "latest": "2025.1.4",
+      "latestIsPreRelease": false,
+      "total": 6,
+      "stable": 5,
+      "versions": [
+        {
+          "v": "2025.1.4",
+          "pre": false
+        },
+        {
+          "v": "2025.1.3",
+          "pre": false
+        },
+        {
+          "v": "2025.1.2",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1",
+          "pre": false
+        },
+        {
+          "v": "2025.1",
+          "pre": false
+        },
+        {
+          "v": "2025.1-RC1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2024.3",
+      "latest": "2024.3.2",
+      "latestIsPreRelease": false,
+      "total": 5,
+      "stable": 3,
+      "versions": [
+        {
+          "v": "2024.3.2",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1",
+          "pre": false
+        },
+        {
+          "v": "2024.3",
+          "pre": false
+        },
+        {
+          "v": "2024.3-RC1",
+          "pre": true
+        },
+        {
+          "v": "2024.3-EAP1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2024.1",
+      "latest": "2024.1.6",
+      "latestIsPreRelease": false,
+      "total": 9,
+      "stable": 7,
+      "versions": [
+        {
+          "v": "2024.1.6",
+          "pre": false
+        },
+        {
+          "v": "2024.1.5",
+          "pre": false
+        },
+        {
+          "v": "2024.1.4",
+          "pre": false
+        },
+        {
+          "v": "2024.1.3",
+          "pre": false
+        },
+        {
+          "v": "2024.1.2",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1",
+          "pre": false
+        },
+        {
+          "v": "2024.1",
+          "pre": false
+        },
+        {
+          "v": "2024.1-RC1",
+          "pre": true
+        },
+        {
+          "v": "2024.1-EAP1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2023.3",
+      "latest": "2023.3.2",
+      "latestIsPreRelease": false,
+      "total": 4,
+      "stable": 3,
+      "versions": [
+        {
+          "v": "2023.3.2",
+          "pre": false
+        },
+        {
+          "v": "2023.3.1",
+          "pre": false
+        },
+        {
+          "v": "2023.3",
+          "pre": false
+        },
+        {
+          "v": "2023.3-RC1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2023.2",
+      "latest": "2023.2.3",
+      "latestIsPreRelease": false,
+      "total": 4,
+      "stable": 4,
+      "versions": [
+        {
+          "v": "2023.2.3",
+          "pre": false
+        },
+        {
+          "v": "2023.2.2",
+          "pre": false
+        },
+        {
+          "v": "2023.2.1",
+          "pre": false
+        },
+        {
+          "v": "2023.2",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2022.3",
+      "latest": "2022.3.3",
+      "latestIsPreRelease": false,
+      "total": 4,
+      "stable": 4,
+      "versions": [
+        {
+          "v": "2022.3.3",
+          "pre": false
+        },
+        {
+          "v": "2022.3.2",
+          "pre": false
+        },
+        {
+          "v": "2022.3.1",
+          "pre": false
+        },
+        {
+          "v": "2022.3",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2022.2",
+      "latest": "2022.2.4",
+      "latestIsPreRelease": false,
+      "total": 5,
+      "stable": 5,
+      "versions": [
+        {
+          "v": "2022.2.4",
+          "pre": false
+        },
+        {
+          "v": "2022.2.3",
+          "pre": false
+        },
+        {
+          "v": "2022.2.2",
+          "pre": false
+        },
+        {
+          "v": "2022.2.1",
+          "pre": false
+        },
+        {
+          "v": "2022.2",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2021.3",
+      "latest": "2021.3.5",
+      "latestIsPreRelease": false,
+      "total": 5,
+      "stable": 5,
+      "versions": [
+        {
+          "v": "2021.3.5",
+          "pre": false
+        },
+        {
+          "v": "2021.3.4",
+          "pre": false
+        },
+        {
+          "v": "2021.3.3",
+          "pre": false
+        },
+        {
+          "v": "2021.3.2",
+          "pre": false
+        },
+        {
+          "v": "2021.3.1",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2021.2",
+      "latest": "2021.2.6",
+      "latestIsPreRelease": false,
+      "total": 3,
+      "stable": 3,
+      "versions": [
+        {
+          "v": "2021.2.6",
+          "pre": false
+        },
+        {
+          "v": "2021.2.5",
+          "pre": false
+        },
+        {
+          "v": "2021.2.3",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2021.1",
+      "latest": "2021.1.4",
+      "latestIsPreRelease": false,
+      "total": 2,
+      "stable": 2,
+      "versions": [
+        {
+          "v": "2021.1.4",
+          "pre": false
+        },
+        {
+          "v": "2021.1.1",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2020.3",
+      "latest": "2020.3.6",
+      "latestIsPreRelease": false,
+      "total": 3,
+      "stable": 3,
+      "versions": [
+        {
+          "v": "2020.3.6",
+          "pre": false
+        },
+        {
+          "v": "2020.3.4",
+          "pre": false
+        },
+        {
+          "v": "2020.3.3",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2020.2",
+      "latest": "2020.2.3",
+      "latestIsPreRelease": false,
+      "total": 1,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2020.2.3",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2020.1",
+      "latest": "2020.1.7",
+      "latestIsPreRelease": false,
+      "total": 1,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2020.1.7",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2019.3",
+      "latest": "2019.3.7",
+      "latestIsPreRelease": false,
+      "total": 1,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2019.3.7",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2019.2",
+      "latest": "2019.2.4",
+      "latestIsPreRelease": false,
+      "total": 1,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2019.2.4",
+          "pre": false
+        }
+      ]
+    }
+  ],
+  "branchBuilds": []
+}

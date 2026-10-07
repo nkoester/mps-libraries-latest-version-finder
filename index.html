@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPS Latest Library Version Extractor 3000</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E">
     <style>
         :root {
             --accent-color: #0d6efd;
@@ -15,11 +16,12 @@
             --hover-bg-color: #e9ecef;
             --success-color: #198754;
             --error-color: #dc3545;
-            --warning-color: #ffc107;
+            --warning-color: #b8860b;
         }
-        body { 
+        * { box-sizing: border-box; }
+        body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6; 
+            line-height: 1.6;
             margin: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -37,39 +39,27 @@
             padding: 1rem 2em;
             border-bottom: 1px solid var(--border-color);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
         }
-        #page-header h1 {
-            margin: 0;
-            padding: 0;
-            border: none;
-            font-size: 1.5rem;
-        }
+        #page-header h1 { margin: 0; padding: 0; border: none; font-size: 1.5rem; }
+        #header-meta { font-size: 0.85rem; color: var(--light-text-color); text-align: right; }
+        #header-meta a { color: var(--light-text-color); }
         #toc {
             grid-area: toc;
-            position: sticky;
-            top: 2em;
             align-self: start;
-            max-height: calc(100vh - 4em);
+            max-height: calc(100vh - 5.5em);
             overflow-y: auto;
             padding: 0 2em;
         }
-        #main-content {
-            grid-area: main;
-            min-width: 0;
-            padding: 2em;
-            overflow-y: auto;
-        }
-        #main-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        h2, h3 { 
-            border-bottom: 1px solid var(--border-color); 
-            padding-bottom: 0.5em; 
-        }
+        #main-content { grid-area: main; min-width: 0; padding: 2em; overflow-y: auto; }
+        #main-container { max-width: 900px; margin: 0 auto; }
+        h2, h3 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.5em; }
         ul { list-style-type: none; padding-left: 0; margin-top: 1.5rem; }
-        li { 
-            padding: 1rem 0; 
+        li {
+            padding: 1rem 0;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
@@ -79,7 +69,7 @@
         li:last-child { border-bottom: none; }
         .version-info { font-weight: 500; overflow-wrap: anywhere; font-size: 1rem; }
         .version-info strong { font-weight: 600; }
-        
+
         .version-group-header {
             display: flex;
             justify-content: space-between;
@@ -87,15 +77,9 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.5em;
         }
-        .version-group-header h2 {
-            margin: 0;
-            padding: 0;
-            border: none;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .button-group { display: flex; gap: 0.5rem; flex-shrink: 0; }
+        .version-group-header h2 { margin: 0; padding: 0; border: none; font-size: 1.5rem; font-weight: 600; }
+
+        .button-group { display: flex; gap: 0.5rem; flex-shrink: 0; align-items: center; }
         .action-btn {
             background-color: var(--hover-bg-color);
             border: none;
@@ -106,6 +90,7 @@
             display: inline-flex;
             align-items: center; justify-content: center;
             font-size: 1rem;
+            text-decoration: none;
             transition: background-color 0.2s, opacity 0.2s;
             color: var(--light-text-color);
             white-space: nowrap;
@@ -113,10 +98,8 @@
         .action-btn:hover { background-color: #dbe0e4; color: var(--text-color); }
         .action-btn:disabled { opacity: 0.5; cursor: wait; }
         .action-btn.copied { background-color: var(--success-color); color: white; }
-        
-        .button-separator {
-            margin-left: 0.5rem;
-        }
+        .action-btn.small { height: 28px; padding: 0 8px; font-size: 0.85rem; }
+        .button-separator { margin-left: 0.5rem; }
 
         #status-container {
             background-color: var(--content-bg-color);
@@ -125,41 +108,47 @@
             margin-bottom: 2rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        #status-container h3 { margin-top: 0; border: none; font-size: 1.2rem; }
+        #status-container h3 { margin-top: 0; border: none; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
         .status-item {
             display: grid;
-            grid-template-columns: auto 250px 1fr auto;
+            grid-template-columns: 250px 1fr auto;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 0.75rem;
+            padding: 0.4rem 0;
             font-size: 0.9rem;
+            border-bottom: 1px solid var(--bg-color);
         }
-        .status-label-group {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 0.75rem;
-            overflow: hidden;
-        }
+        .status-item:last-of-type { border-bottom: none; }
         .status-item-label {
             font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             color: var(--light-text-color);
-            text-decoration: none;
-            text-align: left;
         }
-        .status-line { font-weight: 600; }
+        .status-line { font-weight: 600; font-size: 0.85rem; }
         .status-loading { color: var(--accent-color); }
         .status-success { color: var(--success-color); }
         .status-error { color: var(--error-color); }
-        
-        #toc ul { margin-top: 1rem; }
-        #toc li {
-            display: block;
-            padding: 0.5rem 0;
+        .status-warn { color: var(--warning-color); }
+
+        .badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            background: var(--hover-bg-color);
+            color: var(--light-text-color);
+            vertical-align: middle;
         }
+        .badge.pre { background: #fff3cd; color: var(--warning-color); }
+        .badge.live { background: #d1e7dd; color: var(--success-color); }
+        .badge.stale { background: #f8d7da; color: var(--error-color); }
+
+        #toc ul { margin-top: 1rem; }
+        #toc li { display: block; padding: 0.4rem 0; border: none; }
         #toc a {
             font-weight: 600;
             text-decoration: none;
@@ -170,13 +159,10 @@
             display: block;
         }
         #toc a:hover { color: var(--accent-color); }
-        
-        #stats-placeholder { margin-top: 2rem; }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
+        #toc .count { font-weight: 400; color: var(--light-text-color); font-size: 0.85rem; }
+
+        #stats-placeholder { margin-top: 1.5rem; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
         .stat-item { background-color: var(--bg-color); padding: 1rem; border-radius: 6px; }
         .stat-item .label { font-size: 0.9rem; color: var(--light-text-color); }
         .stat-item .value { font-size: 1.25rem; font-weight: 600; }
@@ -187,6 +173,73 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
+            scroll-margin-top: 1rem;
+        }
+
+        /* All-versions dialog */
+        dialog#all-versions {
+            width: min(860px, 92vw);
+            max-height: 86vh;
+            padding: 0;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+        dialog::backdrop { background: rgba(0,0,0,0.4); }
+        #dialog-layout { display: flex; flex-direction: column; max-height: 86vh; }
+        #dialog-head {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+        }
+        #dialog-head h2 { margin: 0; border: none; padding: 0; font-size: 1.15rem; font-family: Menlo, Monaco, Consolas, monospace; }
+        #dialog-head .sub { font-size: 0.85rem; color: var(--light-text-color); }
+        #dialog-controls {
+            padding: 0.75rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
+            background: var(--bg-color);
+        }
+        #dialog-search {
+            flex: 1 1 220px;
+            min-width: 180px;
+            padding: 0.45rem 0.7rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+        #dialog-controls label { font-size: 0.85rem; color: var(--light-text-color); display: flex; align-items: center; gap: 0.35rem; cursor: pointer; }
+        #dialog-body { overflow-y: auto; padding: 0.5rem 1.5rem 1.5rem; }
+        #dialog-body details { border-bottom: 1px solid var(--border-color); }
+        #dialog-body summary {
+            cursor: pointer;
+            padding: 0.7rem 0;
+            font-weight: 600;
+            display: flex; align-items: center; gap: 0.6rem;
+        }
+        #dialog-body summary .count { font-weight: 400; color: var(--light-text-color); font-size: 0.85rem; }
+        .vrow {
+            display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+            padding: 0.3rem 0 0.3rem 1rem;
+            font-size: 0.9rem;
+        }
+        .vrow .v { font-family: Menlo, Monaco, Consolas, monospace; overflow-wrap: anywhere; }
+        .vrow .actions { display: flex; gap: 0.3rem; flex-shrink: 0; }
+        .muted { color: var(--light-text-color); font-size: 0.9rem; }
+        .notice {
+            background: var(--content-bg-color);
+            border-left: 4px solid var(--warning-color);
+            padding: 1rem 1.25rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        .notice.error { border-left-color: var(--error-color); }
+
+        @media (max-width: 860px) {
+            body { grid-template-columns: 1fr; grid-template-areas: "header" "main"; height: auto; }
+            #toc { display: none; }
         }
     </style>
 </head>
@@ -194,288 +247,597 @@
 
     <header id="page-header">
         <h1>MPS Latest Library Version Extractor 3000</h1>
+        <div id="header-meta"></div>
     </header>
 
     <nav id="toc"></nav>
     <main id="main-content">
-        <div id="status-container"></div>
         <div id="main-container">
+            <div id="status-container"></div>
             <div id="results"></div>
         </div>
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const libraries = [
-                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml', groupId: 'de.itemis.mps', artifactId: 'extensions' },
-                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml', groupId: 'com.mbeddr', artifactId: 'mbeddr' },
-                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml', groupId: 'com.mbeddr', artifactId: 'platform' },
-                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml', groupId: 'org.iets3', artifactId: 'opensource' },
-                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml', groupId: 'org.mpsqa', artifactId: 'all-in-one' },
-                { metadataUrl: 'https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml', groupId: 'com.jetbrains.mps', artifactId: 'mps' }
-            ];
-            const proxies = [
-                { name: 'P1', url: 'https://api.allorigins.win/raw?url=', requiresEncoding: true },
-                { name: 'P2', url: 'https://corsproxy.io/?', requiresEncoding: false }
-            ];
+    <dialog id="all-versions">
+        <div id="dialog-layout">
+            <div id="dialog-head">
+                <div>
+                    <h2 id="dialog-title"></h2>
+                    <div class="sub" id="dialog-sub"></div>
+                </div>
+                <button class="action-btn" id="dialog-close" title="Close">✕</button>
+            </div>
+            <div id="dialog-controls">
+                <input type="search" id="dialog-search" placeholder="Filter versions…" autocomplete="off">
+                <label><input type="checkbox" id="dialog-pre"> pre-releases</label>
+                <label><input type="checkbox" id="dialog-branch"> branch builds</label>
+                <span class="muted" id="dialog-count"></span>
+            </div>
+            <div id="dialog-body"></div>
+        </div>
+    </dialog>
 
-            const tocDiv = document.getElementById('toc');
-            const statusDiv = document.getElementById('status-container');
-            const resultsDiv = document.getElementById('results');
-            
-            let processedLibraries = [];
-            let startTime = 0;
+    <script type="module">
+        import {
+            parseMetadata,
+            buildLibraryData,
+            artifactUrls,
+            mavenCoordinate,
+            lineLabel,
+            isDevelopmentLine,
+        } from './versions-lib.js';
 
-            function setupInitialUI() {
-                let statusHTML = '<h3>🔄 Library Status</h3>';
-                for (const lib of libraries) {
-                    const label = `${lib.groupId}:${lib.artifactId}`;
-                    const folderUrl = lib.metadataUrl.substring(0, lib.metadataUrl.lastIndexOf('/') + 1);
-                    const browseFolderUrl = folderUrl.replace('/repository/', '/service/rest/repository/browse/');
+        /* ------------------------------------------------------------------ */
+        /* state                                                               */
+        /* ------------------------------------------------------------------ */
 
-                    statusHTML += `
-                        <div class="status-item" id="status-item-${lib.artifactId}">
+        const state = {
+            generatedAt: null,
+            libraries: [],          // summary entries, latest-per-line only
+            fullData: new Map(),    // slug -> full version data, loaded on demand
+            dialogLibrary: null,
+        };
+
+        /** Copy payloads live here, not in HTML attributes. */
+        const copyRegistry = [];
+        function copyRef(text) {
+            copyRegistry.push(text);
+            return copyRegistry.length - 1;
+        }
+
+        const tocDiv = document.getElementById('toc');
+        const statusDiv = document.getElementById('status-container');
+        const resultsDiv = document.getElementById('results');
+        const headerMeta = document.getElementById('header-meta');
+
+        const esc = (value) =>
+            String(value).replace(/[&<>"']/g, (char) =>
+                ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+
+        function relativeTime(iso) {
+            const then = new Date(iso).getTime();
+            if (Number.isNaN(then)) return 'unknown';
+            const minutes = Math.round((Date.now() - then) / 60000);
+            if (minutes < 2) return 'just now';
+            if (minutes < 60) return `${minutes} min ago`;
+            const hours = Math.round(minutes / 60);
+            if (hours < 36) return `${hours} h ago`;
+            return `${Math.round(hours / 24)} days ago`;
+        }
+
+        /* ------------------------------------------------------------------ */
+        /* initial load                                                        */
+        /* ------------------------------------------------------------------ */
+
+        async function load() {
+            try {
+                const response = await fetch('./versions.json');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const summary = await response.json();
+                state.generatedAt = summary.generatedAt;
+                state.libraries = summary.libraries;
+                render();
+            } catch (error) {
+                renderBootstrapError(error);
+            }
+        }
+
+        function renderBootstrapError(error) {
+            headerMeta.innerHTML = '';
+            resultsDiv.innerHTML = `
+                <div class="notice error">
+                    <strong>No version data available.</strong>
+                    <p class="muted">
+                        <code>versions.json</code> could not be loaded (${esc(error.message)}).
+                        It is produced by the <code>Update versions</code> GitHub Action — run that
+                        workflow once, or generate it locally with
+                        <code>node scripts/fetch-versions.mjs</code>.
+                    </p>
+                    <p class="muted">
+                        Opening this page from the filesystem will not work either; serve it over
+                        HTTP (<code>npm run serve</code>).
+                    </p>
+                </div>`;
+        }
+
+        /* ------------------------------------------------------------------ */
+        /* rendering                                                           */
+        /* ------------------------------------------------------------------ */
+
+        function render() {
+            copyRegistry.length = 0;
+            const ok = state.libraries.filter((library) => library.ok);
+            const lineMap = buildLineMap(ok);
+
+            renderHeaderMeta();
+            renderStatus();
+            renderStats(ok, lineMap);
+            tocDiv.innerHTML = renderToc(lineMap);
+            resultsDiv.innerHTML = renderLineCards(lineMap);
+        }
+
+        /** line -> [{library, latest, latestIsPreRelease}], newest line first. */
+        function buildLineMap(libraries) {
+            const map = new Map();
+            for (const library of libraries) {
+                for (const line of library.lines ?? []) {
+                    if (!map.has(line.line)) map.set(line.line, []);
+                    map.get(line.line).push({ library, ...line });
+                }
+            }
+            return new Map(
+                [...map.entries()].sort((a, b) => {
+                    const [aMajor, aMinor] = a[0].split('.').map(Number);
+                    const [bMajor, bMinor] = b[0].split('.').map(Number);
+                    return bMajor - aMajor || bMinor - aMinor;
+                }),
+            );
+        }
+
+        function renderHeaderMeta() {
+            if (!state.generatedAt) return;
+            headerMeta.innerHTML = `
+                Data updated ${esc(relativeTime(state.generatedAt))}
+                <span title="${esc(state.generatedAt)}">ⓘ</span><br>
+                <a href="https://github.com/nkoester/mps-libraries-latest-version-finder/commits/main/versions.json"
+                   target="_blank" rel="noopener noreferrer">history</a>`;
+        }
+
+        function renderStatus() {
+            let html = `
+                <h3>
+                    <span>📚 Libraries</span>
+                    <button class="action-btn small" id="refresh-all" title="Re-fetch all metadata directly from the repository">
+                        🔄 Check live
+                    </button>
+                </h3>`;
+
+            for (const library of state.libraries) {
+                const label = `${library.groupId}:${library.artifactId}`;
+                const urls = artifactUrls(library, '');
+                let status;
+                if (!library.ok) {
+                    status = `<span class="status-line status-error">❌ ${esc(library.error ?? 'unavailable')}</span>
+                              <span class="badge stale">stale</span>`;
+                } else {
+                    const extras = [`${library.lines.length} release lines`];
+                    if (library.preRelease) extras.push(`${library.preRelease} pre-release`);
+                    if (library.branchCount) extras.push(`${library.branchCount} branch builds`);
+                    const live = library.live ? ' <span class="badge live">live</span>' : '';
+                    status = `<span class="status-line status-success">${library.released ?? library.total} releases</span>
+                              <span class="muted">${esc(extras.join(' · '))}</span>${live}`;
+                }
+
+                html += `
+                    <div class="status-item" data-slug="${esc(library.slug)}">
+                        <span class="status-item-label" title="${esc(label)}">${esc(label)}</span>
+                        <div>${status}</div>
+                        <div class="button-group">
+                            <button class="action-btn small" data-action="show-all" data-slug="${esc(library.slug)}"
+                                    title="Show every published version of ${esc(label)}">
+                                📜 All versions
+                            </button>
+                            <button class="action-btn small" data-action="refresh-one" data-slug="${esc(library.slug)}"
+                                    title="Re-fetch this library from the repository now">🔄</button>
+                            <a href="${esc(urls.folder)}" target="_blank" rel="noopener noreferrer"
+                               class="action-btn small button-separator" title="Browse in Nexus">📁</a>
+                            <a href="${esc(library.metadataUrl)}" target="_blank" rel="noopener noreferrer"
+                               class="action-btn small" title="View maven-metadata.xml">📄</a>
+                        </div>
+                    </div>`;
+            }
+
+            html += '<div id="stats-placeholder"></div>';
+            statusDiv.innerHTML = html;
+        }
+
+        function renderStats(libraries, lineMap) {
+            const placeholder = document.getElementById('stats-placeholder');
+            if (!placeholder) return;
+
+            const totalVersions = libraries.reduce((sum, library) => sum + (library.total ?? 0), 0);
+            let mostCommonLine = 'N/A';
+            let maxLibraries = 0;
+            for (const [line, entries] of lineMap) {
+                if (entries.length > maxLibraries) {
+                    maxLibraries = entries.length;
+                    mostCommonLine = line;
+                }
+            }
+            const biggest = libraries.reduce(
+                (best, library) => ((library.total ?? 0) > (best?.total ?? 0) ? library : best),
+                null,
+            );
+
+            placeholder.innerHTML = `
+                <h3 style="margin-top: 1.5rem;">📊 Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item"><div class="label">Libraries</div><div class="value">${libraries.length} / ${state.libraries.length}</div></div>
+                    <div class="stat-item"><div class="label">Release lines</div><div class="value">${lineMap.size}</div></div>
+                    <div class="stat-item"><div class="label">Versions indexed</div><div class="value">${totalVersions}</div></div>
+                    <div class="stat-item"><div class="label">Most covered line</div><div class="value">${esc(mostCommonLine)} <small>(${maxLibraries} libs)</small></div></div>
+                    <div class="stat-item"><div class="label">Most versions</div><div class="value">${esc(biggest?.artifactId ?? 'N/A')} <small>(${biggest?.total ?? 0})</small></div></div>
+                </div>`;
+        }
+
+        function renderToc(lineMap) {
+            let html = '<ul>';
+            for (const [line, entries] of lineMap) {
+                // The full "master / nightly (9999.9)" label does not fit the sidebar.
+                const label = isDevelopmentLine(line) ? `master ${line}` : line;
+                html += `<li><a href="#version-${esc(line)}">${esc(label)}
+                    <span class="count">${entries.length} libs</span></a></li>`;
+            }
+            return `${html}</ul>`;
+        }
+
+        function renderLineCards(lineMap) {
+            if (lineMap.size === 0) {
+                return '<p style="text-align:center;margin-top:2rem;">No versions found.</p>';
+            }
+
+            let html = '';
+            for (const [line, entries] of lineMap) {
+                entries.sort((a, b) => a.library.artifactId.localeCompare(b.library.artifactId));
+
+                const versionsText = entries.map((entry) => entry.latest).join('\n');
+                const coordsText = entries
+                    .map((entry) => mavenCoordinate(entry.library, entry.latest))
+                    .join('\n');
+
+                html += `
+                    <div class="version-group-container" id="version-${esc(line)}">
+                        <div class="version-group-header">
+                            <h2>${esc(lineLabel(line))}${
+                                isDevelopmentLine(line)
+                                    ? ' <span class="badge pre" title="Builds off the development branch, published under a synthetic version number">not a release</span>'
+                                    : ''
+                            }</h2>
                             <div class="button-group">
-                                <a href="${browseFolderUrl}" target="_blank" rel="noopener noreferrer" class="action-btn" style="height: 28px; width: 28px;" title="Browse parent folder">📁</a>
-                                <a href="${lib.metadataUrl}" target="_blank" rel="noopener noreferrer" class="action-btn" style="height: 28px; width: 28px;" title="View maven-metadata.xml">📄</a>
-                            </div>
-                            <span class="status-item-label" title="${label}">${label}</span>
-                            <div class="status-line" id="status-${lib.artifactId}">Waiting...</div>
-                            <div class="button-group">
-                                <button class="action-btn reload-btn" data-artifact-id="${lib.artifactId}" data-proxy-index="0" title="Reload via Proxy 1" disabled>${proxies[0].name} 🔄</button>
-                                <button class="action-btn reload-btn" data-artifact-id="${lib.artifactId}" data-proxy-index="1" title="Reload via Proxy 2" disabled>${proxies[1].name} 🔄</button>
+                                <button class="action-btn" data-copy="${copyRef(versionsText)}"
+                                        title="Copy all ${entries.length} versions">📋</button>
+                                <button class="action-btn" data-copy="${copyRef(coordsText)}"
+                                        title="Copy all ${entries.length} Maven coordinates">📦</button>
                             </div>
                         </div>
-                    `;
-                }
-                statusHTML += '<div id="stats-placeholder"></div>';
-                statusDiv.innerHTML = statusHTML;
-            }
+                        <ul>`;
 
-            function updateStatus(artifactId, message, className) {
-                const statusEl = document.getElementById(`status-${artifactId}`);
-                if (statusEl) {
-                    statusEl.innerHTML = message;
-                    statusEl.className = `status-line ${className}`;
-                }
-            }
-            
-            async function fetchLibraryData(lib, proxyIndex = 0) {
-                const fetchStartTime = performance.now();
-                updateStatus(lib.artifactId, 'Fetching...', 'status-loading');
-                const proxy = proxies[proxyIndex];
-                const targetUrl = proxy.requiresEncoding ? encodeURIComponent(lib.metadataUrl) : lib.metadataUrl;
-                const fetchUrl = `${proxy.url}${targetUrl}`;
+                for (const entry of entries) {
+                    const { library, latest, latestIsPreRelease } = entry;
+                    const urls = artifactUrls(library, latest);
+                    const coordinate = mavenCoordinate(library, latest);
+                    const preBadge = latestIsPreRelease
+                        ? ' <span class="badge pre">pre-release</span>'
+                        : '';
+                    const staleBadge = library.ok ? '' : ' <span class="badge stale">stale</span>';
 
-                try {
-                    const response = await fetch(fetchUrl);
-                    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                    const xmlText = await response.text();
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(xmlText, 'application/xml');
-                    if (doc.querySelector('parsererror')) throw new Error('Failed to parse XML.');
-                    const versions = Array.from(doc.querySelectorAll('version')).map(v => v.textContent);
-                    const versionGroups = {};
-                    const versionRegex = /^(\d+\.\d+|^\d{4}.\d+)/;
-                    for (const version of versions) {
-                        const match = version.match(versionRegex);
-                        if (match) {
-                            const key = match[1];
-                            if (!versionGroups[key]) versionGroups[key] = [];
-                            versionGroups[key].push(version);
-                        }
-                    }
-                    const duration = ((performance.now() - fetchStartTime) / 1000).toFixed(2);
-                    updateStatus(lib.artifactId, `✅ Success (${duration}s)`, 'status-success');
-                    return { ...lib, versionGroups, allVersions: versions, error: false };
-                } catch (error) {
-                    console.error(`Failed to fetch for ${lib.artifactId} via ${proxy.name}:`, error);
-                    const duration = ((performance.now() - fetchStartTime) / 1000).toFixed(2);
-                    updateStatus(lib.artifactId, `❌ Failed (${duration}s)`, 'status-error');
-                    return { ...lib, error: true, errorMessage: error.message };
-                }
-            }
-            
-            function updateAndRenderUI() {
-                const successfulLibs = processedLibraries.filter(lib => !lib.error);
-                const masterVersionMap = {};
-                for (const lib of successfulLibs) {
-                    for (const versionKey in lib.versionGroups) {
-                        if (!masterVersionMap[versionKey]) masterVersionMap[versionKey] = [];
-                        const latestInGroup = lib.versionGroups[versionKey].sort().reverse()[0];
-                        masterVersionMap[versionKey].push({ libInfo: lib, fullVersion: latestInGroup });
-                    }
-                }
-                
-                tocDiv.innerHTML = renderTOC(masterVersionMap);
-                renderStatistics(successfulLibs, processedLibraries, startTime);
-                resultsDiv.innerHTML = renderVersionGroups(masterVersionMap);
-            }
-
-            function renderTOC(masterVersionMap) {
-                const sortedVersionKeys = Object.keys(masterVersionMap).sort().reverse();
-                let tocHTML = '<ul>';
-                for (const versionKey of sortedVersionKeys) {
-                    tocHTML += `<li><a href="#version-${versionKey}">${versionKey}</a></li>`;
-                }
-                tocHTML += '</ul>';
-                return tocHTML;
-            }
-
-            function renderStatistics(successfulLibs, allLibs, startTime) {
-                const statsPlaceholder = document.getElementById('stats-placeholder');
-                if (!statsPlaceholder) return;
-                const endTime = performance.now();
-                const duration = ((endTime - startTime) / 1000).toFixed(2);
-                const masterVersionMap = {};
-                for (const lib of successfulLibs) {
-                    for (const versionKey in lib.versionGroups) {
-                        if (!masterVersionMap[versionKey]) masterVersionMap[versionKey] = [];
-                        masterVersionMap[versionKey].push(lib);
-                    }
-                }
-                const totalVersionGroups = Object.keys(masterVersionMap).length;
-                let maxVersions = 0, libWithMostVersions = 'N/A';
-                successfulLibs.forEach(lib => {
-                    if (lib.allVersions && lib.allVersions.length > maxVersions) {
-                        maxVersions = lib.allVersions.length;
-                        libWithMostVersions = lib.artifactId;
-                    }
-                });
-                let mostCommonGroup = 'N/A', maxLibsInGroup = 0;
-                for (const [group, libs] of Object.entries(masterVersionMap)) {
-                    if (libs.length > maxLibsInGroup) {
-                        maxLibsInGroup = libs.length;
-                        mostCommonGroup = group;
-                    }
-                }
-                statsPlaceholder.innerHTML = `
-                    <h3 style="margin-top: 2rem;">📊 Extraction Statistics</h3>
-                    <div class="stats-grid">
-                        <div class="stat-item"><div class="label">Total Time</div><div class="value">${duration}s</div></div>
-                        <div class="stat-item"><div class="label">Libraries Processed</div><div class="value">${successfulLibs.length} / ${allLibs.length}</div></div>
-                        <div class="stat-item"><div class="label">Unique Version Groups</div><div class="value">${totalVersionGroups}</div></div>
-                        <div class="stat-item"><div class="label">Most Common Group</div><div class="value">${mostCommonGroup} <small>(${maxLibsInGroup} libs)</small></div></div>
-                        <div class="stat-item"><div class="label">Library with Most Versions</div><div class="value">${libWithMostVersions} <small>(${maxVersions} total)</small></div></div>
-                    </div>
-                `;
-            }
-
-            function renderVersionGroups(masterVersionMap) {
-                const sortedVersionKeys = Object.keys(masterVersionMap).sort().reverse();
-                let resultsHTML = '';
-                if (sortedVersionKeys.length === 0) {
-                    return '<p style="text-align: center; margin-top: 2rem;">No versions found for any library.</p>';
-                }
-                for (const versionKey of sortedVersionKeys) {
-                    const librariesForVersion = masterVersionMap[versionKey];
-                    librariesForVersion.sort((a, b) => a.libInfo.artifactId.localeCompare(b.libInfo.artifactId));
-                    
-                    const allVersionsText = librariesForVersion.map(e => e.fullVersion).join('\n');
-                    const allMavensText = librariesForVersion.map(e => `${e.libInfo.groupId}:${e.libInfo.artifactId}:${e.fullVersion}`).join('\n');
-
-                    resultsHTML += `
-                        <div class="version-group-container">
-                            <div class="version-group-header" id="version-${versionKey}">
-                                <h2>${versionKey}</h2>
-                                <div class="button-group">
-                                    <button class="action-btn" data-action="copy" data-text="${allVersionsText}" title="Copy all versions:\n${allVersionsText}">📋</button>
-                                    <button class="action-btn" data-action="copy" data-text="${allMavensText}" title="Copy all Maven strings:\n${allMavensText}">📦</button>
-                                </div>
+                    html += `
+                        <li>
+                            <span class="version-info">${esc(library.groupId)}:${esc(library.artifactId)}:
+                                <strong>${esc(latest)}</strong>${preBadge}${staleBadge}</span>
+                            <div class="button-group">
+                                <button class="action-btn" data-copy="${copyRef(latest)}" title="Copy ${esc(latest)}">📋</button>
+                                <button class="action-btn" data-copy="${copyRef(coordinate)}" title="Copy ${esc(coordinate)}">📦</button>
+                                <a href="${esc(urls.pom)}" class="action-btn button-separator" target="_blank" rel="noopener noreferrer" title="View POM">📄</a>
+                                <a href="${esc(urls.zip)}" class="action-btn" target="_blank" rel="noopener noreferrer" title="Download ZIP">⬇️</a>
+                                <a href="${esc(urls.browse)}" class="action-btn" target="_blank" rel="noopener noreferrer" title="Browse in Nexus">🔗</a>
                             </div>
-                            <ul>`;
-                    
-                    for (const entry of librariesForVersion) {
-                        const { libInfo, fullVersion } = entry;
-                        const contentBaseUrl = libInfo.metadataUrl.replace('maven-metadata.xml', '');
-                        const browseBaseUrl = contentBaseUrl.replace('/repository/', '/service/rest/repository/browse/');
-                        const versionBrowseUrl = `${browseBaseUrl}${fullVersion}`;
-                        const downloadUrl = `${contentBaseUrl}${fullVersion}/${libInfo.artifactId}-${fullVersion}.zip`;
-                        const pomUrl = `${contentBaseUrl}${fullVersion}/${libInfo.artifactId}-${fullVersion}.pom`;
-                        const mavenString = `${libInfo.groupId}:${libInfo.artifactId}:${fullVersion}`;
-                        resultsHTML += `
-                            <li>
-                                <span class="version-info">${libInfo.groupId}:${libInfo.artifactId}: <strong>${fullVersion}</strong></span>
-                                <div class="button-group">
-                                    <button class="action-btn" data-action="copy" data-text="${fullVersion}" title="Copy: ${fullVersion}">📋</button>
-                                    <button class="action-btn" data-action="copy" data-text="${mavenString}" title="Copy: ${mavenString}">📦</button>
-                                    <a href="${pomUrl}" class="action-btn button-separator" target="_blank" rel="noopener noreferrer" title="View POM file">📄</a>
-                                    <a href="${downloadUrl}" class="action-btn" target="_blank" rel="noopener noreferrer" title="Download ZIP">⬇️</a>
-                                    <a href="${versionBrowseUrl}" class="action-btn" target="_blank" rel="noopener noreferrer" title="Go to Repository">🔗</a>
-                                </div>
-                            </li>`;
-                    }
-                    resultsHTML += '</ul></div>';
+                        </li>`;
                 }
-                return resultsHTML;
+                html += '</ul></div>';
+            }
+            return html;
+        }
+
+        /* ------------------------------------------------------------------ */
+        /* all-versions dialog                                                 */
+        /* ------------------------------------------------------------------ */
+
+        const dialog = document.getElementById('all-versions');
+        const dialogTitle = document.getElementById('dialog-title');
+        const dialogSub = document.getElementById('dialog-sub');
+        const dialogBody = document.getElementById('dialog-body');
+        const dialogSearch = document.getElementById('dialog-search');
+        const dialogPre = document.getElementById('dialog-pre');
+        const dialogBranch = document.getElementById('dialog-branch');
+        const dialogCount = document.getElementById('dialog-count');
+
+        /** Full version lists are fetched lazily, so the initial page load stays small. */
+        async function loadFullData(slug) {
+            if (state.fullData.has(slug)) return state.fullData.get(slug);
+            const library = state.libraries.find((entry) => entry.slug === slug);
+            const response = await fetch(library.dataFile ?? `./data/${slug}.json`);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const data = await response.json();
+            state.fullData.set(slug, data);
+            return data;
+        }
+
+        async function openAllVersions(slug) {
+            const library = state.libraries.find((entry) => entry.slug === slug);
+            dialogTitle.textContent = `${library.groupId}:${library.artifactId}`;
+            dialogSub.textContent = 'Loading…';
+            dialogBody.innerHTML = '';
+            dialogSearch.value = '';
+            dialogCount.textContent = '';
+            if (!dialog.open) dialog.showModal();
+
+            try {
+                const data = await loadFullData(slug);
+                state.dialogLibrary = { library, data };
+                dialogSub.textContent =
+                    `${data.released} releases (${data.stable} stable, ${data.preRelease} pre-release) ` +
+                    `across ${data.lines.length} lines · ${data.branchCount} branch builds` +
+                    (data.branches ? ` from ${data.branches} branches` : '');
+                renderDialogBody();
+            } catch (error) {
+                state.dialogLibrary = null;
+                dialogSub.textContent = '';
+                dialogBody.innerHTML = `<p class="muted">Could not load the full version list
+                    (${esc(error.message)}).</p>`;
+            }
+        }
+
+        function versionRow(library, entry) {
+            const urls = artifactUrls(library, entry.v);
+            const coordinate = mavenCoordinate(library, entry.v);
+            return `
+                <div class="vrow">
+                    <span class="v">${esc(entry.v)}${entry.pre ? ' <span class="badge pre">pre</span>' : ''}${
+                        entry.branch ? ` <span class="badge">${esc(entry.branch)}</span>` : ''}</span>
+                    <span class="actions">
+                        <button class="action-btn small" data-copy="${copyRef(entry.v)}" title="Copy version">📋</button>
+                        <button class="action-btn small" data-copy="${copyRef(coordinate)}" title="Copy ${esc(coordinate)}">📦</button>
+                        <a href="${esc(urls.pom)}" class="action-btn small" target="_blank" rel="noopener noreferrer" title="View POM">📄</a>
+                        <a href="${esc(urls.zip)}" class="action-btn small" target="_blank" rel="noopener noreferrer" title="Download ZIP">⬇️</a>
+                        <a href="${esc(urls.browse)}" class="action-btn small" target="_blank" rel="noopener noreferrer" title="Browse in Nexus">🔗</a>
+                    </span>
+                </div>`;
+        }
+
+        const SEARCH_LIMIT = 400;
+
+        function renderDialogBody() {
+            if (!state.dialogLibrary) return;
+            const { library, data } = state.dialogLibrary;
+            const query = dialogSearch.value.trim().toLowerCase();
+            const includePre = dialogPre.checked;
+            const keep = (entry) =>
+                (includePre || !entry.pre) && (!query || entry.v.toLowerCase().includes(query));
+
+            if (query) {
+                // Flat result list while searching; lines are not useful here.
+                const pool = data.lines.flatMap((line) => line.versions);
+                if (dialogBranch.checked) pool.push(...(data.branchBuilds ?? []));
+                const matches = pool.filter(keep);
+                dialogCount.textContent = `${matches.length} match${matches.length === 1 ? '' : 'es'}`;
+                const shown = matches.slice(0, SEARCH_LIMIT);
+                dialogBody.innerHTML =
+                    (shown.map((entry) => versionRow(library, entry)).join('') ||
+                        '<p class="muted">No matching versions.</p>') +
+                    (matches.length > shown.length
+                        ? `<p class="muted">…and ${matches.length - shown.length} more. Narrow the filter.</p>`
+                        : '');
+                return;
             }
 
-            async function runWithConcurrency(concurrency, tasks) {
-                const results = []; let taskIndex = 0;
-                async function worker() {
-                    while (taskIndex < tasks.length) {
-                        const currentIndex = taskIndex++;
-                        const task = tasks[currentIndex];
-                        results[currentIndex] = await task();
-                    }
-                }
-                await Promise.all(Array(concurrency).fill(null).map(() => worker()));
-                return results;
-            }
+            const total = data.lines.reduce(
+                (sum, line) => sum + line.versions.filter(keep).length,
+                0,
+            );
+            dialogCount.textContent = `${total} version${total === 1 ? '' : 's'} shown`;
 
-            async function main() {
+            // Rows are rendered when a line is expanded, so opening a library with
+            // thousands of versions stays instant.
+            let html = '';
+            for (const line of data.lines) {
+                const count = line.versions.filter(keep).length;
+                if (count === 0) continue;
+                html += `
+                    <details data-line="${esc(line.line)}">
+                        <summary>${esc(lineLabel(line.line))}
+                            <span class="count">${count} version${count === 1 ? '' : 's'} ·
+                            latest ${esc(line.latest)}</span></summary>
+                        <div class="line-body"></div>
+                    </details>`;
+            }
+            if (dialogBranch.checked && data.branchBuilds?.length) {
+                const count = data.branchBuilds.filter(keep).length;
+                if (count > 0) {
+                    html += `
+                        <details data-line="__branch">
+                            <summary>Branch builds
+                                <span class="count">${count} build${count === 1 ? '' : 's'} ·
+                                not published releases</span></summary>
+                            <div class="line-body"></div>
+                        </details>`;
+                }
+            }
+            dialogBody.innerHTML = html || '<p class="muted">No versions match the current filter.</p>';
+
+            const first = dialogBody.querySelector('details');
+            if (first) first.open = true;
+        }
+
+        function fillLineBody(details) {
+            const body = details.querySelector('.line-body');
+            if (!body || body.dataset.filled === 'true') return;
+            const { library, data } = state.dialogLibrary;
+            const includePre = dialogPre.checked;
+            const key = details.dataset.line;
+            const source =
+                key === '__branch'
+                    ? data.branchBuilds ?? []
+                    : data.lines.find((line) => line.line === key)?.versions ?? [];
+            body.innerHTML = source
+                .filter((entry) => includePre || !entry.pre)
+                .map((entry) => versionRow(library, entry))
+                .join('');
+            body.dataset.filled = 'true';
+        }
+
+        dialogBody.addEventListener('toggle', (event) => {
+            const details = event.target.closest('details');
+            if (details?.open) fillLineBody(details);
+        }, true);
+
+        dialogSearch.addEventListener('input', renderDialogBody);
+        dialogPre.addEventListener('change', renderDialogBody);
+        dialogBranch.addEventListener('change', renderDialogBody);
+        document.getElementById('dialog-close').addEventListener('click', () => dialog.close());
+        dialog.addEventListener('click', (event) => {
+            if (event.target === dialog) dialog.close();
+        });
+
+        /* ------------------------------------------------------------------ */
+        /* live refresh                                                        */
+        /* ------------------------------------------------------------------ */
+
+        /**
+         * Fetches metadata straight from the repository, falling back to public
+         * CORS proxies. The pre-generated data is the fast path; this is the
+         * escape hatch for someone who needs a version published minutes ago.
+         */
+        async function fetchLive(library) {
+            const attempts = [
+                { name: 'direct', url: library.metadataUrl },
+                { name: 'allorigins', url: `https://api.allorigins.win/raw?url=${encodeURIComponent(library.metadataUrl)}` },
+                { name: 'corsproxy', url: `https://corsproxy.io/?url=${encodeURIComponent(library.metadataUrl)}` },
+            ];
+            const errors = [];
+            for (const attempt of attempts) {
                 try {
-                    startTime = performance.now();
-                    setupInitialUI();
-                    const tasks = libraries.map(lib => () => fetchLibraryData(lib));
-                    processedLibraries = await runWithConcurrency(2, tasks);
-                    document.querySelectorAll('.reload-btn').forEach(btn => btn.disabled = false);
-                    updateAndRenderUI();
+                    const response = await fetch(attempt.url, { signal: AbortSignal.timeout(8000) });
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    const versions = parseMetadata(await response.text());
+                    if (versions.length === 0) throw new Error('no versions in response');
+                    return buildLibraryData(versions);
                 } catch (error) {
-                    console.error("A critical error occurred:", error);
-                    resultsDiv.innerHTML = `<p class="error-message">Could not load library data: ${error.message}</p>`;
+                    errors.push(`${attempt.name}: ${error.message}`);
                 }
             }
+            throw new Error(errors.join('; '));
+        }
 
-            async function handleCopyClick(button, textToCopy) {
-                const originalContent = button.innerHTML;
-                try {
-                    await navigator.clipboard.writeText(textToCopy);
-                    button.innerHTML = '✅';
-                    button.classList.add('copied');
-                    setTimeout(() => {
-                        button.innerHTML = originalContent;
-                        button.classList.remove('copied');
-                    }, 2000);
-                } catch (err) { console.error('Failed to copy text: ', err); }
+        async function refresh(slugs) {
+            const targets = state.libraries.filter((library) => slugs.includes(library.slug));
+            for (const library of targets) {
+                const row = statusDiv.querySelector(`.status-item[data-slug="${CSS.escape(library.slug)}"] div`);
+                if (row) row.innerHTML = '<span class="status-line status-loading">Fetching…</span>';
             }
-            
-            document.body.addEventListener('click', async (event) => {
-                const button = event.target.closest('.action-btn');
-                if (!button) return;
 
-                if (button.dataset.action === 'copy') {
-                    handleCopyClick(button, button.dataset.text);
-                    return;
-                }
+            const results = await Promise.allSettled(targets.map((library) => fetchLive(library)));
 
-                if (button.classList.contains('reload-btn')) {
-                    const { artifactId, proxyIndex } = button.dataset;
-                    const libToReload = libraries.find(l => l.artifactId === artifactId);
-                    const indexToUpdate = processedLibraries.findIndex(l => l.artifactId === artifactId);
-                    
-                    if (libToReload && indexToUpdate !== -1) {
-                        document.querySelectorAll(`.reload-btn[data-artifact-id="${artifactId}"]`).forEach(btn => btn.disabled = true);
-                        const result = await fetchLibraryData(libToReload, parseInt(proxyIndex));
-                        processedLibraries[indexToUpdate] = result;
-                        document.querySelectorAll(`.reload-btn[data-artifact-id="${artifactId}"]`).forEach(btn => btn.disabled = false);
-                        updateAndRenderUI();
-                    }
+            results.forEach((result, index) => {
+                const library = targets[index];
+                if (result.status === 'fulfilled') {
+                    const data = result.value;
+                    Object.assign(library, {
+                        ok: true,
+                        live: true,
+                        error: undefined,
+                        total: data.total,
+                        released: data.released,
+                        stable: data.stable,
+                        preRelease: data.preRelease,
+                        branchCount: data.branchCount,
+                        branches: data.branches,
+                        lines: data.lines.map(({ line, latest, latestIsPreRelease, total, stable }) => ({
+                            line, latest, latestIsPreRelease, total, stable,
+                        })),
+                    });
+                    state.fullData.set(library.slug, { ...library, ...data });
+                } else {
+                    library.liveError = result.reason?.message ?? 'failed';
                 }
             });
 
-            main();
+            render();
+
+            const failed = targets.filter((library) => library.liveError);
+            if (failed.length > 0) {
+                for (const library of failed) {
+                    const row = statusDiv.querySelector(`.status-item[data-slug="${CSS.escape(library.slug)}"] div`);
+                    if (row) {
+                        row.insertAdjacentHTML(
+                            'beforeend',
+                            `<span class="status-line status-warn" title="${esc(library.liveError)}">
+                                · live check failed, showing stored data</span>`,
+                        );
+                    }
+                    delete library.liveError;
+                }
+            }
+        }
+
+        /* ------------------------------------------------------------------ */
+        /* events                                                              */
+        /* ------------------------------------------------------------------ */
+
+        async function copyToClipboard(button, text) {
+            const original = button.innerHTML;
+            try {
+                await navigator.clipboard.writeText(text);
+                button.innerHTML = '✅';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.innerHTML = original;
+                    button.classList.remove('copied');
+                }, 1500);
+            } catch (error) {
+                console.error('Copy failed:', error);
+                button.innerHTML = '⚠️';
+                setTimeout(() => { button.innerHTML = original; }, 1500);
+            }
+        }
+
+        document.body.addEventListener('click', async (event) => {
+            const target = event.target.closest('[data-copy], [data-action], #refresh-all');
+            if (!target) return;
+
+            if (target.dataset.copy !== undefined) {
+                copyToClipboard(target, copyRegistry[Number(target.dataset.copy)]);
+                return;
+            }
+
+            if (target.id === 'refresh-all') {
+                target.disabled = true;
+                await refresh(state.libraries.map((library) => library.slug));
+                return;
+            }
+
+            if (target.dataset.action === 'show-all') {
+                openAllVersions(target.dataset.slug);
+                return;
+            }
+
+            if (target.dataset.action === 'refresh-one') {
+                target.disabled = true;
+                await refresh([target.dataset.slug]);
+            }
         });
+
+        load();
     </script>
 </body>
 </html>

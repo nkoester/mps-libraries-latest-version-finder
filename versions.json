@@ -1,0 +1,717 @@
+{
+  "generatedAt": "2026-10-07T12:33:45.364Z",
+  "libraries": [
+    {
+      "groupId": "de.itemis.mps",
+      "artifactId": "extensions",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
+      "slug": "de.itemis.mps_extensions",
+      "ok": true,
+      "total": 1034,
+      "released": 814,
+      "stable": 796,
+      "preRelease": 18,
+      "branchCount": 220,
+      "branches": 68,
+      "dataFile": "data/de.itemis.mps_extensions.json",
+      "lines": [
+        {
+          "line": "9999.9",
+          "latest": "9999.9.3669.f8c8760-SNAPSHOT",
+          "latestIsPreRelease": true,
+          "total": 18,
+          "stable": 0
+        },
+        {
+          "line": "2026.1",
+          "latest": "2026.1.3671.724f373",
+          "latestIsPreRelease": false,
+          "total": 12,
+          "stable": 12
+        },
+        {
+          "line": "2025.1",
+          "latest": "2025.1.3672.edfbfb9",
+          "latestIsPreRelease": false,
+          "total": 108,
+          "stable": 108
+        },
+        {
+          "line": "2024.3",
+          "latest": "2024.3.3222.a0b631c",
+          "latestIsPreRelease": false,
+          "total": 34,
+          "stable": 34
+        },
+        {
+          "line": "2024.1",
+          "latest": "2024.1.3673.0763bfa",
+          "latestIsPreRelease": false,
+          "total": 122,
+          "stable": 122
+        },
+        {
+          "line": "2023.2",
+          "latest": "2023.2.3623.35b8c5e",
+          "latestIsPreRelease": false,
+          "total": 127,
+          "stable": 127
+        },
+        {
+          "line": "2022.3",
+          "latest": "2022.3.3622.5e3e2c1",
+          "latestIsPreRelease": false,
+          "total": 59,
+          "stable": 59
+        },
+        {
+          "line": "2022.2",
+          "latest": "2022.2.3621.a88851f",
+          "latestIsPreRelease": false,
+          "total": 106,
+          "stable": 106
+        },
+        {
+          "line": "2021.3",
+          "latest": "2021.3.3406.97eab29",
+          "latestIsPreRelease": false,
+          "total": 93,
+          "stable": 93
+        },
+        {
+          "line": "2021.2",
+          "latest": "2021.2.2874.a6090d8",
+          "latestIsPreRelease": false,
+          "total": 50,
+          "stable": 50
+        },
+        {
+          "line": "2021.1",
+          "latest": "2021.1.2873.b20916e",
+          "latestIsPreRelease": false,
+          "total": 63,
+          "stable": 63
+        },
+        {
+          "line": "2020.3",
+          "latest": "2020.3.2739.a1f3875",
+          "latestIsPreRelease": false,
+          "total": 21,
+          "stable": 21
+        },
+        {
+          "line": "2020.2",
+          "latest": "2020.2.2447.05d4f73",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        }
+      ]
+    },
+    {
+      "groupId": "com.mbeddr",
+      "artifactId": "mbeddr",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
+      "slug": "com.mbeddr_mbeddr",
+      "ok": true,
+      "total": 2680,
+      "released": 1830,
+      "stable": 1830,
+      "preRelease": 0,
+      "branchCount": 850,
+      "branches": 202,
+      "dataFile": "data/com.mbeddr_mbeddr.json",
+      "lines": [
+        {
+          "line": "9999.9",
+          "latest": "9999.9.26621.423e435",
+          "latestIsPreRelease": false,
+          "total": 391,
+          "stable": 391
+        },
+        {
+          "line": "2026.1",
+          "latest": "2026.1.26620.edb7176",
+          "latestIsPreRelease": false,
+          "total": 25,
+          "stable": 25
+        },
+        {
+          "line": "2025.1",
+          "latest": "2025.1.26619.e47bad1",
+          "latestIsPreRelease": false,
+          "total": 246,
+          "stable": 246
+        },
+        {
+          "line": "2024.3",
+          "latest": "2024.3.25383.9e7fc19",
+          "latestIsPreRelease": false,
+          "total": 67,
+          "stable": 67
+        },
+        {
+          "line": "2024.1",
+          "latest": "2024.1.26616.1947094",
+          "latestIsPreRelease": false,
+          "total": 238,
+          "stable": 238
+        },
+        {
+          "line": "2023.2",
+          "latest": "2023.2.26501.f5ef6b6",
+          "latestIsPreRelease": false,
+          "total": 274,
+          "stable": 274
+        },
+        {
+          "line": "2022.3",
+          "latest": "2022.3.26500.b633ef3",
+          "latestIsPreRelease": false,
+          "total": 119,
+          "stable": 119
+        },
+        {
+          "line": "2022.2",
+          "latest": "2022.2.26499.52911a0",
+          "latestIsPreRelease": false,
+          "total": 170,
+          "stable": 170
+        },
+        {
+          "line": "2021.3",
+          "latest": "2021.3.24707.42254e5",
+          "latestIsPreRelease": false,
+          "total": 139,
+          "stable": 139
+        },
+        {
+          "line": "2021.2",
+          "latest": "2021.2.24668.69dd8f3",
+          "latestIsPreRelease": false,
+          "total": 48,
+          "stable": 48
+        },
+        {
+          "line": "2021.1",
+          "latest": "2021.1.24667.d97bc57",
+          "latestIsPreRelease": false,
+          "total": 88,
+          "stable": 88
+        },
+        {
+          "line": "2020.3",
+          "latest": "2020.3.24319.2804ee7",
+          "latestIsPreRelease": false,
+          "total": 20,
+          "stable": 20
+        },
+        {
+          "line": "2020.2",
+          "latest": "2020.2.23491.924ec3e",
+          "latestIsPreRelease": false,
+          "total": 3,
+          "stable": 3
+        },
+        {
+          "line": "2019.3",
+          "latest": "2019.3.22976.75ffb5d",
+          "latestIsPreRelease": false,
+          "total": 2,
+          "stable": 2
+        }
+      ]
+    },
+    {
+      "groupId": "com.mbeddr",
+      "artifactId": "platform",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
+      "slug": "com.mbeddr_platform",
+      "ok": true,
+      "total": 2999,
+      "released": 2013,
+      "stable": 2013,
+      "preRelease": 0,
+      "branchCount": 986,
+      "branches": 242,
+      "dataFile": "data/com.mbeddr_platform.json",
+      "lines": [
+        {
+          "line": "9999.9",
+          "latest": "9999.9.26621.423e435",
+          "latestIsPreRelease": false,
+          "total": 407,
+          "stable": 407
+        },
+        {
+          "line": "2026.1",
+          "latest": "2026.1.26620.edb7176",
+          "latestIsPreRelease": false,
+          "total": 25,
+          "stable": 25
+        },
+        {
+          "line": "2025.1",
+          "latest": "2025.1.26619.e47bad1",
+          "latestIsPreRelease": false,
+          "total": 248,
+          "stable": 248
+        },
+        {
+          "line": "2024.3",
+          "latest": "2024.3.25383.9e7fc19",
+          "latestIsPreRelease": false,
+          "total": 68,
+          "stable": 68
+        },
+        {
+          "line": "2024.1",
+          "latest": "2024.1.26616.1947094",
+          "latestIsPreRelease": false,
+          "total": 241,
+          "stable": 241
+        },
+        {
+          "line": "2023.2",
+          "latest": "2023.2.26501.f5ef6b6",
+          "latestIsPreRelease": false,
+          "total": 287,
+          "stable": 287
+        },
+        {
+          "line": "2022.3",
+          "latest": "2022.3.26500.b633ef3",
+          "latestIsPreRelease": false,
+          "total": 127,
+          "stable": 127
+        },
+        {
+          "line": "2022.2",
+          "latest": "2022.2.26499.52911a0",
+          "latestIsPreRelease": false,
+          "total": 232,
+          "stable": 232
+        },
+        {
+          "line": "2021.3",
+          "latest": "2021.3.26011.42254e5",
+          "latestIsPreRelease": false,
+          "total": 185,
+          "stable": 185
+        },
+        {
+          "line": "2021.2",
+          "latest": "2021.2.24668.69dd8f3",
+          "latestIsPreRelease": false,
+          "total": 54,
+          "stable": 54
+        },
+        {
+          "line": "2021.1",
+          "latest": "2021.1.24667.d97bc57",
+          "latestIsPreRelease": false,
+          "total": 107,
+          "stable": 107
+        },
+        {
+          "line": "2020.3",
+          "latest": "2020.3.24319.2804ee7",
+          "latestIsPreRelease": false,
+          "total": 25,
+          "stable": 25
+        },
+        {
+          "line": "2020.2",
+          "latest": "2020.2.23491.924ec3e",
+          "latestIsPreRelease": false,
+          "total": 3,
+          "stable": 3
+        },
+        {
+          "line": "2020.1",
+          "latest": "2020.1.22983.1359870",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        },
+        {
+          "line": "2019.3",
+          "latest": "2019.3.22976.75ffb5d",
+          "latestIsPreRelease": false,
+          "total": 2,
+          "stable": 2
+        },
+        {
+          "line": "2019.2",
+          "latest": "2019.2.22179.1d20ccb",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        }
+      ]
+    },
+    {
+      "groupId": "org.iets3",
+      "artifactId": "opensource",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
+      "slug": "org.iets3_opensource",
+      "ok": true,
+      "total": 3023,
+      "released": 1711,
+      "stable": 1704,
+      "preRelease": 7,
+      "branchCount": 1312,
+      "branches": 275,
+      "dataFile": "data/org.iets3_opensource.json",
+      "lines": [
+        {
+          "line": "9999.9",
+          "latest": "9999.9.10936.1f10368",
+          "latestIsPreRelease": false,
+          "total": 190,
+          "stable": 190
+        },
+        {
+          "line": "2026.1",
+          "latest": "2026.1.11263.bfdd608",
+          "latestIsPreRelease": false,
+          "total": 20,
+          "stable": 20
+        },
+        {
+          "line": "2025.1",
+          "latest": "2025.1.11275.a76b99c",
+          "latestIsPreRelease": false,
+          "total": 131,
+          "stable": 125
+        },
+        {
+          "line": "2024.1",
+          "latest": "2024.1.11284.dd048e1",
+          "latestIsPreRelease": false,
+          "total": 259,
+          "stable": 258
+        },
+        {
+          "line": "2023.2",
+          "latest": "2023.2.9490.b7e2dfd",
+          "latestIsPreRelease": false,
+          "total": 217,
+          "stable": 217
+        },
+        {
+          "line": "2022.3",
+          "latest": "2022.3.8656.444c955",
+          "latestIsPreRelease": false,
+          "total": 135,
+          "stable": 135
+        },
+        {
+          "line": "2022.2",
+          "latest": "2022.2.9403.2aebea5",
+          "latestIsPreRelease": false,
+          "total": 269,
+          "stable": 269
+        },
+        {
+          "line": "2021.3",
+          "latest": "2021.3.8356.ce6ff8f",
+          "latestIsPreRelease": false,
+          "total": 238,
+          "stable": 238
+        },
+        {
+          "line": "2021.2",
+          "latest": "2021.2.7340.ba128fb",
+          "latestIsPreRelease": false,
+          "total": 27,
+          "stable": 27
+        },
+        {
+          "line": "2021.1",
+          "latest": "2021.1.7836.d468f81",
+          "latestIsPreRelease": false,
+          "total": 194,
+          "stable": 194
+        },
+        {
+          "line": "2020.3",
+          "latest": "2020.3.6625.a5def84",
+          "latestIsPreRelease": false,
+          "total": 24,
+          "stable": 24
+        },
+        {
+          "line": "2020.2",
+          "latest": "2020.2.5686.44ed42f",
+          "latestIsPreRelease": false,
+          "total": 4,
+          "stable": 4
+        },
+        {
+          "line": "2020.1",
+          "latest": "2020.1.6623.40014aa",
+          "latestIsPreRelease": false,
+          "total": 2,
+          "stable": 2
+        },
+        {
+          "line": "2019.2",
+          "latest": "2019.2.4266.15a3227",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        }
+      ]
+    },
+    {
+      "groupId": "org.mpsqa",
+      "artifactId": "all-in-one",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml",
+      "slug": "org.mpsqa_all-in-one",
+      "ok": true,
+      "total": 431,
+      "released": 402,
+      "stable": 402,
+      "preRelease": 0,
+      "branchCount": 29,
+      "branches": 13,
+      "dataFile": "data/org.mpsqa_all-in-one.json",
+      "lines": [
+        {
+          "line": "9999.9",
+          "latest": "9999.9.1479.e79c062",
+          "latestIsPreRelease": false,
+          "total": 24,
+          "stable": 24
+        },
+        {
+          "line": "2026.1",
+          "latest": "2026.1.1473.d596cbb",
+          "latestIsPreRelease": false,
+          "total": 3,
+          "stable": 3
+        },
+        {
+          "line": "2025.1",
+          "latest": "2025.1.1438.801e837",
+          "latestIsPreRelease": false,
+          "total": 12,
+          "stable": 12
+        },
+        {
+          "line": "2024.3",
+          "latest": "2024.3.1356.b2affd6",
+          "latestIsPreRelease": false,
+          "total": 27,
+          "stable": 27
+        },
+        {
+          "line": "2024.1",
+          "latest": "2024.1.1436.3cd3456",
+          "latestIsPreRelease": false,
+          "total": 33,
+          "stable": 33
+        },
+        {
+          "line": "2023.3",
+          "latest": "2023.3.434.0770b97",
+          "latestIsPreRelease": false,
+          "total": 2,
+          "stable": 2
+        },
+        {
+          "line": "2023.2",
+          "latest": "2023.2.1062.24abe87",
+          "latestIsPreRelease": false,
+          "total": 61,
+          "stable": 61
+        },
+        {
+          "line": "2022.3",
+          "latest": "2022.3.853.fdd8b14",
+          "latestIsPreRelease": false,
+          "total": 50,
+          "stable": 50
+        },
+        {
+          "line": "2022.2",
+          "latest": "2022.2.691.45f01da",
+          "latestIsPreRelease": false,
+          "total": 57,
+          "stable": 57
+        },
+        {
+          "line": "2021.3",
+          "latest": "2021.3.344.9dc2423",
+          "latestIsPreRelease": false,
+          "total": 45,
+          "stable": 45
+        },
+        {
+          "line": "2021.2",
+          "latest": "2021.2.203.99cfb0f",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        },
+        {
+          "line": "2021.1",
+          "latest": "2021.1.207.96ad6bb",
+          "latestIsPreRelease": false,
+          "total": 10,
+          "stable": 10
+        },
+        {
+          "line": "999.9",
+          "latest": "999.9.1085.0cf5b20",
+          "latestIsPreRelease": false,
+          "total": 77,
+          "stable": 77
+        }
+      ]
+    },
+    {
+      "groupId": "com.jetbrains.mps",
+      "artifactId": "mps",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml",
+      "slug": "com.jetbrains.mps_mps",
+      "ok": true,
+      "total": 60,
+      "released": 60,
+      "stable": 52,
+      "preRelease": 8,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/com.jetbrains.mps_mps.json",
+      "lines": [
+        {
+          "line": "2026.1",
+          "latest": "2026.1.1",
+          "latestIsPreRelease": false,
+          "total": 3,
+          "stable": 2
+        },
+        {
+          "line": "2025.3",
+          "latest": "2025.3",
+          "latestIsPreRelease": false,
+          "total": 2,
+          "stable": 1
+        },
+        {
+          "line": "2025.2",
+          "latest": "2025.2.1",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        },
+        {
+          "line": "2025.1",
+          "latest": "2025.1.4",
+          "latestIsPreRelease": false,
+          "total": 6,
+          "stable": 5
+        },
+        {
+          "line": "2024.3",
+          "latest": "2024.3.2",
+          "latestIsPreRelease": false,
+          "total": 5,
+          "stable": 3
+        },
+        {
+          "line": "2024.1",
+          "latest": "2024.1.6",
+          "latestIsPreRelease": false,
+          "total": 9,
+          "stable": 7
+        },
+        {
+          "line": "2023.3",
+          "latest": "2023.3.2",
+          "latestIsPreRelease": false,
+          "total": 4,
+          "stable": 3
+        },
+        {
+          "line": "2023.2",
+          "latest": "2023.2.3",
+          "latestIsPreRelease": false,
+          "total": 4,
+          "stable": 4
+        },
+        {
+          "line": "2022.3",
+          "latest": "2022.3.3",
+          "latestIsPreRelease": false,
+          "total": 4,
+          "stable": 4
+        },
+        {
+          "line": "2022.2",
+          "latest": "2022.2.4",
+          "latestIsPreRelease": false,
+          "total": 5,
+          "stable": 5
+        },
+        {
+          "line": "2021.3",
+          "latest": "2021.3.5",
+          "latestIsPreRelease": false,
+          "total": 5,
+          "stable": 5
+        },
+        {
+          "line": "2021.2",
+          "latest": "2021.2.6",
+          "latestIsPreRelease": false,
+          "total": 3,
+          "stable": 3
+        },
+        {
+          "line": "2021.1",
+          "latest": "2021.1.4",
+          "latestIsPreRelease": false,
+          "total": 2,
+          "stable": 2
+        },
+        {
+          "line": "2020.3",
+          "latest": "2020.3.6",
+          "latestIsPreRelease": false,
+          "total": 3,
+          "stable": 3
+        },
+        {
+          "line": "2020.2",
+          "latest": "2020.2.3",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        },
+        {
+          "line": "2020.1",
+          "latest": "2020.1.7",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        },
+        {
+          "line": "2019.3",
+          "latest": "2019.3.7",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        },
+        {
+          "line": "2019.2",
+          "latest": "2019.2.4",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
+        }
+      ]
+    }
+  ]
+}

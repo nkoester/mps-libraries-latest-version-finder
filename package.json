@@ -1,0 +1,11 @@
+{
+  "name": "mps-libraries-latest-version-finder",
+  "private": true,
+  "type": "module",
+  "description": "Static page listing the latest MPS library versions per release line.",
+  "scripts": {
+    "fetch": "node scripts/fetch-versions.mjs",
+    "bundle": "node scripts/make-bundle.mjs dist",
+    "serve": "python3 -m http.server 8080"
+  }
+}

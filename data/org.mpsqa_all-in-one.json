@@ -1,0 +1,1887 @@
+{
+  "groupId": "org.mpsqa",
+  "artifactId": "all-in-one",
+  "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml",
+  "slug": "org.mpsqa_all-in-one",
+  "generatedAt": "2026-10-07T12:33:45.364Z",
+  "total": 431,
+  "released": 402,
+  "stable": 402,
+  "preRelease": 0,
+  "branchCount": 29,
+  "branches": 13,
+  "lines": [
+    {
+      "line": "9999.9",
+      "latest": "9999.9.1479.e79c062",
+      "latestIsPreRelease": false,
+      "total": 24,
+      "stable": 24,
+      "versions": [
+        {
+          "v": "9999.9.1479.e79c062",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1477.f06e800",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1454.1955330",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1440.86f5cf0",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1434.281ce77",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1378.0734814",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1369.9997a20",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1367.f25ac65",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1365.0c17823",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1364.ddd7529",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1363.0c17823",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1362.fa3e2ed",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1310.182c87c",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1264.2b2934b",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1195.1eecd98",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1179.bf4a89d",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1156.38180d5",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1153.0b9f24c",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1152.65564fe",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1109.42c3942",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1104.c31eaa2",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1100.c31eaa2",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1094.6cd48b0",
+          "pre": false
+        },
+        {
+          "v": "9999.9.1088.7b8bae8",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2026.1",
+      "latest": "2026.1.1473.d596cbb",
+      "latestIsPreRelease": false,
+      "total": 3,
+      "stable": 3,
+      "versions": [
+        {
+          "v": "2026.1.1473.d596cbb",
+          "pre": false
+        },
+        {
+          "v": "2026.1.1448.2560595",
+          "pre": false
+        },
+        {
+          "v": "2026.1.1441.2750f7e",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2025.1",
+      "latest": "2025.1.1438.801e837",
+      "latestIsPreRelease": false,
+      "total": 12,
+      "stable": 12,
+      "versions": [
+        {
+          "v": "2025.1.1438.801e837",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1431.aeb2075",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1404.1a29b59",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1373.fbe75fc",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1358.b6ddc64",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1302.29d536d",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1254.211a2c7",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1232.67d7738",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1221.693f530",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1162.e0963c6",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1135.10cb47a",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1107.9436ac9",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2024.3",
+      "latest": "2024.3.1356.b2affd6",
+      "latestIsPreRelease": false,
+      "total": 27,
+      "stable": 27,
+      "versions": [
+        {
+          "v": "2024.3.1356.b2affd6",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1300.ec0fe24",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1252.04da6b9",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1230.377b41f",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1208.093d4f3",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1191.d15222c",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1160.cc8ceaf",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1148.581a51b",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1132.0e8647b",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1127.96d9414",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1120.b28fde3",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1092.24dabcd",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1083.3fe859a",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1076.6830db9",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1066.a54cf05",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1058.79712d8",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1049.b51ac97",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1043.f4defe4",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1027.f70c9d9",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1002.26174dd",
+          "pre": false
+        },
+        {
+          "v": "2024.3.996.2670528",
+          "pre": false
+        },
+        {
+          "v": "2024.3.976.3445069",
+          "pre": false
+        },
+        {
+          "v": "2024.3.964.8f7959a",
+          "pre": false
+        },
+        {
+          "v": "2024.3.954.d8e4b7a",
+          "pre": false
+        },
+        {
+          "v": "2024.3.866.778aa6f",
+          "pre": false
+        },
+        {
+          "v": "2024.3.862.a86dddb",
+          "pre": false
+        },
+        {
+          "v": "2024.3.849.e73579f",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2024.1",
+      "latest": "2024.1.1436.3cd3456",
+      "latestIsPreRelease": false,
+      "total": 33,
+      "stable": 33,
+      "versions": [
+        {
+          "v": "2024.1.1436.3cd3456",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1429.06e6422",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1401.9e58317",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1371.b41e1b9",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1354.15fc78a",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1350.c3de9ee",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1298.c3de9ee",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1250.163d026",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1228.a370480",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1206.49cffcb",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1188.b842bbb",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1158.2f6b75d",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1144.3218ad8",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1130.a456f46",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1125.ab284d4",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1118.5b4187f",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1090.ece64dc",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1081.3244a05",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1074.8f46199",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1064.73cb348",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1056.1941ac9",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1047.98f02d7",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1041.15aad42",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1022.300f07a",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1000.0c9288f",
+          "pre": false
+        },
+        {
+          "v": "2024.1.974.bc54be5",
+          "pre": false
+        },
+        {
+          "v": "2024.1.962.93576ec",
+          "pre": false
+        },
+        {
+          "v": "2024.1.952.3aa34aa",
+          "pre": false
+        },
+        {
+          "v": "2024.1.927.5609a81",
+          "pre": false
+        },
+        {
+          "v": "2024.1.861.57c8227",
+          "pre": false
+        },
+        {
+          "v": "2024.1.857.b0ec3b7",
+          "pre": false
+        },
+        {
+          "v": "2024.1.845.85c9dc6",
+          "pre": false
+        },
+        {
+          "v": "2024.1.832.579f392",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2023.3",
+      "latest": "2023.3.434.0770b97",
+      "latestIsPreRelease": false,
+      "total": 2,
+      "stable": 2,
+      "versions": [
+        {
+          "v": "2023.3.434.0770b97",
+          "pre": false
+        },
+        {
+          "v": "2023.3.431.0187c13",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2023.2",
+      "latest": "2023.2.1062.24abe87",
+      "latestIsPreRelease": false,
+      "total": 61,
+      "stable": 61,
+      "versions": [
+        {
+          "v": "2023.2.1062.24abe87",
+          "pre": false
+        },
+        {
+          "v": "2023.2.1019.05b974e",
+          "pre": false
+        },
+        {
+          "v": "2023.2.1016.7ca62e9",
+          "pre": false
+        },
+        {
+          "v": "2023.2.982.1e280ef",
+          "pre": false
+        },
+        {
+          "v": "2023.2.959.c2fc94b",
+          "pre": false
+        },
+        {
+          "v": "2023.2.946.5bfd10a",
+          "pre": false
+        },
+        {
+          "v": "2023.2.943.f30eb9a",
+          "pre": false
+        },
+        {
+          "v": "2023.2.937.e1a0374",
+          "pre": false
+        },
+        {
+          "v": "2023.2.935.5de4e16",
+          "pre": false
+        },
+        {
+          "v": "2023.2.933.18f0de2",
+          "pre": false
+        },
+        {
+          "v": "2023.2.922.a186e20",
+          "pre": false
+        },
+        {
+          "v": "2023.2.915.c22f22f",
+          "pre": false
+        },
+        {
+          "v": "2023.2.913.a0f0843",
+          "pre": false
+        },
+        {
+          "v": "2023.2.899.4234691",
+          "pre": false
+        },
+        {
+          "v": "2023.2.894.dafdd87",
+          "pre": false
+        },
+        {
+          "v": "2023.2.888.3317900",
+          "pre": false
+        },
+        {
+          "v": "2023.2.885.974d55e",
+          "pre": false
+        },
+        {
+          "v": "2023.2.881.bd1af14",
+          "pre": false
+        },
+        {
+          "v": "2023.2.879.d7fe7dc",
+          "pre": false
+        },
+        {
+          "v": "2023.2.875.a291e4c",
+          "pre": false
+        },
+        {
+          "v": "2023.2.872.18f65ea",
+          "pre": false
+        },
+        {
+          "v": "2023.2.855.58c8799",
+          "pre": false
+        },
+        {
+          "v": "2023.2.847.4de185f",
+          "pre": false
+        },
+        {
+          "v": "2023.2.836.757008f",
+          "pre": false
+        },
+        {
+          "v": "2023.2.831.84974d1",
+          "pre": false
+        },
+        {
+          "v": "2023.2.826.e3a30eb",
+          "pre": false
+        },
+        {
+          "v": "2023.2.805.20cf17f",
+          "pre": false
+        },
+        {
+          "v": "2023.2.802.493799c",
+          "pre": false
+        },
+        {
+          "v": "2023.2.795.5b7484e",
+          "pre": false
+        },
+        {
+          "v": "2023.2.786.b5b99c0",
+          "pre": false
+        },
+        {
+          "v": "2023.2.773.3223979",
+          "pre": false
+        },
+        {
+          "v": "2023.2.767.fa579df",
+          "pre": false
+        },
+        {
+          "v": "2023.2.763.a8b2285",
+          "pre": false
+        },
+        {
+          "v": "2023.2.752.8c191d0",
+          "pre": false
+        },
+        {
+          "v": "2023.2.728.daaccbb",
+          "pre": false
+        },
+        {
+          "v": "2023.2.719.7269f9c",
+          "pre": false
+        },
+        {
+          "v": "2023.2.657.4e8f442",
+          "pre": false
+        },
+        {
+          "v": "2023.2.653.347e564",
+          "pre": false
+        },
+        {
+          "v": "2023.2.634.504d755",
+          "pre": false
+        },
+        {
+          "v": "2023.2.614.80ba28f",
+          "pre": false
+        },
+        {
+          "v": "2023.2.608.e0f21cb",
+          "pre": false
+        },
+        {
+          "v": "2023.2.600.4daa0d2",
+          "pre": false
+        },
+        {
+          "v": "2023.2.593.024a690",
+          "pre": false
+        },
+        {
+          "v": "2023.2.518.3a298a4",
+          "pre": false
+        },
+        {
+          "v": "2023.2.487.72fb37e",
+          "pre": false
+        },
+        {
+          "v": "2023.2.428.f551464",
+          "pre": false
+        },
+        {
+          "v": "2023.2.427.f551464",
+          "pre": false
+        },
+        {
+          "v": "2023.2.419.9eae9c9",
+          "pre": false
+        },
+        {
+          "v": "2023.2.411.1769c14",
+          "pre": false
+        },
+        {
+          "v": "2023.2.384.515974c",
+          "pre": false
+        },
+        {
+          "v": "2023.2.367.4db1dc2",
+          "pre": false
+        },
+        {
+          "v": "2023.2.363.715207d",
+          "pre": false
+        },
+        {
+          "v": "2023.2.326.f3c2111",
+          "pre": false
+        },
+        {
+          "v": "2023.2.325.0e16b5d",
+          "pre": false
+        },
+        {
+          "v": "2023.2.309.6f926ca",
+          "pre": false
+        },
+        {
+          "v": "2023.2.308.9e25aaf",
+          "pre": false
+        },
+        {
+          "v": "2023.2.306.90a9dcb",
+          "pre": false
+        },
+        {
+          "v": "2023.2.305.8bd8f79",
+          "pre": false
+        },
+        {
+          "v": "2023.2.264.338602f",
+          "pre": false
+        },
+        {
+          "v": "2023.2.263.0bd68bc",
+          "pre": false
+        },
+        {
+          "v": "2023.2.262.d3e13f9",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2022.3",
+      "latest": "2022.3.853.fdd8b14",
+      "latestIsPreRelease": false,
+      "total": 50,
+      "stable": 50,
+      "versions": [
+        {
+          "v": "2022.3.853.fdd8b14",
+          "pre": false
+        },
+        {
+          "v": "2022.3.810.877f9b5",
+          "pre": false
+        },
+        {
+          "v": "2022.3.744.3c2e37a",
+          "pre": false
+        },
+        {
+          "v": "2022.3.742.27d4741",
+          "pre": false
+        },
+        {
+          "v": "2022.3.740.f8875e8",
+          "pre": false
+        },
+        {
+          "v": "2022.3.722.372b547",
+          "pre": false
+        },
+        {
+          "v": "2022.3.715.d353e1c",
+          "pre": false
+        },
+        {
+          "v": "2022.3.712.74fca16",
+          "pre": false
+        },
+        {
+          "v": "2022.3.703.0737cc1",
+          "pre": false
+        },
+        {
+          "v": "2022.3.699.5bbafc5",
+          "pre": false
+        },
+        {
+          "v": "2022.3.697.9029e53",
+          "pre": false
+        },
+        {
+          "v": "2022.3.688.30d4a16",
+          "pre": false
+        },
+        {
+          "v": "2022.3.680.1d344df",
+          "pre": false
+        },
+        {
+          "v": "2022.3.673.c0e832e",
+          "pre": false
+        },
+        {
+          "v": "2022.3.652.43ee186",
+          "pre": false
+        },
+        {
+          "v": "2022.3.639.9812696",
+          "pre": false
+        },
+        {
+          "v": "2022.3.629.6957a3b",
+          "pre": false
+        },
+        {
+          "v": "2022.3.623.69d3db1",
+          "pre": false
+        },
+        {
+          "v": "2022.3.612.ce91256",
+          "pre": false
+        },
+        {
+          "v": "2022.3.606.9547a1e",
+          "pre": false
+        },
+        {
+          "v": "2022.3.579.e1b9d58",
+          "pre": false
+        },
+        {
+          "v": "2022.3.563.715a013",
+          "pre": false
+        },
+        {
+          "v": "2022.3.516.3833270",
+          "pre": false
+        },
+        {
+          "v": "2022.3.480.117fef9",
+          "pre": false
+        },
+        {
+          "v": "2022.3.425.b995bef",
+          "pre": false
+        },
+        {
+          "v": "2022.3.417.160ba92",
+          "pre": false
+        },
+        {
+          "v": "2022.3.408.b1aa714",
+          "pre": false
+        },
+        {
+          "v": "2022.3.401.e590a05",
+          "pre": false
+        },
+        {
+          "v": "2022.3.398.1a0f22c",
+          "pre": false
+        },
+        {
+          "v": "2022.3.390.8ad3bed",
+          "pre": false
+        },
+        {
+          "v": "2022.3.382.a38bcaa",
+          "pre": false
+        },
+        {
+          "v": "2022.3.365.8820173",
+          "pre": false
+        },
+        {
+          "v": "2022.3.357.06d8d0b",
+          "pre": false
+        },
+        {
+          "v": "2022.3.354.953a8ff",
+          "pre": false
+        },
+        {
+          "v": "2022.3.349.6e679b3",
+          "pre": false
+        },
+        {
+          "v": "2022.3.340.1ff39c2",
+          "pre": false
+        },
+        {
+          "v": "2022.3.339.f75b2b0",
+          "pre": false
+        },
+        {
+          "v": "2022.3.335.e070def",
+          "pre": false
+        },
+        {
+          "v": "2022.3.334.598c386",
+          "pre": false
+        },
+        {
+          "v": "2022.3.323.99ce798",
+          "pre": false
+        },
+        {
+          "v": "2022.3.322.459bf5a",
+          "pre": false
+        },
+        {
+          "v": "2022.3.317.df9b741",
+          "pre": false
+        },
+        {
+          "v": "2022.3.316.d51092e",
+          "pre": false
+        },
+        {
+          "v": "2022.3.293.61221b5",
+          "pre": false
+        },
+        {
+          "v": "2022.3.292.26ddbbf",
+          "pre": false
+        },
+        {
+          "v": "2022.3.284.5d33320",
+          "pre": false
+        },
+        {
+          "v": "2022.3.235.5d33320",
+          "pre": false
+        },
+        {
+          "v": "2022.3.234.932c513",
+          "pre": false
+        },
+        {
+          "v": "2022.3.233.351af32",
+          "pre": false
+        },
+        {
+          "v": "2022.3.228.4fa1124",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2022.2",
+      "latest": "2022.2.691.45f01da",
+      "latestIsPreRelease": false,
+      "total": 57,
+      "stable": 57,
+      "versions": [
+        {
+          "v": "2022.2.691.45f01da",
+          "pre": false
+        },
+        {
+          "v": "2022.2.637.1406bfd",
+          "pre": false
+        },
+        {
+          "v": "2022.2.626.65202bd",
+          "pre": false
+        },
+        {
+          "v": "2022.2.621.2fd0679",
+          "pre": false
+        },
+        {
+          "v": "2022.2.604.c596ef6",
+          "pre": false
+        },
+        {
+          "v": "2022.2.583.1ce1757",
+          "pre": false
+        },
+        {
+          "v": "2022.2.573.a121fc9",
+          "pre": false
+        },
+        {
+          "v": "2022.2.556.ca57e92",
+          "pre": false
+        },
+        {
+          "v": "2022.2.548.96fc2d4",
+          "pre": false
+        },
+        {
+          "v": "2022.2.542.e1b23e8",
+          "pre": false
+        },
+        {
+          "v": "2022.2.539.ca054a1",
+          "pre": false
+        },
+        {
+          "v": "2022.2.534.1b0117f",
+          "pre": false
+        },
+        {
+          "v": "2022.2.529.899ede8",
+          "pre": false
+        },
+        {
+          "v": "2022.2.473.9f24b76",
+          "pre": false
+        },
+        {
+          "v": "2022.2.468.d60bf4d",
+          "pre": false
+        },
+        {
+          "v": "2022.2.422.d60bf4d",
+          "pre": false
+        },
+        {
+          "v": "2022.2.414.8070565",
+          "pre": false
+        },
+        {
+          "v": "2022.2.405.9821372",
+          "pre": false
+        },
+        {
+          "v": "2022.2.399.d6e4c4b",
+          "pre": false
+        },
+        {
+          "v": "2022.2.395.6a348f0",
+          "pre": false
+        },
+        {
+          "v": "2022.2.388.b42aa19",
+          "pre": false
+        },
+        {
+          "v": "2022.2.379.bb94f96",
+          "pre": false
+        },
+        {
+          "v": "2022.2.376.8676fdf",
+          "pre": false
+        },
+        {
+          "v": "2022.2.372.7ea1188",
+          "pre": false
+        },
+        {
+          "v": "2022.2.370.8f0e0e1",
+          "pre": false
+        },
+        {
+          "v": "2022.2.368.6bf8e21",
+          "pre": false
+        },
+        {
+          "v": "2022.2.362.e46f280",
+          "pre": false
+        },
+        {
+          "v": "2022.2.355.0d3b2cc",
+          "pre": false
+        },
+        {
+          "v": "2022.2.352.28adf98",
+          "pre": false
+        },
+        {
+          "v": "2022.2.351.1f7ef33",
+          "pre": false
+        },
+        {
+          "v": "2022.2.347.801a1dd",
+          "pre": false
+        },
+        {
+          "v": "2022.2.346.f6b43e4",
+          "pre": false
+        },
+        {
+          "v": "2022.2.337.080a721",
+          "pre": false
+        },
+        {
+          "v": "2022.2.332.1e2ca12",
+          "pre": false
+        },
+        {
+          "v": "2022.2.331.e79d02c",
+          "pre": false
+        },
+        {
+          "v": "2022.2.329.326c631",
+          "pre": false
+        },
+        {
+          "v": "2022.2.320.01eef48",
+          "pre": false
+        },
+        {
+          "v": "2022.2.319.ff5d2f8",
+          "pre": false
+        },
+        {
+          "v": "2022.2.313.385ed6a",
+          "pre": false
+        },
+        {
+          "v": "2022.2.290.a7b6eaf",
+          "pre": false
+        },
+        {
+          "v": "2022.2.283.6f57694",
+          "pre": false
+        },
+        {
+          "v": "2022.2.282.760eb79",
+          "pre": false
+        },
+        {
+          "v": "2022.2.281.ef6a155",
+          "pre": false
+        },
+        {
+          "v": "2022.2.280.2af29a4",
+          "pre": false
+        },
+        {
+          "v": "2022.2.279.c314268",
+          "pre": false
+        },
+        {
+          "v": "2022.2.277.4243007",
+          "pre": false
+        },
+        {
+          "v": "2022.2.271.f33ab5d",
+          "pre": false
+        },
+        {
+          "v": "2022.2.270.c3667bf",
+          "pre": false
+        },
+        {
+          "v": "2022.2.268.9d1c0b1",
+          "pre": false
+        },
+        {
+          "v": "2022.2.267.4b8ff84",
+          "pre": false
+        },
+        {
+          "v": "2022.2.260.5379f33",
+          "pre": false
+        },
+        {
+          "v": "2022.2.259.979a564",
+          "pre": false
+        },
+        {
+          "v": "2022.2.256.6a9efa0",
+          "pre": false
+        },
+        {
+          "v": "2022.2.252.54a2273",
+          "pre": false
+        },
+        {
+          "v": "2022.2.241.16ea23c",
+          "pre": false
+        },
+        {
+          "v": "2022.2.211.16ea23c",
+          "pre": false
+        },
+        {
+          "v": "2022.2.196.16ea23c",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2021.3",
+      "latest": "2021.3.344.9dc2423",
+      "latestIsPreRelease": false,
+      "total": 45,
+      "stable": 45,
+      "versions": [
+        {
+          "v": "2021.3.344.9dc2423",
+          "pre": false
+        },
+        {
+          "v": "2021.3.343.5bf6b13",
+          "pre": false
+        },
+        {
+          "v": "2021.3.327.b4e548b",
+          "pre": false
+        },
+        {
+          "v": "2021.3.314.4216b3f",
+          "pre": false
+        },
+        {
+          "v": "2021.3.312.112aec7",
+          "pre": false
+        },
+        {
+          "v": "2021.3.311.e31475a",
+          "pre": false
+        },
+        {
+          "v": "2021.3.310.55eef85",
+          "pre": false
+        },
+        {
+          "v": "2021.3.303.c1e0fc1",
+          "pre": false
+        },
+        {
+          "v": "2021.3.301.edda333",
+          "pre": false
+        },
+        {
+          "v": "2021.3.289.eff7b0a",
+          "pre": false
+        },
+        {
+          "v": "2021.3.288.898b059",
+          "pre": false
+        },
+        {
+          "v": "2021.3.287.abe1612",
+          "pre": false
+        },
+        {
+          "v": "2021.3.286.3cc9c0b",
+          "pre": false
+        },
+        {
+          "v": "2021.3.257.e81ba53",
+          "pre": false
+        },
+        {
+          "v": "2021.3.254.b67c071",
+          "pre": false
+        },
+        {
+          "v": "2021.3.253.bc4c73f",
+          "pre": false
+        },
+        {
+          "v": "2021.3.251.52c3e3a",
+          "pre": false
+        },
+        {
+          "v": "2021.3.248.b12fbfb",
+          "pre": false
+        },
+        {
+          "v": "2021.3.247.185992c",
+          "pre": false
+        },
+        {
+          "v": "2021.3.246.ca31805",
+          "pre": false
+        },
+        {
+          "v": "2021.3.245.0a40c7f",
+          "pre": false
+        },
+        {
+          "v": "2021.3.244.5e4774b",
+          "pre": false
+        },
+        {
+          "v": "2021.3.243.864ab76",
+          "pre": false
+        },
+        {
+          "v": "2021.3.242.ed59279",
+          "pre": false
+        },
+        {
+          "v": "2021.3.240.cd4c86e",
+          "pre": false
+        },
+        {
+          "v": "2021.3.239.c43a65e",
+          "pre": false
+        },
+        {
+          "v": "2021.3.238.4a16e37",
+          "pre": false
+        },
+        {
+          "v": "2021.3.237.92ca4f8",
+          "pre": false
+        },
+        {
+          "v": "2021.3.236.ff0d658",
+          "pre": false
+        },
+        {
+          "v": "2021.3.232.d6c6fea",
+          "pre": false
+        },
+        {
+          "v": "2021.3.231.620e7f9",
+          "pre": false
+        },
+        {
+          "v": "2021.3.230.a153d77",
+          "pre": false
+        },
+        {
+          "v": "2021.3.229.8a07833",
+          "pre": false
+        },
+        {
+          "v": "2021.3.227.62f6e4d",
+          "pre": false
+        },
+        {
+          "v": "2021.3.226.a4c2254",
+          "pre": false
+        },
+        {
+          "v": "2021.3.221.7dd1e3b",
+          "pre": false
+        },
+        {
+          "v": "2021.3.219.3687e42",
+          "pre": false
+        },
+        {
+          "v": "2021.3.218.f623a8d",
+          "pre": false
+        },
+        {
+          "v": "2021.3.217.d99d442",
+          "pre": false
+        },
+        {
+          "v": "2021.3.216.6e0606d",
+          "pre": false
+        },
+        {
+          "v": "2021.3.215.cb8ea5d",
+          "pre": false
+        },
+        {
+          "v": "2021.3.214.eb56248",
+          "pre": false
+        },
+        {
+          "v": "2021.3.212.01c9683",
+          "pre": false
+        },
+        {
+          "v": "2021.3.209.e209c33",
+          "pre": false
+        },
+        {
+          "v": "2021.3.204.ad73e16",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2021.2",
+      "latest": "2021.2.203.99cfb0f",
+      "latestIsPreRelease": false,
+      "total": 1,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2021.2.203.99cfb0f",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2021.1",
+      "latest": "2021.1.207.96ad6bb",
+      "latestIsPreRelease": false,
+      "total": 10,
+      "stable": 10,
+      "versions": [
+        {
+          "v": "2021.1.207.96ad6bb",
+          "pre": false
+        },
+        {
+          "v": "2021.1.205.b96742d",
+          "pre": false
+        },
+        {
+          "v": "2021.1.202.11e90d8",
+          "pre": false
+        },
+        {
+          "v": "2021.1.200.3dd5d1f",
+          "pre": false
+        },
+        {
+          "v": "2021.1.198.eab8ceb",
+          "pre": false
+        },
+        {
+          "v": "2021.1.197.d1364de",
+          "pre": false
+        },
+        {
+          "v": "2021.1.193.518b39c",
+          "pre": false
+        },
+        {
+          "v": "2021.1.192.1b904ba",
+          "pre": false
+        },
+        {
+          "v": "2021.1.191.cd29180",
+          "pre": false
+        },
+        {
+          "v": "2021.1.190.be8329e",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "999.9",
+      "latest": "999.9.1085.0cf5b20",
+      "latestIsPreRelease": false,
+      "total": 77,
+      "stable": 77,
+      "versions": [
+        {
+          "v": "999.9.1085.0cf5b20",
+          "pre": false
+        },
+        {
+          "v": "999.9.1078.df38723",
+          "pre": false
+        },
+        {
+          "v": "999.9.1072.d047bd4",
+          "pre": false
+        },
+        {
+          "v": "999.9.1068.d007ba8",
+          "pre": false
+        },
+        {
+          "v": "999.9.1060.de2b096",
+          "pre": false
+        },
+        {
+          "v": "999.9.1051.4f1ea05",
+          "pre": false
+        },
+        {
+          "v": "999.9.1045.26d21eb",
+          "pre": false
+        },
+        {
+          "v": "999.9.1037.fb85243",
+          "pre": false
+        },
+        {
+          "v": "999.9.1036.0f60c74",
+          "pre": false
+        },
+        {
+          "v": "999.9.1035.8ebbafd",
+          "pre": false
+        },
+        {
+          "v": "999.9.1034.5270ea9",
+          "pre": false
+        },
+        {
+          "v": "999.9.1029.43a4916",
+          "pre": false
+        },
+        {
+          "v": "999.9.1006.b5dbdaa",
+          "pre": false
+        },
+        {
+          "v": "999.9.1004.3bdbcb6",
+          "pre": false
+        },
+        {
+          "v": "999.9.998.5fc5ac3",
+          "pre": false
+        },
+        {
+          "v": "999.9.989.e821b07",
+          "pre": false
+        },
+        {
+          "v": "999.9.984.641b196",
+          "pre": false
+        },
+        {
+          "v": "999.9.978.13a8c00",
+          "pre": false
+        },
+        {
+          "v": "999.9.966.79346bf",
+          "pre": false
+        },
+        {
+          "v": "999.9.956.69a1532",
+          "pre": false
+        },
+        {
+          "v": "999.9.950.f783de6",
+          "pre": false
+        },
+        {
+          "v": "999.9.892.3e1dc07",
+          "pre": false
+        },
+        {
+          "v": "999.9.882.d9fc71c",
+          "pre": false
+        },
+        {
+          "v": "999.9.868.aa727d2",
+          "pre": false
+        },
+        {
+          "v": "999.9.864.eb602fd",
+          "pre": false
+        },
+        {
+          "v": "999.9.852.189e93a",
+          "pre": false
+        },
+        {
+          "v": "999.9.848.c361640",
+          "pre": false
+        },
+        {
+          "v": "999.9.841.cc745e6",
+          "pre": false
+        },
+        {
+          "v": "999.9.809.317c424",
+          "pre": false
+        },
+        {
+          "v": "999.9.807.19cced8",
+          "pre": false
+        },
+        {
+          "v": "999.9.801.37f9d93",
+          "pre": false
+        },
+        {
+          "v": "999.9.778.a7280dc",
+          "pre": false
+        },
+        {
+          "v": "999.9.776.eb622e9",
+          "pre": false
+        },
+        {
+          "v": "999.9.746.f01971d",
+          "pre": false
+        },
+        {
+          "v": "999.9.731.a4c8fb0",
+          "pre": false
+        },
+        {
+          "v": "999.9.730.c5280ee",
+          "pre": false
+        },
+        {
+          "v": "999.9.717.8817e8b",
+          "pre": false
+        },
+        {
+          "v": "999.9.709.794bc04",
+          "pre": false
+        },
+        {
+          "v": "999.9.694.6439c0b",
+          "pre": false
+        },
+        {
+          "v": "999.9.692.16feb37",
+          "pre": false
+        },
+        {
+          "v": "999.9.663.89fea26",
+          "pre": false
+        },
+        {
+          "v": "999.9.661.a7de9ee",
+          "pre": false
+        },
+        {
+          "v": "999.9.659.0ee07fa",
+          "pre": false
+        },
+        {
+          "v": "999.9.655.3857f3b",
+          "pre": false
+        },
+        {
+          "v": "999.9.651.7bd618e",
+          "pre": false
+        },
+        {
+          "v": "999.9.649.94d1be5",
+          "pre": false
+        },
+        {
+          "v": "999.9.646.c7702d7",
+          "pre": false
+        },
+        {
+          "v": "999.9.645.b4aee4b",
+          "pre": false
+        },
+        {
+          "v": "999.9.641.4e7a8d3",
+          "pre": false
+        },
+        {
+          "v": "999.9.628.50de354",
+          "pre": false
+        },
+        {
+          "v": "999.9.618.c3789a5",
+          "pre": false
+        },
+        {
+          "v": "999.9.616.86a7156",
+          "pre": false
+        },
+        {
+          "v": "999.9.603.28345fa",
+          "pre": false
+        },
+        {
+          "v": "999.9.596.f8741c5",
+          "pre": false
+        },
+        {
+          "v": "999.9.591.e109be4",
+          "pre": false
+        },
+        {
+          "v": "999.9.589.74cec49",
+          "pre": false
+        },
+        {
+          "v": "999.9.588.d4b9ffa",
+          "pre": false
+        },
+        {
+          "v": "999.9.575.e2e96a8",
+          "pre": false
+        },
+        {
+          "v": "999.9.567.58869fa",
+          "pre": false
+        },
+        {
+          "v": "999.9.560.0a4d79c",
+          "pre": false
+        },
+        {
+          "v": "999.9.559.fd218f3",
+          "pre": false
+        },
+        {
+          "v": "999.9.520.0ee910e",
+          "pre": false
+        },
+        {
+          "v": "999.9.513.19c937d",
+          "pre": false
+        },
+        {
+          "v": "999.9.511.32abf62",
+          "pre": false
+        },
+        {
+          "v": "999.9.510.7d77889",
+          "pre": false
+        },
+        {
+          "v": "999.9.506.00c7572",
+          "pre": false
+        },
+        {
+          "v": "999.9.503.2eb6a30",
+          "pre": false
+        },
+        {
+          "v": "999.9.494.1a18868",
+          "pre": false
+        },
+        {
+          "v": "999.9.491.a671732",
+          "pre": false
+        },
+        {
+          "v": "999.9.490.af24f64",
+          "pre": false
+        },
+        {
+          "v": "999.9.483.26fe689",
+          "pre": false
+        },
+        {
+          "v": "999.9.478.7b0de79",
+          "pre": false
+        },
+        {
+          "v": "999.9.476.b83d7b9",
+          "pre": false
+        },
+        {
+          "v": "999.9.451.7f48e9e",
+          "pre": false
+        },
+        {
+          "v": "999.9.440.8a91094",
+          "pre": false
+        },
+        {
+          "v": "999.9.438.dde2302",
+          "pre": false
+        },
+        {
+          "v": "999.9.436.37e9f62",
+          "pre": false
+        }
+      ]
+    }
+  ],
+  "branchBuilds": [
+    {
+      "v": "refactor-plantuml_v1.2023.13_epl2.0.2022.2.278.31a4803",
+      "pre": false,
+      "branch": "refactor-plantuml_v1"
+    },
+    {
+      "v": "refactor-plantuml_v1.2023.13_epl2.0.2022.2.276.7d4b344",
+      "pre": false,
+      "branch": "refactor-plantuml_v1"
+    },
+    {
+      "v": "merge-master.2022.3.341.1ff39c2",
+      "pre": false,
+      "branch": "merge-master"
+    },
+    {
+      "v": "merge-master.2022.3.336.e070def",
+      "pre": false,
+      "branch": "merge-master"
+    },
+    {
+      "v": "merge-master.2022.3.324.99ce798",
+      "pre": false,
+      "branch": "merge-master"
+    },
+    {
+      "v": "merge-MPS-2022.3.2023.2.304.42b6276",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.3.2022.2.356.0d3b2cc",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.3.2022.2.353.28adf98",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.3.2022.2.348.801a1dd",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.3.2022.2.338.080a721",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.3.2022.2.333.1e2ca12",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.3.2022.2.321.01eef48",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.2.2022.3.315.6c7e792",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.2.2022.3.291.0cd78e6",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.2.2021.3.345.9dc2423",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.2.2021.3.330.478392a",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.2.2021.3.328.b4e548b",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "merge-MPS-2022.2.2021.3.318.4216b3f",
+      "pre": false,
+      "branch": "merge-MPS-2022"
+    },
+    {
+      "v": "feature-update_to_2022.2.2.2022.2.269.8bc3379",
+      "pre": false,
+      "branch": "feature-update_to_2022"
+    },
+    {
+      "v": "feature-publish_to_nexus_2021_1.2021.1.189.91440ea",
+      "pre": false,
+      "branch": "feature-publish_to_nexus_2021_1"
+    },
+    {
+      "v": "feature-migration-check-from-sources.2022.2.350.1e47909",
+      "pre": false,
+      "branch": "feature-migration-check-from-sources"
+    },
+    {
+      "v": "feature-automatic_cascading_merges.2021.3.285.288957c",
+      "pre": false,
+      "branch": "feature-automatic_cascading_merges"
+    },
+    {
+      "v": "feature-MPS-2022.2.2022.2.195.98bdc0b",
+      "pre": false,
+      "branch": "feature-MPS-2022"
+    },
+    {
+      "v": "bugfix-small_linter_issues.2023.2.307.a99603f",
+      "pre": false,
+      "branch": "bugfix-small_linter_issues"
+    },
+    {
+      "v": "bugfix-npe-in-migration-check.2021.3.302.8ab1681",
+      "pre": false,
+      "branch": "bugfix-npe-in-migration-check"
+    },
+    {
+      "v": "bugfix-fix_icons_2022.2.2022.2.266.0259b31",
+      "pre": false,
+      "branch": "bugfix-fix_icons_2022"
+    },
+    {
+      "v": "bugfix-fix_icons_2022.2.2022.2.265.bb77683",
+      "pre": false,
+      "branch": "bugfix-fix_icons_2022"
+    },
+    {
+      "v": "bugfix-deterministic-cycles.2021.3.300.e4367fc",
+      "pre": false,
+      "branch": "bugfix-deterministic-cycles"
+    },
+    {
+      "v": "bugfix-deprecationDateComputingUtils_NullPointer.2021.3.342.33c6a1a",
+      "pre": false,
+      "branch": "bugfix-deprecationDateComputingUtils_NullPointer"
+    }
+  ]
+}
