@@ -23,11 +23,11 @@ Earlier versions of this page fetched `maven-metadata.xml` in the browser throug
 public CORS proxies. That was slow and unreliable; the proxies are no longer in
 the critical path.
 
-### On the "Check live" button
+### Why there is no "check live" button
 
-It is **best-effort and usually fails.** `artifacts.itemis.cloud` sends no
-`Access-Control-Allow-Origin` header, so a browser cannot read it directly, and
-the public CORS proxies that used to fill that gap are effectively gone:
+The page cannot fetch from Nexus at all. `artifacts.itemis.cloud` sends no
+`Access-Control-Allow-Origin` header, so a browser refuses to read it directly,
+and the public CORS proxies that used to fill that gap are effectively gone:
 
 | Proxy | State (checked 2026-10-07) |
 | --- | --- |
@@ -40,16 +40,16 @@ the public CORS proxies that used to fill that gap are effectively gone:
 | `r.jina.ai` | `200`, correct CORS headers, but strips XML to an empty document |
 | `api.allorigins.win` | works intermittently; ~15 s for the 188 KB file, `520`/`522` under any concurrency |
 
-Only allorigins works at all, so requests go through it strictly sequentially
-with a 30 s timeout. When it fails the page says so and keeps showing stored data.
+Only allorigins worked at all, and only intermittently, so in-browser fetching
+was dropped entirely rather than shipping a button that mostly fails.
 
-**To actually refresh the data, run the update workflow** — the
-**⚙️ Refresh stored data** button links straight to it. Allow a minute or two
-for the commit and the Pages rebuild, then reload.
+**To refresh the data, run the `Update versions` workflow** (Actions → Update
+versions → Run workflow). Allow a minute or two for the commit and the Pages
+rebuild, then reload.
 
 The durable fix would be a single `Access-Control-Allow-Origin` header on the
-Nexus repository, which would make direct browser fetches work in ~0.3 s and
-retire the proxy path entirely.
+Nexus repository: direct browser fetches would then work in ~0.3 s and a live
+refresh could come back.
 
 ## Version handling
 

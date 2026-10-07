@@ -134,10 +134,8 @@
             color: var(--light-text-color);
         }
         .status-line { font-weight: 600; font-size: 0.85rem; }
-        .status-loading { color: var(--accent-color); }
         .status-success { color: var(--success-color); }
         .status-error { color: var(--error-color); }
-        .status-warn { color: var(--warning-color); }
 
         .badge {
             font-size: 0.7rem;
@@ -151,7 +149,6 @@
             vertical-align: middle;
         }
         .badge.pre { background: #fff3cd; color: var(--warning-color); }
-        .badge.live { background: #d1e7dd; color: var(--success-color); }
         .badge.stale { background: #f8d7da; color: var(--error-color); }
 
         #toc ul { margin-top: 1rem; }
@@ -286,8 +283,6 @@
 
     <script type="module">
         import {
-            parseMetadata,
-            buildLibraryData,
             artifactUrls,
             mavenCoordinate,
             lineLabel,
@@ -299,7 +294,6 @@
         /* ------------------------------------------------------------------ */
 
         const REPO_URL = 'https://github.com/nkoester/mps-libraries-latest-version-finder';
-        const WORKFLOW_URL = `${REPO_URL}/actions/workflows/update-versions.yml`;
 
         const state = {
             generatedAt: null,
@@ -445,20 +439,7 @@
         }, 60000);
 
         function renderStatus() {
-            let html = `
-                <h3>
-                    <span>📚 Libraries</span>
-                    <span class="button-group">
-                        <button class="action-btn small" id="refresh-all"
-                                title="Best-effort live fetch via a public CORS proxy. Slow and often rate-limited.">
-                            🔄 Check live
-                        </button>
-                        <a class="action-btn small" href="${WORKFLOW_URL}" target="_blank" rel="noopener noreferrer"
-                           title="Open the update workflow on GitHub and press 'Run workflow' to refresh the stored data">
-                            ⚙️ Refresh stored data ↗
-                        </a>
-                    </span>
-                </h3>`;
+            let html = '<h3><span>📚 Libraries</span></h3>';
 
             for (const library of state.libraries) {
                 const label = `${library.groupId}:${library.artifactId}`;
@@ -471,9 +452,8 @@
                     const extras = [`${library.lines.length} release lines`];
                     if (library.preRelease) extras.push(`${library.preRelease} pre-release`);
                     if (library.branchCount) extras.push(`${library.branchCount} branch builds`);
-                    const live = library.live ? ' <span class="badge live">live</span>' : '';
                     status = `<span class="status-line status-success">${library.released ?? library.total} releases</span>
-                              <span class="muted">${esc(extras.join(' · '))}</span>${live}`;
+                              <span class="muted">${esc(extras.join(' · '))}</span>`;
                 }
 
                 html += `
@@ -485,8 +465,6 @@
                                     title="Show every published version of ${esc(label)}">
                                 📜 All versions
                             </button>
-                            <button class="action-btn small" data-action="refresh-one" data-slug="${esc(library.slug)}"
-                                    title="Re-fetch this library from the repository now">🔄</button>
                             <a href="${esc(urls.folder)}" target="_blank" rel="noopener noreferrer"
                                class="action-btn small button-separator" title="Browse in Nexus">📁</a>
                             <a href="${esc(library.metadataUrl)}" target="_blank" rel="noopener noreferrer"
@@ -758,132 +736,6 @@
         });
 
         /* ------------------------------------------------------------------ */
-        /* live refresh                                                        */
-        /* ------------------------------------------------------------------ */
-
-        /**
-         * Fetches metadata straight from the repository, falling back to a public
-         * CORS proxy.
-         *
-         * The direct attempt only succeeds if artifacts.itemis.cloud sends
-         * `Access-Control-Allow-Origin`; as of now it does not, so the browser
-         * blocks it and logs a CORS error that cannot be suppressed from script.
-         * That is expected — the proxy fallback is what normally does the work,
-         * and it is slow (~15s for the larger metadata files) and frequently
-         * rate-limited. Live checking is best-effort; the stored data is the
-         * reliable path.
-         */
-        const LIVE_TIMEOUT_MS = 30000;
-
-        async function fetchLive(library) {
-            const encoded = encodeURIComponent(library.metadataUrl);
-            const attempts = [
-                { name: 'direct', url: library.metadataUrl },
-                { name: 'allorigins', url: `https://api.allorigins.win/raw?url=${encoded}` },
-                { name: 'allorigins (retry)', url: `https://api.allorigins.win/raw?url=${encoded}` },
-            ];
-            const errors = [];
-            for (const [index, attempt] of attempts.entries()) {
-                if (index > 0) await new Promise((resolve) => setTimeout(resolve, 600));
-                try {
-                    const response = await fetch(attempt.url, {
-                        signal: AbortSignal.timeout(LIVE_TIMEOUT_MS),
-                    });
-                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                    const versions = parseMetadata(await response.text());
-                    if (versions.length === 0) throw new Error('no versions in response');
-                    return buildLibraryData(versions);
-                } catch (error) {
-                    errors.push(`${attempt.name}: ${error.message}`);
-                }
-            }
-            throw new Error(errors.join(' · '));
-        }
-
-        async function refresh(slugs) {
-            const targets = state.libraries.filter((library) => slugs.includes(library.slug));
-            for (const library of targets) {
-                const row = statusDiv.querySelector(`.status-item[data-slug="${CSS.escape(library.slug)}"] div`);
-                if (row) row.innerHTML = '<span class="status-line status-loading">Queued…</span>';
-            }
-
-            // Strictly sequential: the proxy returns 5xx when several requests
-            // from one origin overlap, so firing all six in parallel fails most
-            // of them.
-            const results = [];
-            for (const library of targets) {
-                const row = statusDiv.querySelector(`.status-item[data-slug="${CSS.escape(library.slug)}"] div`);
-                if (row) {
-                    row.innerHTML =
-                        '<span class="status-line status-loading">Fetching… (can take ~20s)</span>';
-                }
-                try {
-                    results.push({ status: 'fulfilled', value: await fetchLive(library) });
-                } catch (error) {
-                    results.push({ status: 'rejected', reason: error });
-                }
-            }
-
-            results.forEach((result, index) => {
-                const library = targets[index];
-                if (result.status === 'fulfilled') {
-                    const data = result.value;
-                    Object.assign(library, {
-                        ok: true,
-                        live: true,
-                        error: undefined,
-                        total: data.total,
-                        released: data.released,
-                        stable: data.stable,
-                        preRelease: data.preRelease,
-                        branchCount: data.branchCount,
-                        branches: data.branches,
-                        lines: data.lines.map(({ line, latest, latestIsPreRelease, total, stable }) => ({
-                            line, latest, latestIsPreRelease, total, stable,
-                        })),
-                    });
-                    state.fullData.set(library.slug, { ...library, ...data });
-                } else {
-                    library.liveError = result.reason?.message ?? 'failed';
-                }
-            });
-
-            render();
-
-            const failed = targets.filter((library) => library.liveError);
-            if (failed.length === targets.length) {
-                statusDiv.insertAdjacentHTML('afterbegin', `
-                    <div class="notice">
-                        <strong>Live check unavailable.</strong>
-                        <p class="muted">
-                            <code>artifacts.itemis.cloud</code> does not send CORS headers, so the browser
-                            cannot read it directly, and the public proxies used as a fallback are currently
-                            rate-limited or down. The versions shown below are the stored ones and are still
-                            valid — they are just as fresh as the last scheduled update.
-                        </p>
-                        <p class="muted">
-                            To refresh them now, run the
-                            <a href="${WORKFLOW_URL}" target="_blank" rel="noopener noreferrer">update workflow</a>
-                            and reload this page in a minute or two.
-                        </p>
-                    </div>`);
-            }
-            if (failed.length > 0) {
-                for (const library of failed) {
-                    const row = statusDiv.querySelector(`.status-item[data-slug="${CSS.escape(library.slug)}"] div`);
-                    if (row) {
-                        row.insertAdjacentHTML(
-                            'beforeend',
-                            `<span class="status-line status-warn" title="${esc(library.liveError)}">
-                                · live check failed, showing stored data</span>`,
-                        );
-                    }
-                    delete library.liveError;
-                }
-            }
-        }
-
-        /* ------------------------------------------------------------------ */
         /* events                                                              */
         /* ------------------------------------------------------------------ */
 
@@ -905,7 +757,7 @@
         }
 
         document.body.addEventListener('click', async (event) => {
-            const target = event.target.closest('[data-copy], [data-action], #refresh-all');
+            const target = event.target.closest('[data-copy], [data-action]');
             if (!target) return;
 
             if (target.dataset.copy !== undefined) {
@@ -913,20 +765,8 @@
                 return;
             }
 
-            if (target.id === 'refresh-all') {
-                target.disabled = true;
-                await refresh(state.libraries.map((library) => library.slug));
-                return;
-            }
-
             if (target.dataset.action === 'show-all') {
                 openAllVersions(target.dataset.slug);
-                return;
-            }
-
-            if (target.dataset.action === 'refresh-one') {
-                target.disabled = true;
-                await refresh([target.dataset.slug]);
             }
         });
 
