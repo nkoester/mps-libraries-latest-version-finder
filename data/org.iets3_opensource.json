@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-08T02:33:48.325Z",
+  "generatedAt": "2026-10-08T11:14:40.659Z",
   "total": 3027,
-  "released": 1712,
-  "stable": 1705,
+  "released": 1713,
+  "stable": 1706,
   "preRelease": 7,
-  "branchCount": 1315,
+  "branchCount": 1314,
   "branches": 275,
   "lines": [
     {
@@ -1408,11 +1408,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11284.dd048e1",
+      "latest": "2024.1.11291.6d613a1",
       "latestIsPreRelease": false,
-      "total": 259,
-      "stable": 258,
+      "total": 260,
+      "stable": 259,
       "versions": [
+        {
+          "v": "2024.1.11291.6d613a1",
+          "pre": false
+        },
         {
           "v": "2024.1.11284.dd048e1",
           "pre": false
@@ -8063,11 +8067,6 @@
       "branch": "renovate-maintenance-mps20241-github-actions"
     },
     {
-      "v": "renovate-maintenance-mps20241-de.itemis.mps.build-backends-remigrate-1.x.2024.1.9990.69b7ff4-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-de.itemis.mps.build-backends-remigrate-1.x"
-    },
-    {
       "v": "renovate-maintenance-mps20241-de.itemis.mps.build-backends-remigrate-1.x.2024.1.9982.ac00f5c-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-de.itemis.mps.build-backends-remigrate-1.x"
@@ -8358,11 +8357,6 @@
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
     },
     {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9926.9778837-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
-    },
-    {
       "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9922.9fff83e-SNAPSHOT",
       "pre": true,
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
@@ -8456,6 +8450,11 @@
       "v": "merge-20213.2022.2.6629.6634235",
       "pre": false,
       "branch": "merge-20213"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11290.a81d49b-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
     },
     {
       "v": "merge-mps20261_.2026.1.11262.0f4fec2-SNAPSHOT",
@@ -8933,11 +8932,6 @@
       "branch": "merge-mps20251"
     },
     {
-      "v": "merge-mps20251.2025.1.10575.1f931e4-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
       "v": "merge-mps20251.2025.1.10565.304ef67-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
@@ -9024,6 +9018,11 @@
     },
     {
       "v": "merge-mps20251.2025.1.9749.21b3417-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11292.6d613a1-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
@@ -9279,11 +9278,6 @@
     },
     {
       "v": "merge-mps20241.2025.1.10040.5bb492f-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241"
-    },
-    {
-      "v": "merge-mps20241.2025.1.10024.84b6135-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20241"
     },
@@ -9924,11 +9918,6 @@
     },
     {
       "v": "merge-master.2025.1.10592.1b258d7-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
-      "v": "merge-master.2025.1.10579.b5251eb-SNAPSHOT",
       "pre": true,
       "branch": "merge-master"
     },
@@ -12603,6 +12592,11 @@
       "branch": "bugfix-quick_workaround_numberliteral_editor_exception_1541"
     },
     {
+      "v": "bugfix-publishTestExecutor.2025.1.11294.a6c1f66-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-publishTestExecutor"
+    },
+    {
       "v": "bugfix-publishTestExecutor.2025.1.11288.627d4c1-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-publishTestExecutor"
@@ -13063,11 +13057,6 @@
       "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713"
     },
     {
-      "v": "bugfix-avoid_error_for_name_of_new_featuremodel_1713.2024.1.10138.353a611-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713"
-    },
-    {
       "v": "bugfix-avoid_error_for_name_of_new_featuremodel_1713.2024.1.10137.d4498ff-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713"
@@ -13166,6 +13155,16 @@
       "v": "bugfix-NestedShortLambdaExpression.2021.3.6327.57eb4d3",
       "pre": false,
       "branch": "bugfix-NestedShortLambdaExpression"
+    },
+    {
+      "v": "bugfix-Misc-issues-concerning-referencing-Configurations-#1791.2024.1.11295.de82a18-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-Misc-issues-concerning-referencing-Configurations-#1791"
+    },
+    {
+      "v": "bugfix-Misc-issues-concerning-referencing-Configurations-#1791.2024.1.11293.58cd57a-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-Misc-issues-concerning-referencing-Configurations-#1791"
     },
     {
       "v": "bugfix-Misc-issues-concerning-referencing-Configurations-#1791.2024.1.11270.283ec7a-SNAPSHOT",
