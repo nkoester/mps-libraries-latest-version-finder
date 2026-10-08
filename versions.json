@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T11:47:29.314Z",
+  "generatedAt": "2026-10-08T21:50:23.096Z",
   "libraries": [
     {
       "groupId": "com.jetbrains.mps",
@@ -498,11 +498,11 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 3028,
+      "total": 3031,
       "released": 1713,
       "stable": 1706,
       "preRelease": 7,
-      "branchCount": 1315,
+      "branchCount": 1318,
       "branches": 275,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [
