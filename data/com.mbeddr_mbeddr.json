@@ -3,12 +3,12 @@
   "artifactId": "mbeddr",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-10-08T21:50:23.096Z",
-  "total": 2680,
-  "released": 1830,
-  "stable": 1830,
+  "generatedAt": "2026-10-09T11:39:59.150Z",
+  "total": 2671,
+  "released": 1831,
+  "stable": 1831,
   "preRelease": 0,
-  "branchCount": 850,
+  "branchCount": 840,
   "branches": 202,
   "lines": [
     {
@@ -1695,11 +1695,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26619.e47bad1",
+      "latest": "2025.1.26622.e47bad1",
       "latestIsPreRelease": false,
-      "total": 246,
-      "stable": 246,
+      "total": 247,
+      "stable": 247,
       "versions": [
+        {
+          "v": "2025.1.26622.e47bad1",
+          "pre": false
+        },
         {
           "v": "2025.1.26619.e47bad1",
           "pre": false
@@ -7550,11 +7554,6 @@
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.24929.755f994-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion"
-    },
-    {
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.24929.6a9d5fa-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion"
@@ -7915,21 +7914,6 @@
       "branch": "renovate-master-mpsmaster"
     },
     {
-      "v": "renovate-master-mpsmaster.9999.9.25171.ce39187-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsmaster"
-    },
-    {
-      "v": "renovate-master-mpsmaster.9999.9.25171.3bcd388-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsmaster"
-    },
-    {
-      "v": "renovate-master-mpsmaster.9999.9.25163.dc8b69b-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsmaster"
-    },
-    {
       "v": "renovate-master-mpsbuild.9999.9.24950.f001553-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsbuild"
@@ -7946,11 +7930,6 @@
     },
     {
       "v": "renovate-master-mpsbuild.9999.9.24950.035fbe6-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsbuild"
-    },
-    {
-      "v": "renovate-master-mpsbuild.9999.9.24946.5cad6b4-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsbuild"
     },
@@ -8171,11 +8150,6 @@
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25048.2c152d5-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25048.059c043-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
     },
@@ -8413,11 +8387,6 @@
       "v": "renovate-maintenance-mps20251-third-party-minor.2025.1.24879.1b419e2-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-third-party-minor"
-    },
-    {
-      "v": "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24740.90b859b-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24732.3b2ee96-SNAPSHOT",
@@ -9225,22 +9194,12 @@
       "branch": "merge-mps20251"
     },
     {
-      "v": "merge-mps20251.2025.1.24825.7d61585-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
       "v": "merge-mps20251.2025.1.24746.46f3d90-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
     {
       "v": "merge-mps20251.2025.1.24744.16c7d46-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
-      "v": "merge-mps20251.2025.1.24736.eb975d0-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
@@ -10016,11 +9975,6 @@
     },
     {
       "v": "merge-master.9999.9.25176.ff7204a-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
-      "v": "merge-master.9999.9.25170.95a74d9-SNAPSHOT",
       "pre": true,
       "branch": "merge-master"
     },

@@ -3,13 +3,13 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-08T21:50:23.096Z",
-  "total": 3031,
+  "generatedAt": "2026-10-09T11:39:59.150Z",
+  "total": 3015,
   "released": 1713,
   "stable": 1706,
   "preRelease": 7,
-  "branchCount": 1318,
-  "branches": 275,
+  "branchCount": 1302,
+  "branches": 272,
   "lines": [
     {
       "line": "9999.9",
@@ -7142,11 +7142,6 @@
       "branch": "renovate-mpsversion"
     },
     {
-      "v": "renovate-mpsversion.9999.9.9598.097c231-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-mpsversion"
-    },
-    {
       "v": "renovate-mpsversion.9999.9.9560.7ebd872-SNAPSHOT",
       "pre": true,
       "branch": "renovate-mpsversion"
@@ -7178,11 +7173,6 @@
     },
     {
       "v": "renovate-master-patch-third-party-minor.9999.9.10635.3ada2c1-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-third-party-minor"
-    },
-    {
-      "v": "renovate-master-patch-third-party-minor.9999.9.10588.227082c-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-third-party-minor"
     },
@@ -7253,11 +7243,6 @@
     },
     {
       "v": "renovate-master-mpsversion.9999.9.10624.7dfb943-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsversion"
-    },
-    {
-      "v": "renovate-master-mpsversion.9999.9.10587.12fe953-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsversion"
     },
@@ -8032,11 +8017,6 @@
       "branch": "renovate-maintenance-mps20241-github-actions"
     },
     {
-      "v": "renovate-maintenance-mps20241-github-actions.2024.1.10584.e72c6ec-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-github-actions"
-    },
-    {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.10581.60e3d41-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions"
@@ -8058,11 +8038,6 @@
     },
     {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.10151.434797d-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-github-actions"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-github-actions.2024.1.9973.5d2909d-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions"
     },
@@ -8090,11 +8065,6 @@
       "v": "renovate-dependency-check-dependency-check_action-digest.9999.9.9534.2692978-SNAPSHOT",
       "pre": true,
       "branch": "renovate-dependency-check-dependency-check_action-digest"
-    },
-    {
-      "v": "renovate-de.itemis.mps.gradle.common-1.x.9999.9.9820.b78d1bc-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-de.itemis.mps.gradle.common-1.x"
     },
     {
       "v": "renovate-de.itemis.mps.build-backends-remigrate-1.x.9999.9.9942.234f149-SNAPSHOT",
@@ -8155,11 +8125,6 @@
       "v": "refactor-nexusPublication.2020.3.5630.b7e5774",
       "pre": false,
       "branch": "refactor-nexusPublication"
-    },
-    {
-      "v": "refactor-modelCheck.2024.1.9957.c2fa57e-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-modelCheck"
     },
     {
       "v": "refactor-merge_2021.3_into_2022.2.2022.2.6545.b4b2046",
@@ -8372,11 +8337,6 @@
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
     },
     {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9794.137846c-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
-    },
-    {
       "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9769.0bd4176-SNAPSHOT",
       "pre": true,
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
@@ -8398,11 +8358,6 @@
     },
     {
       "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9724.da83211-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
-    },
-    {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9715.da83211-SNAPSHOT",
       "pre": true,
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
     },
@@ -8922,11 +8877,6 @@
       "branch": "merge-mps20251"
     },
     {
-      "v": "merge-mps20251.2025.1.10593.cdc56b1-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
       "v": "merge-mps20251.2025.1.10577.c0330bc-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
@@ -9282,11 +9232,6 @@
       "branch": "merge-mps20241"
     },
     {
-      "v": "merge-mps20241.2025.1.10016.69628cf-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241"
-    },
-    {
       "v": "merge-mps20241.2025.1.10008.f229e39-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20241"
@@ -9312,11 +9257,6 @@
       "branch": "merge-mps20241"
     },
     {
-      "v": "merge-mps20241.2025.1.9774.c98f967-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241"
-    },
-    {
       "v": "merge-mps20241.2025.1.9773.376533b-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20241"
@@ -9333,11 +9273,6 @@
     },
     {
       "v": "merge-mps20241.2025.1.9618.f78fc57-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241"
-    },
-    {
-      "v": "merge-mps20241.2025.1.9505.b7c4259-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20241"
     },
@@ -9908,16 +9843,6 @@
     },
     {
       "v": "merge-master.2025.1.10638.330e147-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
-      "v": "merge-master.2025.1.10595.259d6f8-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
-      "v": "merge-master.2025.1.10592.1b258d7-SNAPSHOT",
       "pre": true,
       "branch": "merge-master"
     },
@@ -10905,11 +10830,6 @@
       "v": "feature-mps20212.2021.2.5581.3fbd5a2",
       "pre": false,
       "branch": "feature-mps20212"
-    },
-    {
-      "v": "feature-mps-2024.1.6.2024.1.9803.c960d8b-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-mps-2024"
     },
     {
       "v": "feature-migration_2023.2.2023.2.6577.91a23fb",
@@ -13177,6 +13097,11 @@
       "branch": "bugfix-NestedShortLambdaExpression"
     },
     {
+      "v": "bugfix-Misc-issues-concerning-referencing-Configurations-#1791.2024.1.11303.c8d28bd-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-Misc-issues-concerning-referencing-Configurations-#1791"
+    },
+    {
       "v": "bugfix-Misc-issues-concerning-referencing-Configurations-#1791.2024.1.11295.de82a18-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-Misc-issues-concerning-referencing-Configurations-#1791"
@@ -13338,11 +13263,6 @@
     },
     {
       "v": "bugfix-Fix-Diamond-Problem-&amp;-Refactoring-#1590.2024.1.9669.652d673-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-Fix-Diamond-Problem-&amp;-Refactoring-#1590"
-    },
-    {
-      "v": "bugfix-Fix-Diamond-Problem-&amp;-Refactoring-#1590.2024.1.9666.0e216d0-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-Fix-Diamond-Problem-&amp;-Refactoring-#1590"
     },

@@ -3,13 +3,13 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-08T21:50:23.096Z",
+  "generatedAt": "2026-10-09T11:39:59.150Z",
   "total": 1034,
-  "released": 814,
-  "stable": 796,
+  "released": 815,
+  "stable": 797,
   "preRelease": 18,
-  "branchCount": 220,
-  "branches": 68,
+  "branchCount": 219,
+  "branches": 67,
   "lines": [
     {
       "line": "9999.9",
@@ -151,11 +151,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3672.edfbfb9",
+      "latest": "2025.1.3674.d7bac18",
       "latestIsPreRelease": false,
-      "total": 108,
-      "stable": 108,
+      "total": 109,
+      "stable": 109,
       "versions": [
+        {
+          "v": "2025.1.3674.d7bac18",
+          "pre": false
+        },
         {
           "v": "2025.1.3672.edfbfb9",
           "pre": false
@@ -3752,11 +3756,6 @@
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
     },
     {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2219.cee9f5b-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
-    },
-    {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2190.15520eb-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
@@ -3865,11 +3864,6 @@
       "v": "premerge-383700.2023.2.1450.2067ef9-SNAPSHOT",
       "pre": true,
       "branch": "premerge-383700"
-    },
-    {
-      "v": "pom-scm.2024.1.2217.64da1b7-SNAPSHOT",
-      "pre": true,
-      "branch": "pom-scm"
     },
     {
       "v": "performance-tables-caching.2025.1.2276.17b4a67-SNAPSHOT",
@@ -4280,6 +4274,11 @@
       "v": "fix-teamcity-kotlin-dsl.2024.1.2314.321a148-SNAPSHOT",
       "pre": true,
       "branch": "fix-teamcity-kotlin-dsl"
+    },
+    {
+      "v": "fix-tables-partial-table-header-identity.2025.1.2415.be14035-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-tables-partial-table-header-identity"
     },
     {
       "v": "fix-tables-partial-table-header-identity.2025.1.2407.8777412-SNAPSHOT",

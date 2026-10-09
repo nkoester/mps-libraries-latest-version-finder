@@ -3,13 +3,13 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-08T21:50:23.096Z",
-  "total": 2999,
-  "released": 2013,
-  "stable": 2013,
+  "generatedAt": "2026-10-09T11:39:59.150Z",
+  "total": 2989,
+  "released": 2014,
+  "stable": 2014,
   "preRelease": 0,
-  "branchCount": 986,
-  "branches": 242,
+  "branchCount": 975,
+  "branches": 240,
   "lines": [
     {
       "line": "9999.9",
@@ -1759,11 +1759,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26619.e47bad1",
+      "latest": "2025.1.26622.e47bad1",
       "latestIsPreRelease": false,
-      "total": 248,
-      "stable": 248,
+      "total": 249,
+      "stable": 249,
       "versions": [
+        {
+          "v": "2025.1.26622.e47bad1",
+          "pre": false
+        },
         {
           "v": "2025.1.26619.e47bad1",
           "pre": false
@@ -8245,11 +8249,6 @@
       "branch": "renovate-reconfigure"
     },
     {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.25050.5d2b428-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion"
-    },
-    {
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.25040.c9b6cff-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion"
@@ -8275,11 +8274,6 @@
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.24992.cc48383-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion"
-    },
-    {
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.24990.2a41a2e-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion"
@@ -8291,11 +8285,6 @@
     },
     {
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.24975.b2f6c6b-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion"
-    },
-    {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.24969.d9457b8-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
@@ -8680,11 +8669,6 @@
       "branch": "renovate-master-mpsmaster"
     },
     {
-      "v": "renovate-master-mpsmaster.9999.9.25171.ce39187-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsmaster"
-    },
-    {
       "v": "renovate-master-mpsmaster.9999.9.25171.3bcd388-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsmaster"
@@ -8895,11 +8879,6 @@
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
     },
     {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25048.a7523bb-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
-    },
-    {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25048.76c1aeb-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
@@ -8941,11 +8920,6 @@
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25024.425f18a-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25024.295c1f5-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
     },
@@ -9775,11 +9749,6 @@
       "branch": "premerge-385170"
     },
     {
-      "v": "premerge-385094.9999.9.24608.9f94be4-SNAPSHOT",
-      "pre": true,
-      "branch": "premerge-385094"
-    },
-    {
       "v": "premerge-385070.9999.9.24608.39402d9-SNAPSHOT",
       "pre": true,
       "branch": "premerge-385070"
@@ -10166,11 +10135,6 @@
     },
     {
       "v": "merge-mps20251.2025.1.24829.989ea03-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
-      "v": "merge-mps20251.2025.1.24825.7d61585-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
@@ -11370,11 +11334,6 @@
       "branch": "merge-master"
     },
     {
-      "v": "merge-master.9999.9.24978.7bdd881-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
       "v": "merge-master.9999.9.24948.91d8f88-SNAPSHOT",
       "pre": true,
       "branch": "merge-master"
@@ -11396,11 +11355,6 @@
     },
     {
       "v": "merge-master.9999.9.24879.440d704-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
-      "v": "merge-master.9999.9.24818.7fec76d-SNAPSHOT",
       "pre": true,
       "branch": "merge-master"
     },
@@ -11433,11 +11387,6 @@
       "v": "ignore-flaky-test.2024.1.24113.d95bb29-SNAPSHOT",
       "pre": true,
       "branch": "ignore-flaky-test"
-    },
-    {
-      "v": "hyperlink-listener-fixes.2024.1.24126.1058a13-SNAPSHOT",
-      "pre": true,
-      "branch": "hyperlink-listener-fixes"
     },
     {
       "v": "fix-suspend-contextactions-when-closed.2023.2.23750.5f571ff-SNAPSHOT",
