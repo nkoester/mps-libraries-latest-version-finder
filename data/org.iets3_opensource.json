@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-09T11:39:59.150Z",
-  "total": 3015,
-  "released": 1713,
-  "stable": 1706,
+  "generatedAt": "2026-10-09T21:29:02.328Z",
+  "total": 3018,
+  "released": 1714,
+  "stable": 1707,
   "preRelease": 7,
-  "branchCount": 1302,
+  "branchCount": 1304,
   "branches": 272,
   "lines": [
     {
@@ -1408,11 +1408,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11291.6d613a1",
+      "latest": "2024.1.11305.be3d12d",
       "latestIsPreRelease": false,
-      "total": 260,
-      "stable": 259,
+      "total": 261,
+      "stable": 260,
       "versions": [
+        {
+          "v": "2024.1.11305.be3d12d",
+          "pre": false
+        },
         {
           "v": "2024.1.11291.6d613a1",
           "pre": false
@@ -7407,6 +7411,11 @@
       "branch": "renovate-maintenance-mps20251-github-actions"
     },
     {
+      "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11306.b44bc11-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-third-party-minor"
+    },
+    {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11272.34fe5cc-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-third-party-minor"
@@ -8968,6 +8977,11 @@
     },
     {
       "v": "merge-mps20251.2025.1.9749.21b3417-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11304.be3d12d-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
