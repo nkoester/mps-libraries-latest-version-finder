@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T21:29:02.328Z",
+  "generatedAt": "2026-10-10T16:09:13.703Z",
   "libraries": [
     {
       "groupId": "com.jetbrains.mps",
@@ -256,11 +256,11 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 2989,
+      "total": 2988,
       "released": 2014,
       "stable": 2014,
       "preRelease": 0,
-      "branchCount": 975,
+      "branchCount": 974,
       "branches": 240,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [

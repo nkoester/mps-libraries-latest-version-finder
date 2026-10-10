@@ -3,12 +3,12 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-09T21:29:02.328Z",
-  "total": 2989,
+  "generatedAt": "2026-10-10T16:09:13.703Z",
+  "total": 2988,
   "released": 2014,
   "stable": 2014,
   "preRelease": 0,
-  "branchCount": 975,
+  "branchCount": 974,
   "branches": 240,
   "lines": [
     {
@@ -8844,11 +8844,6 @@
       "branch": "renovate-master-mpsbuild"
     },
     {
-      "v": "renovate-master-mpsbuild.9999.9.24632.c600c55-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsbuild"
-    },
-    {
       "v": "renovate-master-mpsbuild.9999.9.24630.c2df47e-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsbuild"
@@ -8880,11 +8875,6 @@
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25048.76c1aeb-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25048.2e62f3e-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
     },
@@ -9187,6 +9177,11 @@
       "v": "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24520.683d25c-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24901.0620bfd-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24896.1ecf89b-SNAPSHOT",

@@ -3,7 +3,7 @@
   "artifactId": "mbeddr",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-10-09T21:29:02.328Z",
+  "generatedAt": "2026-10-10T16:09:13.703Z",
   "total": 2671,
   "released": 1831,
   "stable": 1831,
@@ -8049,11 +8049,6 @@
       "branch": "renovate-master-mpsbuild"
     },
     {
-      "v": "renovate-master-mpsbuild.9999.9.24821.00acff1-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsbuild"
-    },
-    {
       "v": "renovate-master-mpsbuild.9999.9.24819.bd7f9b3-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsbuild"
@@ -8492,6 +8487,11 @@
       "v": "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24611.7b709a7-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24901.0620bfd-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24896.1ecf89b-SNAPSHOT",
