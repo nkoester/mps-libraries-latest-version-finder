@@ -3,13 +3,13 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-10T16:09:13.703Z",
+  "generatedAt": "2026-10-12T12:46:30.344Z",
   "total": 1034,
   "released": 815,
   "stable": 797,
   "preRelease": 18,
   "branchCount": 219,
-  "branches": 67,
+  "branches": 68,
   "lines": [
     {
       "line": "9999.9",
@@ -3751,11 +3751,6 @@
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
     },
     {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2220.81c1d92-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
-    },
-    {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2190.15520eb-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
@@ -4399,6 +4394,11 @@
       "v": "feature-slisson-word-formatting-2025.2025.1.2260.d520ea9-SNAPSHOT",
       "pre": true,
       "branch": "feature-slisson-word-formatting-2025"
+    },
+    {
+      "v": "feature-richtext-styles.2025.1.2416.19ac623-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-richtext-styles"
     },
     {
       "v": "feature-changelog.2021.1.2602.be16227",

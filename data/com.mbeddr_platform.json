@@ -3,13 +3,13 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-10T16:09:13.703Z",
+  "generatedAt": "2026-10-12T12:46:30.344Z",
   "total": 2988,
-  "released": 2014,
-  "stable": 2014,
+  "released": 2016,
+  "stable": 2016,
   "preRelease": 0,
-  "branchCount": 974,
-  "branches": 240,
+  "branchCount": 972,
+  "branches": 238,
   "lines": [
     {
       "line": "9999.9",
@@ -1759,11 +1759,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26622.e47bad1",
+      "latest": "2025.1.26623.7e2902b",
       "latestIsPreRelease": false,
-      "total": 249,
-      "stable": 249,
+      "total": 250,
+      "stable": 250,
       "versions": [
+        {
+          "v": "2025.1.26623.7e2902b",
+          "pre": false
+        },
         {
           "v": "2025.1.26622.e47bad1",
           "pre": false
@@ -3045,11 +3049,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.26616.1947094",
+      "latest": "2024.1.26624.2506083",
       "latestIsPreRelease": false,
-      "total": 241,
-      "stable": 241,
+      "total": 242,
+      "stable": 242,
       "versions": [
+        {
+          "v": "2024.1.26624.2506083",
+          "pre": false
+        },
         {
           "v": "2024.1.26616.1947094",
           "pre": false
@@ -8369,11 +8377,6 @@
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.24619.7c2d234-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion"
-    },
-    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25302.52a169b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster"
@@ -8477,6 +8480,11 @@
       "v": "renovate-master-org.commonmark-commonmark-0.x.9999.9.24871.afdb69b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-org.commonmark-commonmark-0.x"
+    },
+    {
+      "v": "renovate-master-mpsmaster.9999.9.25330.4f0ee87-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster"
     },
     {
       "v": "renovate-master-mpsmaster.9999.9.25317.8ecff8b-SNAPSHOT",
@@ -8712,11 +8720,6 @@
       "v": "renovate-master-mpsmaster.9999.9.25143.2ef85b1-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsmaster"
-    },
-    {
-      "v": "renovate-master-mpsbuild.9999.9.24950.f001553-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsbuild"
     },
     {
       "v": "renovate-master-mpsbuild.9999.9.24950.845cda3-SNAPSHOT",
@@ -9344,11 +9347,6 @@
       "branch": "renovate-maintenance-mps20251-major-github-actions"
     },
     {
-      "v": "renovate-maintenance-mps20251-major-github-actions.2025.1.24747.cd63107-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20251-major-github-actions"
-    },
-    {
       "v": "renovate-maintenance-mps20251-major-github-actions.2025.1.24700.909b718-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-major-github-actions"
@@ -9879,11 +9877,6 @@
       "branch": "premerge-383344"
     },
     {
-      "v": "premerge-383151.2023.2.23730.6c5d3f5-SNAPSHOT",
-      "pre": true,
-      "branch": "premerge-383151"
-    },
-    {
       "v": "premerge-382626.9999.9.24450.39d2978-SNAPSHOT",
       "pre": true,
       "branch": "premerge-382626"
@@ -9984,6 +9977,11 @@
       "branch": "merge-2021"
     },
     {
+      "v": "merge-mps20261.2026.1.25292.4a6e727-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
       "v": "merge-mps20261.2026.1.25289.9e91d08-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
@@ -10077,6 +10075,11 @@
       "v": "merge-mps20261.2026.1.25192.6195fec-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
+    },
+    {
+      "v": "merge-mps20251.2025.1.24914.a3f9bc9-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
     },
     {
       "v": "merge-mps20251.2025.1.24900.27ae5fe-SNAPSHOT",
@@ -13067,11 +13070,6 @@
       "v": "bugfix-FixAndImproveTraceExplorer.2021.3.24070.7baa44f",
       "pre": false,
       "branch": "bugfix-FixAndImproveTraceExplorer"
-    },
-    {
-      "v": "ban-path-vars-from-libraries.2024.1.24181.6531880-SNAPSHOT",
-      "pre": true,
-      "branch": "ban-path-vars-from-libraries"
     },
     {
       "v": "assessment-scope-compatibility.2025.1.24562.01273a3-SNAPSHOT",

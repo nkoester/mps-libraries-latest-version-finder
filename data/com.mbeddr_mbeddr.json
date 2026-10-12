@@ -3,13 +3,13 @@
   "artifactId": "mbeddr",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-10-10T16:09:13.703Z",
-  "total": 2671,
-  "released": 1831,
-  "stable": 1831,
+  "generatedAt": "2026-10-12T12:46:30.344Z",
+  "total": 2661,
+  "released": 1833,
+  "stable": 1833,
   "preRelease": 0,
-  "branchCount": 840,
-  "branches": 202,
+  "branchCount": 828,
+  "branches": 199,
   "lines": [
     {
       "line": "9999.9",
@@ -1695,11 +1695,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26622.e47bad1",
+      "latest": "2025.1.26623.7e2902b",
       "latestIsPreRelease": false,
-      "total": 247,
-      "stable": 247,
+      "total": 248,
+      "stable": 248,
       "versions": [
+        {
+          "v": "2025.1.26623.7e2902b",
+          "pre": false
+        },
         {
           "v": "2025.1.26622.e47bad1",
           "pre": false
@@ -2969,11 +2973,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.26616.1947094",
+      "latest": "2024.1.26624.2506083",
       "latestIsPreRelease": false,
-      "total": 238,
-      "stable": 238,
+      "total": 239,
+      "stable": 239,
       "versions": [
+        {
+          "v": "2024.1.26624.2506083",
+          "pre": false
+        },
         {
           "v": "2024.1.26616.1947094",
           "pre": false
@@ -7539,11 +7547,6 @@
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.24975.b2f6c6b-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion"
-    },
-    {
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.24962.5b4caf8-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion"
@@ -7584,22 +7587,12 @@
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.24859.0fe5373-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion"
-    },
-    {
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.24857.9d05fac-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.24854.c40d2a3-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion"
-    },
-    {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.24819.36b7701-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
@@ -7722,6 +7715,11 @@
       "v": "renovate-master-net.sourceforge.plantuml-plantuml-1.x.9999.9.24871.93e81bf-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-net.sourceforge.plantuml-plantuml-1.x"
+    },
+    {
+      "v": "renovate-master-mpsmaster.9999.9.25330.4f0ee87-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster"
     },
     {
       "v": "renovate-master-mpsmaster.9999.9.25317.8ecff8b-SNAPSHOT",
@@ -8054,11 +8052,6 @@
       "branch": "renovate-master-mpsbuild"
     },
     {
-      "v": "renovate-master-mpsbuild.9999.9.24819.b06b7f8-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsbuild"
-    },
-    {
       "v": "renovate-master-mpsbuild.9999.9.24819.a0812a2-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsbuild"
@@ -8199,16 +8192,6 @@
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
     },
     {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.24992.a8d0408-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.24992.499dbef-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
-    },
-    {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.24990.bb9f4c2-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
@@ -8265,11 +8248,6 @@
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.24962.c785580-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.24962.a6e788e-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
     },
@@ -8704,11 +8682,6 @@
       "branch": "renovate-maintenance-mps20241-patch-mpsextensions241"
     },
     {
-      "v": "renovate-maintenance-mps20241-patch-mpsbuild.2024.1.24103.7dde118-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-patch-mpsbuild"
-    },
-    {
       "v": "renovate-maintenance-mps20241-org.cyclonedx.bom-3.x.2024.1.24122.9566cba-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-org.cyclonedx.bom-3.x"
@@ -9044,6 +9017,11 @@
       "branch": "merge-2021"
     },
     {
+      "v": "merge-mps20261.2026.1.25292.4a6e727-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
       "v": "merge-mps20261.2026.1.25289.9e91d08-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
@@ -9139,6 +9117,11 @@
       "branch": "merge-mps20261"
     },
     {
+      "v": "merge-mps20251.2025.1.24914.a3f9bc9-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
       "v": "merge-mps20251.2025.1.24900.27ae5fe-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
@@ -9185,11 +9168,6 @@
     },
     {
       "v": "merge-mps20251.2025.1.24834.b8b0589-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
-      "v": "merge-mps20251.2025.1.24829.989ea03-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
@@ -9974,17 +9952,7 @@
       "branch": "merge-master"
     },
     {
-      "v": "merge-master.9999.9.25176.ff7204a-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
       "v": "merge-master.9999.9.25055.d462805-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
-      "v": "merge-master.9999.9.25039.e23a888-SNAPSHOT",
       "pre": true,
       "branch": "merge-master"
     },
@@ -10040,16 +10008,6 @@
     },
     {
       "v": "merge-master.9999.9.24960.9efd5f4-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
-      "v": "merge-master.9999.9.24942.e9addb8-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
-      "v": "merge-master.9999.9.24925.76525d0-SNAPSHOT",
       "pre": true,
       "branch": "merge-master"
     },
@@ -11289,11 +11247,6 @@
       "branch": "bugfix-failing_test_1023"
     },
     {
-      "v": "bugfix-escape_dots_in_gen_plan_visualizer.2025.1.24728.e1a511f-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-escape_dots_in_gen_plan_visualizer"
-    },
-    {
       "v": "bugfix-dummy_computation_trace_20213.2021.3.24240.b1fbae6",
       "pre": false,
       "branch": "bugfix-dummy_computation_trace_20213"
@@ -11652,11 +11605,6 @@
       "v": "bugfix-FixAndImproveTraceExplorer.2021.3.24070.7baa44f",
       "pre": false,
       "branch": "bugfix-FixAndImproveTraceExplorer"
-    },
-    {
-      "v": "ban-path-vars-from-libraries.2024.1.24181.6531880-SNAPSHOT",
-      "pre": true,
-      "branch": "ban-path-vars-from-libraries"
     },
     {
       "v": "artem-261.9999.9.24865.b5a6869-SNAPSHOT",
