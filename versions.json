@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T12:46:30.344Z",
+  "generatedAt": "2026-10-12T23:30:45.733Z",
   "libraries": [
     {
       "groupId": "com.jetbrains.mps",
@@ -149,11 +149,11 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1034,
-      "released": 815,
-      "stable": 797,
+      "total": 1038,
+      "released": 816,
+      "stable": 798,
       "preRelease": 18,
-      "branchCount": 219,
+      "branchCount": 222,
       "branches": 68,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
@@ -173,10 +173,10 @@
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.3674.d7bac18",
+          "latest": "2025.1.3675.6a24bfd",
           "latestIsPreRelease": false,
-          "total": 109,
-          "stable": 109
+          "total": 110,
+          "stable": 110
         },
         {
           "line": "2024.3",
@@ -256,34 +256,34 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 2988,
-      "released": 2016,
-      "stable": 2016,
+      "total": 2997,
+      "released": 2019,
+      "stable": 2019,
       "preRelease": 0,
-      "branchCount": 972,
+      "branchCount": 978,
       "branches": 238,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
         {
           "line": "9999.9",
-          "latest": "9999.9.26621.423e435",
+          "latest": "9999.9.26627.3fc8395",
           "latestIsPreRelease": false,
-          "total": 407,
-          "stable": 407
+          "total": 408,
+          "stable": 408
         },
         {
           "line": "2026.1",
-          "latest": "2026.1.26620.edb7176",
+          "latest": "2026.1.26626.2299bb1",
           "latestIsPreRelease": false,
-          "total": 25,
-          "stable": 25
+          "total": 26,
+          "stable": 26
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.26623.7e2902b",
+          "latest": "2025.1.26625.9d29482",
           "latestIsPreRelease": false,
-          "total": 250,
-          "stable": 250
+          "total": 251,
+          "stable": 251
         },
         {
           "line": "2024.3",
@@ -384,34 +384,34 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2661,
-      "released": 1833,
-      "stable": 1833,
+      "total": 2670,
+      "released": 1836,
+      "stable": 1836,
       "preRelease": 0,
-      "branchCount": 828,
+      "branchCount": 834,
       "branches": 199,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
         {
           "line": "9999.9",
-          "latest": "9999.9.26621.423e435",
+          "latest": "9999.9.26627.3fc8395",
           "latestIsPreRelease": false,
-          "total": 391,
-          "stable": 391
+          "total": 392,
+          "stable": 392
         },
         {
           "line": "2026.1",
-          "latest": "2026.1.26620.edb7176",
+          "latest": "2026.1.26626.2299bb1",
           "latestIsPreRelease": false,
-          "total": 25,
-          "stable": 25
+          "total": 26,
+          "stable": 26
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.26623.7e2902b",
+          "latest": "2025.1.26625.9d29482",
           "latestIsPreRelease": false,
-          "total": 248,
-          "stable": 248
+          "total": 249,
+          "stable": 249
         },
         {
           "line": "2024.3",
@@ -498,11 +498,11 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 3010,
+      "total": 3012,
       "released": 1714,
       "stable": 1707,
       "preRelease": 7,
-      "branchCount": 1296,
+      "branchCount": 1298,
       "branches": 270,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [
