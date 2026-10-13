@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-13T13:33:25.480Z",
-  "total": 3020,
-  "released": 1717,
-  "stable": 1710,
+  "generatedAt": "2026-10-13T14:40:16.976Z",
+  "total": 3025,
+  "released": 1719,
+  "stable": 1712,
   "preRelease": 7,
-  "branchCount": 1303,
+  "branchCount": 1306,
   "branches": 270,
   "lines": [
     {
@@ -782,11 +782,15 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11263.bfdd608",
+      "latest": "2026.1.11328.df20df8",
       "latestIsPreRelease": false,
-      "total": 20,
-      "stable": 20,
+      "total": 21,
+      "stable": 21,
       "versions": [
+        {
+          "v": "2026.1.11328.df20df8",
+          "pre": false
+        },
         {
           "v": "2026.1.11263.bfdd608",
           "pre": false
@@ -871,11 +875,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11325.b63c645",
+      "latest": "2025.1.11330.5f40c5e",
       "latestIsPreRelease": false,
-      "total": 133,
-      "stable": 127,
+      "total": 134,
+      "stable": 128,
       "versions": [
+        {
+          "v": "2025.1.11330.5f40c5e",
+          "pre": false
+        },
         {
           "v": "2025.1.11325.b63c645",
           "pre": false
@@ -8553,6 +8561,11 @@
       "branch": "merge-mps20261"
     },
     {
+      "v": "merge-mps20261.2025.1.11329.5f40c5e-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
       "v": "merge-mps20261.2025.1.11286.5fae95f-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
@@ -11591,6 +11604,16 @@
       "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10686.998d901-SNAPSHOT",
       "pre": true,
       "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759"
+    },
+    {
+      "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11332.047337d-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978"
+    },
+    {
+      "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11331.ef0af6d-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978"
     },
     {
       "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11323.fd0a7c8-SNAPSHOT",

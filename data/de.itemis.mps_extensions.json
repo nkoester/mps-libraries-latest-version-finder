@@ -3,12 +3,12 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-13T13:33:25.480Z",
-  "total": 1050,
+  "generatedAt": "2026-10-13T14:40:16.976Z",
+  "total": 1051,
   "released": 818,
   "stable": 799,
   "preRelease": 19,
-  "branchCount": 232,
+  "branchCount": 233,
   "branches": 69,
   "lines": [
     {
@@ -4396,6 +4396,11 @@
       "v": "fix-headless-tables.9999.9.2231.de04d8a-SNAPSHOT",
       "pre": true,
       "branch": "fix-headless-tables"
+    },
+    {
+      "v": "feature-view-model.2025.1.2433.8ba7539-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
     },
     {
       "v": "feature-view-model.2025.1.2432.9fe060f-SNAPSHOT",

@@ -1,0 +1,209 @@
+{
+  "groupId": "org.iets3",
+  "artifactId": "opensource",
+  "slug": "org.iets3_opensource",
+  "versions": {
+    "9999.9.10936.1f10368": [
+      [
+        "org.mpsqa_all-in-one",
+        "9999.9.1454.1955330"
+      ],
+      [
+        "com.mbeddr_platform",
+        "9999.9.26559.7732e79"
+      ]
+    ],
+    "2026.1.11328.df20df8": [
+      [
+        "org.mpsqa_all-in-one",
+        "2026.1.1448.2560595"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2026.1.26592.4611389"
+      ]
+    ],
+    "2026.1.11263.bfdd608": [
+      [
+        "org.mpsqa_all-in-one",
+        "2026.1.1448.2560595"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2026.1.26592.4611389"
+      ]
+    ],
+    "2025.1.11330.5f40c5e": [
+      [
+        "org.mpsqa_all-in-one",
+        "2025.1.1438.801e837"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2025.1.26619.e47bad1"
+      ]
+    ],
+    "2025.1.11325.b63c645": [
+      [
+        "org.mpsqa_all-in-one",
+        "2025.1.1438.801e837"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2025.1.26619.e47bad1"
+      ]
+    ],
+    "2024.1.11327.3ef2e67": [
+      [
+        "org.mpsqa_all-in-one",
+        "2024.1.1436.3cd3456"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2024.1.26624.2506083"
+      ]
+    ],
+    "2024.1.11320.c1d70b7": [
+      [
+        "org.mpsqa_all-in-one",
+        "2024.1.1436.3cd3456"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2024.1.26624.2506083"
+      ]
+    ],
+    "2023.2.9490.b7e2dfd": [
+      [
+        "org.mpsqa_all-in-one",
+        "2023.2.1062.24abe87"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2023.2.26236.4dd769e"
+      ]
+    ],
+    "2023.2.9427.4c40325": [
+      [
+        "org.mpsqa_all-in-one",
+        "2023.2.1062.24abe87"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2023.2.26236.4dd769e"
+      ]
+    ],
+    "2022.3.8656.444c955": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.3.853.fdd8b14"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.3.25409.b633ef3"
+      ]
+    ],
+    "2022.3.8642.d922c33": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.3.853.fdd8b14"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.3.25337.b633ef3"
+      ]
+    ],
+    "2022.2.9403.2aebea5": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.2.691.45f01da"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.2.26012.52911a0"
+      ]
+    ],
+    "2022.2.8654.2aebea5": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.2.691.45f01da"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.2.25405.52911a0"
+      ]
+    ],
+    "2021.3.8356.ce6ff8f": [
+      [
+        "com.mbeddr_platform",
+        "2021.3.24707.42254e5"
+      ]
+    ],
+    "2021.3.8137.49be13c": [
+      [
+        "com.mbeddr_platform",
+        "2021.3.24707.42254e5"
+      ]
+    ],
+    "2021.2.7340.ba128fb": [
+      [
+        "com.mbeddr_platform",
+        "2021.2.24668.69dd8f3"
+      ]
+    ],
+    "2021.2.6482.ba128fb": [
+      [
+        "com.mbeddr_platform",
+        "2021.2.24225.69dd8f3"
+      ]
+    ],
+    "2021.1.7836.d468f81": [
+      [
+        "com.mbeddr_platform",
+        "2021.1.24667.d97bc57"
+      ]
+    ],
+    "2021.1.7339.d468f81": [
+      [
+        "com.mbeddr_platform",
+        "2021.1.24667.d97bc57"
+      ]
+    ],
+    "2020.3.6625.a5def84": [
+      [
+        "com.mbeddr_platform",
+        "2020.3.24319.2804ee7"
+      ]
+    ],
+    "2020.2.5686.44ed42f": [
+      [
+        "com.mbeddr_platform",
+        "2020.2.23491.924ec3e"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2020.2.3"
+      ]
+    ],
+    "2020.1.6623.40014aa": [
+      [
+        "com.mbeddr_platform",
+        "2020.1.22983.1359870"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2020.1.7"
+      ]
+    ],
+    "2019.2.4266.15a3227": [
+      [
+        "com.mbeddr_platform",
+        "2019.2.22075.2c5f1d1"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2019.2.4"
+      ]
+    ]
+  }
+}
