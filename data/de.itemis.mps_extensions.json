@@ -3,21 +3,25 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-12T23:30:45.733Z",
-  "total": 1038,
-  "released": 816,
-  "stable": 798,
-  "preRelease": 18,
-  "branchCount": 222,
-  "branches": 68,
+  "generatedAt": "2026-10-13T12:28:32.877Z",
+  "total": 1048,
+  "released": 818,
+  "stable": 799,
+  "preRelease": 19,
+  "branchCount": 230,
+  "branches": 69,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.3669.f8c8760-SNAPSHOT",
+      "latest": "9999.9.3676.5d016ee-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 18,
+      "total": 19,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.3676.5d016ee-SNAPSHOT",
+          "pre": true
+        },
         {
           "v": "9999.9.3669.f8c8760-SNAPSHOT",
           "pre": true
@@ -94,11 +98,15 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.3671.724f373",
+      "latest": "2026.1.3677.5420850",
       "latestIsPreRelease": false,
-      "total": 12,
-      "stable": 12,
+      "total": 13,
+      "stable": 13,
       "versions": [
+        {
+          "v": "2026.1.3677.5420850",
+          "pre": false
+        },
         {
           "v": "2026.1.3671.724f373",
           "pre": false
@@ -3420,6 +3428,16 @@
       "branch": "renovate-mps-jbr"
     },
     {
+      "v": "renovate-master-mps.9999.9.2425.b643001-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2423.eb95fa8-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2422.3c21001-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps"
@@ -4378,6 +4396,36 @@
       "v": "fix-headless-tables.9999.9.2231.de04d8a-SNAPSHOT",
       "pre": true,
       "branch": "fix-headless-tables"
+    },
+    {
+      "v": "feature-view-model.2025.1.2430.e9cbf3f-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
+      "v": "feature-view-model.2025.1.2429.aea9f8a-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
+      "v": "feature-view-model.2025.1.2428.d2abf5b-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
+      "v": "feature-view-model.2025.1.2427.6813461-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
+      "v": "feature-view-model.2025.1.2426.35a348d-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
+      "v": "feature-view-model.2025.1.2424.e2bf083-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
     },
     {
       "v": "feature-upgrade_mps_20213_3.2021.3.2617.505157c",

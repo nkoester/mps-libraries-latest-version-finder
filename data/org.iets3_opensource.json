@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-12T23:30:45.733Z",
-  "total": 3012,
-  "released": 1714,
-  "stable": 1707,
+  "generatedAt": "2026-10-13T12:28:32.877Z",
+  "total": 3016,
+  "released": 1715,
+  "stable": 1708,
   "preRelease": 7,
-  "branchCount": 1298,
+  "branchCount": 1301,
   "branches": 270,
   "lines": [
     {
@@ -1408,11 +1408,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11305.be3d12d",
+      "latest": "2024.1.11320.c1d70b7",
       "latestIsPreRelease": false,
-      "total": 261,
-      "stable": 260,
+      "total": 262,
+      "stable": 261,
       "versions": [
+        {
+          "v": "2024.1.11320.c1d70b7",
+          "pre": false
+        },
         {
           "v": "2024.1.11305.be3d12d",
           "pre": false
@@ -7406,6 +7410,11 @@
       "branch": "renovate-maintenance-mps20251-github-actions"
     },
     {
+      "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11321.c9b0688-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-third-party-minor"
+    },
+    {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11306.b44bc11-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-third-party-minor"
@@ -11569,6 +11578,16 @@
       "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10686.998d901-SNAPSHOT",
       "pre": true,
       "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759"
+    },
+    {
+      "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11323.fd0a7c8-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978"
+    },
+    {
+      "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11322.80fa013-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978"
     },
     {
       "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11315.0b02bf8-SNAPSHOT",
