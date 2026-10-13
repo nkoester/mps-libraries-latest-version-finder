@@ -49,6 +49,32 @@ export function isPreRelease(version) {
   return PRE_RELEASE_RE.test(version);
 }
 
+/**
+ * Maven SNAPSHOT versions store their files under a timestamped name
+ * (`x-1.0-20261013.030247-1.pom`), never under `x-1.0-SNAPSHOT.pom`.
+ */
+export function isSnapshot(version) {
+  return /-SNAPSHOT$/i.test(version);
+}
+
+/**
+ * The timestamped file version for one extension, read from a SNAPSHOT
+ * version's own maven-metadata.xml. Null if the metadata does not say.
+ */
+export function snapshotFileVersion(metadataXml, extension) {
+  for (const [, block] of metadataXml.matchAll(/<snapshotVersion>([\s\S]*?)<\/snapshotVersion>/g)) {
+    if (/<classifier>/.test(block)) continue;
+    if (block.match(/<extension>\s*([^<]*?)\s*<\/extension>/)?.[1] !== extension) continue;
+    const value = block.match(/<value>\s*([^<]*?)\s*<\/value>/)?.[1];
+    if (value) return value;
+  }
+  // Older metadata only records the latest timestamp and build number.
+  const timestamp = metadataXml.match(/<timestamp>\s*([^<]*?)\s*<\/timestamp>/)?.[1];
+  const buildNumber = metadataXml.match(/<buildNumber>\s*([^<]*?)\s*<\/buildNumber>/)?.[1];
+  const base = metadataXml.match(/<version>\s*([^<]*?)-SNAPSHOT\s*<\/version>/i)?.[1];
+  return timestamp && buildNumber && base ? `${base}-${timestamp}-${buildNumber}` : null;
+}
+
 /** The MPS release line a version belongs to, or null if it has no `X.Y` prefix. */
 export function lineOf(version) {
   const match = version.match(LINE_RE);
@@ -168,13 +194,21 @@ export function buildLibraryData(rawVersions) {
   };
 }
 
-/** Repository links for one concrete version of a library. */
+/**
+ * Repository links for one concrete version of a library.
+ *
+ * `pom`/`zip` follow the release naming. For a SNAPSHOT they do not exist:
+ * read `versionMetadata`, then `pomFor(snapshotFileVersion(...))`.
+ */
 export function artifactUrls(library, version) {
   const base = library.metadataUrl.replace('maven-metadata.xml', '');
   const browseBase = base.replace('/repository/', '/service/rest/repository/browse/');
+  const file = (fileVersion, extension) => `${base}${version}/${library.artifactId}-${fileVersion}.${extension}`;
   return {
-    pom: `${base}${version}/${library.artifactId}-${version}.pom`,
-    zip: `${base}${version}/${library.artifactId}-${version}.zip`,
+    pom: file(version, 'pom'),
+    zip: file(version, 'zip'),
+    pomFor: (fileVersion) => file(fileVersion, 'pom'),
+    versionMetadata: `${base}${version}/maven-metadata.xml`,
     browse: `${browseBase}${version}`,
     folder: browseBase,
   };

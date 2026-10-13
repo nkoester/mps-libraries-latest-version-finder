@@ -20,6 +20,9 @@
  * its POM upload has finished. It is kept in `pending` and retried; only after
  * NOT_FOUND_TRIES attempts spanning NOT_FOUND_GRACE_MS is it recorded as null.
  *
+ * SNAPSHOT versions keep their POM under a timestamped name, so their own
+ * maven-metadata.xml is read first (two requests instead of one).
+ *
  * Only dependencies on libraries in scripts/libraries.json are kept.
  *
  * Usage: node scripts/fetch-deps.mjs [--max <n>]
@@ -30,7 +33,15 @@ import { existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { artifactUrls, compareVersions, isDevelopmentLine, parsePomDependencies, slugFor } from '../versions-lib.js';
+import {
+  artifactUrls,
+  compareVersions,
+  isDevelopmentLine,
+  isSnapshot,
+  parsePomDependencies,
+  slugFor,
+  snapshotFileVersion,
+} from '../versions-lib.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = join(ROOT, 'data');
@@ -42,6 +53,8 @@ const ATTEMPTS = 3;
 const DEFAULT_MAX = 150;
 const NOT_FOUND_TRIES = 3;
 const NOT_FOUND_GRACE_MS = 24 * 60 * 60 * 1000;
+/** Marks cache files written with the timestamped SNAPSHOT lookup. */
+const SNAPSHOT_LOOKUP = 'timestamped';
 
 function parseMax(argv) {
   const index = argv.indexOf('--max');
@@ -60,8 +73,8 @@ async function readJsonIfExists(path) {
   }
 }
 
-/** POM text, null on 404, throws on anything else after retries. */
-async function fetchPom(url) {
+/** Response text, null on 404, throws on anything else after retries. */
+async function fetchText(url) {
   let lastError;
   for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
     try {
@@ -75,6 +88,19 @@ async function fetchPom(url) {
     }
   }
   throw lastError;
+}
+
+/**
+ * POM text for one version, null on 404. A SNAPSHOT is resolved through its
+ * version metadata; without that metadata (a non-unique snapshot repository)
+ * the plain name is tried.
+ */
+async function fetchPom(library, version) {
+  const urls = artifactUrls(library, version);
+  if (!isSnapshot(version)) return fetchText(urls.pom);
+  const metadata = await fetchText(urls.versionMetadata);
+  const fileVersion = metadata && snapshotFileVersion(metadata, 'pom');
+  return fetchText(fileVersion ? urls.pomFor(fileVersion) : urls.pom);
 }
 
 async function pool(items, worker) {
@@ -112,13 +138,18 @@ async function main() {
     const previousFile = await readJsonIfExists(join(DEPS_DIR, `${library.slug}.json`));
     const previous = previousFile?.versions ?? {};
     const previousPending = previousFile?.pending ?? {};
+    // Files from before the timestamped lookup may hold SNAPSHOTs recorded
+    // as having no POM because the wrong file name was requested. One retry
+    // each; once the marker is written, a null is final again.
+    const retrySnapshots = previousFile?.snapshotLookup !== SNAPSHOT_LOOKUP;
     const released = new Set();
     const versions = {};
     const pending = {};
     for (const line of full.lines) {
       line.versions.forEach((entry, indexInLine) => {
         released.add(entry.v);
-        if (entry.v in previous) {
+        const stale = retrySnapshots && previous[entry.v] === null && isSnapshot(entry.v);
+        if (entry.v in previous && !stale) {
           versions[entry.v] = previous[entry.v];
           return;
         }
@@ -144,7 +175,7 @@ async function main() {
   await pool(jobs, async ({ library, version }) => {
     const cache = caches.get(library.slug);
     try {
-      const pom = await fetchPom(artifactUrls(library, version).pom);
+      const pom = await fetchPom(library, version);
       if (pom === null) {
         notFound++;
         const seen = cache.pending[version] ?? { firstSeen: new Date(now).toISOString(), tries: 0 };
@@ -175,6 +206,7 @@ async function main() {
       groupId: library.groupId,
       artifactId: library.artifactId,
       slug: library.slug,
+      snapshotLookup: SNAPSHOT_LOOKUP,
       versions: newestFirst(Object.entries(versions).filter(([version]) => released.has(version))),
     };
     const stillPending = Object.entries(pending).filter(([version]) => released.has(version));

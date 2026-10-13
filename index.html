@@ -1191,9 +1191,7 @@
   <body>
     <header class="masthead">
       <div class="wrap">
-        <h1 class="wordmark">
-          MPS Library Versions <span>extractor 3000</span>
-        </h1>
+        <h1 class="wordmark">MPS Library Versions Extractor 3000</h1>
 
         <div class="nyan-track" aria-hidden="true">
           <span class="nyan-trail"></span>
@@ -1362,6 +1360,7 @@
     <script type="module">
       import {
         artifactUrls,
+        isSnapshot,
         mavenCoordinate,
         lineLabel,
         isDevelopmentLine,
@@ -1650,7 +1649,6 @@
         }
 
         const { latest, latestIsPreRelease } = entry;
-        const urls = artifactUrls(library, latest);
         return `
             <article class="node" ${delay}>
                 <div class="coord">
@@ -1667,8 +1665,7 @@
                     <button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}"
                             data-line="${esc(entry.line)}"
                             title="Every ${esc(entry.line)} version of ${esc(library.artifactId)}">Show ${entry.total} previous</button>
-                    <a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
-                    <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>
+                    ${fileLinks(library, latest)}
                     <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, latest))}"
                     title="Copy ${esc(mavenCoordinate(library, latest))}">Copy</button>
                     ${inspectButton(library, latest, "btn btn--out", "Inspect")}
@@ -2211,7 +2208,6 @@
                         <span>${entries.length} shown</span></h2>
                     ${entries
                       .map((entry) => {
-                        const urls = artifactUrls(library, entry.v);
                         const tag = entry.branch
                           ? `<span class="tag quiet">${esc(entry.branch)}</span>`
                           : entry.pre
@@ -2223,8 +2219,7 @@
                                 <span class="acts">
                                     <button class="btn btn--out" data-copy="${copyRef(entry.v)}">Copy</button>
                                     <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
-                                    <a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
-                                    <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>
+                                    ${fileLinks(library, entry.v)}
                                     ${entry.branch ? "" : inspectButton(library, entry.v, "btn", "inspect")}
                                 </span>
                             </div>`;
@@ -2324,16 +2319,28 @@
         }
       }
 
+      /**
+       * pom/zip links. A SNAPSHOT's files carry a timestamp only its own
+       * metadata knows, so it gets one link to its folder instead.
+       */
+      function fileLinks(library, version) {
+        const urls = artifactUrls(library, version);
+        if (isSnapshot(version)) {
+          return `<a class="btn" href="${esc(urls.browse)}/" target="_blank" rel="noopener noreferrer"
+                     title="SNAPSHOT files are timestamped; opens the version folder">files</a>`;
+        }
+        return `<a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
+                <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>`;
+      }
+
       function vrow(library, entry) {
-        const urls = artifactUrls(library, entry.v);
         return `
             <div class="vrow">
                 <span class="v${entry.pre ? " pre" : ""}">${esc(entry.v)}</span>
                 <span class="acts">
                     <button class="btn" data-copy="${copyRef(entry.v)}">copy</button>
                     <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
-                    <a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
-                    <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>
+                    ${fileLinks(library, entry.v)}
                     ${entry.branch ? "" : inspectButton(library, entry.v, "btn", "inspect")}
                 </span>
             </div>`;
