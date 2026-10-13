@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-13T12:28:32.877Z",
-  "total": 3016,
-  "released": 1715,
-  "stable": 1708,
+  "generatedAt": "2026-10-13T13:33:25.480Z",
+  "total": 3020,
+  "released": 1717,
+  "stable": 1710,
   "preRelease": 7,
-  "branchCount": 1301,
+  "branchCount": 1303,
   "branches": 270,
   "lines": [
     {
@@ -871,11 +871,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11287.5fae95f",
+      "latest": "2025.1.11325.b63c645",
       "latestIsPreRelease": false,
-      "total": 132,
-      "stable": 126,
+      "total": 133,
+      "stable": 127,
       "versions": [
+        {
+          "v": "2025.1.11325.b63c645",
+          "pre": false
+        },
         {
           "v": "2025.1.11287.5fae95f",
           "pre": false
@@ -1408,11 +1412,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11320.c1d70b7",
+      "latest": "2024.1.11327.3ef2e67",
       "latestIsPreRelease": false,
-      "total": 262,
-      "stable": 261,
+      "total": 263,
+      "stable": 262,
       "versions": [
+        {
+          "v": "2024.1.11327.3ef2e67",
+          "pre": false
+        },
         {
           "v": "2024.1.11320.c1d70b7",
           "pre": false
@@ -8710,6 +8718,11 @@
       "branch": "merge-mps20251"
     },
     {
+      "v": "merge-mps20251.2025.1.11326.74d89da-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
       "v": "merge-mps20251.2025.1.11311.68bb59f-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
@@ -12503,6 +12516,11 @@
       "v": "bugfix-quick_workaround_numberliteral_editor_exception_1541.2024.1.9476.3c997d5-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-quick_workaround_numberliteral_editor_exception_1541"
+    },
+    {
+      "v": "bugfix-publishTestExecutor.2025.1.11324.0309687-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-publishTestExecutor"
     },
     {
       "v": "bugfix-publishTestExecutor.2025.1.11310.3ffdea7-SNAPSHOT",
