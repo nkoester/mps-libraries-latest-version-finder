@@ -5,7 +5,7 @@ Shows the newest version of each core MPS ecosystem library, grouped by MPS rele
 **→ https://nkoester.github.io/mps-libraries-latest-version-finder/**
 
 Tracks `de.itemis.mps:extensions`, `com.mbeddr:mbeddr`, `com.mbeddr:platform`,
-`org.iets3:opensource`, `org.mpsqa:all-in-one` and `com.jetbrains.mps:mps` from
+`org.iets3:opensource`, `org.mpsqa:all-in-one` and `com.jetbrains:mps` from
 [artifacts.itemis.cloud](https://artifacts.itemis.cloud/repository/maven-mps/).
 
 ## How it works

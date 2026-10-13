@@ -1,6 +1,6 @@
 [
   {
-    "groupId": "com.jetbrains.mps",
+    "groupId": "com.jetbrains",
     "artifactId": "mps",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml"
   },

@@ -2,10 +2,10 @@
   "generatedAt": "2026-10-13T13:33:25.480Z",
   "libraries": [
     {
-      "groupId": "com.jetbrains.mps",
+      "groupId": "com.jetbrains",
       "artifactId": "mps",
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml",
-      "slug": "com.jetbrains.mps_mps",
+      "slug": "com.jetbrains_mps",
       "ok": true,
       "total": 60,
       "released": 60,
@@ -13,7 +13,7 @@
       "preRelease": 8,
       "branchCount": 0,
       "branches": 0,
-      "dataFile": "data/com.jetbrains.mps_mps.json",
+      "dataFile": "data/com.jetbrains_mps.json",
       "lines": [
         {
           "line": "2026.1",
