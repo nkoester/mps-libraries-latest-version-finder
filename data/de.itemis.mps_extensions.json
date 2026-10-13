@@ -3,12 +3,12 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-13T14:40:16.976Z",
-  "total": 1051,
-  "released": 818,
-  "stable": 799,
+  "generatedAt": "2026-10-13T21:45:34.308Z",
+  "total": 1059,
+  "released": 819,
+  "stable": 800,
   "preRelease": 19,
-  "branchCount": 233,
+  "branchCount": 240,
   "branches": 69,
   "lines": [
     {
@@ -753,11 +753,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.3673.0763bfa",
+      "latest": "2024.1.3678.ba1c440",
       "latestIsPreRelease": false,
-      "total": 122,
-      "stable": 122,
+      "total": 123,
+      "stable": 123,
       "versions": [
+        {
+          "v": "2024.1.3678.ba1c440",
+          "pre": false
+        },
         {
           "v": "2024.1.3673.0763bfa",
           "pre": false
@@ -3428,6 +3432,16 @@
       "branch": "renovate-mps-jbr"
     },
     {
+      "v": "renovate-master-mps.9999.9.2444.5e61372-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2435.f71d6cd-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2425.b643001-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps"
@@ -3948,6 +3962,11 @@
       "branch": "modelix-extract-core"
     },
     {
+      "v": "merge-mps20261.2026.1.2439.d7054ba-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
       "v": "merge-mps20261.2026.1.2414.4efd8f8-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
@@ -4036,6 +4055,11 @@
       "v": "merge-mps20261.2026.1.2237.83ca0cc-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
+    },
+    {
+      "v": "merge-mps20251.2025.1.2436.acdb30f-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
     },
     {
       "v": "merge-mps20251.2025.1.2410.ed42576-SNAPSHOT",
@@ -4201,6 +4225,16 @@
       "v": "merge-mps20213.2021.3.2717.7e258de",
       "pre": false,
       "branch": "merge-mps20213"
+    },
+    {
+      "v": "merge-master.9999.9.2442.ba880ed-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master"
+    },
+    {
+      "v": "merge-master.9999.9.2440.be6733d-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master"
     },
     {
       "v": "merge-master.9999.9.2421.445fa15-SNAPSHOT",
@@ -4396,6 +4430,11 @@
       "v": "fix-headless-tables.9999.9.2231.de04d8a-SNAPSHOT",
       "pre": true,
       "branch": "fix-headless-tables"
+    },
+    {
+      "v": "feature-view-model.2025.1.2438.82df34c-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
     },
     {
       "v": "feature-view-model.2025.1.2433.8ba7539-SNAPSHOT",

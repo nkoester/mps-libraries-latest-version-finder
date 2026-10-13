@@ -3,13 +3,13 @@
   "artifactId": "mbeddr",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-10-13T14:40:16.976Z",
-  "total": 2676,
+  "generatedAt": "2026-10-13T21:45:34.308Z",
+  "total": 2680,
   "released": 1838,
   "stable": 1838,
   "preRelease": 0,
-  "branchCount": 838,
-  "branches": 199,
+  "branchCount": 842,
+  "branches": 200,
   "lines": [
     {
       "line": "9999.9",
@@ -7752,6 +7752,11 @@
       "branch": "renovate-master-mpsmaster"
     },
     {
+      "v": "renovate-master-mpsmaster.9999.9.25348.721ed0d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster"
+    },
+    {
       "v": "renovate-master-mpsmaster.9999.9.25348.02c7436-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsmaster"
@@ -10965,6 +10970,21 @@
       "v": "build-publishing-convention.2024.1.24211.87dbaa6-SNAPSHOT",
       "pre": true,
       "branch": "build-publishing-convention"
+    },
+    {
+      "v": "build-platform-self-contained.2024.1.24220.da39bd2-SNAPSHOT",
+      "pre": true,
+      "branch": "build-platform-self-contained"
+    },
+    {
+      "v": "build-platform-self-contained.2024.1.24220.4deff96-SNAPSHOT",
+      "pre": true,
+      "branch": "build-platform-self-contained"
+    },
+    {
+      "v": "build-platform-self-contained.2024.1.24219.7000645-SNAPSHOT",
+      "pre": true,
+      "branch": "build-platform-self-contained"
     },
     {
       "v": "build-ant-version-contract.2024.1.24214.8eea409-SNAPSHOT",
