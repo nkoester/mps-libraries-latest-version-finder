@@ -32,9 +32,15 @@ jobs:
       - name: Fetch maven metadata
         run: node --version && node scripts/fetch-versions.mjs
 
+      # Incremental: only POMs not cached in data/deps yet, at most 150 per
+      # run, so the initial backfill spreads over many runs.
+      - name: Fetch POM dependencies
+        run: node scripts/fetch-deps.mjs --max 150
+
       - name: Commit if changed
         run: |
-          if git diff --quiet -- versions.json data/; then
+          # status, not diff: new files under data/deps are untracked.
+          if [ -z "$(git status --porcelain -- versions.json data/)" ]; then
             echo "No version changes."
             exit 0
           fi

@@ -183,3 +183,98 @@ export function artifactUrls(library, version) {
 export function mavenCoordinate(library, version) {
   return `${library.groupId}:${library.artifactId}:${version}`;
 }
+
+/* ------------------------------------------------------------ dependencies */
+
+function firstTag(xml, tag) {
+  const match = xml.match(new RegExp(`<${tag}>\\s*([^<]*?)\\s*</${tag}>`));
+  return match ? match[1] : null;
+}
+
+/**
+ * Direct `<dependencies>` of a POM as `{ groupId, artifactId, version }`.
+ *
+ * Plugin dependencies (`<build>`), `<dependencyManagement>` and `<exclusions>`
+ * also contain groupId/artifactId pairs, so they are cut out before matching.
+ * `${property}` versions are resolved against the POM's own `<properties>`.
+ */
+export function parsePomDependencies(xmlText) {
+  const xml = xmlText
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<build>[\s\S]*?<\/build>/g, '')
+    .replace(/<dependencyManagement>[\s\S]*?<\/dependencyManagement>/g, '')
+    .replace(/<exclusions>[\s\S]*?<\/exclusions>/g, '');
+
+  const properties = new Map();
+  const propertiesBlock = xml.match(/<properties>([\s\S]*?)<\/properties>/);
+  if (propertiesBlock) {
+    for (const [, key, value] of propertiesBlock[1].matchAll(/<([\w.\-]+)>\s*([^<]*?)\s*<\/\1>/g)) {
+      properties.set(key, value);
+    }
+  }
+  const expand = (value) =>
+    value?.replace(/\$\{([^}]+)\}/g, (whole, key) => properties.get(key) ?? whole) ?? null;
+
+  const dependencies = [];
+  for (const [, body] of xml.matchAll(/<dependency>([\s\S]*?)<\/dependency>/g)) {
+    const groupId = firstTag(body, 'groupId');
+    const artifactId = firstTag(body, 'artifactId');
+    if (!groupId || !artifactId) continue;
+    dependencies.push({ groupId, artifactId, version: expand(firstTag(body, 'version')) });
+  }
+  return dependencies;
+}
+
+/**
+ * Everything one library version needs, transitively, treating every POM
+ * version as a minimum.
+ *
+ * `depsOf(slug, version)` returns `[[depSlug, depVersion], ...]`, or
+ * null/undefined when the POM is unknown. When two paths require the same
+ * library, the higher version wins, and only that version's own dependencies
+ * count -- so the set is recomputed until it stops changing.
+ *
+ * Returns `{ required: [{ slug, v, via }], unknown: [{ slug, v }] }`, where
+ * `via` is the slug path from the root to the requirement (root excluded).
+ */
+export async function resolveRequirements(root, depsOf) {
+  const seed = () => new Map([[root.slug, { v: root.v, by: null }]]);
+  let chosen = seed();
+  let unknown = [];
+
+  for (let round = 0; round < 32; round++) {
+    const next = seed();
+    unknown = [];
+    for (const [slug, { v }] of chosen) {
+      const deps = await depsOf(slug, v);
+      if (!deps) {
+        unknown.push({ slug, v });
+        continue;
+      }
+      for (const [depSlug, depVersion] of deps) {
+        if (depSlug === root.slug) continue;
+        const current = next.get(depSlug);
+        if (!current || compareVersions(depVersion, current.v) > 0) {
+          next.set(depSlug, { v: depVersion, by: slug });
+        }
+      }
+    }
+    const settled = next.size === chosen.size &&
+      [...next].every(([slug, entry]) => chosen.get(slug)?.v === entry.v && chosen.get(slug)?.by === entry.by);
+    chosen = next;
+    if (settled) break;
+  }
+
+  const via = (slug) => {
+    const path = [];
+    for (let at = slug; at && at !== root.slug && path.length <= chosen.size; at = chosen.get(at)?.by) {
+      path.unshift(at);
+    }
+    return path;
+  };
+
+  const required = [...chosen]
+    .filter(([slug]) => slug !== root.slug)
+    .map(([slug, { v }]) => ({ slug, v, via: via(slug) }));
+  return { required, unknown };
+}

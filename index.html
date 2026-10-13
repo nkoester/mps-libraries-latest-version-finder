@@ -1,816 +1,1462 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MPS Library Versions</title>
-    <meta name="description" content="Latest versions of the core MPS ecosystem libraries, by MPS release line.">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232F49C9'/%3E%3Crect x='22' y='30' width='56' height='13' fill='white'/%3E%3Crect x='22' y='52' width='34' height='13' fill='white' opacity='.6'/%3E%3C/svg%3E">
+    <meta
+      name="description"
+      content="Latest versions of the core MPS ecosystem libraries, by MPS release line."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232F49C9'/%3E%3Crect x='22' y='30' width='56' height='13' fill='white'/%3E%3Crect x='22' y='52' width='34' height='13' fill='white' opacity='.6'/%3E%3C/svg%3E"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    />
 
     <style>
+      :root {
+        --ink: #0f1419;
+        --ink-2: #5a6675;
+        --ink-3: #8c97a6;
+        --ground: #e8ecf2;
+        --surface: #ffffff;
+        --rule: #d2dae5;
+        --rule-soft: #e6ebf2;
+        --accent: #2f49c9;
+        --accent-soft: #e4e8fb;
+        --signal: #b4164f;
+        --signal-soft: #fbe6ee;
+
+        --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+        --mono:
+          "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+        --step: 4px;
+        --radius: 3px;
+
+        --on-accent: #ffffff;
+        --rule-strong: #b9c5d6;
+        --grid-line: rgba(47, 73, 201, 0.045);
+        --masthead-bg: rgba(255, 255, 255, 0.72);
+        --tools-bg: #f7f9fc;
+        --shadow: rgba(15, 20, 25, 0.22);
+        --backdrop: rgba(15, 20, 25, 0.42);
+
+        --ext-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M3 1h6v6H7.5V3.56L2.3 8.76 1.24 7.7 6.44 2.5H3z'/%3E%3C/svg%3E");
+      }
+
+      /* Follows the operating system; every value above is overridden here. */
+      @media (prefers-color-scheme: dark) {
         :root {
-            --ink:          #0F1419;
-            --ink-2:        #5A6675;
-            --ink-3:        #8C97A6;
-            --ground:       #E8ECF2;
-            --surface:      #FFFFFF;
-            --rule:         #D2DAE5;
-            --rule-soft:    #E6EBF2;
-            --accent:       #2F49C9;
-            --accent-soft:  #E4E8FB;
-            --signal:       #B4164F;
-            --signal-soft:  #FBE6EE;
-
-            --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
-            --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-
-            --step: 4px;
-            --radius: 3px;
-
-            --on-accent:    #FFFFFF;
-            --rule-strong:  #B9C5D6;
-            --grid-line:    rgba(47,73,201,.045);
-            --masthead-bg:  rgba(255,255,255,.72);
-            --tools-bg:     #F7F9FC;
-            --shadow:       rgba(15,20,25,.22);
-            --backdrop:     rgba(15,20,25,.42);
-
-            --ext-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M3 1h6v6H7.5V3.56L2.3 8.76 1.24 7.7 6.44 2.5H3z'/%3E%3C/svg%3E");
+          --ink: #e4e9f2;
+          --ink-2: #98a5b8;
+          --ink-3: #68758a;
+          --ground: #0d1218;
+          --surface: #151b24;
+          --rule: #28313f;
+          --rule-soft: #1f2733;
+          --rule-strong: #3b4657;
+          --accent: #8094ff;
+          --accent-soft: #1d2540;
+          --signal: #ff76a8;
+          --signal-soft: #331a27;
+          --on-accent: #0d1218;
+          --grid-line: rgba(128, 148, 255, 0.055);
+          --masthead-bg: rgba(21, 27, 36, 0.78);
+          --tools-bg: #11161e;
+          --shadow: rgba(0, 0, 0, 0.6);
+          --backdrop: rgba(0, 0, 0, 0.62);
         }
+      }
 
-        /* Follows the operating system; every value above is overridden here. */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --ink:          #E4E9F2;
-                --ink-2:        #98A5B8;
-                --ink-3:        #68758A;
-                --ground:       #0D1218;
-                --surface:      #151B24;
-                --rule:         #28313F;
-                --rule-soft:    #1F2733;
-                --rule-strong:  #3B4657;
-                --accent:       #8094FF;
-                --accent-soft:  #1D2540;
-                --signal:       #FF76A8;
-                --signal-soft:  #331A27;
-                --on-accent:    #0D1218;
-                --grid-line:    rgba(128,148,255,.055);
-                --masthead-bg:  rgba(21,27,36,.78);
-                --tools-bg:     #11161E;
-                --shadow:       rgba(0,0,0,.6);
-                --backdrop:     rgba(0,0,0,.62);
-            }
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        * { box-sizing: border-box; }
-
-        /* The hidden attribute is only display:none in the UA sheet, so any
+      /* The hidden attribute is only display:none in the UA sheet, so any
            author display rule beats it. Several elements here set display. */
-        [hidden] { display: none !important; }
+      [hidden] {
+        display: none !important;
+      }
 
-        html { -webkit-text-size-adjust: 100%; color-scheme: light dark; }
-
-        body {
-            margin: 0;
-            font-family: var(--display);
-            font-size: 15px;
-            line-height: 1.55;
-            color: var(--ink);
-            background-color: var(--ground);
-            /* Faint 24px grid: the structured editing surface MPS works on. */
-            background-image:
-                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-            background-size: 24px 24px;
+      /* Every size below is in px; this scales them all, dialogs included. */
+      html {
+        -webkit-text-size-adjust: 100%;
+        color-scheme: light dark;
+        zoom: var(--scale);
+      }
+      :root {
+        --scale: 1.4;
+      }
+      @media (max-width: 720px) {
+        :root {
+          --scale: 1;
         }
+      }
 
-        .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+      body {
+        margin: 0;
+        font-family: var(--display);
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--ink);
+        background-color: var(--ground);
+        /* Faint 24px grid: the structured editing surface MPS works on. */
+        background-image:
+          linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+          linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
 
-        a { color: var(--accent); }
+      .wrap {
+        max-width: 1060px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
 
-        /* Anything that leaves the page says so; buttons that open the dialog
+      a {
+        color: var(--accent);
+      }
+
+      /* Anything that leaves the page says so; buttons that open the dialog
            stay unmarked. */
-        a[target="_blank"]::after {
-            content: "";
-            display: inline-block;
-            width: .62em;
-            height: .62em;
-            margin-left: .34em;
-            background: currentColor;
-            opacity: .5;
-            /* Drawn, not a glyph: U+2197 is missing from plenty of font stacks
+      a[target="_blank"]::after {
+        content: "";
+        display: inline-block;
+        width: 0.62em;
+        height: 0.62em;
+        margin-left: 0.34em;
+        background: currentColor;
+        opacity: 0.5;
+        /* Drawn, not a glyph: U+2197 is missing from plenty of font stacks
                and falls back to tofu. */
-            -webkit-mask: var(--ext-arrow) center / contain no-repeat;
-            mask: var(--ext-arrow) center / contain no-repeat;
-        }
-        a[target="_blank"]:hover::after { opacity: .9; }
+        -webkit-mask: var(--ext-arrow) center / contain no-repeat;
+        mask: var(--ext-arrow) center / contain no-repeat;
+      }
+      a[target="_blank"]:hover::after {
+        opacity: 0.9;
+      }
 
-        :focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-            border-radius: 2px;
-        }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
 
-        /* ---------------------------------------------------------- masthead */
+      /* ---------------------------------------------------------- masthead */
 
-        .masthead {
-            border-bottom: 1px solid var(--rule);
-            background: var(--masthead-bg);
-            backdrop-filter: blur(6px);
-            position: sticky;
-            top: 0;
-            z-index: 20;
-        }
-        .masthead .wrap {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 24px;
-            flex-wrap: wrap;
-            padding-top: 14px;
-            padding-bottom: 14px;
-        }
-        .wordmark {
-            font-size: 15px;
-            font-weight: 700;
-            letter-spacing: -.01em;
-            margin: 0;
-        }
-        .wordmark span {
-            font-family: var(--mono);
-            font-weight: 400;
-            color: var(--ink-3);
-            font-size: 12px;
-            letter-spacing: .02em;
-            margin-left: 10px;
-        }
-        .stamp {
-            font-size: 12px;
-            color: var(--ink-2);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 1px;
-        }
-        .stamp-line { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-        .stamp-repo { font-family: var(--mono); font-size: 11px; }
-        .stamp time { font-family: var(--mono); color: var(--ink); }
+      .masthead {
+        border-bottom: 1px solid var(--rule);
+        background: var(--masthead-bg);
+        backdrop-filter: blur(6px);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+      .masthead .wrap {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+      .wordmark {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin: 0;
+      }
+      .wordmark span {
+        font-family: var(--mono);
+        font-weight: 400;
+        color: var(--ink-3);
+        font-size: 12px;
+        letter-spacing: 0.02em;
+        margin-left: 10px;
+      }
+      .stamp {
+        font-size: 12px;
+        color: var(--ink-2);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1px;
+      }
+      .stamp-line {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .stamp-repo {
+        font-family: var(--mono);
+        font-size: 11px;
+      }
+      .stamp time {
+        font-family: var(--mono);
+        color: var(--ink);
+      }
 
-        /* Crosses the gap between the wordmark and the stamp, then the trail
+      /* Crosses the gap between the wordmark and the stamp, then the trail
            retreats from the left until the track is clear again. */
-        .nyan-track {
-            flex: 1 1 140px;
-            position: relative;
-            align-self: center;
-            height: 26px;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        /* The trail is exactly the viewable space, so its length never depends
+      .nyan-track {
+        flex: 1 1 140px;
+        position: relative;
+        align-self: center;
+        height: 26px;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      /* The trail is exactly the viewable space, so its length never depends
            on a guessed pixel width. Both ends are driven by clip-path: the
            right edge follows the cat out, then the left edge chases it. */
-        .nyan-trail {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 50%;
-            margin-top: -7.75px;
-            height: 15.5px;
-            clip-path: inset(0 100% 0 0);
-            background: linear-gradient(to bottom,
-                #FF2A2A 0 16.667%, #FF9F2A 0 33.333%, #FFF32A 0 50%,
-                #44E03C 0 66.667%, #2A9FFF 0 83.333%, #8F57FF 0 100%);
-        }
+      .nyan-trail {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin-top: -7.75px;
+        height: 15.5px;
+        clip-path: inset(0 100% 0 0);
+        background: linear-gradient(
+          to bottom,
+          #ff2a2a 0 16.667%,
+          #ff9f2a 0 33.333%,
+          #fff32a 0 50%,
+          #44e03c 0 66.667%,
+          #2a9fff 0 83.333%,
+          #8f57ff 0 100%
+        );
+      }
+      .nyan-cat {
+        position: absolute;
+        top: 1px;
+        left: -45px;
+        height: 24px;
+        width: auto;
+      }
+      @media (prefers-reduced-motion: no-preference) {
         .nyan-cat {
-            position: absolute;
-            top: 1px;
-            left: -45px;
-            height: 24px;
-            width: auto;
+          animation: nyan-cat 20s linear infinite;
         }
-        @media (prefers-reduced-motion: no-preference) {
-            .nyan-cat   { animation: nyan-cat   20s linear infinite; }
-            .nyan-trail { animation: nyan-trail 20s linear infinite; }
+        .nyan-trail {
+          animation: nyan-trail 20s linear infinite;
         }
-        @keyframes nyan-cat {
-            0%   { left: -45px; }   /* just off-stage left */
-            15%  { left: 100%; }    /* just off-stage right */
-            100% { left: 100%; }
+      }
+      @keyframes nyan-cat {
+        0% {
+          left: -45px;
+        } /* just off-stage left */
+        15% {
+          left: 100%;
+        } /* just off-stage right */
+        100% {
+          left: 100%;
         }
-        @keyframes nyan-trail {
-            0%   { clip-path: inset(0 100% 0 0); }   /* nothing drawn */
-            15%  { clip-path: inset(0 0 0 0); }      /* full width, cat at the right */
-            35%  { clip-path: inset(0 0 0 100%); }   /* retreats from the left */
-            100% { clip-path: inset(0 0 0 100%); }
+      }
+      @keyframes nyan-trail {
+        0% {
+          clip-path: inset(0 100% 0 0);
+        } /* nothing drawn */
+        15% {
+          clip-path: inset(0 0 0 0);
+        } /* full width, cat at the right */
+        35% {
+          clip-path: inset(0 0 0 100%);
+        } /* retreats from the left */
+        100% {
+          clip-path: inset(0 0 0 100%);
         }
-        @media (max-width: 720px) { .nyan-track { display: none; } }
-        .stamp .ago::before { content: "("; }
-        .stamp .ago::after  { content: ")"; }
+      }
+      @media (max-width: 720px) {
+        .nyan-track {
+          display: none;
+        }
+      }
+      .stamp .ago::before {
+        content: "(";
+      }
+      .stamp .ago::after {
+        content: ")";
+      }
 
-        /* ------------------------------------------------------------- finder */
+      /* ------------------------------------------------------------- finder */
 
-        .finder { padding: 34px 0 0; }
-        #q {
-            width: 100%;
-            font-family: var(--mono);
-            font-size: 15px;
-            color: var(--ink);
-            padding: 13px 16px;
-            border: 1px solid var(--rule);
-            border-radius: var(--radius);
-            background: var(--surface);
-        }
-        #q::placeholder { color: var(--ink-3); font-family: var(--display); }
-        #q:focus { border-color: var(--accent); outline-offset: 1px; }
-        .finder-note { margin: 8px 2px 0; font-size: 12px; color: var(--ink-2); min-height: 1em; }
+      .finder {
+        padding: 34px 0 0;
+      }
+      #q {
+        width: 100%;
+        font-family: var(--mono);
+        font-size: 15px;
+        color: var(--ink);
+        padding: 13px 16px;
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+      #q::placeholder {
+        color: var(--ink-3);
+        font-family: var(--display);
+      }
+      #q:focus {
+        border-color: var(--accent);
+        outline-offset: 1px;
+      }
+      .finder-note {
+        margin: 8px 2px 0;
+        font-size: 12px;
+        color: var(--ink-2);
+        min-height: 1em;
+      }
 
-        .hits { padding: 22px 0 56px; }
-        .hit-group { margin-bottom: 22px; }
-        .hit-group h2 {
-            margin: 0 0 6px;
-            font-family: var(--mono);
-            font-size: 13px;
-            font-weight: 700;
-            border: 0;
-            padding: 0;
-        }
-        .hit-group h2 span { font-family: var(--display); font-weight: 400; color: var(--ink-3); font-size: 11.5px; margin-left: 8px; }
-        .hit {
-            display: grid;
-            grid-template-columns: minmax(0,1fr) auto;
-            align-items: center;
-            gap: 14px;
-            background: var(--surface);
-            border: 1px solid var(--rule);
-            border-radius: var(--radius);
-            padding: 7px 10px 7px 0;
-            margin-bottom: 4px;
-        }
-        .hit:hover { border-color: var(--rule-strong); }
-        .hit-v {
-            font-family: var(--mono);
-            font-size: 13.5px;
-            padding: 3px 11px;
-            border-left: 3px solid var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            flex-wrap: wrap;
-        }
-        /* The version lives in its own box: marks inside a flex container would
+      .hits {
+        padding: 22px 0 56px;
+      }
+      .hit-group {
+        margin-bottom: 22px;
+      }
+      .hit-group h2 {
+        margin: 0 0 6px;
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 700;
+        border: 0;
+        padding: 0;
+      }
+      .hit-group h2 span {
+        font-family: var(--display);
+        font-weight: 400;
+        color: var(--ink-3);
+        font-size: 11.5px;
+        margin-left: 8px;
+      }
+      .hit {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 14px;
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        padding: 7px 10px 7px 0;
+        margin-bottom: 4px;
+      }
+      .hit:hover {
+        border-color: var(--rule-strong);
+      }
+      .hit-v {
+        font-family: var(--mono);
+        font-size: 13.5px;
+        padding: 3px 11px;
+        border-left: 3px solid var(--accent);
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        flex-wrap: wrap;
+      }
+      /* The version lives in its own box: marks inside a flex container would
            each become a flex item and inherit the gap. */
-        .hit-text { overflow-wrap: anywhere; min-width: 0; }
-        .hit-v mark { background: var(--accent-soft); color: var(--accent); border-radius: 2px; }
-        .hit-v.pre { border-left-color: var(--signal); }
-        .hit-v.pre mark { background: var(--signal-soft); color: var(--signal); }
+      .hit-text {
+        overflow-wrap: anywhere;
+        min-width: 0;
+      }
+      .hit-v mark {
+        background: var(--accent-soft);
+        color: var(--accent);
+        border-radius: 2px;
+      }
+      .hit-v.pre {
+        border-left-color: var(--signal);
+      }
+      .hit-v.pre mark {
+        background: var(--signal-soft);
+        color: var(--signal);
+      }
 
-        /* ------------------------------------------------------------- picker */
+      /* ------------------------------------------------------------- picker */
 
-        .picker { padding: 40px 0 0; }
+      .picker {
+        padding: 40px 0 0;
+      }
 
-        .ask {
-            font-size: clamp(26px, 4.4vw, 42px);
-            font-weight: 700;
-            letter-spacing: -.025em;
-            line-height: 1.1;
-            margin: 0 0 20px;
-            max-width: 22ch;
-        }
-        .ask em {
-            font-style: normal;
-            font-family: var(--mono);
-            font-weight: 500;
-            font-size: .82em;
-            letter-spacing: -.01em;
-            color: var(--accent);
-        }
+      .ask {
+        font-size: clamp(26px, 4.4vw, 42px);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        line-height: 1.1;
+        margin: 0 0 20px;
+        max-width: 22ch;
+      }
+      .ask em {
+        font-style: normal;
+        font-family: var(--mono);
+        font-weight: 500;
+        font-size: 0.82em;
+        letter-spacing: -0.01em;
+        color: var(--accent);
+      }
 
-        .lines { display: flex; flex-direction: column; gap: 5px; margin-bottom: 4px; }
-        .year { display: grid; grid-template-columns: 5ch 1fr; align-items: center; gap: 12px; }
-        .year-label {
-            font-family: var(--mono);
-            font-size: 11px;
-            color: var(--ink-3);
-            text-align: right;
-            font-variant-numeric: tabular-nums;
-        }
-        .year-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-        .line-chip {
-            flex: 0 0 auto;
-            font-family: var(--mono);
-            font-size: 13px;
-            font-weight: 500;
-            padding: 7px 13px;
-            border: 1px solid var(--rule);
-            border-radius: var(--radius);
-            background: var(--surface);
-            color: var(--ink-2);
-            cursor: pointer;
-            white-space: nowrap;
-            font-feature-settings: "tnum";
-        }
-        .line-chip:hover { border-color: var(--accent); color: var(--accent); }
-        .line-chip[aria-pressed="true"] {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: var(--on-accent);
-        }
-        .line-chip .n {
-            font-size: 11px;
-            opacity: .62;
-            margin-left: 7px;
-        }
+      .lines {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 4px;
+      }
+      .year {
+        display: grid;
+        grid-template-columns: 5ch 1fr;
+        align-items: center;
+        gap: 12px;
+      }
+      .year-label {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--ink-3);
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      .year-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .line-chip {
+        flex: 0 0 auto;
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 500;
+        padding: 7px 13px;
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        background: var(--surface);
+        color: var(--ink-2);
+        cursor: pointer;
+        white-space: nowrap;
+        font-feature-settings: "tnum";
+      }
+      .line-chip:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .line-chip[aria-pressed="true"] {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--on-accent);
+      }
+      .line-chip .n {
+        font-size: 11px;
+        opacity: 0.62;
+        margin-left: 7px;
+      }
 
-        /* Key lines: marked rather than merely coloured, so the distinction
+      /* Key lines: marked rather than merely coloured, so the distinction
            survives for anyone who cannot separate the two blues. */
-        .line-chip.key {
-            border-color: var(--accent);
-            color: var(--accent);
-            font-weight: 700;
-        }
-        /* Must follow .line-chip.key: equal specificity, so order decides, and
+      .line-chip.key {
+        border-color: var(--accent);
+        color: var(--accent);
+        font-weight: 700;
+      }
+      /* Must follow .line-chip.key: equal specificity, so order decides, and
            without this the selected key chip is indigo text on indigo. */
-        .line-chip.key[aria-pressed="true"] { color: var(--on-accent); }
-        .line-chip.key::before {
-            content: "";
-            display: inline-block;
-            width: 5px; height: 5px;
-            border-radius: 50%;
-            background: currentColor;
-            margin-right: 7px;
-            vertical-align: middle;
-        }
-        .key-note {
-            font-size: 11.5px;
-            color: var(--ink-3);
-            margin: 10px 0 0 calc(5ch + 12px);
-            display: flex; align-items: center; gap: 6px;
-        }
-        .key-note::before {
-            content: "";
-            width: 5px; height: 5px; border-radius: 50%;
-            background: var(--accent);
-        }
+      .line-chip.key[aria-pressed="true"] {
+        color: var(--on-accent);
+      }
+      .line-chip.key::before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: currentColor;
+        margin-right: 7px;
+        vertical-align: middle;
+      }
+      .key-note {
+        font-size: 11.5px;
+        color: var(--ink-3);
+        margin: 10px 0 0 calc(5ch + 12px);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .key-note::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
 
-        /* -------------------------------------------------------------- nodes */
+      /* Heading across the top; line picker left, dependency chain of the
+         selected line right. */
+      .picker {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+        column-gap: 32px;
+        align-items: start;
+      }
+      .picker .ask {
+        grid-column: 1 / -1;
+        max-width: none;
+      }
+      .chain {
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        padding: 14px 14px 12px;
+      }
+      .chain h3 {
+        margin: 0;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+      }
+      .chain-note {
+        margin: 2px 0 10px;
+        font-size: 11.5px;
+        color: var(--ink-2);
+      }
+      .chain svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+      .chain .cn rect {
+        fill: var(--surface);
+        stroke: var(--rule-strong);
+      }
+      .chain .cn .a {
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 700;
+        fill: var(--ink);
+      }
+      .chain .cn .g {
+        font-family: var(--mono);
+        font-size: 9.5px;
+        fill: var(--ink-3);
+      }
+      .chain .cn[data-act] {
+        cursor: pointer;
+      }
+      .chain .cn[data-act]:hover rect,
+      .chain .cn[data-act]:focus-visible rect {
+        stroke: var(--accent);
+        fill: var(--accent-soft);
+      }
+      .chain .cn:focus-visible {
+        outline: none;
+      }
+      .chain .ce {
+        fill: none;
+        stroke: var(--ink-3);
+        stroke-width: 1.2;
+      }
+      .chain .ce.hot {
+        stroke: var(--accent);
+        stroke-width: 1.8;
+      }
+      .chain .cn.hot rect {
+        stroke: var(--accent);
+      }
+      .chain marker path {
+        fill: var(--ink-3);
+      }
+      .chain-foot {
+        margin: 8px 0 0;
+        font-size: 11px;
+        color: var(--ink-3);
+      }
+      .chain-foot b {
+        font-family: var(--mono);
+        font-weight: 500;
+        color: var(--ink-2);
+      }
 
-        .board { padding: 26px 0 56px; }
+      @media (max-width: 900px) {
+        .picker {
+          grid-template-columns: 1fr;
+        }
+        .chain {
+          max-width: 440px;
+        }
+      }
 
-        .board-head {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
-        .board-title {
-            margin: 0;
-            font-size: 15px;
-            font-weight: 500;
-            letter-spacing: -.01em;
-            color: var(--ink-2);
-        }
-        .board-title .lead {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--ink);
-            letter-spacing: -.03em;
-            margin-right: 2px;
-        }
-        .board-title .dim { color: var(--ink-3); }
-        .board-note { font-size: 12.5px; color: var(--ink-2); margin: 2px 0 0; }
-        .board-note strong { color: var(--signal); font-weight: 500; }
+      /* -------------------------------------------------------------- nodes */
 
-        .legend {
-            display: grid;
-            grid-template-columns: 20ch 13ch minmax(0, 1fr);
-            font-family: var(--mono);
-            font-size: 14px;          /* sizes the ch tracks, not the text */
-            color: var(--ink-3);
-            padding: 0 0 6px 1px;     /* 1px = the node border */
-        }
-        .legend span {
-            font-size: 10px;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            padding-left: 11px;       /* matches .seg horizontal padding */
-        }
+      .board {
+        padding: 26px 0 56px;
+      }
 
-        .node {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            gap: 16px;
-            background: var(--surface);
-            border: 1px solid var(--rule);
-            border-radius: var(--radius);
-            padding: 9px 12px 9px 0;
-            margin-bottom: 6px;
-        }
-        .node:hover { border-color: var(--rule-strong); }
-        .node.absent { background: transparent; border-style: dashed; border-color: var(--rule); }
+      .board-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .board-title {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        color: var(--ink-2);
+      }
+      .board-title .lead {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--ink);
+        letter-spacing: -0.03em;
+        margin-right: 2px;
+      }
+      .board-title .dim {
+        color: var(--ink-3);
+      }
+      .board-note {
+        font-size: 12.5px;
+        color: var(--ink-2);
+        margin: 2px 0 0;
+      }
+      .board-note strong {
+        color: var(--signal);
+        font-weight: 500;
+      }
 
-        /* The coordinate, projected: three bounded cells rather than a string. */
-        /* Fixed group/artifact columns so every version starts at the same x
+      .legend {
+        display: grid;
+        grid-template-columns: 20ch 13ch minmax(0, 1fr);
+        font-family: var(--mono);
+        font-size: 14px; /* sizes the ch tracks, not the text */
+        color: var(--ink-3);
+        padding: 0 0 6px 1px; /* 1px = the node border */
+      }
+      .legend span {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding-left: 11px; /* matches .seg horizontal padding */
+      }
+
+      .node {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 16px;
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        padding: 9px 12px 9px 0;
+        margin-bottom: 6px;
+      }
+      .node:hover {
+        border-color: var(--rule-strong);
+      }
+      .node.absent {
+        background: transparent;
+        border-style: dashed;
+        border-color: var(--rule);
+      }
+
+      /* The coordinate, projected: three bounded cells rather than a string. */
+      /* Fixed group/artifact columns so every version starts at the same x
            and the six of them read as one column. */
+      .coord {
+        display: grid;
+        grid-template-columns: 20ch 13ch minmax(0, 1fr) auto;
+        align-items: center;
+        font-family: var(--mono);
+        font-size: 14px;
+        min-width: 0;
+      }
+      .seg {
+        font: inherit;
+        border: 0;
+        background: none;
+        padding: 5px 11px;
+        margin: 0;
+        color: var(--ink-2);
+        cursor: copy;
+        text-align: left;
+        border-left: 1px solid var(--rule-soft);
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .seg:first-child {
+        border-left: 3px solid var(--accent);
+      }
+      .seg:hover {
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+      .seg--version {
+        color: var(--ink);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .seg--version::after {
+        content: "copy";
+        font-size: 9.5px;
+        font-family: var(--display);
+        font-weight: 500;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--accent);
+        opacity: 0;
+      }
+      .node:hover .seg--version::after {
+        opacity: 0.5;
+      }
+      .seg--version:hover::after {
+        opacity: 1;
+      }
+      .node.absent .seg--version::after {
+        content: none;
+      }
+      .seg--version.pre {
+        color: var(--signal);
+      }
+      .node.absent .seg:first-child {
+        border-left-color: var(--rule);
+      }
+      .node.absent .seg {
+        color: var(--ink-3);
+        cursor: default;
+      }
+      .node.absent .seg:hover {
+        background: none;
+        color: var(--ink-3);
+      }
+
+      .tag {
+        font-family: var(--mono);
+        font-size: 9.5px;
+        font-weight: 500;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        padding: 2px 6px;
+        border-radius: 2px;
+        background: var(--signal-soft);
+        color: var(--signal);
+        white-space: nowrap;
+        align-self: center;
+        margin-left: 8px;
+      }
+      .tag.quiet {
+        background: var(--rule-soft);
+        color: var(--ink-3);
+      }
+
+      .acts {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .btn {
+        font-family: var(--display);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        padding: 8px 10px;
+        border: 1px solid transparent;
+        border-radius: var(--radius);
+        background: none;
+        color: var(--ink-2);
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+      }
+      .btn:hover {
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+      .btn--solid {
+        background: var(--ink);
+        color: var(--ground);
+        border-color: var(--ink);
+      }
+      .btn--solid:hover {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--on-accent);
+      }
+      .btn--out {
+        border-color: var(--rule);
+        background: var(--surface);
+      }
+      .btn--out:hover {
+        border-color: var(--accent);
+      }
+      .btn.copied {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--on-accent);
+      }
+
+      /* ------------------------------------------------------------ sections */
+
+      .slab {
+        border-top: 1px solid var(--rule);
+        padding: 36px 0;
+      }
+      .slab h2 {
+        margin: 0 0 4px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+      .slab p.lede {
+        margin: 0 0 18px;
+        font-size: 13px;
+        color: var(--ink-2);
+        max-width: 62ch;
+      }
+
+      .inventory {
+        display: grid;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+      .inv-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr) auto;
+        gap: 16px;
+        align-items: center;
+        background: var(--surface);
+        padding: 10px 14px;
+      }
+      .inv-name {
+        font-family: var(--mono);
+        font-size: 13px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .inv-facts {
+        font-size: 12px;
+        color: var(--ink-2);
+        font-variant-numeric: tabular-nums;
+      }
+      .inv-facts b {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .inv-row.bad .inv-facts {
+        color: var(--signal);
+      }
+
+      .colophon {
+        border-top: 1px solid var(--rule);
+        padding: 26px 0 60px;
+        font-size: 12px;
+        color: var(--ink-2);
+      }
+      .colophon p {
+        margin: 0 0 8px;
+        max-width: 70ch;
+      }
+      .figures {
+        font-family: var(--mono);
+        color: var(--ink);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .notice {
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-left: 3px solid var(--signal);
+        border-radius: var(--radius);
+        padding: 18px 20px;
+        margin: 40px 0;
+      }
+      .notice h2 {
+        margin: 0 0 6px;
+        font-size: 15px;
+      }
+      .notice p {
+        margin: 0 0 8px;
+        font-size: 13px;
+        color: var(--ink-2);
+      }
+      code {
+        font-family: var(--mono);
+        font-size: 0.92em;
+      }
+
+      /* -------------------------------------------------------------- dialog */
+
+      dialog {
+        width: min(820px, calc(94vw / var(--scale)));
+        max-height: calc(88vh / var(--scale));
+        padding: 0;
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        box-shadow: 0 24px 64px var(--shadow);
+        color: var(--ink);
+        background: var(--surface);
+      }
+      dialog::backdrop {
+        background: var(--backdrop);
+      }
+      .dlg {
+        display: flex;
+        flex-direction: column;
+        max-height: calc(88vh / var(--scale));
+      }
+      .dlg-head {
+        padding: 18px 20px 14px;
+        border-bottom: 1px solid var(--rule);
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .dlg-head h2 {
+        margin: 0;
+        font-family: var(--mono);
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .dlg-head p {
+        margin: 4px 0 0;
+        font-size: 12px;
+        color: var(--ink-2);
+        font-variant-numeric: tabular-nums;
+      }
+      .dlg-tools {
+        padding: 10px 20px;
+        border-bottom: 1px solid var(--rule);
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        flex-wrap: wrap;
+        background: var(--tools-bg);
+      }
+      .dlg-tools input[type="search"] {
+        flex: 1 1 200px;
+        min-width: 150px;
+        font-family: var(--mono);
+        font-size: 13px;
+        padding: 7px 10px;
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        background: var(--surface);
+        color: var(--ink);
+      }
+      .dlg-tools label {
+        font-size: 12px;
+        color: var(--ink-2);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+      }
+      .dlg-tools .count {
+        font-size: 12px;
+        color: var(--ink-3);
+        font-variant-numeric: tabular-nums;
+        margin-left: auto;
+      }
+      .dlg-body {
+        overflow-y: auto;
+        padding: 4px 20px 20px;
+      }
+      .dlg-body details {
+        border-bottom: 1px solid var(--rule-soft);
+      }
+      .dlg-body summary {
+        cursor: pointer;
+        padding: 9px 0;
+        font-size: 13px;
+        font-weight: 700;
+        font-family: var(--mono);
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+      }
+      .dlg-body summary .count {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: 11.5px;
+        color: var(--ink-3);
+      }
+      .vrow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        padding: 3px 0 3px 14px;
+      }
+      .vrow .v {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        overflow-wrap: anywhere;
+      }
+      .vrow .v.pre {
+        color: var(--signal);
+      }
+      .muted {
+        color: var(--ink-2);
+        font-size: 13px;
+      }
+
+      /* -------------------------------------------------------------- inspect */
+
+      .ins-tools {
+        justify-content: space-between;
+      }
+      .ins-tools p {
+        margin: 0;
+        font-size: 12px;
+        color: var(--ink-2);
+        max-width: 54ch;
+      }
+      .ins-body {
+        padding-top: 12px;
+      }
+      .ins-body h3 {
+        margin: 16px 0 6px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+      }
+      .ins-body h3:first-child {
+        margin-top: 0;
+      }
+      .req {
+        display: grid;
+        grid-template-columns: 24ch minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 4px 14px;
+        padding: 7px 10px;
+        border: 1px solid var(--rule);
+        border-left: 3px solid var(--accent);
+        border-radius: var(--radius);
+        margin-bottom: 4px;
+      }
+      .req.root {
+        background: var(--accent-soft);
+      }
+      .req.free {
+        border-left-color: var(--rule-strong);
+      }
+      .req .ga {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        color: var(--ink-2);
+        overflow-wrap: anywhere;
+      }
+      .req .ga b {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .req .rv {
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 700;
+        overflow-wrap: anywhere;
+      }
+      .req .rv.pre {
+        color: var(--signal);
+      }
+      .req .rv .ge {
+        color: var(--ink-3);
+        font-weight: 400;
+        margin-right: 4px;
+      }
+      .req .meta {
+        grid-column: 2 / 3;
+        font-size: 11.5px;
+        color: var(--ink-3);
+      }
+      .req .meta code {
+        color: var(--ink-2);
+      }
+      .req .meta .ok {
+        color: var(--accent);
+      }
+      .req .meta .bad {
+        color: var(--signal);
+      }
+      .req .acts {
+        grid-row: 1 / span 2;
+        grid-column: 3;
+      }
+      .ins-warn {
+        margin: 12px 0 0;
+        padding: 8px 12px;
+        border-left: 3px solid var(--signal);
+        background: var(--signal-soft);
+        font-size: 12px;
+        color: var(--ink);
+      }
+
+      @media (max-width: 720px) {
+        .req {
+          grid-template-columns: 1fr;
+        }
+        .req .meta,
+        .req .acts {
+          grid-column: 1;
+          grid-row: auto;
+        }
+      }
+
+      /* --------------------------------------------------------------- motion */
+
+      @media (prefers-reduced-motion: no-preference) {
+        .btn,
+        .seg,
+        .line-chip,
+        .node {
+          transition:
+            background-color 0.13s,
+            color 0.13s,
+            border-color 0.13s;
+        }
+        .node {
+          animation: settle 0.22s ease-out backwards;
+        }
+        @keyframes settle {
+          from {
+            opacity: 0;
+            transform: translateY(3px);
+          }
+        }
+      }
+
+      /* ----------------------------------------------------------- responsive */
+
+      @media (max-width: 720px) {
+        .wrap {
+          padding: 0 16px;
+        }
+        .node {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          padding: 10px 12px;
+        }
         .coord {
-            display: grid;
-            grid-template-columns: 20ch 13ch minmax(0, 1fr) auto;
-            align-items: center;
-            font-family: var(--mono);
-            font-size: 14px;
-            min-width: 0;
+          font-size: 13px;
+          grid-template-columns: 1fr;
         }
         .seg {
-            font: inherit;
-            border: 0;
-            background: none;
-            padding: 5px 11px;
-            margin: 0;
-            color: var(--ink-2);
-            cursor: copy;
-            text-align: left;
-            border-left: 1px solid var(--rule-soft);
-            position: relative;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+          border-left: 0;
+          padding: 2px 0;
         }
-        .seg:first-child { border-left: 3px solid var(--accent); }
-        .seg:hover { background: var(--accent-soft); color: var(--accent); }
-        .seg--version {
-            color: var(--ink);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .seg:first-child {
+          border-left: 0;
+          padding-left: 0;
         }
-        .seg--version::after {
-            content: "copy";
-            font-size: 9.5px;
-            font-family: var(--display);
-            font-weight: 500;
-            letter-spacing: .07em;
-            text-transform: uppercase;
-            color: var(--accent);
-            opacity: 0;
+        .acts {
+          flex-wrap: wrap;
         }
-        .node:hover .seg--version::after { opacity: .5; }
-        .seg--version:hover::after { opacity: 1; }
-        .node.absent .seg--version::after { content: none; }
-        .seg--version.pre { color: var(--signal); }
-        .node.absent .seg:first-child { border-left-color: var(--rule); }
-        .node.absent .seg { color: var(--ink-3); cursor: default; }
-        .node.absent .seg:hover { background: none; color: var(--ink-3); }
-
-        .tag {
-            font-family: var(--mono);
-            font-size: 9.5px;
-            font-weight: 500;
-            letter-spacing: .07em;
-            text-transform: uppercase;
-            padding: 2px 6px;
-            border-radius: 2px;
-            background: var(--signal-soft);
-            color: var(--signal);
-            white-space: nowrap;
-            align-self: center;
-            margin-left: 8px;
+        .legend {
+          display: none;
         }
-        .tag.quiet { background: var(--rule-soft); color: var(--ink-3); }
-
-        .acts { display: flex; gap: 4px; align-items: center; flex-shrink: 0; }
-
-        .btn {
-            font-family: var(--display);
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 1;
-            padding: 8px 10px;
-            border: 1px solid transparent;
-            border-radius: var(--radius);
-            background: none;
-            color: var(--ink-2);
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-        }
-        .btn:hover { background: var(--accent-soft); color: var(--accent); }
-        .btn--solid {
-            background: var(--ink);
-            color: var(--ground);
-            border-color: var(--ink);
-        }
-        .btn--solid:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-        .btn--out { border-color: var(--rule); background: var(--surface); }
-        .btn--out:hover { border-color: var(--accent); }
-        .btn.copied { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-
-        /* ------------------------------------------------------------ sections */
-
-        .slab {
-            border-top: 1px solid var(--rule);
-            padding: 36px 0;
-        }
-        .slab h2 {
-            margin: 0 0 4px;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: .07em;
-            text-transform: uppercase;
-        }
-        .slab p.lede { margin: 0 0 18px; font-size: 13px; color: var(--ink-2); max-width: 62ch; }
-
-        .inventory { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
         .inv-row {
-            display: grid;
-            grid-template-columns: minmax(0,1.4fr) minmax(0,1.6fr) auto;
-            gap: 16px;
-            align-items: center;
-            background: var(--surface);
-            padding: 10px 14px;
+          grid-template-columns: 1fr;
+          gap: 6px;
         }
-        .inv-name { font-family: var(--mono); font-size: 13px; overflow: hidden; text-overflow: ellipsis; }
-        .inv-facts { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-        .inv-facts b { color: var(--ink); font-weight: 700; }
-        .inv-row.bad .inv-facts { color: var(--signal); }
-
-        .colophon {
-            border-top: 1px solid var(--rule);
-            padding: 26px 0 60px;
-            font-size: 12px;
-            color: var(--ink-2);
-        }
-        .colophon p { margin: 0 0 8px; max-width: 70ch; }
-        .figures { font-family: var(--mono); color: var(--ink); font-variant-numeric: tabular-nums; }
-
-        .notice {
-            background: var(--surface);
-            border: 1px solid var(--rule);
-            border-left: 3px solid var(--signal);
-            border-radius: var(--radius);
-            padding: 18px 20px;
-            margin: 40px 0;
-        }
-        .notice h2 { margin: 0 0 6px; font-size: 15px; }
-        .notice p { margin: 0 0 8px; font-size: 13px; color: var(--ink-2); }
-        code { font-family: var(--mono); font-size: .92em; }
-
-    /* -------------------------------------------------------------- dialog */
-
-        dialog {
-            width: min(820px, 94vw);
-            max-height: 88vh;
-            padding: 0;
-            border: 1px solid var(--rule);
-            border-radius: var(--radius);
-            box-shadow: 0 24px 64px var(--shadow);
-            color: var(--ink);
-            background: var(--surface);
-        }
-        dialog::backdrop { background: var(--backdrop); }
-        .dlg { display: flex; flex-direction: column; max-height: 88vh; }
-        .dlg-head {
-            padding: 18px 20px 14px;
-            border-bottom: 1px solid var(--rule);
-            display: flex; justify-content: space-between; gap: 16px; align-items: flex-start;
-        }
-        .dlg-head h2 { margin: 0; font-family: var(--mono); font-size: 15px; font-weight: 700; }
-        .dlg-head p { margin: 4px 0 0; font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-        .dlg-tools {
-            padding: 10px 20px;
-            border-bottom: 1px solid var(--rule);
-            display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
-            background: var(--tools-bg);
-        }
-        .dlg-tools input[type=search] {
-            flex: 1 1 200px; min-width: 150px;
-            font-family: var(--mono); font-size: 13px;
-            padding: 7px 10px;
-            border: 1px solid var(--rule); border-radius: var(--radius);
-            background: var(--surface); color: var(--ink);
-        }
-        .dlg-tools label { font-size: 12px; color: var(--ink-2); display: flex; align-items: center; gap: 6px; cursor: pointer; }
-        .dlg-tools .count { font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; margin-left: auto; }
-        .dlg-body { overflow-y: auto; padding: 4px 20px 20px; }
-        .dlg-body details { border-bottom: 1px solid var(--rule-soft); }
-        .dlg-body summary {
-            cursor: pointer; padding: 9px 0; font-size: 13px; font-weight: 700;
-            font-family: var(--mono);
-            display: flex; align-items: baseline; gap: 10px;
-        }
-        .dlg-body summary .count { font-family: var(--display); font-weight: 400; font-size: 11.5px; color: var(--ink-3); }
-        .vrow {
-            display: flex; justify-content: space-between; align-items: center; gap: 14px;
-            padding: 3px 0 3px 14px;
-        }
-        .vrow .v { font-family: var(--mono); font-size: 12.5px; overflow-wrap: anywhere; }
-        .vrow .v.pre { color: var(--signal); }
-        .muted { color: var(--ink-2); font-size: 13px; }
-
-        /* --------------------------------------------------------------- motion */
-
-        @media (prefers-reduced-motion: no-preference) {
-            .btn, .seg, .line-chip, .node { transition: background-color .13s, color .13s, border-color .13s; }
-            .node { animation: settle .22s ease-out backwards; }
-            @keyframes settle {
-                from { opacity: 0; transform: translateY(3px); }
-            }
-        }
-
-        /* ----------------------------------------------------------- responsive */
-
-        @media (max-width: 720px) {
-            .wrap { padding: 0 16px; }
-            .node { grid-template-columns: 1fr; gap: 8px; padding: 10px 12px; }
-            .coord { font-size: 13px; grid-template-columns: 1fr; }
-            .seg { border-left: 0; padding: 2px 0; }
-            .seg:first-child { border-left: 0; padding-left: 0; }
-            .acts { flex-wrap: wrap; }
-            .legend { display: none; }
-            .inv-row { grid-template-columns: 1fr; gap: 6px; }
-        }
+      }
     </style>
-</head>
-<body>
-
-<header class="masthead">
-    <div class="wrap">
-        <h1 class="wordmark">MPS Library Versions <span>extractor 3000</span></h1>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="wrap">
+        <h1 class="wordmark">
+          MPS Library Versions <span>extractor 3000</span>
+        </h1>
 
         <div class="nyan-track" aria-hidden="true">
-            <span class="nyan-trail"></span>
-            <svg class="nyan-cat" viewBox="50 0 46 28" shape-rendering="crispEdges">
-                    <rect x="52" y="5"  width="26" height="20" fill="#FF9EC8"/>
-                    <rect x="55" y="8"  width="20" height="14" fill="#FFD3E8"/>
-                    <rect x="59" y="11" width="2"  height="2"  fill="#FF5FA2"/>
-                    <rect x="66" y="14" width="2"  height="2"  fill="#FF5FA2"/>
-                    <rect x="62" y="17" width="2"  height="2"  fill="#FF5FA2"/>
-                    <rect x="76" y="4"  width="4"  height="4"  fill="#C9C9C9"/>
-                    <rect x="86" y="4"  width="4"  height="4"  fill="#C9C9C9"/>
-                    <rect x="74" y="7"  width="18" height="16" fill="#C9C9C9"/>
-                    <rect x="79" y="12" width="3"  height="3"  fill="#1A1A1A"/>
-                    <rect x="86" y="12" width="3"  height="3"  fill="#1A1A1A"/>
-                    <rect x="76" y="16" width="3"  height="3"  fill="#FF8FB8"/>
-                    <rect x="88" y="16" width="3"  height="3"  fill="#FF8FB8"/>
-                    <rect x="83" y="17" width="2"  height="2"  fill="#1A1A1A"/>
-                    <rect x="56" y="25" width="4"  height="2"  fill="#C9C9C9"/>
-                    <rect x="68" y="25" width="4"  height="2"  fill="#C9C9C9"/>
-            </svg>
+          <span class="nyan-trail"></span>
+          <svg
+            class="nyan-cat"
+            viewBox="50 0 46 28"
+            shape-rendering="crispEdges"
+          >
+            <rect x="52" y="5" width="26" height="20" fill="#FF9EC8" />
+            <rect x="55" y="8" width="20" height="14" fill="#FFD3E8" />
+            <rect x="59" y="11" width="2" height="2" fill="#FF5FA2" />
+            <rect x="66" y="14" width="2" height="2" fill="#FF5FA2" />
+            <rect x="62" y="17" width="2" height="2" fill="#FF5FA2" />
+            <rect x="76" y="4" width="4" height="4" fill="#C9C9C9" />
+            <rect x="86" y="4" width="4" height="4" fill="#C9C9C9" />
+            <rect x="74" y="7" width="18" height="16" fill="#C9C9C9" />
+            <rect x="79" y="12" width="3" height="3" fill="#1A1A1A" />
+            <rect x="86" y="12" width="3" height="3" fill="#1A1A1A" />
+            <rect x="76" y="16" width="3" height="3" fill="#FF8FB8" />
+            <rect x="88" y="16" width="3" height="3" fill="#FF8FB8" />
+            <rect x="83" y="17" width="2" height="2" fill="#1A1A1A" />
+            <rect x="56" y="25" width="4" height="2" fill="#C9C9C9" />
+            <rect x="68" y="25" width="4" height="2" fill="#C9C9C9" />
+          </svg>
         </div>
 
         <div class="stamp" id="stamp"></div>
-    </div>
-</header>
+      </div>
+    </header>
 
-<main id="main">
-    <div class="wrap">
+    <main id="main">
+      <div class="wrap">
         <section class="finder" id="finder" hidden>
-            <input type="search" id="q" autocomplete="off" spellcheck="false"
-                   aria-label="Search every version"
-                   placeholder="One Serach to find it all — group, artifact, version. Space-separated terms all have to match.">
-            <p class="finder-note" id="q-note"></p>
+          <input
+            type="search"
+            id="q"
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Search every version"
+            placeholder="One Serach to find it all — group, artifact, version. Space-separated terms all have to match."
+          />
+          <p class="finder-note" id="q-note"></p>
         </section>
 
         <section class="hits" id="hits" hidden></section>
 
         <section class="picker" id="picker" hidden>
-            <h2 class="ask">Building against MPS <em id="ask-line"></em></h2>
-            <div class="lines" id="lines" role="group" aria-label="MPS release line"></div>
+          <h2 class="ask">Building against MPS <em id="ask-line"></em></h2>
+          <div>
+            <div
+              class="lines"
+              id="lines"
+              role="group"
+              aria-label="MPS release line"
+            ></div>
             <p class="key-note" id="key-note" hidden>key versions</p>
+          </div>
+          <aside
+            class="chain"
+            id="chain"
+            aria-label="Dependency chain"
+            hidden
+          ></aside>
         </section>
 
         <section class="board" id="board" hidden>
-            <div class="board-head">
-                <div>
-                    <h2 class="board-title" id="board-title"></h2>
-                    <p class="board-note" id="board-note"></p>
-                </div>
-                <div class="acts">
-                    <button class="btn btn--out" id="copy-versions">Copy versions</button>
-                    <button class="btn btn--solid" id="copy-coords">Copy coordinates</button>
-                </div>
+          <div class="board-head">
+            <div>
+              <h2 class="board-title" id="board-title"></h2>
+              <p class="board-note" id="board-note"></p>
             </div>
-            <div class="legend"><span>group</span><span>artifact</span><span>version</span></div>
-            <div id="nodes"></div>
+            <div class="acts">
+              <button class="btn btn--out" id="copy-versions">
+                Copy versions
+              </button>
+              <button class="btn btn--solid" id="copy-coords">
+                Copy coordinates
+              </button>
+            </div>
+          </div>
+          <div class="legend">
+            <span>group</span><span>artifact</span><span>version</span>
+          </div>
+          <div id="nodes"></div>
         </section>
 
         <div id="bootstrap"></div>
-    </div>
+      </div>
 
-    <section class="slab" id="inventory-slab" hidden>
+      <section class="slab" id="inventory-slab" hidden>
         <div class="wrap">
-            <h2>Libraries</h2>
-            <p class="lede">Every version ever published, including pre-releases and feature-branch builds.</p>
-            <div class="inventory" id="inventory"></div>
+          <h2>Libraries</h2>
+          <p class="lede">
+            Every version ever published, including pre-releases and
+            feature-branch builds.
+          </p>
+          <div class="inventory" id="inventory"></div>
         </div>
-    </section>
+      </section>
 
-    <footer class="colophon">
+      <footer class="colophon">
         <div class="wrap" id="colophon"></div>
-    </footer>
-</main>
+      </footer>
+    </main>
 
-<dialog id="all-versions">
-    <div class="dlg">
+    <dialog id="all-versions">
+      <div class="dlg">
         <div class="dlg-head">
-            <div>
-                <h2 id="dlg-title"></h2>
-                <p id="dlg-sub"></p>
-            </div>
-            <button class="btn btn--out" id="dlg-close" aria-label="Close">Close</button>
+          <div>
+            <h2 id="dlg-title"></h2>
+            <p id="dlg-sub"></p>
+          </div>
+          <button class="btn btn--out" id="dlg-close" aria-label="Close">
+            Close
+          </button>
         </div>
         <div class="dlg-tools">
-            <input type="search" id="dlg-search" placeholder="Filter versions…" autocomplete="off">
-            <label><input type="checkbox" id="dlg-pre" checked> pre-releases</label>
-            <label><input type="checkbox" id="dlg-branch" checked> branch builds</label>
-            <span class="count" id="dlg-count"></span>
+          <input
+            type="search"
+            id="dlg-search"
+            placeholder="Filter versions…"
+            autocomplete="off"
+          />
+          <label
+            ><input type="checkbox" id="dlg-pre" checked /> pre-releases</label
+          >
+          <label
+            ><input type="checkbox" id="dlg-branch" checked /> branch
+            builds</label
+          >
+          <span class="count" id="dlg-count"></span>
         </div>
         <div class="dlg-body" id="dlg-body"></div>
-    </div>
-</dialog>
+      </div>
+    </dialog>
 
-<script type="module">
-    import {
+    <dialog id="inspect">
+      <div class="dlg">
+        <div class="dlg-head">
+          <div>
+            <h2 id="ins-title"></h2>
+            <p id="ins-sub"></p>
+          </div>
+          <button class="btn btn--out" id="ins-close" aria-label="Close">
+            Close
+          </button>
+        </div>
+        <div class="dlg-tools ins-tools">
+          <p>
+            Minimum versions, as listed in the POMs. Newer builds of the same
+            line satisfy them too.
+          </p>
+          <span class="acts">
+            <button class="btn btn--out" id="ins-copy-versions">
+              Copy versions
+            </button>
+            <button class="btn btn--solid" id="ins-copy-coords">
+              Copy coordinates
+            </button>
+          </span>
+        </div>
+        <div class="dlg-body ins-body" id="ins-body"></div>
+      </div>
+    </dialog>
+
+    <script type="module">
+      import {
         artifactUrls,
         mavenCoordinate,
         lineLabel,
         isDevelopmentLine,
+        isPreRelease,
         compareVersions,
-    } from './versions-lib.js';
+        lineOf,
+        resolveRequirements,
+      } from "./versions-lib.js";
 
-    const REPO = 'https://github.com/nkoester/mps-libraries-latest-version-finder';
+      const REPO =
+        "https://github.com/nkoester/mps-libraries-latest-version-finder";
 
-    /** Release lines given visual priority in the picker. Edit to taste. */
-    const KEY_LINES = new Set(['2026.1', '2025.1', '2024.1', '9999.9']);
+      /** Release lines given visual priority in the picker. Edit to taste. */
+      const KEY_LINES = new Set(["2026.1", "2025.1", "2024.1", "9999.9"]);
 
-    /** Release line selected when the page loads. */
-    const DEFAULT_LINE = '2025.1';
+      /** Release line selected when the page loads. */
+      const DEFAULT_LINE = "2025.1";
 
-    const state = {
+      const state = {
         generatedAt: null,
         libraries: [],
         lineMap: new Map(),
         selected: null,
         fullData: new Map(),
         dialog: null,
-    };
+        graph: null,
+      };
 
-    const copyRegistry = [];
-    const copyRef = (text) => copyRegistry.push(text) - 1;
+      const copyRegistry = [];
+      const copyRef = (text) => copyRegistry.push(text) - 1;
 
-    const $ = (id) => document.getElementById(id);
-    const esc = (value) => String(value).replace(/[&<>"']/g, (c) =>
-        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      const $ = (id) => document.getElementById(id);
+      const esc = (value) =>
+        String(value).replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[c],
+        );
 
-    /* ---------------------------------------------------------------- time */
+      /* ---------------------------------------------------------------- time */
 
-    function absoluteTime(iso) {
+      function absoluteTime(iso) {
         const date = new Date(iso);
-        if (Number.isNaN(date.getTime())) return 'unknown';
+        if (Number.isNaN(date.getTime())) return "unknown";
         // sv-SE is the one common locale that yields ISO-ordered YYYY-MM-DD HH:MM,
         // so the date is never ambiguous. Clock and zone stay local to the reader.
-        return date.toLocaleString('sv-SE', {
-            year: 'numeric', month: '2-digit', day: '2-digit',
-            hour: '2-digit', minute: '2-digit', hour12: false, timeZoneName: 'short',
+        return date.toLocaleString("sv-SE", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+          timeZoneName: "short",
         });
-    }
+      }
 
-    function relativeTime(iso) {
+      function relativeTime(iso) {
         const then = new Date(iso).getTime();
-        if (Number.isNaN(then)) return 'unknown';
+        if (Number.isNaN(then)) return "unknown";
         const seconds = Math.round((Date.now() - then) / 1000);
-        if (seconds < 60) return 'just now';
+        if (seconds < 60) return "just now";
         const minutes = Math.round(seconds / 60);
         if (minutes < 60) return `${minutes} min ago`;
         const hours = Math.round(minutes / 60);
         if (hours < 36) return `${hours} h ago`;
         const days = Math.round(hours / 24);
-        return `${days} day${days === 1 ? '' : 's'} ago`;
-    }
+        return `${days} day${days === 1 ? "" : "s"} ago`;
+      }
 
-    /* ---------------------------------------------------------------- load */
+      /* ---------------------------------------------------------------- load */
 
-    async function load() {
+      async function load() {
         try {
-            const response = await fetch('./versions.json');
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            const summary = await response.json();
-            state.generatedAt = summary.generatedAt;
-            state.libraries = summary.libraries;
-            state.lineMap = buildLineMap(summary.libraries.filter((l) => l.ok));
-            state.selected = defaultLine();
-            renderAll();
+          // The chain panel is optional: without graph.json it stays hidden.
+          const graphRequest = fetch("./data/deps/graph.json")
+            .then((r) => (r.ok ? r.json() : null))
+            .catch(() => null);
+          const response = await fetch("./versions.json");
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const summary = await response.json();
+          state.graph = await graphRequest;
+          state.generatedAt = summary.generatedAt;
+          state.libraries = summary.libraries;
+          state.lineMap = buildLineMap(summary.libraries.filter((l) => l.ok));
+          state.selected = defaultLine();
+          renderAll();
         } catch (error) {
-            $('bootstrap').innerHTML = `
+          $("bootstrap").innerHTML = `
                 <div class="notice">
                     <h2>No version data</h2>
                     <p><code>versions.json</code> could not be loaded (${esc(error.message)}).
@@ -819,147 +1465,178 @@
                     <p>Serve this page over HTTP; opening the file directly will not work.</p>
                 </div>`;
         }
-    }
+      }
 
-    /** line -> entries, newest first. */
-    function buildLineMap(libraries) {
+      /** line -> entries, newest first. */
+      function buildLineMap(libraries) {
         const map = new Map();
         for (const library of libraries) {
-            for (const line of library.lines ?? []) {
-                if (!map.has(line.line)) map.set(line.line, []);
-                map.get(line.line).push({ library, ...line });
-            }
+          for (const line of library.lines ?? []) {
+            if (!map.has(line.line)) map.set(line.line, []);
+            map.get(line.line).push({ library, ...line });
+          }
         }
-        return new Map([...map.entries()].sort((a, b) => {
+        return new Map(
+          [...map.entries()].sort((a, b) => {
             const aDev = isDevelopmentLine(a[0]);
             const bDev = isDevelopmentLine(b[0]);
             if (aDev !== bDev) return aDev ? 1 : -1;
-            const [aMaj, aMin] = a[0].split('.').map(Number);
-            const [bMaj, bMin] = b[0].split('.').map(Number);
+            const [aMaj, aMin] = a[0].split(".").map(Number);
+            const [bMaj, bMin] = b[0].split(".").map(Number);
             return bMaj - aMaj || bMin - aMin;
-        }));
-    }
+          }),
+        );
+      }
 
-    /**
-     * The line selected on load. Falls back to the newest real release line —
-     * never the synthetic development line — if DEFAULT_LINE stops being
-     * published.
-     */
-    function defaultLine() {
+      /**
+       * The line selected on load. Falls back to the newest real release line —
+       * never the synthetic development line — if DEFAULT_LINE stops being
+       * published.
+       */
+      function defaultLine() {
         const keys = [...state.lineMap.keys()];
         if (keys.includes(DEFAULT_LINE)) return DEFAULT_LINE;
         return keys.find((line) => !isDevelopmentLine(line)) ?? keys[0] ?? null;
-    }
+      }
 
-    /* -------------------------------------------------------------- render */
+      /* -------------------------------------------------------------- render */
 
-    function renderAll() {
+      function renderAll() {
         renderStamp();
         renderLines();
-        $('key-note').hidden = ![...state.lineMap.keys()].some((line) => KEY_LINES.has(line));
+        $("key-note").hidden = ![...state.lineMap.keys()].some((line) =>
+          KEY_LINES.has(line),
+        );
         renderBoard();
         renderInventory();
         renderColophon();
-        $('finder').hidden = false;
-        $('q').focus({ preventScroll: true });
-        $('picker').hidden = false;
-        $('board').hidden = false;
-        $('inventory-slab').hidden = false;
-    }
+        $("finder").hidden = false;
+        $("q").focus({ preventScroll: true });
+        $("picker").hidden = false;
+        $("board").hidden = false;
+        $("inventory-slab").hidden = false;
+      }
 
-    function renderStamp() {
-        $('stamp').innerHTML = `
+      function renderStamp() {
+        $("stamp").innerHTML = `
             <span class="stamp-line">
                 <span>updated</span>
                 <time datetime="${esc(state.generatedAt)}" title="${esc(state.generatedAt)}">${esc(absoluteTime(state.generatedAt))}</time>
                 <span class="ago" id="ago">${esc(relativeTime(state.generatedAt))}</span>
             </span>
             <a class="stamp-repo" href="${REPO}" target="_blank" rel="noopener noreferrer">nkoester/mps-libraries-latest-version-finder</a>`;
-    }
+      }
 
-    setInterval(() => {
-        const ago = $('ago');
-        if (ago && state.generatedAt) ago.textContent = relativeTime(state.generatedAt);
-    }, 60000);
+      setInterval(() => {
+        const ago = $("ago");
+        if (ago && state.generatedAt)
+          ago.textContent = relativeTime(state.generatedAt);
+      }, 60000);
 
-    function chip(line, entries) {
-        const classes = ['line-chip'];
-        if (KEY_LINES.has(line)) classes.push('key');
+      function chip(line, entries) {
+        const classes = ["line-chip"];
+        if (KEY_LINES.has(line)) classes.push("key");
         return `
-            <button class="${classes.join(' ')}" data-line="${esc(line)}"
+            <button class="${classes.join(" ")}" data-line="${esc(line)}"
                     aria-pressed="${line === state.selected}">
                 ${esc(isDevelopmentLine(line) ? `master ${line}` : line)}<span class="n">${entries.length}</span>
             </button>`;
-    }
+      }
 
-    /** One row per year, so the eye can jump straight to the right block. */
-    function renderLines() {
+      /** One row per year, so the eye can jump straight to the right block. */
+      function renderLines() {
         const years = new Map();
         for (const [line, entries] of state.lineMap) {
-            const year = isDevelopmentLine(line) ? 'dev' : line.split('.')[0];
-            if (!years.has(year)) years.set(year, []);
-            years.get(year).push([line, entries]);
+          const year = isDevelopmentLine(line) ? "dev" : line.split(".")[0];
+          if (!years.has(year)) years.set(year, []);
+          years.get(year).push([line, entries]);
         }
         // Newest year on top, but versions left-to-right ascending within it.
         for (const lines of years.values()) {
-            lines.reverse();
+          lines.reverse();
         }
-        $('lines').innerHTML = [...years.entries()].map(([year, lines]) => `
-            <div class="year" role="group" aria-label="${year === 'dev' ? 'Development builds' : `MPS ${year}`}">
+        $("lines").innerHTML = [...years.entries()]
+          .map(
+            ([year, lines]) => `
+            <div class="year" role="group" aria-label="${year === "dev" ? "Development builds" : `MPS ${year}`}">
                 <span class="year-label">${esc(year)}</span>
-                <div class="year-chips">${lines.map(([line, entries]) => chip(line, entries)).join('')}</div>
-            </div>`).join('');
-    }
+                <div class="year-chips">${lines.map(([line, entries]) => chip(line, entries)).join("")}</div>
+            </div>`,
+          )
+          .join("");
+      }
 
-    function renderBoard() {
+      function renderBoard() {
         const line = state.selected;
         if (!line) return;
         const entries = state.lineMap.get(line) ?? [];
-        const present = new Map(entries.map((entry) => [entry.library.slug, entry]));
+        const present = new Map(
+          entries.map((entry) => [entry.library.slug, entry]),
+        );
 
-        $('ask-line').textContent = isDevelopmentLine(line) ? lineLabel(line) : line;
-        $('board-title').innerHTML = isDevelopmentLine(line)
-            ? `<span class="lead">Development</span> builds <span class="dim">(${esc(line)})</span>`
-            : `<span class="lead">Latest</span> for MPS ${esc(line)}`;
+        $("ask-line").textContent = isDevelopmentLine(line)
+          ? lineLabel(line)
+          : line;
+        $("board-title").innerHTML = isDevelopmentLine(line)
+          ? `<span class="lead">Development</span> builds <span class="dim">(${esc(line)})</span>`
+          : `<span class="lead">Latest</span> for MPS ${esc(line)}`;
 
-        const missing = state.libraries.filter((library) => library.ok && !present.has(library.slug));
+        const missing = state.libraries.filter(
+          (library) => library.ok && !present.has(library.slug),
+        );
         const notes = [];
         if (isDevelopmentLine(line)) {
-            notes.push('<strong>Not a release.</strong> Builds off the development branch, published under a synthetic version.');
+          notes.push(
+            "<strong>Not a release.</strong> Builds off the development branch, published under a synthetic version.",
+          );
         }
         if (missing.length) {
-            notes.push(`${missing.length} of ${state.libraries.length} libraries publish nothing for this line.`);
+          notes.push(
+            `${missing.length} of ${state.libraries.length} libraries publish nothing for this line.`,
+          );
         }
-        $('board-note').innerHTML = notes.join(' ');
+        $("board-note").innerHTML = notes.join(" ");
 
         // Ordered by the dependency stack (MPS, then what builds on it), which is
         // the order libraries.json declares. Libraries with no build for this line
         // come last -- the negative answer is information too.
-        const rank = new Map(state.libraries.map((library, index) => [library.slug, index]));
-        const byStack = (a, b) => rank.get(a.library.slug) - rank.get(b.library.slug);
+        const rank = new Map(
+          state.libraries.map((library, index) => [library.slug, index]),
+        );
+        const byStack = (a, b) =>
+          rank.get(a.library.slug) - rank.get(b.library.slug);
         const ordered = [
-            ...entries.slice().sort(byStack),
-            ...missing
-                .map((library) => ({ library, absent: true }))
-                .sort(byStack),
+          ...entries.slice().sort(byStack),
+          ...missing
+            .map((library) => ({ library, absent: true }))
+            .sort(byStack),
         ];
 
-        $('nodes').innerHTML = ordered.map((entry, index) => renderNode(entry, index)).join('');
+        $("nodes").innerHTML = ordered
+          .map((entry, index) => renderNode(entry, index))
+          .join("");
+        renderChain();
 
         const live = entries.map((entry) => entry);
-        $('copy-versions').dataset.copy = copyRef(live.map((e) => e.latest).join('\n'));
-        $('copy-coords').dataset.copy = copyRef(live.map((e) => mavenCoordinate(e.library, e.latest)).join('\n'));
+        $("copy-versions").dataset.copy = copyRef(
+          live.map((e) => e.latest).join("\n"),
+        );
+        $("copy-coords").dataset.copy = copyRef(
+          live.map((e) => mavenCoordinate(e.library, e.latest)).join("\n"),
+        );
         const n = live.length;
-        $('copy-versions').textContent = `Copy ${n} version${n === 1 ? '' : 's'}`;
-        $('copy-coords').textContent = `Copy ${n} coordinate${n === 1 ? '' : 's'}`;
-    }
+        $("copy-versions").textContent =
+          `Copy ${n} version${n === 1 ? "" : "s"}`;
+        $("copy-coords").textContent =
+          `Copy ${n} coordinate${n === 1 ? "" : "s"}`;
+      }
 
-    function renderNode(entry, index) {
+      function renderNode(entry, index) {
         const { library } = entry;
         const delay = `style="animation-delay:${Math.min(index * 22, 180)}ms"`;
 
         if (entry.absent) {
-            return `
+          return `
                 <article class="node absent" ${delay}>
                     <div class="coord">
                         <span class="seg">${esc(library.groupId)}</span>
@@ -981,10 +1658,10 @@
                             title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</button>
                     <button class="seg" data-copy="${copyRef(library.artifactId)}"
                             title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</button>
-                    <button class="seg seg--version${latestIsPreRelease ? ' pre' : ''}"
+                    <button class="seg seg--version${latestIsPreRelease ? " pre" : ""}"
                             data-copy="${copyRef(latest)}"
                             title="Copy version ${esc(latest)}">${esc(latest)}</button>
-                    ${latestIsPreRelease ? '<span class="tag">pre-release</span>' : ''}
+                    ${latestIsPreRelease ? '<span class="tag">pre-release</span>' : ""}
                 </div>
                 <div class="acts">
                     <button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}"
@@ -994,270 +1671,718 @@
                     <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>
                     <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, latest))}"
                     title="Copy ${esc(mavenCoordinate(library, latest))}">Copy</button>
+                    ${inspectButton(library, latest, "btn btn--out", "Inspect")}
                 </div>
             </article>`;
-    }
+      }
 
-    function renderInventory() {
-        $('inventory').innerHTML = state.libraries.map((library) => {
-            const urls = artifactUrls(library, '');
+      function renderInventory() {
+        $("inventory").innerHTML = state.libraries
+          .map((library) => {
+            const urls = artifactUrls(library, "");
             if (!library.ok) {
-                return `
+              return `
                     <div class="inv-row bad">
                         <span class="inv-name">${esc(library.groupId)}:${esc(library.artifactId)}</span>
-                        <span class="inv-facts">unavailable — ${esc(library.error ?? 'fetch failed')}, showing last known data</span>
+                        <span class="inv-facts">unavailable — ${esc(library.error ?? "fetch failed")}, showing last known data</span>
                         <span class="acts"><button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}">Show all versions</button></span>
                     </div>`;
             }
-            const facts = [`<b>${library.released ?? library.total}</b> releases`, `${library.lines.length} lines`];
-            if (library.preRelease) facts.push(`${library.preRelease} pre-release`);
-            if (library.branchCount) facts.push(`${library.branchCount} branch builds`);
+            const facts = [
+              `<b>${library.released ?? library.total}</b> releases`,
+              `${library.lines.length} lines`,
+            ];
+            if (library.preRelease)
+              facts.push(`${library.preRelease} pre-release`);
+            if (library.branchCount)
+              facts.push(`${library.branchCount} branch builds`);
             return `
                 <div class="inv-row">
                     <span class="inv-name">${esc(library.groupId)}:${esc(library.artifactId)}</span>
-                    <span class="inv-facts">${facts.join(' · ')}</span>
+                    <span class="inv-facts">${facts.join(" · ")}</span>
                     <span class="acts">
                         <button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}">Show all versions</button>
                         <a class="btn" href="${esc(urls.folder)}" target="_blank" rel="noopener noreferrer">nexus</a>
                         <a class="btn" href="${esc(library.metadataUrl)}" target="_blank" rel="noopener noreferrer">xml</a>
                     </span>
                 </div>`;
-        }).join('');
-    }
+          })
+          .join("");
+      }
 
-    function renderColophon() {
+      function renderColophon() {
         const ok = state.libraries.filter((l) => l.ok);
         const total = ok.reduce((sum, l) => sum + (l.total ?? 0), 0);
-        $('colophon').innerHTML = `
-            <p class="figures">${total.toLocaleString('en-US')} versions · ${ok.length}/${state.libraries.length} libraries · ${state.lineMap.size} release lines</p>`;
-    }
+        $("colophon").innerHTML = `
+            <p class="figures">${total.toLocaleString("en-US")} versions · ${ok.length}/${state.libraries.length} libraries · ${state.lineMap.size} release lines</p>`;
+      }
 
-        /* -------------------------------------------------------------- search */
+      /* --------------------------------------------------------------- chain */
 
-    const HIT_LIMIT = 250;
-    let searchIndex = null;
-    let indexing = null;
+      const CHAIN = { w: 124, h: 38, gx: 14, gy: 30 };
 
-    /**
-     * Every version of every library, flattened. Pulled on demand -- the whole
-     * corpus is ~90 KB gzipped, which is not worth spending on page load for a
-     * feature most visits never touch.
-     */
-    async function buildIndex() {
+      const bySlug = (slug) =>
+        state.libraries.find((library) => library.slug === slug);
+      const rankOf = (slug) =>
+        state.libraries.findIndex((library) => library.slug === slug);
+
+      /**
+       * Layered drawing of what the latest build of each library in the selected
+       * line declares: dependents on top, their dependencies below.
+       */
+      function renderChain() {
+        const panel = $("chain");
+        const graph = state.graph?.lines?.[state.selected];
+        if (!graph) {
+          panel.hidden = true;
+          return;
+        }
+        const line = state.selected;
+        const present = state.libraries.filter(
+          (library) => graph.latest[library.slug],
+        );
+        const absent = state.libraries.filter(
+          (library) => library.ok && !graph.latest[library.slug],
+        );
+        const edges = graph.edges.filter(
+          ([from, to]) => graph.latest[from] && graph.latest[to],
+        );
+
+        const needs = new Map(present.map((library) => [library.slug, []]));
+        const neededBy = new Map(present.map((library) => [library.slug, []]));
+        for (const [from, to] of edges) {
+          needs.get(from).push(to);
+          neededBy.get(to).push(from);
+        }
+
+        // Depth = longest path down to a library with no tracked dependencies.
+        const depth = new Map();
+        const depthOf = (slug, trail = new Set()) => {
+          if (depth.has(slug)) return depth.get(slug);
+          if (trail.has(slug)) return 0;
+          trail.add(slug);
+          const below = needs.get(slug).map((dep) => depthOf(dep, trail));
+          const value = below.length ? 1 + Math.max(...below) : 0;
+          depth.set(slug, value);
+          return value;
+        };
+        present.forEach((library) => depthOf(library.slug));
+
+        const layers = [];
+        for (const library of present) {
+          (layers[depth.get(library.slug)] ??= []).push(library.slug);
+        }
+        for (let i = 0; i < layers.length; i++) layers[i] ??= [];
+
+        // A handful of libraries, so every ordering of every layer is tried:
+        // fewest crossings first, then the most vertical edges. Ties keep the
+        // libraries.json order, as the search starts from it.
+        const widest = Math.max(...layers.map((layer) => layer.length));
+        const position = new Map();
+        const place = (order) =>
+          order.forEach((layer) =>
+            layer.forEach((slug, i) =>
+              position.set(slug, (widest - layer.length) / 2 + i),
+            ),
+          );
+        const score = () => {
+          let crossings = 0;
+          let drift = 0;
+          for (const [i, [a, b]] of edges.entries()) {
+            drift += Math.abs(position.get(a) - position.get(b));
+            for (const [c, d] of edges.slice(i + 1)) {
+              const sameSpan =
+                depth.get(a) === depth.get(c) && depth.get(b) === depth.get(d);
+              if (
+                sameSpan &&
+                (position.get(a) - position.get(c)) *
+                  (position.get(b) - position.get(d)) <
+                  0
+              )
+                crossings++;
+            }
+          }
+          return crossings * 1000 + drift;
+        };
+        const permutations = (items) =>
+          items.length <= 1
+            ? [items]
+            : items.flatMap((item, i) =>
+                permutations([...items.slice(0, i), ...items.slice(i + 1)]).map(
+                  (rest) => [item, ...rest],
+                ),
+              );
+        const options = layers.map(permutations);
+        let best = layers;
+        if (options.reduce((n, list) => n * list.length, 1) <= 5000) {
+          let bestScore = Infinity;
+          const walk = (d, chosen) => {
+            if (d === options.length) {
+              place(chosen);
+              const value = score();
+              if (value < bestScore) {
+                bestScore = value;
+                best = chosen;
+              }
+              return;
+            }
+            for (const option of options[d]) walk(d + 1, [...chosen, option]);
+          };
+          walk(0, []);
+        }
+        place(best);
+
+        const top = layers.length - 1;
+        const x = (slug) => position.get(slug) * (CHAIN.w + CHAIN.gx);
+        const y = (slug) => (top - depth.get(slug)) * (CHAIN.h + CHAIN.gy);
+        const width = widest * CHAIN.w + (widest - 1) * CHAIN.gx;
+        const height = layers.length * CHAIN.h + (layers.length - 1) * CHAIN.gy;
+
+        const edgeSvg = edges
+          .map(([from, to, version]) => {
+            const x1 = x(from) + CHAIN.w / 2;
+            const y1 = y(from) + CHAIN.h;
+            const x2 = x(to) + CHAIN.w / 2;
+            const y2 = y(to) - 3;
+            const mid = (y1 + y2) / 2;
+            return `
+                <path class="ce" data-from="${esc(from)}" data-to="${esc(to)}" marker-end="url(#chain-arrow)"
+                      d="M${x1} ${y1} C${x1} ${mid}, ${x2} ${mid}, ${x2} ${y2}">
+                    <title>${esc(bySlug(from).artifactId)} needs ${esc(bySlug(to).artifactId)} ≥ ${esc(version)}</title>
+                </path>`;
+          })
+          .join("");
+
+        const nodeSvg = present
+          .map((library) => {
+            const latest = graph.latest[library.slug];
+            return `
+                <g class="cn" data-slug="${esc(library.slug)}" data-act="inspect" data-v="${esc(latest)}"
+                   tabindex="0" role="button" transform="translate(${x(library.slug)} ${y(library.slug)})"
+                   aria-label="Inspect ${esc(mavenCoordinate(library, latest))}">
+                    <title>${esc(mavenCoordinate(library, latest))}: inspect</title>
+                    <rect width="${CHAIN.w}" height="${CHAIN.h}" rx="3"/>
+                    <text class="a" x="10" y="16">${esc(library.artifactId)}</text>
+                    <text class="g" x="10" y="30">${esc(library.groupId)}</text>
+                </g>`;
+          })
+          .join("");
+
+        panel.innerHTML = `
+            <h3>Dependency chain</h3>
+            <p class="chain-note">As declared by the latest ${esc(lineLabel(line))} builds. Arrow = needs.</p>
+            <svg viewBox="-2 -2 ${width + 4} ${height + 4}" role="img" aria-label="Dependencies between the latest ${esc(line)} builds">
+                <defs>
+                    <marker id="chain-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                        <path d="M0 0 L10 5 L0 10 z"/>
+                    </marker>
+                </defs>
+                ${edgeSvg}
+                ${nodeSvg}
+            </svg>
+            ${absent.length ? `<p class="chain-foot">No ${esc(line)} build: ${absent.map((l) => `<b>${esc(l.artifactId)}</b>`).join(", ")}</p>` : ""}`;
+        panel.hidden = false;
+      }
+
+      /** Hovering a library lights up the edges it takes part in. */
+      function highlightChain(slug) {
+        for (const edge of $("chain").querySelectorAll(".ce")) {
+          edge.classList.toggle(
+            "hot",
+            slug !== null &&
+              (edge.dataset.from === slug || edge.dataset.to === slug),
+          );
+        }
+      }
+      $("chain").addEventListener("mouseover", (event) =>
+        highlightChain(event.target.closest(".cn")?.dataset.slug ?? null),
+      );
+      $("chain").addEventListener("mouseleave", () => highlightChain(null));
+      $("chain").addEventListener("focusin", (event) =>
+        highlightChain(event.target.closest(".cn")?.dataset.slug ?? null),
+      );
+      $("chain").addEventListener("focusout", () => highlightChain(null));
+      $("chain").addEventListener("keydown", (event) => {
+        const node = event.target.closest(".cn");
+        if (node && (event.key === "Enter" || event.key === " ")) {
+          event.preventDefault();
+          openInspect(node.dataset.slug, node.dataset.v);
+        }
+      });
+
+      /* ------------------------------------------------------------- inspect */
+
+      const ins = $("inspect");
+      const depsFiles = new Map();
+      let inspecting = null;
+
+      function inspectButton(library, version, classes, label) {
+        return `<button class="${classes}" data-act="inspect" data-slug="${esc(library.slug)}" data-v="${esc(version)}"
+                        title="Dependencies of ${esc(mavenCoordinate(library, version))}">${label}</button>`;
+      }
+
+      /** version -> [[depSlug, depVersion], ...] for one library, fetched once. */
+      function loadDeps(slug) {
+        if (!depsFiles.has(slug)) {
+          depsFiles.set(
+            slug,
+            fetch(`./data/deps/${slug}.json`)
+              .then((response) => {
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return response.json();
+              })
+              .then((file) => file.versions)
+              .catch((error) => {
+                depsFiles.delete(slug);
+                throw error;
+              }),
+          );
+        }
+        return depsFiles.get(slug);
+      }
+
+      const depsOf = (slug, version) =>
+        loadDeps(slug).then(
+          (versions) => versions[version],
+          () => null,
+        );
+
+      function latestIn(slug, line) {
+        return (
+          state.lineMap.get(line)?.find((entry) => entry.library.slug === slug)
+            ?.latest ?? null
+        );
+      }
+
+      /** How a required minimum relates to what the line currently offers. */
+      function lineStatus(slug, version) {
+        const line = lineOf(version);
+        const latest = line ? latestIn(slug, line) : null;
+        if (!latest)
+          return `<span class="bad">no ${esc(line ?? "")} build in the index</span>`;
+        const order = compareVersions(latest, version);
+        if (order === 0)
+          return `<span class="ok">latest ${esc(lineLabel(line))}</span>`;
+        if (order > 0)
+          return `latest ${esc(lineLabel(line))}: <code>${esc(latest)}</code>`;
+        return `<span class="bad">newer than the latest indexed ${esc(line)} build</span>`;
+      }
+
+      function reqRow(library, version, { kind, meta, prefix = "" }) {
+        return `
+            <div class="req ${kind}">
+                <span class="ga">${esc(library.groupId)}:<b>${esc(library.artifactId)}</b></span>
+                <span class="rv${isPreRelease(version) ? " pre" : ""}">${prefix}${esc(version)}</span>
+                <span class="acts">
+                    <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, version))}"
+                            title="Copy ${esc(mavenCoordinate(library, version))}">Copy</button>
+                    ${kind === "root" ? "" : inspectButton(library, version, "btn", "inspect")}
+                </span>
+                <span class="meta">${meta}</span>
+            </div>`;
+      }
+
+      async function openInspect(slug, version) {
+        const library = bySlug(slug);
+        if (!library) return;
+        const token = {};
+        inspecting = token;
+        $("ins-title").textContent = mavenCoordinate(library, version);
+        $("ins-sub").textContent = "Resolving dependencies…";
+        $("ins-body").innerHTML = "";
+        for (const id of ["ins-copy-versions", "ins-copy-coords"])
+          $(id).disabled = true;
+        if (!ins.open) ins.showModal();
+
+        const { required, unknown } = await resolveRequirements(
+          { slug, v: version },
+          depsOf,
+        );
+        if (inspecting !== token) return;
+
+        const line = lineOf(version);
+        const ordered = required
+          .filter((entry) => bySlug(entry.slug))
+          .sort((a, b) => rankOf(a.slug) - rankOf(b.slug));
+        const constrained = new Set([
+          slug,
+          ...ordered.map((entry) => entry.slug),
+        ]);
+        const others = state.libraries.filter(
+          (l) => l.ok && !constrained.has(l.slug) && latestIn(l.slug, line),
+        );
+
+        const rootUnknown = unknown.some((entry) => entry.slug === slug);
+        $("ins-sub").textContent =
+          `${lineLabel(line)} · ` +
+          (rootUnknown
+            ? "dependencies unknown"
+            : ordered.length
+              ? `needs ${ordered.length} other librar${ordered.length === 1 ? "y" : "ies"}`
+              : "no dependencies on tracked libraries");
+
+        const viaText = (via) =>
+          via.length <= 1
+            ? "direct"
+            : `via <code>${[library, ...via.slice(0, -1).map(bySlug)].map((l) => esc(l.artifactId)).join(" → ")}</code>`;
+
+        let html =
+          "<h3>Inspected</h3>" +
+          reqRow(library, version, {
+            kind: "root",
+            meta: lineStatus(slug, version),
+          });
+        if (ordered.length) {
+          html +=
+            "<h3>Requires at least</h3>" +
+            ordered
+              .map((entry) =>
+                reqRow(bySlug(entry.slug), entry.v, {
+                  kind: "need",
+                  prefix: '<span class="ge">≥</span>',
+                  meta: `${viaText(entry.via)} · ${lineStatus(entry.slug, entry.v)}`,
+                }),
+              )
+              .join("");
+        }
+        if (others.length) {
+          html +=
+            "<h3>Not required by this build</h3>" +
+            others
+              .map((other) =>
+                reqRow(other, latestIn(other.slug, line), {
+                  kind: "free",
+                  meta: `any ${esc(lineLabel(line))} build; latest shown`,
+                }),
+              )
+              .join("");
+        }
+        if (unknown.length) {
+          html += `<p class="ins-warn">No dependency data for ${unknown
+            .map(
+              ({ slug: s, v }) =>
+                `<code>${esc(bySlug(s)?.artifactId ?? s)} ${esc(v)}</code>`,
+            )
+            .join(", ")}
+                (POM missing or not fetched yet). The list above may be incomplete.</p>`;
+        }
+        $("ins-body").innerHTML = html;
+
+        const set = [
+          { library, v: version },
+          ...ordered.map((entry) => ({
+            library: bySlug(entry.slug),
+            v: entry.v,
+          })),
+        ];
+        $("ins-copy-versions").dataset.copy = copyRef(
+          set.map((entry) => entry.v).join("\n"),
+        );
+        $("ins-copy-coords").dataset.copy = copyRef(
+          set
+            .map((entry) => mavenCoordinate(entry.library, entry.v))
+            .join("\n"),
+        );
+        $("ins-copy-versions").textContent =
+          `Copy ${set.length} version${set.length === 1 ? "" : "s"}`;
+        $("ins-copy-coords").textContent =
+          `Copy ${set.length} coordinate${set.length === 1 ? "" : "s"}`;
+        for (const id of ["ins-copy-versions", "ins-copy-coords"])
+          $(id).disabled = false;
+      }
+
+      $("ins-close").addEventListener("click", () => ins.close());
+      ins.addEventListener("click", (event) => {
+        if (event.target === ins) ins.close();
+      });
+      ins.addEventListener("close", () => {
+        inspecting = null;
+      });
+
+      /* -------------------------------------------------------------- search */
+
+      const HIT_LIMIT = 250;
+      let searchIndex = null;
+      let indexing = null;
+
+      /**
+       * Every version of every library, flattened. Pulled on demand -- the whole
+       * corpus is ~90 KB gzipped, which is not worth spending on page load for a
+       * feature most visits never touch.
+       */
+      async function buildIndex() {
         if (searchIndex) return searchIndex;
         if (indexing) return indexing;
         indexing = (async () => {
-            const loaded = await Promise.all(state.libraries.map(async (library) => {
-                if (!state.fullData.has(library.slug)) {
-                    const response = await fetch(library.dataFile ?? `./data/${library.slug}.json`);
-                    if (!response.ok) throw new Error(`${library.artifactId}: HTTP ${response.status}`);
-                    state.fullData.set(library.slug, await response.json());
-                }
-                return { library, data: state.fullData.get(library.slug) };
-            }));
-            const index = [];
-            for (const { library, data } of loaded) {
-                const prefix = `${library.groupId}:${library.artifactId}:`;
-                for (const line of data.lines) {
-                    for (const entry of line.versions) {
-                        index.push({ library, v: entry.v, pre: entry.pre, line: line.line,
-                                     hay: (prefix + entry.v).toLowerCase() });
-                    }
-                }
-                for (const entry of data.branchBuilds ?? []) {
-                    index.push({ library, v: entry.v, pre: entry.pre, branch: entry.branch,
-                                 hay: (prefix + entry.v).toLowerCase() });
-                }
+          const loaded = await Promise.all(
+            state.libraries.map(async (library) => {
+              if (!state.fullData.has(library.slug)) {
+                const response = await fetch(
+                  library.dataFile ?? `./data/${library.slug}.json`,
+                );
+                if (!response.ok)
+                  throw new Error(
+                    `${library.artifactId}: HTTP ${response.status}`,
+                  );
+                state.fullData.set(library.slug, await response.json());
+              }
+              return { library, data: state.fullData.get(library.slug) };
+            }),
+          );
+          const index = [];
+          for (const { library, data } of loaded) {
+            const prefix = `${library.groupId}:${library.artifactId}:`;
+            for (const line of data.lines) {
+              for (const entry of line.versions) {
+                index.push({
+                  library,
+                  v: entry.v,
+                  pre: entry.pre,
+                  line: line.line,
+                  hay: (prefix + entry.v).toLowerCase(),
+                });
+              }
             }
-            searchIndex = index;
-            indexing = null;
-            return index;
+            for (const entry of data.branchBuilds ?? []) {
+              index.push({
+                library,
+                v: entry.v,
+                pre: entry.pre,
+                branch: entry.branch,
+                hay: (prefix + entry.v).toLowerCase(),
+              });
+            }
+          }
+          searchIndex = index;
+          indexing = null;
+          return index;
         })();
         return indexing;
-    }
+      }
 
-    /** Highlights each matched term inside the version string. */
-    function mark(text, terms) {
+      /** Highlights each matched term inside the version string. */
+      function mark(text, terms) {
         let html = esc(text);
         for (const term of terms) {
-            const re = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-            html = html.replace(re, '\u0001$1\u0002');
+          const re = new RegExp(
+            `(${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
+            "gi",
+          );
+          html = html.replace(re, "\u0001$1\u0002");
         }
-        return html.replace(/\u0001/g, '<mark>').replace(/\u0002/g, '</mark>');
-    }
+        return html.replace(/\u0001/g, "<mark>").replace(/\u0002/g, "</mark>");
+      }
 
-    function renderHits(terms) {
-        const matches = searchIndex.filter((entry) => terms.every((term) => entry.hay.includes(term)));
-        const rank = new Map(state.libraries.map((library, i) => [library.slug, i]));
-        matches.sort((a, b) =>
-            rank.get(a.library.slug) - rank.get(b.library.slug) || compareDesc(a.v, b.v));
+      function renderHits(terms) {
+        const matches = searchIndex.filter((entry) =>
+          terms.every((term) => entry.hay.includes(term)),
+        );
+        const rank = new Map(
+          state.libraries.map((library, i) => [library.slug, i]),
+        );
+        matches.sort(
+          (a, b) =>
+            rank.get(a.library.slug) - rank.get(b.library.slug) ||
+            compareDesc(a.v, b.v),
+        );
 
         const shown = matches.slice(0, HIT_LIMIT);
-        $('q-note').textContent = matches.length === 0
-            ? 'Nothing matches.'
-            : `${matches.length} match${matches.length === 1 ? '' : 'es'}` +
-              (matches.length > shown.length ? ` — showing the first ${shown.length}` : '');
+        $("q-note").textContent =
+          matches.length === 0
+            ? "Nothing matches."
+            : `${matches.length} match${matches.length === 1 ? "" : "es"}` +
+              (matches.length > shown.length
+                ? ` — showing the first ${shown.length}`
+                : "");
 
         const groups = new Map();
         for (const entry of shown) {
-            if (!groups.has(entry.library.slug)) groups.set(entry.library.slug, []);
-            groups.get(entry.library.slug).push(entry);
+          if (!groups.has(entry.library.slug))
+            groups.set(entry.library.slug, []);
+          groups.get(entry.library.slug).push(entry);
         }
 
-        $('hits').innerHTML = [...groups.values()].map((entries) => {
+        $("hits").innerHTML = [...groups.values()]
+          .map((entries) => {
             const library = entries[0].library;
             return `
                 <div class="hit-group">
                     <h2>${esc(library.groupId)}:${esc(library.artifactId)}
                         <span>${entries.length} shown</span></h2>
-                    ${entries.map((entry) => {
+                    ${entries
+                      .map((entry) => {
                         const urls = artifactUrls(library, entry.v);
                         const tag = entry.branch
-                            ? `<span class="tag quiet">${esc(entry.branch)}</span>`
-                            : entry.pre ? '<span class="tag">pre-release</span>' : '';
+                          ? `<span class="tag quiet">${esc(entry.branch)}</span>`
+                          : entry.pre
+                            ? '<span class="tag">pre-release</span>'
+                            : "";
                         return `
                             <div class="hit">
-                                <span class="hit-v${entry.pre ? ' pre' : ''}"><span class="hit-text">${mark(entry.v, terms)}</span>${tag}</span>
+                                <span class="hit-v${entry.pre ? " pre" : ""}"><span class="hit-text">${mark(entry.v, terms)}</span>${tag}</span>
                                 <span class="acts">
                                     <button class="btn btn--out" data-copy="${copyRef(entry.v)}">Copy</button>
                                     <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
                                     <a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
                                     <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>
+                                    ${entry.branch ? "" : inspectButton(library, entry.v, "btn", "inspect")}
                                 </span>
                             </div>`;
-                    }).join('')}
+                      })
+                      .join("")}
                 </div>`;
-        }).join('');
-    }
+          })
+          .join("");
+      }
 
-    /** Descending version order, reusing the shared comparator. */
-    const compareDesc = (a, b) => compareVersions(b, a);
+      /** Descending version order, reusing the shared comparator. */
+      const compareDesc = (a, b) => compareVersions(b, a);
 
-    function setSearching(active) {
-        $('hits').hidden = !active;
-        $('picker').hidden = active;
-        $('board').hidden = active;
-        $('inventory-slab').hidden = active;
-    }
+      function setSearching(active) {
+        $("hits").hidden = !active;
+        $("picker").hidden = active;
+        $("board").hidden = active;
+        $("inventory-slab").hidden = active;
+      }
 
-    async function runSearch() {
-        const query = $('q').value.trim().toLowerCase();
+      async function runSearch() {
+        const query = $("q").value.trim().toLowerCase();
         const terms = query.split(/\s+/).filter(Boolean);
         if (terms.length === 0) {
-            setSearching(false);
-            $('q-note').textContent = '';
-            $('hits').innerHTML = '';
-            return;
+          setSearching(false);
+          $("q-note").textContent = "";
+          $("hits").innerHTML = "";
+          return;
         }
         setSearching(true);
         if (!searchIndex) {
-            $('q-note').textContent = 'Loading every version…';
-            try {
-                await buildIndex();
-            } catch (error) {
-                $('q-note').textContent = `Could not load the full version data (${error.message}).`;
-                return;
-            }
-            // The box may have been cleared or changed while loading.
-            if ($('q').value.trim().toLowerCase() !== query) return;
+          $("q-note").textContent = "Loading every version…";
+          try {
+            await buildIndex();
+          } catch (error) {
+            $("q-note").textContent =
+              `Could not load the full version data (${error.message}).`;
+            return;
+          }
+          // The box may have been cleared or changed while loading.
+          if ($("q").value.trim().toLowerCase() !== query) return;
         }
         renderHits(terms);
-    }
+      }
 
-    $('q').addEventListener('input', runSearch);
-    $('q').addEventListener('keydown', (event) => {
+      $("q").addEventListener("input", runSearch);
+      $("q").addEventListener("keydown", (event) => {
         // Warm the corpus on the first real keystroke. Deliberately not on
         // focus: the field is focused on load, so that would pull the whole
         // corpus on every visit whether or not anyone searches.
         buildIndex().catch(() => {});
-        if (event.key === 'Escape') { $('q').value = ''; runSearch(); }
-    });
-    /* -------------------------------------------------------------- dialog */
+        if (event.key === "Escape") {
+          $("q").value = "";
+          runSearch();
+        }
+      });
+      /* -------------------------------------------------------------- dialog */
 
-    const dlg = $('all-versions');
+      const dlg = $("all-versions");
 
-    async function openAll(slug, scope = null) {
+      async function openAll(slug, scope = null) {
         const library = state.libraries.find((entry) => entry.slug === slug);
-        $('dlg-title').textContent = `${library.groupId}:${library.artifactId}`;
-        $('dlg-sub').textContent = 'Loading…';
-        $('dlg-body').innerHTML = '';
-        $('dlg-search').value = '';
-        $('dlg-count').textContent = '';
+        $("dlg-title").textContent = `${library.groupId}:${library.artifactId}`;
+        $("dlg-sub").textContent = "Loading…";
+        $("dlg-body").innerHTML = "";
+        $("dlg-search").value = "";
+        $("dlg-count").textContent = "";
         if (!dlg.open) dlg.showModal();
         try {
-            if (!state.fullData.has(slug)) {
-                const response = await fetch(library.dataFile ?? `./data/${slug}.json`);
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                state.fullData.set(slug, await response.json());
-            }
-            const data = state.fullData.get(slug);
-            state.dialog = { library, data, scope };
-            const scoped = scope ? data.lines.find((line) => line.line === scope) : null;
-            $('dlg-sub').textContent = scoped
-                ? `${lineLabel(scope)} · ${scoped.total} versions · ${scoped.stable} stable · ` +
-                  `${scoped.total - scoped.stable} pre-release`
-                : `${data.released} releases · ${data.stable} stable · ${data.preRelease} pre-release · ` +
-                  `${data.lines.length} lines · ${data.branchCount} branch builds`;
-            // Branch builds do not belong to a release line, so the toggle is
-            // meaningless while scoped.
-            $('dlg-branch').closest('label').hidden = Boolean(scope);
-            renderDialog();
-            $('dlg-search').focus();
+          if (!state.fullData.has(slug)) {
+            const response = await fetch(
+              library.dataFile ?? `./data/${slug}.json`,
+            );
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            state.fullData.set(slug, await response.json());
+          }
+          const data = state.fullData.get(slug);
+          state.dialog = { library, data, scope };
+          const scoped = scope
+            ? data.lines.find((line) => line.line === scope)
+            : null;
+          $("dlg-sub").textContent = scoped
+            ? `${lineLabel(scope)} · ${scoped.total} versions · ${scoped.stable} stable · ` +
+              `${scoped.total - scoped.stable} pre-release`
+            : `${data.released} releases · ${data.stable} stable · ${data.preRelease} pre-release · ` +
+              `${data.lines.length} lines · ${data.branchCount} branch builds`;
+          // Branch builds do not belong to a release line, so the toggle is
+          // meaningless while scoped.
+          $("dlg-branch").closest("label").hidden = Boolean(scope);
+          renderDialog();
+          $("dlg-search").focus();
         } catch (error) {
-            state.dialog = null;
-            $('dlg-sub').textContent = '';
-            $('dlg-body').innerHTML = `<p class="muted">Could not load the full version list (${esc(error.message)}).</p>`;
+          state.dialog = null;
+          $("dlg-sub").textContent = "";
+          $("dlg-body").innerHTML =
+            `<p class="muted">Could not load the full version list (${esc(error.message)}).</p>`;
         }
-    }
+      }
 
-    function vrow(library, entry) {
+      function vrow(library, entry) {
         const urls = artifactUrls(library, entry.v);
         return `
             <div class="vrow">
-                <span class="v${entry.pre ? ' pre' : ''}">${esc(entry.v)}</span>
+                <span class="v${entry.pre ? " pre" : ""}">${esc(entry.v)}</span>
                 <span class="acts">
                     <button class="btn" data-copy="${copyRef(entry.v)}">copy</button>
                     <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
                     <a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
                     <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>
+                    ${entry.branch ? "" : inspectButton(library, entry.v, "btn", "inspect")}
                 </span>
             </div>`;
-    }
+      }
 
-    const SEARCH_LIMIT = 400;
+      const SEARCH_LIMIT = 400;
 
-    function renderDialog() {
+      function renderDialog() {
         if (!state.dialog) return;
         const { library, data, scope } = state.dialog;
-        const query = $('dlg-search').value.trim().toLowerCase();
-        const pre = $('dlg-pre').checked;
-        const branch = $('dlg-branch').checked && !scope;
-        const lines = scope ? data.lines.filter((line) => line.line === scope) : data.lines;
-        const keep = (entry) => (pre || !entry.pre) && (!query || entry.v.toLowerCase().includes(query));
+        const query = $("dlg-search").value.trim().toLowerCase();
+        const pre = $("dlg-pre").checked;
+        const branch = $("dlg-branch").checked && !scope;
+        const lines = scope
+          ? data.lines.filter((line) => line.line === scope)
+          : data.lines;
+        const keep = (entry) =>
+          (pre || !entry.pre) &&
+          (!query || entry.v.toLowerCase().includes(query));
 
         if (query) {
-            const pool = lines.flatMap((line) => line.versions);
-            if (branch) pool.push(...(data.branchBuilds ?? []));
-            const matches = pool.filter(keep);
-            $('dlg-count').textContent = `${matches.length} match${matches.length === 1 ? '' : 'es'}`;
-            const shown = matches.slice(0, SEARCH_LIMIT);
-            $('dlg-body').innerHTML =
-                (shown.map((entry) => vrow(library, entry)).join('') || '<p class="muted">No matching versions.</p>') +
-                (matches.length > shown.length
-                    ? `<p class="muted">…and ${matches.length - shown.length} more. Narrow the filter.</p>` : '');
-            return;
+          const pool = lines.flatMap((line) => line.versions);
+          if (branch) pool.push(...(data.branchBuilds ?? []));
+          const matches = pool.filter(keep);
+          $("dlg-count").textContent =
+            `${matches.length} match${matches.length === 1 ? "" : "es"}`;
+          const shown = matches.slice(0, SEARCH_LIMIT);
+          $("dlg-body").innerHTML =
+            (shown.map((entry) => vrow(library, entry)).join("") ||
+              '<p class="muted">No matching versions.</p>') +
+            (matches.length > shown.length
+              ? `<p class="muted">…and ${matches.length - shown.length} more. Narrow the filter.</p>`
+              : "");
+          return;
         }
 
-        const total = lines.reduce((sum, line) => sum + line.versions.filter(keep).length, 0);
-        $('dlg-count').textContent = `${total} shown`;
+        const total = lines.reduce(
+          (sum, line) => sum + line.versions.filter(keep).length,
+          0,
+        );
+        $("dlg-count").textContent = `${total} shown`;
 
         // Rows render when a line is expanded, so libraries with thousands of
         // versions open instantly.
-        let html = '';
+        let html = "";
         for (const line of lines) {
-            const count = line.versions.filter(keep).length;
-            if (!count) continue;
-            html += `
+          const count = line.versions.filter(keep).length;
+          if (!count) continue;
+          html += `
                 <details data-line="${esc(line.line)}">
                     <summary>${esc(lineLabel(line.line))}
                         <span class="count">${count} · latest ${esc(line.latest)}</span></summary>
@@ -1265,78 +2390,100 @@
                 </details>`;
         }
         if (branch && data.branchBuilds?.length) {
-            const count = data.branchBuilds.filter(keep).length;
-            if (count) {
-                html += `
+          const count = data.branchBuilds.filter(keep).length;
+          if (count) {
+            html += `
                     <details data-line="__branch">
                         <summary>branch builds <span class="count">${count} · not released</span></summary>
                         <div class="body"></div>
                     </details>`;
-            }
+          }
         }
-        $('dlg-body').innerHTML = html || '<p class="muted">No versions match the current filter.</p>';
-        const first = $('dlg-body').querySelector('details');
+        $("dlg-body").innerHTML =
+          html || '<p class="muted">No versions match the current filter.</p>';
+        const first = $("dlg-body").querySelector("details");
         if (first) first.open = true;
-    }
+      }
 
-    function fillBody(details) {
-        const body = details.querySelector('.body');
-        if (!body || body.dataset.filled === 'true') return;
+      function fillBody(details) {
+        const body = details.querySelector(".body");
+        if (!body || body.dataset.filled === "true") return;
         const { library, data } = state.dialog;
-        const pre = $('dlg-pre').checked;
+        const pre = $("dlg-pre").checked;
         const key = details.dataset.line;
-        const source = key === '__branch'
-            ? data.branchBuilds ?? []
-            : data.lines.find((line) => line.line === key)?.versions ?? [];
-        body.innerHTML = source.filter((entry) => pre || !entry.pre).map((entry) => vrow(library, entry)).join('');
-        body.dataset.filled = 'true';
-    }
+        const source =
+          key === "__branch"
+            ? (data.branchBuilds ?? [])
+            : (data.lines.find((line) => line.line === key)?.versions ?? []);
+        body.innerHTML = source
+          .filter((entry) => pre || !entry.pre)
+          .map((entry) => vrow(library, entry))
+          .join("");
+        body.dataset.filled = "true";
+      }
 
-    $('dlg-body').addEventListener('toggle', (event) => {
-        const details = event.target.closest('details');
-        if (details?.open) fillBody(details);
-    }, true);
+      $("dlg-body").addEventListener(
+        "toggle",
+        (event) => {
+          const details = event.target.closest("details");
+          if (details?.open) fillBody(details);
+        },
+        true,
+      );
 
-    for (const id of ['dlg-search', 'dlg-pre', 'dlg-branch']) {
-        $(id).addEventListener(id === 'dlg-search' ? 'input' : 'change', renderDialog);
-    }
-    $('dlg-close').addEventListener('click', () => dlg.close());
-    dlg.addEventListener('click', (event) => { if (event.target === dlg) dlg.close(); });
+      for (const id of ["dlg-search", "dlg-pre", "dlg-branch"]) {
+        $(id).addEventListener(
+          id === "dlg-search" ? "input" : "change",
+          renderDialog,
+        );
+      }
+      $("dlg-close").addEventListener("click", () => dlg.close());
+      dlg.addEventListener("click", (event) => {
+        if (event.target === dlg) dlg.close();
+      });
 
-    /* -------------------------------------------------------------- events */
+      /* -------------------------------------------------------------- events */
 
-    async function copy(button, text) {
+      async function copy(button, text) {
         const original = button.textContent;
         try {
-            await navigator.clipboard.writeText(text);
-            button.textContent = 'Copied';
-            button.classList.add('copied');
-            setTimeout(() => { button.textContent = original; button.classList.remove('copied'); }, 1200);
+          await navigator.clipboard.writeText(text);
+          button.textContent = "Copied";
+          button.classList.add("copied");
+          setTimeout(() => {
+            button.textContent = original;
+            button.classList.remove("copied");
+          }, 1200);
         } catch (error) {
-            console.error('Copy failed:', error);
-            button.textContent = 'Press ⌘C';
-            setTimeout(() => { button.textContent = original; }, 1600);
+          console.error("Copy failed:", error);
+          button.textContent = "Press ⌘C";
+          setTimeout(() => {
+            button.textContent = original;
+          }, 1600);
         }
-    }
+      }
 
-    document.addEventListener('click', (event) => {
-        const chip = event.target.closest('.line-chip');
+      document.addEventListener("click", (event) => {
+        const chip = event.target.closest(".line-chip");
         if (chip) {
-            state.selected = chip.dataset.line;
-            renderLines();
-            renderBoard();
-            return;
+          state.selected = chip.dataset.line;
+          renderLines();
+          renderBoard();
+          return;
         }
-        const target = event.target.closest('[data-copy], [data-act]');
+        const target = event.target.closest("[data-copy], [data-act]");
         if (!target) return;
         if (target.dataset.copy !== undefined) {
-            copy(target, copyRegistry[Number(target.dataset.copy)]);
-            return;
+          copy(target, copyRegistry[Number(target.dataset.copy)]);
+          return;
         }
-        if (target.dataset.act === 'all') openAll(target.dataset.slug, target.dataset.line ?? null);
-    });
+        if (target.dataset.act === "all")
+          openAll(target.dataset.slug, target.dataset.line ?? null);
+        if (target.dataset.act === "inspect")
+          openInspect(target.dataset.slug, target.dataset.v);
+      });
 
-    load();
-</script>
-</body>
+      load();
+    </script>
+  </body>
 </html>
