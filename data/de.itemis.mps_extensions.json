@@ -3,12 +3,12 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-14T09:48:58.774Z",
-  "total": 1062,
+  "generatedAt": "2026-10-14T11:59:26.452Z",
+  "total": 1069,
   "released": 822,
   "stable": 802,
   "preRelease": 20,
-  "branchCount": 240,
+  "branchCount": 247,
   "branches": 69,
   "lines": [
     {
@@ -4439,6 +4439,11 @@
       "branch": "fix-headless-tables"
     },
     {
+      "v": "feature-view-model.2025.1.2458.36ac433-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
       "v": "feature-view-model.2025.1.2438.82df34c-SNAPSHOT",
       "pre": true,
       "branch": "feature-view-model"
@@ -4552,6 +4557,36 @@
       "v": "build-publishing-convention.2024.1.2389.87ca66f-SNAPSHOT",
       "pre": true,
       "branch": "build-publishing-convention"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.2456.3faead2-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.2455.28bbbd2-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.2453.5a53e03-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.2452.5c2eb27-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.2450.7178b5d-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.2449.8dceb71-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
     },
     {
       "v": "build-pre-move-fixes-20241.2024.1.2448.f7ad6f5-SNAPSHOT",

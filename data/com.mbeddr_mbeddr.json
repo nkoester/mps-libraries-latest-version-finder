@@ -3,13 +3,13 @@
   "artifactId": "mbeddr",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-10-14T09:48:58.774Z",
-  "total": 2704,
+  "generatedAt": "2026-10-14T11:59:26.452Z",
+  "total": 2708,
   "released": 1846,
   "stable": 1846,
   "preRelease": 0,
-  "branchCount": 858,
-  "branches": 200,
+  "branchCount": 862,
+  "branches": 201,
   "lines": [
     {
       "line": "9999.9",
@@ -11082,6 +11082,26 @@
       "v": "build-publishing-convention.2024.1.24211.87dbaa6-SNAPSHOT",
       "pre": true,
       "branch": "build-publishing-convention"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.24228.50509b4-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.24226.52c3747-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.24225.135d425-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
+    },
+    {
+      "v": "build-pre-move-fixes-20241.2024.1.24224.a6d1f95-SNAPSHOT",
+      "pre": true,
+      "branch": "build-pre-move-fixes-20241"
     },
     {
       "v": "build-platform-self-contained.2024.1.24220.da39bd2-SNAPSHOT",
