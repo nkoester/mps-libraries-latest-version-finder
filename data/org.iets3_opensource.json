@@ -3,13 +3,13 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-14T11:59:26.452Z",
-  "total": 3030,
-  "released": 1722,
-  "stable": 1715,
+  "generatedAt": "2026-10-14T15:42:51.105Z",
+  "total": 3034,
+  "released": 1723,
+  "stable": 1716,
   "preRelease": 7,
-  "branchCount": 1308,
-  "branches": 270,
+  "branchCount": 1311,
+  "branches": 271,
   "lines": [
     {
       "line": "9999.9",
@@ -782,11 +782,15 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11343.1cc5044",
+      "latest": "2026.1.11349.95affbe",
       "latestIsPreRelease": false,
-      "total": 22,
-      "stable": 22,
+      "total": 23,
+      "stable": 23,
       "versions": [
+        {
+          "v": "2026.1.11349.95affbe",
+          "pre": false
+        },
         {
           "v": "2026.1.11343.1cc5044",
           "pre": false
@@ -7588,6 +7592,11 @@
       "branch": "renovate-maintenance-mps20241-third-party-minor"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11351.bcde57a-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11337.82d0384-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
@@ -8441,6 +8450,11 @@
       "v": "merge-20213.2022.2.6629.6634235",
       "pre": false,
       "branch": "merge-20213"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11347.4c3ccac-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
     },
     {
       "v": "merge-mps20261.2026.1.11342.e6a1165-SNAPSHOT",
@@ -10201,6 +10215,11 @@
       "v": "feature-virtual_runSolver.2021.1.5940.a05e05f",
       "pre": false,
       "branch": "feature-virtual_runSolver"
+    },
+    {
+      "v": "feature-view-model.2025.1.11352.1a70398-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
     },
     {
       "v": "feature-variability-improve-handling-of-root-constraints-with-grouping_1552.2024.1.9614.7c13fe4-SNAPSHOT",

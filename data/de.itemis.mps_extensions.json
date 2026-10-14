@@ -3,13 +3,13 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-14T11:59:26.452Z",
-  "total": 1069,
-  "released": 822,
-  "stable": 802,
+  "generatedAt": "2026-10-14T15:42:51.105Z",
+  "total": 1080,
+  "released": 825,
+  "stable": 805,
   "preRelease": 20,
-  "branchCount": 247,
-  "branches": 69,
+  "branchCount": 255,
+  "branches": 71,
   "lines": [
     {
       "line": "9999.9",
@@ -102,11 +102,15 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.3680.3219c61",
+      "latest": "2026.1.3685.da8f0d1",
       "latestIsPreRelease": false,
-      "total": 14,
-      "stable": 14,
+      "total": 15,
+      "stable": 15,
       "versions": [
+        {
+          "v": "2026.1.3685.da8f0d1",
+          "pre": false
+        },
         {
           "v": "2026.1.3680.3219c61",
           "pre": false
@@ -167,11 +171,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3679.6c3c912",
+      "latest": "2025.1.3684.b8ed5ae",
       "latestIsPreRelease": false,
-      "total": 111,
-      "stable": 111,
+      "total": 112,
+      "stable": 112,
       "versions": [
+        {
+          "v": "2025.1.3684.b8ed5ae",
+          "pre": false
+        },
         {
           "v": "2025.1.3679.6c3c912",
           "pre": false
@@ -765,11 +773,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.3678.ba1c440",
+      "latest": "2024.1.3682.05edf9a",
       "latestIsPreRelease": false,
-      "total": 123,
-      "stable": 123,
+      "total": 124,
+      "stable": 124,
       "versions": [
+        {
+          "v": "2024.1.3682.05edf9a",
+          "pre": false
+        },
         {
           "v": "2024.1.3678.ba1c440",
           "pre": false
@@ -3444,6 +3456,11 @@
       "branch": "renovate-mps-jbr"
     },
     {
+      "v": "renovate-master-mps.9999.9.2465.78f67f6-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2444.5e61372-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps"
@@ -3939,6 +3956,11 @@
       "branch": "perf-grammarcells-chart-parser"
     },
     {
+      "v": "mps-263-fixes.9999.9.2469.6a51514-SNAPSHOT",
+      "pre": true,
+      "branch": "mps-263-fixes"
+    },
+    {
       "v": "mps-262-fixes.9999.9.2299.36afa16-SNAPSHOT",
       "pre": true,
       "branch": "mps-262-fixes"
@@ -3972,6 +3994,11 @@
       "v": "modelix-extract-core.2020.3.2404.0a38a09",
       "pre": false,
       "branch": "modelix-extract-core"
+    },
+    {
+      "v": "merge-mps20261.2026.1.2460.b5a7584-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
     },
     {
       "v": "merge-mps20261.2026.1.2439.d7054ba-SNAPSHOT",
@@ -4067,6 +4094,11 @@
       "v": "merge-mps20261.2026.1.2237.83ca0cc-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
+    },
+    {
+      "v": "merge-mps20251.2025.1.2459.a8e6358-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
     },
     {
       "v": "merge-mps20251.2025.1.2436.acdb30f-SNAPSHOT",
@@ -4237,6 +4269,11 @@
       "v": "merge-mps20213.2021.3.2717.7e258de",
       "pre": false,
       "branch": "merge-mps20213"
+    },
+    {
+      "v": "merge-master.9999.9.2463.d8e2e85-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master"
     },
     {
       "v": "merge-master.9999.9.2442.ba880ed-SNAPSHOT",
@@ -4437,6 +4474,21 @@
       "v": "fix-headless-tables.9999.9.2231.de04d8a-SNAPSHOT",
       "pre": true,
       "branch": "fix-headless-tables"
+    },
+    {
+      "v": "fix-celllayout-regressions.2025.1.2467.39fa51f-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-regressions"
+    },
+    {
+      "v": "fix-celllayout-regressions.2025.1.2462.bc26f00-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-regressions"
+    },
+    {
+      "v": "feature-view-model.2025.1.2468.dab2866-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
     },
     {
       "v": "feature-view-model.2025.1.2458.36ac433-SNAPSHOT",
