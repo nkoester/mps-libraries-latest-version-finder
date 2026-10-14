@@ -1379,6 +1379,16 @@
       /** Release line selected when the page loads. */
       const DEFAULT_LINE = "2025.1";
 
+      /** Order of the "Latest for MPS ..." board: top-level libraries first. */
+      const BOARD_ORDER = [
+        "org.iets3_opensource",
+        "com.mbeddr_mbeddr",
+        "com.mbeddr_platform",
+        "org.mpsqa_all-in-one",
+        "de.itemis.mps_extensions",
+        "com.jetbrains_mps",
+      ];
+
       const state = {
         generatedAt: null,
         libraries: [],
@@ -1596,14 +1606,15 @@
         }
         $("board-note").innerHTML = notes.join(" ");
 
-        // Ordered by the dependency stack (MPS, then what builds on it), which is
-        // the order libraries.json declares. Libraries with no build for this line
-        // come last -- the negative answer is information too.
-        const rank = new Map(
-          state.libraries.map((library, index) => [library.slug, index]),
-        );
+        // Top of the stack first (what users pick), down to MPS itself. Libraries
+        // not listed in BOARD_ORDER follow in libraries.json order. Libraries with
+        // no build for this line come last -- the negative answer is information too.
+        const boardRank = (slug) => {
+          const pinned = BOARD_ORDER.indexOf(slug);
+          return pinned === -1 ? BOARD_ORDER.length + rankOf(slug) : pinned;
+        };
         const byStack = (a, b) =>
-          rank.get(a.library.slug) - rank.get(b.library.slug);
+          boardRank(a.library.slug) - boardRank(b.library.slug);
         const ordered = [
           ...entries.slice().sort(byStack),
           ...missing
