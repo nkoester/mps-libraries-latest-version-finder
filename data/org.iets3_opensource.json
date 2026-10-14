@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-14T01:36:42.766Z",
-  "total": 3025,
-  "released": 1719,
-  "stable": 1712,
+  "generatedAt": "2026-10-14T09:48:58.774Z",
+  "total": 3028,
+  "released": 1721,
+  "stable": 1714,
   "preRelease": 7,
-  "branchCount": 1306,
+  "branchCount": 1307,
   "branches": 270,
   "lines": [
     {
@@ -782,11 +782,15 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11328.df20df8",
+      "latest": "2026.1.11343.1cc5044",
       "latestIsPreRelease": false,
-      "total": 21,
-      "stable": 21,
+      "total": 22,
+      "stable": 22,
       "versions": [
+        {
+          "v": "2026.1.11343.1cc5044",
+          "pre": false
+        },
         {
           "v": "2026.1.11328.df20df8",
           "pre": false
@@ -1420,11 +1424,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11327.3ef2e67",
+      "latest": "2024.1.11340.74dcbac",
       "latestIsPreRelease": false,
-      "total": 263,
-      "stable": 262,
+      "total": 264,
+      "stable": 263,
       "versions": [
+        {
+          "v": "2024.1.11340.74dcbac",
+          "pre": false
+        },
         {
           "v": "2024.1.11327.3ef2e67",
           "pre": false
@@ -7576,6 +7584,11 @@
       "branch": "renovate-maintenance-mps20241-third-party-minor"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11337.82d0384-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11317.55722f3-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
@@ -7647,11 +7660,6 @@
     },
     {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.10625.ef2bc7a-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.10612.3a0269b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
     },
@@ -8431,6 +8439,16 @@
       "branch": "merge-20213"
     },
     {
+      "v": "merge-mps20261.2026.1.11342.e6a1165-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11341.7fdef25-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
       "v": "merge-mps20261.2026.1.11290.a81d49b-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
@@ -8727,6 +8745,11 @@
     },
     {
       "v": "merge-mps20251.9999.9.9680.70065f4-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
+      "v": "merge-mps20251.2025.1.11339.1ea357d-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
@@ -9192,11 +9215,6 @@
     },
     {
       "v": "merge-mps20251.2024.1.10613.9c176ec-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
-      "v": "merge-mps20251.2024.1.10609.17ee409-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
@@ -11312,11 +11330,6 @@
     },
     {
       "v": "feature-config_combination_logic_1794.2024.1.10616.ad4b8c0-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-config_combination_logic_1794"
-    },
-    {
-      "v": "feature-config_combination_logic_1794.2024.1.10615.be27878-SNAPSHOT",
       "pre": true,
       "branch": "feature-config_combination_logic_1794"
     },

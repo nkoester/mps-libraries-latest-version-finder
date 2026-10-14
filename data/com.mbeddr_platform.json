@@ -3,21 +3,25 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-14T01:36:42.766Z",
-  "total": 3023,
-  "released": 2025,
-  "stable": 2025,
+  "generatedAt": "2026-10-14T09:48:58.774Z",
+  "total": 3030,
+  "released": 2028,
+  "stable": 2028,
   "preRelease": 0,
-  "branchCount": 998,
+  "branchCount": 1002,
   "branches": 239,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26633.3953618",
+      "latest": "9999.9.26637.ca05074",
       "latestIsPreRelease": false,
-      "total": 410,
-      "stable": 410,
+      "total": 411,
+      "stable": 411,
       "versions": [
+        {
+          "v": "9999.9.26637.ca05074",
+          "pre": false
+        },
         {
           "v": "9999.9.26633.3953618",
           "pre": false
@@ -1662,11 +1666,15 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.26632.b2e5066",
+      "latest": "2026.1.26636.3864fa8",
       "latestIsPreRelease": false,
-      "total": 28,
-      "stable": 28,
+      "total": 29,
+      "stable": 29,
       "versions": [
+        {
+          "v": "2026.1.26636.3864fa8",
+          "pre": false
+        },
         {
           "v": "2026.1.26632.b2e5066",
           "pre": false
@@ -1783,11 +1791,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26631.5d84534",
+      "latest": "2025.1.26635.ba6d307",
       "latestIsPreRelease": false,
-      "total": 252,
-      "stable": 252,
+      "total": 253,
+      "stable": 253,
       "versions": [
+        {
+          "v": "2025.1.26635.ba6d307",
+          "pre": false
+        },
         {
           "v": "2025.1.26631.5d84534",
           "pre": false
@@ -8413,6 +8425,11 @@
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25364.9b6d101-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25357.323c051-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster"
@@ -9063,6 +9080,11 @@
       "branch": "renovate-master-apache-poi-monorepo"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25318.e223ca6-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mpsextensions261"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25314.2c62822-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mpsextensions261"
@@ -9266,6 +9288,11 @@
       "v": "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24520.683d25c-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24924.5c85be0-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24921.a785f6e-SNAPSHOT",
@@ -9506,6 +9533,11 @@
       "v": "renovate-maintenance-mps20241-prek-0.x.2024.1.24197.99bd6da-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-prek-0.x"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24224.d356e87-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-mpsextensions241"
     },
     {
       "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24222.9229b19-SNAPSHOT",
