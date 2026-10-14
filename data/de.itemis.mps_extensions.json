@@ -3,21 +3,25 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-14T15:42:51.105Z",
-  "total": 1080,
-  "released": 825,
+  "generatedAt": "2026-10-14T20:29:02.582Z",
+  "total": 1081,
+  "released": 826,
   "stable": 805,
-  "preRelease": 20,
+  "preRelease": 21,
   "branchCount": 255,
   "branches": 71,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.3681.12a3ca8-SNAPSHOT",
+      "latest": "9999.9.3686.e7e2ff2-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 20,
+      "total": 21,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.3686.e7e2ff2-SNAPSHOT",
+          "pre": true
+        },
         {
           "v": "9999.9.3681.12a3ca8-SNAPSHOT",
           "pre": true

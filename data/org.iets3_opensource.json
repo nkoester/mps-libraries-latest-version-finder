@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-14T15:42:51.105Z",
-  "total": 3034,
-  "released": 1723,
-  "stable": 1716,
+  "generatedAt": "2026-10-14T20:29:02.582Z",
+  "total": 3037,
+  "released": 1724,
+  "stable": 1717,
   "preRelease": 7,
-  "branchCount": 1311,
+  "branchCount": 1313,
   "branches": 271,
   "lines": [
     {
@@ -1432,11 +1432,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11340.74dcbac",
+      "latest": "2024.1.11355.3bb7a7c",
       "latestIsPreRelease": false,
-      "total": 264,
-      "stable": 263,
+      "total": 265,
+      "stable": 264,
       "versions": [
+        {
+          "v": "2024.1.11355.3bb7a7c",
+          "pre": false
+        },
         {
           "v": "2024.1.11340.74dcbac",
           "pre": false
@@ -9052,6 +9056,11 @@
       "branch": "merge-mps20251"
     },
     {
+      "v": "merge-mps20251.2024.1.11354.3bb7a7c-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
       "v": "merge-mps20251.2024.1.11304.be3d12d-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
@@ -10215,6 +10224,11 @@
       "v": "feature-virtual_runSolver.2021.1.5940.a05e05f",
       "pre": false,
       "branch": "feature-virtual_runSolver"
+    },
+    {
+      "v": "feature-view-model.2025.1.11353.1027e0b-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
     },
     {
       "v": "feature-view-model.2025.1.11352.1a70398-SNAPSHOT",

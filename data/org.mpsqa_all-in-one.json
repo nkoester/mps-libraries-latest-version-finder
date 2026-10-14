@@ -3,21 +3,25 @@
   "artifactId": "all-in-one",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml",
   "slug": "org.mpsqa_all-in-one",
-  "generatedAt": "2026-10-14T15:42:51.105Z",
-  "total": 431,
-  "released": 402,
-  "stable": 402,
+  "generatedAt": "2026-10-14T20:29:02.582Z",
+  "total": 433,
+  "released": 404,
+  "stable": 404,
   "preRelease": 0,
   "branchCount": 29,
   "branches": 13,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.1479.e79c062",
+      "latest": "9999.9.1484.7a37b52",
       "latestIsPreRelease": false,
-      "total": 24,
-      "stable": 24,
+      "total": 25,
+      "stable": 25,
       "versions": [
+        {
+          "v": "9999.9.1484.7a37b52",
+          "pre": false
+        },
         {
           "v": "9999.9.1479.e79c062",
           "pre": false
@@ -118,11 +122,15 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.1473.d596cbb",
+      "latest": "2026.1.1482.16fad4c",
       "latestIsPreRelease": false,
-      "total": 3,
-      "stable": 3,
+      "total": 4,
+      "stable": 4,
       "versions": [
+        {
+          "v": "2026.1.1482.16fad4c",
+          "pre": false
+        },
         {
           "v": "2026.1.1473.d596cbb",
           "pre": false

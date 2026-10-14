@@ -3,21 +3,25 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-14T15:42:51.105Z",
-  "total": 3046,
-  "released": 2031,
-  "stable": 2031,
+  "generatedAt": "2026-10-14T20:29:02.582Z",
+  "total": 3050,
+  "released": 2032,
+  "stable": 2032,
   "preRelease": 0,
-  "branchCount": 1015,
+  "branchCount": 1018,
   "branches": 241,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26637.ca05074",
+      "latest": "9999.9.26641.7d06998",
       "latestIsPreRelease": false,
-      "total": 411,
-      "stable": 411,
+      "total": 412,
+      "stable": 412,
       "versions": [
+        {
+          "v": "9999.9.26641.7d06998",
+          "pre": false
+        },
         {
           "v": "9999.9.26637.ca05074",
           "pre": false
@@ -8437,6 +8441,16 @@
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25372.9296300-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster"
+    },
+    {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25372.77c3b1f-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25364.9b6d101-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster"
@@ -9093,6 +9107,11 @@
     },
     {
       "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25325.aca2ef1-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mpsextensions261"
+    },
+    {
+      "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25325.ab7a14f-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mpsextensions261"
     },
