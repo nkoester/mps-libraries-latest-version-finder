@@ -3,21 +3,25 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-13T21:45:34.308Z",
-  "total": 3006,
-  "released": 2021,
-  "stable": 2021,
+  "generatedAt": "2026-10-14T01:36:42.766Z",
+  "total": 3023,
+  "released": 2025,
+  "stable": 2025,
   "preRelease": 0,
-  "branchCount": 985,
+  "branchCount": 998,
   "branches": 239,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26629.3fc8395",
+      "latest": "9999.9.26633.3953618",
       "latestIsPreRelease": false,
-      "total": 409,
-      "stable": 409,
+      "total": 410,
+      "stable": 410,
       "versions": [
+        {
+          "v": "9999.9.26633.3953618",
+          "pre": false
+        },
         {
           "v": "9999.9.26629.3fc8395",
           "pre": false
@@ -1658,11 +1662,15 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.26628.2299bb1",
+      "latest": "2026.1.26632.b2e5066",
       "latestIsPreRelease": false,
-      "total": 27,
-      "stable": 27,
+      "total": 28,
+      "stable": 28,
       "versions": [
+        {
+          "v": "2026.1.26632.b2e5066",
+          "pre": false
+        },
         {
           "v": "2026.1.26628.2299bb1",
           "pre": false
@@ -1775,11 +1783,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26625.9d29482",
+      "latest": "2025.1.26631.5d84534",
       "latestIsPreRelease": false,
-      "total": 251,
-      "stable": 251,
+      "total": 252,
+      "stable": 252,
       "versions": [
+        {
+          "v": "2025.1.26631.5d84534",
+          "pre": false
+        },
         {
           "v": "2025.1.26625.9d29482",
           "pre": false
@@ -3069,11 +3081,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.26624.2506083",
+      "latest": "2024.1.26630.f648d47",
       "latestIsPreRelease": false,
-      "total": 242,
-      "stable": 242,
+      "total": 243,
+      "stable": 243,
       "versions": [
+        {
+          "v": "2024.1.26630.f648d47",
+          "pre": false
+        },
         {
           "v": "2024.1.26624.2506083",
           "pre": false
@@ -8397,6 +8413,11 @@
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25357.323c051-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25348.7afa0e0-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster"
@@ -8505,6 +8526,11 @@
       "v": "renovate-master-org.commonmark-commonmark-0.x.9999.9.24871.afdb69b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-org.commonmark-commonmark-0.x"
+    },
+    {
+      "v": "renovate-master-mpsmaster.9999.9.25357.1e173eb-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster"
     },
     {
       "v": "renovate-master-mpsmaster.9999.9.25348.9b7c880-SNAPSHOT",
@@ -9037,6 +9063,16 @@
       "branch": "renovate-master-apache-poi-monorepo"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25314.2c62822-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mpsextensions261"
+    },
+    {
+      "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25314.19fd217-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mpsextensions261"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25307.b097bf6-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mpsextensions261"
@@ -9230,6 +9266,16 @@
       "v": "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24520.683d25c-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24921.a785f6e-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24921.53ff7cf-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24916.9776072-SNAPSHOT",
@@ -9460,6 +9506,11 @@
       "v": "renovate-maintenance-mps20241-prek-0.x.2024.1.24197.99bd6da-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-prek-0.x"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24222.9229b19-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-mpsextensions241"
     },
     {
       "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24206.3f74c5b-SNAPSHOT",
@@ -10032,6 +10083,16 @@
       "branch": "merge-2021"
     },
     {
+      "v": "merge-mps20261.2026.1.25312.4d89ccc-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
+      "v": "merge-mps20261.2026.1.25312.3b51ee5-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
       "v": "merge-mps20261.2026.1.25305.d085806-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
@@ -10135,6 +10196,16 @@
       "v": "merge-mps20261.2026.1.25192.6195fec-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
+    },
+    {
+      "v": "merge-mps20251.2025.1.24919.2b44fd0-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
+      "v": "merge-mps20251.2025.1.24919.0e3fe42-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
     },
     {
       "v": "merge-mps20251.2025.1.24914.ebfff2d-SNAPSHOT",
@@ -11210,6 +11281,16 @@
       "v": "merge-mps20213-secure.2021.3.24132.82987a6",
       "pre": false,
       "branch": "merge-mps20213-secure"
+    },
+    {
+      "v": "merge-master.9999.9.25355.54e2c07-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master"
+    },
+    {
+      "v": "merge-master.9999.9.25355.18f8848-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master"
     },
     {
       "v": "merge-master.9999.9.25347.462f4f2-SNAPSHOT",

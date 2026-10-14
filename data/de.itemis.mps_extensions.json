@@ -3,21 +3,25 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-13T21:45:34.308Z",
-  "total": 1059,
-  "released": 819,
-  "stable": 800,
-  "preRelease": 19,
-  "branchCount": 240,
-  "branches": 69,
+  "generatedAt": "2026-10-14T01:36:42.766Z",
+  "total": 1061,
+  "released": 822,
+  "stable": 802,
+  "preRelease": 20,
+  "branchCount": 239,
+  "branches": 68,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.3676.5d016ee-SNAPSHOT",
+      "latest": "9999.9.3681.12a3ca8-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 19,
+      "total": 20,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.3681.12a3ca8-SNAPSHOT",
+          "pre": true
+        },
         {
           "v": "9999.9.3676.5d016ee-SNAPSHOT",
           "pre": true
@@ -98,11 +102,15 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.3677.5420850",
+      "latest": "2026.1.3680.3219c61",
       "latestIsPreRelease": false,
-      "total": 13,
-      "stable": 13,
+      "total": 14,
+      "stable": 14,
       "versions": [
+        {
+          "v": "2026.1.3680.3219c61",
+          "pre": false
+        },
         {
           "v": "2026.1.3677.5420850",
           "pre": false
@@ -159,11 +167,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3675.6a24bfd",
+      "latest": "2025.1.3679.6c3c912",
       "latestIsPreRelease": false,
-      "total": 110,
-      "stable": 110,
+      "total": 111,
+      "stable": 111,
       "versions": [
+        {
+          "v": "2025.1.3679.6c3c912",
+          "pre": false
+        },
         {
           "v": "2025.1.3675.6a24bfd",
           "pre": false
@@ -4390,11 +4402,6 @@
       "v": "fix-sticky-headers-polishing.2025.1.2405.933e9c9-SNAPSHOT",
       "pre": true,
       "branch": "fix-sticky-headers-polishing"
-    },
-    {
-      "v": "fix-sm-command-helper.2025.1.2222.109f6cd-SNAPSHOT",
-      "pre": true,
-      "branch": "fix-sm-command-helper"
     },
     {
       "v": "fix-richtext-Word-empty-string-instead-of-single-space.2025.1.2322.ba2858a-SNAPSHOT",
