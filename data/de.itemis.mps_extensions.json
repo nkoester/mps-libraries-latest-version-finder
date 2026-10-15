@@ -3,13 +3,13 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-15T15:30:27.243Z",
-  "total": 1087,
+  "generatedAt": "2026-10-15T20:11:08.051Z",
+  "total": 1095,
   "released": 829,
   "stable": 807,
   "preRelease": 22,
-  "branchCount": 258,
-  "branches": 72,
+  "branchCount": 266,
+  "branches": 74,
   "lines": [
     {
       "line": "9999.9",
@@ -3472,6 +3472,11 @@
       "branch": "renovate-mps-jbr"
     },
     {
+      "v": "renovate-master-mps.9999.9.2487.f4bc2cf-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2478.5fa8751-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps"
@@ -3730,6 +3735,11 @@
       "v": "renovate-master-mkdocs-material-9.x.9999.9.2355.14daefe-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mkdocs-material-9.x"
+    },
+    {
+      "v": "renovate-master-major-mps.9999.9.2488.f6873cd-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps"
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-262.x.9999.9.2304.cc7dc45-SNAPSHOT",
@@ -4000,6 +4010,11 @@
       "v": "modelix-extract-core.2020.3.2404.0a38a09",
       "pre": false,
       "branch": "modelix-extract-core"
+    },
+    {
+      "v": "merge-mps20261.2026.1.2490.8f7be84-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
     },
     {
       "v": "merge-mps20261.2026.1.2476.1a1205d-SNAPSHOT",
@@ -4497,6 +4512,16 @@
       "branch": "fix-celllayout-regressions"
     },
     {
+      "v": "feature-view-model.2025.1.2492.c185f27-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
+      "v": "feature-view-model.2025.1.2491.87f4271-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
       "v": "feature-view-model.2025.1.2474.9128d6b-SNAPSHOT",
       "pre": true,
       "branch": "feature-view-model"
@@ -4602,6 +4627,11 @@
       "branch": "feature-slisson-word-formatting-2025"
     },
     {
+      "v": "feature-richtext-styles.2025.1.2485.c33334c-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-richtext-styles"
+    },
+    {
       "v": "feature-richtext-styles.2025.1.2481.008c1bb-SNAPSHOT",
       "pre": true,
       "branch": "feature-richtext-styles"
@@ -4625,6 +4655,16 @@
       "v": "feature-baseLanguageExtensions-improve-groupBy.2025.1.2279.ed75f4c-SNAPSHOT",
       "pre": true,
       "branch": "feature-baseLanguageExtensions-improve-groupBy"
+    },
+    {
+      "v": "docs-building-default-task.2025.1.2486.723b70c-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-building-default-task"
+    },
+    {
+      "v": "docs-building-default-task.2025.1.2484.faa4010-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-building-default-task"
     },
     {
       "v": "build-versioning-convention.2024.1.2390.fce5a7f-SNAPSHOT",

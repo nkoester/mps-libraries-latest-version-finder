@@ -3,12 +3,12 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-15T15:30:27.243Z",
-  "total": 3064,
+  "generatedAt": "2026-10-15T20:11:08.051Z",
+  "total": 3065,
   "released": 2036,
   "stable": 2036,
   "preRelease": 0,
-  "branchCount": 1028,
+  "branchCount": 1029,
   "branches": 242,
   "lines": [
     {
@@ -8455,6 +8455,11 @@
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.24807.7945104-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion"
+    },
+    {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25377.984f3dd-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster"
     },
     {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25377.8e554c0-SNAPSHOT",
