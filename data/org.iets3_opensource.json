@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-14T20:29:02.582Z",
-  "total": 3037,
+  "generatedAt": "2026-10-15T01:13:29.290Z",
+  "total": 3021,
   "released": 1724,
   "stable": 1717,
   "preRelease": 7,
-  "branchCount": 1313,
+  "branchCount": 1297,
   "branches": 271,
   "lines": [
     {
@@ -7116,11 +7116,6 @@
       "branch": "renovate-mpsversion"
     },
     {
-      "v": "renovate-mpsversion.9999.9.9818.3eab8cf-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-mpsversion"
-    },
-    {
       "v": "renovate-mpsversion.9999.9.9808.bcbbcf0-SNAPSHOT",
       "pre": true,
       "branch": "renovate-mpsversion"
@@ -7736,17 +7731,7 @@
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
     },
     {
-      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.10103.c7b1908-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
-    },
-    {
       "v": "renovate-maintenance-mps20241-org.pcollections-pcollections-5.x.2024.1.10021.bc3c4ff-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-org.pcollections-pcollections-5.x"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-org.pcollections-pcollections-5.x.2024.1.10012.47c3686-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-org.pcollections-pcollections-5.x"
     },
@@ -7754,11 +7739,6 @@
       "v": "renovate-maintenance-mps20241-org.pcollections-pcollections-5.x.2024.1.9993.01dc1db-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-org.pcollections-pcollections-5.x"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-org.cyclonedx.bom-3.x.2024.1.10059.ce2ab8e-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-org.cyclonedx.bom-3.x"
     },
     {
       "v": "renovate-maintenance-mps20241-org.cyclonedx.bom-3.x.2024.1.10057.6eb52eb-SNAPSHOT",
@@ -7966,11 +7946,6 @@
       "branch": "renovate-maintenance-mps20241-gradle-9.x"
     },
     {
-      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.10120.a578997-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-gradle-9.x"
-    },
-    {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.10011.12439e1-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-9.x"
@@ -7989,6 +7964,11 @@
       "v": "renovate-maintenance-mps20241-gradle-8.x.2024.1.9974.ac5828d-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-8.x"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-github-actions.2024.1.11357.7de212f-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-github-actions"
     },
     {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.11282.3af0353-SNAPSHOT",
@@ -8101,11 +8081,6 @@
       "branch": "renovate-maintenance-mps20241-de.itemis.mps.build-backends-remigrate-1.x"
     },
     {
-      "v": "renovate-gradle-9.x.9999.9.9940.fd35598-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-gradle-9.x"
-    },
-    {
       "v": "renovate-gradle-9.x.9999.9.9687.030ba6d-SNAPSHOT",
       "pre": true,
       "branch": "renovate-gradle-9.x"
@@ -8129,11 +8104,6 @@
       "v": "renovate-actions-setup-java-digest.9999.9.9699.f04c7d3-SNAPSHOT",
       "pre": true,
       "branch": "renovate-actions-setup-java-digest"
-    },
-    {
-      "v": "renovate-actions-checkout-digest.9999.9.9821.657bbb7-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-actions-checkout-digest"
     },
     {
       "v": "renovate-actions-checkout-digest.9999.9.9537.b181dd2-SNAPSHOT",
@@ -8362,11 +8332,6 @@
     },
     {
       "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.10145.23918a7-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
-    },
-    {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.10121.66256e1-SNAPSHOT",
       "pre": true,
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
     },
@@ -8747,11 +8712,6 @@
     },
     {
       "v": "merge-mps20251.9999.9.9962.0bc2246-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
-      "v": "merge-mps20251.9999.9.9887.5239ca7-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
@@ -9306,19 +9266,9 @@
       "branch": "merge-mps20251"
     },
     {
-      "v": "merge-mps20251.2024.1.10112.fa1ecad-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
       "v": "merge-mps20251.2024.1.10107.30c5a09-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
-    },
-    {
-      "v": "merge-mps20241.2025.1.10040.5bb492f-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241"
     },
     {
       "v": "merge-mps20241.2025.1.10008.f229e39-SNAPSHOT",
@@ -9392,11 +9342,6 @@
     },
     {
       "v": "merge-mps20241.2024.1.9802.13ae70c-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241"
-    },
-    {
-      "v": "merge-mps20241.2024.1.9768.01dfe6a-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20241"
     },
@@ -10704,11 +10649,6 @@
       "v": "feature-run-manually-background.2025.1.11141.65d06b5-SNAPSHOT",
       "pre": true,
       "branch": "feature-run-manually-background"
-    },
-    {
-      "v": "feature-remove_deprecated_concepts_related_to_configurations_1631.2024.1.9799.6f452ad-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-remove_deprecated_concepts_related_to_configurations_1631"
     },
     {
       "v": "feature-remove_deprecated_concepts_related_to_configurations_1631.2024.1.9793.6643b37-SNAPSHOT",
@@ -12646,11 +12586,6 @@
       "branch": "bugfix-publishTestExecutor"
     },
     {
-      "v": "bugfix-precision_of_types_with_prefixed_physunits_is_wrong_1593.2024.1.9670.c2fd0ac-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-precision_of_types_with_prefixed_physunits_is_wrong_1593"
-    },
-    {
       "v": "bugfix-precision_of_types_with_prefixed_physunits_is_wrong_1593.2024.1.9667.9415804-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-precision_of_types_with_prefixed_physunits_is_wrong_1593"
@@ -12847,11 +12782,6 @@
     },
     {
       "v": "bugfix-interpreted-tests-jna-path-fix.2024.1.10109.d614c9f-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-interpreted-tests-jna-path-fix"
-    },
-    {
-      "v": "bugfix-interpreted-tests-jna-path-fix.2024.1.10100.0cb7b89-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-interpreted-tests-jna-path-fix"
     },
@@ -13092,11 +13022,6 @@
     },
     {
       "v": "bugfix-avoid_error_for_name_of_new_featuremodel_1713.2024.1.10225.cd9579a-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713"
-    },
-    {
-      "v": "bugfix-avoid_error_for_name_of_new_featuremodel_1713.2024.1.10137.d4498ff-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713"
     },
@@ -13357,11 +13282,6 @@
     },
     {
       "v": "bugfix-Fix-Diamond-Problem-&amp;-Refactoring-#1590.2024.1.9676.203eff2-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-Fix-Diamond-Problem-&amp;-Refactoring-#1590"
-    },
-    {
-      "v": "bugfix-Fix-Diamond-Problem-&amp;-Refactoring-#1590.2024.1.9669.652d673-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-Fix-Diamond-Problem-&amp;-Refactoring-#1590"
     },
