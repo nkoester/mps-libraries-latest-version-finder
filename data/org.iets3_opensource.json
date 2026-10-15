@@ -3,13 +3,13 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-15T09:38:27.666Z",
-  "total": 3024,
+  "generatedAt": "2026-10-15T15:30:27.243Z",
+  "total": 3027,
   "released": 1724,
   "stable": 1717,
   "preRelease": 7,
-  "branchCount": 1300,
-  "branches": 271,
+  "branchCount": 1303,
+  "branches": 272,
   "lines": [
     {
       "line": "9999.9",
@@ -7591,6 +7591,11 @@
       "branch": "renovate-maintenance-mps20241-third-party-minor"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11364.f73e3e2-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11351.bcde57a-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
@@ -12794,6 +12799,16 @@
       "v": "bugfix-irecordDeclaration_custom_equals_20211.2021.1.5860.27a0ab5",
       "pre": false,
       "branch": "bugfix-irecordDeclaration_custom_equals_20211"
+    },
+    {
+      "v": "bugfix-interpreter-runner.2025.1.11367.bc618db-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-interpreter-runner"
+    },
+    {
+      "v": "bugfix-interpreter-runner.2025.1.11365.4e43f93-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-interpreter-runner"
     },
     {
       "v": "bugfix-interpreted-tests-jna-path-fix.2024.1.10109.d614c9f-SNAPSHOT",
