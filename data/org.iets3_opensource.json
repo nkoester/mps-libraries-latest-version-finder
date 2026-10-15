@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-15T01:13:29.290Z",
-  "total": 3021,
+  "generatedAt": "2026-10-15T09:38:27.666Z",
+  "total": 3024,
   "released": 1724,
   "stable": 1717,
   "preRelease": 7,
-  "branchCount": 1297,
+  "branchCount": 1300,
   "branches": 271,
   "lines": [
     {
@@ -8266,6 +8266,11 @@
       "branch": "refactor-UmlautHandlingIdentifiers_20241"
     },
     {
+      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.11363.3422d66-SNAPSHOT",
+      "pre": true,
+      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
+    },
+    {
       "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.11214.817048d-SNAPSHOT",
       "pre": true,
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474"
@@ -10171,6 +10176,11 @@
       "branch": "feature-virtual_runSolver"
     },
     {
+      "v": "feature-view-model.2025.1.11359.6ef8986-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
       "v": "feature-view-model.2025.1.11353.1027e0b-SNAPSHOT",
       "pre": true,
       "branch": "feature-view-model"
@@ -11599,6 +11609,11 @@
       "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10686.998d901-SNAPSHOT",
       "pre": true,
       "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759"
+    },
+    {
+      "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11360.b4572b6-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978"
     },
     {
       "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11332.047337d-SNAPSHOT",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T01:13:29.290Z",
+  "generatedAt": "2026-10-15T09:38:27.666Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -149,12 +149,12 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1081,
+      "total": 1078,
       "released": 826,
       "stable": 805,
       "preRelease": 21,
-      "branchCount": 255,
-      "branches": 71,
+      "branchCount": 252,
+      "branches": 72,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
         {
@@ -256,12 +256,12 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3050,
-      "released": 2032,
-      "stable": 2032,
+      "total": 3054,
+      "released": 2033,
+      "stable": 2033,
       "preRelease": 0,
-      "branchCount": 1018,
-      "branches": 241,
+      "branchCount": 1021,
+      "branches": 242,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
         {
@@ -294,10 +294,10 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.26638.7b3e239",
+          "latest": "2024.1.26642.6bcdc9b",
           "latestIsPreRelease": false,
-          "total": 244,
-          "stable": 244
+          "total": 245,
+          "stable": 245
         },
         {
           "line": "2023.2",
@@ -384,12 +384,12 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2724,
-      "released": 1850,
-      "stable": 1850,
+      "total": 2709,
+      "released": 1851,
+      "stable": 1851,
       "preRelease": 0,
-      "branchCount": 874,
-      "branches": 202,
+      "branchCount": 858,
+      "branches": 200,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
         {
@@ -422,10 +422,10 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.26638.7b3e239",
+          "latest": "2024.1.26642.6bcdc9b",
           "latestIsPreRelease": false,
-          "total": 242,
-          "stable": 242
+          "total": 243,
+          "stable": 243
         },
         {
           "line": "2023.2",
@@ -498,11 +498,11 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 3021,
+      "total": 3024,
       "released": 1724,
       "stable": 1717,
       "preRelease": 7,
-      "branchCount": 1297,
+      "branchCount": 1300,
       "branches": 271,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [

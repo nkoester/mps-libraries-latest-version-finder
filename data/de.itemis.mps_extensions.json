@@ -3,13 +3,13 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-15T01:13:29.290Z",
-  "total": 1081,
+  "generatedAt": "2026-10-15T09:38:27.666Z",
+  "total": 1078,
   "released": 826,
   "stable": 805,
   "preRelease": 21,
-  "branchCount": 255,
-  "branches": 71,
+  "branchCount": 252,
+  "branches": 72,
   "lines": [
     {
       "line": "9999.9",
@@ -3810,26 +3810,6 @@
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
     },
     {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2230.c378c5c-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2229.fb381c3-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2226.d533742-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2223.c7eca2c-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
-    },
-    {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2190.15520eb-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
@@ -4100,6 +4080,11 @@
       "branch": "merge-mps20261"
     },
     {
+      "v": "merge-mps20251.2025.1.2475.bf2ca46-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
       "v": "merge-mps20251.2025.1.2459.a8e6358-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
@@ -4136,11 +4121,6 @@
     },
     {
       "v": "merge-mps20251.2025.1.2294.dfcf84c-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251"
-    },
-    {
-      "v": "merge-mps20251.2025.1.2225.0688b2b-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
@@ -4360,16 +4340,6 @@
       "branch": "merge-master"
     },
     {
-      "v": "merge-master.9999.9.2227.f1e2faa-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
-      "v": "merge-master.9999.9.2224.31e88ef-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
       "v": "merge-master.9999.9.2205.c6bac95-SNAPSHOT",
       "pre": true,
       "branch": "merge-master"
@@ -4490,6 +4460,16 @@
       "branch": "fix-celllayout-regressions"
     },
     {
+      "v": "feature-view-model.2025.1.2474.9128d6b-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
+      "v": "feature-view-model.2025.1.2473.a90c068-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model"
+    },
+    {
       "v": "feature-view-model.2025.1.2468.dab2866-SNAPSHOT",
       "pre": true,
       "branch": "feature-view-model"
@@ -4608,6 +4588,11 @@
       "v": "build-versioning-convention.2024.1.2390.fce5a7f-SNAPSHOT",
       "pre": true,
       "branch": "build-versioning-convention"
+    },
+    {
+      "v": "build-publishing-repositories-20241.2024.1.2471.57ebba7-SNAPSHOT",
+      "pre": true,
+      "branch": "build-publishing-repositories-20241"
     },
     {
       "v": "build-publishing-convention.2024.1.2389.87ca66f-SNAPSHOT",

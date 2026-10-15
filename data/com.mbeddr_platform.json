@@ -3,13 +3,13 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-15T01:13:29.290Z",
-  "total": 3050,
-  "released": 2032,
-  "stable": 2032,
+  "generatedAt": "2026-10-15T09:38:27.666Z",
+  "total": 3054,
+  "released": 2033,
+  "stable": 2033,
   "preRelease": 0,
-  "branchCount": 1018,
-  "branches": 241,
+  "branchCount": 1021,
+  "branches": 242,
   "lines": [
     {
       "line": "9999.9",
@@ -3105,11 +3105,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.26638.7b3e239",
+      "latest": "2024.1.26642.6bcdc9b",
       "latestIsPreRelease": false,
-      "total": 244,
-      "stable": 244,
+      "total": 245,
+      "stable": 245,
       "versions": [
+        {
+          "v": "2024.1.26642.6bcdc9b",
+          "pre": false
+        },
         {
           "v": "2024.1.26638.7b3e239",
           "pre": false
@@ -9581,6 +9585,11 @@
       "branch": "renovate-maintenance-mps20241-prek-0.x"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24231.d26aa7d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-mpsextensions241"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24229.3fb56ad-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-mpsextensions241"
@@ -10284,6 +10293,11 @@
       "v": "merge-mps20261.2026.1.25192.6195fec-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
+    },
+    {
+      "v": "merge-mps20251.2025.1.24932.c135e41-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
     },
     {
       "v": "merge-mps20251.2025.1.24929.70bfbb2-SNAPSHOT",
@@ -12549,6 +12563,11 @@
       "v": "build-unified-version.2024.1.24213.068806b-SNAPSHOT",
       "pre": true,
       "branch": "build-unified-version"
+    },
+    {
+      "v": "build-publishing-repositories-20241.2024.1.24229.effde67-SNAPSHOT",
+      "pre": true,
+      "branch": "build-publishing-repositories-20241"
     },
     {
       "v": "build-publishing-convention.2024.1.24211.ed5b6fb-SNAPSHOT",
