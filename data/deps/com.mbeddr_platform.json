@@ -4,6 +4,12 @@
   "slug": "com.mbeddr_platform",
   "snapshotLookup": "timestamped",
   "versions": {
+    "9999.9.26648.3a8ce0c": [
+      [
+        "de.itemis.mps_extensions",
+        "9999.9.3669.f8c8760-SNAPSHOT"
+      ]
+    ],
     "9999.9.26645.3a8ce0c": [
       [
         "de.itemis.mps_extensions",
@@ -262,6 +268,24 @@
         "9999.9.3610.e04ea8b-SNAPSHOT"
       ]
     ],
+    "9999.9.26493.a448940": [
+      [
+        "de.itemis.mps_extensions",
+        "9999.9.3610.e04ea8b-SNAPSHOT"
+      ]
+    ],
+    "9999.9.26489.a448940": [
+      [
+        "de.itemis.mps_extensions",
+        "9999.9.3610.e04ea8b-SNAPSHOT"
+      ]
+    ],
+    "9999.9.26487.c25eaa4": [
+      [
+        "de.itemis.mps_extensions",
+        "9999.9.3610.e04ea8b-SNAPSHOT"
+      ]
+    ],
     "2026.1.26644.d1cac63": [
       [
         "de.itemis.mps_extensions",
@@ -470,6 +494,16 @@
       [
         "de.itemis.mps_extensions",
         "2026.1.3628.51e7c81"
+      ]
+    ],
+    "2025.1.26646.2d78ecb": [
+      [
+        "de.itemis.mps_extensions",
+        "2025.1.3674.d7bac18"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2025.1.4"
       ]
     ],
     "2025.1.26643.2d78ecb": [
@@ -756,6 +790,18 @@
         "2025.1.3620.f5e6cd3"
       ]
     ],
+    "2025.1.26496.23055bc": [
+      [
+        "de.itemis.mps_extensions",
+        "2025.1.3620.f5e6cd3"
+      ]
+    ],
+    "2025.1.26495.928fd08": [
+      [
+        "de.itemis.mps_extensions",
+        "2025.1.3620.f5e6cd3"
+      ]
+    ],
     "2024.3.25383.9e7fc19": [
       [
         "com.jetbrains_mps",
@@ -1018,6 +1064,34 @@
       [
         "com.jetbrains_mps",
         "2024.3-RC1"
+      ]
+    ],
+    "2024.3.25132.f52b6bc": [
+      [
+        "com.jetbrains_mps",
+        "2024.3-RC1"
+      ]
+    ],
+    "2024.3.25124.f52b6bc": [
+      [
+        "com.jetbrains_mps",
+        "2024.3-RC1"
+      ]
+    ],
+    "2024.3.25121.42af88f": [
+      [
+        "com.jetbrains_mps",
+        "2024.3-RC1"
+      ]
+    ],
+    "2024.1.26647.6bcdc9b": [
+      [
+        "de.itemis.mps_extensions",
+        "2024.1.3673.0763bfa"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2024.1.6"
       ]
     ],
     "2024.1.26642.6bcdc9b": [
@@ -1298,6 +1372,18 @@
       [
         "de.itemis.mps_extensions",
         "2024.1.3562.aba6bac"
+      ]
+    ],
+    "2024.1.26351.4adbdb5": [
+      [
+        "de.itemis.mps_extensions",
+        "2024.1.3562.aba6bac"
+      ]
+    ],
+    "2024.1.26346.fb89f1a": [
+      [
+        "de.itemis.mps_extensions",
+        "2024.1.3559.4d21bb7"
       ]
     ],
     "2023.2.26501.f5ef6b6": [
@@ -1648,6 +1734,24 @@
         "2023.2.2"
       ]
     ],
+    "2023.2.25528.9e6e78e": [
+      [
+        "com.jetbrains_mps",
+        "2023.2.2"
+      ]
+    ],
+    "2023.2.25525.b61e01b": [
+      [
+        "com.jetbrains_mps",
+        "2023.2.2"
+      ]
+    ],
+    "2023.2.25517.9e6e78e": [
+      [
+        "com.jetbrains_mps",
+        "2023.2.2"
+      ]
+    ],
     "2022.3.26500.b633ef3": [
       [
         "com.jetbrains_mps",
@@ -1901,6 +2005,30 @@
       ]
     ],
     "2022.3.24877.ac880ec": [
+      [
+        "com.jetbrains_mps",
+        "2022.3.2"
+      ]
+    ],
+    "2022.3.24874.ac880ec": [
+      [
+        "com.jetbrains_mps",
+        "2022.3.2"
+      ]
+    ],
+    "2022.3.24871.6c92452": [
+      [
+        "com.jetbrains_mps",
+        "2022.3.2"
+      ]
+    ],
+    "2022.3.24869.9cffdaf": [
+      [
+        "com.jetbrains_mps",
+        "2022.3.2"
+      ]
+    ],
+    "2022.3.24867.55ef8c3": [
       [
         "com.jetbrains_mps",
         "2022.3.2"
@@ -2164,6 +2292,30 @@
         "2022.2.3"
       ]
     ],
+    "2022.2.24747.b628f1e": [
+      [
+        "com.jetbrains_mps",
+        "2022.2.3"
+      ]
+    ],
+    "2022.2.24740.2fbf4f5": [
+      [
+        "com.jetbrains_mps",
+        "2022.2.3"
+      ]
+    ],
+    "2022.2.24734.2fbf4f5": [
+      [
+        "com.jetbrains_mps",
+        "2022.2.3"
+      ]
+    ],
+    "2022.2.24732.beecfd2": [
+      [
+        "com.jetbrains_mps",
+        "2022.2.3"
+      ]
+    ],
     "2021.3.26011.42254e5": [
       [
         "com.jetbrains_mps",
@@ -2417,6 +2569,30 @@
       ]
     ],
     "2021.3.24262.ad9c755": [
+      [
+        "com.jetbrains_mps",
+        "2021.3.5"
+      ]
+    ],
+    "2021.3.24251.59dc420": [
+      [
+        "com.jetbrains_mps",
+        "2021.3.5"
+      ]
+    ],
+    "2021.3.24242.59dc420": [
+      [
+        "com.jetbrains_mps",
+        "2021.3.5"
+      ]
+    ],
+    "2021.3.24239.e2fccaa": [
+      [
+        "com.jetbrains_mps",
+        "2021.3.5"
+      ]
+    ],
+    "2021.3.24232.4e2cad6": [
       [
         "com.jetbrains_mps",
         "2021.3.5"
@@ -2680,6 +2856,30 @@
         "2021.2.5"
       ]
     ],
+    "2021.2.23409.6a0e3ff": [
+      [
+        "com.jetbrains_mps",
+        "2021.2.5"
+      ]
+    ],
+    "2021.2.23403.6a0e3ff": [
+      [
+        "com.jetbrains_mps",
+        "2021.2.5"
+      ]
+    ],
+    "2021.2.23395.6a0e3ff": [
+      [
+        "com.jetbrains_mps",
+        "2021.2.5"
+      ]
+    ],
+    "2021.2.23388.c06a286": [
+      [
+        "com.jetbrains_mps",
+        "2021.2.5"
+      ]
+    ],
     "2021.1.24667.d97bc57": [
       [
         "com.jetbrains_mps",
@@ -2933,6 +3133,30 @@
       ]
     ],
     "2021.1.23669.96d55fe": [
+      [
+        "com.jetbrains_mps",
+        "2021.1.4"
+      ]
+    ],
+    "2021.1.23666.9290a92": [
+      [
+        "com.jetbrains_mps",
+        "2021.1.4"
+      ]
+    ],
+    "2021.1.23654.9290a92": [
+      [
+        "com.jetbrains_mps",
+        "2021.1.4"
+      ]
+    ],
+    "2021.1.23651.9290a92": [
+      [
+        "com.jetbrains_mps",
+        "2021.1.4"
+      ]
+    ],
+    "2021.1.23650.9290a92": [
       [
         "com.jetbrains_mps",
         "2021.1.4"

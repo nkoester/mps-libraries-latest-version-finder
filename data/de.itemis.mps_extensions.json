@@ -3,21 +3,25 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-15T20:11:08.051Z",
-  "total": 1095,
-  "released": 829,
-  "stable": 807,
-  "preRelease": 22,
+  "generatedAt": "2026-10-16T09:30:54.340Z",
+  "total": 1098,
+  "released": 832,
+  "stable": 809,
+  "preRelease": 23,
   "branchCount": 266,
-  "branches": 74,
+  "branches": 73,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.3689.d015334-SNAPSHOT",
+      "latest": "9999.9.3690.ab7128e-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 22,
+      "total": 23,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.3690.ab7128e-SNAPSHOT",
+          "pre": true
+        },
         {
           "v": "9999.9.3689.d015334-SNAPSHOT",
           "pre": true
@@ -183,11 +187,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3687.ee05e8a",
+      "latest": "2025.1.3691.f7c69d3",
       "latestIsPreRelease": false,
-      "total": 113,
-      "stable": 113,
+      "total": 114,
+      "stable": 114,
       "versions": [
+        {
+          "v": "2025.1.3691.f7c69d3",
+          "pre": false
+        },
         {
           "v": "2025.1.3687.ee05e8a",
           "pre": false
@@ -789,11 +797,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.3682.05edf9a",
+      "latest": "2024.1.3692.8a4e8a4",
       "latestIsPreRelease": false,
-      "total": 124,
-      "stable": 124,
+      "total": 125,
+      "stable": 125,
       "versions": [
+        {
+          "v": "2024.1.3692.8a4e8a4",
+          "pre": false
+        },
         {
           "v": "2024.1.3682.05edf9a",
           "pre": false
@@ -3737,6 +3749,11 @@
       "branch": "renovate-master-mkdocs-material-9.x"
     },
     {
+      "v": "renovate-master-major-mps.9999.9.2493.64b2b18-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps"
+    },
+    {
       "v": "renovate-master-major-mps.9999.9.2488.f6873cd-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps"
@@ -4490,11 +4507,6 @@
       "v": "fix-navigation-deadlocks.2025.1.2249.12e0a48-SNAPSHOT",
       "pre": true,
       "branch": "fix-navigation-deadlocks"
-    },
-    {
-      "v": "fix-headless-tables.9999.9.2231.de04d8a-SNAPSHOT",
-      "pre": true,
-      "branch": "fix-headless-tables"
     },
     {
       "v": "fix-celllayout-regressions.2025.1.2482.3036123-SNAPSHOT",

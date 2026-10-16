@@ -3,21 +3,25 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-15T20:11:08.051Z",
-  "total": 3065,
-  "released": 2036,
-  "stable": 2036,
+  "generatedAt": "2026-10-16T09:30:54.340Z",
+  "total": 3068,
+  "released": 2039,
+  "stable": 2039,
   "preRelease": 0,
   "branchCount": 1029,
-  "branches": 242,
+  "branches": 241,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26645.3a8ce0c",
+      "latest": "9999.9.26648.3a8ce0c",
       "latestIsPreRelease": false,
-      "total": 413,
-      "stable": 413,
+      "total": 414,
+      "stable": 414,
       "versions": [
+        {
+          "v": "9999.9.26648.3a8ce0c",
+          "pre": false
+        },
         {
           "v": "9999.9.26645.3a8ce0c",
           "pre": false
@@ -1807,11 +1811,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26643.2d78ecb",
+      "latest": "2025.1.26646.2d78ecb",
       "latestIsPreRelease": false,
-      "total": 255,
-      "stable": 255,
+      "total": 256,
+      "stable": 256,
       "versions": [
+        {
+          "v": "2025.1.26646.2d78ecb",
+          "pre": false
+        },
         {
           "v": "2025.1.26643.2d78ecb",
           "pre": false
@@ -3117,11 +3125,15 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.26642.6bcdc9b",
+      "latest": "2024.1.26647.6bcdc9b",
       "latestIsPreRelease": false,
-      "total": 245,
-      "stable": 245,
+      "total": 246,
+      "stable": 246,
       "versions": [
+        {
+          "v": "2024.1.26647.6bcdc9b",
+          "pre": false
+        },
         {
           "v": "2024.1.26642.6bcdc9b",
           "pre": false
@@ -8467,6 +8479,11 @@
       "branch": "renovate-master-patch-mpsextensionsmaster"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25377.502faf2-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25372.9296300-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster"
@@ -9332,11 +9349,6 @@
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion"
     },
     {
-      "v": "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24680.b2a6d2f-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion"
-    },
-    {
       "v": "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24680.35912c7-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion"
@@ -9368,6 +9380,11 @@
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24933.8f449e0-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24933.81a5417-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
     },
@@ -9628,6 +9645,11 @@
     },
     {
       "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24231.d26aa7d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-mpsextensions241"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24231.1ae4882-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-mpsextensions241"
     },
@@ -11657,11 +11679,6 @@
       "branch": "merge-master"
     },
     {
-      "v": "merge-master.9999.9.24925.76525d0-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master"
-    },
-    {
       "v": "merge-master.9999.9.24892.e30aea5-SNAPSHOT",
       "pre": true,
       "branch": "merge-master"
@@ -12235,11 +12252,6 @@
       "v": "feature-interpreter_dataflow.2021.3.24358.7da0c59",
       "pre": false,
       "branch": "feature-interpreter_dataflow"
-    },
-    {
-      "v": "feature-hyperlink-isapplicable.2023.2.23752.1e0b8ff-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-hyperlink-isapplicable"
     },
     {
       "v": "feature-gradle-8.9.2022.3.24770.eb1ef7c",
