@@ -504,6 +504,56 @@
         "9999.9.26391.3b16a84"
       ]
     ],
+    "9999.9.9943.a035e14": [
+      [
+        "org.mpsqa_all-in-one",
+        "9999.9.1264.2b2934b"
+      ],
+      [
+        "com.mbeddr_platform",
+        "9999.9.26390.7f24448"
+      ]
+    ],
+    "9999.9.9941.32b0151": [
+      [
+        "org.mpsqa_all-in-one",
+        "9999.9.1264.2b2934b"
+      ],
+      [
+        "com.mbeddr_platform",
+        "9999.9.26387.7f24448"
+      ]
+    ],
+    "9999.9.9939.e91a528": [
+      [
+        "org.mpsqa_all-in-one",
+        "9999.9.1264.2b2934b"
+      ],
+      [
+        "com.mbeddr_platform",
+        "9999.9.26379.0fd1478"
+      ]
+    ],
+    "9999.9.9937.047a0a7": [
+      [
+        "org.mpsqa_all-in-one",
+        "9999.9.1264.2b2934b"
+      ],
+      [
+        "com.mbeddr_platform",
+        "9999.9.26379.0fd1478"
+      ]
+    ],
+    "9999.9.9912.e677f8e": [
+      [
+        "org.mpsqa_all-in-one",
+        "9999.9.1264.2b2934b"
+      ],
+      [
+        "com.mbeddr_platform",
+        "9999.9.26372.d0ddb1b"
+      ]
+    ],
     "2026.1.11349.95affbe": [
       [
         "org.mpsqa_all-in-one",
@@ -1244,6 +1294,46 @@
         "2025.1.26492.43b2239"
       ]
     ],
+    "2025.1.10539.cfad8f5": [
+      [
+        "org.mpsqa_all-in-one",
+        "2025.1.1404.1a29b59"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2025.1.26492.43b2239"
+      ]
+    ],
+    "2025.1.10532.de7ef95": [
+      [
+        "org.mpsqa_all-in-one",
+        "2025.1.1404.1a29b59"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2025.1.26484.acab2f3"
+      ]
+    ],
+    "2025.1.10503.716f3f4": [
+      [
+        "org.mpsqa_all-in-one",
+        "2025.1.1404.1a29b59"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2025.1.26484.acab2f3"
+      ]
+    ],
+    "2025.1.10496.dfd0ddb": [
+      [
+        "org.mpsqa_all-in-one",
+        "2025.1.1373.fbe75fc"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2025.1.26480.b9e5f21"
+      ]
+    ],
     "2024.1.11355.3bb7a7c": [
       [
         "org.mpsqa_all-in-one",
@@ -1745,6 +1835,46 @@
       ]
     ],
     "2024.1.10706.0c90b6b": [
+      [
+        "org.mpsqa_all-in-one",
+        "2024.1.1436.3cd3456"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2024.1.26519.74a6294"
+      ]
+    ],
+    "2024.1.10699.d394e8d": [
+      [
+        "org.mpsqa_all-in-one",
+        "2024.1.1436.3cd3456"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2024.1.26519.74a6294"
+      ]
+    ],
+    "2024.1.10681.b512cc4": [
+      [
+        "org.mpsqa_all-in-one",
+        "2024.1.1436.3cd3456"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2024.1.26519.74a6294"
+      ]
+    ],
+    "2024.1.10663.0533594": [
+      [
+        "org.mpsqa_all-in-one",
+        "2024.1.1436.3cd3456"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2024.1.26519.74a6294"
+      ]
+    ],
+    "2024.1.10660.ecd16f5": [
       [
         "org.mpsqa_all-in-one",
         "2024.1.1436.3cd3456"
@@ -2264,6 +2394,46 @@
         "2023.2.25061.ecd4e3e"
       ]
     ],
+    "2023.2.8094.8f98b81": [
+      [
+        "org.mpsqa_all-in-one",
+        "2023.2.888.3317900"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2023.2.25049.962ebd3"
+      ]
+    ],
+    "2023.2.8086.86e6809": [
+      [
+        "org.mpsqa_all-in-one",
+        "2023.2.888.3317900"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2023.2.25049.962ebd3"
+      ]
+    ],
+    "2023.2.8081.2012c95": [
+      [
+        "org.mpsqa_all-in-one",
+        "2023.2.888.3317900"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2023.2.25049.962ebd3"
+      ]
+    ],
+    "2023.2.8075.4f17ddb": [
+      [
+        "org.mpsqa_all-in-one",
+        "2023.2.885.974d55e"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2023.2.25049.962ebd3"
+      ]
+    ],
     "2022.3.8656.444c955": [
       [
         "org.mpsqa_all-in-one",
@@ -2768,6 +2938,46 @@
       [
         "org.mpsqa_all-in-one",
         "2022.3.579.e1b9d58"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.3.24695.0d9b3f3"
+      ]
+    ],
+    "2022.3.7451.a2892f0": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.3.579.e1b9d58"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.3.24695.0d9b3f3"
+      ]
+    ],
+    "2022.3.7442.703ce46": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.3.579.e1b9d58"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.3.24695.0d9b3f3"
+      ]
+    ],
+    "2022.3.7437.aa2ad1d": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.3.579.e1b9d58"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.3.24695.0d9b3f3"
+      ]
+    ],
+    "2022.3.7422.dc6a534": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.3.563.715a013"
       ],
       [
         "com.mbeddr_platform",
@@ -3284,6 +3494,46 @@
         "2022.2.24712.79a8c6d"
       ]
     ],
+    "2022.2.7417.61f2c2c": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.2.399.d6e4c4b"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.2.24710.31f448c"
+      ]
+    ],
+    "2022.2.7411.34d9804": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.2.399.d6e4c4b"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.2.24710.31f448c"
+      ]
+    ],
+    "2022.2.7409.a1f552f": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.2.399.d6e4c4b"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.2.24710.31f448c"
+      ]
+    ],
+    "2022.2.7403.050a455": [
+      [
+        "org.mpsqa_all-in-one",
+        "2022.2.399.d6e4c4b"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2022.2.24700.31f448c"
+      ]
+    ],
     "2021.3.8356.ce6ff8f": [
       [
         "com.mbeddr_platform",
@@ -3588,6 +3838,30 @@
       [
         "com.mbeddr_platform",
         "2021.3.24360.9066233"
+      ]
+    ],
+    "2021.3.6737.7961b38": [
+      [
+        "com.mbeddr_platform",
+        "2021.3.24360.9066233"
+      ]
+    ],
+    "2021.3.6726.7961b38": [
+      [
+        "com.mbeddr_platform",
+        "2021.3.24352.d08d0d6"
+      ]
+    ],
+    "2021.3.6716.a735f13": [
+      [
+        "com.mbeddr_platform",
+        "2021.3.24352.d08d0d6"
+      ]
+    ],
+    "2021.3.6707.41ef9b3": [
+      [
+        "com.mbeddr_platform",
+        "2021.3.24352.d08d0d6"
       ]
     ],
     "2021.2.7340.ba128fb": [
@@ -4056,6 +4330,30 @@
       [
         "com.mbeddr_platform",
         "2021.1.23699.503dfa0"
+      ]
+    ],
+    "2021.1.5972.9e50501": [
+      [
+        "com.mbeddr_platform",
+        "2021.1.23699.503dfa0"
+      ]
+    ],
+    "2021.1.5968.9e50501": [
+      [
+        "com.mbeddr_platform",
+        "2021.1.23695.10d5c19"
+      ]
+    ],
+    "2021.1.5966.9e50501": [
+      [
+        "com.mbeddr_platform",
+        "2021.1.23690.49f19b4"
+      ]
+    ],
+    "2021.1.5965.9e50501": [
+      [
+        "com.mbeddr_platform",
+        "2021.1.23688.49f19b4"
       ]
     ],
     "2020.3.6625.a5def84": [

@@ -3,12 +3,12 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-16T15:14:15.995Z",
-  "total": 1104,
+  "generatedAt": "2026-10-16T19:48:51.000Z",
+  "total": 1107,
   "released": 832,
   "stable": 809,
   "preRelease": 23,
-  "branchCount": 272,
+  "branchCount": 275,
   "branches": 74,
   "lines": [
     {
@@ -3749,6 +3749,16 @@
       "branch": "renovate-master-mkdocs-material-9.x"
     },
     {
+      "v": "renovate-master-major-mps.9999.9.2503.e60f8f0-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps"
+    },
+    {
+      "v": "renovate-master-major-mps.9999.9.2500.a66b8f5-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps"
+    },
+    {
       "v": "renovate-master-major-mps.9999.9.2494.657cc6e-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps"
@@ -4642,6 +4652,11 @@
       "v": "feature-slisson-word-formatting-2025.2025.1.2260.d520ea9-SNAPSHOT",
       "pre": true,
       "branch": "feature-slisson-word-formatting-2025"
+    },
+    {
+      "v": "feature-richtext-styles.2025.1.2501.1427370-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-richtext-styles"
     },
     {
       "v": "feature-richtext-styles.2025.1.2499.6b1b4b4-SNAPSHOT",
