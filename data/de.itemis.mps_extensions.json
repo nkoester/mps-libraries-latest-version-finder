@@ -3,13 +3,13 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-16T09:30:54.340Z",
-  "total": 1098,
+  "generatedAt": "2026-10-16T15:14:15.995Z",
+  "total": 1104,
   "released": 832,
   "stable": 809,
   "preRelease": 23,
-  "branchCount": 266,
-  "branches": 73,
+  "branchCount": 272,
+  "branches": 74,
   "lines": [
     {
       "line": "9999.9",
@@ -3749,6 +3749,11 @@
       "branch": "renovate-master-mkdocs-material-9.x"
     },
     {
+      "v": "renovate-master-major-mps.9999.9.2494.657cc6e-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps"
+    },
+    {
       "v": "renovate-master-major-mps.9999.9.2493.64b2b18-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps"
@@ -4639,6 +4644,16 @@
       "branch": "feature-slisson-word-formatting-2025"
     },
     {
+      "v": "feature-richtext-styles.2025.1.2499.6b1b4b4-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-richtext-styles"
+    },
+    {
+      "v": "feature-richtext-styles.2025.1.2498.ae0b2a6-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-richtext-styles"
+    },
+    {
       "v": "feature-richtext-styles.2025.1.2485.c33334c-SNAPSHOT",
       "pre": true,
       "branch": "feature-richtext-styles"
@@ -4677,6 +4692,21 @@
       "v": "docs-building-default-task.2025.1.2484.faa4010-SNAPSHOT",
       "pre": true,
       "branch": "docs-building-default-task"
+    },
+    {
+      "v": "docs-agent-audit-fixes.2025.1.2495.8d0d290-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-agent-audit-fixes"
+    },
+    {
+      "v": "docs-agent-audit-fixes.2024.1.2497.b66b56c-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-agent-audit-fixes"
+    },
+    {
+      "v": "docs-agent-audit-fixes.2024.1.2496.6befa4f-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-agent-audit-fixes"
     },
     {
       "v": "build-versioning-convention.2024.1.2390.fce5a7f-SNAPSHOT",

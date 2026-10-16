@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-16T09:30:54.340Z",
-  "total": 2994,
+  "generatedAt": "2026-10-16T15:14:15.995Z",
+  "total": 2997,
   "released": 1724,
   "stable": 1717,
   "preRelease": 7,
-  "branchCount": 1270,
+  "branchCount": 1273,
   "branches": 266,
   "lines": [
     {
@@ -11449,6 +11449,21 @@
       "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10686.998d901-SNAPSHOT",
       "pre": true,
       "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759"
+    },
+    {
+      "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11374.f03fa8e-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978"
+    },
+    {
+      "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11373.b38f856-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978"
+    },
+    {
+      "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11372.5fda899-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978"
     },
     {
       "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11370.eac13c4-SNAPSHOT",
