@@ -57,9 +57,9 @@
     "2025.1": {
       "latest": {
         "com.jetbrains_mps": "2025.1.4",
-        "de.itemis.mps_extensions": "2025.1.3691.f7c69d3",
-        "com.mbeddr_platform": "2025.1.26646.2d78ecb",
-        "com.mbeddr_mbeddr": "2025.1.26646.2d78ecb",
+        "de.itemis.mps_extensions": "2025.1.3693.0fad5bb",
+        "com.mbeddr_platform": "2025.1.26649.2d78ecb",
+        "com.mbeddr_mbeddr": "2025.1.26649.2d78ecb",
         "org.iets3_opensource": "2025.1.11345.0dcf930",
         "org.mpsqa_all-in-one": "2025.1.1438.801e837"
       },
@@ -77,7 +77,7 @@
         [
           "com.mbeddr_mbeddr",
           "com.mbeddr_platform",
-          "2025.1.26646.2d78ecb"
+          "2025.1.26649.2d78ecb"
         ],
         [
           "org.iets3_opensource",

@@ -3,10 +3,10 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-16T19:48:51.000Z",
-  "total": 1107,
-  "released": 832,
-  "stable": 809,
+  "generatedAt": "2026-10-17T09:01:29.195Z",
+  "total": 1108,
+  "released": 833,
+  "stable": 810,
   "preRelease": 23,
   "branchCount": 275,
   "branches": 74,
@@ -187,11 +187,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3691.f7c69d3",
+      "latest": "2025.1.3693.0fad5bb",
       "latestIsPreRelease": false,
-      "total": 114,
-      "stable": 114,
+      "total": 115,
+      "stable": 115,
       "versions": [
+        {
+          "v": "2025.1.3693.0fad5bb",
+          "pre": false
+        },
         {
           "v": "2025.1.3691.f7c69d3",
           "pre": false
@@ -3749,6 +3753,16 @@
       "branch": "renovate-master-mkdocs-material-9.x"
     },
     {
+      "v": "renovate-master-major-mps.9999.9.2506.a6f711c-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps"
+    },
+    {
+      "v": "renovate-master-major-mps.9999.9.2505.0d0077c-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps"
+    },
+    {
       "v": "renovate-master-major-mps.9999.9.2503.e60f8f0-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps"
@@ -3855,16 +3869,6 @@
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2235.04987e7-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2234.c941d9b-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2233.c311c0b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
     },

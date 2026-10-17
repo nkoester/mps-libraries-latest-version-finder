@@ -3,12 +3,12 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-16T19:48:51.000Z",
-  "total": 3068,
-  "released": 2039,
-  "stable": 2039,
+  "generatedAt": "2026-10-17T09:01:29.195Z",
+  "total": 3067,
+  "released": 2040,
+  "stable": 2040,
   "preRelease": 0,
-  "branchCount": 1029,
+  "branchCount": 1027,
   "branches": 241,
   "lines": [
     {
@@ -1811,11 +1811,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26646.2d78ecb",
+      "latest": "2025.1.26649.2d78ecb",
       "latestIsPreRelease": false,
-      "total": 256,
-      "stable": 256,
+      "total": 257,
+      "stable": 257,
       "versions": [
+        {
+          "v": "2025.1.26649.2d78ecb",
+          "pre": false
+        },
         {
           "v": "2025.1.26646.2d78ecb",
           "pre": false
@@ -8409,11 +8413,6 @@
       "branch": "renovate-master-patch-mpsextensionsversion"
     },
     {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.24934.831e42f-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion"
-    },
-    {
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.24929.755f994-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion"
@@ -8994,11 +8993,6 @@
       "branch": "renovate-master-mpsbuild"
     },
     {
-      "v": "renovate-master-mpsbuild.9999.9.24654.e303c2d-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsbuild"
-    },
-    {
       "v": "renovate-master-mpsbuild.9999.9.24654.d30e9c9-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsbuild"
@@ -9060,11 +9054,6 @@
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25027.a3edcdd-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25024.e99ace9-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x"
     },
@@ -9385,6 +9374,11 @@
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24933.81a5417-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24933.11162d3-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
     },
