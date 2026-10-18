@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T14:04:12.886Z",
+  "generatedAt": "2026-10-18T00:40:29.568Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -149,11 +149,11 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1110,
+      "total": 1113,
       "released": 833,
       "stable": 810,
       "preRelease": 23,
-      "branchCount": 277,
+      "branchCount": 280,
       "branches": 74,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [

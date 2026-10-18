@@ -3,12 +3,12 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-17T14:04:12.886Z",
-  "total": 1110,
+  "generatedAt": "2026-10-18T00:40:29.568Z",
+  "total": 1113,
   "released": 833,
   "stable": 810,
   "preRelease": 23,
-  "branchCount": 277,
+  "branchCount": 280,
   "branches": 74,
   "lines": [
     {
@@ -3753,6 +3753,11 @@
       "branch": "renovate-master-mkdocs-material-9.x"
     },
     {
+      "v": "renovate-master-major-mps.9999.9.2511.a01c2db-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps"
+    },
+    {
       "v": "renovate-master-major-mps.9999.9.2507.5169633-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps"
@@ -4161,6 +4166,16 @@
       "v": "merge-mps20261.2026.1.2237.83ca0cc-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
+    },
+    {
+      "v": "merge-mps20251.2025.1.2513.25070bf-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
+      "v": "merge-mps20251.2025.1.2512.27dcf20-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
     },
     {
       "v": "merge-mps20251.2025.1.2475.bf2ca46-SNAPSHOT",
