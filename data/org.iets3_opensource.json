@@ -3,7 +3,7 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-18T00:40:29.568Z",
+  "generatedAt": "2026-10-18T09:20:38.833Z",
   "total": 2951,
   "released": 1724,
   "stable": 1717,
@@ -7526,6 +7526,11 @@
       "branch": "renovate-maintenance-mps20241-third-party-minor"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11382.9ad5264-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11369.96452f4-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
@@ -11447,11 +11452,6 @@
     },
     {
       "v": "feature-Create-new-IDotTargets-for-enumerations-#1827.2024.1.10658.75912d9-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-Create-new-IDotTargets-for-enumerations-#1827"
-    },
-    {
-      "v": "feature-Create-new-IDotTargets-for-enumerations-#1827.2024.1.10656.a68864f-SNAPSHOT",
       "pre": true,
       "branch": "feature-Create-new-IDotTargets-for-enumerations-#1827"
     },

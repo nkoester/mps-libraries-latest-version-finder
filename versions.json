@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T00:40:29.568Z",
+  "generatedAt": "2026-10-18T09:20:38.833Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -149,9 +149,9 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1113,
-      "released": 833,
-      "stable": 810,
+      "total": 1115,
+      "released": 835,
+      "stable": 812,
       "preRelease": 23,
       "branchCount": 280,
       "branches": 74,
@@ -173,10 +173,10 @@
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.3693.0fad5bb",
+          "latest": "2025.1.3694.29cae85",
           "latestIsPreRelease": false,
-          "total": 115,
-          "stable": 115
+          "total": 116,
+          "stable": 116
         },
         {
           "line": "2024.3",
@@ -187,10 +187,10 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.3692.8a4e8a4",
+          "latest": "2024.1.3695.bac07ab",
           "latestIsPreRelease": false,
-          "total": 125,
-          "stable": 125
+          "total": 126,
+          "stable": 126
         },
         {
           "line": "2023.2",
@@ -256,34 +256,34 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3067,
-      "released": 2040,
-      "stable": 2040,
+      "total": 3078,
+      "released": 2046,
+      "stable": 2046,
       "preRelease": 0,
-      "branchCount": 1027,
+      "branchCount": 1032,
       "branches": 241,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
         {
           "line": "9999.9",
-          "latest": "9999.9.26648.3a8ce0c",
+          "latest": "9999.9.26655.30193f1",
           "latestIsPreRelease": false,
-          "total": 414,
-          "stable": 414
+          "total": 415,
+          "stable": 415
         },
         {
           "line": "2026.1",
-          "latest": "2026.1.26644.d1cac63",
+          "latest": "2026.1.26654.d156123",
           "latestIsPreRelease": false,
-          "total": 31,
-          "stable": 31
+          "total": 32,
+          "stable": 32
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.26649.2d78ecb",
+          "latest": "2025.1.26652.add74ca",
           "latestIsPreRelease": false,
-          "total": 257,
-          "stable": 257
+          "total": 259,
+          "stable": 259
         },
         {
           "line": "2024.3",
@@ -294,10 +294,10 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.26647.6bcdc9b",
+          "latest": "2024.1.26653.52a92d2",
           "latestIsPreRelease": false,
-          "total": 246,
-          "stable": 246
+          "total": 248,
+          "stable": 248
         },
         {
           "line": "2023.2",
@@ -384,34 +384,34 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2635,
-      "released": 1858,
-      "stable": 1858,
+      "total": 2645,
+      "released": 1864,
+      "stable": 1864,
       "preRelease": 0,
-      "branchCount": 777,
+      "branchCount": 781,
       "branches": 186,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
         {
           "line": "9999.9",
-          "latest": "9999.9.26648.3a8ce0c",
+          "latest": "9999.9.26655.30193f1",
           "latestIsPreRelease": false,
-          "total": 398,
-          "stable": 398
+          "total": 399,
+          "stable": 399
         },
         {
           "line": "2026.1",
-          "latest": "2026.1.26644.d1cac63",
+          "latest": "2026.1.26654.d156123",
           "latestIsPreRelease": false,
-          "total": 31,
-          "stable": 31
+          "total": 32,
+          "stable": 32
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.26649.2d78ecb",
+          "latest": "2025.1.26652.add74ca",
           "latestIsPreRelease": false,
-          "total": 255,
-          "stable": 255
+          "total": 257,
+          "stable": 257
         },
         {
           "line": "2024.3",
@@ -422,10 +422,10 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.26647.6bcdc9b",
+          "latest": "2024.1.26653.52a92d2",
           "latestIsPreRelease": false,
-          "total": 244,
-          "stable": 244
+          "total": 246,
+          "stable": 246
         },
         {
           "line": "2023.2",
