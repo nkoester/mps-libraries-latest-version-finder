@@ -3,13 +3,13 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-18T14:19:51.986Z",
-  "total": 1115,
+  "generatedAt": "2026-10-18T19:14:27.965Z",
+  "total": 1117,
   "released": 835,
   "stable": 812,
   "preRelease": 23,
-  "branchCount": 280,
-  "branches": 74,
+  "branchCount": 282,
+  "branches": 75,
   "lines": [
     {
       "line": "9999.9",
@@ -4066,6 +4066,11 @@
       "branch": "modelix-extract-core"
     },
     {
+      "v": "merge-mps20261.2026.1.2516.fb0c7f0-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
       "v": "merge-mps20261.2026.1.2490.8f7be84-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
@@ -4469,6 +4474,11 @@
       "v": "jbr25.2026.1.2238.2579b5c-SNAPSHOT",
       "pre": true,
       "branch": "jbr25"
+    },
+    {
+      "v": "fix-viewmodel-tests-mps20261-compat.2025.1.2517.cad8b34-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-viewmodel-tests-mps20261-compat"
     },
     {
       "v": "fix-teamcity-kotlin-dsl.2024.1.2314.321a148-SNAPSHOT",
