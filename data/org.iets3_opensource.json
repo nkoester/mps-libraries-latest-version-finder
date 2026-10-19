@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-19T10:31:49.133Z",
-  "total": 2964,
+  "generatedAt": "2026-10-19T17:20:36.978Z",
+  "total": 2965,
   "released": 1728,
   "stable": 1721,
   "preRelease": 7,
-  "branchCount": 1236,
+  "branchCount": 1237,
   "branches": 260,
   "lines": [
     {
@@ -11320,6 +11320,11 @@
       "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10686.998d901-SNAPSHOT",
       "pre": true,
       "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759"
+    },
+    {
+      "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11398.87726f3-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978"
     },
     {
       "v": "feature-Improve-Editor-Handling-of-FeatureDecTab-#1978.2024.1.11374.f03fa8e-SNAPSHOT",
