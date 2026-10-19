@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-19T00:51:06.760Z",
-  "total": 2953,
-  "released": 1724,
-  "stable": 1717,
+  "generatedAt": "2026-10-19T10:31:49.133Z",
+  "total": 2964,
+  "released": 1728,
+  "stable": 1721,
   "preRelease": 7,
-  "branchCount": 1229,
+  "branchCount": 1236,
   "branches": 260,
   "lines": [
     {
@@ -883,11 +883,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11345.0dcf930",
+      "latest": "2025.1.11395.02072c6",
       "latestIsPreRelease": false,
-      "total": 135,
-      "stable": 129,
+      "total": 136,
+      "stable": 130,
       "versions": [
+        {
+          "v": "2025.1.11395.02072c6",
+          "pre": false
+        },
         {
           "v": "2025.1.11345.0dcf930",
           "pre": false
@@ -1432,11 +1436,23 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11355.3bb7a7c",
+      "latest": "2024.1.11393.b4b4b34",
       "latestIsPreRelease": false,
-      "total": 265,
-      "stable": 264,
+      "total": 268,
+      "stable": 267,
       "versions": [
+        {
+          "v": "2024.1.11393.b4b4b34",
+          "pre": false
+        },
+        {
+          "v": "2024.1.11390.b308293",
+          "pre": false
+        },
+        {
+          "v": "2024.1.11386.2201737",
+          "pre": false
+        },
         {
           "v": "2024.1.11355.3bb7a7c",
           "pre": false
@@ -7531,6 +7547,11 @@
       "branch": "renovate-maintenance-mps20241-third-party-minor"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11387.c7f8ce1-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11383.78edb03-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor"
@@ -7849,6 +7870,16 @@
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.9981.fe2e609-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-9.x"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-github-actions.2024.1.11391.9d0aea5-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-github-actions"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-github-actions.2024.1.11388.2c444ab-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-github-actions"
     },
     {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.11357.7de212f-SNAPSHOT",
@@ -8406,6 +8437,11 @@
       "branch": "merge-mps20261"
     },
     {
+      "v": "merge-mps20261.2025.1.11394.02072c6-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
+    },
+    {
       "v": "merge-mps20261.2025.1.11344.0dcf930-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261"
@@ -8557,6 +8593,11 @@
     },
     {
       "v": "merge-mps20251.9999.9.9681.eaff690-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
+      "v": "merge-mps20251.2025.1.11392.3f78046-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },
@@ -8812,6 +8853,16 @@
     },
     {
       "v": "merge-mps20251.2025.1.9749.21b3417-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11389.b308293-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11385.2201737-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251"
     },

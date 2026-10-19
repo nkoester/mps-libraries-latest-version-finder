@@ -3,10 +3,10 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-19T00:51:06.760Z",
-  "total": 1118,
-  "released": 835,
-  "stable": 812,
+  "generatedAt": "2026-10-19T10:31:49.133Z",
+  "total": 1119,
+  "released": 836,
+  "stable": 813,
   "preRelease": 23,
   "branchCount": 283,
   "branches": 75,
@@ -187,11 +187,15 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3694.29cae85",
+      "latest": "2025.1.3696.3b88dd4",
       "latestIsPreRelease": false,
-      "total": 116,
-      "stable": 116,
+      "total": 117,
+      "stable": 117,
       "versions": [
+        {
+          "v": "2025.1.3696.3b88dd4",
+          "pre": false
+        },
         {
           "v": "2025.1.3694.29cae85",
           "pre": false
@@ -3761,6 +3765,11 @@
       "branch": "renovate-master-mkdocs-material-9.x"
     },
     {
+      "v": "renovate-master-major-mps.9999.9.2519.c379d20-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps"
+    },
+    {
       "v": "renovate-master-major-mps.9999.9.2511.a01c2db-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps"
@@ -3882,11 +3891,6 @@
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2243.97c4901-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2235.04987e7-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x"
     },

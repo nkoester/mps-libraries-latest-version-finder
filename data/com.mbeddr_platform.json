@@ -3,12 +3,12 @@
   "artifactId": "platform",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-19T00:51:06.760Z",
-  "total": 3078,
-  "released": 2046,
-  "stable": 2046,
+  "generatedAt": "2026-10-19T10:31:49.133Z",
+  "total": 3082,
+  "released": 2048,
+  "stable": 2048,
   "preRelease": 0,
-  "branchCount": 1032,
+  "branchCount": 1034,
   "branches": 241,
   "lines": [
     {
@@ -1819,11 +1819,19 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26652.add74ca",
+      "latest": "2025.1.26657.c5d588e",
       "latestIsPreRelease": false,
-      "total": 259,
-      "stable": 259,
+      "total": 261,
+      "stable": 261,
       "versions": [
+        {
+          "v": "2025.1.26657.c5d588e",
+          "pre": false
+        },
+        {
+          "v": "2025.1.26656.add74ca",
+          "pre": false
+        },
         {
           "v": "2025.1.26652.add74ca",
           "pre": false
@@ -9387,6 +9395,11 @@
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion"
     },
     {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24935.993badd-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
+    },
+    {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24933.c717e1e-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensions251"
@@ -10265,6 +10278,11 @@
       "v": "merge-2021.1->2021.2.2021.2.23394.48fc62f",
       "pre": false,
       "branch": "merge-2021"
+    },
+    {
+      "v": "merge-mps20261.2026.1.25335.01a9f32-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
     },
     {
       "v": "merge-mps20261.2026.1.25333.5acc0e5-SNAPSHOT",
