@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-18T19:14:27.965Z",
-  "total": 2952,
+  "generatedAt": "2026-10-19T00:51:06.760Z",
+  "total": 2953,
   "released": 1724,
   "stable": 1717,
   "preRelease": 7,
-  "branchCount": 1228,
+  "branchCount": 1229,
   "branches": 260,
   "lines": [
     {
@@ -7369,6 +7369,11 @@
       "v": "renovate-maintenance-mps20251-patch-mpsversion.2025.1.10236.e26b1e1-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsversion"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11384.ed809c7-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-third-party-minor"
     },
     {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11378.e64f441-SNAPSHOT",

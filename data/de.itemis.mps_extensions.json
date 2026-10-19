@@ -3,12 +3,12 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-18T19:14:27.965Z",
-  "total": 1117,
+  "generatedAt": "2026-10-19T00:51:06.760Z",
+  "total": 1118,
   "released": 835,
   "stable": 812,
   "preRelease": 23,
-  "branchCount": 282,
+  "branchCount": 283,
   "branches": 75,
   "lines": [
     {
@@ -4064,6 +4064,11 @@
       "v": "modelix-extract-core.2020.3.2404.0a38a09",
       "pre": false,
       "branch": "modelix-extract-core"
+    },
+    {
+      "v": "merge-mps20261.2026.1.2518.811513b-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261"
     },
     {
       "v": "merge-mps20261.2026.1.2516.fb0c7f0-SNAPSHOT",
