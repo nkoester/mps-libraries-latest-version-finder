@@ -3,12 +3,12 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-20T11:49:24.316Z",
-  "total": 2970,
-  "released": 1729,
-  "stable": 1722,
+  "generatedAt": "2026-10-20T13:16:38.018Z",
+  "total": 2973,
+  "released": 1730,
+  "stable": 1723,
   "preRelease": 7,
-  "branchCount": 1241,
+  "branchCount": 1243,
   "branches": 260,
   "lines": [
     {
@@ -1793,11 +1793,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11393.b4b4b34",
+      "latest": "2024.1.11405.ee845c4",
       "latestIsPreRelease": false,
-      "total": 268,
-      "stable": 267,
+      "total": 269,
+      "stable": 268,
       "versions": [
+        {
+          "v": "2024.1.11405.ee845c4",
+          "pre": false,
+          "d": "2026-10-20"
+        },
         {
           "v": "2024.1.11393.b4b4b34",
           "pre": false,
@@ -3139,7 +3144,7 @@
           "d": "2024-11-19"
         }
       ],
-      "latestDate": "2026-10-19"
+      "latestDate": "2026-10-20"
     },
     {
       "line": "2023.2",
@@ -9687,6 +9692,12 @@
       "d": "2026-03-12"
     },
     {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11408.58186f6-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-10-20"
+    },
+    {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11402.36ed899-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-9.x",
@@ -10975,6 +10986,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-02-02"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11406.ee845c4-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-10-20"
     },
     {
       "v": "merge-mps20251.2024.1.11389.b308293-SNAPSHOT",

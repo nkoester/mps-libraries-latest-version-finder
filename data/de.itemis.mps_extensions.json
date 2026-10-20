@@ -3,12 +3,12 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-20T11:49:24.316Z",
-  "total": 1119,
+  "generatedAt": "2026-10-20T13:16:38.018Z",
+  "total": 1120,
   "released": 836,
   "stable": 813,
   "preRelease": 23,
-  "branchCount": 283,
+  "branchCount": 284,
   "branches": 75,
   "lines": [
     {
@@ -4670,6 +4670,12 @@
       "pre": true,
       "branch": "renovate-master-mkdocs-material-9.x",
       "d": "2026-09-02"
+    },
+    {
+      "v": "renovate-master-major-mps.9999.9.2520.83add2b-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps",
+      "d": "2026-10-20"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2519.c379d20-SNAPSHOT",
