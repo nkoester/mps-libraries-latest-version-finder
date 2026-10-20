@@ -222,76 +222,56 @@
         color: var(--ink);
       }
 
-      /* Crosses the gap between the wordmark and the stamp, then the trail
-           retreats from the left until the track is clear again. */
+      /* Crosses the gap between the wordmark and the stamp on a sine wave,
+           trailing a wavy ribbon, then waits off-stage for the next loop.
+           Driven entirely by the script below; without it (or with reduced
+           motion) the cat stays off-stage. */
       .nyan-track {
         flex: 1 1 140px;
         position: relative;
         align-self: center;
-        height: 26px;
+        height: 34px;
         overflow: hidden;
         pointer-events: none;
       }
-      /* The trail is exactly the viewable space, so its length never depends
-           on a guessed pixel width. Both ends are driven by clip-path: the
-           right edge follows the cat out, then the left edge chases it. */
+      /* Spans the track and never moves: the ribbon is drawn in track
+           coordinates, so the part left behind is repainted identically. */
       .nyan-trail {
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        margin-top: -7.75px;
-        height: 15.5px;
-        clip-path: inset(0 100% 0 0);
-        background: linear-gradient(
-          to bottom,
-          #ff2a2a 0 16.667%,
-          #ff9f2a 0 33.333%,
-          #fff32a 0 50%,
-          #44e03c 0 66.667%,
-          #2a9fff 0 83.333%,
-          #8f57ff 0 100%
-        );
+        inset: 0;
+        width: 100%;
+        height: 100%;
       }
+      .nyan-trail path {
+        fill: none;
+        stroke-width: 2.8;
+        stroke-linejoin: round;
+      }
+      .nyan-trail [data-band="0"] {
+        stroke: #ff2a2a;
+      }
+      .nyan-trail [data-band="1"] {
+        stroke: #ff9f2a;
+      }
+      .nyan-trail [data-band="2"] {
+        stroke: #fff32a;
+      }
+      .nyan-trail [data-band="3"] {
+        stroke: #44e03c;
+      }
+      .nyan-trail [data-band="4"] {
+        stroke: #2a9fff;
+      }
+      .nyan-trail [data-band="5"] {
+        stroke: #8f57ff;
+      }
+      /* Starts just left of the track; the script translates it. */
       .nyan-cat {
         position: absolute;
-        top: 1px;
-        left: -45px;
+        top: 5px;
+        left: -40px;
+        width: 40px;
         height: 24px;
-        width: auto;
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        .nyan-cat {
-          animation: nyan-cat 20s linear infinite;
-        }
-        .nyan-trail {
-          animation: nyan-trail 20s linear infinite;
-        }
-      }
-      @keyframes nyan-cat {
-        0% {
-          left: -45px;
-        } /* just off-stage left */
-        15% {
-          left: 100%;
-        } /* just off-stage right */
-        100% {
-          left: 100%;
-        }
-      }
-      @keyframes nyan-trail {
-        0% {
-          clip-path: inset(0 100% 0 0);
-        } /* nothing drawn */
-        15% {
-          clip-path: inset(0 0 0 0);
-        } /* full width, cat at the right */
-        35% {
-          clip-path: inset(0 0 0 100%);
-        } /* retreats from the left */
-        100% {
-          clip-path: inset(0 0 0 100%);
-        }
       }
       @media (max-width: 720px) {
         .nyan-track {
@@ -1527,7 +1507,14 @@
         </div>
 
         <div class="nyan-track" aria-hidden="true">
-          <span class="nyan-trail"></span>
+          <svg class="nyan-trail">
+            <path data-band="0" />
+            <path data-band="1" />
+            <path data-band="2" />
+            <path data-band="3" />
+            <path data-band="4" />
+            <path data-band="5" />
+          </svg>
           <svg
             class="nyan-cat"
             viewBox="50 0 46 28"
@@ -1721,6 +1708,115 @@
         <div class="dlg-body ins-body" id="ins-body"></div>
       </div>
     </dialog>
+
+    <script>
+      // Flies the nyan cat across its track on a sine wave, trailing a ribbon.
+      // The ribbon is a fixed curve in track coordinates, y(x) =
+      // -A sin(k (x + CAT_WIDTH)), of which only the LENGTH px behind the cat
+      // are drawn; the cat rides the same curve. Nothing already drawn moves,
+      // so there's no sub-pixel jitter. Sleeps while off-stage.
+      (() => {
+        const track = document.querySelector(".nyan-track");
+        const cat = track?.querySelector(".nyan-cat");
+        if (!cat) return;
+        const paths = [...track.querySelectorAll(".nyan-trail path")];
+        const motion = matchMedia("(prefers-reduced-motion: no-preference)");
+
+        const CAT_WIDTH = 40; // must match .nyan-cat
+        const BASE_Y = 17; // .nyan-cat's vertical centre
+        const LENGTH = 240;
+        const WAVELENGTH = 50;
+        const AMPLITUDE = 4;
+        const CYCLE_MS = 20000;
+        const CROSSING_MS = 3000;
+        const STEP = 5;
+        const BAND_OFFSETS = [-6.5, -3.9, -1.3, 1.3, 3.9, 6.5];
+        const K = (2 * Math.PI) / WAVELENGTH;
+        const origin = performance.now();
+        let travel = 0;
+        let devicePx = 1; // device pixels per CSS px
+        let frame = 0;
+        let timer = 0;
+
+        const waveY = (x) => -AMPLITUDE * Math.sin(K * (x + CAT_WIDTH));
+        const slope = (x) => -AMPLITUDE * K * Math.cos(K * (x + CAT_WIDTH));
+
+        // Samples sit on a fixed STEP grid (plus both ends), so the same
+        // stretch of ribbon always gets the same Bezier segments.
+        function ribbonPath(from, to, offset) {
+          const xs = [from];
+          for (let x = Math.floor(from / STEP + 1) * STEP; x < to; x += STEP) xs.push(x);
+          xs.push(to);
+          const y = (x) => (BASE_Y + offset + waveY(x)).toFixed(2);
+          let d = `M${from.toFixed(2)} ${y(from)}`;
+          for (let i = 1; i < xs.length; i++) {
+            const a = xs[i - 1];
+            const b = xs[i];
+            const h = (b - a) / 3;
+            const ya = BASE_Y + offset + waveY(a);
+            const yb = BASE_Y + offset + waveY(b);
+            d +=
+              ` C${(a + h).toFixed(2)} ${(ya + slope(a) * h).toFixed(2)}` +
+              ` ${(b - h).toFixed(2)} ${(yb - slope(b) * h).toFixed(2)}` +
+              ` ${b.toFixed(2)} ${y(b)}`;
+          }
+          return d;
+        }
+
+        // progress 0: cat just left of the track; 1: ribbon tail just past
+        // its right edge.
+        function place(progress) {
+          // Whole device pixels keep the pixel-art cat crisp and stop the
+          // browser from snapping it on its own.
+          const dx = Math.round(progress * travel * devicePx) / devicePx;
+          const dy = Math.round(waveY(dx - CAT_WIDTH) * devicePx) / devicePx;
+          cat.style.transform = `translate(${dx}px, ${dy}px)`;
+          // Head ends under the cat's left edge (track x = dx - CAT_WIDTH).
+          const head = dx - CAT_WIDTH + 1;
+          const tail = Math.max(head - LENGTH, -STEP);
+          paths.forEach((p, i) =>
+            p.setAttribute("d", head > tail ? ribbonPath(tail, head, BAND_OFFSETS[i]) : ""),
+          );
+        }
+
+        function stop() {
+          cancelAnimationFrame(frame);
+          clearTimeout(timer);
+          frame = timer = 0;
+        }
+
+        function tick(now) {
+          frame = 0;
+          const t = (now - origin) % CYCLE_MS;
+          if (t < CROSSING_MS) {
+            place(t / CROSSING_MS);
+            frame = requestAnimationFrame(tick);
+          } else {
+            place(1);
+            timer = setTimeout(() => {
+              timer = 0;
+              frame = requestAnimationFrame(tick);
+            }, CYCLE_MS - t);
+          }
+        }
+
+        function restart() {
+          // From fully left of the track until the ribbon tail clears it.
+          // The root is CSS-zoomed (html { zoom }); offsetWidth is unzoomed.
+          const zoom = Number(getComputedStyle(document.documentElement).zoom) || 1;
+          devicePx = devicePixelRatio * zoom;
+          const width = track.offsetWidth;
+          travel = width + LENGTH + CAT_WIDTH;
+          stop();
+          place(0);
+          if (motion.matches && width > 0) frame = requestAnimationFrame(tick);
+        }
+
+        restart();
+        new ResizeObserver(restart).observe(track);
+        motion.addEventListener("change", restart);
+      })();
+    </script>
 
     <script type="module">
       import {
