@@ -172,6 +172,18 @@
         "17.0.9-b1087.9"
       ]
     ],
+    "2023.2.2": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.12-b1000.54"
+      ]
+    ],
+    "263.6259.94": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
     "263.6259.90": [
       [
         "com.jetbrains.jdk_jbr_jcef",

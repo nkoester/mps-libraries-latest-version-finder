@@ -3,13 +3,13 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-20T15:33:50.989Z",
-  "total": 1120,
+  "generatedAt": "2026-10-20T20:18:04.497Z",
+  "total": 1123,
   "released": 836,
   "stable": 813,
   "preRelease": 23,
-  "branchCount": 284,
-  "branches": 75,
+  "branchCount": 287,
+  "branches": 76,
   "lines": [
     {
       "line": "9999.9",
@@ -5636,6 +5636,24 @@
       "pre": true,
       "branch": "fix-projectview-write-intent-from-read-action",
       "d": "2026-08-01"
+    },
+    {
+      "v": "fix-plaintextgen-tab-edge-cases.9999.9.2523.2d564d0-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-plaintextgen-tab-edge-cases",
+      "d": "2026-10-20"
+    },
+    {
+      "v": "fix-plaintextgen-tab-edge-cases.9999.9.2522.81c62de-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-plaintextgen-tab-edge-cases",
+      "d": "2026-10-20"
+    },
+    {
+      "v": "fix-plaintextgen-tab-edge-cases.9999.9.2521.be86a26-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-plaintextgen-tab-edge-cases",
+      "d": "2026-10-20"
     },
     {
       "v": "fix-navigation-deadlocks.2025.1.2250.ba12bac-SNAPSHOT",
