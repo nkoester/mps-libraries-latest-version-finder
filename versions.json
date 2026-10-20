@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T09:28:43.355Z",
+  "generatedAt": "2026-10-20T11:49:24.316Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -559,11 +559,11 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 2969,
+      "total": 2970,
       "released": 1729,
       "stable": 1722,
       "preRelease": 7,
-      "branchCount": 1240,
+      "branchCount": 1241,
       "branches": 260,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [
@@ -978,6 +978,308 @@
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 5
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps",
+      "artifactId": "mps-gradle-plugin",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/mps-gradle-plugin/maven-metadata.xml",
+      "kind": "tool",
+      "lineScheme": "major",
+      "discouraged": {
+        "2.x": "2.x was never established and is discouraged; use 1.x."
+      },
+      "slug": "de.itemis.mps_mps-gradle-plugin",
+      "ok": true,
+      "total": 108,
+      "released": 78,
+      "stable": 78,
+      "preRelease": 0,
+      "branchCount": 30,
+      "branches": 14,
+      "dataFile": "data/de.itemis.mps_mps-gradle-plugin.json",
+      "lines": [
+        {
+          "line": "2.x",
+          "latest": "2.0.328.08de38e",
+          "discouraged": "2.x was never established and is discouraged; use 1.x.",
+          "latestIsPreRelease": false,
+          "total": 10,
+          "stable": 10,
+          "latestDate": "2024-02-20"
+        },
+        {
+          "line": "1.x",
+          "latest": "1.31.0.1.1243113",
+          "latestIsPreRelease": false,
+          "total": 68,
+          "stable": 68,
+          "latestDate": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.build-backends",
+      "artifactId": "launcher",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/launcher/maven-metadata.xml",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.build-backends_launcher",
+      "ok": true,
+      "total": 84,
+      "released": 84,
+      "stable": 84,
+      "preRelease": 0,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/de.itemis.mps.build-backends_launcher.json",
+      "lines": [
+        {
+          "line": "2.x",
+          "latest": "2.9.2.239.aeb5185",
+          "latestIsPreRelease": false,
+          "total": 75,
+          "stable": 75,
+          "latestDate": "2026-10-18"
+        },
+        {
+          "line": "1.x",
+          "latest": "1.0.0.56.8c05881",
+          "latestIsPreRelease": false,
+          "total": 9,
+          "stable": 9,
+          "latestDate": "2023-10-20"
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.build-backends",
+      "artifactId": "modelcheck",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/modelcheck/maven-metadata.xml",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.build-backends_modelcheck",
+      "ok": true,
+      "total": 104,
+      "released": 104,
+      "stable": 104,
+      "preRelease": 0,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/de.itemis.mps.build-backends_modelcheck.json",
+      "lines": [
+        {
+          "line": "1.x",
+          "latest": "1.27.4.239.aeb5185",
+          "latestIsPreRelease": false,
+          "total": 104,
+          "stable": 104,
+          "latestDate": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.build-backends",
+      "artifactId": "execute-generators",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/execute-generators/maven-metadata.xml",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.build-backends_execute-generators",
+      "ok": true,
+      "total": 104,
+      "released": 104,
+      "stable": 104,
+      "preRelease": 0,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/de.itemis.mps.build-backends_execute-generators.json",
+      "lines": [
+        {
+          "line": "1.x",
+          "latest": "1.27.4.239.aeb5185",
+          "latestIsPreRelease": false,
+          "total": 104,
+          "stable": 104,
+          "latestDate": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.build-backends",
+      "artifactId": "execute",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/execute/maven-metadata.xml",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.build-backends_execute",
+      "ok": true,
+      "total": 71,
+      "released": 71,
+      "stable": 71,
+      "preRelease": 0,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/de.itemis.mps.build-backends_execute.json",
+      "lines": [
+        {
+          "line": "1.x",
+          "latest": "1.27.4.239.aeb5185",
+          "latestIsPreRelease": false,
+          "total": 71,
+          "stable": 71,
+          "latestDate": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.build-backends",
+      "artifactId": "remigrate",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/remigrate/maven-metadata.xml",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.build-backends_remigrate",
+      "ok": true,
+      "total": 51,
+      "released": 51,
+      "stable": 51,
+      "preRelease": 0,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/de.itemis.mps.build-backends_remigrate.json",
+      "lines": [
+        {
+          "line": "1.x",
+          "latest": "1.1.3.239.aeb5185",
+          "latestIsPreRelease": false,
+          "total": 17,
+          "stable": 17,
+          "latestDate": "2026-10-18"
+        },
+        {
+          "line": "0.x",
+          "latest": "0.3.0.165.81672e9",
+          "latestIsPreRelease": false,
+          "total": 34,
+          "stable": 34,
+          "latestDate": "2025-11-21"
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.build-backends",
+      "artifactId": "project-loader",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/project-loader/maven-metadata.xml",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.build-backends_project-loader",
+      "ok": true,
+      "total": 104,
+      "released": 104,
+      "stable": 104,
+      "preRelease": 0,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/de.itemis.mps.build-backends_project-loader.json",
+      "lines": [
+        {
+          "line": "6.x",
+          "latest": "6.1.0.239.aeb5185",
+          "latestIsPreRelease": false,
+          "total": 7,
+          "stable": 7,
+          "latestDate": "2026-10-18"
+        },
+        {
+          "line": "5.x",
+          "latest": "5.1.2.211.acde161",
+          "latestIsPreRelease": false,
+          "total": 10,
+          "stable": 10,
+          "latestDate": "2026-09-16"
+        },
+        {
+          "line": "4.x",
+          "latest": "4.0.0.165.81672e9",
+          "latestIsPreRelease": false,
+          "total": 2,
+          "stable": 2,
+          "latestDate": "2025-11-21"
+        },
+        {
+          "line": "3.x",
+          "latest": "3.0.2.154.f3551e4",
+          "latestIsPreRelease": false,
+          "total": 12,
+          "stable": 12,
+          "latestDate": "2025-09-10"
+        },
+        {
+          "line": "2.x",
+          "latest": "2.5.0.124.fe9ea2a",
+          "latestIsPreRelease": false,
+          "total": 57,
+          "stable": 57,
+          "latestDate": "2025-03-28"
+        },
+        {
+          "line": "1.x",
+          "latest": "1.10.32.10c2255",
+          "latestIsPreRelease": false,
+          "total": 16,
+          "stable": 16,
+          "latestDate": "2023-07-27"
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.build-backends",
+      "artifactId": "migrate",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/migrate/maven-metadata.xml",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.build-backends_migrate",
+      "ok": true,
+      "total": 10,
+      "released": 10,
+      "stable": 10,
+      "preRelease": 0,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/de.itemis.mps.build-backends_migrate.json",
+      "lines": [
+        {
+          "line": "0.x",
+          "latest": "0.2.3.239.aeb5185",
+          "latestIsPreRelease": false,
+          "total": 10,
+          "stable": 10,
+          "latestDate": "2026-10-18"
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.build-backends",
+      "artifactId": "migration-common",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/migration-common/maven-metadata.xml",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.build-backends_migration-common",
+      "ok": true,
+      "total": 9,
+      "released": 9,
+      "stable": 9,
+      "preRelease": 0,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/de.itemis.mps.build-backends_migration-common.json",
+      "lines": [
+        {
+          "line": "1.x",
+          "latest": "1.1.3.239.aeb5185",
+          "latestIsPreRelease": false,
+          "total": 9,
+          "stable": 9,
+          "latestDate": "2026-10-18"
         }
       ]
     },

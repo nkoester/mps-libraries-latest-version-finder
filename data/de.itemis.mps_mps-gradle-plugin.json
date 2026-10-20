@@ -1,0 +1,613 @@
+{
+  "groupId": "de.itemis.mps",
+  "artifactId": "mps-gradle-plugin",
+  "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/mps-gradle-plugin/maven-metadata.xml",
+  "kind": "tool",
+  "lineScheme": "major",
+  "discouraged": {
+    "2.x": "2.x was never established and is discouraged; use 1.x."
+  },
+  "slug": "de.itemis.mps_mps-gradle-plugin",
+  "generatedAt": "2026-10-20T11:49:24.316Z",
+  "total": 108,
+  "released": 78,
+  "stable": 78,
+  "preRelease": 0,
+  "branchCount": 30,
+  "branches": 14,
+  "lines": [
+    {
+      "line": "2.x",
+      "latest": "2.0.328.08de38e",
+      "latestIsPreRelease": false,
+      "discouraged": "2.x was never established and is discouraged; use 1.x.",
+      "total": 10,
+      "stable": 10,
+      "versions": [
+        {
+          "v": "2.0.328.08de38e",
+          "pre": false,
+          "d": "2024-02-20"
+        },
+        {
+          "v": "2.0.327.ec8074e",
+          "pre": false,
+          "d": "2023-01-19"
+        },
+        {
+          "v": "2.0.326.8b63f0c",
+          "pre": false,
+          "d": "2023-01-19"
+        },
+        {
+          "v": "2.0.322.aa83c83",
+          "pre": false,
+          "d": "2022-12-05"
+        },
+        {
+          "v": "2.0.321.1ca9241",
+          "pre": false,
+          "d": "2022-11-25"
+        },
+        {
+          "v": "2.0.320.74de787",
+          "pre": false,
+          "d": "2022-09-21"
+        },
+        {
+          "v": "2.0.318.dcac77a",
+          "pre": false,
+          "d": "2022-09-15"
+        },
+        {
+          "v": "2.0.317.3229d6a",
+          "pre": false,
+          "d": "2022-09-15"
+        },
+        {
+          "v": "2.0.316.9135418",
+          "pre": false,
+          "d": "2022-08-28"
+        },
+        {
+          "v": "2.0.315.0da7e4b",
+          "pre": false,
+          "d": "2022-07-05"
+        }
+      ],
+      "latestDate": "2024-02-20"
+    },
+    {
+      "line": "1.x",
+      "latest": "1.31.0.1.1243113",
+      "latestIsPreRelease": false,
+      "total": 68,
+      "stable": 68,
+      "versions": [
+        {
+          "v": "1.31.0.1.1243113",
+          "pre": false,
+          "d": "2026-08-20"
+        },
+        {
+          "v": "1.31.0.1.6b32025",
+          "pre": false,
+          "d": "2026-09-15"
+        },
+        {
+          "v": "1.30.2.1.649c88d",
+          "pre": false,
+          "d": "2026-08-11"
+        },
+        {
+          "v": "1.30.1.1.bc0f59d",
+          "pre": false,
+          "d": "2026-03-23"
+        },
+        {
+          "v": "1.30.0.1.f7dd918",
+          "pre": false,
+          "d": "2026-02-07"
+        },
+        {
+          "v": "1.29.3.1.19b70ba",
+          "pre": false,
+          "d": "2025-07-22"
+        },
+        {
+          "v": "1.29.2.1.fd9c9f8",
+          "pre": false,
+          "d": "2025-06-05"
+        },
+        {
+          "v": "1.29.2.1.b23a7fe",
+          "pre": false,
+          "d": "2025-07-21"
+        },
+        {
+          "v": "1.29.2.1.6d8e0a7",
+          "pre": false,
+          "d": "2025-05-07"
+        },
+        {
+          "v": "1.29.1.1.d7f2744",
+          "pre": false,
+          "d": "2025-02-25"
+        },
+        {
+          "v": "1.29.0.1.811916e",
+          "pre": false,
+          "d": "2025-01-22"
+        },
+        {
+          "v": "1.28.0.441.896925d",
+          "pre": false,
+          "d": "2024-07-09"
+        },
+        {
+          "v": "1.28.0.1.f8ee996",
+          "pre": false,
+          "d": "2024-10-22"
+        },
+        {
+          "v": "1.28.0.1.eee9d0f",
+          "pre": false,
+          "d": "2024-09-10"
+        },
+        {
+          "v": "1.28.0.1.d6256d2",
+          "pre": false,
+          "d": "2024-09-10"
+        },
+        {
+          "v": "1.28.0.1.2983fc1",
+          "pre": false,
+          "d": "2024-09-10"
+        },
+        {
+          "v": "1.27.0.440.389ea32",
+          "pre": false,
+          "d": "2024-06-28"
+        },
+        {
+          "v": "1.26.0.437.20464ee",
+          "pre": false,
+          "d": "2024-06-26"
+        },
+        {
+          "v": "1.25.2.435.a1000fe",
+          "pre": false,
+          "d": "2024-06-26"
+        },
+        {
+          "v": "1.25.2.434.f74c02c",
+          "pre": false,
+          "d": "2024-06-14"
+        },
+        {
+          "v": "1.25.1.433.0675e56",
+          "pre": false,
+          "d": "2024-05-17"
+        },
+        {
+          "v": "1.25.0.432.2d9315f",
+          "pre": false,
+          "d": "2024-05-17"
+        },
+        {
+          "v": "1.24.0.424.410b57d",
+          "pre": false,
+          "d": "2024-04-18"
+        },
+        {
+          "v": "1.24.0.422.bc47810",
+          "pre": false,
+          "d": "2024-04-16"
+        },
+        {
+          "v": "1.23.1.421.614437e",
+          "pre": false,
+          "d": "2024-04-11"
+        },
+        {
+          "v": "1.23.1.419.df49b26",
+          "pre": false,
+          "d": "2024-04-11"
+        },
+        {
+          "v": "1.23.1.416.dae2796",
+          "pre": false,
+          "d": "2024-04-11"
+        },
+        {
+          "v": "1.23.1.412.a54f29f",
+          "pre": false,
+          "d": "2024-03-20"
+        },
+        {
+          "v": "1.23.0.411.f28e9fc",
+          "pre": false,
+          "d": "2024-02-14"
+        },
+        {
+          "v": "1.22.2.410.1a5f477",
+          "pre": false,
+          "d": "2024-02-09"
+        },
+        {
+          "v": "1.22.1.409.6d52c83",
+          "pre": false,
+          "d": "2024-01-22"
+        },
+        {
+          "v": "1.22.0.408.0a05207",
+          "pre": false,
+          "d": "2023-12-20"
+        },
+        {
+          "v": "1.21.2.403.32fc09e",
+          "pre": false,
+          "d": "2023-12-06"
+        },
+        {
+          "v": "1.21.1.398.c3cb3cf",
+          "pre": false,
+          "d": "2023-12-05"
+        },
+        {
+          "v": "1.21.0.392.f359ee2",
+          "pre": false,
+          "d": "2023-11-23"
+        },
+        {
+          "v": "1.20.0.389.390e059",
+          "pre": false,
+          "d": "2023-11-06"
+        },
+        {
+          "v": "1.19.374.d67a4c3",
+          "pre": false,
+          "d": "2023-10-10"
+        },
+        {
+          "v": "1.19.371.56feaf7",
+          "pre": false,
+          "d": "2023-09-26"
+        },
+        {
+          "v": "1.19.367.d76ef9a",
+          "pre": false,
+          "d": "2023-09-25"
+        },
+        {
+          "v": "1.19.3.386.ed225b9",
+          "pre": false,
+          "d": "2023-10-27"
+        },
+        {
+          "v": "1.19.2.385.72424d4",
+          "pre": false,
+          "d": "2023-10-26"
+        },
+        {
+          "v": "1.19.1.376.5808514",
+          "pre": false,
+          "d": "2023-10-24"
+        },
+        {
+          "v": "1.18.362.bdbe954",
+          "pre": false,
+          "d": "2023-09-21"
+        },
+        {
+          "v": "1.18.356.90f1a8c",
+          "pre": false,
+          "d": "2023-08-07"
+        },
+        {
+          "v": "1.17.354.e921726",
+          "pre": false,
+          "d": "2023-06-30"
+        },
+        {
+          "v": "1.16.352.17eae3e",
+          "pre": false,
+          "d": "2023-04-25"
+        },
+        {
+          "v": "1.16.351.9984588",
+          "pre": false,
+          "d": "2023-04-25"
+        },
+        {
+          "v": "1.15.348.cb26115",
+          "pre": false,
+          "d": "2023-04-24"
+        },
+        {
+          "v": "1.15.347.43645bc",
+          "pre": false,
+          "d": "2023-04-14"
+        },
+        {
+          "v": "1.15.346.03fb1f0",
+          "pre": false,
+          "d": "2023-04-14"
+        },
+        {
+          "v": "1.14.345.5cd1622",
+          "pre": false,
+          "d": "2023-04-12"
+        },
+        {
+          "v": "1.14.344.6d9e5b0",
+          "pre": false,
+          "d": "2023-04-12"
+        },
+        {
+          "v": "1.14.343.ceb5743",
+          "pre": false,
+          "d": "2023-04-12"
+        },
+        {
+          "v": "1.13.339.83060f8",
+          "pre": false,
+          "d": "2023-02-27"
+        },
+        {
+          "v": "1.12.338.01a6d65",
+          "pre": false,
+          "d": "2023-02-03"
+        },
+        {
+          "v": "1.12.337.c0e9e68",
+          "pre": false,
+          "d": "2023-02-02"
+        },
+        {
+          "v": "1.12.335.4385b37",
+          "pre": false,
+          "d": "2023-01-20"
+        },
+        {
+          "v": "1.12.334.713279f",
+          "pre": false,
+          "d": "2023-01-20"
+        },
+        {
+          "v": "1.11.330.8d31adc",
+          "pre": false,
+          "d": "2023-01-20"
+        },
+        {
+          "v": "1.11.325.74a2dd9",
+          "pre": false,
+          "d": "2022-11-30"
+        },
+        {
+          "v": "1.10.323.99d6368",
+          "pre": false,
+          "d": "2022-10-05"
+        },
+        {
+          "v": "1.9.317.da3c241",
+          "pre": false,
+          "d": "2022-08-31"
+        },
+        {
+          "v": "1.9.315.4487934",
+          "pre": false,
+          "d": "2022-08-28"
+        },
+        {
+          "v": "1.7.288.4ea765f",
+          "pre": false,
+          "d": "2022-09-19"
+        },
+        {
+          "v": "1.4.258.d478f80",
+          "pre": false,
+          "d": "2022-10-13"
+        },
+        {
+          "v": "1.2.177.46341c0",
+          "pre": false,
+          "d": "2022-09-02"
+        },
+        {
+          "v": "1.2.175.cc60dc8",
+          "pre": false,
+          "d": "2022-10-13"
+        },
+        {
+          "v": "1.2.110.1282cb6",
+          "pre": false,
+          "d": "2022-09-02"
+        }
+      ],
+      "latestDate": "2026-08-20"
+    }
+  ],
+  "branchBuilds": [
+    {
+      "v": "refactor-oldNexusDependency.2.0.329.1fa4642",
+      "pre": false,
+      "branch": "refactor-oldNexusDependency",
+      "d": "2022-09-15"
+    },
+    {
+      "v": "refactor-oldNexusDependency.2.0.328.55313a7",
+      "pre": false,
+      "branch": "refactor-oldNexusDependency",
+      "d": "2022-09-15"
+    },
+    {
+      "v": "refactor-oldNexusDependency.2.0.321.d7def99",
+      "pre": false,
+      "branch": "refactor-oldNexusDependency",
+      "d": "2022-09-12"
+    },
+    {
+      "v": "refactor-nexusPublication.1.6.296.bd14d82",
+      "pre": false,
+      "branch": "refactor-nexusPublication",
+      "d": "2022-08-31"
+    },
+    {
+      "v": "refactor-nexusPublication.1.6.295.125c77c",
+      "pre": false,
+      "branch": "refactor-nexusPublication",
+      "d": "2022-08-31"
+    },
+    {
+      "v": "refactor-nexusPublication.1.6.294.163b222",
+      "pre": false,
+      "branch": "refactor-nexusPublication",
+      "d": "2022-08-31"
+    },
+    {
+      "v": "refactor-nexusPublication.1.6.293.579b0d5",
+      "pre": false,
+      "branch": "refactor-nexusPublication",
+      "d": "2022-08-31"
+    },
+    {
+      "v": "refactor-alignNexusPublication.1.9.316.49eefba",
+      "pre": false,
+      "branch": "refactor-alignNexusPublication",
+      "d": "2022-08-31"
+    },
+    {
+      "v": "pull-155.1.23.1.420.017fc49",
+      "pre": false,
+      "branch": "pull-155",
+      "d": "2024-04-11"
+    },
+    {
+      "v": "pull-150.1.21.0.391.026105d",
+      "pre": false,
+      "branch": "pull-150",
+      "d": "2023-11-23"
+    },
+    {
+      "v": "pull-143.1.17.353.a02c8ae",
+      "pre": false,
+      "branch": "pull-143",
+      "d": "2023-06-30"
+    },
+    {
+      "v": "mps20203.1.6.296.fdc8a9f",
+      "pre": false,
+      "branch": "mps20203",
+      "d": "2022-08-31"
+    },
+    {
+      "v": "feature-migrationPlugin_backport_v1.x.1.11.329.2103c55",
+      "pre": false,
+      "branch": "feature-migrationPlugin_backport_v1.x",
+      "d": "2023-01-19"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.384.13af452",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-26"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.383.8ffb42e",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-25"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.382.49cd15b",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-24"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.381.6211115",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-24"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.380.ed322bf",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-24"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.380.9c5aeec",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-24"
+    },
+    {
+      "v": "bugfix-jbrFolderFixJBD17_v1.x.1.12.336.3fd7301",
+      "pre": false,
+      "branch": "bugfix-jbrFolderFixJBD17_v1.x",
+      "d": "2023-01-30"
+    },
+    {
+      "v": "bugfix-jbrFolderFixJBD17_v1.x.1.11.326.11e32e3",
+      "pre": false,
+      "branch": "bugfix-jbrFolderFixJBD17_v1.x",
+      "d": "2023-01-30"
+    },
+    {
+      "v": "bugfix-fix_jbr_version_download.1.22.0.395.9c09f23",
+      "pre": false,
+      "branch": "bugfix-fix_jbr_version_download",
+      "d": "2023-12-05"
+    },
+    {
+      "v": "bugfix-fix_jbr_version_download.1.22.0.394.19e7a33",
+      "pre": false,
+      "branch": "bugfix-fix_jbr_version_download",
+      "d": "2023-12-05"
+    },
+    {
+      "v": "bugfix-fix_jbr_version_download.1.21.0.393.fc78c22",
+      "pre": false,
+      "branch": "bugfix-fix_jbr_version_download",
+      "d": "2023-12-05"
+    },
+    {
+      "v": "bugfix-distributionType.2.0.317.b3ab37c",
+      "pre": false,
+      "branch": "bugfix-distributionType",
+      "d": "2022-09-14"
+    },
+    {
+      "v": "bugfix-distributionType.2.0.317.99065dc",
+      "pre": false,
+      "branch": "bugfix-distributionType",
+      "d": "2022-09-14"
+    },
+    {
+      "v": "bugfix-copy_jbr_dash.1.21.2.402.144ccfe",
+      "pre": false,
+      "branch": "bugfix-copy_jbr_dash",
+      "d": "2023-12-06"
+    },
+    {
+      "v": "bugfix-copy_jbr_dash.1.21.2.401.0ed20dc",
+      "pre": false,
+      "branch": "bugfix-copy_jbr_dash",
+      "d": "2023-12-06"
+    },
+    {
+      "v": "bugfix-copy_jbr_dash.1.21.1.399.9994955",
+      "pre": false,
+      "branch": "bugfix-copy_jbr_dash",
+      "d": "2023-12-06"
+    },
+    {
+      "v": "alexei-testing-tc.1.19.371.56feaf7",
+      "pre": false,
+      "branch": "alexei-testing-tc",
+      "d": "2023-09-26"
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "groupId": "de.itemis.mps.build-backends",
+  "artifactId": "remigrate",
+  "slug": "de.itemis.mps.build-backends_remigrate",
+  "snapshotLookup": "timestamped",
+  "versions": {
+    "1.1.3.239.aeb5185": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.1.0.239.aeb5185"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.1.3.239.aeb5185"
+      ]
+    ],
+    "1.1.3.236.98e1534": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.0.3.236.98e1534"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.1.3.236.98e1534"
+      ]
+    ],
+    "1.1.2.230.7aa8cfe": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.0.2.230.7aa8cfe"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.1.2.230.7aa8cfe"
+      ]
+    ],
+    "1.1.1.224.fa57378": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.0.1.224.fa57378"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.1.1.224.fa57378"
+      ]
+    ],
+    "1.1.0.222.e62f91c": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.0.0.222.e62f91c"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.1.0.222.e62f91c"
+      ]
+    ],
+    "1.1.0.219.0e76a0a": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.0.0.219.0e76a0a"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.1.0.219.0e76a0a"
+      ]
+    ],
+    "1.1.0.214.19b463e": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.0.0.214.19b463e"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.1.0.214.19b463e"
+      ]
+    ],
+    "1.0.2.211.acde161": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.1.2.211.acde161"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.0.0.211.acde161"
+      ]
+    ],
+    "1.0.2.209.a81911e": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.1.2.209.a81911e"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.0.0.209.a81911e"
+      ]
+    ],
+    "1.0.2.208.42ae13c": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.1.2.208.42ae13c"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "unspecified"
+      ]
+    ],
+    "1.0.2.198.6f6b6a3": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.1.1.198.6f6b6a3"
+      ]
+    ],
+    "1.0.1.188.0d9b1a8": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.1.0.188.0d9b1a8"
+      ]
+    ],
+    "1.0.1.186.eda5913": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.1.0.186.eda5913"
+      ]
+    ],
+    "1.0.1.185.53c5432": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.0.1.185.53c5432"
+      ]
+    ],
+    "1.0.1.180.8e0fd7e": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.0.1.180.8e0fd7e"
+      ]
+    ],
+    "1.0.1.171.f987265": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.0.1.171.f987265"
+      ]
+    ],
+    "1.0.0.167.c51149b": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "5.0.0.167.c51149b"
+      ]
+    ],
+    "0.3.0.165.81672e9": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "4.0.0.165.81672e9"
+      ]
+    ],
+    "0.3.0.157.6a9f4e2": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "4.0.0.157.6a9f4e2"
+      ]
+    ],
+    "0.3.0.154.f3551e4": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.154.f3551e4"
+      ]
+    ],
+    "0.3.0.152.2bc9f41": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.152.2bc9f41"
+      ]
+    ],
+    "0.3.0.148.8d82c41": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.148.8d82c41"
+      ]
+    ],
+    "0.3.0.148.09f6bd9": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.148.09f6bd9"
+      ]
+    ],
+    "0.3.0.146.928c2b5": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.146.928c2b5"
+      ]
+    ],
+    "0.3.0.146.8d82c41": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.146.8d82c41"
+      ]
+    ],
+    "0.3.0.140.5d2a253": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.140.5d2a253"
+      ]
+    ],
+    "0.3.0.139.0bf1309": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.139.0bf1309"
+      ]
+    ],
+    "0.3.0.138.42b9742": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.138.42b9742"
+      ]
+    ],
+    "0.2.0.130.94399cc": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.2.130.94399cc"
+      ]
+    ],
+    "0.2.0.129.4b9e9bc": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.1.129.4b9e9bc"
+      ]
+    ],
+    "0.2.0.128.8ab0570": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "3.0.0.128.8ab0570"
+      ]
+    ],
+    "0.1.0.124.fe9ea2a": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.5.0.124.fe9ea2a"
+      ]
+    ],
+    "0.0.5.123.5032efa": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.4.1.123.5032efa"
+      ]
+    ],
+    "0.0.5.122.b3f3024": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.4.1.122.b3f3024"
+      ]
+    ],
+    "0.0.5.120.c791da5": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.4.1.120.c791da5"
+      ]
+    ],
+    "0.0.5.119.d852c06": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.4.0.119.d852c06"
+      ]
+    ],
+    "0.0.5.116.be3a81c": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.1.116.be3a81c"
+      ]
+    ],
+    "0.0.5.115.6fb92e6": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.1.115.6fb92e6"
+      ]
+    ],
+    "0.0.5.112.164de65": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.1.112.164de65"
+      ]
+    ],
+    "0.0.5.110.e54794d": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.1.110.e54794d"
+      ]
+    ],
+    "0.0.5.107.def8e1d": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.107.def8e1d"
+      ]
+    ],
+    "0.0.5.105.6dc5930": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.105.6dc5930"
+      ]
+    ],
+    "0.0.5.102.ef70afc": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.102.ef70afc"
+      ]
+    ],
+    "0.0.5.101.16ef51b": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.101.16ef51b"
+      ]
+    ],
+    "0.0.5.100.3ab059c": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.100.3ab059c"
+      ]
+    ],
+    "0.0.4.98.8f853d3": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.98.8f853d3"
+      ]
+    ],
+    "0.0.4.97.e80bf65": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.97.e80bf65"
+      ]
+    ],
+    "0.0.4.96.fc7abf8": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.96.fc7abf8"
+      ]
+    ],
+    "0.0.4.95.a261d1d": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.95.a261d1d"
+      ]
+    ],
+    "0.0.4.94.09f8f72": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.94.09f8f72"
+      ]
+    ],
+    "0.0.4.93.c589295": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "2.3.0.93.c589295"
+      ]
+    ]
+  }
+}

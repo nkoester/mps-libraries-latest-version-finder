@@ -1,0 +1,78 @@
+{
+  "groupId": "de.itemis.mps.build-backends",
+  "artifactId": "migrate",
+  "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/migrate/maven-metadata.xml",
+  "kind": "tool",
+  "lineScheme": "major",
+  "slug": "de.itemis.mps.build-backends_migrate",
+  "generatedAt": "2026-10-20T11:49:24.316Z",
+  "total": 10,
+  "released": 10,
+  "stable": 10,
+  "preRelease": 0,
+  "branchCount": 0,
+  "branches": 0,
+  "lines": [
+    {
+      "line": "0.x",
+      "latest": "0.2.3.239.aeb5185",
+      "latestIsPreRelease": false,
+      "total": 10,
+      "stable": 10,
+      "versions": [
+        {
+          "v": "0.2.3.239.aeb5185",
+          "pre": false,
+          "d": "2026-10-18"
+        },
+        {
+          "v": "0.2.3.236.98e1534",
+          "pre": false,
+          "d": "2026-10-16"
+        },
+        {
+          "v": "0.2.2.230.7aa8cfe",
+          "pre": false,
+          "d": "2026-10-03"
+        },
+        {
+          "v": "0.2.1.224.fa57378",
+          "pre": false,
+          "d": "2026-09-29"
+        },
+        {
+          "v": "0.2.0.222.e62f91c",
+          "pre": false,
+          "d": "2026-09-23"
+        },
+        {
+          "v": "0.2.0.219.0e76a0a",
+          "pre": false,
+          "d": "2026-09-22"
+        },
+        {
+          "v": "0.2.0.214.19b463e",
+          "pre": false,
+          "d": "2026-09-21"
+        },
+        {
+          "v": "0.1.0.211.acde161",
+          "pre": false,
+          "d": "2026-09-16"
+        },
+        {
+          "v": "0.1.0.209.a81911e",
+          "pre": false,
+          "d": "2026-09-14"
+        },
+        {
+          "v": "0.1.0.208.42ae13c",
+          "pre": false,
+          "d": "2026-09-11"
+        }
+      ],
+      "latestDate": "2026-10-18"
+    }
+  ],
+  "branchBuilds": []
+}
