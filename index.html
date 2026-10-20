@@ -599,7 +599,10 @@
          selected line right. */
       .picker {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+        /* The picker takes the width its rows need, so each year stays on one
+           line; the chain gets the rest. Only when the chain would drop below
+           320px does the picker give way and wrap. */
+        grid-template-columns: minmax(min-content, max-content) minmax(320px, 1fr);
         column-gap: 32px;
         align-items: start;
       }
@@ -607,11 +610,18 @@
         grid-column: 1 / -1;
         max-width: none;
       }
+      /* The line picker sits centred beside the (taller) chain. */
+      .picker > div {
+        align-self: center;
+      }
       .chain {
         background: var(--surface);
         border: 1px solid var(--rule);
         border-radius: var(--radius);
         padding: 14px 14px 12px;
+        /* Reserved height (reserveChainHeight): smaller graphs centre. */
+        display: flex;
+        flex-direction: column;
       }
       .chain h3 {
         margin: 0;
@@ -621,16 +631,36 @@
         text-transform: uppercase;
         color: var(--ink-3);
       }
+      /* Legend in the style of the picker's "key versions" note: a sample of
+         the edge, then what it means. */
       .chain-note {
-        margin: 2px 0 10px;
+        margin: 4px 0 10px;
         font-size: 11.5px;
-        color: var(--ink-2);
+        color: var(--ink-3);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 16px;
       }
-      /* Boxes keep the size of a two-column graph; narrower graphs centre. */
+      .chain-note .lg {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .chain-note .lg::before {
+        content: "";
+        width: 18px;
+        border-top: 1.2px solid var(--ink-3);
+      }
+      .chain-note .lg-dotted::before {
+        border-top-style: dotted;
+        border-top-width: 1.5px;
+      }
+      /* Drawn 1:1 (width/height attributes), centred; shrinks only if the
+         panel is narrower than the graph. */
       .chain svg {
         display: block;
-        margin: 0 auto;
-        width: 100%;
+        margin: auto;
+        max-width: 100%;
         height: auto;
         overflow: visible;
       }
@@ -640,13 +670,13 @@
       }
       .chain .cn .a {
         font-family: var(--mono);
-        font-size: 12px;
+        font-size: 13px; /* as the line chips */
         font-weight: 700;
         fill: var(--ink);
       }
       .chain .cn .g {
         font-family: var(--mono);
-        font-size: 9.5px;
+        font-size: 10.5px;
         fill: var(--ink-3);
       }
       .chain .cn[data-act] {
@@ -746,7 +776,7 @@
         display: grid;
         grid-template-columns: 20ch 13ch minmax(0, 1fr);
         font-family: var(--mono);
-        font-size: 14px; /* sizes the ch tracks, not the text */
+        font-size: 13px; /* sizes the ch tracks, not the text; = .coord */
         color: var(--ink-3);
         padding: 0 0 6px 1px; /* 1px = the node border */
       }
@@ -785,7 +815,7 @@
         grid-template-columns: 20ch 13ch minmax(0, 1fr) auto;
         align-items: center;
         font-family: var(--mono);
-        font-size: 14px;
+        font-size: 13px; /* as the line chips; .legend must match */
         min-width: 0;
       }
       .seg {
@@ -877,6 +907,13 @@
       .tag.quiet {
         background: var(--rule-soft);
         color: var(--ink-3);
+      }
+      /* Branch names can be very long and are part of the version anyway:
+         cap the tag so the version cell keeps its room. */
+      .coord .tag {
+        max-width: 18ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .tag.ok {
         background: var(--accent-soft);
@@ -1855,7 +1892,46 @@
         $("picker").hidden = false;
         $("board").hidden = false;
         $("inventory-slab").hidden = false;
+        reserveChainHeight();
       }
+
+      /**
+       * Everything above the table whose height depends on the line -- the
+       * "Building against" heading, the chain panel, the board heading --
+       * keeps the height of its tallest line, so picking a line never moves
+       * the picker or the table. Measured by rendering every line once;
+       * again on resize, as wrapping and the chain's fit follow the width.
+       */
+      function reserveChainHeight() {
+        const parts = [
+          $("picker").querySelector(".ask"),
+          $("chain"),
+          $("board").querySelector(".board-head"),
+        ];
+        const keep = state.selected;
+        for (const part of parts) part.style.minHeight = "";
+        const tallest = parts.map(() => 0);
+        for (const line of state.lineMap.keys()) {
+          state.selected = line;
+          renderBoard();
+          parts.forEach((part, i) => {
+            if (!part.hidden) tallest[i] = Math.max(tallest[i], part.offsetHeight);
+          });
+        }
+        state.selected = keep;
+        renderBoard();
+        parts.forEach((part, i) => {
+          part.style.minHeight = tallest[i] ? `${tallest[i]}px` : "";
+        });
+      }
+
+      let resizing = null;
+      addEventListener("resize", () => {
+        clearTimeout(resizing);
+        resizing = setTimeout(() => {
+          if (!$("picker").hidden) reserveChainHeight();
+        }, 150);
+      });
 
       /**
        * `generatedAt` only moves when a version changes -- runs that find
@@ -1947,7 +2023,11 @@
         for (const lines of years.values()) {
           lines.reverse();
         }
-        $("lines").innerHTML = [...years.entries()]
+        // Development builds on top, then newest year first.
+        const rows = [...years.entries()].sort(
+          ([a], [b]) => Number(b === "dev") - Number(a === "dev"),
+        );
+        $("lines").innerHTML = rows
           .map(
             ([year, lines]) => `
             <div class="year" role="group" aria-label="${year === "dev" ? "Development builds" : `MPS ${year}`}">
@@ -1980,14 +2060,15 @@
         const notes = [];
         if (isDevelopmentLine(line)) {
           notes.push(
-            "<strong>Not a release.</strong> Builds off the development branch, published under a synthetic version.",
+            "<strong>Not a release:</strong> development-branch builds.",
           );
         }
-        if (missing.length) {
-          notes.push(
-            `${missing.length} of ${mpsLibraries.length} libraries publish nothing for this line.`,
-          );
-        }
+        // Always one sentence here, so the board does not shift between lines.
+        notes.push(
+          missing.length
+            ? `${missing.length} of ${mpsLibraries.length} libraries publish nothing for this line.`
+            : `All ${mpsLibraries.length} libraries publish a build for this line.`,
+        );
         $("board-note").innerHTML = notes.join(" ");
 
         // Top of the stack first (what users pick), down to MPS itself. Libraries
@@ -2228,6 +2309,11 @@
 
       /* --------------------------------------------------------------- chain */
 
+      /**
+       * Graph geometry in CSS px: the chain is drawn 1:1, so its text matches
+       * the line picker on every line; only a graph wider than its panel
+       * shrinks to fit.
+       */
       const CHAIN = { w: 124, h: 38, gx: 14, gy: 72 };
 
       const bySlug = (slug) =>
@@ -2295,10 +2381,12 @@
       function chainNote(edges) {
         const kinds = new Set(edges.map(([, , , kind]) => kind));
         const parts = [];
-        if (kinds.has(undefined)) parts.push("Solid: explicit POM dependency.");
-        if (kinds.has("implicit")) parts.push("Dotted: implicit, not in the POM.");
+        if (kinds.has(undefined))
+          parts.push('<span class="lg lg-solid">explicit POM dependency</span>');
+        if (kinds.has("implicit"))
+          parts.push('<span class="lg lg-dotted">implicit non-POM dependency</span>');
         return parts.length
-          ? `<p class="chain-note">${parts.join("<br />")}</p>`
+          ? `<p class="chain-note">${parts.join(" ")}</p>`
           : "";
       }
 
@@ -2566,7 +2654,7 @@
         panel.innerHTML = `
             <h3>Dependency chain</h3>
             ${chainNote(edges)}
-            <svg viewBox="${-2 - left} -2 ${width + 4 + left + right} ${height + 4}" style="max-width:${(((width + 4 + left + right) / (2 * CHAIN.w + CHAIN.gx + 4)) * 100).toFixed(2)}%" role="img" aria-label="Dependencies between the latest ${esc(line)} builds">
+            <svg viewBox="${-2 - left} -2 ${width + 4 + left + right} ${height + 4}" width="${width + 4 + left + right}" height="${height + 4}" role="img" aria-label="Dependencies between the latest ${esc(line)} builds">
                 <defs>
                     <marker id="chain-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                         <path d="M0 0 L10 5 L0 10 z"/>
@@ -3003,7 +3091,7 @@
                     ${entries
                       .map((entry) => {
                         const tag = entry.branch
-                          ? `<span class="tag quiet">${esc(entry.branch)}</span>`
+                          ? `<span class="tag quiet" title="Branch build: ${esc(entry.branch)}">${esc(entry.branch)}</span>`
                           : entry.pre
                             ? '<span class="tag">pre-release</span>'
                             : "";
