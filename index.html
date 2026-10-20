@@ -201,6 +201,12 @@
         font-family: var(--mono);
         font-size: 11px;
       }
+      .stamp-line a {
+        color: inherit;
+      }
+      .stamp-line.bad {
+        color: var(--signal);
+      }
       .stamp time {
         font-family: var(--mono);
         color: var(--ink);
@@ -1512,6 +1518,8 @@
         fullData: new Map(),
         dialog: null,
         graph: null,
+        // Newest run of the update workflow, from the GitHub API.
+        lastRun: null,
         // MPS version -> { jbr, source, artifacts }, from data/deps/mps-jbr.json.
         runtime: null,
         // slug -> Map(version -> date), filled as full data files load.
@@ -1645,6 +1653,11 @@
           const response = await fetch("./versions.json");
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
           const summary = await response.json();
+          // Not awaited: the stamp gains its "checked" line when this lands.
+          loadLastRun().then((run) => {
+            state.lastRun = run;
+            if (state.generatedAt) renderStamp();
+          });
           state.graph = await graphRequest;
           state.runtime = (await runtimeRequest)?.versions ?? null;
           state.generatedAt = summary.generatedAt;
@@ -1722,20 +1735,73 @@
         $("inventory-slab").hidden = false;
       }
 
+      /**
+       * `generatedAt` only moves when a version changes -- runs that find
+       * nothing new commit nothing -- so it is labelled "last change". When
+       * the job last ran comes from the GitHub API instead; without it (rate
+       * limit, offline) the line is simply left out.
+       */
       function renderStamp() {
         $("stamp").innerHTML = `
             <span class="stamp-line">
-                <span>updated</span>
+                <span>last change</span>
                 <time datetime="${esc(state.generatedAt)}" title="${esc(state.generatedAt)}">${esc(absoluteTime(state.generatedAt))}</time>
                 <span class="ago" id="ago">${esc(relativeTime(state.generatedAt))}</span>
             </span>
+            ${checkLine()}
             <a class="stamp-repo" href="${REPO}" target="_blank" rel="noopener noreferrer">nkoester/mps-libraries-latest-version-finder</a>`;
+      }
+
+      const RUN_OUTCOME = {
+        cancelled: "cancelled",
+        timed_out: "timed out",
+        skipped: "skipped",
+      };
+
+      function checkLine() {
+        const run = state.lastRun;
+        if (!run) return "";
+        const link = (text) =>
+          `<a href="${esc(run.url)}" target="_blank" rel="noopener noreferrer"
+              title="${esc(absoluteTime(run.at))}" id="check-ago">${esc(text)}</a>`;
+        if (run.running)
+          return `<span class="stamp-line">${link("checking for new versions now…")}</span>`;
+        if (run.conclusion !== "success")
+          return `<span class="stamp-line bad">last check ${esc(RUN_OUTCOME[run.conclusion] ?? "failed")} ${link(relativeTime(run.at))}</span>`;
+        return `<span class="stamp-line">checked ${link(relativeTime(run.at))}</span>`;
+      }
+
+      const RUNS_API =
+        "https://api.github.com/repos/nkoester/mps-libraries-latest-version-finder/actions/workflows/update-versions.yml/runs?per_page=1";
+
+      /** The newest run of the update workflow, or null if unavailable. */
+      async function loadLastRun() {
+        try {
+          const response = await fetch(RUNS_API, {
+            headers: { accept: "application/vnd.github+json" },
+          });
+          if (!response.ok) return null;
+          const run = (await response.json()).workflow_runs?.[0];
+          if (!run) return null;
+          const running = run.status !== "completed";
+          return {
+            running,
+            conclusion: run.conclusion,
+            at: running ? run.run_started_at : run.updated_at,
+            url: run.html_url,
+          };
+        } catch {
+          return null;
+        }
       }
 
       setInterval(() => {
         const ago = $("ago");
         if (ago && state.generatedAt)
           ago.textContent = relativeTime(state.generatedAt);
+        const check = $("check-ago");
+        if (check && state.lastRun && !state.lastRun.running)
+          check.textContent = relativeTime(state.lastRun.at);
       }, 60000);
 
       function chip(line, entries) {

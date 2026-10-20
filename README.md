@@ -143,6 +143,14 @@ The update job skips the commit when only the timestamp would change, so
 `git log versions.json` reads as a changelog of MPS library releases rather than
 a wall of noise.
 
+That is why the page header shows two times: **last change** is `generatedAt`
+from `versions.json` and only moves when a version changes; **checked** is the
+end of the newest `update-versions.yml` run, read from the GitHub API in the
+browser (it turns red when that run failed, and links to it). GitHub often
+starts scheduled runs late, so gaps of more than six hours do happen. If the API
+is unavailable (60 unauthenticated requests per hour per IP), the line is left
+out.
+
 The monthly release doubles as a keep-alive: GitHub disables scheduled workflows
 in repositories with 60 days of no activity.
 
