@@ -45,6 +45,7 @@ import {
   isDevelopmentLine,
   isMarker,
   isRuntime,
+  isTool,
   isSnapshot,
   lineOf,
   matchRuntime,
@@ -264,7 +265,8 @@ async function main() {
   // to load with the page.
   const lines = {};
   for (const library of summary.libraries) {
-    if (isMarker(library) || isRuntime(library)) continue;
+    // The chain is about MPS libraries; runtimes and tooling have their own views.
+    if (isMarker(library) || isRuntime(library) || isTool(library)) continue;
     for (const { line, latest } of library.lines ?? []) {
       lines[line] ??= { latest: {}, edges: [] };
       lines[line].latest[library.slug] = latest;

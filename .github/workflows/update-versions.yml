@@ -44,15 +44,26 @@ jobs:
       - name: Fetch POM dependencies
         run: node scripts/fetch-deps.mjs --max 150
 
+      # mps-gradle-plugin <-> MPS / Gradle / Java contract, read from the
+      # plugin's and mps-build-backends' sources at each version's commit.
+      # See docs/gradle-plugin-compat.md.
+      - name: Extract Gradle plugin compatibility
+        run: node scripts/extract-gradle-plugin-compat.mjs
+
+      # Never fails the run: findings land in data/assumptions-report.md and
+      # the run summary. See docs/reassessment.md.
+      - name: Check assumptions
+        run: node scripts/check-assumptions.mjs
+
       - name: Commit if changed
         run: |
           # status, not diff: new files under data/deps are untracked.
-          if [ -z "$(git status --porcelain -- versions.json data/)" ]; then
+          if [ -z "$(git status --porcelain -- versions.json data/ scripts/gradle-plugin-compat.json)" ]; then
             echo "No version changes."
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add versions.json data/
+          git add versions.json data/ scripts/gradle-plugin-compat.json
           git commit -m "data: update MPS library versions ($(date -u +%Y-%m-%d))"
           git push

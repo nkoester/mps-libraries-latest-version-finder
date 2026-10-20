@@ -23,7 +23,7 @@ import { existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { parseMetadata, buildLibraryData, isRuntime, slugFor } from '../versions-lib.js';
+import { parseMetadata, buildLibraryData, lineSchemeOf, slugFor } from '../versions-lib.js';
 import { applyDates, readDates } from './dates-lib.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -81,7 +81,10 @@ async function main() {
       try {
         const rawVersions = await fetchMetadata(library);
         const data = applyDates(
-          buildLibraryData(rawVersions, { lineScheme: isRuntime(library) ? 'java' : 'mps' }),
+          buildLibraryData(rawVersions, {
+            lineScheme: lineSchemeOf(library),
+            discouraged: library.discouraged,
+          }),
           await readDates(ROOT, slug),
         );
         process.stderr.write(
@@ -139,10 +142,11 @@ async function main() {
       dataFile: `data/${slug}.json`,
       // Summary carries only the latest per line; the full lists live in the
       // per-library data file so the initial page load stays small.
-      lines: data.lines.map(({ line, latest, latestDate, latestIsPreRelease, total, stable: stableCount }) => ({
+      lines: data.lines.map(({ line, latest, latestDate, latestIsPreRelease, total, stable: stableCount, discouraged }) => ({
         line,
         latest,
         ...(latestDate && { latestDate }),
+        ...(discouraged && { discouraged }),
         latestIsPreRelease,
         total,
         stable: stableCount,

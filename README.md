@@ -7,7 +7,8 @@ Shows the newest version of each core MPS ecosystem library, grouped by MPS rele
 Tracks `de.itemis.mps:extensions`, `com.mbeddr:mbeddr`, `com.mbeddr:platform`,
 `org.iets3:opensource`, `org.mpsqa:all-in-one` and `com.jetbrains:mps`, plus the
 JetBrains Runtime artifacts `com.jetbrains.jdk:jbr_jcef`, `jbr`, `jbrsdk` and
-`jbr_nomod`, from
+`jbr_nomod`, and the build tooling `de.itemis.mps:mps-gradle-plugin` with the
+`de.itemis.mps.build-backends` it runs, from
 [artifacts.itemis.cloud](https://artifacts.itemis.cloud/repository/maven-mps/).
 
 ## How it works
@@ -132,11 +133,39 @@ that declares no dependency): each library is built against its line's MPS,
 but most POMs do not declare it, and the others reach MPS through these. The
 dotted edges are drawn only; **Inspect** lists what the POMs declare.
 
+## Build tooling and its compatibility
+
+The **Build tooling** section of the board shows the recommended
+`mps-gradle-plugin` (1.x; 2.x is marked discouraged: never established) and the
+`mps-build-backends` it runs: the launcher it pins, and the newest
+`modelcheck`, `execute-generators`, `execute` and `remigrate` inside its backend
+range. Each row is tagged with the selected MPS line's status.
+
+That status is an **extracted contract**: no POM or Gradle metadata declares
+MPS compatibility, so the page uses the strongest statement that exists, the
+MPS versions mps-build-backends **tests** each release against, read from the
+upstream sources at the commit every published version was built from. Gradle
+and Java come from the plugin build (wrapper, Java target) plus minimums from
+its CHANGELOG. Untested combinations may still work but are not covered.
+
+- Method, sources, file layout and the re-extraction runbook:
+  [docs/gradle-plugin-compat.md](docs/gradle-plugin-compat.md)
+- Extracted + curated data: `scripts/gradle-plugin-compat.json`
+
+## Keeping the extraction honest
+
+Every update run checks the assumptions the extractors rely on (version
+shapes, abandoned lines, missing JBR mappings, the plugin contract's sources,
+page constants) and writes `data/assumptions-report.md`. It never fails the
+run; a changed report is the signal to re-assess, following
+[docs/reassessment.md](docs/reassessment.md) -- written so an AI agent can do
+it.
+
 ## Automation
 
 | Workflow | Schedule | Does |
 | --- | --- | --- |
-| `update-versions.yml` | every 6 h — 05:00, 11:00, 17:00, 23:00 UTC | fetch metadata, dates and POM dependencies, commit `versions.json` + `data/` **only if something changed** |
+| `update-versions.yml` | every 6 h — 05:00, 11:00, 17:00, 23:00 UTC | fetch metadata, dates and POM dependencies, extract the Gradle plugin contract, check assumptions; commit `versions.json`, `data/` and `scripts/gradle-plugin-compat.json` **only if something changed** |
 | `monthly-release.yml` | 1st of month, 06:00 UTC | publish one consolidated version list as a GitHub Release |
 
 The update job skips the commit when only the timestamp would change, so
@@ -163,6 +192,8 @@ To adjust the cron timezone, edit the `cron:` line in `update-versions.yml`
 node scripts/fetch-versions.mjs   # refresh versions.json + data/
 node scripts/fetch-dates.mjs      # publication dates (--max <n>, --full)
 node scripts/fetch-deps.mjs       # POM dependencies + MPS -> JBR (--max <n>)
+node scripts/extract-gradle-plugin-compat.mjs  # plugin contract (clones 2 public repos)
+node scripts/check-assumptions.mjs             # writes data/assumptions-report.md
 npm run serve                     # http://localhost:8080
 ```
 
@@ -171,7 +202,10 @@ The page must be served over HTTP — it uses ES modules and `fetch`, so opening
 
 Adding a library: append it to `scripts/libraries.json` and re-run the fetchers.
 An optional `"kind"` marks a `runtime` artifact (grouped by Java version, kept
-out of the MPS line picker) or a `marker` (fetched for its POM only, never shown).
+out of the MPS line picker), a `tool` (build tooling, grouped by major version:
+`"lineScheme": "major"`) or a `marker` (fetched for its POM only, never shown).
+`"discouraged": { "<line>": "<reason>" }` keeps an abandoned line from being
+recommended.
 
 ```bash
 node scripts/make-bundle.mjs dist  # build the monthly release artifacts

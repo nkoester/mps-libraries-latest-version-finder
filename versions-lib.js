@@ -30,10 +30,21 @@ const JAVA_LINE_RE = /^(\d+)(?=[._u-]|$)/;
  *   (none)    an MPS library, grouped by MPS release line
  *   runtime   a JetBrains Runtime artifact, grouped by Java version and kept
  *             out of the MPS line picker
+ *   tool      build tooling (mps-gradle-plugin, mps-build-backends), versioned
+ *             independently of MPS, grouped by major version
  *   marker    tracked for its POM dependencies only, never shown
  */
 export const isRuntime = (library) => library?.kind === 'runtime';
 export const isMarker = (library) => library?.kind === 'marker';
+export const isTool = (library) => library?.kind === 'tool';
+/** Grouped by MPS release line: shown on the board and in the line picker. */
+export const isMpsLibrary = (library) => !library?.kind;
+
+/** How a library's versions are grouped into lines. */
+export function lineSchemeOf(library) {
+  if (library?.lineScheme) return library.lineScheme;
+  return isRuntime(library) ? 'java' : 'mps';
+}
 
 /**
  * mbeddr, IETS3, the MPS extensions and MPS-QA publish builds off their
@@ -96,10 +107,15 @@ export function snapshotFileVersion(metadataXml, extension) {
 
 /**
  * The release line a version belongs to, or null if it has none: `X.Y` for
- * MPS libraries, the Java version for runtime artifacts.
+ * MPS libraries, the Java version for runtime artifacts, `N.x` for tooling
+ * grouped by major version.
  */
 export function lineOf(version, scheme = 'mps') {
   if (scheme === 'java') return version.match(JAVA_LINE_RE)?.[1] ?? null;
+  if (scheme === 'major') {
+    const major = version.match(/^(\d+)\./)?.[1];
+    return major ? `${major}.x` : null;
+  }
   const match = version.match(LINE_RE);
   return match ? `${match[1]}.${match[2]}` : null;
 }
@@ -170,7 +186,7 @@ export function slugFor(library) {
  * prefers a stable version, falling back to a pre-release if a line has nothing
  * else.
  */
-export function buildLibraryData(rawVersions, { lineScheme = 'mps' } = {}) {
+export function buildLibraryData(rawVersions, { lineScheme = 'mps', discouraged = {} } = {}) {
   const seen = new Set();
   const all = [];
   for (const raw of rawVersions) {
@@ -207,6 +223,9 @@ export function buildLibraryData(rawVersions, { lineScheme = 'mps' } = {}) {
         line,
         latest: latest.v,
         latestIsPreRelease: !latestStable,
+        // Configured per library (libraries.json `discouraged`): a line that
+        // exists but should not be used, e.g. mps-gradle-plugin 2.x.
+        ...(discouraged[line] && { discouraged: discouraged[line] }),
         total: versions.length,
         stable: versions.filter((entry) => !entry.pre).length,
         versions,
@@ -250,6 +269,106 @@ export function artifactUrls(library, version) {
     versionMetadata: `${base}${folder}/maven-metadata.xml`,
     browse: `${browseBase}${folder}`,
     folder: browseBase,
+  };
+}
+
+/**
+ * The line to recommend: the newest line that is not discouraged (falling
+ * back to the newest overall). Lines come newest first.
+ */
+export function recommendedLine(lines) {
+  return lines.find((line) => !line.discouraged && !isDevelopmentLine(line.line)) ?? lines[0] ?? null;
+}
+
+/**
+ * MPS line of a version string from a tested-against list: `2024.1.6` ->
+ * `2024.1`; a prerelease build number `263.6259.45` -> `2026.3` (flagged).
+ */
+export function mpsLineOfTested(version) {
+  const release = version.match(/^(\d{4})\.(\d+)/);
+  if (release) return { line: `${release[1]}.${release[2]}`, pre: false };
+  const build = version.match(/^(\d{2})(\d)\./);
+  if (build) return { line: `20${build[1]}.${build[2]}`, pre: true };
+  return null;
+}
+
+/* --------------------------------------------------- gradle plugin contract */
+
+/** Whether a version satisfies a Gradle/Maven version: `[1.26,2.0)`, `1.+`, `1.2`. */
+export function inVersionRange(version, range) {
+  if (!range) return false;
+  const interval = range.match(/^([[(])\s*([^,]*)\s*,\s*([^\])]*)\s*([\])])$/);
+  if (interval) {
+    const [, open, low, high, close] = interval;
+    if (low) {
+      const order = compareVersions(version, low);
+      if (order < 0 || (order === 0 && open === '(')) return false;
+    }
+    if (high) {
+      const order = compareVersions(version, high);
+      if (order > 0 || (order === 0 && close === ')')) return false;
+    }
+    return true;
+  }
+  if (range.endsWith('+')) return version.startsWith(range.slice(0, -1));
+  return compareVersions(version, range) === 0;
+}
+
+/**
+ * The "tested against" contract of one mps-gradle-plugin version for one MPS
+ * line, from scripts/gradle-plugin-compat.json (see docs/gradle-plugin-compat.md).
+ *
+ * The plugin runs the launcher it pins (POM) and the newest backends inside
+ * its range (resolved by Gradle at build time, so this moves as backends are
+ * released). A line counts as tested when both of those backend releases list
+ * a release of it; a prerelease build alone is reported as `pre`.
+ *
+ * `available` maps a backend artifact to its released versions, newest first.
+ */
+export function pluginContract(compat, pluginVersion, available, mpsLine) {
+  const facts = compat?.extracted?.plugin?.[pluginVersion];
+  if (!facts) return null;
+  const testedOf = (artifact, version) => {
+    const commit = compat.extracted.backends?.[artifact]?.[version];
+    return commit ? (compat.extracted.testedMps?.[commit] ?? null) : null;
+  };
+  const resolved = facts.backendsRange
+    ? (available.modelcheck ?? []).find((v) => inVersionRange(v, facts.backendsRange)) ?? null
+    : null;
+  const sources = [];
+  if (facts.launcher) sources.push({ artifact: 'launcher', version: facts.launcher, tested: testedOf('launcher', facts.launcher) });
+  if (resolved) sources.push({ artifact: 'modelcheck', version: resolved, tested: testedOf('modelcheck', resolved) });
+
+  const coverage = (tested) => {
+    const hits = (tested ?? []).map(mpsLineOfTested).filter((hit) => hit?.line === mpsLine);
+    if (hits.some((hit) => !hit.pre)) return 'tested';
+    return hits.length ? 'pre' : 'untested';
+  };
+  const levels = sources.map((source) => coverage(source.tested));
+  const status = !sources.length || sources.some((source) => !source.tested)
+    ? 'unknown'
+    : levels.includes('untested') ? 'untested' : levels.includes('pre') ? 'pre' : 'tested';
+
+  // Curated minimums apply to the named line and every later one.
+  const curated = compat.curated ?? {};
+  const minimum = (curated.pluginMinimumForMps ?? [])
+    .filter((entry) => compareVersions(mpsLine, entry.mps) >= 0)
+    .sort((a, b) => compareVersions(b.plugin, a.plugin))[0] ?? null;
+  const dropped = (curated.pluginMpsDropped ?? [])
+    .find((entry) => compareVersions(mpsLine, entry.mps) <= 0 && compareVersions(pluginVersion, entry.plugin) >= 0) ?? null;
+  const gradleMin = (curated.pluginGradle ?? [])
+    .filter((entry) => entry.gradleMin && compareVersions(pluginVersion, entry.plugin) >= 0)
+    .sort((a, b) => compareVersions(b.plugin, a.plugin))[0] ?? null;
+
+  return {
+    ...facts,
+    resolvedBackends: resolved,
+    sources,
+    status,
+    minimum,
+    belowMinimum: Boolean(minimum && compareVersions(pluginVersion, minimum.plugin) < 0),
+    dropped,
+    gradleMin,
   };
 }
 

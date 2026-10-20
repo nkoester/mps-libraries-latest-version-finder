@@ -54,6 +54,72 @@
     "kind": "runtime"
   },
   {
+    "groupId": "de.itemis.mps",
+    "artifactId": "mps-gradle-plugin",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/mps-gradle-plugin/maven-metadata.xml",
+    "kind": "tool",
+    "lineScheme": "major",
+    "discouraged": {
+      "2.x": "2.x was never established and is discouraged; use 1.x."
+    }
+  },
+  {
+    "groupId": "de.itemis.mps.build-backends",
+    "artifactId": "launcher",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/launcher/maven-metadata.xml",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
+    "groupId": "de.itemis.mps.build-backends",
+    "artifactId": "modelcheck",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/modelcheck/maven-metadata.xml",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
+    "groupId": "de.itemis.mps.build-backends",
+    "artifactId": "execute-generators",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/execute-generators/maven-metadata.xml",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
+    "groupId": "de.itemis.mps.build-backends",
+    "artifactId": "execute",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/execute/maven-metadata.xml",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
+    "groupId": "de.itemis.mps.build-backends",
+    "artifactId": "remigrate",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/remigrate/maven-metadata.xml",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
+    "groupId": "de.itemis.mps.build-backends",
+    "artifactId": "project-loader",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/project-loader/maven-metadata.xml",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
+    "groupId": "de.itemis.mps.build-backends",
+    "artifactId": "migrate",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/migrate/maven-metadata.xml",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
+    "groupId": "de.itemis.mps.build-backends",
+    "artifactId": "migration-common",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/migration-common/maven-metadata.xml",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
     "groupId": "com.jetbrains.mps",
     "artifactId": "mps-jbr",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/mps-jbr/maven-metadata.xml",

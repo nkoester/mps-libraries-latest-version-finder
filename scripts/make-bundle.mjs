@@ -14,7 +14,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { isMarker, isRuntime, lineLabel } from '../versions-lib.js';
+import { isMarker, isMpsLibrary, isRuntime, isTool, lineLabel, recommendedLine } from '../versions-lib.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outputDir = process.argv[2] ?? ROOT;
@@ -58,7 +58,7 @@ await writeFile(join(outputDir, bundleName), `${JSON.stringify(bundle, null, 2)}
 
 // Release notes: one table per release line, as that is how the versions are
 // actually consumed (you pin a whole set against one MPS version).
-const mpsLibraries = libraries.filter((library) => !isRuntime(library));
+const mpsLibraries = libraries.filter(isMpsLibrary);
 const lineKeys = [...new Set(mpsLibraries.flatMap((library) => library.lines.map((line) => line.line)))];
 lineKeys.sort((a, b) => Number(b.split('.')[0]) - Number(a.split('.')[0]) || Number(b.split('.')[1]) - Number(a.split('.')[1]));
 
@@ -81,6 +81,15 @@ for (const line of lineKeys.slice(0, 8)) {
 
 if (lineKeys.length > 8) {
   notes += `_${lineKeys.length - 8} older release lines omitted -- see the attached JSON._\n`;
+}
+
+const tools = libraries.filter(isTool);
+if (tools.length) {
+  notes += `\n### Build tooling\n\nIndependent of the MPS line. Compatibility: see the page or \`scripts/gradle-plugin-compat.json\`.\n\n| Artifact | Recommended |\n| --- | --- |\n`;
+  for (const library of tools) {
+    const line = recommendedLine(library.lines);
+    if (line) notes += `| \`${library.groupId}:${library.artifactId}\` | \`${line.latest}\` |\n`;
+  }
 }
 
 const runtimes = libraries.filter(isRuntime);

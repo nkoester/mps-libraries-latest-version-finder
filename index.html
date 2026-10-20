@@ -434,14 +434,22 @@
         cursor: copy;
       }
       /* Search hits can be long branch builds: wrap instead of cutting off. */
+      /* break-word, not anywhere: the version keeps its full width when
+         there is room (anywhere would let the grid shrink it to a few
+         characters) and still breaks when a branch name cannot fit. */
       .hit .seg--version,
       .vrow .seg--version {
         white-space: normal;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
+        /* overflow:hidden would drop the cell's min-content from the column
+           sizing and let the grid squeeze the version after all. */
+        overflow: visible;
       }
-      .hit:hover .seg--version::after,
-      .vrow:hover .seg--version::after {
-        opacity: 0.5;
+      /* Lists drop the board's "copy" hint: it reserves width the version
+         needs; the cursor, flash and balloon already say "copy". */
+      .hit .seg--version::after,
+      .vrow .seg--version::after {
+        content: none;
       }
       .hit .seg mark {
         background: var(--accent-soft);
@@ -465,7 +473,7 @@
       /* The version lives in its own box: marks inside a flex container would
            each become a flex item and inherit the gap. */
       .hit-text {
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
         min-width: 0;
       }
       .hit-v mark {
@@ -651,6 +659,12 @@
         width: 18px;
         border-top: 1.2px solid var(--ink-3);
       }
+      .chain-note .lg-tool::before {
+        border-top-color: var(--need);
+      }
+      .chain-note .lg-untested::before {
+        border-top-style: dashed;
+      }
       .chain-note .lg-dotted::before {
         border-top-style: dotted;
         border-top-width: 1.5px;
@@ -697,6 +711,16 @@
       }
       .chain .ce.fallback {
         stroke-dasharray: 4 3;
+      }
+      /* mps-gradle-plugin -> mps: the extracted contract, in the tooling colour. */
+      .chain .ce.tooling {
+        stroke: var(--need);
+      }
+      .chain .ce.tooling.untested {
+        stroke-dasharray: 4 3;
+      }
+      .chain .cn.tool rect {
+        stroke: var(--need);
       }
       .chain .ce.implicit {
         stroke-dasharray: 1.5 3;
@@ -932,6 +956,71 @@
       .node.runtime .seg:first-child {
         border-left-color: var(--ink-3);
       }
+      .node.tool .seg:first-child {
+        border-left-color: var(--need);
+      }
+      /* Tooling names are longer (de.itemis.mps.build-backends,
+         execute-generators); the library rows keep the header's columns. */
+      .node.tool .coord {
+        grid-template-columns: 31ch 21ch minmax(0, 1fr) auto;
+      }
+      /* Lists: the version always gets its full width (its min-content is the
+         whole version, or the longest hyphen-separated part of a branch
+         build); group and artifact take what is left and end in an ellipsis
+         when short of room -- they repeat on every row of a hit group. */
+      .hit .coord,
+      .vrow .coord {
+        grid-template-columns: minmax(0, max-content) minmax(0, max-content) auto auto;
+      }
+      .coord .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+      /* Status tags are short and must stay readable; the cap is for branch names. */
+      .coord .tags .tag {
+        max-width: none;
+        margin-left: 0;
+      }
+      /* Marks data that is extracted, not declared: links to the method. */
+      .contract-flag {
+        font-family: var(--mono);
+        font-size: 9.5px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        padding: 2px 6px;
+        margin-left: 6px;
+        border: 1px solid var(--need);
+        border-radius: 2px;
+        color: var(--need);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .contract-flag:hover {
+        background: var(--need-soft);
+      }
+      .contract-note {
+        margin: 6px 0 0;
+        font-size: 11.5px;
+        color: var(--ink-3);
+      }
+      .facts {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        gap: 4px 16px;
+        font-size: 12.5px;
+        padding: 4px 10px 8px;
+      }
+      .facts > span:first-child,
+      .fact > span:first-child {
+        color: var(--ink-3);
+      }
+      .fact {
+        display: contents;
+      }
+      .facts small {
+        color: var(--ink-3);
+      }
 
       .acts {
         display: flex;
@@ -1109,7 +1198,8 @@
       /* -------------------------------------------------------------- dialog */
 
       dialog {
-        width: min(820px, calc(94vw / var(--scale)));
+        /* Wide enough for group | artifact | version of build-backends rows. */
+        width: min(1080px, calc(94vw / var(--scale)));
         max-height: calc(88vh / var(--scale));
         padding: 0;
         border: 1px solid var(--rule);
@@ -1221,7 +1311,6 @@
          so the version keeps the room. */
       .vrow .coord {
         font-size: 12.5px;
-        grid-template-columns: auto auto minmax(0, 1fr) auto;
       }
       .vrow .seg {
         padding: 3px 8px;
@@ -1616,7 +1705,7 @@
           </button>
         </div>
         <div class="dlg-tools ins-tools">
-          <p>
+          <p id="ins-note">
             Minimum versions, as listed in the POMs. Newer builds of the same
             line satisfy them too.
           </p>
@@ -1647,6 +1736,12 @@
         inDateRange,
         isMarker,
         isRuntime,
+        isTool,
+        isMpsLibrary,
+        recommendedLine,
+        pluginContract,
+        mpsLineOfTested,
+        inVersionRange,
       } from "./versions-lib.js";
 
       /** Release lines given visual priority in the picker. Edit to taste. */
@@ -1666,6 +1761,10 @@
       ];
 
       const MPS_SLUG = "com.jetbrains_mps";
+      const PLUGIN_SLUG = "de.itemis.mps_mps-gradle-plugin";
+      const BACKENDS = "de.itemis.mps.build-backends";
+      const COMPAT_DOC =
+        "https://github.com/nkoester/mps-libraries-latest-version-finder/blob/main/docs/gradle-plugin-compat.md";
       /** The runtime artifact MPS names; shown even when no build matches. */
       const JBR_PRIMARY = "com.jetbrains.jdk_jbr_jcef";
 
@@ -1681,6 +1780,8 @@
         lastRun: null,
         // MPS version -> { jbr, source, artifacts }, from data/deps/mps-jbr.json.
         runtime: null,
+        // mps-gradle-plugin contract, scripts/gradle-plugin-compat.json.
+        compat: null,
         // slug -> Map(version -> date), filled as full data files load.
         dates: new Map(),
       };
@@ -1809,6 +1910,7 @@
               .catch(() => null);
           const graphRequest = optional("./data/deps/graph.json");
           const runtimeRequest = optional("./data/deps/mps-jbr.json");
+          const compatRequest = optional("./scripts/gradle-plugin-compat.json");
           const response = await fetch("./versions.json");
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
           const summary = await response.json();
@@ -1819,15 +1921,17 @@
           });
           state.graph = await graphRequest;
           state.runtime = (await runtimeRequest)?.versions ?? null;
+          state.compat = await compatRequest;
           state.generatedAt = summary.generatedAt;
           state.libraries = summary.libraries.filter((l) => !isMarker(l));
           state.lineMap = buildLineMap(
-            state.libraries.filter((l) => l.ok && !isRuntime(l)),
+            state.libraries.filter((l) => l.ok && isMpsLibrary(l)),
           );
-          // Runtime lists are tiny; the board needs their dates.
+          // Runtime and tooling lists are small; the board needs their dates
+          // and the tooling contract their version lists.
           await Promise.all(
             state.libraries
-              .filter(isRuntime)
+              .filter((l) => isRuntime(l) || isTool(l))
               .map((l) => ensureData(l.slug).catch(() => null)),
           );
           state.selected = defaultLine();
@@ -2053,7 +2157,7 @@
           ? `<span class="lead">Development</span> builds <span class="dim">(${esc(line)})</span>`
           : `<span class="lead">Latest</span> for MPS ${esc(line)}`;
 
-        const mpsLibraries = state.libraries.filter((l) => !isRuntime(l));
+        const mpsLibraries = state.libraries.filter(isMpsLibrary);
         const missing = mpsLibraries.filter(
           (library) => library.ok && !present.has(library.slug),
         );
@@ -2098,7 +2202,8 @@
                   renderRuntimeNode(row, ordered.length + index),
                 )
                 .join("")
-            : "");
+            : "") +
+          renderTooling(line);
         renderChain();
 
         const live = [
@@ -2264,6 +2369,214 @@
           .sort((a, b) => compareVersions(b.mps, a.mps));
       }
 
+      /* ------------------------------------------------------------- tooling */
+
+      /** Released versions of one library, newest first (full data). */
+      const releasedVersions = (slug) =>
+        (state.fullData.get(slug)?.lines ?? []).flatMap((line) =>
+          line.versions.map((entry) => entry.v),
+        );
+
+      /** Tested-against status of one backend release for one MPS line. */
+      function backendStatus(artifact, version, mpsLine) {
+        const commit = state.compat?.extracted?.backends?.[artifact]?.[version];
+        const tested = commit ? state.compat.extracted.testedMps?.[commit] : null;
+        if (!tested) return { status: "unknown", tested: null };
+        const hits = tested
+          .map(mpsLineOfTested)
+          .filter((hit) => hit?.line === mpsLine);
+        return {
+          status: hits.some((hit) => !hit.pre)
+            ? "tested"
+            : hits.length
+              ? "pre"
+              : "untested",
+          tested,
+        };
+      }
+
+      /** `2024.1.6, 263.6259.45` -> `2024.1 · 2026.3 (pre)`. */
+      function testedLines(tested) {
+        const seen = new Map();
+        for (const hit of (tested ?? []).map(mpsLineOfTested).filter(Boolean)) {
+          if (!seen.has(hit.line) || !hit.pre) seen.set(hit.line, hit.pre);
+        }
+        return [...seen]
+          .sort(([a], [b]) => compareVersions(a, b))
+          .map(([line, pre]) => (pre ? `${line} (pre)` : line))
+          .join(" · ");
+      }
+
+      const STATUS_TAG = {
+        tested: (line) => `<span class="tag ok" title="Listed in the tested-against contract">tested · MPS ${esc(line)}</span>`,
+        pre: (line) => `<span class="tag" title="Only a prerelease build of this line is tested">prerelease tested · ${esc(line)}</span>`,
+        untested: (line) => `<span class="tag" title="Not in the tested-against contract; may still work">untested · MPS ${esc(line)}</span>`,
+        unknown: () => '<span class="tag quiet" title="No tested-against list found for this version">no contract</span>',
+      };
+
+      /**
+       * What mps-gradle-plugin (recommended line) runs for one MPS line: the
+       * plugin, the launcher it pins and the newest backends in its range.
+       */
+      function toolingRows(mpsLine) {
+        const plugin = bySlug(PLUGIN_SLUG);
+        if (!plugin?.ok || !state.compat) return null;
+        const line = recommendedLine(plugin.lines);
+        if (!line) return null;
+        const available = { modelcheck: releasedVersions(`${BACKENDS}_modelcheck`) };
+        const contract = pluginContract(state.compat, line.latest, available, mpsLine);
+        if (!contract) return null;
+        const newestIn = (artifact, range) =>
+          releasedVersions(`${BACKENDS}_${artifact}`).find((v) => inVersionRange(v, range)) ?? null;
+        const backends = [
+          ["launcher", contract.launcher, "pinned by the plugin"],
+          ["modelcheck", contract.resolvedBackends, `newest in ${contract.backendsRange}`],
+          ["execute-generators", contract.backendsRange && newestIn("execute-generators", contract.backendsRange), `newest in ${contract.backendsRange}`],
+          ["execute", contract.backendsRange && newestIn("execute", contract.backendsRange), `newest in ${contract.backendsRange}`],
+          ["remigrate", newestIn("remigrate", "[0,2)"), "newest in [0,2)"],
+        ]
+          .filter(([, version]) => version)
+          .map(([artifact, version, why]) => ({
+            library: bySlug(`${BACKENDS}_${artifact}`),
+            v: version,
+            why,
+            ...backendStatus(artifact, version, mpsLine),
+          }))
+          .filter((row) => row.library);
+        return { plugin, line, contract, backends };
+      }
+
+      function renderTooling(mpsLine) {
+        const tooling = toolingRows(mpsLine);
+        if (!tooling) return "";
+        const { plugin, line, contract, backends } = tooling;
+        const dev = isDevelopmentLine(mpsLine);
+        const tag = (status) => (dev ? "" : STATUS_TAG[status](mpsLine));
+        const gradle =
+          `Gradle ${esc(contract.gradle ?? "?")}` +
+          (contract.gradleMin ? ` (needs ≥ ${esc(contract.gradleMin.gradleMin)})` : "") +
+          ` · Java ${esc(contract.java ?? "?")}`;
+        const warn = !dev && contract.belowMinimum
+          ? `<span class="tag" title="${esc(contract.minimum.source)}">needs plugin ≥ ${esc(contract.minimum.plugin)}</span>`
+          : "";
+        const rows = [
+          { library: plugin, v: line.latest, tags: tag(contract.status) + warn, meta: gradle },
+          ...backends.map((row) => ({
+            library: row.library,
+            v: row.v,
+            tags: tag(row.status),
+            meta: esc(row.why),
+          })),
+        ];
+        const sources = contract.sources
+          .map((source) =>
+            `${esc(source.artifact)} ${esc(source.version.split(".").slice(0, 3).join("."))}: ${source.tested ? esc(testedLines(source.tested)) : "no list"}`,
+          )
+          .join("; ");
+        return `
+            <p class="board-sep">Build tooling: <code>mps-gradle-plugin</code> ${esc(line.line)} and the backends it runs
+                <a class="contract-flag" href="${COMPAT_DOC}" target="_blank" rel="noopener noreferrer"
+                   title="Extracted from the sources of mps-gradle-plugin and mps-build-backends; how and what it promises">extracted contract</a></p>
+            ${rows.map((row, index) => renderToolNode(row, index)).join("")}
+            <p class="contract-note">${
+              dev
+                ? "Development line: not covered by the contract."
+                : `Compatibility is the <b>tested-against contract</b>: MPS versions mps-build-backends tests each release with (${sources}). Extracted from the upstream sources at each version's commit; untested combinations may still work but are not covered.`
+            }</p>`;
+      }
+
+      function renderToolNode({ library, v, tags, meta }, index) {
+        const delay = `style="animation-delay:${Math.min(index * 22, 180)}ms"`;
+        const date = dateOf(library.slug, v);
+        return `
+            <article class="node tool" ${delay}>
+                <div class="coord">
+                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
+                          title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</span>
+                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
+                          title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</span>
+                    <span class="seg seg--version" role="button" tabindex="0" data-copy="${copyRef(v)}"
+                          title="Copy version ${esc(v)}">${esc(v)}</span>
+                    <span class="tags">${tags}</span>
+                    <span class="coord-date">${date ? `published ${esc(date)} · ` : ""}${meta}</span>
+                </div>
+                <div class="acts">
+                    ${fileLinks(library, v)}
+                    <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, v))}"
+                            title="Copy ${esc(mavenCoordinate(library, v))}">Copy</button>
+                    ${inspectButton(library, v, "btn btn--out", "Inspect")}
+                </div>
+            </article>`;
+      }
+
+      /** Inspect for tooling: the extracted contract instead of a dependency walk. */
+      function inspectTool(library, version) {
+        const mpsLine = isDevelopmentLine(state.selected) ? null : state.selected;
+        const line = state.fullData.get(library.slug)?.lines.find((l) => l.versions.some((e) => e.v === version));
+        const isPlugin = library.slug === PLUGIN_SLUG;
+        $("ins-sub").textContent =
+          `${line ? lineLabel(line.line) : "branch build"} · build tooling` +
+          (line?.discouraged ? " · discouraged" : "");
+        let html =
+          "<h3>Inspected</h3>" +
+          reqRow(library, version, {
+            kind: "root",
+            meta: (line?.discouraged ? `<span class="bad">${esc(line.discouraged)}</span> · ` : "") +
+              published(library.slug, version).replace(/^ · /, ""),
+          });
+        const fact = (label, value) =>
+          `<div class="fact"><span>${label}</span><span>${value}</span></div>`;
+        const set = [{ library, v: version }];
+
+        if (isPlugin) {
+          const available = { modelcheck: releasedVersions(`${BACKENDS}_modelcheck`) };
+          const contract = pluginContract(state.compat, version, available, mpsLine ?? "0.0");
+          html += `<h3 class="need">Contract <a class="contract-flag" href="${COMPAT_DOC}" target="_blank" rel="noopener noreferrer">extracted · tested against</a></h3>`;
+          if (!contract) {
+            html += '<p class="ins-warn">No extracted contract for this version (branch build or not extracted yet).</p>';
+          } else {
+            html += '<div class="facts">' +
+              fact("Gradle", `built with ${esc(contract.gradle ?? "?")}` + (contract.gradleMin ? `; needs ≥ ${esc(contract.gradleMin.gradleMin)} <small>(${esc(contract.gradleMin.source)})</small>` : "")) +
+              fact("Java", `target ${esc(contract.java ?? "?")}`) +
+              fact("Backends", contract.backendsRange
+                ? `<code>${esc(contract.backendsRange)}</code> → today ${esc(contract.resolvedBackends ?? "none")}`
+                : "no backend range (before mps-build-backends)") +
+              fact("Launcher", contract.launcher ? `pinned ${esc(contract.launcher)}` : "none") +
+              contract.sources.map((source) =>
+                fact(`Tested · ${esc(source.artifact)}`, source.tested ? esc(testedLines(source.tested)) : "no list")).join("") +
+              (mpsLine
+                ? fact(`MPS ${esc(mpsLine)}`, STATUS_TAG[contract.status](mpsLine) +
+                    (contract.belowMinimum ? ` <span class="bad">needs plugin ≥ ${esc(contract.minimum.plugin)}: ${esc(contract.minimum.source)}</span>` : ""))
+                : "") +
+              fact("Source commit", contract.commit ? `<code>${esc(contract.commit)}</code>` : "not found") +
+              "</div>";
+            const runs = [["launcher", contract.launcher], ["modelcheck", contract.resolvedBackends]]
+              .filter(([, v]) => v)
+              .map(([artifact, v]) => ({ library: bySlug(`${BACKENDS}_${artifact}`), v }))
+              .filter((row) => row.library);
+            if (runs.length) {
+              html += '<h3 class="need">Runs these backends</h3>' +
+                runs.map((row) => reqRow(row.library, row.v, {
+                  kind: "need",
+                  meta: mpsLine
+                    ? STATUS_TAG[backendStatus(row.library.artifactId, row.v, mpsLine).status](mpsLine)
+                    : "",
+                })).join("");
+              set.push(...runs);
+            }
+          }
+        } else if (library.groupId === BACKENDS) {
+          const status = backendStatus(library.artifactId, version, mpsLine ?? "0.0");
+          html += `<h3 class="need">Contract <a class="contract-flag" href="${COMPAT_DOC}" target="_blank" rel="noopener noreferrer">extracted · tested against</a></h3>` +
+            '<div class="facts">' +
+            fact("Tested with MPS", status.tested ? esc(testedLines(status.tested)) : "no list for this version") +
+            (mpsLine ? fact(`MPS ${esc(mpsLine)}`, STATUS_TAG[status.status](mpsLine)) : "") +
+            "</div>";
+        }
+        $("ins-body").innerHTML = html;
+        setInspectCopy(set);
+      }
+
       function renderInventory() {
         $("inventory").innerHTML = state.libraries
           .map((library) => {
@@ -2280,7 +2593,15 @@
               `<b>${library.released ?? library.total}</b> releases`,
               isRuntime(library)
                 ? `Java ${library.lines.map((line) => esc(line.line)).join(", ")}`
-                : `${library.lines.length} lines`,
+                : isTool(library)
+                  ? library.lines
+                      .map((line) =>
+                        line.discouraged
+                          ? `<span title="${esc(line.discouraged)}">${esc(line.line)} (discouraged)</span>`
+                          : esc(line.line),
+                      )
+                      .join(", ")
+                  : `${library.lines.length} lines`,
             ];
             if (library.preRelease)
               facts.push(`${library.preRelease} pre-release`);
@@ -2363,12 +2684,28 @@
           latest[JBR_PRIMARY] = row.v;
           edges.push([MPS_SLUG, JBR_PRIMARY, row.v, "runtime"]);
         }
+        // The Gradle plugin builds against MPS; its edge carries the
+        // extracted tested-against status for this line.
+        const tooling = toolingRows(lineOf(mpsVersion));
+        if (tooling) {
+          latest[PLUGIN_SLUG] = tooling.line.latest;
+          edges.push([PLUGIN_SLUG, MPS_SLUG, lineOf(mpsVersion), "tooling", tooling.contract.status]);
+        }
         return { graph: { latest, edges }, row };
       }
 
-      function edgeTitle([from, to, version, kind], runtime) {
+      const STATUS_TEXT = {
+        tested: "tested against",
+        pre: "only a prerelease build tested against",
+        untested: "not in the tested-against contract for",
+        unknown: "no tested-against list for",
+      };
+
+      function edgeTitle([from, to, version, kind, status], runtime) {
         const a = bySlug(from).artifactId;
         const b = bySlug(to).artifactId;
+        if (kind === "tooling")
+          return `${a}: ${STATUS_TEXT[status]} MPS ${version} (extracted contract)`;
         if (kind === "implicit")
           return `${a} is built against MPS ${version}; not declared in its POM`;
         if (kind !== "runtime") return `${a} needs ${b} ≥ ${version}`;
@@ -2385,13 +2722,22 @@
           parts.push('<span class="lg lg-solid">explicit POM dependency</span>');
         if (kinds.has("implicit"))
           parts.push('<span class="lg lg-dotted">implicit non-POM dependency</span>');
+        const tooling = edges.find(([, , , kind]) => kind === "tooling");
+        if (tooling)
+          parts.push(
+            tooling[4] === "tested"
+              ? '<span class="lg lg-tool">tested-against contract</span>'
+              : '<span class="lg lg-tool lg-untested">untested (contract)</span>',
+          );
         return parts.length
           ? `<p class="chain-note">${parts.join(" ")}</p>`
           : "";
       }
 
-      function edgeClass([, , , kind], runtime) {
+      function edgeClass([, , , kind, status], runtime) {
         if (kind === "implicit") return "ce implicit";
+        if (kind === "tooling")
+          return status === "tested" ? "ce tooling" : "ce tooling untested";
         if (kind === "runtime" && !runtime.exact) return "ce fallback";
         return "ce";
       }
@@ -2410,7 +2756,7 @@
         );
         const absent = state.libraries.filter(
           (library) =>
-            library.ok && !isRuntime(library) && !graph.latest[library.slug],
+            library.ok && isMpsLibrary(library) && !graph.latest[library.slug],
         );
         const edges = graph.edges.filter(
           ([from, to]) => graph.latest[from] && graph.latest[to],
@@ -2638,12 +2984,12 @@
           .map((library) => {
             const latest = graph.latest[library.slug];
             return `
-                <g class="cn" data-slug="${esc(library.slug)}" data-act="inspect" data-v="${esc(latest)}"
+                <g class="cn${isTool(library) ? " tool" : ""}" data-slug="${esc(library.slug)}" data-act="inspect" data-v="${esc(latest)}"
                    tabindex="0" role="button" transform="translate(${x(library.slug)} ${y(library.slug)})"
                    aria-label="Inspect ${esc(mavenCoordinate(library, latest))}">
                     <title>${esc(mavenCoordinate(library, latest))}: inspect</title>
                     <rect width="${CHAIN.w}" height="${CHAIN.h}" rx="3"/>
-                    <text class="a" x="10" y="16">${esc(library.artifactId)}</text>
+                    <text class="a" x="10" y="16"${library.artifactId.length > 14 ? ` textLength="${CHAIN.w - 20}" lengthAdjust="spacingAndGlyphs"` : ""}>${esc(library.artifactId)}</text>
                     <text class="g" x="10" y="30">${esc(library.groupId)}</text>
                 </g>`;
           })
@@ -2779,6 +3125,9 @@
         const token = {};
         inspecting = token;
         $("ins-title").textContent = mavenCoordinate(library, version);
+        $("ins-note").textContent = isTool(library)
+          ? "Compatibility as extracted from the upstream sources: the tested-against contract."
+          : "Minimum versions, as listed in the POMs. Newer builds of the same line satisfy them too.";
         $("ins-sub").textContent = "Resolving dependencies…";
         $("ins-body").innerHTML = "";
         for (const id of ["ins-copy-versions", "ins-copy-coords"])
@@ -2789,6 +3138,12 @@
           await ensureData(slug).catch(() => null);
           if (inspecting !== token) return;
           inspectRuntime(library, version);
+          return;
+        }
+        if (isTool(library)) {
+          await ensureData(slug).catch(() => null);
+          if (inspecting !== token) return;
+          inspectTool(library, version);
           return;
         }
 
@@ -3233,6 +3588,10 @@
           return `<a class="btn" href="${esc(urls.browse)}/" target="_blank" rel="noopener noreferrer"
                      title="SNAPSHOT files are timestamped; opens the version folder">files</a>`;
         }
+        if (isTool(library)) {
+          return `<a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
+                  <a class="btn" href="${esc(urls.pom.replace(/\.pom$/, ".jar"))}" target="_blank" rel="noopener noreferrer">jar</a>`;
+        }
         return `<a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
                 <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>`;
       }
@@ -3354,9 +3713,9 @@
           const count = line.versions.filter(keep).length;
           if (!count) continue;
           html += `
-                <details data-line="${esc(line.line)}">
+                <details data-line="${esc(line.line)}"${line.discouraged ? ' class="discouraged"' : ""}>
                     <summary>${esc(lineLabel(line.line))}
-                        <span class="count">${count} · latest ${esc(line.latest)}${line.latestDate ? ` · ${esc(line.latestDate)}` : ""}</span></summary>
+                        <span class="count">${count} · latest ${esc(line.latest)}${line.latestDate ? ` · ${esc(line.latestDate)}` : ""}${line.discouraged ? ` · <span class="bad" title="${esc(line.discouraged)}">discouraged</span>` : ""}</span></summary>
                     <div class="body"></div>
                 </details>`;
         }
@@ -3372,7 +3731,10 @@
         }
         $("dlg-body").innerHTML =
           html || '<p class="muted">No versions match the current filter.</p>';
-        const first = $("dlg-body").querySelector("details");
+        // Open the first line worth using, not a discouraged one.
+        const first =
+          $("dlg-body").querySelector("details:not(.discouraged)") ??
+          $("dlg-body").querySelector("details");
         if (first) first.open = true;
       }
 
