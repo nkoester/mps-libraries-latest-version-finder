@@ -1,0 +1,506 @@
+{
+  "groupId": "com.jetbrains.mps",
+  "artifactId": "mps-jbr",
+  "slug": "com.jetbrains.mps_mps-jbr",
+  "snapshotLookup": "timestamped",
+  "versions": {
+    "2026.1.1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b329.124"
+      ]
+    ],
+    "2026.1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b329.124"
+      ]
+    ],
+    "2026.1-RC1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.2-b329.117"
+      ]
+    ],
+    "2025.3": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.8-b1163.69"
+      ]
+    ],
+    "2025.3-EAP1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.8-b1163.62"
+      ]
+    ],
+    "2025.2.1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.8-b1038.71"
+      ]
+    ],
+    "2025.1.4": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.8-b895.146"
+      ]
+    ],
+    "2025.1.3": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.8-b895.146"
+      ]
+    ],
+    "2025.1.2": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.8-b895.146"
+      ]
+    ],
+    "2025.1.1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.8-b895.146"
+      ]
+    ],
+    "2025.1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.6-b895.109"
+      ]
+    ],
+    "2025.1-RC1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.6-b895.105"
+      ]
+    ],
+    "2024.3.2": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.6-b631.39"
+      ]
+    ],
+    "2024.3.1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.6-b631.39"
+      ]
+    ],
+    "2024.3": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.5-b631.16"
+      ]
+    ],
+    "2024.3-RC1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.5-b631.16"
+      ]
+    ],
+    "2024.3-EAP1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.5-b631.16"
+      ]
+    ],
+    "2024.1.6": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.12-b1207.37"
+      ]
+    ],
+    "2024.1.5": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.12-b1207.37"
+      ]
+    ],
+    "2024.1.4": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.12-b1207.37"
+      ]
+    ],
+    "2024.1.3": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.11-b1207.30"
+      ]
+    ],
+    "2024.1.2": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.11-b1207.30"
+      ]
+    ],
+    "2024.1.1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.11-b1207.30"
+      ]
+    ],
+    "2024.1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.11-b1207.24"
+      ]
+    ],
+    "2024.1-RC1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.11-b1207.24"
+      ]
+    ],
+    "2024.1-EAP1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.11-b1207.23"
+      ]
+    ],
+    "2023.3.2": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.12-b1087.25"
+      ]
+    ],
+    "2023.3.1": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "17.0.9-b1087.9"
+      ]
+    ],
+    "263.6259.89": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.85": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.81": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.71": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.69": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.64": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.58": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.55": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.54": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.53": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.49": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.45": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.43": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.42": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.28": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.27": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "263.6259.24": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
+    "262.10968.10021": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.10013": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.10011": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.10004": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.10003": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.10000": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.549": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.548": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.545": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.543": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.542": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.538": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.535": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.531": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.530": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.528": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.526": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.524": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.516": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.515": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.512": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.509": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.505": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.501": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.494": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.10968.486": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4-b508.27"
+      ]
+    ],
+    "262.9437.478": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.476": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.472": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.470": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.463": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.459": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.454": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.445": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.440": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.433": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.422": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ],
+    "262.9437.420": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.3-b508.16"
+      ]
+    ]
+  }
+}

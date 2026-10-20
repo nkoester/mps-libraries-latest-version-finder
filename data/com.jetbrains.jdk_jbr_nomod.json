@@ -1,0 +1,52 @@
+{
+  "groupId": "com.jetbrains.jdk",
+  "artifactId": "jbr_nomod",
+  "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/jdk/jbr_nomod/maven-metadata.xml",
+  "kind": "runtime",
+  "slug": "com.jetbrains.jdk_jbr_nomod",
+  "generatedAt": "2026-10-20T09:28:43.355Z",
+  "total": 5,
+  "released": 5,
+  "stable": 5,
+  "preRelease": 0,
+  "branchCount": 0,
+  "branches": 0,
+  "lines": [
+    {
+      "line": "11",
+      "latest": "11_0_14_1-b1751.46",
+      "latestIsPreRelease": false,
+      "total": 5,
+      "stable": 5,
+      "versions": [
+        {
+          "v": "11_0_14_1-b1751.46",
+          "pre": false,
+          "d": "2022-09-16"
+        },
+        {
+          "v": "11_0_12-b1504.28",
+          "pre": false,
+          "d": "2022-07-05"
+        },
+        {
+          "v": "11_0_11-b1341.60",
+          "pre": false,
+          "d": "2022-07-05"
+        },
+        {
+          "v": "11_0_10-b1341.41",
+          "pre": false,
+          "d": "2022-07-05"
+        },
+        {
+          "v": "11_0_10-b1145.96",
+          "pre": false,
+          "d": "2022-09-13"
+        }
+      ],
+      "latestDate": "2022-09-16"
+    }
+  ],
+  "branchBuilds": []
+}

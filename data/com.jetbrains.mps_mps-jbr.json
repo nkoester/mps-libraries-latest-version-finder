@@ -1,0 +1,439 @@
+{
+  "groupId": "com.jetbrains.mps",
+  "artifactId": "mps-jbr",
+  "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/mps-jbr/maven-metadata.xml",
+  "kind": "marker",
+  "slug": "com.jetbrains.mps_mps-jbr",
+  "generatedAt": "2026-10-20T09:28:43.355Z",
+  "total": 83,
+  "released": 83,
+  "stable": 76,
+  "preRelease": 7,
+  "branchCount": 0,
+  "branches": 0,
+  "lines": [
+    {
+      "line": "2026.1",
+      "latest": "2026.1.1",
+      "latestIsPreRelease": false,
+      "total": 3,
+      "stable": 2,
+      "versions": [
+        {
+          "v": "2026.1.1",
+          "pre": false
+        },
+        {
+          "v": "2026.1",
+          "pre": false
+        },
+        {
+          "v": "2026.1-RC1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2025.3",
+      "latest": "2025.3",
+      "latestIsPreRelease": false,
+      "total": 2,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2025.3",
+          "pre": false
+        },
+        {
+          "v": "2025.3-EAP1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2025.2",
+      "latest": "2025.2.1",
+      "latestIsPreRelease": false,
+      "total": 1,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2025.2.1",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "2025.1",
+      "latest": "2025.1.4",
+      "latestIsPreRelease": false,
+      "total": 6,
+      "stable": 5,
+      "versions": [
+        {
+          "v": "2025.1.4",
+          "pre": false
+        },
+        {
+          "v": "2025.1.3",
+          "pre": false
+        },
+        {
+          "v": "2025.1.2",
+          "pre": false
+        },
+        {
+          "v": "2025.1.1",
+          "pre": false
+        },
+        {
+          "v": "2025.1",
+          "pre": false
+        },
+        {
+          "v": "2025.1-RC1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2024.3",
+      "latest": "2024.3.2",
+      "latestIsPreRelease": false,
+      "total": 5,
+      "stable": 3,
+      "versions": [
+        {
+          "v": "2024.3.2",
+          "pre": false
+        },
+        {
+          "v": "2024.3.1",
+          "pre": false
+        },
+        {
+          "v": "2024.3",
+          "pre": false
+        },
+        {
+          "v": "2024.3-RC1",
+          "pre": true
+        },
+        {
+          "v": "2024.3-EAP1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2024.1",
+      "latest": "2024.1.6",
+      "latestIsPreRelease": false,
+      "total": 9,
+      "stable": 7,
+      "versions": [
+        {
+          "v": "2024.1.6",
+          "pre": false
+        },
+        {
+          "v": "2024.1.5",
+          "pre": false
+        },
+        {
+          "v": "2024.1.4",
+          "pre": false
+        },
+        {
+          "v": "2024.1.3",
+          "pre": false
+        },
+        {
+          "v": "2024.1.2",
+          "pre": false
+        },
+        {
+          "v": "2024.1.1",
+          "pre": false
+        },
+        {
+          "v": "2024.1",
+          "pre": false
+        },
+        {
+          "v": "2024.1-RC1",
+          "pre": true
+        },
+        {
+          "v": "2024.1-EAP1",
+          "pre": true
+        }
+      ]
+    },
+    {
+      "line": "2023.3",
+      "latest": "2023.3.2",
+      "latestIsPreRelease": false,
+      "total": 2,
+      "stable": 2,
+      "versions": [
+        {
+          "v": "2023.3.2",
+          "pre": false
+        },
+        {
+          "v": "2023.3.1",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "263.6259",
+      "latest": "263.6259.89",
+      "latestIsPreRelease": false,
+      "total": 17,
+      "stable": 17,
+      "versions": [
+        {
+          "v": "263.6259.89",
+          "pre": false
+        },
+        {
+          "v": "263.6259.85",
+          "pre": false
+        },
+        {
+          "v": "263.6259.81",
+          "pre": false
+        },
+        {
+          "v": "263.6259.71",
+          "pre": false
+        },
+        {
+          "v": "263.6259.69",
+          "pre": false
+        },
+        {
+          "v": "263.6259.64",
+          "pre": false
+        },
+        {
+          "v": "263.6259.58",
+          "pre": false
+        },
+        {
+          "v": "263.6259.55",
+          "pre": false
+        },
+        {
+          "v": "263.6259.54",
+          "pre": false
+        },
+        {
+          "v": "263.6259.53",
+          "pre": false
+        },
+        {
+          "v": "263.6259.49",
+          "pre": false
+        },
+        {
+          "v": "263.6259.45",
+          "pre": false
+        },
+        {
+          "v": "263.6259.43",
+          "pre": false
+        },
+        {
+          "v": "263.6259.42",
+          "pre": false
+        },
+        {
+          "v": "263.6259.28",
+          "pre": false
+        },
+        {
+          "v": "263.6259.27",
+          "pre": false
+        },
+        {
+          "v": "263.6259.24",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "262.10968",
+      "latest": "262.10968.10021",
+      "latestIsPreRelease": false,
+      "total": 26,
+      "stable": 26,
+      "versions": [
+        {
+          "v": "262.10968.10021",
+          "pre": false
+        },
+        {
+          "v": "262.10968.10013",
+          "pre": false
+        },
+        {
+          "v": "262.10968.10011",
+          "pre": false
+        },
+        {
+          "v": "262.10968.10004",
+          "pre": false
+        },
+        {
+          "v": "262.10968.10003",
+          "pre": false
+        },
+        {
+          "v": "262.10968.10000",
+          "pre": false
+        },
+        {
+          "v": "262.10968.549",
+          "pre": false
+        },
+        {
+          "v": "262.10968.548",
+          "pre": false
+        },
+        {
+          "v": "262.10968.545",
+          "pre": false
+        },
+        {
+          "v": "262.10968.543",
+          "pre": false
+        },
+        {
+          "v": "262.10968.542",
+          "pre": false
+        },
+        {
+          "v": "262.10968.538",
+          "pre": false
+        },
+        {
+          "v": "262.10968.535",
+          "pre": false
+        },
+        {
+          "v": "262.10968.531",
+          "pre": false
+        },
+        {
+          "v": "262.10968.530",
+          "pre": false
+        },
+        {
+          "v": "262.10968.528",
+          "pre": false
+        },
+        {
+          "v": "262.10968.526",
+          "pre": false
+        },
+        {
+          "v": "262.10968.524",
+          "pre": false
+        },
+        {
+          "v": "262.10968.516",
+          "pre": false
+        },
+        {
+          "v": "262.10968.515",
+          "pre": false
+        },
+        {
+          "v": "262.10968.512",
+          "pre": false
+        },
+        {
+          "v": "262.10968.509",
+          "pre": false
+        },
+        {
+          "v": "262.10968.505",
+          "pre": false
+        },
+        {
+          "v": "262.10968.501",
+          "pre": false
+        },
+        {
+          "v": "262.10968.494",
+          "pre": false
+        },
+        {
+          "v": "262.10968.486",
+          "pre": false
+        }
+      ]
+    },
+    {
+      "line": "262.9437",
+      "latest": "262.9437.478",
+      "latestIsPreRelease": false,
+      "total": 12,
+      "stable": 12,
+      "versions": [
+        {
+          "v": "262.9437.478",
+          "pre": false
+        },
+        {
+          "v": "262.9437.476",
+          "pre": false
+        },
+        {
+          "v": "262.9437.472",
+          "pre": false
+        },
+        {
+          "v": "262.9437.470",
+          "pre": false
+        },
+        {
+          "v": "262.9437.463",
+          "pre": false
+        },
+        {
+          "v": "262.9437.459",
+          "pre": false
+        },
+        {
+          "v": "262.9437.454",
+          "pre": false
+        },
+        {
+          "v": "262.9437.445",
+          "pre": false
+        },
+        {
+          "v": "262.9437.440",
+          "pre": false
+        },
+        {
+          "v": "262.9437.433",
+          "pre": false
+        },
+        {
+          "v": "262.9437.422",
+          "pre": false
+        },
+        {
+          "v": "262.9437.420",
+          "pre": false
+        }
+      ]
+    }
+  ],
+  "branchBuilds": []
+}
