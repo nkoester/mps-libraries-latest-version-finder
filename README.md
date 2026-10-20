@@ -5,7 +5,9 @@ Shows the newest version of each core MPS ecosystem library, grouped by MPS rele
 **→ https://nkoester.github.io/mps-libraries-latest-version-finder/**
 
 Tracks `de.itemis.mps:extensions`, `com.mbeddr:mbeddr`, `com.mbeddr:platform`,
-`org.iets3:opensource`, `org.mpsqa:all-in-one` and `com.jetbrains:mps` from
+`org.iets3:opensource`, `org.mpsqa:all-in-one` and `com.jetbrains:mps`, plus the
+JetBrains Runtime artifacts `com.jetbrains.jdk:jbr_jcef`, `jbr`, `jbrsdk` and
+`jbr_nomod`, from
 [artifacts.itemis.cloud](https://artifacts.itemis.cloud/repository/maven-mps/).
 
 ## How it works
@@ -17,7 +19,8 @@ same-origin JSON file.
 | File | Size | Loaded |
 | --- | --- | --- |
 | `versions.json` | ~20 KB | on page load — latest version per release line |
-| `data/<group>_<artifact>.json` | 40 KB – 300 KB | on demand, when you open **All versions** |
+| `data/<group>_<artifact>.json` | 40 KB – 400 KB | on demand, when you open **All versions**, search or inspect |
+| `data/deps/graph.json`, `data/deps/mps-jbr.json` | ~15 KB each | on page load — dependency chain, MPS → JBR |
 
 Earlier versions of this page fetched `maven-metadata.xml` in the browser through
 public CORS proxies. That was slow and unreliable; the proxies are no longer in
@@ -59,6 +62,13 @@ and every cell copies on click, so you can take just the version or the whole
 coordinate. Libraries that published nothing for the selected line are listed too,
 marked **no build for this line** — the absence is often the answer you needed.
 
+Under the libraries, the board lists the **JetBrains Runtime** the selected
+line's MPS build is made for (see [MPS and the JetBrains Runtime](#mps-and-the-jetbrains-runtime)).
+
+Every version shows its **publication date**. The *newer than* / *older than*
+fields under the search box and in **All versions** filter by it (both ends
+inclusive); a date filter alone lists everything in the range, newest first.
+
 Libraries are ordered by the dependency stack (MPS first, then what builds on it),
 not alphabetically. Development builds (`9999.9`, `999.9`) sort last and are
 labelled as not being releases.
@@ -77,14 +87,56 @@ labelled as not being releases.
 - **`9999.9` and `999.9`** are synthetic development-branch versions, not real
   MPS releases, and are labelled as such.
 
+- **JetBrains Runtime** artifacts are grouped by Java version (`8`, `11`, `17`,
+  `21`, `25`), not by MPS line. All three spellings JBR has used are read:
+  `8u202-b1483.53`, `11_0_14_1-b1751.46`, `21.0.5-b631.8`.
+
 Nothing is discarded: every version the repository reports is stored and reachable
 through **All versions**.
+
+## Publication dates
+
+The date is when the version was **uploaded to artifacts.itemis.cloud**, read
+from the Nexus search API (`lastModified` of the POM) and, for SNAPSHOTs, which
+the search index does not cover, from the version's own `maven-metadata.xml`.
+It is cached in `data/dates/<slug>.json` and looked up once per version.
+
+It is not the upstream release date:
+
+- Everything published before mid-2022 was migrated to this Nexus then and
+  carries a migration date (2022-07 to 2022-11).
+- MPS and JBR builds are mirrored; their date is when they were mirrored,
+  sometimes long after the JetBrains release (e.g. MPS `2021.2.3` → 2024-01).
+
+## MPS and the JetBrains Runtime
+
+The MPS POM declares no JBR. The link comes from:
+
+1. **`com.jetbrains.mps:mps-jbr`** — a marker POM published for every MPS release
+   since 2023.3.1 (and every pre-release build) by
+   [build.publish.mps](https://github.com/mbeddr/build.publish.mps). Its single
+   dependency is the exact `com.jetbrains.jdk:jbr_jcef` build MPS is made for,
+   taken from `mps.runtimeBuild` in the distribution's `build.properties`. It is
+   tracked like any library but never shown.
+2. **`scripts/mps-jbr-legacy.json`** — for MPS before 2023.3.1 only, from the
+   [mbeddr MPS – JBR table](https://github.com/mbeddr/build.publish.jdk#mps---jbr-table).
+
+`fetch-deps.mjs` resolves both into `data/deps/mps-jbr.json`. Use the exact build
+where you can. Where the repository does not have it (e.g. `17.0.9-b1087.9` for
+MPS 2023.3.1), the board offers the oldest newer build of the same Java version,
+tagged **≥ fallback**.
+
+The dependency chain draws this as `mps → jbr_jcef` (dashed for a fallback),
+plus a dotted edge to `mps` from every library at the bottom of its chain (one
+that declares no dependency): each library is built against its line's MPS,
+but most POMs do not declare it, and the others reach MPS through these. The
+dotted edges are drawn only; **Inspect** lists what the POMs declare.
 
 ## Automation
 
 | Workflow | Schedule | Does |
 | --- | --- | --- |
-| `update-versions.yml` | every 6 h — 05:00, 11:00, 17:00, 23:00 UTC | fetch metadata, commit `versions.json` + `data/` **only if versions changed** |
+| `update-versions.yml` | every 6 h — 05:00, 11:00, 17:00, 23:00 UTC | fetch metadata, dates and POM dependencies, commit `versions.json` + `data/` **only if something changed** |
 | `monthly-release.yml` | 1st of month, 06:00 UTC | publish one consolidated version list as a GitHub Release |
 
 The update job skips the commit when only the timestamp would change, so
@@ -101,13 +153,17 @@ To adjust the cron timezone, edit the `cron:` line in `update-versions.yml`
 
 ```bash
 node scripts/fetch-versions.mjs   # refresh versions.json + data/
+node scripts/fetch-dates.mjs      # publication dates (--max <n>, --full)
+node scripts/fetch-deps.mjs       # POM dependencies + MPS -> JBR (--max <n>)
 npm run serve                     # http://localhost:8080
 ```
 
 The page must be served over HTTP — it uses ES modules and `fetch`, so opening
 `index.html` from the filesystem will not work.
 
-Adding a library: append it to `scripts/libraries.json` and re-run the fetcher.
+Adding a library: append it to `scripts/libraries.json` and re-run the fetchers.
+An optional `"kind"` marks a `runtime` artifact (grouped by Java version, kept
+out of the MPS line picker) or a `marker` (fetched for its POM only, never shown).
 
 ```bash
 node scripts/make-bundle.mjs dist  # build the monthly release artifacts

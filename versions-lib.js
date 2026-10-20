@@ -19,6 +19,23 @@ const PRE_RELEASE_RE =
 const LINE_RE = /^(\d+)\.(\d+)/;
 
 /**
+ * Leading Java feature version of a JetBrains Runtime build. JBR has used
+ * three spellings: `8u202-b1483.53`, `11_0_14_1-b1751.46` and `21.0.5-b631.8`.
+ */
+const JAVA_LINE_RE = /^(\d+)(?=[._u-]|$)/;
+
+/**
+ * Library roles, set per entry in scripts/libraries.json:
+ *
+ *   (none)    an MPS library, grouped by MPS release line
+ *   runtime   a JetBrains Runtime artifact, grouped by Java version and kept
+ *             out of the MPS line picker
+ *   marker    tracked for its POM dependencies only, never shown
+ */
+export const isRuntime = (library) => library?.kind === 'runtime';
+export const isMarker = (library) => library?.kind === 'marker';
+
+/**
  * mbeddr, IETS3, the MPS extensions and MPS-QA publish builds off their
  * development branch under a synthetic version. These sort above (or far below)
  * every real release line, so they need labelling rather than hiding.
@@ -31,7 +48,9 @@ export function isDevelopmentLine(line) {
 }
 
 export function lineLabel(line) {
-  return isDevelopmentLine(line) ? `master / nightly (${line})` : line;
+  if (isDevelopmentLine(line)) return `master / nightly (${line})`;
+  // Only runtime lines are a bare number; MPS lines are always `X.Y`.
+  return /^\d+$/.test(line) ? `Java ${line}` : line;
 }
 
 /**
@@ -75,8 +94,12 @@ export function snapshotFileVersion(metadataXml, extension) {
   return timestamp && buildNumber && base ? `${base}-${timestamp}-${buildNumber}` : null;
 }
 
-/** The MPS release line a version belongs to, or null if it has no `X.Y` prefix. */
-export function lineOf(version) {
+/**
+ * The release line a version belongs to, or null if it has none: `X.Y` for
+ * MPS libraries, the Java version for runtime artifacts.
+ */
+export function lineOf(version, scheme = 'mps') {
+  if (scheme === 'java') return version.match(JAVA_LINE_RE)?.[1] ?? null;
   const match = version.match(LINE_RE);
   return match ? `${match[1]}.${match[2]}` : null;
 }
@@ -93,6 +116,11 @@ function compareSegment(a, b) {
   // above `2024.1.3193.ccbdc48`.
   if (aNumeric) return 1;
   if (bNumeric) return -1;
+  // Same letters, then a number (`b944` vs `b1145`, `rc9` vs `rc10`): compare
+  // the number, so JBR build numbers order correctly.
+  const aTagged = a.match(/^([a-z]+)(\d+)$/i);
+  const bTagged = b.match(/^([a-z]+)(\d+)$/i);
+  if (aTagged && bTagged && aTagged[1] === bTagged[1]) return Number(aTagged[2]) - Number(bTagged[2]);
   return a < b ? -1 : a > b ? 1 : 0;
 }
 
@@ -111,13 +139,20 @@ export function compareVersions(a, b) {
   return 0;
 }
 
+const XML_ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" };
+
+/** Branch names may contain `&`, which the metadata stores as `&amp;`. */
+function decodeXml(text) {
+  return text.replace(/&(amp|lt|gt|quot|apos);/g, (whole, name) => XML_ENTITIES[name]);
+}
+
 /** Extract every `<version>` from a maven-metadata.xml document. */
 export function parseMetadata(xmlText) {
   const versions = [];
   const re = /<version>([^<]+)<\/version>/g;
   let match;
   while ((match = re.exec(xmlText)) !== null) {
-    versions.push(match[1].trim());
+    versions.push(decodeXml(match[1].trim()));
   }
   return versions;
 }
@@ -135,7 +170,7 @@ export function slugFor(library) {
  * prefers a stable version, falling back to a pre-release if a line has nothing
  * else.
  */
-export function buildLibraryData(rawVersions) {
+export function buildLibraryData(rawVersions, { lineScheme = 'mps' } = {}) {
   const seen = new Set();
   const all = [];
   for (const raw of rawVersions) {
@@ -145,7 +180,7 @@ export function buildLibraryData(rawVersions) {
     all.push({
       v: version,
       pre: isPreRelease(version),
-      line: lineOf(version),
+      line: lineOf(version, lineScheme),
       branch: branchOf(version),
     });
   }
@@ -203,15 +238,62 @@ export function buildLibraryData(rawVersions) {
 export function artifactUrls(library, version) {
   const base = library.metadataUrl.replace('maven-metadata.xml', '');
   const browseBase = base.replace('/repository/', '/service/rest/repository/browse/');
-  const file = (fileVersion, extension) => `${base}${version}/${library.artifactId}-${fileVersion}.${extension}`;
+  // Branch names may carry `#` (`fix#1474.2024.1...`), which would otherwise
+  // end the path and start a fragment.
+  const folder = encodeURIComponent(version);
+  const file = (fileVersion, extension) =>
+    `${base}${folder}/${library.artifactId}-${encodeURIComponent(fileVersion)}.${extension}`;
   return {
     pom: file(version, 'pom'),
     zip: file(version, 'zip'),
     pomFor: (fileVersion) => file(fileVersion, 'pom'),
-    versionMetadata: `${base}${version}/maven-metadata.xml`,
-    browse: `${browseBase}${version}`,
+    versionMetadata: `${base}${folder}/maven-metadata.xml`,
+    browse: `${browseBase}${folder}`,
     folder: browseBase,
   };
+}
+
+/* ------------------------------------------------------------------- dates */
+
+/**
+ * Whether a `YYYY-MM-DD` date lies within [from, to]; either bound may be
+ * empty. Same-format ISO dates compare correctly as strings.
+ */
+export function inDateRange(date, from, to) {
+  if (!from && !to) return true;
+  if (!date) return false;
+  return (!from || date >= from) && (!to || date <= to);
+}
+
+/* --------------------------------------------------------------- MPS -> JBR */
+
+/**
+ * The runtime build an MPS version is built with, per runtime artifact.
+ *
+ * `required` is the exact JBR version MPS names. Each candidate artifact gets
+ * that version when the repository has it (`exact`), otherwise the oldest
+ * build of the same Java version that is newer (`exact: false`), otherwise
+ * nothing (`v: null`). Spellings are compared by value, so `11.0.12-b1504.28`
+ * matches `11_0_12-b1504.28`.
+ *
+ * `available` maps an artifact slug to its version list.
+ */
+export function matchRuntime(required, available) {
+  const java = lineOf(required, 'java');
+  const artifacts = {};
+  for (const [slug, versions] of Object.entries(available)) {
+    const exact = versions.find((v) => v === required) ??
+      versions.find((v) => compareVersions(v, required) === 0);
+    if (exact) {
+      artifacts[slug] = { v: exact, exact: true };
+      continue;
+    }
+    const newer = versions
+      .filter((v) => lineOf(v, 'java') === java && compareVersions(v, required) > 0)
+      .sort(compareVersions)[0];
+    artifacts[slug] = { v: newer ?? null, exact: false };
+  }
+  return artifacts;
 }
 
 export function mavenCoordinate(library, version) {

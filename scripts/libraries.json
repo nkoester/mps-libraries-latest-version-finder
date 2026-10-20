@@ -28,5 +28,35 @@
     "groupId": "org.mpsqa",
     "artifactId": "all-in-one",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml"
+  },
+  {
+    "groupId": "com.jetbrains.jdk",
+    "artifactId": "jbr_jcef",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/jdk/jbr_jcef/maven-metadata.xml",
+    "kind": "runtime"
+  },
+  {
+    "groupId": "com.jetbrains.jdk",
+    "artifactId": "jbr",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/jdk/jbr/maven-metadata.xml",
+    "kind": "runtime"
+  },
+  {
+    "groupId": "com.jetbrains.jdk",
+    "artifactId": "jbrsdk",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/jdk/jbrsdk/maven-metadata.xml",
+    "kind": "runtime"
+  },
+  {
+    "groupId": "com.jetbrains.jdk",
+    "artifactId": "jbr_nomod",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/jdk/jbr_nomod/maven-metadata.xml",
+    "kind": "runtime"
+  },
+  {
+    "groupId": "com.jetbrains.mps",
+    "artifactId": "mps-jbr",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/mps-jbr/maven-metadata.xml",
+    "kind": "marker"
   }
 ]

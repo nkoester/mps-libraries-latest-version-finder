@@ -14,20 +14,22 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { lineLabel } from '../versions-lib.js';
+import { isMarker, isRuntime, lineLabel } from '../versions-lib.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outputDir = process.argv[2] ?? ROOT;
 
 const summary = JSON.parse(await readFile(join(ROOT, 'versions.json'), 'utf8'));
 
+// The mps-jbr marker is plumbing; its content ships as data/deps/mps-jbr.json.
 const libraries = await Promise.all(
-  summary.libraries.map(async (library) => {
+  summary.libraries.filter((library) => !isMarker(library)).map(async (library) => {
     const full = JSON.parse(await readFile(join(ROOT, 'data', `${library.slug}.json`), 'utf8'));
     return {
       groupId: library.groupId,
       artifactId: library.artifactId,
       metadataUrl: library.metadataUrl,
+      ...(library.kind && { kind: library.kind }),
       ok: library.ok,
       total: full.total,
       released: full.released,
@@ -56,7 +58,8 @@ await writeFile(join(outputDir, bundleName), `${JSON.stringify(bundle, null, 2)}
 
 // Release notes: one table per release line, as that is how the versions are
 // actually consumed (you pin a whole set against one MPS version).
-const lineKeys = [...new Set(libraries.flatMap((library) => library.lines.map((line) => line.line)))];
+const mpsLibraries = libraries.filter((library) => !isRuntime(library));
+const lineKeys = [...new Set(mpsLibraries.flatMap((library) => library.lines.map((line) => line.line)))];
 lineKeys.sort((a, b) => Number(b.split('.')[0]) - Number(a.split('.')[0]) || Number(b.split('.')[1]) - Number(a.split('.')[1]));
 
 let notes = `Snapshot of the latest MPS library versions on ${now.toISOString().slice(0, 10)}.\n\n`;
@@ -64,7 +67,7 @@ notes += `Data generated: ${summary.generatedAt}\n\n`;
 notes += `Full machine-readable list: \`${bundleName}\` (attached).\n\n`;
 
 for (const line of lineKeys.slice(0, 8)) {
-  const rows = libraries
+  const rows = mpsLibraries
     .map((library) => ({ library, entry: library.lines.find((candidate) => candidate.line === line) }))
     .filter((row) => row.entry);
   if (rows.length === 0) continue;
@@ -78,6 +81,16 @@ for (const line of lineKeys.slice(0, 8)) {
 
 if (lineKeys.length > 8) {
   notes += `_${lineKeys.length - 8} older release lines omitted -- see the attached JSON._\n`;
+}
+
+const runtimes = libraries.filter(isRuntime);
+if (runtimes.length) {
+  notes += `\n### JetBrains Runtime\n\n| Artifact | Java | Latest |\n| --- | --- | --- |\n`;
+  for (const library of runtimes) {
+    for (const entry of library.lines) {
+      notes += `| \`${library.groupId}:${library.artifactId}\` | ${entry.line} | \`${entry.latest}\` |\n`;
+    }
+  }
 }
 
 await writeFile(join(outputDir, 'RELEASE_NOTES.md'), notes);

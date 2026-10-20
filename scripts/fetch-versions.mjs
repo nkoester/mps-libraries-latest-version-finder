@@ -5,6 +5,9 @@
  *   versions.json              summary: latest version per release line (small, loaded on page load)
  *   data/<slug>.json           full version list per library (loaded on demand)
  *
+ * Publication dates already cached by fetch-dates.mjs are merged in, so a
+ * run here never strips them.
+ *
  * Runs on a GitHub Actions runner, so it talks to the repository directly --
  * no CORS, no proxy.
  *
@@ -20,7 +23,8 @@ import { existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { parseMetadata, buildLibraryData, slugFor } from '../versions-lib.js';
+import { parseMetadata, buildLibraryData, isRuntime, slugFor } from '../versions-lib.js';
+import { applyDates, readDates } from './dates-lib.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SUMMARY_FILE = join(ROOT, 'versions.json');
@@ -76,7 +80,10 @@ async function main() {
       const slug = slugFor(library);
       try {
         const rawVersions = await fetchMetadata(library);
-        const data = buildLibraryData(rawVersions);
+        const data = applyDates(
+          buildLibraryData(rawVersions, { lineScheme: isRuntime(library) ? 'java' : 'mps' }),
+          await readDates(ROOT, slug),
+        );
         process.stderr.write(
           `ok    ${library.groupId}:${library.artifactId} -- ${data.total} versions, ${data.lines.length} lines\n`,
         );
@@ -132,9 +139,10 @@ async function main() {
       dataFile: `data/${slug}.json`,
       // Summary carries only the latest per line; the full lists live in the
       // per-library data file so the initial page load stays small.
-      lines: data.lines.map(({ line, latest, latestIsPreRelease, total, stable: stableCount }) => ({
+      lines: data.lines.map(({ line, latest, latestDate, latestIsPreRelease, total, stable: stableCount }) => ({
         line,
         latest,
+        ...(latestDate && { latestDate }),
         latestIsPreRelease,
         total,
         stable: stableCount,

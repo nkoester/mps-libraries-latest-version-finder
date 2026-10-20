@@ -319,6 +319,63 @@
         min-height: 1em;
       }
 
+      .date-filter {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 8px 2px 0;
+        font-size: 12px;
+        color: var(--ink-2);
+      }
+      .date-filter label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .date-filter input[type="date"] {
+        font-family: var(--mono);
+        font-size: 12px;
+        padding: 4px 6px;
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        background: var(--surface);
+        color: var(--ink);
+      }
+      /* Clear buttons stay in place; disabled while there is nothing to clear. */
+      .date-filter .btn:disabled {
+        color: var(--ink-3);
+        opacity: 0.5;
+        cursor: default;
+        background: none;
+      }
+      .dlg-tools .date-filter {
+        margin: 0;
+      }
+      /* Group and artifact span the date line too, so the accent edge does. */
+      .coord > .seg:nth-child(-n + 2) {
+        grid-row: span 2;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+      }
+      .coord-date {
+        grid-column: 3;
+        padding: 0 11px;
+        font-size: 11px;
+        color: var(--ink-3);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+      .date {
+        font-family: var(--mono);
+        font-size: 11.5px;
+        color: var(--ink-3);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        margin-right: 6px;
+      }
+
       .hits {
         padding: 22px 0 56px;
       }
@@ -528,8 +585,10 @@
         font-size: 11.5px;
         color: var(--ink-2);
       }
+      /* Boxes keep the size of a two-column graph; narrower graphs centre. */
       .chain svg {
         display: block;
+        margin: 0 auto;
         width: 100%;
         height: auto;
         overflow: visible;
@@ -564,6 +623,12 @@
         fill: none;
         stroke: var(--ink-3);
         stroke-width: 1.2;
+      }
+      .chain .ce.fallback {
+        stroke-dasharray: 4 3;
+      }
+      .chain .ce.implicit {
+        stroke-dasharray: 1.5 3;
       }
       .chain .ce.hot {
         stroke: var(--accent);
@@ -762,6 +827,23 @@
       .tag.quiet {
         background: var(--rule-soft);
         color: var(--ink-3);
+      }
+      .tag.ok {
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+
+      /* JetBrains Runtime rows under the libraries: same cells, quieter edge. */
+      .board-sep {
+        margin: 18px 0 8px;
+        font-size: 12px;
+        color: var(--ink-2);
+      }
+      .board-sep code {
+        color: var(--ink);
+      }
+      .node.runtime .seg:first-child {
+        border-left-color: var(--ink-3);
       }
 
       .acts {
@@ -1233,6 +1315,19 @@
             aria-label="Search every version"
             placeholder="One Serach to find it all — group, artifact, version. Space-separated terms all have to match."
           />
+          <div class="date-filter" role="group" aria-label="Publication date">
+            <label title="Published on or after this date"
+              >newer than <input type="date" id="q-from"
+            /></label>
+            <label title="Published on or before this date"
+              >older than <input type="date" id="q-to"
+            /></label>
+            <button class="btn" id="q-clear-dates" disabled>clear dates</button>
+            <label
+              ><input type="checkbox" id="q-snap" checked /> hide SNAPSHOTs</label
+            >
+            <button class="btn" id="q-clear" disabled>clear all</button>
+          </div>
           <p class="finder-note" id="q-note"></p>
         </section>
 
@@ -1322,6 +1417,19 @@
             ><input type="checkbox" id="dlg-branch" checked /> branch
             builds</label
           >
+          <span class="date-filter" role="group" aria-label="Publication date">
+            <label title="Published on or after this date"
+              >newer than <input type="date" id="dlg-from"
+            /></label>
+            <label title="Published on or before this date"
+              >older than <input type="date" id="dlg-to"
+            /></label>
+            <button class="btn" id="dlg-clear-dates" disabled>clear dates</button>
+            <label
+              ><input type="checkbox" id="dlg-snap" checked /> hide SNAPSHOTs</label
+            >
+            <button class="btn" id="dlg-clear" disabled>clear all</button>
+          </span>
           <span class="count" id="dlg-count"></span>
         </div>
         <div class="dlg-body" id="dlg-body"></div>
@@ -1368,6 +1476,9 @@
         compareVersions,
         lineOf,
         resolveRequirements,
+        inDateRange,
+        isMarker,
+        isRuntime,
       } from "./versions-lib.js";
 
       const REPO =
@@ -1389,6 +1500,10 @@
         "com.jetbrains_mps",
       ];
 
+      const MPS_SLUG = "com.jetbrains_mps";
+      /** The runtime artifact MPS names; shown even when no build matches. */
+      const JBR_PRIMARY = "com.jetbrains.jdk_jbr_jcef";
+
       const state = {
         generatedAt: null,
         libraries: [],
@@ -1397,6 +1512,10 @@
         fullData: new Map(),
         dialog: null,
         graph: null,
+        // MPS version -> { jbr, source, artifacts }, from data/deps/mps-jbr.json.
+        runtime: null,
+        // slug -> Map(version -> date), filled as full data files load.
+        dates: new Map(),
       };
 
       const copyRegistry = [];
@@ -1447,21 +1566,98 @@
         return `${days} day${days === 1 ? "" : "s"} ago`;
       }
 
+      /* --------------------------------------------------------------- dates */
+
+      /** Publication date cell; empty when the repository gave none. */
+      function dateTag(date) {
+        return date
+          ? `<span class="date" title="Published to artifacts.itemis.cloud">${esc(date)}</span>`
+          : "";
+      }
+
+      /** Board variant: a second line under the version cell. */
+      function coordDate(date) {
+        return date
+          ? `<span class="coord-date" title="Published to artifacts.itemis.cloud">published ${esc(date)}</span>`
+          : "";
+      }
+
+      function rangeText(from, to) {
+        if (from && to) return `${from} to ${to}`;
+        return from ? `on or after ${from}` : `on or before ${to}`;
+      }
+
+      /** Known date of one version: full data if loaded, else the summary. */
+      function dateOf(slug, version) {
+        const known = state.dates.get(slug)?.get(version);
+        if (known) return known;
+        return (
+          bySlug(slug)?.lines?.find((line) => line.latest === version)
+            ?.latestDate ?? null
+        );
+      }
+
+      /** Full version list of one library, fetched once. */
+      const loading = new Map();
+      function ensureData(slug) {
+        if (state.fullData.has(slug))
+          return Promise.resolve(state.fullData.get(slug));
+        if (!loading.has(slug)) {
+          const library = bySlug(slug);
+          loading.set(
+            slug,
+            fetch(library?.dataFile ?? `./data/${slug}.json`)
+              .then((response) => {
+                if (!response.ok)
+                  throw new Error(
+                    `${library?.artifactId ?? slug}: HTTP ${response.status}`,
+                  );
+                return response.json();
+              })
+              .then((data) => {
+                state.fullData.set(slug, data);
+                const dates = new Map();
+                for (const line of data.lines)
+                  for (const entry of line.versions)
+                    if (entry.d) dates.set(entry.v, entry.d);
+                for (const entry of data.branchBuilds ?? [])
+                  if (entry.d) dates.set(entry.v, entry.d);
+                state.dates.set(slug, dates);
+                return data;
+              })
+              .finally(() => loading.delete(slug)),
+          );
+        }
+        return loading.get(slug);
+      }
+
       /* ---------------------------------------------------------------- load */
 
       async function load() {
         try {
           // The chain panel is optional: without graph.json it stays hidden.
-          const graphRequest = fetch("./data/deps/graph.json")
-            .then((r) => (r.ok ? r.json() : null))
-            .catch(() => null);
+          const optional = (url) =>
+            fetch(url)
+              .then((r) => (r.ok ? r.json() : null))
+              .catch(() => null);
+          const graphRequest = optional("./data/deps/graph.json");
+          const runtimeRequest = optional("./data/deps/mps-jbr.json");
           const response = await fetch("./versions.json");
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
           const summary = await response.json();
           state.graph = await graphRequest;
+          state.runtime = (await runtimeRequest)?.versions ?? null;
           state.generatedAt = summary.generatedAt;
-          state.libraries = summary.libraries;
-          state.lineMap = buildLineMap(summary.libraries.filter((l) => l.ok));
+          state.libraries = summary.libraries.filter((l) => !isMarker(l));
+          state.lineMap = buildLineMap(
+            state.libraries.filter((l) => l.ok && !isRuntime(l)),
+          );
+          // Runtime lists are tiny; the board needs their dates.
+          await Promise.all(
+            state.libraries
+              .filter(isRuntime)
+              .map((l) => ensureData(l.slug).catch(() => null)),
+          );
           state.selected = defaultLine();
           renderAll();
         } catch (error) {
@@ -1590,7 +1786,8 @@
           ? `<span class="lead">Development</span> builds <span class="dim">(${esc(line)})</span>`
           : `<span class="lead">Latest</span> for MPS ${esc(line)}`;
 
-        const missing = state.libraries.filter(
+        const mpsLibraries = state.libraries.filter((l) => !isRuntime(l));
+        const missing = mpsLibraries.filter(
           (library) => library.ok && !present.has(library.slug),
         );
         const notes = [];
@@ -1601,7 +1798,7 @@
         }
         if (missing.length) {
           notes.push(
-            `${missing.length} of ${state.libraries.length} libraries publish nothing for this line.`,
+            `${missing.length} of ${mpsLibraries.length} libraries publish nothing for this line.`,
           );
         }
         $("board-note").innerHTML = notes.join(" ");
@@ -1622,12 +1819,26 @@
             .sort(byStack),
         ];
 
-        $("nodes").innerHTML = ordered
-          .map((entry, index) => renderNode(entry, index))
-          .join("");
+        const mpsLatest = present.get(MPS_SLUG)?.latest ?? null;
+        const runtime = mpsLatest ? runtimeRows(mpsLatest) : [];
+        $("nodes").innerHTML =
+          ordered.map((entry, index) => renderNode(entry, index)).join("") +
+          (runtime.length
+            ? runtimeHeading(mpsLatest) +
+              runtime
+                .map((row, index) =>
+                  renderRuntimeNode(row, ordered.length + index),
+                )
+                .join("")
+            : "");
         renderChain();
 
-        const live = entries.map((entry) => entry);
+        const live = [
+          ...entries,
+          ...runtime
+            .filter((row) => row.v)
+            .map((row) => ({ library: row.library, latest: row.v })),
+        ];
         $("copy-versions").dataset.copy = copyRef(
           live.map((e) => e.latest).join("\n"),
         );
@@ -1671,6 +1882,7 @@
                             data-copy="${copyRef(latest)}"
                             title="Copy version ${esc(latest)}">${esc(latest)}</button>
                     ${latestIsPreRelease ? '<span class="tag">pre-release</span>' : ""}
+                    ${coordDate(entry.latestDate)}
                 </div>
                 <div class="acts">
                     <button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}"
@@ -1682,6 +1894,102 @@
                     ${inspectButton(library, latest, "btn btn--out", "Inspect")}
                 </div>
             </article>`;
+      }
+
+      /* ------------------------------------------------------------- runtime */
+
+      /**
+       * The JBR rows for one MPS version: the build it is made for in every
+       * runtime artifact that has it, or the nearest newer build of the same
+       * Java version. The primary artifact is listed even without a match.
+       */
+      function runtimeRows(mpsVersion) {
+        const match = state.runtime?.[mpsVersion];
+        if (!match) return [];
+        return state.libraries
+          .filter((library) => isRuntime(library) && library.ok)
+          .flatMap((library) => {
+            const hit = match.artifacts[library.slug];
+            if (!hit || (!hit.v && library.slug !== JBR_PRIMARY)) return [];
+            return [
+              {
+                library,
+                v: hit.v,
+                exact: hit.exact,
+                required: match.jbr,
+                source: match.source,
+              },
+            ];
+          });
+      }
+
+      const RUNTIME_SOURCE = {
+        marker: "from com.jetbrains.mps:mps-jbr",
+        table: "from the mbeddr MPS–JBR table",
+      };
+
+      function runtimeHeading(mpsVersion) {
+        const match = state.runtime[mpsVersion];
+        return `
+            <p class="board-sep">JetBrains Runtime for MPS <code>${esc(mpsVersion)}</code>:
+                made for <code>${esc(match.jbr)}</code> · ${esc(RUNTIME_SOURCE[match.source] ?? match.source)}</p>`;
+      }
+
+      function runtimeTag(row) {
+        if (row.exact)
+          return '<span class="tag ok" title="The exact build MPS is made for">exact</span>';
+        return `<span class="tag" title="MPS is made for ${esc(row.required)}, which is not in the repository. Newer builds of the same Java version usually work; the exact one is recommended.">≥ fallback</span>`;
+      }
+
+      function renderRuntimeNode(row, index) {
+        const { library, v } = row;
+        const delay = `style="animation-delay:${Math.min(index * 22, 180)}ms"`;
+        if (!v) {
+          return `
+                <article class="node runtime absent" ${delay}>
+                    <div class="coord">
+                        <span class="seg">${esc(library.groupId)}</span>
+                        <span class="seg">${esc(library.artifactId)}</span>
+                        <span class="seg seg--version">${esc(row.required)} not in the repository</span>
+                    </div>
+                    <div class="acts">
+                        <button class="btn" data-act="all" data-slug="${esc(library.slug)}">Show all versions</button>
+                    </div>
+                </article>`;
+        }
+        const java = lineOf(v, "java");
+        const total =
+          library.lines.find((line) => line.line === java)?.total ?? 0;
+        return `
+            <article class="node runtime" ${delay}>
+                <div class="coord">
+                    <button class="seg" data-copy="${copyRef(library.groupId)}"
+                            title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</button>
+                    <button class="seg" data-copy="${copyRef(library.artifactId)}"
+                            title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</button>
+                    <button class="seg seg--version" data-copy="${copyRef(v)}"
+                            title="Copy version ${esc(v)}">${esc(v)}</button>
+                    ${runtimeTag(row)}
+                    ${coordDate(dateOf(library.slug, v))}
+                </div>
+                <div class="acts">
+                    <button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}"
+                            data-line="${esc(java)}"
+                            title="Every ${esc(lineLabel(java))} build of ${esc(library.artifactId)}">Show ${total} ${esc(lineLabel(java))}</button>
+                    ${fileLinks(library, v)}
+                    <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, v))}"
+                    title="Copy ${esc(mavenCoordinate(library, v))}">Copy</button>
+                    ${inspectButton(library, v, "btn btn--out", "Inspect")}
+                </div>
+            </article>`;
+      }
+
+      /** MPS versions whose runtime resolves to this build of one artifact. */
+      function mpsUsing(slug, version) {
+        return Object.entries(state.runtime ?? {})
+          .filter(([, match]) => match.artifacts[slug]?.v === version)
+          .map(([mps, match]) => ({ mps, ...match, exact: match.artifacts[slug].exact }))
+          .sort((a, b) => compareVersions(b.mps, a.mps));
       }
 
       function renderInventory() {
@@ -1698,7 +2006,9 @@
             }
             const facts = [
               `<b>${library.released ?? library.total}</b> releases`,
-              `${library.lines.length} lines`,
+              isRuntime(library)
+                ? `Java ${library.lines.map((line) => esc(line.line)).join(", ")}`
+                : `${library.lines.length} lines`,
             ];
             if (library.preRelease)
               facts.push(`${library.preRelease} pre-release`);
@@ -1727,7 +2037,7 @@
 
       /* --------------------------------------------------------------- chain */
 
-      const CHAIN = { w: 124, h: 38, gx: 14, gy: 30 };
+      const CHAIN = { w: 124, h: 38, gx: 14, gy: 72 };
 
       const bySlug = (slug) =>
         state.libraries.find((library) => library.slug === slug);
@@ -1738,19 +2048,77 @@
        * Layered drawing of what the latest build of each library in the selected
        * line declares: dependents on top, their dependencies below.
        */
+      /**
+       * The declared graph plus what the POMs leave out. Edges are
+       * [from, to, version, kind]; kind is undefined for declared edges.
+       *
+       *   implicit  every library is built against the line's MPS, even when
+       *             its POM does not say so. Drawn only from the bottom of
+       *             each chain -- libraries that declare no dependency --
+       *             as the rest reach MPS through them. Drawn only: Inspect
+       *             keeps to what the POMs declare.
+       *   runtime   MPS -> the JBR it is made for, from the MPS -> JBR map.
+       *             Only the primary artifact is drawn, as that is the one
+       *             MPS names.
+       */
+      function augmentGraph(declared) {
+        const mpsVersion = declared.latest[MPS_SLUG];
+        if (!mpsVersion) return { graph: declared, row: null };
+        const latest = { ...declared.latest };
+        const edges = [...declared.edges];
+        const declaresAny = new Set(
+          declared.edges
+            .filter(([from, to]) => declared.latest[from] && declared.latest[to])
+            .map(([from]) => from),
+        );
+        for (const slug of Object.keys(declared.latest)) {
+          if (slug === MPS_SLUG || declaresAny.has(slug)) continue;
+          if (isRuntime(bySlug(slug))) continue;
+          edges.push([slug, MPS_SLUG, lineOf(mpsVersion), "implicit"]);
+        }
+        const row =
+          runtimeRows(mpsVersion).find(
+            (r) => r.library.slug === JBR_PRIMARY && r.v,
+          ) ?? null;
+        if (row) {
+          latest[JBR_PRIMARY] = row.v;
+          edges.push([MPS_SLUG, JBR_PRIMARY, row.v, "runtime"]);
+        }
+        return { graph: { latest, edges }, row };
+      }
+
+      function edgeTitle([from, to, version, kind], runtime) {
+        const a = bySlug(from).artifactId;
+        const b = bySlug(to).artifactId;
+        if (kind === "implicit")
+          return `${a} is built against MPS ${version}; not declared in its POM`;
+        if (kind !== "runtime") return `${a} needs ${b} ≥ ${version}`;
+        return runtime.exact
+          ? `${a} is made for ${b} ${version}`
+          : `${a} is made for ${runtime.required}, not in the repository; nearest newer: ${version}`;
+      }
+
+      function edgeClass([, , , kind], runtime) {
+        if (kind === "implicit") return "ce implicit";
+        if (kind === "runtime" && !runtime.exact) return "ce fallback";
+        return "ce";
+      }
+
       function renderChain() {
         const panel = $("chain");
-        const graph = state.graph?.lines?.[state.selected];
-        if (!graph) {
+        const declared = state.graph?.lines?.[state.selected];
+        if (!declared) {
           panel.hidden = true;
           return;
         }
+        const { graph, row: runtime } = augmentGraph(declared);
         const line = state.selected;
         const present = state.libraries.filter(
           (library) => graph.latest[library.slug],
         );
         const absent = state.libraries.filter(
-          (library) => library.ok && !graph.latest[library.slug],
+          (library) =>
+            library.ok && !isRuntime(library) && !graph.latest[library.slug],
         );
         const edges = graph.edges.filter(
           ([from, to]) => graph.latest[from] && graph.latest[to],
@@ -1846,17 +2214,115 @@
         const width = widest * CHAIN.w + (widest - 1) * CHAIN.gx;
         const height = layers.length * CHAIN.h + (layers.length - 1) * CHAIN.gy;
 
+        // An edge that skips a layer would run behind the boxes in between,
+        // so it leaves through the gap below its source, runs down a lane
+        // outside the graph and enters through the gap above its target.
+        const LANE = 8;
+        // Straight run at both ends: arrows are entered from behind, never
+        // crossed by an edge still bending in.
+        const STUB = 14;
+        const BAND = 6;
+        const lanes = { left: 0, right: 0 };
+        const centre = (slug) => x(slug) + CHAIN.w / 2;
+        const skips = ([from, to]) => depth.get(from) - depth.get(to) > 1;
+        // Each lane edge takes the side with fewer lanes so far -- two on one
+        // side would have to cross -- the most off-centre edges first, ties
+        // going to the side an edge leans to. Later lanes run further out.
+        const sides = new Map();
+        const laneOf = new Map();
+        const pull = (edge) =>
+          (centre(edge[0]) + centre(edge[1])) / 2 - width / 2;
+        for (const edge of edges
+          .filter(skips)
+          .sort((a, b) => Math.abs(pull(b)) - Math.abs(pull(a)))) {
+          const side =
+            lanes.left === lanes.right
+              ? pull(edge) < 0
+                ? "left"
+                : "right"
+              : lanes.left < lanes.right
+                ? "left"
+                : "right";
+          sides.set(edge, side);
+          laneOf.set(edge, ++lanes[side]);
+        }
+        const sideOf = (edge) => sides.get(edge);
+
+        // Where an edge heads at its far end, seen from one box. Lanes lie
+        // beyond either side of the graph, outer lanes further out.
+        const heading = (edge, far) =>
+          skips(edge)
+            ? (sideOf(edge) === "left" ? -1 : 1) * (1e6 + laneOf.get(edge))
+            : centre(far);
+
+        // Several edges at one box get their own port each, spread along the
+        // edge of the box in the order they leave or arrive.
+        const ports = new Map();
+        const assignPorts = (end, far) => {
+          const groups = new Map();
+          for (const edge of edges) {
+            if (!groups.has(edge[end])) groups.set(edge[end], []);
+            groups.get(edge[end]).push(edge);
+          }
+          for (const [slug, list] of groups) {
+            list.sort((a, b) => heading(a, a[far]) - heading(b, b[far]));
+            list.forEach((edge, i) =>
+              ports.set(
+                `${end}:${edge[0]}>${edge[1]}`,
+                x(slug) + (CHAIN.w * (i + 1)) / (list.length + 1),
+              ),
+            );
+          }
+        };
+        assignPorts(0, 1);
+        assignPorts(1, 0);
+
+        const edgePath = (edge) => {
+          const [from, to] = edge;
+          const x1 = ports.get(`0:${from}>${to}`);
+          const x2 = ports.get(`1:${from}>${to}`);
+          const y1 = y(from) + CHAIN.h;
+          const y2 = y(to) - 3;
+          const a = y1 + STUB;
+          const b = y2 - STUB;
+          // Edges between neighbouring layers bend only inside a band in the
+          // middle of the gap; lane edges turn above or below it.
+          const mid = (a + b) / 2;
+          const top = mid - BAND;
+          const low = mid + BAND;
+          if (!skips(edge)) {
+            return `M${x1} ${y1} L${x1} ${top} C${x1} ${mid}, ${x2} ${mid}, ${x2} ${low} L${x2} ${y2}`;
+          }
+          // Lane edges turn above the band below the source and below the
+          // band above the target. Nested lanes stay clear of each other when
+          // inner lanes turn lower leaving and higher arriving.
+          const lane = laneOf.get(edge);
+          const side = sideOf(edge);
+          const lx = side === "left" ? -lane * LANE : width + lane * LANE;
+          const share = (lanes[side] - lane + 1) / (lanes[side] + 1);
+          // The band of the gap right below the source / right above the
+          // target, not of the whole span.
+          const half = (CHAIN.gy - 3 - 2 * STUB) / 2;
+          const out = a + (half - BAND) * share;
+          const back = b - (half - BAND) * share;
+          const r = 4;
+          const d1 = Math.sign(lx - x1);
+          const d2 = Math.sign(x2 - lx);
+          return (
+            `M${x1} ${y1} L${x1} ${out - r} Q${x1} ${out} ${x1 + d1 * r} ${out} ` +
+            `L${lx - d1 * r} ${out} Q${lx} ${out} ${lx} ${out + r} ` +
+            `L${lx} ${back - r} Q${lx} ${back} ${lx + d2 * r} ${back} ` +
+            `L${x2 - d2 * r} ${back} Q${x2} ${back} ${x2} ${back + r} L${x2} ${y2}`
+          );
+        };
+
         const edgeSvg = edges
-          .map(([from, to, version]) => {
-            const x1 = x(from) + CHAIN.w / 2;
-            const y1 = y(from) + CHAIN.h;
-            const x2 = x(to) + CHAIN.w / 2;
-            const y2 = y(to) - 3;
-            const mid = (y1 + y2) / 2;
+          .map((edge) => {
+            const [from, to] = edge;
             return `
-                <path class="ce" data-from="${esc(from)}" data-to="${esc(to)}" marker-end="url(#chain-arrow)"
-                      d="M${x1} ${y1} C${x1} ${mid}, ${x2} ${mid}, ${x2} ${y2}">
-                    <title>${esc(bySlug(from).artifactId)} needs ${esc(bySlug(to).artifactId)} ≥ ${esc(version)}</title>
+                <path class="${edgeClass(edge, runtime)}" data-from="${esc(from)}" data-to="${esc(to)}" marker-end="url(#chain-arrow)"
+                      d="${edgePath(edge)}">
+                    <title>${esc(edgeTitle(edge, runtime))}</title>
                 </path>`;
           })
           .join("");
@@ -1876,10 +2342,12 @@
           })
           .join("");
 
+        const left = lanes.left * LANE;
+        const right = lanes.right * LANE;
         panel.innerHTML = `
             <h3>Dependency chain</h3>
-            <p class="chain-note">As declared by the latest ${esc(lineLabel(line))} builds. Arrow = needs.</p>
-            <svg viewBox="-2 -2 ${width + 4} ${height + 4}" role="img" aria-label="Dependencies between the latest ${esc(line)} builds">
+            <p class="chain-note">As declared by the latest ${esc(lineLabel(line))} builds. Arrow = needs.${edges.some((e) => e[3] === "implicit") ? " Dotted: built against MPS, not declared in the POM." : ""}${runtime ? ` JBR: the build MPS is made for${runtime.exact ? "" : " (dashed: nearest newer, exact one missing)"}.` : ""}</p>
+            <svg viewBox="${-2 - left} -2 ${width + 4 + left + right} ${height + 4}" style="max-width:${(((width + 4 + left + right) / (2 * CHAIN.w + CHAIN.gx + 4)) * 100).toFixed(2)}%" role="img" aria-label="Dependencies between the latest ${esc(line)} builds">
                 <defs>
                     <marker id="chain-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                         <path d="M0 0 L10 5 L0 10 z"/>
@@ -1976,6 +2444,11 @@
         return `<span class="bad">newer than the latest indexed ${esc(line)} build</span>`;
       }
 
+      const published = (slug, version) => {
+        const date = dateOf(slug, version);
+        return date ? ` · published ${esc(date)}` : "";
+      };
+
       function reqRow(library, version, { kind, meta, prefix = "" }) {
         return `
             <div class="req ${kind}">
@@ -2002,9 +2475,22 @@
           $(id).disabled = true;
         if (!ins.open) ins.showModal();
 
+        if (isRuntime(library)) {
+          await ensureData(slug).catch(() => null);
+          if (inspecting !== token) return;
+          inspectRuntime(library, version);
+          return;
+        }
+
         const { required, unknown } = await resolveRequirements(
           { slug, v: version },
           depsOf,
+        );
+        // Dates for every row; the files are cached for the search anyway.
+        await Promise.all(
+          [slug, ...required.map((entry) => entry.slug)].map((s) =>
+            ensureData(s).catch(() => null),
+          ),
         );
         if (inspecting !== token) return;
 
@@ -2038,7 +2524,7 @@
           "<h3>Inspected</h3>" +
           reqRow(library, version, {
             kind: "root",
-            meta: lineStatus(slug, version),
+            meta: lineStatus(slug, version) + published(slug, version),
           });
         if (ordered.length) {
           html +=
@@ -2048,8 +2534,35 @@
                 reqRow(bySlug(entry.slug), entry.v, {
                   kind: "need",
                   prefix: '<span class="ge">≥</span>',
-                  meta: `${viaText(entry.via)} · ${lineStatus(entry.slug, entry.v)}`,
+                  meta: `${viaText(entry.via)} · ${lineStatus(entry.slug, entry.v)}${published(entry.slug, entry.v)}`,
                 }),
+              )
+              .join("");
+        }
+        // The runtime follows MPS: the inspected MPS build, or the minimum
+        // MPS this build requires.
+        const mpsVersion =
+          slug === MPS_SLUG
+            ? version
+            : ordered.find((entry) => entry.slug === MPS_SLUG)?.v;
+        const runtime = mpsVersion ? runtimeRows(mpsVersion) : [];
+        if (runtime.length) {
+          const via = slug === MPS_SLUG ? "" : ` (the minimum MPS)`;
+          html +=
+            `<h3>JetBrains Runtime for MPS ${esc(mpsVersion)}${via}</h3>` +
+            runtime
+              .map((row) =>
+                row.v
+                  ? reqRow(row.library, row.v, {
+                      kind: "need",
+                      prefix: row.exact ? "" : '<span class="ge">≥</span>',
+                      meta:
+                        (row.exact
+                          ? "exact build MPS is made for"
+                          : `MPS is made for <code>${esc(row.required)}</code>, not in the repository; nearest newer ${esc(lineLabel(lineOf(row.v, "java")))} build`) +
+                        published(row.library.slug, row.v),
+                    })
+                  : `<p class="ins-warn">MPS is made for <code>${esc(row.required)}</code>; no ${esc(row.library.artifactId)} build of it or newer in the repository.</p>`,
               )
               .join("");
         }
@@ -2082,7 +2595,51 @@
             library: bySlug(entry.slug),
             v: entry.v,
           })),
+          ...runtime
+            .filter((row) => row.v)
+            .map((row) => ({ library: row.library, v: row.v })),
         ];
+        setInspectCopy(set);
+      }
+
+      /** A runtime build: which MPS versions it serves. */
+      function inspectRuntime(library, version) {
+        const java = lineOf(version, "java");
+        const users = mpsUsing(library.slug, version);
+        $("ins-sub").textContent =
+          `${lineLabel(java)} · JetBrains Runtime` +
+          (users.length
+            ? ` · used by ${users.length} MPS version${users.length === 1 ? "" : "s"}`
+            : "");
+        const mps = bySlug(MPS_SLUG);
+        let html =
+          "<h3>Inspected</h3>" +
+          reqRow(library, version, {
+            kind: "root",
+            meta: `${esc(lineLabel(java))}${published(library.slug, version)}`,
+          });
+        if (users.length && mps) {
+          html +=
+            "<h3>MPS versions using this build</h3>" +
+            users
+              .map((user) =>
+                reqRow(mps, user.mps, {
+                  kind: "need",
+                  meta: user.exact
+                    ? "made for exactly this build"
+                    : `made for <code>${esc(user.jbr)}</code>, not in the repository; this is the nearest newer build`,
+                }),
+              )
+              .join("");
+        } else {
+          html +=
+            '<p class="muted">No tracked MPS version is made for this build.</p>';
+        }
+        $("ins-body").innerHTML = html;
+        setInspectCopy([{ library, v: version }]);
+      }
+
+      function setInspectCopy(set) {
         $("ins-copy-versions").dataset.copy = copyRef(
           set.map((entry) => entry.v).join("\n"),
         );
@@ -2123,19 +2680,10 @@
         if (indexing) return indexing;
         indexing = (async () => {
           const loaded = await Promise.all(
-            state.libraries.map(async (library) => {
-              if (!state.fullData.has(library.slug)) {
-                const response = await fetch(
-                  library.dataFile ?? `./data/${library.slug}.json`,
-                );
-                if (!response.ok)
-                  throw new Error(
-                    `${library.artifactId}: HTTP ${response.status}`,
-                  );
-                state.fullData.set(library.slug, await response.json());
-              }
-              return { library, data: state.fullData.get(library.slug) };
-            }),
+            state.libraries.map(async (library) => ({
+              library,
+              data: await ensureData(library.slug),
+            })),
           );
           const index = [];
           for (const { library, data } of loaded) {
@@ -2146,6 +2694,7 @@
                   library,
                   v: entry.v,
                   pre: entry.pre,
+                  d: entry.d,
                   line: line.line,
                   hay: (prefix + entry.v).toLowerCase(),
                 });
@@ -2156,6 +2705,7 @@
                 library,
                 v: entry.v,
                 pre: entry.pre,
+                d: entry.d,
                 branch: entry.branch,
                 hay: (prefix + entry.v).toLowerCase(),
               });
@@ -2181,27 +2731,38 @@
         return html.replace(/\u0001/g, "<mark>").replace(/\u0002/g, "</mark>");
       }
 
-      function renderHits(terms) {
-        const matches = searchIndex.filter((entry) =>
-          terms.every((term) => entry.hay.includes(term)),
+      function renderHits(terms, from, to, hideSnapshots) {
+        const dated = Boolean(from || to);
+        const byTerms = searchIndex.filter(
+          (entry) =>
+            !(hideSnapshots && isSnapshot(entry.v)) &&
+            terms.every((term) => entry.hay.includes(term)),
+        );
+        const matches = byTerms.filter((entry) =>
+          inDateRange(entry.d, from, to),
         );
         const rank = new Map(
           state.libraries.map((library, i) => [library.slug, i]),
         );
+        // With a date filter, newest publication first within each library.
         matches.sort(
           (a, b) =>
             rank.get(a.library.slug) - rank.get(b.library.slug) ||
+            (dated ? (b.d ?? "").localeCompare(a.d ?? "") : 0) ||
             compareDesc(a.v, b.v),
         );
 
         const shown = matches.slice(0, HIT_LIMIT);
+        const undated = dated ? byTerms.filter((entry) => !entry.d).length : 0;
         $("q-note").textContent =
-          matches.length === 0
+          (matches.length === 0
             ? "Nothing matches."
             : `${matches.length} match${matches.length === 1 ? "" : "es"}` +
               (matches.length > shown.length
                 ? ` — showing the first ${shown.length}`
-                : "");
+                : "")) +
+          (dated ? ` · published ${rangeText(from, to)}` : "") +
+          (undated ? ` · ${undated} without a date left out` : "");
 
         const groups = new Map();
         for (const entry of shown) {
@@ -2228,6 +2789,7 @@
                             <div class="hit">
                                 <span class="hit-v${entry.pre ? " pre" : ""}"><span class="hit-text">${mark(entry.v, terms)}</span>${tag}</span>
                                 <span class="acts">
+                                    ${dateTag(entry.d)}
                                     <button class="btn btn--out" data-copy="${copyRef(entry.v)}">Copy</button>
                                     <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
                                     ${fileLinks(library, entry.v)}
@@ -2254,7 +2816,14 @@
       async function runSearch() {
         const query = $("q").value.trim().toLowerCase();
         const terms = query.split(/\s+/).filter(Boolean);
-        if (terms.length === 0) {
+        const from = $("q-from").value;
+        const to = $("q-to").value;
+        const hideSnapshots = $("q-snap").checked;
+        // Enabled while there is something to reset to the defaults.
+        $("q-clear-dates").disabled = !(from || to);
+        $("q-clear").disabled = !(terms.length || from || to || !hideSnapshots);
+        // The checkbox only narrows a search; on its own it lists nothing.
+        if (terms.length === 0 && !from && !to) {
           setSearching(false);
           $("q-note").textContent = "";
           $("hits").innerHTML = "";
@@ -2271,12 +2840,34 @@
             return;
           }
           // The box may have been cleared or changed while loading.
-          if ($("q").value.trim().toLowerCase() !== query) return;
+          if (
+            $("q").value.trim().toLowerCase() !== query ||
+            $("q-from").value !== from ||
+            $("q-to").value !== to ||
+            $("q-snap").checked !== hideSnapshots
+          )
+            return;
         }
-        renderHits(terms);
+        renderHits(terms, from, to, hideSnapshots);
       }
 
       $("q").addEventListener("input", runSearch);
+      $("q-from").addEventListener("change", runSearch);
+      $("q-to").addEventListener("change", runSearch);
+      $("q-snap").addEventListener("change", runSearch);
+      $("q-clear-dates").addEventListener("click", () => {
+        $("q-from").value = "";
+        $("q-to").value = "";
+        runSearch();
+      });
+      $("q-clear").addEventListener("click", () => {
+        $("q").value = "";
+        $("q-from").value = "";
+        $("q-to").value = "";
+        $("q-snap").checked = true;
+        runSearch();
+        $("q").focus();
+      });
       $("q").addEventListener("keydown", (event) => {
         // Warm the corpus on the first real keystroke. Deliberately not on
         // focus: the field is focused on load, so that would pull the whole
@@ -2300,14 +2891,7 @@
         $("dlg-count").textContent = "";
         if (!dlg.open) dlg.showModal();
         try {
-          if (!state.fullData.has(slug)) {
-            const response = await fetch(
-              library.dataFile ?? `./data/${slug}.json`,
-            );
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            state.fullData.set(slug, await response.json());
-          }
-          const data = state.fullData.get(slug);
+          const data = await ensureData(slug);
           state.dialog = { library, data, scope };
           const scoped = scope
             ? data.lines.find((line) => line.line === scope)
@@ -2336,6 +2920,11 @@
        */
       function fileLinks(library, version) {
         const urls = artifactUrls(library, version);
+        if (isRuntime(library)) {
+          return `<a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
+                  <a class="btn" href="${esc(urls.browse)}/" target="_blank" rel="noopener noreferrer"
+                     title="One .tgz per platform; opens the version folder">files</a>`;
+        }
         if (isSnapshot(version)) {
           return `<a class="btn" href="${esc(urls.browse)}/" target="_blank" rel="noopener noreferrer"
                      title="SNAPSHOT files are timestamped; opens the version folder">files</a>`;
@@ -2349,6 +2938,7 @@
             <div class="vrow">
                 <span class="v${entry.pre ? " pre" : ""}">${esc(entry.v)}</span>
                 <span class="acts">
+                    ${dateTag(entry.d)}
                     <button class="btn" data-copy="${copyRef(entry.v)}">copy</button>
                     <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
                     ${fileLinks(library, entry.v)}
@@ -2363,21 +2953,43 @@
         if (!state.dialog) return;
         const { library, data, scope } = state.dialog;
         const query = $("dlg-search").value.trim().toLowerCase();
+        const from = $("dlg-from").value;
+        const to = $("dlg-to").value;
+        const dated = Boolean(from || to);
         const pre = $("dlg-pre").checked;
+        const hideSnapshots = $("dlg-snap").checked;
         const branch = $("dlg-branch").checked && !scope;
+        $("dlg-clear-dates").disabled = !dated;
+        $("dlg-clear").disabled = !(
+          query ||
+          dated ||
+          !hideSnapshots ||
+          !pre ||
+          !$("dlg-branch").checked
+        );
         const lines = scope
           ? data.lines.filter((line) => line.line === scope)
           : data.lines;
-        const keep = (entry) =>
+        const keepText = (entry) =>
           (pre || !entry.pre) &&
+          !(hideSnapshots && isSnapshot(entry.v)) &&
           (!query || entry.v.toLowerCase().includes(query));
+        const keep = (entry) => keepText(entry) && inDateRange(entry.d, from, to);
 
-        if (query) {
+        // A text or date filter flattens the lines into one list; a date
+        // filter orders it by publication, newest first.
+        if (query || dated) {
           const pool = lines.flatMap((line) => line.versions);
           if (branch) pool.push(...(data.branchBuilds ?? []));
           const matches = pool.filter(keep);
+          if (dated)
+            matches.sort((a, b) => (b.d ?? "").localeCompare(a.d ?? ""));
+          const undated = dated
+            ? pool.filter((entry) => keepText(entry) && !entry.d).length
+            : 0;
           $("dlg-count").textContent =
-            `${matches.length} match${matches.length === 1 ? "" : "es"}`;
+            `${matches.length} match${matches.length === 1 ? "" : "es"}` +
+            (undated ? ` · ${undated} undated left out` : "");
           const shown = matches.slice(0, SEARCH_LIMIT);
           $("dlg-body").innerHTML =
             (shown.map((entry) => vrow(library, entry)).join("") ||
@@ -2403,7 +3015,7 @@
           html += `
                 <details data-line="${esc(line.line)}">
                     <summary>${esc(lineLabel(line.line))}
-                        <span class="count">${count} · latest ${esc(line.latest)}</span></summary>
+                        <span class="count">${count} · latest ${esc(line.latest)}${line.latestDate ? ` · ${esc(line.latestDate)}` : ""}</span></summary>
                     <div class="body"></div>
                 </details>`;
         }
@@ -2428,13 +3040,17 @@
         if (!body || body.dataset.filled === "true") return;
         const { library, data } = state.dialog;
         const pre = $("dlg-pre").checked;
+        const hideSnapshots = $("dlg-snap").checked;
         const key = details.dataset.line;
         const source =
           key === "__branch"
             ? (data.branchBuilds ?? [])
             : (data.lines.find((line) => line.line === key)?.versions ?? []);
         body.innerHTML = source
-          .filter((entry) => pre || !entry.pre)
+          .filter(
+            (entry) =>
+              (pre || !entry.pre) && !(hideSnapshots && isSnapshot(entry.v)),
+          )
           .map((entry) => vrow(library, entry))
           .join("");
         body.dataset.filled = "true";
@@ -2449,12 +3065,34 @@
         true,
       );
 
-      for (const id of ["dlg-search", "dlg-pre", "dlg-branch"]) {
+      for (const id of [
+        "dlg-search",
+        "dlg-pre",
+        "dlg-branch",
+        "dlg-from",
+        "dlg-to",
+        "dlg-snap",
+      ]) {
         $(id).addEventListener(
           id === "dlg-search" ? "input" : "change",
           renderDialog,
         );
       }
+      $("dlg-clear-dates").addEventListener("click", () => {
+        $("dlg-from").value = "";
+        $("dlg-to").value = "";
+        renderDialog();
+      });
+      $("dlg-clear").addEventListener("click", () => {
+        $("dlg-search").value = "";
+        $("dlg-from").value = "";
+        $("dlg-to").value = "";
+        $("dlg-snap").checked = true;
+        $("dlg-pre").checked = true;
+        $("dlg-branch").checked = true;
+        renderDialog();
+        $("dlg-search").focus();
+      });
       $("dlg-close").addEventListener("click", () => dlg.close());
       dlg.addEventListener("click", (event) => {
         if (event.target === dlg) dlg.close();

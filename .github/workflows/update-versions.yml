@@ -32,8 +32,15 @@ jobs:
       - name: Fetch maven metadata
         run: node --version && node scripts/fetch-versions.mjs
 
+      # Incremental: only versions not cached in data/dates yet. Releases come
+      # from the Nexus search API (swept when many are missing), SNAPSHOTs
+      # from their own metadata, at most 400 single lookups per run.
+      - name: Fetch publication dates
+        run: node scripts/fetch-dates.mjs --max 400
+
       # Incremental: only POMs not cached in data/deps yet, at most 150 per
-      # run, so the initial backfill spreads over many runs.
+      # run, so the initial backfill spreads over many runs. Also rebuilds
+      # data/deps/mps-jbr.json (MPS version -> JBR build).
       - name: Fetch POM dependencies
         run: node scripts/fetch-deps.mjs --max 150
 

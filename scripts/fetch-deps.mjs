@@ -5,6 +5,12 @@
  *
  *   data/deps/<slug>.json      version -> [[depSlug, depVersion], ...]  (null = no POM)
  *   data/deps/graph.json       edges between the latest builds of every line
+ *   data/deps/mps-jbr.json     MPS version -> the JBR build it is made for
+ *
+ * The MPS -> JBR link is not in the MPS POM. Since 2023.3.1 a marker artifact,
+ * com.jetbrains.mps:mps-jbr, carries it as its one dependency (on jbr_jcef);
+ * older releases fall back to scripts/mps-jbr-legacy.json. Runtime artifacts
+ * themselves declare nothing and are not fetched.
  *
  * Published POMs never change, so each one is fetched exactly once: versions
  * already in the cache are skipped, transient failures are retried next run.
@@ -37,7 +43,11 @@ import {
   artifactUrls,
   compareVersions,
   isDevelopmentLine,
+  isMarker,
+  isRuntime,
   isSnapshot,
+  lineOf,
+  matchRuntime,
   parsePomDependencies,
   slugFor,
   snapshotFileVersion,
@@ -117,6 +127,41 @@ async function writeIfChanged(path, payload) {
   return true;
 }
 
+const MPS_SLUG = 'com.jetbrains_mps';
+const MARKER_SLUG = 'com.jetbrains.mps_mps-jbr';
+/** First MPS release with a marker; later versions never fall back to the table. */
+const MARKER_SINCE = '2023.3.1';
+
+/**
+ * Every MPS version with the JBR build it is made for (`jbr`, `source`
+ * marker|table) and, per runtime artifact, the exact build or the nearest
+ * newer one of the same Java version (see matchRuntime).
+ */
+async function buildRuntimeMap(summary, caches) {
+  const mps = await readJsonIfExists(join(DATA_DIR, `${MPS_SLUG}.json`));
+  if (!mps) return null;
+  const legacy = (await readJsonIfExists(join(ROOT, 'scripts', 'mps-jbr-legacy.json')))?.versions ?? {};
+  const markers = caches.get(MARKER_SLUG)?.versions ?? {};
+
+  const available = {};
+  for (const library of summary.libraries.filter(isRuntime)) {
+    const full = await readJsonIfExists(join(DATA_DIR, `${library.slug}.json`));
+    if (full) available[library.slug] = full.lines.flatMap((line) => line.versions.map((entry) => entry.v));
+  }
+
+  const versions = {};
+  for (const line of mps.lines) {
+    for (const { v } of line.versions) {
+      const marked = markers[v]?.find(([slug]) => summary.libraries.some((l) => l.slug === slug && isRuntime(l)))?.[1];
+      const legacyJbr = compareVersions(v, MARKER_SINCE) < 0 ? (legacy[v] ?? legacy[lineOf(v)]) : null;
+      const jbr = marked ?? legacyJbr;
+      if (!jbr) continue;
+      versions[v] = { jbr, source: marked ? 'marker' : 'table', artifacts: matchRuntime(jbr, available) };
+    }
+  }
+  return { versions };
+}
+
 async function main() {
   const max = parseMax(process.argv.slice(2));
   const now = Date.now();
@@ -133,6 +178,7 @@ async function main() {
   const caches = new Map();
   const missing = [];
   for (const [rank, library] of summary.libraries.entries()) {
+    if (isRuntime(library)) continue;
     const full = await readJsonIfExists(join(DATA_DIR, `${library.slug}.json`));
     if (!full) continue;
     const previousFile = await readJsonIfExists(join(DEPS_DIR, `${library.slug}.json`));
@@ -218,6 +264,7 @@ async function main() {
   // to load with the page.
   const lines = {};
   for (const library of summary.libraries) {
+    if (isMarker(library) || isRuntime(library)) continue;
     for (const { line, latest } of library.lines ?? []) {
       lines[line] ??= { latest: {}, edges: [] };
       lines[line].latest[library.slug] = latest;
@@ -227,6 +274,9 @@ async function main() {
     }
   }
   if (await writeIfChanged(join(DEPS_DIR, 'graph.json'), { lines })) written++;
+
+  const runtimeMap = await buildRuntimeMap(summary, caches);
+  if (runtimeMap && await writeIfChanged(join(DEPS_DIR, 'mps-jbr.json'), runtimeMap)) written++;
 
   let left = 0;
   for (const { released, versions } of caches.values()) {
