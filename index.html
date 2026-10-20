@@ -169,6 +169,11 @@
         padding-top: 14px;
         padding-bottom: 14px;
       }
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
       .wordmark {
         font-size: 15px;
         font-weight: 700;
@@ -1279,7 +1284,16 @@
   <body>
     <header class="masthead">
       <div class="wrap">
-        <h1 class="wordmark">MPS Platform Version Finder 3000</h1>
+        <div class="brand">
+          <h1 class="wordmark">MPS Platform Version Finder 3000</h1>
+          <a
+            class="stamp-repo"
+            href="https://github.com/nkoester/mps-libraries-latest-version-finder"
+            target="_blank"
+            rel="noopener noreferrer"
+            >nkoester/mps-libraries-latest-version-finder</a
+          >
+        </div>
 
         <div class="nyan-track" aria-hidden="true">
           <span class="nyan-trail"></span>
@@ -1330,7 +1344,8 @@
             /></label>
             <button class="btn" id="q-clear-dates" disabled>clear dates</button>
             <label
-              ><input type="checkbox" id="q-snap" checked /> hide SNAPSHOTs</label
+              ><input type="checkbox" id="q-snap" checked /> hide
+              SNAPSHOTs</label
             >
             <button class="btn" id="q-clear" disabled>clear all</button>
           </div>
@@ -1430,9 +1445,12 @@
             <label title="Published on or before this date"
               >older than <input type="date" id="dlg-to"
             /></label>
-            <button class="btn" id="dlg-clear-dates" disabled>clear dates</button>
+            <button class="btn" id="dlg-clear-dates" disabled>
+              clear dates
+            </button>
             <label
-              ><input type="checkbox" id="dlg-snap" checked /> hide SNAPSHOTs</label
+              ><input type="checkbox" id="dlg-snap" checked /> hide
+              SNAPSHOTs</label
             >
             <button class="btn" id="dlg-clear" disabled>clear all</button>
           </span>
@@ -1486,9 +1504,6 @@
         isMarker,
         isRuntime,
       } from "./versions-lib.js";
-
-      const REPO =
-        "https://github.com/nkoester/mps-libraries-latest-version-finder";
 
       /** Release lines given visual priority in the picker. Edit to taste. */
       const KEY_LINES = new Set(["2026.1", "2025.1", "2024.1", "9999.9"]);
@@ -1748,8 +1763,7 @@
                 <time datetime="${esc(state.generatedAt)}" title="${esc(state.generatedAt)}">${esc(absoluteTime(state.generatedAt))}</time>
                 <span class="ago" id="ago">${esc(relativeTime(state.generatedAt))}</span>
             </span>
-            ${checkLine()}
-            <a class="stamp-repo" href="${REPO}" target="_blank" rel="noopener noreferrer">nkoester/mps-libraries-latest-version-finder</a>`;
+            ${checkLine()}`;
       }
 
       const RUN_OUTCOME = {
@@ -2054,7 +2068,11 @@
       function mpsUsing(slug, version) {
         return Object.entries(state.runtime ?? {})
           .filter(([, match]) => match.artifacts[slug]?.v === version)
-          .map(([mps, match]) => ({ mps, ...match, exact: match.artifacts[slug].exact }))
+          .map(([mps, match]) => ({
+            mps,
+            ...match,
+            exact: match.artifacts[slug].exact,
+          }))
           .sort((a, b) => compareVersions(b.mps, a.mps));
       }
 
@@ -2134,7 +2152,9 @@
         const edges = [...declared.edges];
         const declaresAny = new Set(
           declared.edges
-            .filter(([from, to]) => declared.latest[from] && declared.latest[to])
+            .filter(
+              ([from, to]) => declared.latest[from] && declared.latest[to],
+            )
             .map(([from]) => from),
         );
         for (const slug of Object.keys(declared.latest)) {
@@ -2162,6 +2182,17 @@
         return runtime.exact
           ? `${a} is made for ${b} ${version}`
           : `${a} is made for ${runtime.required}, not in the repository; nearest newer: ${version}`;
+      }
+
+      /** Legend for the edge kinds actually drawn on this line. */
+      function chainNote(edges) {
+        const kinds = new Set(edges.map(([, , , kind]) => kind));
+        const parts = [];
+        if (kinds.has(undefined)) parts.push("Solid: explicit POM dependency.");
+        if (kinds.has("implicit")) parts.push("Dotted: implicit, not in the POM.");
+        return parts.length
+          ? `<p class="chain-note">${parts.join("<br />")}</p>`
+          : "";
       }
 
       function edgeClass([, , , kind], runtime) {
@@ -2275,10 +2306,21 @@
         place(best);
 
         const top = layers.length - 1;
+        // JBR alone in the bottom layer hangs off MPS by one straight edge,
+        // so its gap is a quarter of the others.
+        const runtimeRow =
+          layers[0].length === 1 && layers[0][0] === JBR_PRIMARY;
+        const gapAbove = (d) =>
+          d === 0 && runtimeRow ? CHAIN.gy / 4 : CHAIN.gy;
+        const rowTop = [];
+        for (let d = top, at = 0; d >= 0; d--) {
+          rowTop[d] = at;
+          if (d > 0) at += CHAIN.h + gapAbove(d - 1);
+        }
         const x = (slug) => position.get(slug) * (CHAIN.w + CHAIN.gx);
-        const y = (slug) => (top - depth.get(slug)) * (CHAIN.h + CHAIN.gy);
+        const y = (slug) => rowTop[depth.get(slug)];
         const width = widest * CHAIN.w + (widest - 1) * CHAIN.gx;
-        const height = layers.length * CHAIN.h + (layers.length - 1) * CHAIN.gy;
+        const height = rowTop[0] + CHAIN.h;
 
         // An edge that skips a layer would run behind the boxes in between,
         // so it leaves through the gap below its source, runs down a lane
@@ -2349,6 +2391,10 @@
           const x2 = ports.get(`1:${from}>${to}`);
           const y1 = y(from) + CHAIN.h;
           const y2 = y(to) - 3;
+          if (gapAbove(depth.get(to)) < CHAIN.gy) {
+            const mid = (y1 + y2) / 2;
+            return `M${x1} ${y1} C${x1} ${mid}, ${x2} ${mid}, ${x2} ${y2}`;
+          }
           const a = y1 + STUB;
           const b = y2 - STUB;
           // Edges between neighbouring layers bend only inside a band in the
@@ -2412,7 +2458,7 @@
         const right = lanes.right * LANE;
         panel.innerHTML = `
             <h3>Dependency chain</h3>
-            <p class="chain-note">As declared by the latest ${esc(lineLabel(line))} builds. Arrow = needs.${edges.some((e) => e[3] === "implicit") ? " Dotted: built against MPS, not declared in the POM." : ""}${runtime ? ` JBR: the build MPS is made for${runtime.exact ? "" : " (dashed: nearest newer, exact one missing)"}.` : ""}</p>
+            ${chainNote(edges)}
             <svg viewBox="${-2 - left} -2 ${width + 4 + left + right} ${height + 4}" style="max-width:${(((width + 4 + left + right) / (2 * CHAIN.w + CHAIN.gx + 4)) * 100).toFixed(2)}%" role="img" aria-label="Dependencies between the latest ${esc(line)} builds">
                 <defs>
                     <marker id="chain-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -3040,7 +3086,8 @@
           (pre || !entry.pre) &&
           !(hideSnapshots && isSnapshot(entry.v)) &&
           (!query || entry.v.toLowerCase().includes(query));
-        const keep = (entry) => keepText(entry) && inDateRange(entry.d, from, to);
+        const keep = (entry) =>
+          keepText(entry) && inDateRange(entry.d, from, to);
 
         // A text or date filter flattens the lines into one list; a date
         // filter orders it by publication, newest first.
