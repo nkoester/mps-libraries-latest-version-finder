@@ -33,6 +33,9 @@
         --accent-soft: #e4e8fb;
         --signal: #b4164f;
         --signal-soft: #fbe6ee;
+        /* Inspect: what a build requires. */
+        --need: #a35a00;
+        --need-soft: #fdf2e3;
 
         --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
         --mono:
@@ -67,6 +70,8 @@
           --accent-soft: #1d2540;
           --signal: #ff76a8;
           --signal-soft: #331a27;
+          --need: #f2a94e;
+          --need-soft: #2b2114;
           --on-accent: #0d1218;
           --grid-line: rgba(128, 148, 255, 0.055);
           --masthead-bg: rgba(21, 27, 36, 0.78);
@@ -422,6 +427,31 @@
       .hit:hover {
         border-color: var(--rule-strong);
       }
+      .hit.inspectable {
+        cursor: pointer;
+      }
+      .hit .seg {
+        cursor: copy;
+      }
+      /* Search hits can be long branch builds: wrap instead of cutting off. */
+      .hit .seg--version,
+      .vrow .seg--version {
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+      .hit:hover .seg--version::after,
+      .vrow:hover .seg--version::after {
+        opacity: 0.5;
+      }
+      .hit .seg mark {
+        background: var(--accent-soft);
+        color: var(--accent);
+        border-radius: 2px;
+      }
+      .hit .seg--version.pre mark {
+        background: var(--signal-soft);
+        color: var(--signal);
+      }
       .hit-v {
         font-family: var(--mono);
         font-size: 13.5px;
@@ -773,6 +803,15 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+      .seg,
+      .req .cp {
+        user-select: text;
+      }
+      .seg:focus-visible,
+      .req .cp:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: -2px;
+      }
       .seg:first-child {
         border-left: 3px solid var(--accent);
       }
@@ -901,6 +940,35 @@
       }
       .btn--out:hover {
         border-color: var(--accent);
+      }
+      #copy-tip {
+        inset: auto;
+        margin: 0;
+        position: fixed;
+        padding: 3px 8px;
+        border: 0;
+        border-radius: var(--radius);
+        background: var(--ink);
+        color: var(--ground);
+        font-family: var(--display);
+        font-size: 11.5px;
+        font-weight: 500;
+        pointer-events: none;
+        box-shadow: 0 4px 12px var(--shadow);
+      }
+      /* Copy cells flash where the copy happened. */
+      @keyframes copied-flash {
+        from {
+          background: var(--accent-soft);
+          color: var(--accent);
+          box-shadow: inset 0 0 0 2px var(--accent);
+        }
+        to {
+          box-shadow: inset 0 0 0 2px transparent;
+        }
+      }
+      .flash {
+        animation: copied-flash 0.9s ease-out;
       }
       .btn.copied {
         background: var(--accent);
@@ -1099,19 +1167,27 @@
         color: var(--ink-3);
       }
       .vrow {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
         align-items: center;
         gap: 14px;
-        padding: 3px 0 3px 14px;
+        padding: 2px 0 2px 14px;
+        border-radius: var(--radius);
       }
-      .vrow .v {
-        font-family: var(--mono);
+      .vrow.inspectable {
+        cursor: pointer;
+      }
+      .vrow:hover {
+        background: var(--tools-bg);
+      }
+      /* Group and artifact repeat on every row: size them to their content
+         so the version keeps the room. */
+      .vrow .coord {
         font-size: 12.5px;
-        overflow-wrap: anywhere;
+        grid-template-columns: auto auto minmax(0, 1fr) auto;
       }
-      .vrow .v.pre {
-        color: var(--signal);
+      .vrow .seg {
+        padding: 3px 8px;
       }
       .muted {
         color: var(--ink-2);
@@ -1133,7 +1209,8 @@
         padding-top: 12px;
       }
       .ins-body h3 {
-        margin: 16px 0 6px;
+        /* About a line of air between sections. */
+        margin: 30px 0 6px;
         font-size: 10px;
         font-weight: 500;
         letter-spacing: 0.1em;
@@ -1157,8 +1234,19 @@
       .req.root {
         background: var(--accent-soft);
       }
+      .req.need {
+        border-left-color: var(--need);
+        background: var(--need-soft);
+      }
       .req.free {
         border-left-color: var(--rule-strong);
+        border-left-style: dashed;
+      }
+      .ins-body h3.need {
+        color: var(--need);
+      }
+      .ins-body h3.free {
+        color: var(--ink-3);
       }
       .req .ga {
         font-family: var(--mono);
@@ -1175,6 +1263,23 @@
         font-size: 13px;
         font-weight: 700;
         overflow-wrap: anywhere;
+      }
+      /* Group, artifact and version copy on click, like the board's cells. */
+      .req .cp {
+        font: inherit;
+        color: inherit;
+        border: 0;
+        background: none;
+        padding: 1px 3px;
+        margin: 0 -1px;
+        border-radius: 2px;
+        cursor: copy;
+        text-align: left;
+        overflow-wrap: anywhere;
+      }
+      .req .cp:hover {
+        background: var(--accent-soft);
+        color: var(--accent);
       }
       .req .rv.pre {
         color: var(--signal);
@@ -1412,6 +1517,8 @@
         <div class="wrap" id="colophon"></div>
       </footer>
     </main>
+
+    <div id="copy-tip" popover="manual" role="status"></div>
 
     <dialog id="all-versions">
       <div class="dlg">
@@ -1954,13 +2061,13 @@
         return `
             <article class="node" ${delay}>
                 <div class="coord">
-                    <button class="seg" data-copy="${copyRef(library.groupId)}"
-                            title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</button>
-                    <button class="seg" data-copy="${copyRef(library.artifactId)}"
-                            title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</button>
-                    <button class="seg seg--version${latestIsPreRelease ? " pre" : ""}"
+                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
+                            title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</span>
+                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
+                            title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</span>
+                    <span class="seg seg--version${latestIsPreRelease ? " pre" : ""}" role="button" tabindex="0"
                             data-copy="${copyRef(latest)}"
-                            title="Copy version ${esc(latest)}">${esc(latest)}</button>
+                            title="Copy version ${esc(latest)}">${esc(latest)}</span>
                     ${latestIsPreRelease ? '<span class="tag">pre-release</span>' : ""}
                     ${coordDate(entry.latestDate)}
                 </div>
@@ -2043,12 +2150,12 @@
         return `
             <article class="node runtime" ${delay}>
                 <div class="coord">
-                    <button class="seg" data-copy="${copyRef(library.groupId)}"
-                            title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</button>
-                    <button class="seg" data-copy="${copyRef(library.artifactId)}"
-                            title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</button>
-                    <button class="seg seg--version" data-copy="${copyRef(v)}"
-                            title="Copy version ${esc(v)}">${esc(v)}</button>
+                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
+                            title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</span>
+                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
+                            title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</span>
+                    <span class="seg seg--version" role="button" tabindex="0" data-copy="${copyRef(v)}"
+                            title="Copy version ${esc(v)}">${esc(v)}</span>
                     ${runtimeTag(row)}
                     ${coordDate(dateOf(library.slug, v))}
                 </div>
@@ -2564,12 +2671,15 @@
       function reqRow(library, version, { kind, meta, prefix = "" }) {
         return `
             <div class="req ${kind}">
-                <span class="ga">${esc(library.groupId)}:<b>${esc(library.artifactId)}</b></span>
-                <span class="rv${isPreRelease(version) ? " pre" : ""}">${prefix}${esc(version)}</span>
+                <span class="ga"><span class="cp" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
+                        title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</span>:<span class="cp" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
+                        title="Copy artifact ${esc(library.artifactId)}"><b>${esc(library.artifactId)}</b></span></span>
+                <span class="rv${isPreRelease(version) ? " pre" : ""}">${prefix}<span class="cp" role="button" tabindex="0" data-copy="${copyRef(version)}"
+                        title="Copy version ${esc(version)}">${esc(version)}</span></span>
                 <span class="acts">
                     <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, version))}"
                             title="Copy ${esc(mavenCoordinate(library, version))}">Copy</button>
-                    ${kind === "root" ? "" : inspectButton(library, version, "btn", "inspect")}
+                    ${kind === "root" ? "" : inspectButton(library, version, "btn btn--out", "Inspect")}
                 </span>
                 <span class="meta">${meta}</span>
             </div>`;
@@ -2640,7 +2750,7 @@
           });
         if (ordered.length) {
           html +=
-            "<h3>Requires at least</h3>" +
+            '<h3 class="need">Requires at least</h3>' +
             ordered
               .map((entry) =>
                 reqRow(bySlug(entry.slug), entry.v, {
@@ -2661,7 +2771,7 @@
         if (runtime.length) {
           const via = slug === MPS_SLUG ? "" : ` (the minimum MPS)`;
           html +=
-            `<h3>JetBrains Runtime for MPS ${esc(mpsVersion)}${via}</h3>` +
+            `<h3 class="need">JetBrains Runtime for MPS ${esc(mpsVersion)}${via}</h3>` +
             runtime
               .map((row) =>
                 row.v
@@ -2680,7 +2790,7 @@
         }
         if (others.length) {
           html +=
-            "<h3>Not required by this build</h3>" +
+            '<h3 class="free">Not required by this build</h3>' +
             others
               .map((other) =>
                 reqRow(other, latestIn(other.slug, line), {
@@ -2736,7 +2846,7 @@
             users
               .map((user) =>
                 reqRow(mps, user.mps, {
-                  kind: "need",
+                  kind: "user",
                   meta: user.exact
                     ? "made for exactly this build"
                     : `made for <code>${esc(user.jbr)}</code>, not in the repository; this is the nearest newer build`,
@@ -2897,17 +3007,11 @@
                           : entry.pre
                             ? '<span class="tag">pre-release</span>'
                             : "";
-                        return `
-                            <div class="hit">
-                                <span class="hit-v${entry.pre ? " pre" : ""}"><span class="hit-text">${mark(entry.v, terms)}</span>${tag}</span>
-                                <span class="acts">
-                                    ${dateTag(entry.d)}
-                                    <button class="btn btn--out" data-copy="${copyRef(entry.v)}">Copy</button>
-                                    <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
-                                    ${fileLinks(library, entry.v)}
-                                    ${entry.branch ? "" : inspectButton(library, entry.v, "btn", "inspect")}
-                                </span>
-                            </div>`;
+                        return versionRow(library, entry, {
+                          kind: "hit",
+                          terms,
+                          tag,
+                        });
                       })
                       .join("")}
                 </div>`;
@@ -3045,19 +3149,55 @@
                 <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>`;
       }
 
-      function vrow(library, entry) {
+      /**
+       * One version as a row of copy cells (group | artifact | version, as
+       * on the board) plus its date and actions. Clicking the rest of the
+       * row inspects it; branch builds have no Inspect. Shared by search
+       * hits (`hit`) and All versions (`vrow`).
+       */
+      function versionRow(library, entry, { kind, terms = [], tag = "" }) {
+        const inspect = entry.branch
+          ? ""
+          : ` data-act="inspect" data-slug="${esc(library.slug)}" data-v="${esc(entry.v)}"
+              title="Inspect ${esc(mavenCoordinate(library, entry.v))}"`;
         return `
-            <div class="vrow">
-                <span class="v${entry.pre ? " pre" : ""}">${esc(entry.v)}</span>
-                <span class="acts">
-                    ${dateTag(entry.d)}
-                    <button class="btn" data-copy="${copyRef(entry.v)}">copy</button>
-                    <button class="btn" data-copy="${copyRef(mavenCoordinate(library, entry.v))}">coord</button>
-                    ${fileLinks(library, entry.v)}
-                    ${entry.branch ? "" : inspectButton(library, entry.v, "btn", "inspect")}
-                </span>
+            <div class="${kind}${entry.branch ? "" : " inspectable"}"${inspect}>
+                <div class="coord">
+                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
+                          title="Copy group ${esc(library.groupId)}">${mark(library.groupId, terms)}</span>
+                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
+                          title="Copy artifact ${esc(library.artifactId)}">${mark(library.artifactId, terms)}</span>
+                    <span class="seg seg--version${entry.pre ? " pre" : ""}" role="button" tabindex="0" data-copy="${copyRef(entry.v)}"
+                          title="Copy version ${esc(entry.v)}"><span class="hit-text">${mark(entry.v, terms)}</span></span>
+                    ${tag}
+                </div>
+                <span class="acts">${kind === "vrow" ? boardActs(library, entry) : hitActs(library, entry)}</span>
             </div>`;
       }
+
+      const coordinateCopy = (library, version, classes, label) =>
+        `<button class="${classes}" data-copy="${copyRef(mavenCoordinate(library, version))}"
+                 title="Copy ${esc(mavenCoordinate(library, version))}">${label}</button>`;
+
+      function hitActs(library, entry) {
+        return `
+            ${dateTag(entry.d)}
+            ${coordinateCopy(library, entry.v, "btn", "coord")}
+            ${fileLinks(library, entry.v)}
+            ${entry.branch ? "" : inspectButton(library, entry.v, "btn", "inspect")}`;
+      }
+
+      /** All versions: same order and buttons as the Latest board. */
+      function boardActs(library, entry) {
+        return `
+            ${dateTag(entry.d)}
+            ${fileLinks(library, entry.v)}
+            ${coordinateCopy(library, entry.v, "btn btn--out", "Copy")}
+            ${entry.branch ? "" : inspectButton(library, entry.v, "btn btn--out", "Inspect")}`;
+      }
+
+      const vrow = (library, entry) =>
+        versionRow(library, entry, { kind: "vrow" });
 
       const SEARCH_LIMIT = 400;
 
@@ -3213,26 +3353,78 @@
 
       /* -------------------------------------------------------------- events */
 
+      /**
+       * Copy feedback is a small balloon above the clicked element; the
+       * element's own text never changes, so a double click still selects
+       * the value. A popover sits in the top layer, above open dialogs.
+       */
+      const tip = $("copy-tip");
+      let tipTimer = null;
+      function balloon(target, text, ms) {
+        tip.textContent = text;
+        if (!tip.matches(":popover-open")) tip.showPopover();
+        // Measured in screen pixels; the root CSS zoom scales whatever is set,
+        // so the position is divided by it.
+        const zoom =
+          Number(getComputedStyle(document.documentElement).zoom) || 1;
+        const box = target.getBoundingClientRect();
+        const own = tip.getBoundingClientRect();
+        const left = Math.min(
+          Math.max(4, box.left + box.width / 2 - own.width / 2),
+          innerWidth - own.width - 4,
+        );
+        const top = Math.max(4, box.top - own.height - 6);
+        tip.style.left = `${left / zoom}px`;
+        tip.style.top = `${top / zoom}px`;
+        clearTimeout(tipTimer);
+        tipTimer = setTimeout(() => tip.hidePopover(), ms);
+      }
+
       async function copy(button, text) {
-        const original = button.textContent;
         try {
           await navigator.clipboard.writeText(text);
-          button.textContent = "Copied";
-          button.classList.add("copied");
-          setTimeout(() => {
-            button.textContent = original;
-            button.classList.remove("copied");
-          }, 1200);
+          if (button.matches("button")) {
+            button.classList.add("copied");
+            setTimeout(() => button.classList.remove("copied"), 600);
+          } else {
+            // Restart the flash on repeated copies.
+            button.classList.remove("flash");
+            void button.offsetWidth;
+            button.classList.add("flash");
+          }
+          balloon(button, "Copied", 1200);
         } catch (error) {
           console.error("Copy failed:", error);
-          button.textContent = "Press ⌘C";
-          setTimeout(() => {
-            button.textContent = original;
-          }, 1600);
+          balloon(button, "Press ⌘C", 1600);
         }
       }
 
+      /** Copy cells and search rows: text first, click action second. */
+      const TEXTUAL = ".seg, .cp, .hit, .vrow";
+      let pendingClick = null;
+
+      function selectedWithin(element) {
+        const selection = getSelection();
+        if (!selection || selection.isCollapsed) return false;
+        for (let i = 0; i < selection.rangeCount; i++)
+          if (selection.getRangeAt(i).intersectsNode(element)) return true;
+        return false;
+      }
+
+      function act(target) {
+        if (target.dataset.copy !== undefined) {
+          copy(target, copyRegistry[Number(target.dataset.copy)]);
+          return;
+        }
+        if (target.dataset.act === "all")
+          openAll(target.dataset.slug, target.dataset.line ?? null);
+        if (target.dataset.act === "inspect")
+          openInspect(target.dataset.slug, target.dataset.v);
+      }
+
       document.addEventListener("click", (event) => {
+        // Links inside an inspectable row open the link, not Inspect.
+        if (event.target.closest("a")) return;
         const chip = event.target.closest(".line-chip");
         if (chip) {
           state.selected = chip.dataset.line;
@@ -3242,14 +3434,31 @@
         }
         const target = event.target.closest("[data-copy], [data-act]");
         if (!target) return;
-        if (target.dataset.copy !== undefined) {
-          copy(target, copyRegistry[Number(target.dataset.copy)]);
+        if (!target.matches(TEXTUAL)) {
+          act(target);
           return;
         }
-        if (target.dataset.act === "all")
-          openAll(target.dataset.slug, target.dataset.line ?? null);
-        if (target.dataset.act === "inspect")
-          openInspect(target.dataset.slug, target.dataset.v);
+        // Text keeps the browser's selection behaviour: a drag-select or a
+        // double click never acts. Copying changes nothing on screen, so it
+        // happens on the first click; opening Inspect waits until the click
+        // is clearly not the start of a double click.
+        clearTimeout(pendingClick);
+        if (event.detail > 1 || selectedWithin(target)) return;
+        if (target.dataset.copy !== undefined) {
+          act(target);
+          return;
+        }
+        pendingClick = setTimeout(() => {
+          if (!selectedWithin(target)) act(target);
+        }, 250);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        const target = event.target.closest?.("[role=button][data-copy]");
+        if (!target) return;
+        event.preventDefault();
+        act(target);
       });
 
       load();
