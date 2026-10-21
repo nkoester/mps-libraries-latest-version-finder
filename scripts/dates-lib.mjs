@@ -1,6 +1,7 @@
 /**
- * Publication dates, kept in data/dates/<slug>.json (version -> YYYY-MM-DD,
- * null when the repository has no date for it) and copied into the version
+ * Publication dates, kept in data/dates/<slug>.json (version -> UTC timestamp
+ * such as 2026-09-17T13:35:08Z, or a bare YYYY-MM-DD from before times were
+ * kept; null when the repository has no date for it) and copied into the version
  * data as `d` on every entry and `latestDate` on every line.
  *
  * Shared by fetch-versions.mjs, which applies the cache while it builds, and
@@ -16,7 +17,7 @@ export function datesPath(root, slug) {
   return join(root, 'data', 'dates', `${slug}.json`);
 }
 
-/** version -> date for one library; empty when there is no cache yet. */
+/** version -> timestamp for one library; empty when there is no cache yet. */
 export async function readDates(root, slug) {
   const path = datesPath(root, slug);
   if (!existsSync(path)) return {};

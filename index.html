@@ -1932,17 +1932,28 @@
 
       /* --------------------------------------------------------------- dates */
 
+      /** Publication time in the reader's zone; a bare date stays as it is. */
+      function publishedText(value) {
+        return value.length === 10 ? value : absoluteTime(value);
+      }
+
+      function publishedTitle(value) {
+        return value.length === 10
+          ? "Published to artifacts.itemis.cloud"
+          : `Published to artifacts.itemis.cloud at ${value}`;
+      }
+
       /** Publication date cell; empty when the repository gave none. */
       function dateTag(date) {
         return date
-          ? `<span class="date" title="Published to artifacts.itemis.cloud">${esc(date)}</span>`
+          ? `<span class="date" title="${esc(publishedTitle(date))}">${esc(publishedText(date))}</span>`
           : "";
       }
 
       /** Board variant: a second line under the version cell. */
       function coordDate(date) {
         return date
-          ? `<span class="coord-date" title="Published to artifacts.itemis.cloud">published ${esc(date)}</span>`
+          ? `<span class="coord-date" title="${esc(publishedTitle(date))}">published ${esc(publishedText(date))}</span>`
           : "";
       }
 
@@ -2594,7 +2605,7 @@
                     <span class="seg seg--version" role="button" tabindex="0" data-copy="${copyRef(v)}"
                           title="Copy version ${esc(v)}">${esc(v)}</span>
                     <span class="tags">${tags}</span>
-                    <span class="coord-date">${date ? `published ${esc(date)} · ` : ""}${meta}</span>
+                    <span class="coord-date">${date ? `<span title="${esc(publishedTitle(date))}">published ${esc(publishedText(date))}</span> · ` : ""}${meta}</span>
                 </div>
                 <div class="acts">
                     ${fileLinks(library, v)}
@@ -3195,7 +3206,7 @@
 
       const published = (slug, version) => {
         const date = dateOf(slug, version);
-        return date ? ` · published ${esc(date)}` : "";
+        return date ? ` · published ${esc(publishedText(date))}` : "";
       };
 
       function reqRow(library, version, { kind, meta, prefix = "" }) {
@@ -3811,7 +3822,7 @@
           html += `
                 <details data-line="${esc(line.line)}"${line.discouraged ? ' class="discouraged"' : ""}>
                     <summary>${esc(lineLabel(line.line))}
-                        <span class="count">${count} · latest ${esc(line.latest)}${line.latestDate ? ` · ${esc(line.latestDate)}` : ""}${line.discouraged ? ` · <span class="bad" title="${esc(line.discouraged)}">discouraged</span>` : ""}</span></summary>
+                        <span class="count">${count} · latest ${esc(line.latest)}${line.latestDate ? ` · ${esc(publishedText(line.latestDate))}` : ""}${line.discouraged ? ` · <span class="bad" title="${esc(line.discouraged)}">discouraged</span>` : ""}</span></summary>
                     <div class="body"></div>
                 </details>`;
         }

@@ -66,7 +66,7 @@ marked **no build for this line** — the absence is often the answer you needed
 Under the libraries, the board lists the **JetBrains Runtime** the selected
 line's MPS build is made for (see [MPS and the JetBrains Runtime](#mps-and-the-jetbrains-runtime)).
 
-Every version shows its **publication date**. The *newer than* / *older than*
+Every version shows its **publication date and time**. The *newer than* / *older than*
 fields under the search box and in **All versions** filter by it (both ends
 inclusive); a date filter alone lists everything in the range, newest first.
 
@@ -97,12 +97,21 @@ through **All versions**.
 
 ## Publication dates
 
-The date is when the version was **uploaded to artifacts.itemis.cloud**, read
-from the Nexus search API (`lastModified` of the POM) and, for SNAPSHOTs, which
-the search index does not cover, from the version's own `maven-metadata.xml`.
-It is cached in `data/dates/<slug>.json` and looked up once per version.
+The date and time is when the version was **uploaded to artifacts.itemis.cloud**,
+read from the Nexus search API (`lastModified` of the POM) and, for SNAPSHOTs,
+which the search index does not cover, from the version's own `maven-metadata.xml`.
+It is cached in `data/dates/<slug>.json` as a UTC timestamp
+(`2026-09-17T13:35:08Z`). Nexus is the ground truth, but a regular run looks
+up only versions not cached yet. Refreshes replace cached values with what
+Nexus returns now: the daily 05:00 UTC run re-reads every SNAPSHOT
+(`--snapshots`; a redeploy changes its time), and `--full` re-sweeps every
+library to refresh all release dates. `--full` is local only, never in CI.
+The page shows it in
+the reader's time zone, and the *newer than* / *older than* filter compares
+local calendar days. Entries cached as a bare date (before times were kept)
+are looked up again by the next run.
 
-It is not the upstream release date:
+It is not the upstream release time:
 
 - Everything published before mid-2022 was migrated to this Nexus then and
   carries a migration date (2022-07 to 2022-11).
@@ -165,7 +174,7 @@ it.
 
 | Workflow | Schedule | Does |
 | --- | --- | --- |
-| `update-versions.yml` | every 6 h — 05:00, 11:00, 17:00, 23:00 UTC | fetch metadata, dates and POM dependencies, extract the Gradle plugin contract, check assumptions; commit `versions.json`, `data/` and `scripts/gradle-plugin-compat.json` **only if something changed** |
+| `update-versions.yml` | every 6 h — 05:00, 11:00, 17:00, 23:00 UTC (SNAPSHOT dates re-read at 05:00 only) | fetch metadata, dates and POM dependencies, extract the Gradle plugin contract, check assumptions; commit `versions.json`, `data/` and `scripts/gradle-plugin-compat.json` **only if something changed** |
 | `monthly-release.yml` | 1st of month, 06:00 UTC | publish one consolidated version list as a GitHub Release |
 
 The update job skips the commit when only the timestamp would change, so
@@ -190,7 +199,7 @@ To adjust the cron timezone, edit the `cron:` line in `update-versions.yml`
 
 ```bash
 node scripts/fetch-versions.mjs   # refresh versions.json + data/
-node scripts/fetch-dates.mjs      # publication dates (--max <n>, --full)
+node scripts/fetch-dates.mjs      # publication dates (--max <n>, --snapshots, --full)
 node scripts/fetch-deps.mjs       # POM dependencies + MPS -> JBR (--max <n>)
 node scripts/extract-gradle-plugin-compat.mjs  # plugin contract (clones 2 public repos)
 node scripts/check-assumptions.mjs             # writes data/assumptions-report.md

@@ -80,7 +80,7 @@ async function main() {
       for (const line of full.lines) {
         if (line.discouraged || isDevelopmentLine(line.line)) continue;
         if (compareVersions(line.line, newest.line) > 0) {
-          add('error', 'abandoned-line', `${name}: line ${line.line} ranks above ${newest.line}, but the newest upload (${newest.v}, ${newest.d}) is in ${newest.line}. Mark ${line.line} as discouraged in scripts/libraries.json if it is abandoned.`);
+          add('error', 'abandoned-line', `${name}: line ${line.line} ranks above ${newest.line}, but the newest upload (${newest.v}, ${newest.d.slice(0, 10)}) is in ${newest.line}. Mark ${line.line} as discouraged in scripts/libraries.json if it is abandoned.`);
         }
       }
       if (recommended && recommended.line !== newest.line && !recommended.discouraged) {
@@ -106,7 +106,7 @@ async function main() {
   for (const entry of mps ? releasesOf(mps) : []) {
     if (entry.pre || compareVersions(entry.v, MARKER_SINCE) < 0 || runtime[entry.v]) continue;
     if (entry.d && daysSince(entry.d) < MARKER_GRACE_DAYS) continue;
-    add('warn', 'mps-jbr', `MPS ${entry.v} (published ${entry.d ?? 'undated'}) has no JBR mapping: no com.jetbrains.mps:mps-jbr marker for it yet`);
+    add('warn', 'mps-jbr', `MPS ${entry.v} (published ${entry.d?.slice(0, 10) ?? 'undated'}) has no JBR mapping: no com.jetbrains.mps:mps-jbr marker for it yet`);
   }
 
   // 5. Dates and dependencies not fetched yet (informational).

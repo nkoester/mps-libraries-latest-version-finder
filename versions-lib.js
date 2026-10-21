@@ -375,13 +375,27 @@ export function pluginContract(compat, pluginVersion, available, mpsLine) {
 /* ------------------------------------------------------------------- dates */
 
 /**
- * Whether a `YYYY-MM-DD` date lies within [from, to]; either bound may be
- * empty. Same-format ISO dates compare correctly as strings.
+ * Calendar day `YYYY-MM-DD` of a publication timestamp in the local time
+ * zone, so it matches the time shown. A bare date is a day already.
  */
-export function inDateRange(date, from, to) {
+export function publishedDay(value) {
+  if (!value || value.length === 10) return value ?? null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  const pad = (n) => String(n).padStart(2, '0');
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+}
+
+/**
+ * Whether a publication timestamp falls on a day within [from, to]
+ * (`YYYY-MM-DD`, local); either bound may be empty. Same-format ISO dates
+ * compare correctly as strings.
+ */
+export function inDateRange(value, from, to) {
   if (!from && !to) return true;
-  if (!date) return false;
-  return (!from || date >= from) && (!to || date <= to);
+  const day = publishedDay(value);
+  if (!day) return false;
+  return (!from || day >= from) && (!to || day <= to);
 }
 
 /* --------------------------------------------------------------- MPS -> JBR */

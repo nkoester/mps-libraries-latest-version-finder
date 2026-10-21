@@ -3,12 +3,13 @@
  * Records when each version was published to the repository. Run after
  * fetch-versions.mjs; writes:
  *
- *   data/dates/<slug>.json     version -> YYYY-MM-DD  (null = repository has no date)
+ *   data/dates/<slug>.json     version -> UTC timestamp, e.g. 2026-09-17T13:35:08Z
+ *                              (null = repository has no date)
  *
  * and copies the dates into versions.json and data/<slug>.json.
  *
- * The date is the upload date on artifacts.itemis.cloud, not the upstream
- * release date: versions migrated to this Nexus in mid-2022 all carry their
+ * The timestamp is the upload time on artifacts.itemis.cloud, not the upstream
+ * release time: versions migrated to this Nexus in mid-2022 all carry their
  * migration date, and mirrored MPS builds carry the date they were mirrored.
  *
  * Sources:
@@ -18,14 +19,22 @@
  *   - SNAPSHOTs are not in the search index, so their own
  *     maven-metadata.xml is read for `<lastUpdated>`.
  *
- * Published dates do not change, so each version is looked up once. A
- * version the repository does not know yet is retried on later runs and only
- * recorded as null after NOT_FOUND_TRIES runs spanning NOT_FOUND_GRACE_MS.
+ * Nexus is the ground truth, but a regular run only looks up versions not
+ * cached yet; a sweep then fills only those. Two opt-in refreshes replace
+ * cached values with whatever Nexus returns now:
+ *   --snapshots  re-read every cached SNAPSHOT (a redeploy changes its time);
+ *                CI passes it once a day.
+ *   --full       re-sweep every library, refreshing all release dates.
+ *                Local only, never in CI.
+ * A value Nexus no longer reports is kept. Entries cached as a bare
+ * YYYY-MM-DD (before times were kept) are looked up again. A version the
+ * repository does not know yet is retried on later runs and only recorded
+ * as null after NOT_FOUND_TRIES runs spanning NOT_FOUND_GRACE_MS.
  *
- * Each run makes at most --max single-version lookups (default 400); sweeps
- * are not counted. Pass --full to re-sweep every library.
+ * Each run makes at most --max lookups of uncached versions (default 400);
+ * sweeps and SNAPSHOT re-reads are not counted.
  *
- * Usage: node scripts/fetch-dates.mjs [--max <n>] [--full]
+ * Usage: node scripts/fetch-dates.mjs [--max <n>] [--snapshots] [--full]
  */
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -53,7 +62,7 @@ function parseArgs(argv) {
   const index = argv.indexOf('--max');
   const max = index === -1 ? DEFAULT_MAX : Number(argv[index + 1]);
   if (!Number.isInteger(max) || max < 0) throw new Error(`--max needs a non-negative integer, got "${argv[index + 1]}"`);
-  return { max, full: argv.includes('--full') };
+  return { max, full: argv.includes('--full'), snapshots: argv.includes('--snapshots') };
 }
 
 async function readJsonIfExists(path) {
@@ -96,12 +105,24 @@ async function pool(items, worker) {
   }));
 }
 
-/** Upload date of one search-API component: its POM, else its oldest asset. */
+/** A cache value from before times were kept: YYYY-MM-DD only. */
+const isDateOnly = (value) => typeof value === 'string' && value.length === 10;
+
+/** UTC timestamp at second precision, e.g. 2026-09-17T13:35:08Z; null if unparseable. */
+function toTimestamp(value) {
+  const time = Date.parse(value);
+  return Number.isNaN(time) ? null : new Date(time).toISOString().replace(/\.\d{3}Z$/, 'Z');
+}
+
+/** Upload time of one search-API component: its POM, else its oldest asset. */
 function componentDate(component) {
   const assets = component.assets ?? [];
   const pom = assets.find((asset) => asset.maven2?.extension === 'pom' && !asset.maven2?.classifier);
-  const stamps = (pom ? [pom] : assets).map((asset) => asset.lastModified).filter(Boolean).sort();
-  return stamps[0]?.slice(0, 10) ?? null;
+  const stamps = (pom ? [pom] : assets)
+    .map((asset) => asset.lastModified && toTimestamp(asset.lastModified))
+    .filter(Boolean)
+    .sort();
+  return stamps[0] ?? null;
 }
 
 function searchUrl(library, params = {}) {
@@ -114,7 +135,7 @@ function searchUrl(library, params = {}) {
   return `${SEARCH_URL}?${query}`;
 }
 
-/** Every component of a library the search index knows: version -> date. */
+/** Every component of a library the search index knows: version -> timestamp. */
 async function sweep(library) {
   const found = {};
   let token = null;
@@ -132,12 +153,13 @@ async function sweep(library) {
   return found;
 }
 
-/** Date of one version, null if the repository does not know it (yet). */
+/** Upload time of one version, null if the repository does not know it (yet). */
 async function lookup(library, version) {
   if (isSnapshot(version)) {
     const metadata = await fetchWithRetry(artifactUrls(library, version).versionMetadata, (r) => r.text());
-    const stamp = metadata?.match(/<lastUpdated>\s*(\d{4})(\d{2})(\d{2})\d*\s*<\/lastUpdated>/);
-    return stamp ? `${stamp[1]}-${stamp[2]}-${stamp[3]}` : null;
+    // Maven writes <lastUpdated> as yyyyMMddHHmmss in UTC.
+    const stamp = metadata?.match(/<lastUpdated>\s*(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})\s*<\/lastUpdated>/);
+    return stamp ? toTimestamp(`${stamp[1]}-${stamp[2]}-${stamp[3]}T${stamp[4]}:${stamp[5]}:${stamp[6]}Z`) : null;
   }
   const page = await fetchWithRetry(searchUrl(library, { version }), (response) => response.json());
   const component = page?.items?.find((item) => item.version === version);
@@ -150,7 +172,7 @@ const allVersions = (data) => [
 ];
 
 async function main() {
-  const { max, full } = parseArgs(process.argv.slice(2));
+  const { max, full, snapshots } = parseArgs(process.argv.slice(2));
   const now = Date.now();
   const summary = await readJsonIfExists(join(ROOT, 'versions.json'));
   if (!summary) throw new Error('versions.json missing -- run fetch-versions.mjs first');
@@ -164,9 +186,16 @@ async function main() {
     const previous = await readJsonIfExists(datesPath(ROOT, library.slug));
     const known = previous?.versions ?? {};
     const pending = previous?.pending ?? {};
+    // Date-only entries are looked up again; the old date is the fallback.
+    const legacy = {};
+    for (const [version, value] of Object.entries(known)) {
+      if (!isDateOnly(value)) continue;
+      legacy[version] = value;
+      delete known[version];
+    }
     const versions = allVersions(data);
     const missing = versions.filter((v) => !(v in known));
-    caches.push({ library, data, versions, known, pending, missing });
+    caches.push({ library, data, versions, known, pending, legacy, missing });
   }
 
   // Sweeps first: they settle most releases in a few requests each.
@@ -195,15 +224,24 @@ async function main() {
       .map((version) => ({ cache, version })))
     .sort((a, b) => compareVersions(b.version, a.version))
     .slice(0, max);
+  // Redeploying a SNAPSHOT changes its time; --snapshots picks that up.
+  const rereads = !snapshots ? [] : caches.flatMap((cache) => cache.versions
+    .filter((v) => isSnapshot(v) && cache.known[v])
+    .map((version) => ({ cache, version, cached: true })));
 
   const notFound = [];
   let failed = 0;
-  process.stderr.write(`${jobs.length} single lookups (--max ${max})\n`);
-  await pool(jobs, async ({ cache, version }) => {
+  let changed = 0;
+  process.stderr.write(`${jobs.length} single lookups (--max ${max}), ${rereads.length} SNAPSHOT re-reads\n`);
+  await pool([...jobs, ...rereads], async ({ cache, version, cached }) => {
     try {
       const date = await lookup(cache.library, version);
-      if (date) cache.known[version] = date;
-      else notFound.push({ cache, version });
+      if (date) {
+        if (cached && cache.known[version] !== date) changed++;
+        cache.known[version] = date;
+      } else if (!cached) {
+        notFound.push({ cache, version });
+      }
     } catch (error) {
       failed++;
       process.stderr.write(`FAIL  ${cache.library.artifactId}:${version} -- ${error.message}\n`);
@@ -217,6 +255,8 @@ async function main() {
     }
   }
   for (const { cache, version } of notFound) {
+    // An upgrade that found nothing keeps its date; it is not a missing version.
+    if (version in cache.legacy) continue;
     const seen = cache.pending[version] ?? { firstSeen: new Date(now).toISOString(), tries: 0 };
     const entry = { firstSeen: seen.firstSeen, tries: seen.tries + 1 };
     if (entry.tries >= NOT_FOUND_TRIES && now - Date.parse(entry.firstSeen) >= NOT_FOUND_GRACE_MS) {
@@ -231,7 +271,8 @@ async function main() {
   let written = 0;
   let undated = 0;
   for (const cache of caches) {
-    const { library, data, versions, known, pending } = cache;
+    const { library, data, versions, known, pending, legacy } = cache;
+    for (const [version, date] of Object.entries(legacy)) if (!(version in known)) known[version] = date;
     const current = new Set(versions);
     for (const version of Object.keys(pending)) if (version in known) delete pending[version];
     const payload = {
@@ -256,9 +297,10 @@ async function main() {
   }
   if (await writeIfChanged(join(ROOT, 'versions.json'), summary)) written++;
 
-  process.stderr.write(`\nLooked up ${jobs.length}, not found ${notFound.length}, failed ${failed}, ` +
-    `undated ${undated}, wrote ${written} files.\n`);
-  if (jobs.length > 0 && failed === jobs.length) process.exitCode = 1;
+  process.stderr.write(`\nLooked up ${jobs.length}, re-read ${rereads.length} (${changed} changed), ` +
+    `not found ${notFound.length}, failed ${failed}, undated ${undated}, wrote ${written} files.\n`);
+  const attempted = jobs.length + rereads.length;
+  if (attempted > 0 && failed === attempted) process.exitCode = 1;
 }
 
 main().catch((error) => {

@@ -3,8 +3,10 @@ name: Update versions
 on:
   schedule:
     # Every 6 hours at 05:00, 11:00, 17:00, 23:00 UTC.
-    # The 05:00 slot lands at 07:00 CEST (summer) / 06:00 CET (winter).
-    - cron: '0 5,11,17,23 * * *'
+    # The 05:00 slot lands at 07:00 CEST (summer) / 06:00 CET (winter) and
+    # also re-reads SNAPSHOT dates (see "Fetch publication dates").
+    - cron: '0 5 * * *'
+    - cron: '0 11,17,23 * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -34,9 +36,13 @@ jobs:
 
       # Incremental: only versions not cached in data/dates yet. Releases come
       # from the Nexus search API (swept when many are missing), SNAPSHOTs
-      # from their own metadata, at most 400 single lookups per run.
+      # from their own metadata, at most 400 single lookups per run. The
+      # daily 05:00 run also re-reads every cached SNAPSHOT. Never --full here:
+      # a full refresh is a manual, local step.
       - name: Fetch publication dates
-        run: node scripts/fetch-dates.mjs --max 400
+        env:
+          SNAPSHOTS: ${{ github.event.schedule == '0 5 * * *' && '--snapshots' || '' }}
+        run: node scripts/fetch-dates.mjs --max 400 $SNAPSHOTS
 
       # Incremental: only POMs not cached in data/deps yet, at most 150 per
       # run, so the initial backfill spreads over many runs. Also rebuilds
