@@ -3,6 +3,8 @@
   "artifactId": "execute-generators",
   "slug": "de.itemis.mps.build-backends_execute-generators",
   "versions": {
+    "1.28.0-SNAPSHOT": "2026-10-21T19:03:43Z",
+    "1.27.5-SNAPSHOT": "2026-10-21T16:20:06Z",
     "1.27.4.239.aeb5185": "2026-10-18T20:47:16Z",
     "1.27.4.236.98e1534": "2026-10-16T19:02:25Z",
     "1.27.3.230.7aa8cfe": "2026-10-03T08:20:49Z",

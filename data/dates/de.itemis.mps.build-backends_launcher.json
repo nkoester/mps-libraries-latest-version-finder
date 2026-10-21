@@ -3,6 +3,8 @@
   "artifactId": "launcher",
   "slug": "de.itemis.mps.build-backends_launcher",
   "versions": {
+    "2.10.0-SNAPSHOT": "2026-10-21T19:03:43Z",
+    "2.9.3-SNAPSHOT": "2026-10-21T16:20:06Z",
     "2.9.2.239.aeb5185": "2026-10-18T20:47:17Z",
     "2.9.2.236.98e1534": "2026-10-16T19:02:28Z",
     "2.9.2.230.7aa8cfe": "2026-10-03T08:20:50Z",

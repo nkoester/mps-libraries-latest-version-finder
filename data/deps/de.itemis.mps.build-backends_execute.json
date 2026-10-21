@@ -4,6 +4,18 @@
   "slug": "de.itemis.mps.build-backends_execute",
   "snapshotLookup": "timestamped",
   "versions": {
+    "1.28.0-SNAPSHOT": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.2.0-SNAPSHOT"
+      ]
+    ],
+    "1.27.5-SNAPSHOT": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.1.1-SNAPSHOT"
+      ]
+    ],
     "1.27.4.239.aeb5185": [
       [
         "de.itemis.mps.build-backends_project-loader",

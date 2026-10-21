@@ -7,11 +7,11 @@
   "kind": "tool",
   "lineScheme": "major",
   "slug": "de.itemis.mps.build-backends_migration-common",
-  "generatedAt": "2026-10-21T12:01:56.244Z",
-  "total": 9,
-  "released": 9,
+  "generatedAt": "2026-10-21T20:26:22.971Z",
+  "total": 11,
+  "released": 11,
   "stable": 9,
-  "preRelease": 0,
+  "preRelease": 2,
   "branchCount": 0,
   "branches": 0,
   "lines": [
@@ -19,9 +19,19 @@
       "line": "1.x",
       "latest": "1.1.3.239.aeb5185",
       "latestIsPreRelease": false,
-      "total": 9,
+      "total": 11,
       "stable": 9,
       "versions": [
+        {
+          "v": "1.2.0-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-21T19:03:43Z"
+        },
+        {
+          "v": "1.1.4-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-21T16:20:06Z"
+        },
         {
           "v": "1.1.3.239.aeb5185",
           "pre": false,

@@ -7,11 +7,11 @@
   "kind": "tool",
   "lineScheme": "major",
   "slug": "de.itemis.mps.build-backends_modelcheck",
-  "generatedAt": "2026-10-21T12:01:56.244Z",
-  "total": 104,
-  "released": 104,
+  "generatedAt": "2026-10-21T20:26:22.971Z",
+  "total": 106,
+  "released": 106,
   "stable": 104,
-  "preRelease": 0,
+  "preRelease": 2,
   "branchCount": 0,
   "branches": 0,
   "lines": [
@@ -19,9 +19,19 @@
       "line": "1.x",
       "latest": "1.27.4.239.aeb5185",
       "latestIsPreRelease": false,
-      "total": 104,
+      "total": 106,
       "stable": 104,
       "versions": [
+        {
+          "v": "1.28.0-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-21T19:03:43Z"
+        },
+        {
+          "v": "1.27.5-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-21T16:20:06Z"
+        },
         {
           "v": "1.27.4.239.aeb5185",
           "pre": false,

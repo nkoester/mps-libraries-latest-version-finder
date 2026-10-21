@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-21T12:01:56.244Z",
-  "total": 1128,
+  "generatedAt": "2026-10-21T20:26:22.971Z",
+  "total": 1132,
   "released": 836,
   "stable": 813,
   "preRelease": 23,
-  "branchCount": 292,
-  "branches": 77,
+  "branchCount": 296,
+  "branches": 79,
   "lines": [
     {
       "line": "9999.9",
@@ -4674,6 +4674,18 @@
       "d": "2026-09-02T09:40:49Z"
     },
     {
+      "v": "renovate-master-major-mps.9999.9.2532.7713d80-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps",
+      "d": "2026-10-21T20:04:55Z"
+    },
+    {
+      "v": "renovate-master-major-mps.9999.9.2530.7d077e3-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps",
+      "d": "2026-10-21T14:59:43Z"
+    },
+    {
       "v": "renovate-master-major-mps.9999.9.2528.e18502b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
@@ -5832,6 +5844,12 @@
       "d": "2026-08-16T08:20:49Z"
     },
     {
+      "v": "feature-tables-cross-table.2026.1.2531.5cefe86-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-tables-cross-table",
+      "d": "2026-10-21T18:01:59Z"
+    },
+    {
       "v": "feature-table_selection_copy_cut_paste.2023.2.1651.8d41a6b-SNAPSHOT",
       "pre": true,
       "branch": "feature-table_selection_copy_cut_paste",
@@ -5878,6 +5896,12 @@
       "pre": true,
       "branch": "feature-richtext-styles",
       "d": "2026-10-12T11:50:20Z"
+    },
+    {
+      "v": "feature-remove-modelix-dependency.2026.1.2529.a60ff8f-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-remove-modelix-dependency",
+      "d": "2026-10-21T14:57:41Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2527.f83caf5-SNAPSHOT",

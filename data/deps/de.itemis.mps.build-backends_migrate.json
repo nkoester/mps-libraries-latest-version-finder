@@ -4,6 +4,26 @@
   "slug": "de.itemis.mps.build-backends_migrate",
   "snapshotLookup": "timestamped",
   "versions": {
+    "0.3.0-SNAPSHOT": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.2.0-SNAPSHOT"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.2.0-SNAPSHOT"
+      ]
+    ],
+    "0.2.4-SNAPSHOT": [
+      [
+        "de.itemis.mps.build-backends_project-loader",
+        "6.1.1-SNAPSHOT"
+      ],
+      [
+        "de.itemis.mps.build-backends_migration-common",
+        "1.1.4-SNAPSHOT"
+      ]
+    ],
     "0.2.3.239.aeb5185": [
       [
         "de.itemis.mps.build-backends_project-loader",

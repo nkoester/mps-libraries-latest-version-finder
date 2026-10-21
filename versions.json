@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T12:01:56.244Z",
+  "generatedAt": "2026-10-21T20:26:22.971Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -171,12 +171,12 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1128,
+      "total": 1132,
       "released": 836,
       "stable": 813,
       "preRelease": 23,
-      "branchCount": 292,
-      "branches": 77,
+      "branchCount": 296,
+      "branches": 79,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
         {
@@ -569,11 +569,11 @@
       "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 2978,
+      "total": 2980,
       "released": 1732,
       "stable": 1725,
       "preRelease": 7,
-      "branchCount": 1246,
+      "branchCount": 1248,
       "branches": 260,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [
@@ -1050,10 +1050,10 @@
       "lineScheme": "major",
       "slug": "de.itemis.mps.build-backends_launcher",
       "ok": true,
-      "total": 84,
-      "released": 84,
+      "total": 86,
+      "released": 86,
       "stable": 84,
-      "preRelease": 0,
+      "preRelease": 2,
       "branchCount": 0,
       "branches": 0,
       "dataFile": "data/de.itemis.mps.build-backends_launcher.json",
@@ -1063,7 +1063,7 @@
           "latest": "2.9.2.239.aeb5185",
           "latestDate": "2026-10-18T20:47:17Z",
           "latestIsPreRelease": false,
-          "total": 75,
+          "total": 77,
           "stable": 75
         },
         {
@@ -1086,10 +1086,10 @@
       "lineScheme": "major",
       "slug": "de.itemis.mps.build-backends_modelcheck",
       "ok": true,
-      "total": 104,
-      "released": 104,
+      "total": 106,
+      "released": 106,
       "stable": 104,
-      "preRelease": 0,
+      "preRelease": 2,
       "branchCount": 0,
       "branches": 0,
       "dataFile": "data/de.itemis.mps.build-backends_modelcheck.json",
@@ -1099,7 +1099,7 @@
           "latest": "1.27.4.239.aeb5185",
           "latestDate": "2026-10-18T20:47:45Z",
           "latestIsPreRelease": false,
-          "total": 104,
+          "total": 106,
           "stable": 104
         }
       ]
@@ -1114,10 +1114,10 @@
       "lineScheme": "major",
       "slug": "de.itemis.mps.build-backends_execute-generators",
       "ok": true,
-      "total": 104,
-      "released": 104,
+      "total": 106,
+      "released": 106,
       "stable": 104,
-      "preRelease": 0,
+      "preRelease": 2,
       "branchCount": 0,
       "branches": 0,
       "dataFile": "data/de.itemis.mps.build-backends_execute-generators.json",
@@ -1127,7 +1127,7 @@
           "latest": "1.27.4.239.aeb5185",
           "latestDate": "2026-10-18T20:47:16Z",
           "latestIsPreRelease": false,
-          "total": 104,
+          "total": 106,
           "stable": 104
         }
       ]
@@ -1142,10 +1142,10 @@
       "lineScheme": "major",
       "slug": "de.itemis.mps.build-backends_execute",
       "ok": true,
-      "total": 71,
-      "released": 71,
+      "total": 73,
+      "released": 73,
       "stable": 71,
-      "preRelease": 0,
+      "preRelease": 2,
       "branchCount": 0,
       "branches": 0,
       "dataFile": "data/de.itemis.mps.build-backends_execute.json",
@@ -1155,7 +1155,7 @@
           "latest": "1.27.4.239.aeb5185",
           "latestDate": "2026-10-18T20:47:17Z",
           "latestIsPreRelease": false,
-          "total": 71,
+          "total": 73,
           "stable": 71
         }
       ]
@@ -1170,10 +1170,10 @@
       "lineScheme": "major",
       "slug": "de.itemis.mps.build-backends_remigrate",
       "ok": true,
-      "total": 51,
-      "released": 51,
+      "total": 53,
+      "released": 53,
       "stable": 51,
-      "preRelease": 0,
+      "preRelease": 2,
       "branchCount": 0,
       "branches": 0,
       "dataFile": "data/de.itemis.mps.build-backends_remigrate.json",
@@ -1183,7 +1183,7 @@
           "latest": "1.1.3.239.aeb5185",
           "latestDate": "2026-10-18T20:48:20Z",
           "latestIsPreRelease": false,
-          "total": 17,
+          "total": 19,
           "stable": 17
         },
         {
@@ -1206,10 +1206,10 @@
       "lineScheme": "major",
       "slug": "de.itemis.mps.build-backends_project-loader",
       "ok": true,
-      "total": 104,
-      "released": 104,
+      "total": 106,
+      "released": 106,
       "stable": 104,
-      "preRelease": 0,
+      "preRelease": 2,
       "branchCount": 0,
       "branches": 0,
       "dataFile": "data/de.itemis.mps.build-backends_project-loader.json",
@@ -1219,7 +1219,7 @@
           "latest": "6.1.0.239.aeb5185",
           "latestDate": "2026-10-18T20:47:49Z",
           "latestIsPreRelease": false,
-          "total": 7,
+          "total": 9,
           "stable": 7
         },
         {
@@ -1274,10 +1274,10 @@
       "lineScheme": "major",
       "slug": "de.itemis.mps.build-backends_migrate",
       "ok": true,
-      "total": 10,
-      "released": 10,
+      "total": 12,
+      "released": 12,
       "stable": 10,
-      "preRelease": 0,
+      "preRelease": 2,
       "branchCount": 0,
       "branches": 0,
       "dataFile": "data/de.itemis.mps.build-backends_migrate.json",
@@ -1287,7 +1287,7 @@
           "latest": "0.2.3.239.aeb5185",
           "latestDate": "2026-10-18T20:48:20Z",
           "latestIsPreRelease": false,
-          "total": 10,
+          "total": 12,
           "stable": 10
         }
       ]
@@ -1302,10 +1302,10 @@
       "lineScheme": "major",
       "slug": "de.itemis.mps.build-backends_migration-common",
       "ok": true,
-      "total": 9,
-      "released": 9,
+      "total": 11,
+      "released": 11,
       "stable": 9,
-      "preRelease": 0,
+      "preRelease": 2,
       "branchCount": 0,
       "branches": 0,
       "dataFile": "data/de.itemis.mps.build-backends_migration-common.json",
@@ -1315,7 +1315,7 @@
           "latest": "1.1.3.239.aeb5185",
           "latestDate": "2026-10-18T20:47:14Z",
           "latestIsPreRelease": false,
-          "total": 9,
+          "total": 11,
           "stable": 9
         }
       ]
@@ -1327,9 +1327,9 @@
       "kind": "marker",
       "slug": "com.jetbrains.mps_mps-jbr",
       "ok": true,
-      "total": 89,
-      "released": 89,
-      "stable": 82,
+      "total": 91,
+      "released": 91,
+      "stable": 84,
       "preRelease": 7,
       "branchCount": 0,
       "branches": 0,
@@ -1393,10 +1393,10 @@
         },
         {
           "line": "263.6259",
-          "latest": "263.6259.102",
+          "latest": "263.6259.106",
           "latestIsPreRelease": false,
-          "total": 22,
-          "stable": 22
+          "total": 24,
+          "stable": 24
         },
         {
           "line": "262.10968",
