@@ -2,13 +2,15 @@
   "groupId": "org.iets3",
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
+  "repo": "IETS3/iets3.opensource",
+  "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-21T11:14:02.274Z",
-  "total": 2977,
+  "generatedAt": "2026-10-21T12:01:56.244Z",
+  "total": 2978,
   "released": 1732,
   "stable": 1725,
   "preRelease": 7,
-  "branchCount": 1245,
+  "branchCount": 1246,
   "branches": 260,
   "lines": [
     {
@@ -12274,6 +12276,12 @@
       "pre": false,
       "branch": "feature-virtual_runSolver",
       "d": "2023-02-13T10:34:02Z"
+    },
+    {
+      "v": "feature-view-model.2025.1.11420.a05aa05-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model",
+      "d": "2026-10-21T11:44:16Z"
     },
     {
       "v": "feature-view-model.2025.1.11359.6ef8986-SNAPSHOT",
