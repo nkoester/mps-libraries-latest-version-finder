@@ -273,6 +273,38 @@ export function artifactUrls(library, version) {
 }
 
 /**
+ * GitHub tree of the library's repository as it was at this version; null
+ * when the version has no known ref.
+ *
+ * - JBR: release tag `jbr-release-<version without "-">`. Older 8u/11
+ *   builds (`11_0_10-b1145.96`) follow no single tag scheme and get none.
+ * - MPS: the version is the tag (`2026.1`, `2026.1.1`); pre-releases and
+ *   build numbers (`263.6259.45`) are not tagged.
+ * - everything else: the commit the build carries as its last segment
+ *   (`2026.1.3688.0c1ad7a`, SNAPSHOTs and branch builds alike).
+ */
+export function sourceUrl(library, version) {
+  if (!library.repo) return null;
+  let ref = null;
+  if (isRuntime(library)) {
+    if (/^\d+(\.\d+)+-b[\d.]+$/.test(version)) ref = `jbr-release-${version.replace('-', '')}`;
+  } else if (library.repo === 'JetBrains/MPS') {
+    if (/^\d{4}\.\d+(\.\d+)?$/.test(version)) ref = version;
+  } else {
+    ref = version.replace(/-SNAPSHOT$/i, '').match(/\.([0-9a-f]{7,40})$/)?.[1] ?? null;
+  }
+  return ref ? `https://github.com/${library.repo}/tree/${encodeURIComponent(ref)}` : null;
+}
+
+/** Repository front page and changelog of a library, each null if unknown. */
+export function repoLinks(library) {
+  return {
+    repo: library.repo ? `https://github.com/${library.repo}` : null,
+    changelog: library.changelog ?? null,
+  };
+}
+
+/**
  * The line to recommend: the newest line that is not discouraged (falling
  * back to the newest overall). Lines come newest first.
  */

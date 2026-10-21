@@ -70,6 +70,13 @@ Every version shows its **publication date and time**. The *newer than* / *older
 fields under the search box and in **All versions** filter by it (both ends
 inclusive); a date filter alone lists everything in the range, newest first.
 
+The **GitHub icon** next to a version opens its repository as of that
+release. Library versions end in the commit they were built from
+(`2026.1.3688.0c1ad7a` → `0c1ad7a`); MPS uses its version tag (releases only)
+and the JetBrains Runtime its `jbr-release-…` tag (old 8u/11 builds have none).
+The **Inspect** header links the repository and its changelog. Both come from
+`repo` and `changelog` in `scripts/libraries.json`.
+
 Libraries are ordered by the dependency stack (MPS first, then what builds on it),
 not alphabetically. Development builds (`9999.9`, `999.9`) sort last and are
 labelled as not being releases.

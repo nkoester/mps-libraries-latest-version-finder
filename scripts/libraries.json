@@ -2,61 +2,82 @@
   {
     "groupId": "com.jetbrains",
     "artifactId": "mps",
-    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml"
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/maven-metadata.xml",
+    "repo": "JetBrains/MPS",
+    "changelog": "https://www.jetbrains.com/mps/whatsnew/"
   },
   {
     "groupId": "de.itemis.mps",
     "artifactId": "extensions",
-    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml"
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
+    "repo": "JetBrains/MPS-extensions",
+    "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md"
   },
   {
     "groupId": "com.mbeddr",
     "artifactId": "platform",
-    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml"
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
+    "repo": "mbeddr/mbeddr.core",
+    "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md"
   },
   {
     "groupId": "com.mbeddr",
     "artifactId": "mbeddr",
-    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml"
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
+    "repo": "mbeddr/mbeddr.core",
+    "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md"
   },
   {
     "groupId": "org.iets3",
     "artifactId": "opensource",
-    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml"
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
+    "repo": "IETS3/iets3.opensource",
+    "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md"
   },
   {
     "groupId": "org.mpsqa",
     "artifactId": "all-in-one",
-    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml"
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml",
+    "repo": "mbeddr/mps-qa"
   },
   {
     "groupId": "com.jetbrains.jdk",
     "artifactId": "jbr_jcef",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/jdk/jbr_jcef/maven-metadata.xml",
+    "repo": "JetBrains/JetBrainsRuntime",
+    "changelog": "https://github.com/JetBrains/JetBrainsRuntime/releases",
     "kind": "runtime"
   },
   {
     "groupId": "com.jetbrains.jdk",
     "artifactId": "jbr",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/jdk/jbr/maven-metadata.xml",
+    "repo": "JetBrains/JetBrainsRuntime",
+    "changelog": "https://github.com/JetBrains/JetBrainsRuntime/releases",
     "kind": "runtime"
   },
   {
     "groupId": "com.jetbrains.jdk",
     "artifactId": "jbrsdk",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/jdk/jbrsdk/maven-metadata.xml",
+    "repo": "JetBrains/JetBrainsRuntime",
+    "changelog": "https://github.com/JetBrains/JetBrainsRuntime/releases",
     "kind": "runtime"
   },
   {
     "groupId": "com.jetbrains.jdk",
     "artifactId": "jbr_nomod",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/jdk/jbr_nomod/maven-metadata.xml",
+    "repo": "JetBrains/JetBrainsRuntime",
+    "changelog": "https://github.com/JetBrains/JetBrainsRuntime/releases",
     "kind": "runtime"
   },
   {
     "groupId": "de.itemis.mps",
     "artifactId": "mps-gradle-plugin",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/mps-gradle-plugin/maven-metadata.xml",
+    "repo": "mbeddr/mps-gradle-plugin",
+    "changelog": "https://github.com/mbeddr/mps-gradle-plugin/blob/HEAD/CHANGELOG.md",
     "kind": "tool",
     "lineScheme": "major",
     "discouraged": {
@@ -67,6 +88,8 @@
     "groupId": "de.itemis.mps.build-backends",
     "artifactId": "launcher",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/launcher/maven-metadata.xml",
+    "repo": "mbeddr/mps-build-backends",
+    "changelog": "https://github.com/mbeddr/mps-build-backends/blob/HEAD/launcher/CHANGELOG.md",
     "kind": "tool",
     "lineScheme": "major"
   },
@@ -74,6 +97,8 @@
     "groupId": "de.itemis.mps.build-backends",
     "artifactId": "modelcheck",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/modelcheck/maven-metadata.xml",
+    "repo": "mbeddr/mps-build-backends",
+    "changelog": "https://github.com/mbeddr/mps-build-backends/blob/HEAD/CHANGELOG.md",
     "kind": "tool",
     "lineScheme": "major"
   },
@@ -81,6 +106,8 @@
     "groupId": "de.itemis.mps.build-backends",
     "artifactId": "execute-generators",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/execute-generators/maven-metadata.xml",
+    "repo": "mbeddr/mps-build-backends",
+    "changelog": "https://github.com/mbeddr/mps-build-backends/blob/HEAD/CHANGELOG.md",
     "kind": "tool",
     "lineScheme": "major"
   },
@@ -88,6 +115,8 @@
     "groupId": "de.itemis.mps.build-backends",
     "artifactId": "execute",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/execute/maven-metadata.xml",
+    "repo": "mbeddr/mps-build-backends",
+    "changelog": "https://github.com/mbeddr/mps-build-backends/blob/HEAD/CHANGELOG.md",
     "kind": "tool",
     "lineScheme": "major"
   },
@@ -95,6 +124,8 @@
     "groupId": "de.itemis.mps.build-backends",
     "artifactId": "remigrate",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/remigrate/maven-metadata.xml",
+    "repo": "mbeddr/mps-build-backends",
+    "changelog": "https://github.com/mbeddr/mps-build-backends/blob/HEAD/remigrate/CHANGELOG.md",
     "kind": "tool",
     "lineScheme": "major"
   },
@@ -102,6 +133,8 @@
     "groupId": "de.itemis.mps.build-backends",
     "artifactId": "project-loader",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/project-loader/maven-metadata.xml",
+    "repo": "mbeddr/mps-build-backends",
+    "changelog": "https://github.com/mbeddr/mps-build-backends/blob/HEAD/project-loader/CHANGELOG.md",
     "kind": "tool",
     "lineScheme": "major"
   },
@@ -109,6 +142,8 @@
     "groupId": "de.itemis.mps.build-backends",
     "artifactId": "migrate",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/migrate/maven-metadata.xml",
+    "repo": "mbeddr/mps-build-backends",
+    "changelog": "https://github.com/mbeddr/mps-build-backends/blob/HEAD/migrate/CHANGELOG.md",
     "kind": "tool",
     "lineScheme": "major"
   },
@@ -116,6 +151,8 @@
     "groupId": "de.itemis.mps.build-backends",
     "artifactId": "migration-common",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/migration-common/maven-metadata.xml",
+    "repo": "mbeddr/mps-build-backends",
+    "changelog": "https://github.com/mbeddr/mps-build-backends/blob/HEAD/migration-common/CHANGELOG.md",
     "kind": "tool",
     "lineScheme": "major"
   },

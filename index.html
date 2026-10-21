@@ -590,7 +590,10 @@
         /* The picker takes the width its rows need, so each year stays on one
            line; the chain gets the rest. Only when the chain would drop below
            320px does the picker give way and wrap. */
-        grid-template-columns: minmax(min-content, max-content) minmax(320px, 1fr);
+        grid-template-columns: minmax(min-content, max-content) minmax(
+            320px,
+            1fr
+          );
         column-gap: 32px;
         align-items: start;
       }
@@ -950,7 +953,10 @@
          when short of room -- they repeat on every row of a hit group. */
       .hit .coord,
       .vrow .coord {
-        grid-template-columns: minmax(0, max-content) minmax(0, max-content) auto auto;
+        grid-template-columns: minmax(0, max-content) minmax(
+            0,
+            max-content
+          ) auto auto;
       }
       .coord .tags {
         display: flex;
@@ -1046,6 +1052,21 @@
       }
       .btn--out:hover {
         border-color: var(--accent);
+      }
+      /* Icon-only link, e.g. GitHub: same box as a text button. */
+      .btn--icon {
+        padding: 6px 8px;
+      }
+      .btn--icon svg {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+      .dlg-head .head-acts {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        margin-left: auto;
       }
       #copy-tip {
         inset: auto;
@@ -1640,9 +1661,12 @@
             <h2 id="dlg-title"></h2>
             <p id="dlg-sub"></p>
           </div>
-          <button class="btn btn--out" id="dlg-close" aria-label="Close">
-            Close
-          </button>
+          <span class="head-acts">
+            <span class="acts" id="dlg-links"></span>
+            <button class="btn btn--out" id="dlg-close" aria-label="Close">
+              Close
+            </button>
+          </span>
         </div>
         <div class="dlg-tools">
           <input
@@ -1687,9 +1711,12 @@
             <h2 id="ins-title"></h2>
             <p id="ins-sub"></p>
           </div>
-          <button class="btn btn--out" id="ins-close" aria-label="Close">
-            Close
-          </button>
+          <span class="head-acts">
+            <span class="acts" id="ins-links"></span>
+            <button class="btn btn--out" id="ins-close" aria-label="Close">
+              Close
+            </button>
+          </span>
         </div>
         <div class="dlg-tools ins-tools">
           <p id="ins-note">
@@ -1745,7 +1772,8 @@
         // stretch of ribbon always gets the same Bezier segments.
         function ribbonPath(from, to, offset) {
           const xs = [from];
-          for (let x = Math.floor(from / STEP + 1) * STEP; x < to; x += STEP) xs.push(x);
+          for (let x = Math.floor(from / STEP + 1) * STEP; x < to; x += STEP)
+            xs.push(x);
           xs.push(to);
           const y = (x) => (BASE_Y + offset + waveY(x)).toFixed(2);
           let d = `M${from.toFixed(2)} ${y(from)}`;
@@ -1775,7 +1803,10 @@
           const head = dx - CAT_WIDTH + 1;
           const tail = Math.max(head - LENGTH, -STEP);
           paths.forEach((p, i) =>
-            p.setAttribute("d", head > tail ? ribbonPath(tail, head, BAND_OFFSETS[i]) : ""),
+            p.setAttribute(
+              "d",
+              head > tail ? ribbonPath(tail, head, BAND_OFFSETS[i]) : "",
+            ),
           );
         }
 
@@ -1803,7 +1834,8 @@
         function restart() {
           // From fully left of the track until the ribbon tail clears it.
           // The root is CSS-zoomed (html { zoom }); offsetWidth is unzoomed.
-          const zoom = Number(getComputedStyle(document.documentElement).zoom) || 1;
+          const zoom =
+            Number(getComputedStyle(document.documentElement).zoom) || 1;
           devicePx = devicePixelRatio * zoom;
           const width = track.offsetWidth;
           travel = width + LENGTH + CAT_WIDTH;
@@ -1821,6 +1853,8 @@
     <script type="module">
       import {
         artifactUrls,
+        sourceUrl,
+        repoLinks,
         isSnapshot,
         mavenCoordinate,
         lineLabel,
@@ -2126,7 +2160,8 @@
           state.selected = line;
           renderBoard();
           parts.forEach((part, i) => {
-            if (!part.hidden) tallest[i] = Math.max(tallest[i], part.offsetHeight);
+            if (!part.hidden)
+              tallest[i] = Math.max(tallest[i], part.offsetHeight);
           });
         }
         state.selected = keep;
@@ -2487,7 +2522,9 @@
       /** Tested-against status of one backend release for one MPS line. */
       function backendStatus(artifact, version, mpsLine) {
         const commit = state.compat?.extracted?.backends?.[artifact]?.[version];
-        const tested = commit ? state.compat.extracted.testedMps?.[commit] : null;
+        const tested = commit
+          ? state.compat.extracted.testedMps?.[commit]
+          : null;
         if (!tested) return { status: "unknown", tested: null };
         const hits = tested
           .map(mpsLineOfTested)
@@ -2515,10 +2552,14 @@
       }
 
       const STATUS_TAG = {
-        tested: (line) => `<span class="tag ok" title="Listed in the tested-against contract">tested · MPS ${esc(line)}</span>`,
-        pre: (line) => `<span class="tag" title="Only a prerelease build of this line is tested">prerelease tested · ${esc(line)}</span>`,
-        untested: (line) => `<span class="tag" title="Not in the tested-against contract; may still work">untested · MPS ${esc(line)}</span>`,
-        unknown: () => '<span class="tag quiet" title="No tested-against list found for this version">no contract</span>',
+        tested: (line) =>
+          `<span class="tag ok" title="Listed in the tested-against contract">tested · MPS ${esc(line)}</span>`,
+        pre: (line) =>
+          `<span class="tag" title="Only a prerelease build of this line is tested">prerelease tested · ${esc(line)}</span>`,
+        untested: (line) =>
+          `<span class="tag" title="Not in the tested-against contract; may still work">untested · MPS ${esc(line)}</span>`,
+        unknown: () =>
+          '<span class="tag quiet" title="No tested-against list found for this version">no contract</span>',
       };
 
       /**
@@ -2530,16 +2571,39 @@
         if (!plugin?.ok || !state.compat) return null;
         const line = recommendedLine(plugin.lines);
         if (!line) return null;
-        const available = { modelcheck: releasedVersions(`${BACKENDS}_modelcheck`) };
-        const contract = pluginContract(state.compat, line.latest, available, mpsLine);
+        const available = {
+          modelcheck: releasedVersions(`${BACKENDS}_modelcheck`),
+        };
+        const contract = pluginContract(
+          state.compat,
+          line.latest,
+          available,
+          mpsLine,
+        );
         if (!contract) return null;
         const newestIn = (artifact, range) =>
-          releasedVersions(`${BACKENDS}_${artifact}`).find((v) => inVersionRange(v, range)) ?? null;
+          releasedVersions(`${BACKENDS}_${artifact}`).find((v) =>
+            inVersionRange(v, range),
+          ) ?? null;
         const backends = [
           ["launcher", contract.launcher, "pinned by the plugin"],
-          ["modelcheck", contract.resolvedBackends, `newest in ${contract.backendsRange}`],
-          ["execute-generators", contract.backendsRange && newestIn("execute-generators", contract.backendsRange), `newest in ${contract.backendsRange}`],
-          ["execute", contract.backendsRange && newestIn("execute", contract.backendsRange), `newest in ${contract.backendsRange}`],
+          [
+            "modelcheck",
+            contract.resolvedBackends,
+            `newest in ${contract.backendsRange}`,
+          ],
+          [
+            "execute-generators",
+            contract.backendsRange &&
+              newestIn("execute-generators", contract.backendsRange),
+            `newest in ${contract.backendsRange}`,
+          ],
+          [
+            "execute",
+            contract.backendsRange &&
+              newestIn("execute", contract.backendsRange),
+            `newest in ${contract.backendsRange}`,
+          ],
           ["remigrate", newestIn("remigrate", "[0,2)"), "newest in [0,2)"],
         ]
           .filter(([, version]) => version)
@@ -2561,13 +2625,21 @@
         const tag = (status) => (dev ? "" : STATUS_TAG[status](mpsLine));
         const gradle =
           `Gradle ${esc(contract.gradle ?? "?")}` +
-          (contract.gradleMin ? ` (needs ≥ ${esc(contract.gradleMin.gradleMin)})` : "") +
+          (contract.gradleMin
+            ? ` (needs ≥ ${esc(contract.gradleMin.gradleMin)})`
+            : "") +
           ` · Java ${esc(contract.java ?? "?")}`;
-        const warn = !dev && contract.belowMinimum
-          ? `<span class="tag" title="${esc(contract.minimum.source)}">needs plugin ≥ ${esc(contract.minimum.plugin)}</span>`
-          : "";
+        const warn =
+          !dev && contract.belowMinimum
+            ? `<span class="tag" title="${esc(contract.minimum.source)}">needs plugin ≥ ${esc(contract.minimum.plugin)}</span>`
+            : "";
         const rows = [
-          { library: plugin, v: line.latest, tags: tag(contract.status) + warn, meta: gradle },
+          {
+            library: plugin,
+            v: line.latest,
+            tags: tag(contract.status) + warn,
+            meta: gradle,
+          },
           ...backends.map((row) => ({
             library: row.library,
             v: row.v,
@@ -2576,8 +2648,9 @@
           })),
         ];
         const sources = contract.sources
-          .map((source) =>
-            `${esc(source.artifact)} ${esc(source.version.split(".").slice(0, 3).join("."))}: ${source.tested ? esc(testedLines(source.tested)) : "no list"}`,
+          .map(
+            (source) =>
+              `${esc(source.artifact)} ${esc(source.version.split(".").slice(0, 3).join("."))}: ${source.tested ? esc(testedLines(source.tested)) : "no list"}`,
           )
           .join("; ");
         return `
@@ -2618,8 +2691,12 @@
 
       /** Inspect for tooling: the extracted contract instead of a dependency walk. */
       function inspectTool(library, version) {
-        const mpsLine = isDevelopmentLine(state.selected) ? null : state.selected;
-        const line = state.fullData.get(library.slug)?.lines.find((l) => l.versions.some((e) => e.v === version));
+        const mpsLine = isDevelopmentLine(state.selected)
+          ? null
+          : state.selected;
+        const line = state.fullData
+          .get(library.slug)
+          ?.lines.find((l) => l.versions.some((e) => e.v === version));
         const isPlugin = library.slug === PLUGIN_SLUG;
         $("ins-sub").textContent =
           `${line ? lineLabel(line.line) : "branch build"} · build tooling` +
@@ -2628,56 +2705,124 @@
           "<h3>Inspected</h3>" +
           reqRow(library, version, {
             kind: "root",
-            meta: (line?.discouraged ? `<span class="bad">${esc(line.discouraged)}</span> · ` : "") +
-              published(library.slug, version).replace(/^ · /, ""),
+            meta:
+              (line?.discouraged
+                ? `<span class="bad">${esc(line.discouraged)}</span> · `
+                : "") + published(library.slug, version).replace(/^ · /, ""),
           });
         const fact = (label, value) =>
           `<div class="fact"><span>${label}</span><span>${value}</span></div>`;
         const set = [{ library, v: version }];
 
         if (isPlugin) {
-          const available = { modelcheck: releasedVersions(`${BACKENDS}_modelcheck`) };
-          const contract = pluginContract(state.compat, version, available, mpsLine ?? "0.0");
+          const available = {
+            modelcheck: releasedVersions(`${BACKENDS}_modelcheck`),
+          };
+          const contract = pluginContract(
+            state.compat,
+            version,
+            available,
+            mpsLine ?? "0.0",
+          );
           html += `<h3 class="need">Contract <a class="contract-flag" href="${COMPAT_DOC}" target="_blank" rel="noopener noreferrer">extracted · tested against</a></h3>`;
           if (!contract) {
-            html += '<p class="ins-warn">No extracted contract for this version (branch build or not extracted yet).</p>';
+            html +=
+              '<p class="ins-warn">No extracted contract for this version (branch build or not extracted yet).</p>';
           } else {
-            html += '<div class="facts">' +
-              fact("Gradle", `built with ${esc(contract.gradle ?? "?")}` + (contract.gradleMin ? `; needs ≥ ${esc(contract.gradleMin.gradleMin)} <small>(${esc(contract.gradleMin.source)})</small>` : "")) +
+            html +=
+              '<div class="facts">' +
+              fact(
+                "Gradle",
+                `built with ${esc(contract.gradle ?? "?")}` +
+                  (contract.gradleMin
+                    ? `; needs ≥ ${esc(contract.gradleMin.gradleMin)} <small>(${esc(contract.gradleMin.source)})</small>`
+                    : ""),
+              ) +
               fact("Java", `target ${esc(contract.java ?? "?")}`) +
-              fact("Backends", contract.backendsRange
-                ? `<code>${esc(contract.backendsRange)}</code> → today ${esc(contract.resolvedBackends ?? "none")}`
-                : "no backend range (before mps-build-backends)") +
-              fact("Launcher", contract.launcher ? `pinned ${esc(contract.launcher)}` : "none") +
-              contract.sources.map((source) =>
-                fact(`Tested · ${esc(source.artifact)}`, source.tested ? esc(testedLines(source.tested)) : "no list")).join("") +
+              fact(
+                "Backends",
+                contract.backendsRange
+                  ? `<code>${esc(contract.backendsRange)}</code> → today ${esc(contract.resolvedBackends ?? "none")}`
+                  : "no backend range (before mps-build-backends)",
+              ) +
+              fact(
+                "Launcher",
+                contract.launcher ? `pinned ${esc(contract.launcher)}` : "none",
+              ) +
+              contract.sources
+                .map((source) =>
+                  fact(
+                    `Tested · ${esc(source.artifact)}`,
+                    source.tested ? esc(testedLines(source.tested)) : "no list",
+                  ),
+                )
+                .join("") +
               (mpsLine
-                ? fact(`MPS ${esc(mpsLine)}`, STATUS_TAG[contract.status](mpsLine) +
-                    (contract.belowMinimum ? ` <span class="bad">needs plugin ≥ ${esc(contract.minimum.plugin)}: ${esc(contract.minimum.source)}</span>` : ""))
+                ? fact(
+                    `MPS ${esc(mpsLine)}`,
+                    STATUS_TAG[contract.status](mpsLine) +
+                      (contract.belowMinimum
+                        ? ` <span class="bad">needs plugin ≥ ${esc(contract.minimum.plugin)}: ${esc(contract.minimum.source)}</span>`
+                        : ""),
+                  )
                 : "") +
-              fact("Source commit", contract.commit ? `<code>${esc(contract.commit)}</code>` : "not found") +
+              fact(
+                "Source commit",
+                contract.commit
+                  ? `<code>${esc(contract.commit)}</code>`
+                  : "not found",
+              ) +
               "</div>";
-            const runs = [["launcher", contract.launcher], ["modelcheck", contract.resolvedBackends]]
+            const runs = [
+              ["launcher", contract.launcher],
+              ["modelcheck", contract.resolvedBackends],
+            ]
               .filter(([, v]) => v)
-              .map(([artifact, v]) => ({ library: bySlug(`${BACKENDS}_${artifact}`), v }))
+              .map(([artifact, v]) => ({
+                library: bySlug(`${BACKENDS}_${artifact}`),
+                v,
+              }))
               .filter((row) => row.library);
             if (runs.length) {
-              html += '<h3 class="need">Runs these backends</h3>' +
-                runs.map((row) => reqRow(row.library, row.v, {
-                  kind: "need",
-                  meta: mpsLine
-                    ? STATUS_TAG[backendStatus(row.library.artifactId, row.v, mpsLine).status](mpsLine)
-                    : "",
-                })).join("");
+              html +=
+                '<h3 class="need">Runs these backends</h3>' +
+                runs
+                  .map((row) =>
+                    reqRow(row.library, row.v, {
+                      kind: "need",
+                      meta: mpsLine
+                        ? STATUS_TAG[
+                            backendStatus(
+                              row.library.artifactId,
+                              row.v,
+                              mpsLine,
+                            ).status
+                          ](mpsLine)
+                        : "",
+                    }),
+                  )
+                  .join("");
               set.push(...runs);
             }
           }
         } else if (library.groupId === BACKENDS) {
-          const status = backendStatus(library.artifactId, version, mpsLine ?? "0.0");
-          html += `<h3 class="need">Contract <a class="contract-flag" href="${COMPAT_DOC}" target="_blank" rel="noopener noreferrer">extracted · tested against</a></h3>` +
+          const status = backendStatus(
+            library.artifactId,
+            version,
+            mpsLine ?? "0.0",
+          );
+          html +=
+            `<h3 class="need">Contract <a class="contract-flag" href="${COMPAT_DOC}" target="_blank" rel="noopener noreferrer">extracted · tested against</a></h3>` +
             '<div class="facts">' +
-            fact("Tested with MPS", status.tested ? esc(testedLines(status.tested)) : "no list for this version") +
-            (mpsLine ? fact(`MPS ${esc(mpsLine)}`, STATUS_TAG[status.status](mpsLine)) : "") +
+            fact(
+              "Tested with MPS",
+              status.tested
+                ? esc(testedLines(status.tested))
+                : "no list for this version",
+            ) +
+            (mpsLine
+              ? fact(`MPS ${esc(mpsLine)}`, STATUS_TAG[status.status](mpsLine))
+              : "") +
             "</div>";
         }
         $("ins-body").innerHTML = html;
@@ -2796,7 +2941,13 @@
         const tooling = toolingRows(lineOf(mpsVersion));
         if (tooling) {
           latest[PLUGIN_SLUG] = tooling.line.latest;
-          edges.push([PLUGIN_SLUG, MPS_SLUG, lineOf(mpsVersion), "tooling", tooling.contract.status]);
+          edges.push([
+            PLUGIN_SLUG,
+            MPS_SLUG,
+            lineOf(mpsVersion),
+            "tooling",
+            tooling.contract.status,
+          ]);
         }
         return { graph: { latest, edges }, row };
       }
@@ -2826,9 +2977,13 @@
         const kinds = new Set(edges.map(([, , , kind]) => kind));
         const parts = [];
         if (kinds.has(undefined))
-          parts.push('<span class="lg lg-solid">explicit POM dependency</span>');
+          parts.push(
+            '<span class="lg lg-solid">explicit POM dependency</span>',
+          );
         if (kinds.has("implicit"))
-          parts.push('<span class="lg lg-dotted">implicit non-POM dependency</span>');
+          parts.push(
+            '<span class="lg lg-dotted">implicit non-POM dependency</span>',
+          );
         const tooling = edges.find(([, , , kind]) => kind === "tooling");
         if (tooling)
           parts.push(
@@ -3217,11 +3372,7 @@
                         title="Copy artifact ${esc(library.artifactId)}"><b>${esc(library.artifactId)}</b></span></span>
                 <span class="rv${isPreRelease(version) ? " pre" : ""}">${prefix}<span class="cp" role="button" tabindex="0" data-copy="${copyRef(version)}"
                         title="Copy version ${esc(version)}">${esc(version)}</span></span>
-                <span class="acts">
-                    <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, version))}"
-                            title="Copy ${esc(mavenCoordinate(library, version))}">Copy</button>
-                    ${kind === "root" ? "" : inspectButton(library, version, "btn btn--out", "Inspect")}
-                </span>
+                <span class="acts">${versionActs(library, version, { inspect: kind !== "root" })}</span>
                 <span class="meta">${meta}</span>
             </div>`;
       }
@@ -3231,10 +3382,10 @@
         if (!library) return;
         const token = {};
         inspecting = token;
-        $("ins-title").textContent = mavenCoordinate(library, version);
+        setDialogHead("ins", library, mavenCoordinate(library, version));
         $("ins-note").textContent = isTool(library)
           ? "Compatibility as extracted from the upstream sources: the tested-against contract."
-          : "Minimum versions, as listed in the POMs. Newer builds of the same line satisfy them too.";
+          : "Minimum versions, as listed in the POMs.";
         $("ins-sub").textContent = "Resolving dependencies…";
         $("ins-body").innerHTML = "";
         for (const id of ["ins-copy-versions", "ins-copy-coords"])
@@ -3650,7 +3801,7 @@
 
       async function openAll(slug, scope = null) {
         const library = state.libraries.find((entry) => entry.slug === slug);
-        $("dlg-title").textContent = `${library.groupId}:${library.artifactId}`;
+        setDialogHead("dlg", library, `${library.groupId}:${library.artifactId}`);
         $("dlg-sub").textContent = "Loading…";
         $("dlg-body").innerHTML = "";
         $("dlg-search").value = "";
@@ -3680,14 +3831,61 @@
         }
       }
 
+      const GITHUB_ICON = `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>`;
+
+      /** An archive box: the zip distribution. */
+      const ZIP_ICON = `<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2" width="13" height="3.5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M2.75 5.5v8.25h10.5V5.5M6.25 8.25h3.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+      /** A file with angle brackets: the POM. */
+      const POM_ICON = `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 1.25h6l3.25 3.25v10.25h-9.25z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6.75 7.5l-1.75 1.75 1.75 1.75M9.25 7.5l1.75 1.75-1.75 1.75" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+      function pomLink(url) {
+        return `<a class="btn btn--icon" href="${esc(url)}" target="_blank" rel="noopener noreferrer"
+                   title="Open the POM" aria-label="pom">${POM_ICON}</a>`;
+      }
+
+      /** GitHub icon link to the source as of this version; empty if unknown. */
+      function sourceLink(library, version) {
+        const url = sourceUrl(library, version);
+        return url
+          ? `<a class="btn btn--icon" href="${esc(url)}" target="_blank" rel="noopener noreferrer"
+                title="Source at ${esc(version)} on GitHub" aria-label="Source at ${esc(version)} on GitHub">${GITHUB_ICON}</a>`
+          : "";
+      }
+
+      /** Title and repository links of a dialog (`ins`, `dlg`). */
+      function setDialogHead(prefix, library, title) {
+        $(`${prefix}-title`).textContent = title;
+        $(`${prefix}-links`).innerHTML = headLinks(library);
+      }
+
+      /** Dialog header: the repository and its changelog, not version-bound. */
+      function headLinks(library) {
+        const { repo, changelog } = repoLinks(library);
+        return (
+          (changelog
+            ? `<a class="btn btn--out" href="${esc(changelog)}" target="_blank" rel="noopener noreferrer">changelog</a>`
+            : "") +
+          (repo
+            ? `<a class="btn btn--out btn--icon" href="${esc(repo)}" target="_blank" rel="noopener noreferrer"
+                  title="${esc(library.repo)} on GitHub" aria-label="${esc(library.repo)} on GitHub">${GITHUB_ICON}</a>`
+            : "")
+        );
+      }
+
       /**
-       * pom/zip links. A SNAPSHOT's files carry a timestamp only its own
-       * metadata knows, so it gets one link to its folder instead.
+       * pom/zip links plus the GitHub source link. A SNAPSHOT's files carry a
+       * timestamp only its own metadata knows, so it gets one link to its
+       * folder instead.
        */
       function fileLinks(library, version) {
+        return artifactLinks(library, version) + sourceLink(library, version);
+      }
+
+      function artifactLinks(library, version) {
         const urls = artifactUrls(library, version);
         if (isRuntime(library)) {
-          return `<a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
+          return `${pomLink(urls.pom)}
                   <a class="btn" href="${esc(urls.browse)}/" target="_blank" rel="noopener noreferrer"
                      title="One .tgz per platform; opens the version folder">files</a>`;
         }
@@ -3696,11 +3894,12 @@
                      title="SNAPSHOT files are timestamped; opens the version folder">files</a>`;
         }
         if (isTool(library)) {
-          return `<a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
+          return `${pomLink(urls.pom)}
                   <a class="btn" href="${esc(urls.pom.replace(/\.pom$/, ".jar"))}" target="_blank" rel="noopener noreferrer">jar</a>`;
         }
-        return `<a class="btn" href="${esc(urls.pom)}" target="_blank" rel="noopener noreferrer">pom</a>
-                <a class="btn" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer">zip</a>`;
+        return `${pomLink(urls.pom)}
+                <a class="btn btn--icon" href="${esc(urls.zip)}" target="_blank" rel="noopener noreferrer"
+                   title="Download the zip" aria-label="zip">${ZIP_ICON}</a>`;
       }
 
       /**
@@ -3741,13 +3940,20 @@
             ${entry.branch ? "" : inspectButton(library, entry.v, "btn", "inspect")}`;
       }
 
-      /** All versions: same order and buttons as the Latest board. */
-      function boardActs(library, entry) {
+      /**
+       * File links, Copy and Inspect for one version: All versions and the
+       * Inspect rows share them, in the Latest board's order.
+       */
+      function versionActs(library, version, { inspect = true } = {}) {
         return `
-            ${dateTag(entry.d)}
-            ${fileLinks(library, entry.v)}
-            ${coordinateCopy(library, entry.v, "btn btn--out", "Copy")}
-            ${entry.branch ? "" : inspectButton(library, entry.v, "btn btn--out", "Inspect")}`;
+            ${fileLinks(library, version)}
+            ${coordinateCopy(library, version, "btn btn--out", "Copy")}
+            ${inspect ? inspectButton(library, version, "btn btn--out", "Inspect") : ""}`;
+      }
+
+      /** All versions: the date, then the shared actions. */
+      function boardActs(library, entry) {
+        return dateTag(entry.d) + versionActs(library, entry.v, { inspect: !entry.branch });
       }
 
       const vrow = (library, entry) =>
