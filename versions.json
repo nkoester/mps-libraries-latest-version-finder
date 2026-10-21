@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T09:50:49.532Z",
+  "generatedAt": "2026-10-21T11:14:02.274Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -559,9 +559,9 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 2976,
-      "released": 1731,
-      "stable": 1724,
+      "total": 2977,
+      "released": 1732,
+      "stable": 1725,
       "preRelease": 7,
       "branchCount": 1245,
       "branches": 260,
@@ -586,18 +586,18 @@
         {
           "line": "2025.1",
           "latest": "2025.1.11415.8425241",
+          "latestDate": "2026-10-21T09:10:18Z",
           "latestIsPreRelease": false,
           "total": 137,
-          "stable": 131,
-          "latestDate": "2026-10-21T09:10:18Z"
+          "stable": 131
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.11405.ee845c4",
-          "latestDate": "2026-10-20T12:46:21Z",
+          "latest": "2024.1.11417.7d8a03d",
           "latestIsPreRelease": false,
-          "total": 269,
-          "stable": 268
+          "total": 270,
+          "stable": 269,
+          "latestDate": "2026-10-21T11:08:41Z"
         },
         {
           "line": "2023.2",

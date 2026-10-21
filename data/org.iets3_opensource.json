@@ -3,10 +3,10 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-21T09:50:49.532Z",
-  "total": 2976,
-  "released": 1731,
-  "stable": 1724,
+  "generatedAt": "2026-10-21T11:14:02.274Z",
+  "total": 2977,
+  "released": 1732,
+  "stable": 1725,
   "preRelease": 7,
   "branchCount": 1245,
   "branches": 260,
@@ -1798,11 +1798,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11405.ee845c4",
+      "latest": "2024.1.11417.7d8a03d",
       "latestIsPreRelease": false,
-      "total": 269,
-      "stable": 268,
+      "total": 270,
+      "stable": 269,
       "versions": [
+        {
+          "v": "2024.1.11417.7d8a03d",
+          "pre": false,
+          "d": "2026-10-21T11:08:41Z"
+        },
         {
           "v": "2024.1.11405.ee845c4",
           "pre": false,
@@ -3149,7 +3154,7 @@
           "d": "2024-11-19T14:58:20Z"
         }
       ],
-      "latestDate": "2026-10-20T12:46:21Z"
+      "latestDate": "2026-10-21T11:08:41Z"
     },
     {
       "line": "2023.2",
