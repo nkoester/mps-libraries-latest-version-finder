@@ -339,6 +339,14 @@
         color: var(--ink);
       }
       /* Clear buttons stay in place; disabled while there is nothing to clear. */
+      /* "clear dates" / "clear all": red while there is something to clear. */
+      .date-filter .btn--clear:not(:disabled) {
+        color: var(--signal);
+        border-color: var(--signal);
+      }
+      .date-filter .btn--clear:not(:disabled):hover {
+        background: var(--signal-soft);
+      }
       .date-filter .btn:disabled {
         color: var(--ink-3);
         opacity: 0.5;
@@ -407,11 +415,9 @@
       .hit:hover {
         border-color: var(--rule-strong);
       }
-      .hit.inspectable {
+      /* A row that opens Inspect on click, in every view. */
+      .inspectable {
         cursor: pointer;
-      }
-      .hit .seg {
-        cursor: copy;
       }
       /* Search hits can be long branch builds: wrap instead of cutting off. */
       /* break-word, not anywhere: the version keeps its full width when
@@ -424,12 +430,6 @@
         /* overflow:hidden would drop the cell's min-content from the column
            sizing and let the grid squeeze the version after all. */
         overflow: visible;
-      }
-      /* Lists drop the board's "copy" hint: it reserves width the version
-         needs; the cursor, flash and balloon already say "copy". */
-      .hit .seg--version::after,
-      .vrow .seg--version::after {
-        content: none;
       }
       .hit .seg mark {
         background: var(--accent-soft);
@@ -832,7 +832,6 @@
         padding: 5px 11px;
         margin: 0;
         color: var(--ink-2);
-        cursor: copy;
         text-align: left;
         border-left: 1px solid var(--rule-soft);
         position: relative;
@@ -840,21 +839,22 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
-      .seg,
-      .req .cp {
+      /* Click to copy, everywhere: the cursor, hover tint, flash and
+         "Copied" balloon say it; selecting the text still works. */
+      .cp {
+        cursor: copy;
         user-select: text;
       }
-      .seg:focus-visible,
-      .req .cp:focus-visible {
+      .cp:hover {
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+      .cp:focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: -2px;
       }
       .seg:first-child {
         border-left: 3px solid var(--accent);
-      }
-      .seg:hover {
-        background: var(--accent-soft);
-        color: var(--accent);
       }
       .seg--version {
         color: var(--ink);
@@ -863,25 +863,6 @@
         align-items: center;
         gap: 10px;
       }
-      .seg--version::after {
-        content: "copy";
-        font-size: 9.5px;
-        font-family: var(--display);
-        font-weight: 500;
-        letter-spacing: 0.07em;
-        text-transform: uppercase;
-        color: var(--accent);
-        opacity: 0;
-      }
-      .node:hover .seg--version::after {
-        opacity: 0.5;
-      }
-      .seg--version:hover::after {
-        opacity: 1;
-      }
-      .node.absent .seg--version::after {
-        content: none;
-      }
       .seg--version.pre {
         color: var(--signal);
       }
@@ -889,11 +870,6 @@
         border-left-color: var(--rule);
       }
       .node.absent .seg {
-        color: var(--ink-3);
-        cursor: default;
-      }
-      .node.absent .seg:hover {
-        background: none;
         color: var(--ink-3);
       }
 
@@ -1052,6 +1028,11 @@
       }
       .btn--out:hover {
         border-color: var(--accent);
+      }
+      /* Coordinate copy: group:artifact:version in the code face. */
+      .btn--coord {
+        font-family: var(--mono);
+        letter-spacing: -0.02em;
       }
       /* Icon-only link, e.g. GitHub: same box as a text button. */
       .btn--icon {
@@ -1302,9 +1283,6 @@
         padding: 2px 0 2px 14px;
         border-radius: var(--radius);
       }
-      .vrow.inspectable {
-        cursor: pointer;
-      }
       .vrow:hover {
         background: var(--tools-bg);
       }
@@ -1358,6 +1336,12 @@
         border-radius: var(--radius);
         margin-bottom: 4px;
       }
+      /* Hover like a board node; the left edge keeps its kind colour. */
+      .req.inspectable:hover {
+        border-top-color: var(--rule-strong);
+        border-right-color: var(--rule-strong);
+        border-bottom-color: var(--rule-strong);
+      }
       .req.root {
         background: var(--accent-soft);
       }
@@ -1391,22 +1375,12 @@
         font-weight: 700;
         overflow-wrap: anywhere;
       }
-      /* Group, artifact and version copy on click, like the board's cells. */
+      /* Inline copy cells: group, artifact and version of a requirement. */
       .req .cp {
-        font: inherit;
-        color: inherit;
-        border: 0;
-        background: none;
         padding: 1px 3px;
         margin: 0 -1px;
         border-radius: 2px;
-        cursor: copy;
-        text-align: left;
         overflow-wrap: anywhere;
-      }
-      .req .cp:hover {
-        background: var(--accent-soft);
-        color: var(--accent);
       }
       .req .rv.pre {
         color: var(--signal);
@@ -1581,12 +1555,12 @@
             <label title="Published on or before this date"
               >older than <input type="date" id="q-to"
             /></label>
-            <button class="btn" id="q-clear-dates" disabled>clear dates</button>
+            <button class="btn btn--clear" id="q-clear-dates" disabled>clear dates</button>
             <label
               ><input type="checkbox" id="q-snap" checked /> hide
               SNAPSHOTs</label
             >
-            <button class="btn" id="q-clear" disabled>clear all</button>
+            <button class="btn btn--clear" id="q-clear" disabled>clear all</button>
           </div>
           <p class="finder-note" id="q-note"></p>
         </section>
@@ -1689,14 +1663,14 @@
             <label title="Published on or before this date"
               >older than <input type="date" id="dlg-to"
             /></label>
-            <button class="btn" id="dlg-clear-dates" disabled>
+            <button class="btn btn--clear" id="dlg-clear-dates" disabled>
               clear dates
             </button>
             <label
               ><input type="checkbox" id="dlg-snap" checked /> hide
               SNAPSHOTs</label
             >
-            <button class="btn" id="dlg-clear" disabled>clear all</button>
+            <button class="btn btn--clear" id="dlg-clear" disabled>clear all</button>
           </span>
           <span class="count" id="dlg-count"></span>
         </div>
@@ -2387,15 +2361,9 @@
 
         const { latest, latestIsPreRelease } = entry;
         return `
-            <article class="node" ${delay}>
+            <article class="node inspectable" ${delay}${inspectAttrs(library, latest)}>
                 <div class="coord">
-                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
-                            title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</span>
-                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
-                            title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</span>
-                    <span class="seg seg--version${latestIsPreRelease ? " pre" : ""}" role="button" tabindex="0"
-                            data-copy="${copyRef(latest)}"
-                            title="Copy version ${esc(latest)}">${esc(latest)}</span>
+                    ${coordCells(library, latest, { pre: latestIsPreRelease })}
                     ${latestIsPreRelease ? '<span class="tag">pre-release</span>' : ""}
                     ${coordDate(entry.latestDate)}
                 </div>
@@ -2403,10 +2371,7 @@
                     <button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}"
                             data-line="${esc(entry.line)}"
                             title="Every ${esc(entry.line)} version of ${esc(library.artifactId)}">Show ${entry.total} previous</button>
-                    ${fileLinks(library, latest)}
-                    <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, latest))}"
-                    title="Copy ${esc(mavenCoordinate(library, latest))}">Copy</button>
-                    ${inspectButton(library, latest, "btn btn--out", "Inspect")}
+                    ${versionActs(library, latest)}
                 </div>
             </article>`;
       }
@@ -2476,14 +2441,9 @@
         const total =
           library.lines.find((line) => line.line === java)?.total ?? 0;
         return `
-            <article class="node runtime" ${delay}>
+            <article class="node runtime inspectable" ${delay}${inspectAttrs(library, v)}>
                 <div class="coord">
-                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
-                            title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</span>
-                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
-                            title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</span>
-                    <span class="seg seg--version" role="button" tabindex="0" data-copy="${copyRef(v)}"
-                            title="Copy version ${esc(v)}">${esc(v)}</span>
+                    ${coordCells(library, v)}
                     ${runtimeTag(row)}
                     ${coordDate(dateOf(library.slug, v))}
                 </div>
@@ -2491,10 +2451,7 @@
                     <button class="btn btn--out" data-act="all" data-slug="${esc(library.slug)}"
                             data-line="${esc(java)}"
                             title="Every ${esc(lineLabel(java))} build of ${esc(library.artifactId)}">Show ${total} ${esc(lineLabel(java))}</button>
-                    ${fileLinks(library, v)}
-                    <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, v))}"
-                    title="Copy ${esc(mavenCoordinate(library, v))}">Copy</button>
-                    ${inspectButton(library, v, "btn btn--out", "Inspect")}
+                    ${versionActs(library, v)}
                 </div>
             </article>`;
       }
@@ -2669,22 +2626,14 @@
         const delay = `style="animation-delay:${Math.min(index * 22, 180)}ms"`;
         const date = dateOf(library.slug, v);
         return `
-            <article class="node tool" ${delay}>
+            <article class="node tool inspectable" ${delay}${inspectAttrs(library, v)}>
                 <div class="coord">
-                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
-                          title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</span>
-                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
-                          title="Copy artifact ${esc(library.artifactId)}">${esc(library.artifactId)}</span>
-                    <span class="seg seg--version" role="button" tabindex="0" data-copy="${copyRef(v)}"
-                          title="Copy version ${esc(v)}">${esc(v)}</span>
+                    ${coordCells(library, v)}
                     <span class="tags">${tags}</span>
                     <span class="coord-date">${date ? `<span title="${esc(publishedTitle(date))}">published ${esc(publishedText(date))}</span> · ` : ""}${meta}</span>
                 </div>
                 <div class="acts">
-                    ${fileLinks(library, v)}
-                    <button class="btn btn--out" data-copy="${copyRef(mavenCoordinate(library, v))}"
-                            title="Copy ${esc(mavenCoordinate(library, v))}">Copy</button>
-                    ${inspectButton(library, v, "btn btn--out", "Inspect")}
+                    ${versionActs(library, v)}
                 </div>
             </article>`;
       }
@@ -3307,6 +3256,17 @@
       const depsFiles = new Map();
       let inspecting = null;
 
+      /**
+       * Attributes that make a whole row open Inspect on click: board nodes,
+       * Inspect rows, search hits and All versions. The row also gets the
+       * `inspectable` class. Copy cells, buttons and links inside keep their
+       * own action.
+       */
+      function inspectAttrs(library, version) {
+        return ` data-act="inspect" data-slug="${esc(library.slug)}" data-v="${esc(version)}"
+                 title="Inspect ${esc(mavenCoordinate(library, version))}"`;
+      }
+
       function inspectButton(library, version, classes, label) {
         return `<button class="${classes}" data-act="inspect" data-slug="${esc(library.slug)}" data-v="${esc(version)}"
                         title="Dependencies of ${esc(mavenCoordinate(library, version))}">${label}</button>`;
@@ -3366,12 +3326,9 @@
 
       function reqRow(library, version, { kind, meta, prefix = "" }) {
         return `
-            <div class="req ${kind}">
-                <span class="ga"><span class="cp" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
-                        title="Copy group ${esc(library.groupId)}">${esc(library.groupId)}</span>:<span class="cp" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
-                        title="Copy artifact ${esc(library.artifactId)}"><b>${esc(library.artifactId)}</b></span></span>
-                <span class="rv${isPreRelease(version) ? " pre" : ""}">${prefix}<span class="cp" role="button" tabindex="0" data-copy="${copyRef(version)}"
-                        title="Copy version ${esc(version)}">${esc(version)}</span></span>
+            <div class="req ${kind}${kind === "root" ? "" : " inspectable"}"${kind === "root" ? "" : inspectAttrs(library, version)}>
+                <span class="ga">${copyCell("group", library.groupId)}:${copyCell("artifact", library.artifactId, { html: `<b>${esc(library.artifactId)}</b>` })}</span>
+                <span class="rv${isPreRelease(version) ? " pre" : ""}">${prefix}${copyCell("version", version)}</span>
                 <span class="acts">${versionActs(library, version, { inspect: kind !== "root" })}</span>
                 <span class="meta">${meta}</span>
             </div>`;
@@ -3908,37 +3865,44 @@
        * row inspects it; branch builds have no Inspect. Shared by search
        * hits (`hit`) and All versions (`vrow`).
        */
+      /**
+       * One click-to-copy span; every copyable group, artifact and version
+       * on the page is one of these. `html` replaces the escaped text.
+       */
+      function copyCell(kind, value, { classes = "", html = esc(value) } = {}) {
+        return `<span class="cp${classes ? ` ${classes}` : ""}" role="button" tabindex="0"
+                      data-copy="${copyRef(value)}" title="Copy ${kind} ${esc(value)}">${html}</span>`;
+      }
+
+      /** group | artifact | version cells of a coordinate row. */
+      function coordCells(library, version, { pre = false, render = esc, renderVersion = render } = {}) {
+        return (
+          copyCell("group", library.groupId, { classes: "seg", html: render(library.groupId) }) +
+          copyCell("artifact", library.artifactId, { classes: "seg", html: render(library.artifactId) }) +
+          copyCell("version", version, { classes: `seg seg--version${pre ? " pre" : ""}`, html: renderVersion(version) })
+        );
+      }
+
       function versionRow(library, entry, { kind, terms = [], tag = "" }) {
-        const inspect = entry.branch
-          ? ""
-          : ` data-act="inspect" data-slug="${esc(library.slug)}" data-v="${esc(entry.v)}"
-              title="Inspect ${esc(mavenCoordinate(library, entry.v))}"`;
         return `
-            <div class="${kind}${entry.branch ? "" : " inspectable"}"${inspect}>
+            <div class="${kind}${entry.branch ? "" : " inspectable"}"${entry.branch ? "" : inspectAttrs(library, entry.v)}>
                 <div class="coord">
-                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.groupId)}"
-                          title="Copy group ${esc(library.groupId)}">${mark(library.groupId, terms)}</span>
-                    <span class="seg" role="button" tabindex="0" data-copy="${copyRef(library.artifactId)}"
-                          title="Copy artifact ${esc(library.artifactId)}">${mark(library.artifactId, terms)}</span>
-                    <span class="seg seg--version${entry.pre ? " pre" : ""}" role="button" tabindex="0" data-copy="${copyRef(entry.v)}"
-                          title="Copy version ${esc(entry.v)}"><span class="hit-text">${mark(entry.v, terms)}</span></span>
+                    ${coordCells(library, entry.v, {
+                      pre: entry.pre,
+                      render: (text) => mark(text, terms),
+                      renderVersion: (text) => `<span class="hit-text">${mark(text, terms)}</span>`,
+                    })}
                     ${tag}
                 </div>
-                <span class="acts">${kind === "vrow" ? boardActs(library, entry) : hitActs(library, entry)}</span>
+                <span class="acts">${entryActs(library, entry)}</span>
             </div>`;
       }
 
-      const coordinateCopy = (library, version, classes, label) =>
-        `<button class="${classes}" data-copy="${copyRef(mavenCoordinate(library, version))}"
-                 title="Copy ${esc(mavenCoordinate(library, version))}">${label}</button>`;
-
-      function hitActs(library, entry) {
-        return `
-            ${dateTag(entry.d)}
-            ${coordinateCopy(library, entry.v, "btn", "coord")}
-            ${fileLinks(library, entry.v)}
-            ${entry.branch ? "" : inspectButton(library, entry.v, "btn", "inspect")}`;
-      }
+      /** Copies group:artifact:version; labelled with Maven's own shorthand. */
+      const coordinateCopy = (library, version, classes) =>
+        `<button class="${classes} btn--coord" data-copy="${copyRef(mavenCoordinate(library, version))}"
+                 title="Copy ${esc(mavenCoordinate(library, version))}"
+                 aria-label="Copy coordinate ${esc(mavenCoordinate(library, version))}">g:a:v</button>`;
 
       /**
        * File links, Copy and Inspect for one version: All versions and the
@@ -3947,12 +3911,12 @@
       function versionActs(library, version, { inspect = true } = {}) {
         return `
             ${fileLinks(library, version)}
-            ${coordinateCopy(library, version, "btn btn--out", "Copy")}
+            ${coordinateCopy(library, version, "btn btn--out")}
             ${inspect ? inspectButton(library, version, "btn btn--out", "Inspect") : ""}`;
       }
 
-      /** All versions: the date, then the shared actions. */
-      function boardActs(library, entry) {
+      /** Search hits and All versions: the date, then the shared actions. */
+      function entryActs(library, entry) {
         return dateTag(entry.d) + versionActs(library, entry.v, { inspect: !entry.branch });
       }
 
@@ -4162,8 +4126,8 @@
         }
       }
 
-      /** Copy cells and search rows: text first, click action second. */
-      const TEXTUAL = ".seg, .cp, .hit, .vrow";
+      /** Copy cells and inspectable rows: text first, click action second. */
+      const TEXTUAL = ".cp, .inspectable";
       let pendingClick = null;
 
       function selectedWithin(element) {
