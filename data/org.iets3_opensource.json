@@ -3,10 +3,10 @@
   "artifactId": "opensource",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-21T01:19:25.050Z",
-  "total": 2975,
-  "released": 1730,
-  "stable": 1723,
+  "generatedAt": "2026-10-21T09:50:49.532Z",
+  "total": 2976,
+  "released": 1731,
+  "stable": 1724,
   "preRelease": 7,
   "branchCount": 1245,
   "branches": 260,
@@ -1103,11 +1103,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11395.02072c6",
+      "latest": "2025.1.11415.8425241",
       "latestIsPreRelease": false,
-      "total": 136,
-      "stable": 130,
+      "total": 137,
+      "stable": 131,
       "versions": [
+        {
+          "v": "2025.1.11415.8425241",
+          "pre": false,
+          "d": "2026-10-21"
+        },
         {
           "v": "2025.1.11395.02072c6",
           "pre": false,
@@ -1789,7 +1794,7 @@
           "d": "2025-06-04"
         }
       ],
-      "latestDate": "2026-10-19"
+      "latestDate": "2026-10-21"
     },
     {
       "line": "2024.1",
@@ -9668,12 +9673,6 @@
       "d": "2026-08-24"
     },
     {
-      "v": "renovate-maintenance-mps20241-major-github-actions.2024.1.10661.8874277-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-major-github-actions",
-      "d": "2026-07-09"
-    },
-    {
       "v": "renovate-maintenance-mps20241-major-github-actions.2024.1.10651.93fae67-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-major-github-actions",
@@ -10484,6 +10483,12 @@
       "d": "2026-07-16"
     },
     {
+      "v": "merge-mps20261.2025.1.11414.8425241-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-10-21"
+    },
+    {
       "v": "merge-mps20261.2025.1.11394.02072c6-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -10881,12 +10886,6 @@
     },
     {
       "v": "merge-mps20251.2025.1.10682.22e4f63-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-07-09"
-    },
-    {
-      "v": "merge-mps20251.2025.1.10665.df8758b-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-07-09"
@@ -15390,6 +15389,12 @@
       "pre": false,
       "branch": "bugfix-irecordDeclaration_custom_equals_20211",
       "d": "2022-12-12"
+    },
+    {
+      "v": "bugfix-interpreter-runner.2025.1.11412.b77873c-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-interpreter-runner",
+      "d": "2026-10-21"
     },
     {
       "v": "bugfix-interpreter-runner.2025.1.11410.6a05ab6-SNAPSHOT",

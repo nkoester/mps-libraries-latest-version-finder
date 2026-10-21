@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T01:19:25.050Z",
+  "generatedAt": "2026-10-21T09:50:49.532Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -167,11 +167,11 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1127,
+      "total": 1128,
       "released": 836,
       "stable": 813,
       "preRelease": 23,
-      "branchCount": 291,
+      "branchCount": 292,
       "branches": 77,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
@@ -287,12 +287,12 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/platform/maven-metadata.xml",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3082,
+      "total": 3084,
       "released": 2048,
       "stable": 2048,
       "preRelease": 0,
-      "branchCount": 1034,
-      "branches": 241,
+      "branchCount": 1036,
+      "branches": 242,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
         {
@@ -431,12 +431,12 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/mbeddr/mbeddr/maven-metadata.xml",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2649,
+      "total": 2651,
       "released": 1866,
       "stable": 1866,
       "preRelease": 0,
-      "branchCount": 783,
-      "branches": 186,
+      "branchCount": 785,
+      "branches": 187,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
         {
@@ -559,9 +559,9 @@
       "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/iets3/opensource/maven-metadata.xml",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 2975,
-      "released": 1730,
-      "stable": 1723,
+      "total": 2976,
+      "released": 1731,
+      "stable": 1724,
       "preRelease": 7,
       "branchCount": 1245,
       "branches": 260,
@@ -585,11 +585,11 @@
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.11395.02072c6",
-          "latestDate": "2026-10-19",
+          "latest": "2025.1.11415.8425241",
           "latestIsPreRelease": false,
-          "total": 136,
-          "stable": 130
+          "total": 137,
+          "stable": 131,
+          "latestDate": "2026-10-21"
         },
         {
           "line": "2024.1",
@@ -1290,9 +1290,9 @@
       "kind": "marker",
       "slug": "com.jetbrains.mps_mps-jbr",
       "ok": true,
-      "total": 86,
-      "released": 86,
-      "stable": 79,
+      "total": 88,
+      "released": 88,
+      "stable": 81,
       "preRelease": 7,
       "branchCount": 0,
       "branches": 0,
@@ -1356,10 +1356,10 @@
         },
         {
           "line": "263.6259",
-          "latest": "263.6259.94",
+          "latest": "263.6259.96",
           "latestIsPreRelease": false,
-          "total": 19,
-          "stable": 19
+          "total": 21,
+          "stable": 21
         },
         {
           "line": "262.10968",

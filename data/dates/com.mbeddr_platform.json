@@ -3084,6 +3084,8 @@
     "bugfix-FixAndImproveTraceExplorer.2021.3.24071.2750767": "2023-11-22",
     "bugfix-FixAndImproveTraceExplorer.2021.3.24070.7baa44f": "2023-11-22",
     "assessment-scope-compatibility.2025.1.24562.01273a3-SNAPSHOT": "2025-11-08",
-    "artem-261.9999.9.24865.b5a6869-SNAPSHOT": "2026-01-14"
+    "artem-261.9999.9.24865.b5a6869-SNAPSHOT": "2026-01-14",
+    "artem-use-editor-nav.9999.9.25380.f475492-SNAPSHOT": "2026-10-21",
+    "artem-use-editor-nav.9999.9.25379.91f4653-SNAPSHOT": "2026-10-21"
   }
 }
