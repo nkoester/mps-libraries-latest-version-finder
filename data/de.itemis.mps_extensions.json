@@ -3,13 +3,13 @@
   "artifactId": "extensions",
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/extensions/maven-metadata.xml",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-20T20:18:04.497Z",
-  "total": 1123,
+  "generatedAt": "2026-10-21T01:19:25.050Z",
+  "total": 1127,
   "released": 836,
   "stable": 813,
   "preRelease": 23,
-  "branchCount": 287,
-  "branches": 76,
+  "branchCount": 291,
+  "branches": 77,
   "lines": [
     {
       "line": "9999.9",
@@ -4672,6 +4672,12 @@
       "d": "2026-09-02"
     },
     {
+      "v": "renovate-master-major-mps.9999.9.2525.380f3d0-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps",
+      "d": "2026-10-20"
+    },
+    {
       "v": "renovate-master-major-mps.9999.9.2520.83add2b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
@@ -5864,6 +5870,24 @@
       "pre": true,
       "branch": "feature-richtext-styles",
       "d": "2026-10-12"
+    },
+    {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2527.f83caf5-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-20"
+    },
+    {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2526.d9ca137-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-20"
+    },
+    {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2524.aed9c94-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-20"
     },
     {
       "v": "feature-changelog.2021.1.2602.be16227",
