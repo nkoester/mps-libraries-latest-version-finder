@@ -98,7 +98,7 @@
         zoom: var(--scale);
       }
       :root {
-        --scale: 1.4;
+        --scale: 1.3;
       }
       @media (max-width: 720px) {
         :root {
@@ -661,7 +661,7 @@
         height: auto;
         overflow: visible;
       }
-      .chain .cn rect {
+      .chain .cn > rect {
         fill: var(--surface);
         stroke: var(--rule-strong);
       }
@@ -679,8 +679,8 @@
       .chain .cn[data-act] {
         cursor: pointer;
       }
-      .chain .cn[data-act]:hover rect,
-      .chain .cn[data-act]:focus-visible rect {
+      .chain .cn[data-act]:hover > rect,
+      .chain .cn[data-act]:focus-visible > rect {
         stroke: var(--accent);
         fill: var(--accent-soft);
       }
@@ -702,7 +702,7 @@
       .chain .ce.tooling.untested {
         stroke-dasharray: 4 3;
       }
-      .chain .cn.tool rect {
+      .chain .cn.tool > rect {
         stroke: var(--need);
       }
       .chain .ce.implicit {
@@ -712,11 +712,86 @@
         stroke: var(--accent);
         stroke-width: 1.8;
       }
-      .chain .cn.hot rect {
+      .chain .cn.hot > rect {
         stroke: var(--accent);
       }
       .chain marker path {
         fill: var(--ink-3);
+      }
+      /* Inspect's graph view: the inspected build is the accented box. */
+      .chain .cn.root > rect {
+        stroke: var(--accent);
+        stroke-width: 1.6;
+        fill: var(--accent-soft);
+      }
+      .ins-graph {
+        margin: 0 0 14px;
+      }
+      .ins-graph .cn {
+        cursor: pointer;
+      }
+      /* SVG copy cell: the lists' .cp hover and copied-flash, drawn on a
+         rect behind the text (SVG has no background or box-shadow). */
+      .chain .cn .cp {
+        cursor: copy;
+        outline: none;
+      }
+      .chain .cn .cp-bg {
+        fill: transparent;
+        stroke: transparent;
+        stroke-width: 2;
+      }
+      .chain .cn .cp:hover .cp-bg,
+      .chain .cn .cp:focus-visible .cp-bg {
+        fill: var(--accent-soft);
+      }
+      .chain .cn .cp:focus-visible .cp-bg {
+        stroke: var(--accent);
+      }
+      .chain .cn .cp:hover text,
+      .chain .cn .cp:focus-visible text {
+        fill: var(--accent);
+      }
+      @keyframes copied-flash-svg {
+        from {
+          fill: var(--accent-soft);
+          stroke: var(--accent);
+        }
+        to {
+          stroke: transparent;
+        }
+      }
+      .chain .cn .cp.flash {
+        animation: none;
+      }
+      .chain .cn .cp.flash .cp-bg {
+        animation: copied-flash-svg 0.9s ease-out;
+      }
+      /* Not required by this build: present for orientation only. */
+      .chain .cn.free {
+        opacity: 0.5;
+      }
+      .chain .cn.free > rect {
+        stroke-dasharray: 3 2;
+      }
+      .chain .ce.free {
+        opacity: 0.4;
+      }
+      .chain .ce.free.hot {
+        opacity: 1;
+      }
+      .chain-note .lg-free::before {
+        border-top-style: dashed;
+        opacity: 0.5;
+      }
+      .ins-graph .cn:hover > rect,
+      .ins-graph .cn:focus-visible > rect {
+        stroke: var(--accent);
+      }
+      .req.hot {
+        border-top-color: var(--accent);
+        border-right-color: var(--accent);
+        border-bottom-color: var(--accent);
       }
       .chain-foot {
         margin: 8px 0 0;
@@ -929,10 +1004,9 @@
          when short of room -- they repeat on every row of a hit group. */
       .hit .coord,
       .vrow .coord {
-        grid-template-columns: minmax(0, max-content) minmax(
-            0,
-            max-content
-          ) auto auto;
+        grid-template-columns:
+          minmax(0, max-content) minmax(0, max-content)
+          auto auto;
       }
       .coord .tags {
         display: flex;
@@ -1077,6 +1151,11 @@
       }
       .flash {
         animation: copied-flash 0.9s ease-out;
+      }
+      /* A row focused from the Inspect graph: twice as long, as the eye
+         first has to follow the scroll. */
+      .req.flash {
+        animation-duration: 1.8s;
       }
       .btn.copied {
         background: var(--accent);
@@ -1555,12 +1634,16 @@
             <label title="Published on or before this date"
               >older than <input type="date" id="q-to"
             /></label>
-            <button class="btn btn--clear" id="q-clear-dates" disabled>clear dates</button>
+            <button class="btn btn--clear" id="q-clear-dates" disabled>
+              clear dates
+            </button>
             <label
               ><input type="checkbox" id="q-snap" checked /> hide
               SNAPSHOTs</label
             >
-            <button class="btn btn--clear" id="q-clear" disabled>clear all</button>
+            <button class="btn btn--clear" id="q-clear" disabled>
+              clear all
+            </button>
           </div>
           <p class="finder-note" id="q-note"></p>
         </section>
@@ -1670,7 +1753,9 @@
               ><input type="checkbox" id="dlg-snap" checked /> hide
               SNAPSHOTs</label
             >
-            <button class="btn btn--clear" id="dlg-clear" disabled>clear all</button>
+            <button class="btn btn--clear" id="dlg-clear" disabled>
+              clear all
+            </button>
           </span>
           <span class="count" id="dlg-count"></span>
         </div>
@@ -1686,6 +1771,11 @@
             <p id="ins-sub"></p>
           </div>
           <span class="head-acts">
+            <button
+              class="btn btn--out"
+              id="ins-view"
+              title="Show or hide the dependency graph above the list"
+            ></button>
             <span class="acts" id="ins-links"></span>
             <button class="btn btn--out" id="ins-close" aria-label="Close">
               Close
@@ -2836,7 +2926,7 @@
        * the line picker on every line; only a graph wider than its panel
        * shrinks to fit.
        */
-      const CHAIN = { w: 124, h: 38, gx: 14, gy: 72 };
+      const CHAIN = { w: 164, h: 52, gx: 14, gy: 72 };
 
       const bySlug = (slug) =>
         state.libraries.find((library) => library.slug === slug);
@@ -2953,26 +3043,29 @@
         return "ce";
       }
 
-      function renderChain() {
-        const panel = $("chain");
-        const declared = state.graph?.lines?.[state.selected];
-        if (!declared) {
-          panel.hidden = true;
-          return;
-        }
-        const { graph, row: runtime } = augmentGraph(declared);
-        const line = state.selected;
-        const present = state.libraries.filter(
-          (library) => graph.latest[library.slug],
-        );
-        const absent = state.libraries.filter(
-          (library) =>
-            library.ok && isMpsLibrary(library) && !graph.latest[library.slug],
-        );
-        const edges = graph.edges.filter(
-          ([from, to]) => graph.latest[from] && graph.latest[to],
-        );
-
+      /**
+       * Layered SVG of a dependency graph: dependents on top, their
+       * dependencies below. Shared by the board's chain and Inspect's graph
+       * view. Edges are [from, to, version, kind, status]; `graph.latest`
+       * maps every drawn slug to the version shown for it.
+       */
+      function chainSvg({
+        graph,
+        present,
+        edges,
+        runtime,
+        markerId,
+        label,
+        sub = (library) => library.groupId,
+        nodeClass = () => "",
+        nodeAct = () => true,
+        box = CHAIN,
+        fitSub = false,
+        verb = "inspect",
+        over = null,
+        edgeExtra = () => "",
+        copyVersion = false,
+      }) {
         const needs = new Map(present.map((library) => [library.slug, []]));
         const neededBy = new Map(present.map((library) => [library.slug, []]));
         for (const [from, to] of edges) {
@@ -3062,17 +3155,16 @@
         // so its gap is a quarter of the others.
         const runtimeRow =
           layers[0].length === 1 && layers[0][0] === JBR_PRIMARY;
-        const gapAbove = (d) =>
-          d === 0 && runtimeRow ? CHAIN.gy / 4 : CHAIN.gy;
+        const gapAbove = (d) => (d === 0 && runtimeRow ? box.gy / 4 : box.gy);
         const rowTop = [];
         for (let d = top, at = 0; d >= 0; d--) {
           rowTop[d] = at;
-          if (d > 0) at += CHAIN.h + gapAbove(d - 1);
+          if (d > 0) at += box.h + gapAbove(d - 1);
         }
-        const x = (slug) => position.get(slug) * (CHAIN.w + CHAIN.gx);
+        const x = (slug) => position.get(slug) * (box.w + box.gx);
         const y = (slug) => rowTop[depth.get(slug)];
-        const width = widest * CHAIN.w + (widest - 1) * CHAIN.gx;
-        const height = rowTop[0] + CHAIN.h;
+        const width = widest * box.w + (widest - 1) * box.gx;
+        const height = rowTop[0] + box.h;
 
         // An edge that skips a layer would run behind the boxes in between,
         // so it leaves through the gap below its source, runs down a lane
@@ -3083,7 +3175,7 @@
         const STUB = 14;
         const BAND = 6;
         const lanes = { left: 0, right: 0 };
-        const centre = (slug) => x(slug) + CHAIN.w / 2;
+        const centre = (slug) => x(slug) + box.w / 2;
         const skips = ([from, to]) => depth.get(from) - depth.get(to) > 1;
         // Each lane edge takes the side with fewer lanes so far -- two on one
         // side would have to cross -- the most off-centre edges first, ties
@@ -3129,7 +3221,7 @@
             list.forEach((edge, i) =>
               ports.set(
                 `${end}:${edge[0]}>${edge[1]}`,
-                x(slug) + (CHAIN.w * (i + 1)) / (list.length + 1),
+                x(slug) + (box.w * (i + 1)) / (list.length + 1),
               ),
             );
           }
@@ -3141,9 +3233,9 @@
           const [from, to] = edge;
           const x1 = ports.get(`0:${from}>${to}`);
           const x2 = ports.get(`1:${from}>${to}`);
-          const y1 = y(from) + CHAIN.h;
+          const y1 = y(from) + box.h;
           const y2 = y(to) - 3;
-          if (gapAbove(depth.get(to)) < CHAIN.gy) {
+          if (gapAbove(depth.get(to)) < box.gy) {
             const mid = (y1 + y2) / 2;
             return `M${x1} ${y1} C${x1} ${mid}, ${x2} ${mid}, ${x2} ${y2}`;
           }
@@ -3166,7 +3258,7 @@
           const share = (lanes[side] - lane + 1) / (lanes[side] + 1);
           // The band of the gap right below the source / right above the
           // target, not of the whole span.
-          const half = (CHAIN.gy - 3 - 2 * STUB) / 2;
+          const half = (box.gy - 3 - 2 * STUB) / 2;
           const out = a + (half - BAND) * share;
           const back = b - (half - BAND) * share;
           const r = 4;
@@ -3184,42 +3276,95 @@
           .map((edge) => {
             const [from, to] = edge;
             return `
-                <path class="${edgeClass(edge, runtime)}" data-from="${esc(from)}" data-to="${esc(to)}" marker-end="url(#chain-arrow)"
+                <path class="${edgeClass(edge, runtime)}${edgeExtra(edge)}" data-from="${esc(from)}" data-to="${esc(to)}" marker-end="url(#${markerId})"
                       d="${edgePath(edge)}">
                     <title>${esc(edgeTitle(edge, runtime))}</title>
                 </path>`;
           })
           .join("");
 
+        // One label line, squeezed to the box when it would overflow.
+        const fitWidth = (text, charWidth) =>
+          Math.min(text.length * charWidth, box.w - 20);
+        const fitText = (cls, y, text, charWidth) =>
+          `<text class="${cls}" x="10" y="${y}"${text.length * charWidth > box.w - 20 ? ` textLength="${box.w - 20}" lengthAdjust="spacingAndGlyphs"` : ""}>${esc(text)}</text>`;
+        // The version line as a copy cell, like copyCell() in the lists: the
+        // page-wide click handler copies the plain version (no "≥"). The
+        // rect behind the text takes the lists' hover tint and copy flash.
+        const versionCell = (y, text, version) => `
+                    <g class="cp" role="button" tabindex="0" data-copy="${copyRef(version)}">
+                        <title>Copy version ${esc(version)}</title>
+                        <rect class="cp-bg" x="6" y="${y - 11}" width="${fitWidth(text, 6.4) + 8}" height="15" rx="2"/>
+                        ${fitText("g", y, text, 6.4)}
+                    </g>`;
         const nodeSvg = present
           .map((library) => {
             const latest = graph.latest[library.slug];
+            const act = nodeAct(library)
+              ? ` data-act="inspect" data-v="${esc(latest)}"`
+              : "";
             return `
-                <g class="cn${isTool(library) ? " tool" : ""}" data-slug="${esc(library.slug)}" data-act="inspect" data-v="${esc(latest)}"
+                <g class="cn${isTool(library) ? " tool" : ""}${nodeClass(library)}" data-slug="${esc(library.slug)}"${act}
                    tabindex="0" role="button" transform="translate(${x(library.slug)} ${y(library.slug)})"
-                   aria-label="Inspect ${esc(mavenCoordinate(library, latest))}">
-                    <title>${esc(mavenCoordinate(library, latest))}: inspect</title>
-                    <rect width="${CHAIN.w}" height="${CHAIN.h}" rx="3"/>
-                    <text class="a" x="10" y="16"${library.artifactId.length > 14 ? ` textLength="${CHAIN.w - 20}" lengthAdjust="spacingAndGlyphs"` : ""}>${esc(library.artifactId)}</text>
-                    <text class="g" x="10" y="30">${esc(library.groupId)}</text>
+                   aria-label="${esc(verb[0].toUpperCase() + verb.slice(1))} ${esc(mavenCoordinate(library, latest))}">
+                    <title>${esc(mavenCoordinate(library, latest))}: ${esc(verb)}</title>
+                    <rect width="${box.w}" height="${box.h}" rx="3"/>
+                    ${over ? fitText("g", 14, over(library), 6.4) : ""}
+                    <text class="a" x="10" y="${over ? 30 : 16}"${library.artifactId.length * 7.9 > box.w - 20 ? ` textLength="${box.w - 20}" lengthAdjust="spacingAndGlyphs"` : ""}>${esc(library.artifactId)}</text>
+                    ${!sub ? "" : copyVersion ? versionCell(over ? 44 : 30, sub(library, latest), latest) : fitSub ? fitText("g", over ? 44 : 30, sub(library, latest), 6.4) : `<text class="g" x="10" y="30">${esc(sub(library, latest))}</text>`}
                 </g>`;
           })
           .join("");
 
         const left = lanes.left * LANE;
         const right = lanes.right * LANE;
-        panel.innerHTML = `
-            <h3>Dependency chain</h3>
-            ${chainNote(edges)}
-            <svg viewBox="${-2 - left} -2 ${width + 4 + left + right} ${height + 4}" width="${width + 4 + left + right}" height="${height + 4}" role="img" aria-label="Dependencies between the latest ${esc(line)} builds">
+        return `
+            <svg viewBox="${-2 - left} -2 ${width + 4 + left + right} ${height + 4}" width="${width + 4 + left + right}" height="${height + 4}" role="img" aria-label="${esc(label)}">
                 <defs>
-                    <marker id="chain-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <marker id="${markerId}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                         <path d="M0 0 L10 5 L0 10 z"/>
                     </marker>
                 </defs>
                 ${edgeSvg}
                 ${nodeSvg}
-            </svg>
+            </svg>`;
+      }
+
+      function renderChain() {
+        const panel = $("chain");
+        const declared = state.graph?.lines?.[state.selected];
+        if (!declared) {
+          panel.hidden = true;
+          return;
+        }
+        const { graph, row: runtime } = augmentGraph(declared);
+        const line = state.selected;
+        const present = state.libraries.filter(
+          (library) => graph.latest[library.slug],
+        );
+        const absent = state.libraries.filter(
+          (library) =>
+            library.ok && isMpsLibrary(library) && !graph.latest[library.slug],
+        );
+        const edges = graph.edges.filter(
+          ([from, to]) => graph.latest[from] && graph.latest[to],
+        );
+
+        panel.innerHTML = `
+            <h3>Dependency chain</h3>
+            ${chainNote(edges)}
+            ${chainSvg({
+              graph,
+              present,
+              edges,
+              runtime,
+              markerId: "chain-arrow",
+              label: `Dependencies between the latest ${line} builds`,
+              over: (l) => l.groupId,
+              sub: (l, v) => v,
+              fitSub: true,
+              copyVersion: true,
+            })}
             ${absent.length ? `<p class="chain-foot">No ${esc(line)} build: ${absent.map((l) => `<b>${esc(l.artifactId)}</b>`).join(", ")}</p>` : ""}`;
         panel.hidden = false;
       }
@@ -3244,7 +3389,11 @@
       $("chain").addEventListener("focusout", () => highlightChain(null));
       $("chain").addEventListener("keydown", (event) => {
         const node = event.target.closest(".cn");
-        if (node && (event.key === "Enter" || event.key === " ")) {
+        if (
+          node &&
+          !event.target.closest("[data-copy]") &&
+          (event.key === "Enter" || event.key === " ")
+        ) {
           event.preventDefault();
           openInspect(node.dataset.slug, node.dataset.v);
         }
@@ -3326,7 +3475,7 @@
 
       function reqRow(library, version, { kind, meta, prefix = "" }) {
         return `
-            <div class="req ${kind}${kind === "root" ? "" : " inspectable"}"${kind === "root" ? "" : inspectAttrs(library, version)}>
+            <div class="req ${kind}${kind === "root" ? "" : " inspectable"}"${kind === "root" ? ` data-slug="${esc(library.slug)}"` : inspectAttrs(library, version)}>
                 <span class="ga">${copyCell("group", library.groupId)}:${copyCell("artifact", library.artifactId, { html: `<b>${esc(library.artifactId)}</b>` })}</span>
                 <span class="rv${isPreRelease(version) ? " pre" : ""}">${prefix}${copyCell("version", version)}</span>
                 <span class="acts">${versionActs(library, version, { inspect: kind !== "root" })}</span>
@@ -3334,11 +3483,170 @@
             </div>`;
       }
 
+      /* ------------------------------------------------- inspect: graph view */
+
+      // Prototype: Inspect with a graph of the inspected build's own chain
+      // above the list (default) or the list alone. Remembered per browser.
+      const INSPECT_VIEW_KEY = "inspectView";
+      let inspectView =
+        localStorage.getItem(INSPECT_VIEW_KEY) === "list" ? "list" : "graph";
+      let inspected = null;
+
+      function renderInspectViewToggle() {
+        $("ins-view").textContent =
+          inspectView === "graph" ? "hide graph" : "show graph";
+      }
+      renderInspectViewToggle();
+      $("ins-view").addEventListener("click", () => {
+        inspectView = inspectView === "graph" ? "list" : "graph";
+        localStorage.setItem(INSPECT_VIEW_KEY, inspectView);
+        renderInspectViewToggle();
+        if (inspected) openInspect(inspected.slug, inspected.version);
+      });
+
+      /**
+       * The inspected build and what it requires, drawn like the board's
+       * chain: each edge is what one POM declares, at that POM's minimum.
+       * MPS -> JBR is the runtime MPS is made for (primary artifact only).
+       */
+      async function inspectGraph(
+        library,
+        version,
+        ordered,
+        runtime,
+        others,
+        line,
+      ) {
+        const latest = { [library.slug]: version };
+        for (const entry of ordered) latest[entry.slug] = entry.v;
+        // Not required by this build: drawn faded at the line's latest, with
+        // their own POM edges, so it shows where they would hook in.
+        const free = new Set();
+        for (const other of others) {
+          const v = latestIn(other.slug, line);
+          if (!v || isRuntime(other) || isTool(other)) continue;
+          latest[other.slug] = v;
+          free.add(other.slug);
+        }
+        const edges = [];
+        for (const [slug, v] of Object.entries(latest)) {
+          for (const [dep, min] of (await depsOf(slug, v)) ?? []) {
+            if (latest[dep] && dep !== slug) edges.push([slug, dep, min]);
+          }
+        }
+        // As on the board: a library that declares no tracked dependency is
+        // still built against MPS; drawn dotted, not in the POM.
+        if (latest[MPS_SLUG]) {
+          const declares = new Set(edges.map(([from]) => from));
+          for (const slug of Object.keys(latest)) {
+            if (slug === MPS_SLUG || declares.has(slug)) continue;
+            edges.push([slug, MPS_SLUG, lineOf(latest[MPS_SLUG]), "implicit"]);
+          }
+        }
+        const jbr =
+          runtime.find((row) => row.library.slug === JBR_PRIMARY && row.v) ??
+          null;
+        if (jbr && latest[MPS_SLUG]) {
+          latest[JBR_PRIMARY] = jbr.v;
+          edges.push([MPS_SLUG, JBR_PRIMARY, jbr.v, "runtime"]);
+        }
+        const present = state.libraries.filter((l) => latest[l.slug]);
+        if (present.length < 2) return "";
+        return `
+            <section class="chain ins-graph" aria-label="Dependency chain of this build">
+                <h3>Dependency chain of this build</h3>
+                ${chainNote(edges).replace(
+                  "</p>",
+                  free.size
+                    ? ' <span class="lg lg-free">not required by this build</span></p>'
+                    : "</p>",
+                )}
+                ${chainSvg({
+                  graph: { latest, edges },
+                  present,
+                  edges,
+                  runtime: jbr,
+                  markerId: "ins-arrow",
+                  label: `Dependencies of ${mavenCoordinate(library, version)}`,
+                  over: (l) => l.groupId,
+                  fitSub: true,
+                  sub: (l, v) =>
+                    l.slug === library.slug ||
+                    l.slug === JBR_PRIMARY ||
+                    free.has(l.slug)
+                      ? v
+                      : `≥ ${v}`,
+                  nodeClass: (l) =>
+                    l.slug === library.slug
+                      ? " root"
+                      : free.has(l.slug)
+                        ? " free"
+                        : "",
+                  edgeExtra: ([from]) => (free.has(from) ? " free" : ""),
+                  nodeAct: () => false,
+                  verb: "show in the list",
+                  copyVersion: true,
+                })}
+            </section>`;
+      }
+
+      /** Graph node <-> list row: hovering either lights up both. */
+      function highlightInspect(slug) {
+        const body = $("ins-body");
+        for (const edge of body.querySelectorAll(".ce"))
+          edge.classList.toggle(
+            "hot",
+            slug !== null &&
+              (edge.dataset.from === slug || edge.dataset.to === slug),
+          );
+        for (const node of body.querySelectorAll(".cn"))
+          node.classList.toggle("hot", node.dataset.slug === slug);
+        for (const row of body.querySelectorAll(".req[data-slug]"))
+          row.classList.toggle("hot", row.dataset.slug === slug);
+      }
+      $("ins-body").addEventListener("mouseover", (event) =>
+        highlightInspect(
+          event.target.closest(".cn, .req[data-slug]")?.dataset.slug ?? null,
+        ),
+      );
+      $("ins-body").addEventListener("mouseleave", () =>
+        highlightInspect(null),
+      );
+
+      /** A graph node brings its row into view and flashes it. */
+      function focusInspectRow(slug) {
+        const row = $("ins-body").querySelector(
+          `.req[data-slug="${CSS.escape(slug)}"]`,
+        );
+        if (!row) return;
+        row.scrollIntoView({ block: "center", behavior: "smooth" });
+        row.classList.remove("flash");
+        void row.offsetWidth; // restart the animation on repeated clicks
+        row.classList.add("flash");
+      }
+      $("ins-body").addEventListener("click", (event) => {
+        const node = event.target.closest(".ins-graph .cn");
+        if (node && !event.target.closest("[data-copy]"))
+          focusInspectRow(node.dataset.slug);
+      });
+      $("ins-body").addEventListener("keydown", (event) => {
+        const node = event.target.closest(".ins-graph .cn");
+        if (
+          node &&
+          !event.target.closest("[data-copy]") &&
+          (event.key === "Enter" || event.key === " ")
+        ) {
+          event.preventDefault();
+          focusInspectRow(node.dataset.slug);
+        }
+      });
+
       async function openInspect(slug, version) {
         const library = bySlug(slug);
         if (!library) return;
         const token = {};
         inspecting = token;
+        inspected = { slug, version };
         setDialogHead("ins", library, mavenCoordinate(library, version));
         $("ins-note").textContent = isTool(library)
           ? "Compatibility as extracted from the upstream sources: the tested-against contract."
@@ -3400,12 +3708,33 @@
             ? "direct"
             : `via <code>${[library, ...via.slice(0, -1).map(bySlug)].map((l) => esc(l.artifactId)).join(" → ")}</code>`;
 
+        // The runtime follows MPS: the inspected MPS build, or the minimum
+        // MPS this build requires.
+        const mpsVersion =
+          slug === MPS_SLUG
+            ? version
+            : ordered.find((entry) => entry.slug === MPS_SLUG)?.v;
+        const runtime = mpsVersion ? runtimeRows(mpsVersion) : [];
+        const graphHtml =
+          inspectView === "graph"
+            ? await inspectGraph(
+                library,
+                version,
+                ordered,
+                runtime,
+                others,
+                line,
+              )
+            : "";
+        if (inspecting !== token) return;
+
         let html =
           "<h3>Inspected</h3>" +
           reqRow(library, version, {
             kind: "root",
             meta: lineStatus(slug, version) + published(slug, version),
-          });
+          }) +
+          graphHtml;
         if (ordered.length) {
           html +=
             '<h3 class="need">Requires at least</h3>' +
@@ -3419,13 +3748,6 @@
               )
               .join("");
         }
-        // The runtime follows MPS: the inspected MPS build, or the minimum
-        // MPS this build requires.
-        const mpsVersion =
-          slug === MPS_SLUG
-            ? version
-            : ordered.find((entry) => entry.slug === MPS_SLUG)?.v;
-        const runtime = mpsVersion ? runtimeRows(mpsVersion) : [];
         if (runtime.length) {
           const via = slug === MPS_SLUG ? "" : ` (the minimum MPS)`;
           html +=
@@ -3758,7 +4080,11 @@
 
       async function openAll(slug, scope = null) {
         const library = state.libraries.find((entry) => entry.slug === slug);
-        setDialogHead("dlg", library, `${library.groupId}:${library.artifactId}`);
+        setDialogHead(
+          "dlg",
+          library,
+          `${library.groupId}:${library.artifactId}`,
+        );
         $("dlg-sub").textContent = "Loading…";
         $("dlg-body").innerHTML = "";
         $("dlg-search").value = "";
@@ -3875,11 +4201,24 @@
       }
 
       /** group | artifact | version cells of a coordinate row. */
-      function coordCells(library, version, { pre = false, render = esc, renderVersion = render } = {}) {
+      function coordCells(
+        library,
+        version,
+        { pre = false, render = esc, renderVersion = render } = {},
+      ) {
         return (
-          copyCell("group", library.groupId, { classes: "seg", html: render(library.groupId) }) +
-          copyCell("artifact", library.artifactId, { classes: "seg", html: render(library.artifactId) }) +
-          copyCell("version", version, { classes: `seg seg--version${pre ? " pre" : ""}`, html: renderVersion(version) })
+          copyCell("group", library.groupId, {
+            classes: "seg",
+            html: render(library.groupId),
+          }) +
+          copyCell("artifact", library.artifactId, {
+            classes: "seg",
+            html: render(library.artifactId),
+          }) +
+          copyCell("version", version, {
+            classes: `seg seg--version${pre ? " pre" : ""}`,
+            html: renderVersion(version),
+          })
         );
       }
 
@@ -3890,7 +4229,8 @@
                     ${coordCells(library, entry.v, {
                       pre: entry.pre,
                       render: (text) => mark(text, terms),
-                      renderVersion: (text) => `<span class="hit-text">${mark(text, terms)}</span>`,
+                      renderVersion: (text) =>
+                        `<span class="hit-text">${mark(text, terms)}</span>`,
                     })}
                     ${tag}
                 </div>
@@ -3917,7 +4257,10 @@
 
       /** Search hits and All versions: the date, then the shared actions. */
       function entryActs(library, entry) {
-        return dateTag(entry.d) + versionActs(library, entry.v, { inspect: !entry.branch });
+        return (
+          dateTag(entry.d) +
+          versionActs(library, entry.v, { inspect: !entry.branch })
+        );
       }
 
       const vrow = (library, entry) =>
@@ -4116,7 +4459,7 @@
           } else {
             // Restart the flash on repeated copies.
             button.classList.remove("flash");
-            void button.offsetWidth;
+            void button.getBoundingClientRect(); // reflow; also for SVG
             button.classList.add("flash");
           }
           balloon(button, "Copied", 1200);
