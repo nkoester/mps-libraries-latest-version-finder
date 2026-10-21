@@ -18,7 +18,7 @@
         {
           "line": "2026.1",
           "latest": "2026.1.1",
-          "latestDate": "2026-09-17",
+          "latestDate": "2026-09-17T13:35:19Z",
           "latestIsPreRelease": false,
           "total": 3,
           "stable": 2
@@ -26,7 +26,7 @@
         {
           "line": "2025.3",
           "latest": "2025.3",
-          "latestDate": "2026-06-11",
+          "latestDate": "2026-06-11T08:36:25Z",
           "latestIsPreRelease": false,
           "total": 2,
           "stable": 1
@@ -34,7 +34,7 @@
         {
           "line": "2025.2",
           "latest": "2025.2.1",
-          "latestDate": "2025-12-15",
+          "latestDate": "2025-12-15T13:14:58Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -42,7 +42,7 @@
         {
           "line": "2025.1",
           "latest": "2025.1.4",
-          "latestDate": "2026-09-17",
+          "latestDate": "2026-09-17T09:49:04Z",
           "latestIsPreRelease": false,
           "total": 6,
           "stable": 5
@@ -50,7 +50,7 @@
         {
           "line": "2024.3",
           "latest": "2024.3.2",
-          "latestDate": "2025-04-11",
+          "latestDate": "2025-04-11T12:02:48Z",
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 3
@@ -58,7 +58,7 @@
         {
           "line": "2024.1",
           "latest": "2024.1.6",
-          "latestDate": "2026-01-13",
+          "latestDate": "2026-01-13T16:32:20Z",
           "latestIsPreRelease": false,
           "total": 9,
           "stable": 7
@@ -66,7 +66,7 @@
         {
           "line": "2023.3",
           "latest": "2023.3.2",
-          "latestDate": "2024-10-09",
+          "latestDate": "2024-10-09T12:09:16Z",
           "latestIsPreRelease": false,
           "total": 4,
           "stable": 3
@@ -74,7 +74,7 @@
         {
           "line": "2023.2",
           "latest": "2023.2.3",
-          "latestDate": "2025-05-27",
+          "latestDate": "2025-05-27T11:25:09Z",
           "latestIsPreRelease": false,
           "total": 4,
           "stable": 4
@@ -82,7 +82,7 @@
         {
           "line": "2022.3",
           "latest": "2022.3.3",
-          "latestDate": "2024-10-09",
+          "latestDate": "2024-10-09T11:49:12Z",
           "latestIsPreRelease": false,
           "total": 4,
           "stable": 4
@@ -90,7 +90,7 @@
         {
           "line": "2022.2",
           "latest": "2022.2.4",
-          "latestDate": "2024-10-09",
+          "latestDate": "2024-10-09T11:36:40Z",
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 5
@@ -98,7 +98,7 @@
         {
           "line": "2021.3",
           "latest": "2021.3.5",
-          "latestDate": "2023-11-29",
+          "latestDate": "2023-11-29T16:05:10Z",
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 5
@@ -106,7 +106,7 @@
         {
           "line": "2021.2",
           "latest": "2021.2.6",
-          "latestDate": "2022-11-22",
+          "latestDate": "2022-11-22T14:33:09Z",
           "latestIsPreRelease": false,
           "total": 3,
           "stable": 3
@@ -114,7 +114,7 @@
         {
           "line": "2021.1",
           "latest": "2021.1.4",
-          "latestDate": "2022-07-05",
+          "latestDate": "2022-07-05T11:25:57Z",
           "latestIsPreRelease": false,
           "total": 2,
           "stable": 2
@@ -122,7 +122,7 @@
         {
           "line": "2020.3",
           "latest": "2020.3.6",
-          "latestDate": "2022-07-05",
+          "latestDate": "2022-07-05T11:26:44Z",
           "latestIsPreRelease": false,
           "total": 3,
           "stable": 3
@@ -130,7 +130,7 @@
         {
           "line": "2020.2",
           "latest": "2020.2.3",
-          "latestDate": "2022-07-05",
+          "latestDate": "2022-07-05T11:32:38Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -138,7 +138,7 @@
         {
           "line": "2020.1",
           "latest": "2020.1.7",
-          "latestDate": "2022-07-05",
+          "latestDate": "2022-07-05T11:30:56Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -146,7 +146,7 @@
         {
           "line": "2019.3",
           "latest": "2019.3.7",
-          "latestDate": "2022-07-05",
+          "latestDate": "2022-07-05T11:32:15Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -154,7 +154,7 @@
         {
           "line": "2019.2",
           "latest": "2019.2.4",
-          "latestDate": "2022-10-13",
+          "latestDate": "2022-10-13T10:40:17Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -178,7 +178,7 @@
         {
           "line": "9999.9",
           "latest": "9999.9.3690.ab7128e-SNAPSHOT",
-          "latestDate": "2026-10-16",
+          "latestDate": "2026-10-16T03:14:08Z",
           "latestIsPreRelease": true,
           "total": 23,
           "stable": 0
@@ -186,7 +186,7 @@
         {
           "line": "2026.1",
           "latest": "2026.1.3688.0c1ad7a",
-          "latestDate": "2026-10-15",
+          "latestDate": "2026-10-15T11:26:32Z",
           "latestIsPreRelease": false,
           "total": 16,
           "stable": 16
@@ -194,7 +194,7 @@
         {
           "line": "2025.1",
           "latest": "2025.1.3696.3b88dd4",
-          "latestDate": "2026-10-19",
+          "latestDate": "2026-10-19T01:12:57Z",
           "latestIsPreRelease": false,
           "total": 117,
           "stable": 117
@@ -202,7 +202,7 @@
         {
           "line": "2024.3",
           "latest": "2024.3.3222.a0b631c",
-          "latestDate": "2025-04-30",
+          "latestDate": "2025-04-30T12:46:49Z",
           "latestIsPreRelease": false,
           "total": 34,
           "stable": 34
@@ -210,7 +210,7 @@
         {
           "line": "2024.1",
           "latest": "2024.1.3695.bac07ab",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T03:12:46Z",
           "latestIsPreRelease": false,
           "total": 126,
           "stable": 126
@@ -218,7 +218,7 @@
         {
           "line": "2023.2",
           "latest": "2023.2.3623.35b8c5e",
-          "latestDate": "2026-06-05",
+          "latestDate": "2026-06-05T11:09:29Z",
           "latestIsPreRelease": false,
           "total": 127,
           "stable": 127
@@ -226,7 +226,7 @@
         {
           "line": "2022.3",
           "latest": "2022.3.3622.5e3e2c1",
-          "latestDate": "2026-06-05",
+          "latestDate": "2026-06-05T11:08:21Z",
           "latestIsPreRelease": false,
           "total": 59,
           "stable": 59
@@ -234,7 +234,7 @@
         {
           "line": "2022.2",
           "latest": "2022.2.3621.a88851f",
-          "latestDate": "2026-06-05",
+          "latestDate": "2026-06-05T11:08:07Z",
           "latestIsPreRelease": false,
           "total": 106,
           "stable": 106
@@ -242,7 +242,7 @@
         {
           "line": "2021.3",
           "latest": "2021.3.3406.97eab29",
-          "latestDate": "2025-07-30",
+          "latestDate": "2025-07-30T03:12:43Z",
           "latestIsPreRelease": false,
           "total": 93,
           "stable": 93
@@ -250,7 +250,7 @@
         {
           "line": "2021.2",
           "latest": "2021.2.2874.a6090d8",
-          "latestDate": "2024-05-31",
+          "latestDate": "2024-05-31T10:17:04Z",
           "latestIsPreRelease": false,
           "total": 50,
           "stable": 50
@@ -258,7 +258,7 @@
         {
           "line": "2021.1",
           "latest": "2021.1.2873.b20916e",
-          "latestDate": "2024-05-31",
+          "latestDate": "2024-05-31T10:03:54Z",
           "latestIsPreRelease": false,
           "total": 63,
           "stable": 63
@@ -266,7 +266,7 @@
         {
           "line": "2020.3",
           "latest": "2020.3.2739.a1f3875",
-          "latestDate": "2024-02-08",
+          "latestDate": "2024-02-08T14:02:23Z",
           "latestIsPreRelease": false,
           "total": 21,
           "stable": 21
@@ -274,7 +274,7 @@
         {
           "line": "2020.2",
           "latest": "2020.2.2447.05d4f73",
-          "latestDate": "2022-09-15",
+          "latestDate": "2022-09-15T03:09:45Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -298,7 +298,7 @@
         {
           "line": "9999.9",
           "latest": "9999.9.26655.30193f1",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T06:43:44Z",
           "latestIsPreRelease": false,
           "total": 415,
           "stable": 415
@@ -306,7 +306,7 @@
         {
           "line": "2026.1",
           "latest": "2026.1.26654.d156123",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T06:41:46Z",
           "latestIsPreRelease": false,
           "total": 32,
           "stable": 32
@@ -314,7 +314,7 @@
         {
           "line": "2025.1",
           "latest": "2025.1.26657.c5d588e",
-          "latestDate": "2026-10-19",
+          "latestDate": "2026-10-19T07:59:31Z",
           "latestIsPreRelease": false,
           "total": 261,
           "stable": 261
@@ -322,7 +322,7 @@
         {
           "line": "2024.3",
           "latest": "2024.3.25383.9e7fc19",
-          "latestDate": "2025-05-01",
+          "latestDate": "2025-05-01T07:48:17Z",
           "latestIsPreRelease": false,
           "total": 68,
           "stable": 68
@@ -330,7 +330,7 @@
         {
           "line": "2024.1",
           "latest": "2024.1.26653.52a92d2",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T06:40:50Z",
           "latestIsPreRelease": false,
           "total": 248,
           "stable": 248
@@ -338,7 +338,7 @@
         {
           "line": "2023.2",
           "latest": "2023.2.26501.f5ef6b6",
-          "latestDate": "2026-06-05",
+          "latestDate": "2026-06-05T11:19:09Z",
           "latestIsPreRelease": false,
           "total": 287,
           "stable": 287
@@ -346,7 +346,7 @@
         {
           "line": "2022.3",
           "latest": "2022.3.26500.b633ef3",
-          "latestDate": "2026-06-05",
+          "latestDate": "2026-06-05T11:18:00Z",
           "latestIsPreRelease": false,
           "total": 127,
           "stable": 127
@@ -354,7 +354,7 @@
         {
           "line": "2022.2",
           "latest": "2022.2.26499.52911a0",
-          "latestDate": "2026-06-05",
+          "latestDate": "2026-06-05T11:17:11Z",
           "latestIsPreRelease": false,
           "total": 232,
           "stable": 232
@@ -362,7 +362,7 @@
         {
           "line": "2021.3",
           "latest": "2021.3.26011.42254e5",
-          "latestDate": "2025-07-30",
+          "latestDate": "2025-07-30T03:23:14Z",
           "latestIsPreRelease": false,
           "total": 185,
           "stable": 185
@@ -370,7 +370,7 @@
         {
           "line": "2021.2",
           "latest": "2021.2.24668.69dd8f3",
-          "latestDate": "2024-05-31",
+          "latestDate": "2024-05-31T10:30:41Z",
           "latestIsPreRelease": false,
           "total": 54,
           "stable": 54
@@ -378,7 +378,7 @@
         {
           "line": "2021.1",
           "latest": "2021.1.24667.d97bc57",
-          "latestDate": "2024-05-31",
+          "latestDate": "2024-05-31T10:16:06Z",
           "latestIsPreRelease": false,
           "total": 107,
           "stable": 107
@@ -386,7 +386,7 @@
         {
           "line": "2020.3",
           "latest": "2020.3.24319.2804ee7",
-          "latestDate": "2024-02-08",
+          "latestDate": "2024-02-08T14:14:39Z",
           "latestIsPreRelease": false,
           "total": 25,
           "stable": 25
@@ -394,7 +394,7 @@
         {
           "line": "2020.2",
           "latest": "2020.2.23491.924ec3e",
-          "latestDate": "2022-09-16",
+          "latestDate": "2022-09-16T15:07:10Z",
           "latestIsPreRelease": false,
           "total": 3,
           "stable": 3
@@ -402,7 +402,7 @@
         {
           "line": "2020.1",
           "latest": "2020.1.22983.1359870",
-          "latestDate": "2022-09-16",
+          "latestDate": "2022-09-16T19:47:02Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -410,7 +410,7 @@
         {
           "line": "2019.3",
           "latest": "2019.3.22976.75ffb5d",
-          "latestDate": "2022-09-02",
+          "latestDate": "2022-09-02T12:01:31Z",
           "latestIsPreRelease": false,
           "total": 2,
           "stable": 2
@@ -418,7 +418,7 @@
         {
           "line": "2019.2",
           "latest": "2019.2.22179.1d20ccb",
-          "latestDate": "2022-10-13",
+          "latestDate": "2022-10-13T10:27:16Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -442,7 +442,7 @@
         {
           "line": "9999.9",
           "latest": "9999.9.26655.30193f1",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T06:59:27Z",
           "latestIsPreRelease": false,
           "total": 399,
           "stable": 399
@@ -450,7 +450,7 @@
         {
           "line": "2026.1",
           "latest": "2026.1.26654.d156123",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T06:56:18Z",
           "latestIsPreRelease": false,
           "total": 32,
           "stable": 32
@@ -458,7 +458,7 @@
         {
           "line": "2025.1",
           "latest": "2025.1.26657.c5d588e",
-          "latestDate": "2026-10-19",
+          "latestDate": "2026-10-19T08:14:20Z",
           "latestIsPreRelease": false,
           "total": 259,
           "stable": 259
@@ -466,7 +466,7 @@
         {
           "line": "2024.3",
           "latest": "2024.3.25383.9e7fc19",
-          "latestDate": "2025-05-01",
+          "latestDate": "2025-05-01T08:09:38Z",
           "latestIsPreRelease": false,
           "total": 67,
           "stable": 67
@@ -474,7 +474,7 @@
         {
           "line": "2024.1",
           "latest": "2024.1.26653.52a92d2",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T06:55:19Z",
           "latestIsPreRelease": false,
           "total": 246,
           "stable": 246
@@ -482,7 +482,7 @@
         {
           "line": "2023.2",
           "latest": "2023.2.26501.f5ef6b6",
-          "latestDate": "2026-06-05",
+          "latestDate": "2026-06-05T11:34:49Z",
           "latestIsPreRelease": false,
           "total": 274,
           "stable": 274
@@ -490,7 +490,7 @@
         {
           "line": "2022.3",
           "latest": "2022.3.26500.b633ef3",
-          "latestDate": "2026-06-05",
+          "latestDate": "2026-06-05T11:33:22Z",
           "latestIsPreRelease": false,
           "total": 119,
           "stable": 119
@@ -498,7 +498,7 @@
         {
           "line": "2022.2",
           "latest": "2022.2.26499.52911a0",
-          "latestDate": "2026-06-05",
+          "latestDate": "2026-06-05T11:35:49Z",
           "latestIsPreRelease": false,
           "total": 170,
           "stable": 170
@@ -506,7 +506,7 @@
         {
           "line": "2021.3",
           "latest": "2021.3.24707.42254e5",
-          "latestDate": "2024-06-18",
+          "latestDate": "2024-06-18T12:58:52Z",
           "latestIsPreRelease": false,
           "total": 139,
           "stable": 139
@@ -514,7 +514,7 @@
         {
           "line": "2021.2",
           "latest": "2021.2.24668.69dd8f3",
-          "latestDate": "2024-05-31",
+          "latestDate": "2024-05-31T11:01:12Z",
           "latestIsPreRelease": false,
           "total": 48,
           "stable": 48
@@ -522,7 +522,7 @@
         {
           "line": "2021.1",
           "latest": "2021.1.24667.d97bc57",
-          "latestDate": "2024-05-31",
+          "latestDate": "2024-05-31T10:45:19Z",
           "latestIsPreRelease": false,
           "total": 88,
           "stable": 88
@@ -530,7 +530,7 @@
         {
           "line": "2020.3",
           "latest": "2020.3.24319.2804ee7",
-          "latestDate": "2024-02-08",
+          "latestDate": "2024-02-08T14:40:59Z",
           "latestIsPreRelease": false,
           "total": 20,
           "stable": 20
@@ -538,7 +538,7 @@
         {
           "line": "2020.2",
           "latest": "2020.2.23491.924ec3e",
-          "latestDate": "2022-09-16",
+          "latestDate": "2022-09-16T15:37:56Z",
           "latestIsPreRelease": false,
           "total": 3,
           "stable": 3
@@ -546,7 +546,7 @@
         {
           "line": "2019.3",
           "latest": "2019.3.22976.75ffb5d",
-          "latestDate": "2022-09-02",
+          "latestDate": "2022-09-02T12:02:02Z",
           "latestIsPreRelease": false,
           "total": 2,
           "stable": 2
@@ -570,7 +570,7 @@
         {
           "line": "9999.9",
           "latest": "9999.9.10936.1f10368",
-          "latestDate": "2026-08-12",
+          "latestDate": "2026-08-12T07:22:23Z",
           "latestIsPreRelease": false,
           "total": 190,
           "stable": 190
@@ -578,7 +578,7 @@
         {
           "line": "2026.1",
           "latest": "2026.1.11401.91d3cd0",
-          "latestDate": "2026-10-20",
+          "latestDate": "2026-10-20T07:21:42Z",
           "latestIsPreRelease": false,
           "total": 24,
           "stable": 24
@@ -589,12 +589,12 @@
           "latestIsPreRelease": false,
           "total": 137,
           "stable": 131,
-          "latestDate": "2026-10-21"
+          "latestDate": "2026-10-21T09:10:18Z"
         },
         {
           "line": "2024.1",
           "latest": "2024.1.11405.ee845c4",
-          "latestDate": "2026-10-20",
+          "latestDate": "2026-10-20T12:46:21Z",
           "latestIsPreRelease": false,
           "total": 269,
           "stable": 268
@@ -602,7 +602,7 @@
         {
           "line": "2023.2",
           "latest": "2023.2.9490.b7e2dfd",
-          "latestDate": "2025-12-04",
+          "latestDate": "2025-12-04T11:57:51Z",
           "latestIsPreRelease": false,
           "total": 217,
           "stable": 217
@@ -610,7 +610,7 @@
         {
           "line": "2022.3",
           "latest": "2022.3.8656.444c955",
-          "latestDate": "2025-05-14",
+          "latestDate": "2025-05-14T10:54:06Z",
           "latestIsPreRelease": false,
           "total": 135,
           "stable": 135
@@ -618,7 +618,7 @@
         {
           "line": "2022.2",
           "latest": "2022.2.9403.2aebea5",
-          "latestDate": "2025-11-20",
+          "latestDate": "2025-11-20T13:00:07Z",
           "latestIsPreRelease": false,
           "total": 269,
           "stable": 269
@@ -626,7 +626,7 @@
         {
           "line": "2021.3",
           "latest": "2021.3.8356.ce6ff8f",
-          "latestDate": "2025-03-26",
+          "latestDate": "2025-03-26T11:23:13Z",
           "latestIsPreRelease": false,
           "total": 238,
           "stable": 238
@@ -634,7 +634,7 @@
         {
           "line": "2021.2",
           "latest": "2021.2.7340.ba128fb",
-          "latestDate": "2024-05-31",
+          "latestDate": "2024-05-31T10:43:13Z",
           "latestIsPreRelease": false,
           "total": 27,
           "stable": 27
@@ -642,7 +642,7 @@
         {
           "line": "2021.1",
           "latest": "2021.1.7836.d468f81",
-          "latestDate": "2024-11-13",
+          "latestDate": "2024-11-13T16:13:52Z",
           "latestIsPreRelease": false,
           "total": 194,
           "stable": 194
@@ -650,7 +650,7 @@
         {
           "line": "2020.3",
           "latest": "2020.3.6625.a5def84",
-          "latestDate": "2024-02-08",
+          "latestDate": "2024-02-08T15:46:59Z",
           "latestIsPreRelease": false,
           "total": 24,
           "stable": 24
@@ -658,7 +658,7 @@
         {
           "line": "2020.2",
           "latest": "2020.2.5686.44ed42f",
-          "latestDate": "2022-09-19",
+          "latestDate": "2022-09-19T13:16:30Z",
           "latestIsPreRelease": false,
           "total": 4,
           "stable": 4
@@ -666,7 +666,7 @@
         {
           "line": "2020.1",
           "latest": "2020.1.6623.40014aa",
-          "latestDate": "2024-02-08",
+          "latestDate": "2024-02-08T14:43:10Z",
           "latestIsPreRelease": false,
           "total": 2,
           "stable": 2
@@ -674,7 +674,7 @@
         {
           "line": "2019.2",
           "latest": "2019.2.4266.15a3227",
-          "latestDate": "2022-10-13",
+          "latestDate": "2022-10-13T10:22:34Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -698,7 +698,7 @@
         {
           "line": "9999.9",
           "latest": "9999.9.1484.7a37b52",
-          "latestDate": "2026-10-14",
+          "latestDate": "2026-10-14T18:47:21Z",
           "latestIsPreRelease": false,
           "total": 25,
           "stable": 25
@@ -706,7 +706,7 @@
         {
           "line": "2026.1",
           "latest": "2026.1.1482.16fad4c",
-          "latestDate": "2026-10-14",
+          "latestDate": "2026-10-14T18:30:51Z",
           "latestIsPreRelease": false,
           "total": 4,
           "stable": 4
@@ -714,7 +714,7 @@
         {
           "line": "2025.1",
           "latest": "2025.1.1438.801e837",
-          "latestDate": "2026-06-18",
+          "latestDate": "2026-06-18T12:20:17Z",
           "latestIsPreRelease": false,
           "total": 12,
           "stable": 12
@@ -722,7 +722,7 @@
         {
           "line": "2024.3",
           "latest": "2024.3.1356.b2affd6",
-          "latestDate": "2026-04-29",
+          "latestDate": "2026-04-29T14:13:50Z",
           "latestIsPreRelease": false,
           "total": 27,
           "stable": 27
@@ -730,7 +730,7 @@
         {
           "line": "2024.1",
           "latest": "2024.1.1436.3cd3456",
-          "latestDate": "2026-06-18",
+          "latestDate": "2026-06-18T12:06:24Z",
           "latestIsPreRelease": false,
           "total": 33,
           "stable": 33
@@ -738,7 +738,7 @@
         {
           "line": "2023.3",
           "latest": "2023.3.434.0770b97",
-          "latestDate": "2024-04-16",
+          "latestDate": "2024-04-16T08:59:56Z",
           "latestIsPreRelease": false,
           "total": 2,
           "stable": 2
@@ -746,7 +746,7 @@
         {
           "line": "2023.2",
           "latest": "2023.2.1062.24abe87",
-          "latestDate": "2025-04-14",
+          "latestDate": "2025-04-14T09:43:48Z",
           "latestIsPreRelease": false,
           "total": 61,
           "stable": 61
@@ -754,7 +754,7 @@
         {
           "line": "2022.3",
           "latest": "2022.3.853.fdd8b14",
-          "latestDate": "2024-11-23",
+          "latestDate": "2024-11-23T09:44:49Z",
           "latestIsPreRelease": false,
           "total": 50,
           "stable": 50
@@ -762,7 +762,7 @@
         {
           "line": "2022.2",
           "latest": "2022.2.691.45f01da",
-          "latestDate": "2024-09-04",
+          "latestDate": "2024-09-04T08:17:52Z",
           "latestIsPreRelease": false,
           "total": 57,
           "stable": 57
@@ -770,7 +770,7 @@
         {
           "line": "2021.3",
           "latest": "2021.3.344.9dc2423",
-          "latestDate": "2024-02-07",
+          "latestDate": "2024-02-07T17:57:33Z",
           "latestIsPreRelease": false,
           "total": 45,
           "stable": 45
@@ -778,7 +778,7 @@
         {
           "line": "2021.2",
           "latest": "2021.2.203.99cfb0f",
-          "latestDate": "2023-07-18",
+          "latestDate": "2023-07-18T15:45:49Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -786,7 +786,7 @@
         {
           "line": "2021.1",
           "latest": "2021.1.207.96ad6bb",
-          "latestDate": "2023-07-28",
+          "latestDate": "2023-07-28T14:23:44Z",
           "latestIsPreRelease": false,
           "total": 10,
           "stable": 10
@@ -794,7 +794,7 @@
         {
           "line": "999.9",
           "latest": "999.9.1085.0cf5b20",
-          "latestDate": "2025-05-01",
+          "latestDate": "2025-05-01T19:46:35Z",
           "latestIsPreRelease": false,
           "total": 77,
           "stable": 77
@@ -819,7 +819,7 @@
         {
           "line": "25",
           "latest": "25.0.4.1-b623.69",
-          "latestDate": "2026-10-14",
+          "latestDate": "2026-10-14T07:57:16Z",
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 5
@@ -827,7 +827,7 @@
         {
           "line": "21",
           "latest": "21.0.11-b1163.116",
-          "latestDate": "2026-06-18",
+          "latestDate": "2026-06-18T08:08:27Z",
           "latestIsPreRelease": false,
           "total": 11,
           "stable": 11
@@ -835,7 +835,7 @@
         {
           "line": "17",
           "latest": "17.0.14-b1367.22",
-          "latestDate": "2025-02-19",
+          "latestDate": "2025-02-19T10:42:26Z",
           "latestIsPreRelease": false,
           "total": 12,
           "stable": 12
@@ -843,7 +843,7 @@
         {
           "line": "11",
           "latest": "11_0_14_1-b1751.46",
-          "latestDate": "2022-09-16",
+          "latestDate": "2022-09-16T19:04:03Z",
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 5
@@ -868,7 +868,7 @@
         {
           "line": "25",
           "latest": "25.0.4.1-b623.69",
-          "latestDate": "2026-10-14",
+          "latestDate": "2026-10-14T07:54:33Z",
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 5
@@ -876,7 +876,7 @@
         {
           "line": "21",
           "latest": "21.0.11-b1163.116",
-          "latestDate": "2026-06-17",
+          "latestDate": "2026-06-17T19:23:56Z",
           "latestIsPreRelease": false,
           "total": 11,
           "stable": 11
@@ -884,7 +884,7 @@
         {
           "line": "17",
           "latest": "17.0.14-b1367.22",
-          "latestDate": "2025-02-19",
+          "latestDate": "2025-02-19T10:40:04Z",
           "latestIsPreRelease": false,
           "total": 12,
           "stable": 12
@@ -892,7 +892,7 @@
         {
           "line": "11",
           "latest": "11_0_10-b1145.96",
-          "latestDate": "2022-09-03",
+          "latestDate": "2022-09-03T08:27:31Z",
           "latestIsPreRelease": false,
           "total": 3,
           "stable": 3
@@ -917,7 +917,7 @@
         {
           "line": "25",
           "latest": "25.0.4.1-b623.69",
-          "latestDate": "2026-10-14",
+          "latestDate": "2026-10-14T08:00:39Z",
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 5
@@ -925,7 +925,7 @@
         {
           "line": "21",
           "latest": "21.0.9-b895.147",
-          "latestDate": "2025-11-05",
+          "latestDate": "2025-11-05T12:54:04Z",
           "latestIsPreRelease": false,
           "total": 10,
           "stable": 10
@@ -933,7 +933,7 @@
         {
           "line": "17",
           "latest": "17.0.14-b1367.22",
-          "latestDate": "2025-02-19",
+          "latestDate": "2025-02-19T10:45:14Z",
           "latestIsPreRelease": false,
           "total": 11,
           "stable": 11
@@ -941,7 +941,7 @@
         {
           "line": "11",
           "latest": "11_0_14_1-b1751.46",
-          "latestDate": "2022-09-16",
+          "latestDate": "2022-09-16T19:05:26Z",
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 5
@@ -949,7 +949,7 @@
         {
           "line": "8",
           "latest": "8u202-b1483.53",
-          "latestDate": "2022-10-31",
+          "latestDate": "2022-10-31T13:08:34Z",
           "latestIsPreRelease": false,
           "total": 1,
           "stable": 1
@@ -974,7 +974,7 @@
         {
           "line": "11",
           "latest": "11_0_14_1-b1751.46",
-          "latestDate": "2022-09-16",
+          "latestDate": "2022-09-16T19:04:58Z",
           "latestIsPreRelease": false,
           "total": 5,
           "stable": 5
@@ -1003,7 +1003,7 @@
         {
           "line": "2.x",
           "latest": "2.0.328.08de38e",
-          "latestDate": "2024-02-20",
+          "latestDate": "2024-02-20T21:38:38Z",
           "discouraged": "2.x was never established and is discouraged; use 1.x.",
           "latestIsPreRelease": false,
           "total": 10,
@@ -1012,7 +1012,7 @@
         {
           "line": "1.x",
           "latest": "1.31.0.1.1243113",
-          "latestDate": "2026-08-20",
+          "latestDate": "2026-08-20T09:38:24Z",
           "latestIsPreRelease": false,
           "total": 68,
           "stable": 68
@@ -1038,7 +1038,7 @@
         {
           "line": "2.x",
           "latest": "2.9.2.239.aeb5185",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T20:47:17Z",
           "latestIsPreRelease": false,
           "total": 75,
           "stable": 75
@@ -1046,7 +1046,7 @@
         {
           "line": "1.x",
           "latest": "1.0.0.56.8c05881",
-          "latestDate": "2023-10-20",
+          "latestDate": "2023-10-20T10:12:30Z",
           "latestIsPreRelease": false,
           "total": 9,
           "stable": 9
@@ -1072,7 +1072,7 @@
         {
           "line": "1.x",
           "latest": "1.27.4.239.aeb5185",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T20:47:45Z",
           "latestIsPreRelease": false,
           "total": 104,
           "stable": 104
@@ -1098,7 +1098,7 @@
         {
           "line": "1.x",
           "latest": "1.27.4.239.aeb5185",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T20:47:16Z",
           "latestIsPreRelease": false,
           "total": 104,
           "stable": 104
@@ -1124,7 +1124,7 @@
         {
           "line": "1.x",
           "latest": "1.27.4.239.aeb5185",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T20:47:17Z",
           "latestIsPreRelease": false,
           "total": 71,
           "stable": 71
@@ -1150,7 +1150,7 @@
         {
           "line": "1.x",
           "latest": "1.1.3.239.aeb5185",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T20:48:20Z",
           "latestIsPreRelease": false,
           "total": 17,
           "stable": 17
@@ -1158,7 +1158,7 @@
         {
           "line": "0.x",
           "latest": "0.3.0.165.81672e9",
-          "latestDate": "2025-11-21",
+          "latestDate": "2025-11-21T21:26:04Z",
           "latestIsPreRelease": false,
           "total": 34,
           "stable": 34
@@ -1184,7 +1184,7 @@
         {
           "line": "6.x",
           "latest": "6.1.0.239.aeb5185",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T20:47:49Z",
           "latestIsPreRelease": false,
           "total": 7,
           "stable": 7
@@ -1192,7 +1192,7 @@
         {
           "line": "5.x",
           "latest": "5.1.2.211.acde161",
-          "latestDate": "2026-09-16",
+          "latestDate": "2026-09-16T14:22:29Z",
           "latestIsPreRelease": false,
           "total": 10,
           "stable": 10
@@ -1200,7 +1200,7 @@
         {
           "line": "4.x",
           "latest": "4.0.0.165.81672e9",
-          "latestDate": "2025-11-21",
+          "latestDate": "2025-11-21T21:25:35Z",
           "latestIsPreRelease": false,
           "total": 2,
           "stable": 2
@@ -1208,7 +1208,7 @@
         {
           "line": "3.x",
           "latest": "3.0.2.154.f3551e4",
-          "latestDate": "2025-09-10",
+          "latestDate": "2025-09-10T12:26:25Z",
           "latestIsPreRelease": false,
           "total": 12,
           "stable": 12
@@ -1216,7 +1216,7 @@
         {
           "line": "2.x",
           "latest": "2.5.0.124.fe9ea2a",
-          "latestDate": "2025-03-28",
+          "latestDate": "2025-03-28T09:23:47Z",
           "latestIsPreRelease": false,
           "total": 57,
           "stable": 57
@@ -1224,7 +1224,7 @@
         {
           "line": "1.x",
           "latest": "1.10.32.10c2255",
-          "latestDate": "2023-07-27",
+          "latestDate": "2023-07-27T05:29:54Z",
           "latestIsPreRelease": false,
           "total": 16,
           "stable": 16
@@ -1250,7 +1250,7 @@
         {
           "line": "0.x",
           "latest": "0.2.3.239.aeb5185",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T20:48:20Z",
           "latestIsPreRelease": false,
           "total": 10,
           "stable": 10
@@ -1276,7 +1276,7 @@
         {
           "line": "1.x",
           "latest": "1.1.3.239.aeb5185",
-          "latestDate": "2026-10-18",
+          "latestDate": "2026-10-18T20:47:14Z",
           "latestIsPreRelease": false,
           "total": 9,
           "stable": 9
