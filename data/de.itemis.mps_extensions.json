@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-22T15:46:54.078Z",
-  "total": 1135,
+  "generatedAt": "2026-10-22T20:22:48.302Z",
+  "total": 1149,
   "released": 836,
   "stable": 813,
   "preRelease": 23,
-  "branchCount": 299,
-  "branches": 82,
+  "branchCount": 313,
+  "branches": 85,
   "lines": [
     {
       "line": "9999.9",
@@ -4344,6 +4344,24 @@
       "d": "2026-07-20T08:35:42Z"
     },
     {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2561.7f9baaa-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-22T20:05:06Z"
+    },
+    {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2549.72c3904-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-22T16:39:41Z"
+    },
+    {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2546.7b9099e-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-22T16:23:30Z"
+    },
+    {
       "v": "test-plaintextgen-regression-coverage.9999.9.2540.832e79e-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
@@ -4690,6 +4708,12 @@
       "pre": true,
       "branch": "renovate-master-mkdocs-material-9.x",
       "d": "2026-09-02T09:40:49Z"
+    },
+    {
+      "v": "renovate-master-major-mps.9999.9.2558.5f34142-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps",
+      "d": "2026-10-22T19:55:27Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2532.7713d80-SNAPSHOT",
@@ -5454,6 +5478,12 @@
       "d": "2024-01-16T08:47:43Z"
     },
     {
+      "v": "merge-master.9999.9.2557.4ee7766-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-10-22T19:55:22Z"
+    },
+    {
       "v": "merge-master.9999.9.2536.a9433d2-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -5662,6 +5692,18 @@
       "pre": true,
       "branch": "fix-projectview-write-intent-from-read-action",
       "d": "2026-08-01T05:49:45Z"
+    },
+    {
+      "v": "fix-plaintextgen-tab-edge-cases.9999.9.2548.a049b25-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-plaintextgen-tab-edge-cases",
+      "d": "2026-10-22T16:30:19Z"
+    },
+    {
+      "v": "fix-plaintextgen-tab-edge-cases.9999.9.2543.8ba2f09-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-plaintextgen-tab-edge-cases",
+      "d": "2026-10-22T16:07:48Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2541.9ead9ca-SNAPSHOT",
@@ -5910,6 +5952,18 @@
       "d": "2026-10-22T07:23:59Z"
     },
     {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2547.a69a654-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-22T16:29:56Z"
+    },
+    {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2544.eb8969f-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-22T16:10:43Z"
+    },
+    {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2542.3144f6b-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
@@ -5934,6 +5988,18 @@
       "d": "2026-10-20T20:20:24Z"
     },
     {
+      "v": "feature-plaintextgen-diffing-paste.9999.9.2551.f8e3fa8-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-diffing-paste",
+      "d": "2026-10-22T18:28:31Z"
+    },
+    {
+      "v": "feature-plaintextgen-diffing-paste.9999.9.2550.69df8c9-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-diffing-paste",
+      "d": "2026-10-22T18:06:16Z"
+    },
+    {
       "v": "feature-changelog.2021.1.2602.be16227",
       "pre": false,
       "branch": "feature-changelog",
@@ -5950,6 +6016,18 @@
       "pre": true,
       "branch": "feature-baseLanguageExtensions-improve-groupBy",
       "d": "2026-07-31T20:51:04Z"
+    },
+    {
+      "v": "docs-plaintextgen-user-guide.9999.9.2553.1c09c7b-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-plaintextgen-user-guide",
+      "d": "2026-10-22T19:26:38Z"
+    },
+    {
+      "v": "docs-plaintextgen-user-guide.9999.9.2552.2a8a2bb-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-plaintextgen-user-guide",
+      "d": "2026-10-22T18:59:48Z"
     },
     {
       "v": "docs-building-default-task.2025.1.2486.723b70c-SNAPSHOT",
@@ -5986,6 +6064,12 @@
       "pre": true,
       "branch": "claude-teamcity-dirty-files-artifact-3bd721",
       "d": "2026-10-22T07:51:52Z"
+    },
+    {
+      "v": "claude-coding-standards-dsl-06bd5f.2024.1.2554.6d52045-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-coding-standards-dsl-06bd5f",
+      "d": "2026-10-22T19:47:21Z"
     },
     {
       "v": "build-versioning-convention.2024.1.2390.fce5a7f-SNAPSHOT",
