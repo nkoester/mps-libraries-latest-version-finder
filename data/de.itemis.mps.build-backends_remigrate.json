@@ -7,7 +7,7 @@
   "kind": "tool",
   "lineScheme": "major",
   "slug": "de.itemis.mps.build-backends_remigrate",
-  "generatedAt": "2026-10-22T01:08:59.620Z",
+  "generatedAt": "2026-10-22T09:52:57.615Z",
   "total": 53,
   "released": 53,
   "stable": 51,
@@ -25,7 +25,7 @@
         {
           "v": "1.2.0-SNAPSHOT",
           "pre": true,
-          "d": "2026-10-21T19:03:43Z"
+          "d": "2026-10-21T21:44:45Z"
         },
         {
           "v": "1.1.4-SNAPSHOT",

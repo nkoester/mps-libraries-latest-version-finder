@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T01:08:59.620Z",
+  "generatedAt": "2026-10-22T09:52:57.615Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -171,12 +171,12 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1132,
+      "total": 1130,
       "released": 836,
       "stable": 813,
       "preRelease": 23,
-      "branchCount": 296,
-      "branches": 79,
+      "branchCount": 294,
+      "branches": 80,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
         {
@@ -588,10 +588,10 @@
         {
           "line": "2026.1",
           "latest": "2026.1.11424.a53a9bd",
+          "latestDate": "2026-10-21T20:58:22Z",
           "latestIsPreRelease": false,
           "total": 25,
-          "stable": 25,
-          "latestDate": "2026-10-21T20:58:22Z"
+          "stable": 25
         },
         {
           "line": "2025.1",
@@ -1013,10 +1013,10 @@
       },
       "slug": "de.itemis.mps_mps-gradle-plugin",
       "ok": true,
-      "total": 108,
-      "released": 78,
+      "total": 109,
+      "released": 79,
       "stable": 78,
-      "preRelease": 0,
+      "preRelease": 1,
       "branchCount": 30,
       "branches": 14,
       "dataFile": "data/de.itemis.mps_mps-gradle-plugin.json",
@@ -1035,7 +1035,7 @@
           "latest": "1.31.0.1.1243113",
           "latestDate": "2026-08-20T09:38:24Z",
           "latestIsPreRelease": false,
-          "total": 68,
+          "total": 69,
           "stable": 68
         }
       ]

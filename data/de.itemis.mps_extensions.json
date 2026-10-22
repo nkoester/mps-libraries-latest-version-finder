@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-22T01:08:59.620Z",
-  "total": 1132,
+  "generatedAt": "2026-10-22T09:52:57.615Z",
+  "total": 1130,
   "released": 836,
   "stable": 813,
   "preRelease": 23,
-  "branchCount": 296,
-  "branches": 79,
+  "branchCount": 294,
+  "branches": 80,
   "lines": [
     {
       "line": "9999.9",
@@ -4344,6 +4344,12 @@
       "d": "2026-07-20T08:35:42Z"
     },
     {
+      "v": "test-ci-dirty-files-artifacts.9999.9.2537.da413c4-SNAPSHOT",
+      "pre": true,
+      "branch": "test-ci-dirty-files-artifacts",
+      "d": "2026-10-22T08:26:47Z"
+    },
+    {
       "v": "renovate-mps-jbr.9999.9.2307.fe26f13-SNAPSHOT",
       "pre": true,
       "branch": "renovate-mps-jbr",
@@ -4677,19 +4683,19 @@
       "v": "renovate-master-major-mps.9999.9.2532.7713d80-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-21T20:04:55Z"
+      "d": "2026-10-22T07:24:17Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2530.7d077e3-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-21T14:59:43Z"
+      "d": "2026-10-22T07:24:16Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2528.e18502b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-21T09:32:25Z"
+      "d": "2026-10-22T07:24:15Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2525.380f3d0-SNAPSHOT",
@@ -4701,13 +4707,13 @@
       "v": "renovate-master-major-mps.9999.9.2520.83add2b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-20T12:27:06Z"
+      "d": "2026-10-22T07:24:14Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2519.c379d20-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-19T09:29:24Z"
+      "d": "2026-10-22T07:24:13Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2511.a01c2db-SNAPSHOT",
@@ -4846,18 +4852,6 @@
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
       "d": "2026-06-24T18:02:47Z"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2244.25c71af-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
-      "d": "2026-07-07T02:14:18Z"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2243.97c4901-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
-      "d": "2026-07-07T02:14:17Z"
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2190.15520eb-SNAPSHOT",
@@ -5070,6 +5064,18 @@
       "d": "2022-09-06T16:23:26Z"
     },
     {
+      "v": "merge-mps20261.2026.1.2535.a6d3cb2-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-10-22T07:59:09Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.2533.7ac88d8-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-10-22T07:24:09Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.2518.811513b-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -5206,12 +5212,6 @@
       "pre": true,
       "branch": "merge-mps20261",
       "d": "2026-07-08T03:12:21Z"
-    },
-    {
-      "v": "merge-mps20261.2026.1.2237.83ca0cc-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20261",
-      "d": "2026-06-23T12:58:30Z"
     },
     {
       "v": "merge-mps20251.2025.1.2513.25070bf-SNAPSHOT",
@@ -5436,6 +5436,12 @@
       "d": "2024-01-16T08:47:43Z"
     },
     {
+      "v": "merge-master.9999.9.2536.a9433d2-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-10-22T08:15:05Z"
+    },
+    {
       "v": "merge-master.9999.9.2477.5ca58d3-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -5538,34 +5544,10 @@
       "d": "2026-07-08T03:12:20Z"
     },
     {
-      "v": "merge-master.9999.9.2242.27a860b-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-07-07T02:14:00Z"
-    },
-    {
       "v": "merge-master.9999.9.2205.c6bac95-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
       "d": "2026-06-12T23:11:19Z"
-    },
-    {
-      "v": "merge-master.2026.1.2239.51e7c81-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-07-07T02:13:55Z"
-    },
-    {
-      "v": "merge-master.2026.1.2236.91e87d1-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-07-07T02:13:55Z"
-    },
-    {
-      "v": "jbr25.2026.1.2238.2579b5c-SNAPSHOT",
-      "pre": true,
-      "branch": "jbr25",
-      "d": "2026-07-07T02:13:54Z"
     },
     {
       "v": "fix-viewmodel-tests-mps20261-compat.2025.1.2517.cad8b34-SNAPSHOT",
@@ -5667,19 +5649,19 @@
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2523.2d564d0-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-20T19:01:29Z"
+      "d": "2026-10-22T07:24:04Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2522.81c62de-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-20T15:55:10Z"
+      "d": "2026-10-22T07:24:03Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2521.be86a26-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-20T15:38:47Z"
+      "d": "2026-10-22T07:24:02Z"
     },
     {
       "v": "fix-navigation-deadlocks.2025.1.2250.ba12bac-SNAPSHOT",
@@ -5901,19 +5883,19 @@
       "v": "feature-remove-modelix-dependency.2026.1.2529.a60ff8f-SNAPSHOT",
       "pre": true,
       "branch": "feature-remove-modelix-dependency",
-      "d": "2026-10-21T14:57:41Z"
+      "d": "2026-10-22T07:23:59Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2527.f83caf5-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-20T21:03:06Z"
+      "d": "2026-10-22T07:23:58Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2526.d9ca137-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-20T20:46:43Z"
+      "d": "2026-10-22T07:23:57Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2524.aed9c94-SNAPSHOT",
@@ -5968,6 +5950,12 @@
       "pre": true,
       "branch": "docs-agent-audit-fixes",
       "d": "2026-10-17T02:54:33Z"
+    },
+    {
+      "v": "claude-teamcity-dirty-files-artifact-3bd721.2024.1.2534.0a775e0-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-teamcity-dirty-files-artifact-3bd721",
+      "d": "2026-10-22T07:51:52Z"
     },
     {
       "v": "build-versioning-convention.2024.1.2390.fce5a7f-SNAPSHOT",

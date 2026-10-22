@@ -484,6 +484,13 @@
         "java": "11",
         "launcher": "2.8.0.167.c51149b"
       },
+      "1.32.0-SNAPSHOT": {
+        "commit": null,
+        "backendsRange": null,
+        "gradle": null,
+        "java": null,
+        "launcher": "2.8.0.167.c51149b"
+      },
       "2.0.315.0da7e4b": {
         "commit": "0da7e4ba4d5e",
         "backendsRange": null,

@@ -3,7 +3,7 @@
   "artifactId": "modelcheck",
   "slug": "de.itemis.mps.build-backends_modelcheck",
   "versions": {
-    "1.28.0-SNAPSHOT": "2026-10-21T19:03:43Z",
+    "1.28.0-SNAPSHOT": "2026-10-21T21:44:45Z",
     "1.27.5-SNAPSHOT": "2026-10-21T16:20:06Z",
     "1.27.4.239.aeb5185": "2026-10-18T20:47:45Z",
     "1.27.4.236.98e1534": "2026-10-16T19:02:58Z",
