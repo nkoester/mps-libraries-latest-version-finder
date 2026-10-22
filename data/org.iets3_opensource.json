@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-22T09:52:57.615Z",
-  "total": 2981,
-  "released": 1733,
-  "stable": 1726,
+  "generatedAt": "2026-10-22T15:46:54.078Z",
+  "total": 2983,
+  "released": 1734,
+  "stable": 1727,
   "preRelease": 7,
-  "branchCount": 1248,
+  "branchCount": 1249,
   "branches": 260,
   "lines": [
     {
@@ -1110,11 +1110,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11415.8425241",
+      "latest": "2025.1.11429.83c8f91",
       "latestIsPreRelease": false,
-      "total": 137,
-      "stable": 131,
+      "total": 138,
+      "stable": 132,
       "versions": [
+        {
+          "v": "2025.1.11429.83c8f91",
+          "pre": false,
+          "d": "2026-10-22T13:22:14Z"
+        },
         {
           "v": "2025.1.11415.8425241",
           "pre": false,
@@ -1801,7 +1806,7 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-10-21T09:10:18Z"
+      "latestDate": "2026-10-22T13:22:14Z"
     },
     {
       "line": "2024.1",
@@ -9127,12 +9132,6 @@
       "d": "2026-10-07T01:43:56Z"
     },
     {
-      "v": "renovate-maintenance-mps20251-third-party-minor.2025.1.10679.57501d2-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20251-third-party-minor",
-      "d": "2026-07-09T12:54:36Z"
-    },
-    {
       "v": "renovate-maintenance-mps20251-patch-third-party-minor.2025.1.11276.3e1230c-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-third-party-minor",
@@ -10705,6 +10704,18 @@
       "d": "2026-01-16T02:44:52Z"
     },
     {
+      "v": "merge-mps20251.2025.1.11427.cca93b0-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-10-22T12:28:46Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.11426.697ae38-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-10-22T11:49:32Z"
+    },
+    {
       "v": "merge-mps20251.2025.1.11392.3f78046-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -10907,12 +10918,6 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-07-09T12:54:15Z"
-    },
-    {
-      "v": "merge-mps20251.2025.1.10682.22e4f63-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-07-09T12:54:14Z"
     },
     {
       "v": "merge-mps20251.2025.1.10577.c0330bc-SNAPSHOT",
@@ -12293,6 +12298,12 @@
       "pre": false,
       "branch": "feature-virtual_runSolver",
       "d": "2023-02-13T10:34:02Z"
+    },
+    {
+      "v": "feature-view-model.2025.1.11431.dec19d7-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-view-model",
+      "d": "2026-10-22T14:23:49Z"
     },
     {
       "v": "feature-view-model.2025.1.11420.a05aa05-SNAPSHOT",

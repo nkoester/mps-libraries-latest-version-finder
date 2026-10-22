@@ -5,13 +5,13 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-22T09:52:57.615Z",
-  "total": 3084,
+  "generatedAt": "2026-10-22T15:46:54.078Z",
+  "total": 3085,
   "released": 2048,
   "stable": 2048,
   "preRelease": 0,
-  "branchCount": 1036,
-  "branches": 242,
+  "branchCount": 1037,
+  "branches": 243,
   "lines": [
     {
       "line": "9999.9",
@@ -12712,6 +12712,12 @@
       "pre": false,
       "branch": "mps-artem-2022",
       "d": "2023-03-22T12:51:42Z"
+    },
+    {
+      "v": "migration-provisional-platform-20241.2024.1.2538.70ceea6-SNAPSHOT",
+      "pre": true,
+      "branch": "migration-provisional-platform-20241",
+      "d": "2026-10-22T09:42:11Z"
     },
     {
       "v": "merge-2021.1-to-2021.2.2021.2.23463.257cc08",

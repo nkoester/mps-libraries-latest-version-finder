@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-22T09:52:57.615Z",
-  "total": 1130,
+  "generatedAt": "2026-10-22T15:46:54.078Z",
+  "total": 1135,
   "released": 836,
   "stable": 813,
   "preRelease": 23,
-  "branchCount": 294,
-  "branches": 80,
+  "branchCount": 299,
+  "branches": 82,
   "lines": [
     {
       "line": "9999.9",
@@ -4344,6 +4344,18 @@
       "d": "2026-07-20T08:35:42Z"
     },
     {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2540.832e79e-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-22T12:47:11Z"
+    },
+    {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2539.1fdf0be-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-22T12:25:28Z"
+    },
+    {
       "v": "test-ci-dirty-files-artifacts.9999.9.2537.da413c4-SNAPSHOT",
       "pre": true,
       "branch": "test-ci-dirty-files-artifacts",
@@ -5064,6 +5076,12 @@
       "d": "2022-09-06T16:23:26Z"
     },
     {
+      "v": "migration-provisional-platform-20241.2024.1.2538.70ceea6-SNAPSHOT",
+      "pre": true,
+      "branch": "migration-provisional-platform-20241",
+      "d": "2026-10-22T09:42:11Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.2535.a6d3cb2-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -5646,6 +5664,12 @@
       "d": "2026-08-01T05:49:45Z"
     },
     {
+      "v": "fix-plaintextgen-tab-edge-cases.9999.9.2541.9ead9ca-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-plaintextgen-tab-edge-cases",
+      "d": "2026-10-22T14:07:56Z"
+    },
+    {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2523.2d564d0-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
@@ -5884,6 +5908,12 @@
       "pre": true,
       "branch": "feature-remove-modelix-dependency",
       "d": "2026-10-22T07:23:59Z"
+    },
+    {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2542.3144f6b-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-22T14:42:07Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2527.f83caf5-SNAPSHOT",
