@@ -10,7 +10,7 @@
     "2.x": "2.x was never established and is discouraged; use 1.x."
   },
   "slug": "de.itemis.mps_mps-gradle-plugin",
-  "generatedAt": "2026-10-23T01:08:27.567Z",
+  "generatedAt": "2026-10-23T09:46:47.376Z",
   "total": 109,
   "released": 79,
   "stable": 78,
@@ -89,7 +89,7 @@
         {
           "v": "1.32.0-SNAPSHOT",
           "pre": true,
-          "d": "2026-10-22T06:37:44Z"
+          "d": "2026-10-23T08:47:31Z"
         },
         {
           "v": "1.31.0.1.1243113",

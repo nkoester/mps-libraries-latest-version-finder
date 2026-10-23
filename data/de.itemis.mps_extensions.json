@@ -5,21 +5,26 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-23T01:08:27.567Z",
-  "total": 1162,
-  "released": 836,
-  "stable": 813,
-  "preRelease": 23,
-  "branchCount": 326,
+  "generatedAt": "2026-10-23T09:46:47.376Z",
+  "total": 1182,
+  "released": 840,
+  "stable": 816,
+  "preRelease": 24,
+  "branchCount": 342,
   "branches": 85,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.3690.ab7128e-SNAPSHOT",
+      "latest": "9999.9.3697.e463a12-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 23,
+      "total": 24,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.3697.e463a12-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-23T03:00:18Z"
+        },
         {
           "v": "9999.9.3690.ab7128e-SNAPSHOT",
           "pre": true,
@@ -136,15 +141,20 @@
           "d": "2025-09-05T03:13:11Z"
         }
       ],
-      "latestDate": "2026-10-16T03:14:08Z"
+      "latestDate": "2026-10-23T03:00:18Z"
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.3688.0c1ad7a",
+      "latest": "2026.1.3700.744285d",
       "latestIsPreRelease": false,
-      "total": 16,
-      "stable": 16,
+      "total": 17,
+      "stable": 17,
       "versions": [
+        {
+          "v": "2026.1.3700.744285d",
+          "pre": false,
+          "d": "2026-10-23T03:13:09Z"
+        },
         {
           "v": "2026.1.3688.0c1ad7a",
           "pre": false,
@@ -226,15 +236,20 @@
           "d": "2026-06-23T13:28:12Z"
         }
       ],
-      "latestDate": "2026-10-15T11:26:32Z"
+      "latestDate": "2026-10-23T03:13:09Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3696.3b88dd4",
+      "latest": "2025.1.3699.0dadfaf",
       "latestIsPreRelease": false,
-      "total": 117,
-      "stable": 117,
+      "total": 118,
+      "stable": 118,
       "versions": [
+        {
+          "v": "2025.1.3699.0dadfaf",
+          "pre": false,
+          "d": "2026-10-23T03:12:35Z"
+        },
         {
           "v": "2025.1.3696.3b88dd4",
           "pre": false,
@@ -821,7 +836,7 @@
           "d": "2025-04-29T14:16:32Z"
         }
       ],
-      "latestDate": "2026-10-19T01:12:57Z"
+      "latestDate": "2026-10-23T03:12:35Z"
     },
     {
       "line": "2024.3",
@@ -1005,11 +1020,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.3695.bac07ab",
+      "latest": "2024.1.3698.729267d",
       "latestIsPreRelease": false,
-      "total": 126,
-      "stable": 126,
+      "total": 127,
+      "stable": 127,
       "versions": [
+        {
+          "v": "2024.1.3698.729267d",
+          "pre": false,
+          "d": "2026-10-23T03:09:41Z"
+        },
         {
           "v": "2024.1.3695.bac07ab",
           "pre": false,
@@ -1641,7 +1661,7 @@
           "d": "2024-11-09T19:39:20Z"
         }
       ],
-      "latestDate": "2026-10-18T03:12:46Z"
+      "latestDate": "2026-10-23T03:09:41Z"
     },
     {
       "line": "2023.2",
@@ -4344,10 +4364,34 @@
       "d": "2026-07-20T08:35:42Z"
     },
     {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2590.694cf23-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-23T06:04:20Z"
+    },
+    {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2587.96cccd5-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-23T04:35:41Z"
+    },
+    {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2583.48b8fac-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-23T04:05:00Z"
+    },
+    {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2577.8cfd1f8-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-23T02:43:18Z"
+    },
+    {
       "v": "test-plaintextgen-regression-coverage.9999.9.2571.3e61b5f-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-22T21:14:10Z"
+      "d": "2026-10-23T02:01:37Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2561.7f9baaa-SNAPSHOT",
@@ -4359,31 +4403,31 @@
       "v": "test-plaintextgen-regression-coverage.9999.9.2549.72c3904-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-22T16:39:41Z"
+      "d": "2026-10-23T02:01:36Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2546.7b9099e-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-22T16:23:30Z"
+      "d": "2026-10-23T02:01:36Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2540.832e79e-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-22T12:47:11Z"
+      "d": "2026-10-23T02:01:35Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2539.1fdf0be-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-22T12:25:28Z"
+      "d": "2026-10-23T02:01:34Z"
     },
     {
       "v": "test-ci-dirty-files-artifacts.9999.9.2537.da413c4-SNAPSHOT",
       "pre": true,
       "branch": "test-ci-dirty-files-artifacts",
-      "d": "2026-10-22T08:26:47Z"
+      "d": "2026-10-23T02:01:33Z"
     },
     {
       "v": "renovate-mps-jbr.9999.9.2307.fe26f13-SNAPSHOT",
@@ -4722,16 +4766,22 @@
       "d": "2026-09-02T09:40:49Z"
     },
     {
+      "v": "renovate-master-major-mps.9999.9.2579.03d2c8a-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps",
+      "d": "2026-10-23T03:31:24Z"
+    },
+    {
       "v": "renovate-master-major-mps.9999.9.2565.6cf0109-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-22T20:25:00Z"
+      "d": "2026-10-23T02:01:29Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2558.5f34142-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-22T19:55:27Z"
+      "d": "2026-10-23T02:01:28Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2532.7713d80-SNAPSHOT",
@@ -4900,12 +4950,6 @@
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
       "d": "2026-07-07T02:14:19Z"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2245.d7bb377-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
-      "d": "2026-06-24T18:02:47Z"
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2190.15520eb-SNAPSHOT",
@@ -5121,7 +5165,7 @@
       "v": "migration-provisional-platform-20241.2024.1.2538.70ceea6-SNAPSHOT",
       "pre": true,
       "branch": "migration-provisional-platform-20241",
-      "d": "2026-10-22T09:42:11Z"
+      "d": "2026-10-23T02:01:24Z"
     },
     {
       "v": "merge-mps20261.2026.1.2535.a6d3cb2-SNAPSHOT",
@@ -5499,13 +5543,13 @@
       "v": "merge-master.9999.9.2557.4ee7766-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
-      "d": "2026-10-22T19:55:22Z"
+      "d": "2026-10-23T02:01:21Z"
     },
     {
       "v": "merge-master.9999.9.2536.a9433d2-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
-      "d": "2026-10-22T08:15:05Z"
+      "d": "2026-10-23T02:01:20Z"
     },
     {
       "v": "merge-master.9999.9.2477.5ca58d3-SNAPSHOT",
@@ -5712,28 +5756,46 @@
       "d": "2026-08-01T05:49:45Z"
     },
     {
+      "v": "fix-plaintextgen-tab-edge-cases.9999.9.2584.a3f0a15-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-plaintextgen-tab-edge-cases",
+      "d": "2026-10-23T04:16:20Z"
+    },
+    {
+      "v": "fix-plaintextgen-tab-edge-cases.9999.9.2582.d2fc6b7-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-plaintextgen-tab-edge-cases",
+      "d": "2026-10-23T03:40:32Z"
+    },
+    {
+      "v": "fix-plaintextgen-tab-edge-cases.9999.9.2576.b235f17-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-plaintextgen-tab-edge-cases",
+      "d": "2026-10-23T02:03:11Z"
+    },
+    {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2567.616cfa2-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-22T20:51:10Z"
+      "d": "2026-10-23T02:01:17Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2548.a049b25-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-22T16:30:19Z"
+      "d": "2026-10-23T02:01:16Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2543.8ba2f09-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-22T16:07:48Z"
+      "d": "2026-10-23T02:01:15Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2541.9ead9ca-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-22T14:07:56Z"
+      "d": "2026-10-23T02:01:14Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2523.2d564d0-SNAPSHOT",
@@ -5976,40 +6038,52 @@
       "d": "2026-10-22T07:23:59Z"
     },
     {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2578.17314f7-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-23T02:45:21Z"
+    },
+    {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2575.2236efa-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-23T02:01:11Z"
+    },
+    {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2574.9b9c90a-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-22T21:28:57Z"
+      "d": "2026-10-23T02:01:10Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2570.708cb08-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-22T21:04:27Z"
+      "d": "2026-10-23T02:01:09Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2564.fe6e6c6-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-22T20:18:23Z"
+      "d": "2026-10-23T02:01:08Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2547.a69a654-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-22T16:29:56Z"
+      "d": "2026-10-23T02:01:08Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2544.eb8969f-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-22T16:10:43Z"
+      "d": "2026-10-23T02:01:07Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2542.3144f6b-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-22T14:42:07Z"
+      "d": "2026-10-23T02:01:06Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2527.f83caf5-SNAPSHOT",
@@ -6030,34 +6104,58 @@
       "d": "2026-10-20T20:20:24Z"
     },
     {
+      "v": "feature-plaintextgen-diffing-paste.9999.9.2592.cc4d4c3-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-diffing-paste",
+      "d": "2026-10-23T06:14:42Z"
+    },
+    {
+      "v": "feature-plaintextgen-diffing-paste.9999.9.2589.aec8800-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-diffing-paste",
+      "d": "2026-10-23T04:42:59Z"
+    },
+    {
+      "v": "feature-plaintextgen-diffing-paste.9999.9.2585.edd386c-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-diffing-paste",
+      "d": "2026-10-23T04:24:06Z"
+    },
+    {
+      "v": "feature-plaintextgen-diffing-paste.9999.9.2580.9edaef9-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-diffing-paste",
+      "d": "2026-10-23T03:37:36Z"
+    },
+    {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2573.5867f90-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-22T21:26:51Z"
+      "d": "2026-10-23T02:01:05Z"
     },
     {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2569.0cd5c66-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-22T20:54:04Z"
+      "d": "2026-10-23T02:01:04Z"
     },
     {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2562.33d951f-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-22T20:13:40Z"
+      "d": "2026-10-23T02:01:04Z"
     },
     {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2551.f8e3fa8-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-22T18:28:31Z"
+      "d": "2026-10-23T02:01:03Z"
     },
     {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2550.69df8c9-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-22T18:06:16Z"
+      "d": "2026-10-23T02:01:02Z"
     },
     {
       "v": "feature-changelog.2021.1.2602.be16227",
@@ -6078,34 +6176,52 @@
       "d": "2026-07-31T20:51:04Z"
     },
     {
+      "v": "docs-plaintextgen-user-guide.9999.9.2588.a514155-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-plaintextgen-user-guide",
+      "d": "2026-10-23T04:42:59Z"
+    },
+    {
+      "v": "docs-plaintextgen-user-guide.9999.9.2586.e927df1-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-plaintextgen-user-guide",
+      "d": "2026-10-23T04:26:25Z"
+    },
+    {
+      "v": "docs-plaintextgen-user-guide.9999.9.2581.842f382-SNAPSHOT",
+      "pre": true,
+      "branch": "docs-plaintextgen-user-guide",
+      "d": "2026-10-23T03:40:25Z"
+    },
+    {
       "v": "docs-plaintextgen-user-guide.9999.9.2572.5c09678-SNAPSHOT",
       "pre": true,
       "branch": "docs-plaintextgen-user-guide",
-      "d": "2026-10-22T21:26:49Z"
+      "d": "2026-10-23T02:01:01Z"
     },
     {
       "v": "docs-plaintextgen-user-guide.9999.9.2568.4879857-SNAPSHOT",
       "pre": true,
       "branch": "docs-plaintextgen-user-guide",
-      "d": "2026-10-22T20:53:26Z"
+      "d": "2026-10-23T02:01:00Z"
     },
     {
       "v": "docs-plaintextgen-user-guide.9999.9.2563.0231d5b-SNAPSHOT",
       "pre": true,
       "branch": "docs-plaintextgen-user-guide",
-      "d": "2026-10-22T20:13:31Z"
+      "d": "2026-10-23T02:00:59Z"
     },
     {
       "v": "docs-plaintextgen-user-guide.9999.9.2553.1c09c7b-SNAPSHOT",
       "pre": true,
       "branch": "docs-plaintextgen-user-guide",
-      "d": "2026-10-22T19:26:38Z"
+      "d": "2026-10-23T02:00:59Z"
     },
     {
       "v": "docs-plaintextgen-user-guide.9999.9.2552.2a8a2bb-SNAPSHOT",
       "pre": true,
       "branch": "docs-plaintextgen-user-guide",
-      "d": "2026-10-22T18:59:48Z"
+      "d": "2026-10-23T02:00:58Z"
     },
     {
       "v": "docs-building-default-task.2025.1.2486.723b70c-SNAPSHOT",
@@ -6147,7 +6263,7 @@
       "v": "claude-coding-standards-dsl-06bd5f.2024.1.2554.6d52045-SNAPSHOT",
       "pre": true,
       "branch": "claude-coding-standards-dsl-06bd5f",
-      "d": "2026-10-22T19:47:21Z"
+      "d": "2026-10-23T02:00:57Z"
     },
     {
       "v": "build-versioning-convention.2024.1.2390.fce5a7f-SNAPSHOT",

@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-23T01:08:27.567Z",
-  "total": 2983,
+  "generatedAt": "2026-10-23T09:46:47.376Z",
+  "total": 2984,
   "released": 1734,
   "stable": 1727,
   "preRelease": 7,
-  "branchCount": 1249,
+  "branchCount": 1250,
   "branches": 260,
   "lines": [
     {
@@ -9414,6 +9414,12 @@
       "d": "2026-06-03T08:57:04Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11433.a7dd641-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
+      "d": "2026-10-23T07:12:19Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11387.c7f8ce1-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
@@ -10317,7 +10323,7 @@
       "v": "merge-mps20261.2026.1.11423.048ee82-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
-      "d": "2026-10-21T15:17:47Z"
+      "d": "2026-10-22T11:49:37Z"
     },
     {
       "v": "merge-mps20261.2026.1.11421.3203b1e-SNAPSHOT",
@@ -12309,7 +12315,7 @@
       "v": "feature-view-model.2025.1.11420.a05aa05-SNAPSHOT",
       "pre": true,
       "branch": "feature-view-model",
-      "d": "2026-10-21T11:44:16Z"
+      "d": "2026-10-22T11:49:21Z"
     },
     {
       "v": "feature-view-model.2025.1.11359.6ef8986-SNAPSHOT",
