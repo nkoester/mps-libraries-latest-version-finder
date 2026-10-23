@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-23T15:36:31.913Z",
-  "total": 1197,
+  "generatedAt": "2026-10-23T20:10:45.811Z",
+  "total": 1215,
   "released": 840,
   "stable": 816,
   "preRelease": 24,
-  "branchCount": 357,
-  "branches": 90,
+  "branchCount": 375,
+  "branches": 91,
   "lines": [
     {
       "line": "9999.9",
@@ -4364,6 +4364,18 @@
       "d": "2026-07-20T08:35:42Z"
     },
     {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2627.2b3a1ee-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-23T19:45:20Z"
+    },
+    {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2624.438fa6d-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-23T19:30:19Z"
+    },
+    {
       "v": "test-plaintextgen-regression-coverage.9999.9.2604.124036b-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
@@ -4446,6 +4458,24 @@
       "pre": true,
       "branch": "renovate-mps-jbr",
       "d": "2026-08-07T13:43:47Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2629.0eda18f-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-23T19:55:06Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2623.6a447c5-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-23T19:21:45Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2621.5504594-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-23T19:05:15Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2608.bc1a5e2-SNAPSHOT",
@@ -4776,6 +4806,12 @@
       "pre": true,
       "branch": "renovate-master-mkdocs-material-9.x",
       "d": "2026-09-02T09:40:49Z"
+    },
+    {
+      "v": "renovate-master-major-mps.9999.9.2613.e64650c-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps",
+      "d": "2026-10-23T16:23:33Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2609.5a5376b-SNAPSHOT",
@@ -5184,6 +5220,12 @@
       "pre": true,
       "branch": "migration-provisional-platform-20241",
       "d": "2026-10-23T02:01:24Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.2615.3c3c7a3-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-10-23T17:41:22Z"
     },
     {
       "v": "merge-mps20261.2026.1.2535.a6d3cb2-SNAPSHOT",
@@ -5678,6 +5720,12 @@
       "d": "2026-06-12T23:11:19Z"
     },
     {
+      "v": "langvis-structure-fixes.9999.9.2620.964996e-SNAPSHOT",
+      "pre": true,
+      "branch": "langvis-structure-fixes",
+      "d": "2026-10-23T19:03:17Z"
+    },
+    {
       "v": "langvis-structure-fixes.9999.9.2602.cc77c31-SNAPSHOT",
       "pre": true,
       "branch": "langvis-structure-fixes",
@@ -5856,6 +5904,12 @@
       "pre": true,
       "branch": "fix-navigation-deadlocks",
       "d": "2026-07-07T02:13:52Z"
+    },
+    {
+      "v": "fix-celllayout-regressions.2025.1.2614.16752e0-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-regressions",
+      "d": "2026-10-23T16:33:14Z"
     },
     {
       "v": "fix-celllayout-regressions.2025.1.2606.29f5956-SNAPSHOT",
@@ -6078,6 +6132,18 @@
       "pre": true,
       "branch": "feature-remove-modelix-dependency",
       "d": "2026-10-22T07:23:59Z"
+    },
+    {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2626.b439723-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-23T19:38:48Z"
+    },
+    {
+      "v": "feature-plaintextgen-split-vertical-layout.9999.9.2622.a216e23-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-split-vertical-layout",
+      "d": "2026-10-23T19:10:59Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2578.17314f7-SNAPSHOT",
@@ -6314,6 +6380,18 @@
       "d": "2026-10-22T07:51:52Z"
     },
     {
+      "v": "claude-pre-commit-hooks-mps20241.2024.1.2612.2477de2-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-pre-commit-hooks-mps20241",
+      "d": "2026-10-23T16:17:30Z"
+    },
+    {
+      "v": "claude-pre-commit-hooks-mps20241.2024.1.2611.695d0e7-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-pre-commit-hooks-mps20241",
+      "d": "2026-10-23T15:53:52Z"
+    },
+    {
       "v": "claude-pre-commit-hooks-mps20241.2024.1.2607.f39c539-SNAPSHOT",
       "pre": true,
       "branch": "claude-pre-commit-hooks-mps20241",
@@ -6332,6 +6410,12 @@
       "d": "2026-10-23T10:58:27Z"
     },
     {
+      "v": "claude-fix-f1re-undo-test-a79460.2024.1.2618.b59ef99-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-fix-f1re-undo-test-a79460",
+      "d": "2026-10-23T18:08:49Z"
+    },
+    {
       "v": "claude-fix-f1re-undo-test-a79460.2024.1.2599.b31d29b-SNAPSHOT",
       "pre": true,
       "branch": "claude-fix-f1re-undo-test-a79460",
@@ -6342,6 +6426,24 @@
       "pre": true,
       "branch": "claude-fix-f1re-file-editor-headless",
       "d": "2026-10-23T11:46:01Z"
+    },
+    {
+      "v": "claude-coding-standards-no-hidden-thread-switch.2024.1.2625.b618875-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-coding-standards-no-hidden-thread-switch",
+      "d": "2026-10-23T19:30:37Z"
+    },
+    {
+      "v": "claude-coding-standards-no-hidden-thread-switch.2024.1.2619.6295906-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-coding-standards-no-hidden-thread-switch",
+      "d": "2026-10-23T18:21:55Z"
+    },
+    {
+      "v": "claude-coding-standards-no-hidden-thread-switch.2024.1.2616.1c286eb-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-coding-standards-no-hidden-thread-switch",
+      "d": "2026-10-23T17:51:12Z"
     },
     {
       "v": "claude-coding-standards-dsl-06bd5f.2024.1.2554.6d52045-SNAPSHOT",
@@ -6480,6 +6582,12 @@
       "pre": false,
       "branch": "bugfix-ThirdPartySolution",
       "d": "2024-03-12T13:41:16Z"
+    },
+    {
+      "v": "artem-module-filesystem.9999.9.2610.56e514e-SNAPSHOT",
+      "pre": true,
+      "branch": "artem-module-filesystem",
+      "d": "2026-10-23T15:26:24Z"
     },
     {
       "v": "artem-module-filesystem.9999.9.2605.9fd6d65-SNAPSHOT",
