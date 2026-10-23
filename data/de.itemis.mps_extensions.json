@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-23T09:46:47.376Z",
-  "total": 1182,
+  "generatedAt": "2026-10-23T15:36:31.913Z",
+  "total": 1197,
   "released": 840,
   "stable": 816,
   "preRelease": 24,
-  "branchCount": 342,
-  "branches": 85,
+  "branchCount": 357,
+  "branches": 90,
   "lines": [
     {
       "line": "9999.9",
@@ -4364,6 +4364,12 @@
       "d": "2026-07-20T08:35:42Z"
     },
     {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2604.124036b-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-23T13:23:36Z"
+    },
+    {
       "v": "test-plaintextgen-regression-coverage.9999.9.2590.694cf23-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
@@ -4440,6 +4446,12 @@
       "pre": true,
       "branch": "renovate-mps-jbr",
       "d": "2026-08-07T13:43:47Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2608.bc1a5e2-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-23T15:21:22Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2566.6fc94fb-SNAPSHOT",
@@ -4764,6 +4776,12 @@
       "pre": true,
       "branch": "renovate-master-mkdocs-material-9.x",
       "d": "2026-09-02T09:40:49Z"
+    },
+    {
+      "v": "renovate-master-major-mps.9999.9.2609.5a5376b-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mps",
+      "d": "2026-10-23T15:21:33Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2579.03d2c8a-SNAPSHOT",
@@ -5660,6 +5678,18 @@
       "d": "2026-06-12T23:11:19Z"
     },
     {
+      "v": "langvis-structure-fixes.9999.9.2602.cc77c31-SNAPSHOT",
+      "pre": true,
+      "branch": "langvis-structure-fixes",
+      "d": "2026-10-23T13:05:23Z"
+    },
+    {
+      "v": "langvis-structure-fixes.9999.9.2595.8216ae4-SNAPSHOT",
+      "pre": true,
+      "branch": "langvis-structure-fixes",
+      "d": "2026-10-23T10:01:33Z"
+    },
+    {
       "v": "fix-viewmodel-tests-mps20261-compat.2025.1.2517.cad8b34-SNAPSHOT",
       "pre": true,
       "branch": "fix-viewmodel-tests-mps20261-compat",
@@ -5826,6 +5856,18 @@
       "pre": true,
       "branch": "fix-navigation-deadlocks",
       "d": "2026-07-07T02:13:52Z"
+    },
+    {
+      "v": "fix-celllayout-regressions.2025.1.2606.29f5956-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-regressions",
+      "d": "2026-10-23T14:01:12Z"
+    },
+    {
+      "v": "fix-celllayout-regressions.2025.1.2601.465e5b6-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-regressions",
+      "d": "2026-10-23T12:51:39Z"
     },
     {
       "v": "fix-celllayout-regressions.2025.1.2482.3036123-SNAPSHOT",
@@ -6104,6 +6146,18 @@
       "d": "2026-10-20T20:20:24Z"
     },
     {
+      "v": "feature-plaintextgen-diffing-paste.9999.9.2598.97e7865-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-diffing-paste",
+      "d": "2026-10-23T11:12:32Z"
+    },
+    {
+      "v": "feature-plaintextgen-diffing-paste.9999.9.2596.76e68a2-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-plaintextgen-diffing-paste",
+      "d": "2026-10-23T10:18:07Z"
+    },
+    {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2592.cc4d4c3-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
@@ -6260,6 +6314,36 @@
       "d": "2026-10-22T07:51:52Z"
     },
     {
+      "v": "claude-pre-commit-hooks-mps20241.2024.1.2607.f39c539-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-pre-commit-hooks-mps20241",
+      "d": "2026-10-23T15:13:02Z"
+    },
+    {
+      "v": "claude-pre-commit-hooks-mps20241.2024.1.2603.4c3642f-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-pre-commit-hooks-mps20241",
+      "d": "2026-10-23T13:05:52Z"
+    },
+    {
+      "v": "claude-pre-commit-hooks-mps20241.2024.1.2597.a813690-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-pre-commit-hooks-mps20241",
+      "d": "2026-10-23T10:58:27Z"
+    },
+    {
+      "v": "claude-fix-f1re-undo-test-a79460.2024.1.2599.b31d29b-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-fix-f1re-undo-test-a79460",
+      "d": "2026-10-23T11:46:01Z"
+    },
+    {
+      "v": "claude-fix-f1re-file-editor-headless.2025.1.2600.44db832-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-fix-f1re-file-editor-headless",
+      "d": "2026-10-23T11:46:01Z"
+    },
+    {
       "v": "claude-coding-standards-dsl-06bd5f.2024.1.2554.6d52045-SNAPSHOT",
       "pre": true,
       "branch": "claude-coding-standards-dsl-06bd5f",
@@ -6396,6 +6480,12 @@
       "pre": false,
       "branch": "bugfix-ThirdPartySolution",
       "d": "2024-03-12T13:41:16Z"
+    },
+    {
+      "v": "artem-module-filesystem.9999.9.2605.9fd6d65-SNAPSHOT",
+      "pre": true,
+      "branch": "artem-module-filesystem",
+      "d": "2026-10-23T13:31:06Z"
     }
   ]
 }

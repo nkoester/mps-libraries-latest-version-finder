@@ -10,11 +10,11 @@
     "2.x": "2.x was never established and is discouraged; use 1.x."
   },
   "slug": "de.itemis.mps_mps-gradle-plugin",
-  "generatedAt": "2026-10-23T09:46:47.376Z",
-  "total": 109,
-  "released": 79,
-  "stable": 78,
-  "preRelease": 1,
+  "generatedAt": "2026-10-23T15:36:31.913Z",
+  "total": 111,
+  "released": 81,
+  "stable": 79,
+  "preRelease": 2,
   "branchCount": 30,
   "branches": 14,
   "lines": [
@@ -81,11 +81,21 @@
     },
     {
       "line": "1.x",
-      "latest": "1.31.0.1.1243113",
+      "latest": "1.32.0",
       "latestIsPreRelease": false,
-      "total": 69,
-      "stable": 68,
+      "total": 71,
+      "stable": 69,
       "versions": [
+        {
+          "v": "1.32.1-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-23T14:28:38Z"
+        },
+        {
+          "v": "1.32.0",
+          "pre": false,
+          "d": "2026-10-23T13:39:52Z"
+        },
         {
           "v": "1.32.0-SNAPSHOT",
           "pre": true,
@@ -432,7 +442,7 @@
           "d": "2022-09-02T09:48:49Z"
         }
       ],
-      "latestDate": "2026-08-20T09:38:24Z"
+      "latestDate": "2026-10-23T13:39:52Z"
     }
   ],
   "branchBuilds": [

@@ -14,6 +14,18 @@
     "2.0.317.3229d6a": [],
     "2.0.316.9135418": [],
     "2.0.315.0da7e4b": [],
+    "1.32.1-SNAPSHOT": [
+      [
+        "de.itemis.mps.build-backends_launcher",
+        "2.8.0.167.c51149b"
+      ]
+    ],
+    "1.32.0": [
+      [
+        "de.itemis.mps.build-backends_launcher",
+        "2.8.0.167.c51149b"
+      ]
+    ],
     "1.32.0-SNAPSHOT": [
       [
         "de.itemis.mps.build-backends_launcher",

@@ -3,6 +3,7 @@
   "artifactId": "platform",
   "slug": "com.mbeddr_platform",
   "versions": {
+    "9999.9.26662.32c3bec": "2026-10-23T12:47:20Z",
     "9999.9.26659.30193f1": "2026-10-23T03:22:50Z",
     "9999.9.26655.30193f1": "2026-10-18T06:43:44Z",
     "9999.9.26648.3a8ce0c": "2026-10-16T03:25:31Z",
@@ -2085,6 +2086,7 @@
     "renovate-master-patch-mpsextensionsversion.9999.9.24867.d5a152d-SNAPSHOT": "2026-01-14T06:54:03Z",
     "renovate-master-patch-mpsextensionsversion.9999.9.24859.0fe5373-SNAPSHOT": "2025-12-17T19:15:47Z",
     "renovate-master-patch-mpsextensionsversion.9999.9.24807.7945104-SNAPSHOT": "2025-11-26T06:42:47Z",
+    "renovate-master-patch-mpsextensionsmaster.9999.9.25382.dec8d90-SNAPSHOT": "2026-10-23T12:44:47Z",
     "renovate-master-patch-mpsextensionsmaster.9999.9.25379.e175452-SNAPSHOT": "2026-10-23T06:12:00Z",
     "renovate-master-patch-mpsextensionsmaster.9999.9.25377.984f3dd-SNAPSHOT": "2026-10-16T04:25:25Z",
     "renovate-master-patch-mpsextensionsmaster.9999.9.25377.8e554c0-SNAPSHOT": "2026-10-15T12:11:26Z",
@@ -2220,6 +2222,7 @@
     "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.24962.e70f06b-SNAPSHOT": "2026-02-20T05:33:10Z",
     "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.24962.a6e788e-SNAPSHOT": "2026-02-20T05:33:09Z",
     "renovate-master-apache-poi-monorepo.9999.9.24824.08851ac-SNAPSHOT": "2025-12-12T07:41:10Z",
+    "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25331.b232676-SNAPSHOT": "2026-10-23T12:44:47Z",
     "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25329.c02a025-SNAPSHOT": "2026-10-15T11:24:37Z",
     "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25329.2495cfc-SNAPSHOT": "2026-10-16T04:25:12Z",
     "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25325.aca2ef1-SNAPSHOT": "2026-10-16T04:25:11Z",
@@ -2265,6 +2268,7 @@
     "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24647.088f881-SNAPSHOT": "2026-01-22T16:42:06Z",
     "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24552.937d89a-SNAPSHOT": "2025-11-01T05:32:04Z",
     "renovate-maintenance-mps20251-patch-mpsextensionsversion.2025.1.24520.683d25c-SNAPSHOT": "2025-10-16T09:40:11Z",
+    "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24937.63b7757-SNAPSHOT": "2026-10-23T12:44:57Z",
     "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24935.993badd-SNAPSHOT": "2026-10-19T06:00:42Z",
     "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24933.c717e1e-SNAPSHOT": "2026-10-16T04:25:05Z",
     "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24933.98d8e07-SNAPSHOT": "2026-10-18T04:49:24Z",
@@ -3093,6 +3097,7 @@
     "assessment-scope-compatibility.2025.1.24562.01273a3-SNAPSHOT": "2025-11-08T02:30:45Z",
     "artem-261.9999.9.24865.b5a6869-SNAPSHOT": "2026-01-14T06:53:19Z",
     "artem-use-editor-nav.9999.9.25380.f475492-SNAPSHOT": "2026-10-21T06:57:00Z",
-    "artem-use-editor-nav.9999.9.25379.91f4653-SNAPSHOT": "2026-10-21T06:23:05Z"
+    "artem-use-editor-nav.9999.9.25379.91f4653-SNAPSHOT": "2026-10-21T06:23:05Z",
+    "artem-concept-editor-icon.9999.9.25382.6348150-SNAPSHOT": "2026-10-23T13:07:47Z"
   }
 }

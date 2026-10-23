@@ -4,6 +4,12 @@
   "slug": "com.mbeddr_platform",
   "snapshotLookup": "timestamped",
   "versions": {
+    "9999.9.26662.32c3bec": [
+      [
+        "de.itemis.mps_extensions",
+        "9999.9.3690.ab7128e-SNAPSHOT"
+      ]
+    ],
     "9999.9.26659.30193f1": [
       [
         "de.itemis.mps_extensions",

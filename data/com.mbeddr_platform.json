@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-23T09:46:47.376Z",
-  "total": 3091,
-  "released": 2052,
-  "stable": 2052,
+  "generatedAt": "2026-10-23T15:36:31.913Z",
+  "total": 3096,
+  "released": 2053,
+  "stable": 2053,
   "preRelease": 0,
-  "branchCount": 1039,
-  "branches": 243,
+  "branchCount": 1043,
+  "branches": 244,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26659.30193f1",
+      "latest": "9999.9.26662.32c3bec",
       "latestIsPreRelease": false,
-      "total": 416,
-      "stable": 416,
+      "total": 417,
+      "stable": 417,
       "versions": [
+        {
+          "v": "9999.9.26662.32c3bec",
+          "pre": false,
+          "d": "2026-10-23T12:47:20Z"
+        },
         {
           "v": "9999.9.26659.30193f1",
           "pre": false,
@@ -2101,7 +2106,7 @@
           "d": "2025-11-04T16:14:17Z"
         }
       ],
-      "latestDate": "2026-10-23T03:22:50Z"
+      "latestDate": "2026-10-23T12:47:20Z"
     },
     {
       "line": "2026.1",
@@ -10616,6 +10621,12 @@
       "d": "2025-11-26T06:42:47Z"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25382.dec8d90-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster",
+      "d": "2026-10-23T12:44:47Z"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25379.e175452-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
@@ -11426,6 +11437,12 @@
       "d": "2025-12-12T07:41:10Z"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25331.b232676-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mpsextensions261",
+      "d": "2026-10-23T12:44:47Z"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25329.c02a025-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mpsextensions261",
@@ -11694,6 +11711,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion",
       "d": "2025-10-16T09:40:11Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24937.63b7757-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251",
+      "d": "2026-10-23T12:44:57Z"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24935.993badd-SNAPSHOT",
@@ -16668,6 +16691,12 @@
       "pre": true,
       "branch": "artem-use-editor-nav",
       "d": "2026-10-21T06:23:05Z"
+    },
+    {
+      "v": "artem-concept-editor-icon.9999.9.25382.6348150-SNAPSHOT",
+      "pre": true,
+      "branch": "artem-concept-editor-icon",
+      "d": "2026-10-23T13:07:47Z"
     }
   ]
 }
