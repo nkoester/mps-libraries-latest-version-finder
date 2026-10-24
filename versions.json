@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T20:10:45.811Z",
+  "generatedAt": "2026-10-24T01:19:46.026Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -171,11 +171,11 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1215,
+      "total": 1220,
       "released": 840,
       "stable": 816,
       "preRelease": 24,
-      "branchCount": 375,
+      "branchCount": 380,
       "branches": 91,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [

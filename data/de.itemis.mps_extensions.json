@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-23T20:10:45.811Z",
-  "total": 1215,
+  "generatedAt": "2026-10-24T01:19:46.026Z",
+  "total": 1220,
   "released": 840,
   "stable": 816,
   "preRelease": 24,
-  "branchCount": 375,
+  "branchCount": 380,
   "branches": 91,
   "lines": [
     {
@@ -4364,6 +4364,18 @@
       "d": "2026-07-20T08:35:42Z"
     },
     {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2631.be9cbc3-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-23T20:41:05Z"
+    },
+    {
+      "v": "test-plaintextgen-regression-coverage.9999.9.2630.5e8f78a-SNAPSHOT",
+      "pre": true,
+      "branch": "test-plaintextgen-regression-coverage",
+      "d": "2026-10-23T20:13:08Z"
+    },
+    {
       "v": "test-plaintextgen-regression-coverage.9999.9.2627.2b3a1ee-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
@@ -4458,6 +4470,12 @@
       "pre": true,
       "branch": "renovate-mps-jbr",
       "d": "2026-08-07T13:43:47Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2633.836a8c1-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-23T20:59:57Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2629.0eda18f-SNAPSHOT",
@@ -5376,6 +5394,12 @@
       "pre": true,
       "branch": "merge-mps20261",
       "d": "2026-07-08T03:12:21Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.2634.5537c6f-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-10-23T21:00:13Z"
     },
     {
       "v": "merge-mps20251.2025.1.2513.25070bf-SNAPSHOT",
@@ -6426,6 +6450,12 @@
       "pre": true,
       "branch": "claude-fix-f1re-file-editor-headless",
       "d": "2026-10-23T11:46:01Z"
+    },
+    {
+      "v": "claude-coding-standards-no-hidden-thread-switch.2024.1.2632.af817c9-SNAPSHOT",
+      "pre": true,
+      "branch": "claude-coding-standards-no-hidden-thread-switch",
+      "d": "2026-10-23T20:55:00Z"
     },
     {
       "v": "claude-coding-standards-no-hidden-thread-switch.2024.1.2625.b618875-SNAPSHOT",
