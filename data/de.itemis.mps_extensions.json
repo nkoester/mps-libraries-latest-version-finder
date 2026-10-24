@@ -5,21 +5,26 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-24T01:19:46.026Z",
-  "total": 1220,
-  "released": 840,
-  "stable": 816,
-  "preRelease": 24,
-  "branchCount": 380,
+  "generatedAt": "2026-10-24T09:20:28.283Z",
+  "total": 1225,
+  "released": 844,
+  "stable": 819,
+  "preRelease": 25,
+  "branchCount": 381,
   "branches": 91,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.3697.e463a12-SNAPSHOT",
+      "latest": "9999.9.3701.d6cb0ed-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 24,
+      "total": 25,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.3701.d6cb0ed-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-24T03:15:02Z"
+        },
         {
           "v": "9999.9.3697.e463a12-SNAPSHOT",
           "pre": true,
@@ -141,15 +146,20 @@
           "d": "2025-09-05T03:13:11Z"
         }
       ],
-      "latestDate": "2026-10-23T03:00:18Z"
+      "latestDate": "2026-10-24T03:15:02Z"
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.3700.744285d",
+      "latest": "2026.1.3704.b382763",
       "latestIsPreRelease": false,
-      "total": 17,
-      "stable": 17,
+      "total": 18,
+      "stable": 18,
       "versions": [
+        {
+          "v": "2026.1.3704.b382763",
+          "pre": false,
+          "d": "2026-10-24T03:12:57Z"
+        },
         {
           "v": "2026.1.3700.744285d",
           "pre": false,
@@ -236,15 +246,20 @@
           "d": "2026-06-23T13:28:12Z"
         }
       ],
-      "latestDate": "2026-10-23T03:13:09Z"
+      "latestDate": "2026-10-24T03:12:57Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3699.0dadfaf",
+      "latest": "2025.1.3702.3e93b0d",
       "latestIsPreRelease": false,
-      "total": 118,
-      "stable": 118,
+      "total": 119,
+      "stable": 119,
       "versions": [
+        {
+          "v": "2025.1.3702.3e93b0d",
+          "pre": false,
+          "d": "2026-10-24T03:12:42Z"
+        },
         {
           "v": "2025.1.3699.0dadfaf",
           "pre": false,
@@ -836,7 +851,7 @@
           "d": "2025-04-29T14:16:32Z"
         }
       ],
-      "latestDate": "2026-10-23T03:12:35Z"
+      "latestDate": "2026-10-24T03:12:42Z"
     },
     {
       "line": "2024.3",
@@ -1020,11 +1035,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.3698.729267d",
+      "latest": "2024.1.3703.7b6c0fe",
       "latestIsPreRelease": false,
-      "total": 127,
-      "stable": 127,
+      "total": 128,
+      "stable": 128,
       "versions": [
+        {
+          "v": "2024.1.3703.7b6c0fe",
+          "pre": false,
+          "d": "2026-10-24T03:12:40Z"
+        },
         {
           "v": "2024.1.3698.729267d",
           "pre": false,
@@ -1661,7 +1681,7 @@
           "d": "2024-11-09T19:39:20Z"
         }
       ],
-      "latestDate": "2026-10-23T03:09:41Z"
+      "latestDate": "2026-10-24T03:12:40Z"
     },
     {
       "line": "2023.2",
@@ -4367,13 +4387,13 @@
       "v": "test-plaintextgen-regression-coverage.9999.9.2631.be9cbc3-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-23T20:41:05Z"
+      "d": "2026-10-24T03:14:59Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2630.5e8f78a-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-23T20:13:08Z"
+      "d": "2026-10-24T03:14:59Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2627.2b3a1ee-SNAPSHOT",
@@ -4385,7 +4405,7 @@
       "v": "test-plaintextgen-regression-coverage.9999.9.2624.438fa6d-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-23T19:30:19Z"
+      "d": "2026-10-24T03:14:58Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2604.124036b-SNAPSHOT",
@@ -4403,19 +4423,19 @@
       "v": "test-plaintextgen-regression-coverage.9999.9.2587.96cccd5-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-23T04:35:41Z"
+      "d": "2026-10-24T03:14:57Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2583.48b8fac-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-23T04:05:00Z"
+      "d": "2026-10-24T03:14:56Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2577.8cfd1f8-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
-      "d": "2026-10-23T02:43:18Z"
+      "d": "2026-10-24T03:14:55Z"
     },
     {
       "v": "test-plaintextgen-regression-coverage.9999.9.2571.3e61b5f-SNAPSHOT",
@@ -4472,6 +4492,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2635.835a228-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-24T05:12:03Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2633.836a8c1-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -4487,13 +4513,13 @@
       "v": "renovate-master-mps.9999.9.2623.6a447c5-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-10-23T19:21:45Z"
+      "d": "2026-10-24T03:14:54Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2621.5504594-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-10-23T19:05:15Z"
+      "d": "2026-10-24T03:14:53Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2608.bc1a5e2-SNAPSHOT",
@@ -4829,19 +4855,19 @@
       "v": "renovate-master-major-mps.9999.9.2613.e64650c-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-23T16:23:33Z"
+      "d": "2026-10-24T03:14:49Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2609.5a5376b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-23T15:21:33Z"
+      "d": "2026-10-24T03:14:48Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2579.03d2c8a-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-major-mps",
-      "d": "2026-10-23T03:31:24Z"
+      "d": "2026-10-24T03:14:47Z"
     },
     {
       "v": "renovate-master-major-mps.9999.9.2565.6cf0109-SNAPSHOT",
@@ -5016,12 +5042,6 @@
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
       "d": "2026-06-26T17:32:19Z"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2246.472bdf3-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
-      "d": "2026-07-07T02:14:19Z"
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2190.15520eb-SNAPSHOT",
@@ -5240,10 +5260,16 @@
       "d": "2026-10-23T02:01:24Z"
     },
     {
+      "v": "merge-mps20261.2026.1.2636.92962e2-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-10-24T06:18:23Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.2615.3c3c7a3-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
-      "d": "2026-10-23T17:41:22Z"
+      "d": "2026-10-24T03:14:43Z"
     },
     {
       "v": "merge-mps20261.2026.1.2535.a6d3cb2-SNAPSHOT",
@@ -5399,7 +5425,7 @@
       "v": "merge-mps20251.2025.1.2634.5537c6f-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
-      "d": "2026-10-23T21:00:13Z"
+      "d": "2026-10-24T03:14:41Z"
     },
     {
       "v": "merge-mps20251.2025.1.2513.25070bf-SNAPSHOT",
@@ -5747,13 +5773,13 @@
       "v": "langvis-structure-fixes.9999.9.2620.964996e-SNAPSHOT",
       "pre": true,
       "branch": "langvis-structure-fixes",
-      "d": "2026-10-23T19:03:17Z"
+      "d": "2026-10-24T03:14:38Z"
     },
     {
       "v": "langvis-structure-fixes.9999.9.2602.cc77c31-SNAPSHOT",
       "pre": true,
       "branch": "langvis-structure-fixes",
-      "d": "2026-10-23T13:05:23Z"
+      "d": "2026-10-24T03:14:37Z"
     },
     {
       "v": "langvis-structure-fixes.9999.9.2595.8216ae4-SNAPSHOT",
@@ -5861,19 +5887,19 @@
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2584.a3f0a15-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-23T04:16:20Z"
+      "d": "2026-10-24T03:14:35Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2582.d2fc6b7-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-23T03:40:32Z"
+      "d": "2026-10-24T03:14:34Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2576.b235f17-SNAPSHOT",
       "pre": true,
       "branch": "fix-plaintextgen-tab-edge-cases",
-      "d": "2026-10-23T02:03:11Z"
+      "d": "2026-10-24T03:14:33Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2567.616cfa2-SNAPSHOT",
@@ -5933,19 +5959,19 @@
       "v": "fix-celllayout-regressions.2025.1.2614.16752e0-SNAPSHOT",
       "pre": true,
       "branch": "fix-celllayout-regressions",
-      "d": "2026-10-23T16:33:14Z"
+      "d": "2026-10-24T03:14:32Z"
     },
     {
       "v": "fix-celllayout-regressions.2025.1.2606.29f5956-SNAPSHOT",
       "pre": true,
       "branch": "fix-celllayout-regressions",
-      "d": "2026-10-23T14:01:12Z"
+      "d": "2026-10-24T03:14:31Z"
     },
     {
       "v": "fix-celllayout-regressions.2025.1.2601.465e5b6-SNAPSHOT",
       "pre": true,
       "branch": "fix-celllayout-regressions",
-      "d": "2026-10-23T12:51:39Z"
+      "d": "2026-10-24T03:14:31Z"
     },
     {
       "v": "fix-celllayout-regressions.2025.1.2482.3036123-SNAPSHOT",
@@ -6161,19 +6187,19 @@
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2626.b439723-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-23T19:38:48Z"
+      "d": "2026-10-24T03:14:27Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2622.a216e23-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-23T19:10:59Z"
+      "d": "2026-10-24T03:14:27Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2578.17314f7-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-split-vertical-layout",
-      "d": "2026-10-23T02:45:21Z"
+      "d": "2026-10-24T03:14:26Z"
     },
     {
       "v": "feature-plaintextgen-split-vertical-layout.9999.9.2575.2236efa-SNAPSHOT",
@@ -6239,19 +6265,19 @@
       "v": "feature-plaintextgen-diffing-paste.9999.9.2598.97e7865-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-23T11:12:32Z"
+      "d": "2026-10-24T03:14:25Z"
     },
     {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2596.76e68a2-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-23T10:18:07Z"
+      "d": "2026-10-24T03:14:24Z"
     },
     {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2592.cc4d4c3-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-23T06:14:42Z"
+      "d": "2026-10-24T03:14:23Z"
     },
     {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2589.aec8800-SNAPSHOT",
@@ -6263,13 +6289,13 @@
       "v": "feature-plaintextgen-diffing-paste.9999.9.2585.edd386c-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-23T04:24:06Z"
+      "d": "2026-10-24T03:14:22Z"
     },
     {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2580.9edaef9-SNAPSHOT",
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
-      "d": "2026-10-23T03:37:36Z"
+      "d": "2026-10-24T03:14:21Z"
     },
     {
       "v": "feature-plaintextgen-diffing-paste.9999.9.2573.5867f90-SNAPSHOT",
@@ -6323,19 +6349,19 @@
       "v": "docs-plaintextgen-user-guide.9999.9.2588.a514155-SNAPSHOT",
       "pre": true,
       "branch": "docs-plaintextgen-user-guide",
-      "d": "2026-10-23T04:42:59Z"
+      "d": "2026-10-24T03:14:20Z"
     },
     {
       "v": "docs-plaintextgen-user-guide.9999.9.2586.e927df1-SNAPSHOT",
       "pre": true,
       "branch": "docs-plaintextgen-user-guide",
-      "d": "2026-10-23T04:26:25Z"
+      "d": "2026-10-24T03:14:19Z"
     },
     {
       "v": "docs-plaintextgen-user-guide.9999.9.2581.842f382-SNAPSHOT",
       "pre": true,
       "branch": "docs-plaintextgen-user-guide",
-      "d": "2026-10-23T03:40:25Z"
+      "d": "2026-10-24T03:14:18Z"
     },
     {
       "v": "docs-plaintextgen-user-guide.9999.9.2572.5c09678-SNAPSHOT",
@@ -6407,73 +6433,73 @@
       "v": "claude-pre-commit-hooks-mps20241.2024.1.2612.2477de2-SNAPSHOT",
       "pre": true,
       "branch": "claude-pre-commit-hooks-mps20241",
-      "d": "2026-10-23T16:17:30Z"
+      "d": "2026-10-24T03:14:17Z"
     },
     {
       "v": "claude-pre-commit-hooks-mps20241.2024.1.2611.695d0e7-SNAPSHOT",
       "pre": true,
       "branch": "claude-pre-commit-hooks-mps20241",
-      "d": "2026-10-23T15:53:52Z"
+      "d": "2026-10-24T03:14:16Z"
     },
     {
       "v": "claude-pre-commit-hooks-mps20241.2024.1.2607.f39c539-SNAPSHOT",
       "pre": true,
       "branch": "claude-pre-commit-hooks-mps20241",
-      "d": "2026-10-23T15:13:02Z"
+      "d": "2026-10-24T03:14:15Z"
     },
     {
       "v": "claude-pre-commit-hooks-mps20241.2024.1.2603.4c3642f-SNAPSHOT",
       "pre": true,
       "branch": "claude-pre-commit-hooks-mps20241",
-      "d": "2026-10-23T13:05:52Z"
+      "d": "2026-10-24T03:14:15Z"
     },
     {
       "v": "claude-pre-commit-hooks-mps20241.2024.1.2597.a813690-SNAPSHOT",
       "pre": true,
       "branch": "claude-pre-commit-hooks-mps20241",
-      "d": "2026-10-23T10:58:27Z"
+      "d": "2026-10-24T03:14:14Z"
     },
     {
       "v": "claude-fix-f1re-undo-test-a79460.2024.1.2618.b59ef99-SNAPSHOT",
       "pre": true,
       "branch": "claude-fix-f1re-undo-test-a79460",
-      "d": "2026-10-23T18:08:49Z"
+      "d": "2026-10-24T03:14:13Z"
     },
     {
       "v": "claude-fix-f1re-undo-test-a79460.2024.1.2599.b31d29b-SNAPSHOT",
       "pre": true,
       "branch": "claude-fix-f1re-undo-test-a79460",
-      "d": "2026-10-23T11:46:01Z"
+      "d": "2026-10-24T03:14:12Z"
     },
     {
       "v": "claude-fix-f1re-file-editor-headless.2025.1.2600.44db832-SNAPSHOT",
       "pre": true,
       "branch": "claude-fix-f1re-file-editor-headless",
-      "d": "2026-10-23T11:46:01Z"
+      "d": "2026-10-24T03:14:11Z"
     },
     {
       "v": "claude-coding-standards-no-hidden-thread-switch.2024.1.2632.af817c9-SNAPSHOT",
       "pre": true,
       "branch": "claude-coding-standards-no-hidden-thread-switch",
-      "d": "2026-10-23T20:55:00Z"
+      "d": "2026-10-24T03:14:11Z"
     },
     {
       "v": "claude-coding-standards-no-hidden-thread-switch.2024.1.2625.b618875-SNAPSHOT",
       "pre": true,
       "branch": "claude-coding-standards-no-hidden-thread-switch",
-      "d": "2026-10-23T19:30:37Z"
+      "d": "2026-10-24T03:14:10Z"
     },
     {
       "v": "claude-coding-standards-no-hidden-thread-switch.2024.1.2619.6295906-SNAPSHOT",
       "pre": true,
       "branch": "claude-coding-standards-no-hidden-thread-switch",
-      "d": "2026-10-23T18:21:55Z"
+      "d": "2026-10-24T03:14:09Z"
     },
     {
       "v": "claude-coding-standards-no-hidden-thread-switch.2024.1.2616.1c286eb-SNAPSHOT",
       "pre": true,
       "branch": "claude-coding-standards-no-hidden-thread-switch",
-      "d": "2026-10-23T17:51:12Z"
+      "d": "2026-10-24T03:14:08Z"
     },
     {
       "v": "claude-coding-standards-dsl-06bd5f.2024.1.2554.6d52045-SNAPSHOT",
@@ -6617,13 +6643,13 @@
       "v": "artem-module-filesystem.9999.9.2610.56e514e-SNAPSHOT",
       "pre": true,
       "branch": "artem-module-filesystem",
-      "d": "2026-10-23T15:26:24Z"
+      "d": "2026-10-24T03:14:06Z"
     },
     {
       "v": "artem-module-filesystem.9999.9.2605.9fd6d65-SNAPSHOT",
       "pre": true,
       "branch": "artem-module-filesystem",
-      "d": "2026-10-23T13:31:06Z"
+      "d": "2026-10-24T03:14:05Z"
     }
   ]
 }

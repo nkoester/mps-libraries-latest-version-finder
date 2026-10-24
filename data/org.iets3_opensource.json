@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-24T01:19:46.026Z",
-  "total": 2986,
+  "generatedAt": "2026-10-24T09:20:28.283Z",
+  "total": 2970,
   "released": 1735,
   "stable": 1728,
   "preRelease": 7,
-  "branchCount": 1251,
-  "branches": 260,
+  "branchCount": 1235,
+  "branches": 256,
   "lines": [
     {
       "line": "9999.9",
@@ -8885,12 +8885,6 @@
       "d": "2026-02-11T09:43:24Z"
     },
     {
-      "v": "renovate-org.cyclonedx.bom-3.x.9999.9.9824.52720da-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-org.cyclonedx.bom-3.x",
-      "d": "2026-02-11T07:52:05Z"
-    },
-    {
       "v": "renovate-mpsversion.9999.9.9860.518a156-SNAPSHOT",
       "pre": true,
       "branch": "renovate-mpsversion",
@@ -8907,12 +8901,6 @@
       "pre": true,
       "branch": "renovate-mpsversion",
       "d": "2026-02-10T09:38:49Z"
-    },
-    {
-      "v": "renovate-mpsversion.9999.9.9808.bcbbcf0-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-mpsversion",
-      "d": "2026-02-09T19:25:49Z"
     },
     {
       "v": "renovate-mpsversion.9999.9.9709.75ee5cd-SNAPSHOT",
@@ -9419,10 +9407,16 @@
       "d": "2026-06-03T08:57:04Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11439.aeea5b9-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
+      "d": "2026-10-24T05:42:15Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11433.a7dd641-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
-      "d": "2026-10-23T07:12:19Z"
+      "d": "2026-10-24T05:42:14Z"
     },
     {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11387.c7f8ce1-SNAPSHOT",
@@ -9603,12 +9597,6 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
       "d": "2026-03-26T01:43:18Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.10122.e5834bb-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
-      "d": "2026-03-19T11:55:31Z"
     },
     {
       "v": "renovate-maintenance-mps20241-modelcheck-2.x.2024.1.10019.a950ce3-SNAPSHOT",
@@ -9917,12 +9905,6 @@
       "d": "2026-07-07T22:58:11Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-github-actions.2024.1.10693.4a2e20c-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-github-actions",
-      "d": "2026-06-25T18:35:23Z"
-    },
-    {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.10621.c7aa727-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions",
@@ -9957,24 +9939,6 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions",
       "d": "2026-03-24T17:55:48Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-de.itemis.mps.build-backends-remigrate-1.x.2024.1.9982.ac00f5c-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-de.itemis.mps.build-backends-remigrate-1.x",
-      "d": "2026-03-13T01:41:59Z"
-    },
-    {
-      "v": "renovate-gradle-9.x.9999.9.9687.030ba6d-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-gradle-9.x",
-      "d": "2026-01-16T15:55:56Z"
-    },
-    {
-      "v": "renovate-de.itemis.mps.build-backends-remigrate-1.x.9999.9.9942.234f149-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-de.itemis.mps.build-backends-remigrate-1.x",
-      "d": "2026-03-13T01:41:57Z"
     },
     {
       "v": "renovate-actions-setup-java-digest.9999.9.9699.f04c7d3-SNAPSHOT",
@@ -10691,12 +10655,6 @@
       "d": "2026-03-13T01:41:53Z"
     },
     {
-      "v": "merge-mps20251.9999.9.10039.231103d-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-03-13T01:41:52Z"
-    },
-    {
       "v": "merge-mps20251.9999.9.10007.0a9d07e-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -11339,12 +11297,6 @@
       "d": "2026-03-25T03:19:21Z"
     },
     {
-      "v": "merge-mps20251.2024.1.10128.17dc696-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-03-23T07:23:39Z"
-    },
-    {
       "v": "merge-mps20251.2024.1.10107.30c5a09-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -11355,12 +11307,6 @@
       "pre": true,
       "branch": "merge-mps20241",
       "d": "2026-03-13T01:41:44Z"
-    },
-    {
-      "v": "merge-mps20241.2025.1.9996.7136fe4-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241",
-      "d": "2026-03-13T01:41:43Z"
     },
     {
       "v": "merge-mps20241.2025.1.9773.376533b-SNAPSHOT",
@@ -11891,12 +11837,6 @@
       "d": "2026-04-13T14:38:20Z"
     },
     {
-      "v": "merge-master.9999.9.10087.87fb482-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-03-16T07:31:24Z"
-    },
-    {
       "v": "merge-master.2026.1.10993.9bd2ba8-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -12227,12 +12167,6 @@
       "d": "2026-06-02T06:47:24Z"
     },
     {
-      "v": "features-arimer-staticVersions.9999.9.9950.6e38642-SNAPSHOT",
-      "pre": true,
-      "branch": "features-arimer-staticVersions",
-      "d": "2026-03-13T01:41:39Z"
-    },
-    {
       "v": "features-arimer-enableCIModelchecker.2024.1.11249.db8215f-SNAPSHOT",
       "pre": true,
       "branch": "features-arimer-enableCIModelchecker",
@@ -12320,7 +12254,7 @@
       "v": "feature-view-model.2025.1.11431.dec19d7-SNAPSHOT",
       "pre": true,
       "branch": "feature-view-model",
-      "d": "2026-10-22T14:23:49Z"
+      "d": "2026-10-24T05:41:50Z"
     },
     {
       "v": "feature-view-model.2025.1.11420.a05aa05-SNAPSHOT",
@@ -13967,34 +13901,10 @@
       "d": "2026-07-01T14:39:00Z"
     },
     {
-      "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10692.de50a54-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759",
-      "d": "2026-06-25T13:02:37Z"
-    },
-    {
       "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10691.ee91f60-SNAPSHOT",
       "pre": true,
       "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759",
       "d": "2026-06-25T12:51:57Z"
-    },
-    {
-      "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10690.32d5ca3-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759",
-      "d": "2026-07-09T12:53:53Z"
-    },
-    {
-      "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10689.9970ccd-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759",
-      "d": "2026-06-25T11:59:00Z"
-    },
-    {
-      "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10688.9d7e8f0-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-Improve-scoping-of-CustomRunnerAspect-#1759",
-      "d": "2026-07-09T12:53:52Z"
     },
     {
       "v": "feature-Improve-scoping-of-CustomRunnerAspect-#1759.2024.1.10687.1434f66-SNAPSHOT",
@@ -16053,12 +15963,6 @@
       "pre": true,
       "branch": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590",
       "d": "2026-01-22T08:02:09Z"
-    },
-    {
-      "v": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590.2024.1.9676.203eff2-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590",
-      "d": "2026-01-15T13:08:07Z"
     },
     {
       "v": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590.2024.1.9658.25d213f-SNAPSHOT",
