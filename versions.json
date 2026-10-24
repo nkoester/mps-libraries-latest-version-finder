@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T09:20:28.283Z",
+  "generatedAt": "2026-10-24T14:12:03.392Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -182,26 +182,26 @@
         {
           "line": "9999.9",
           "latest": "9999.9.3701.d6cb0ed-SNAPSHOT",
+          "latestDate": "2026-10-24T03:15:02Z",
           "latestIsPreRelease": true,
           "total": 25,
-          "stable": 0,
-          "latestDate": "2026-10-24T03:15:02Z"
+          "stable": 0
         },
         {
           "line": "2026.1",
           "latest": "2026.1.3704.b382763",
+          "latestDate": "2026-10-24T03:12:57Z",
           "latestIsPreRelease": false,
           "total": 18,
-          "stable": 18,
-          "latestDate": "2026-10-24T03:12:57Z"
+          "stable": 18
         },
         {
           "line": "2025.1",
           "latest": "2025.1.3702.3e93b0d",
+          "latestDate": "2026-10-24T03:12:42Z",
           "latestIsPreRelease": false,
           "total": 119,
-          "stable": 119,
-          "latestDate": "2026-10-24T03:12:42Z"
+          "stable": 119
         },
         {
           "line": "2024.3",
@@ -214,10 +214,10 @@
         {
           "line": "2024.1",
           "latest": "2024.1.3703.7b6c0fe",
+          "latestDate": "2026-10-24T03:12:40Z",
           "latestIsPreRelease": false,
           "total": 128,
-          "stable": 128,
-          "latestDate": "2026-10-24T03:12:40Z"
+          "stable": 128
         },
         {
           "line": "2023.2",
@@ -304,26 +304,26 @@
         {
           "line": "9999.9",
           "latest": "9999.9.26666.32c3bec",
+          "latestDate": "2026-10-24T03:25:50Z",
           "latestIsPreRelease": false,
           "total": 418,
-          "stable": 418,
-          "latestDate": "2026-10-24T03:25:50Z"
+          "stable": 418
         },
         {
           "line": "2026.1",
           "latest": "2026.1.26665.d156123",
+          "latestDate": "2026-10-24T03:22:35Z",
           "latestIsPreRelease": false,
           "total": 34,
-          "stable": 34,
-          "latestDate": "2026-10-24T03:22:35Z"
+          "stable": 34
         },
         {
           "line": "2025.1",
           "latest": "2025.1.26663.c5d588e",
+          "latestDate": "2026-10-24T03:22:54Z",
           "latestIsPreRelease": false,
           "total": 263,
-          "stable": 263,
-          "latestDate": "2026-10-24T03:22:54Z"
+          "stable": 263
         },
         {
           "line": "2024.3",
@@ -336,10 +336,10 @@
         {
           "line": "2024.1",
           "latest": "2024.1.26664.52a92d2",
+          "latestDate": "2026-10-24T03:23:05Z",
           "latestIsPreRelease": false,
           "total": 250,
-          "stable": 250,
-          "latestDate": "2026-10-24T03:23:05Z"
+          "stable": 250
         },
         {
           "line": "2023.2",
@@ -450,26 +450,26 @@
         {
           "line": "9999.9",
           "latest": "9999.9.26666.32c3bec",
+          "latestDate": "2026-10-24T03:41:17Z",
           "latestIsPreRelease": false,
           "total": 402,
-          "stable": 402,
-          "latestDate": "2026-10-24T03:41:17Z"
+          "stable": 402
         },
         {
           "line": "2026.1",
           "latest": "2026.1.26665.d156123",
+          "latestDate": "2026-10-24T03:37:13Z",
           "latestIsPreRelease": false,
           "total": 34,
-          "stable": 34,
-          "latestDate": "2026-10-24T03:37:13Z"
+          "stable": 34
         },
         {
           "line": "2025.1",
           "latest": "2025.1.26663.c5d588e",
+          "latestDate": "2026-10-24T03:37:06Z",
           "latestIsPreRelease": false,
           "total": 261,
-          "stable": 261,
-          "latestDate": "2026-10-24T03:37:06Z"
+          "stable": 261
         },
         {
           "line": "2024.3",
@@ -482,10 +482,10 @@
         {
           "line": "2024.1",
           "latest": "2024.1.26664.52a92d2",
+          "latestDate": "2026-10-24T03:37:40Z",
           "latestIsPreRelease": false,
           "total": 248,
-          "stable": 248,
-          "latestDate": "2026-10-24T03:37:40Z"
+          "stable": 248
         },
         {
           "line": "2023.2",
