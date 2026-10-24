@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-24T14:12:03.392Z",
-  "total": 1225,
+  "generatedAt": "2026-10-24T19:11:42.734Z",
+  "total": 1229,
   "released": 844,
   "stable": 819,
   "preRelease": 25,
-  "branchCount": 381,
+  "branchCount": 385,
   "branches": 91,
   "lines": [
     {
@@ -4492,6 +4492,18 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2640.fd587e2-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-24T16:36:45Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2639.b36de62-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-24T16:19:22Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2635.835a228-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5648,6 +5660,18 @@
       "pre": false,
       "branch": "merge-mps20213",
       "d": "2024-01-16T08:47:43Z"
+    },
+    {
+      "v": "merge-master.9999.9.2638.6743acc-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-10-24T16:17:29Z"
+    },
+    {
+      "v": "merge-master.9999.9.2637.c4314ee-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-10-24T14:51:10Z"
     },
     {
       "v": "merge-master.9999.9.2557.4ee7766-SNAPSHOT",
