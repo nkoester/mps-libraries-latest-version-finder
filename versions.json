@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T09:37:28.611Z",
+  "generatedAt": "2026-10-25T14:43:31.949Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -171,37 +171,37 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1231,
+      "total": 1232,
       "released": 847,
       "stable": 821,
       "preRelease": 26,
-      "branchCount": 384,
+      "branchCount": 385,
       "branches": 91,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
         {
           "line": "9999.9",
           "latest": "9999.9.3705.4d5f845-SNAPSHOT",
+          "latestDate": "2026-10-25T03:14:53Z",
           "latestIsPreRelease": true,
           "total": 26,
-          "stable": 0,
-          "latestDate": "2026-10-25T03:14:53Z"
+          "stable": 0
         },
         {
           "line": "2026.1",
           "latest": "2026.1.3707.00017d1",
+          "latestDate": "2026-10-25T03:13:11Z",
           "latestIsPreRelease": false,
           "total": 19,
-          "stable": 19,
-          "latestDate": "2026-10-25T03:13:11Z"
+          "stable": 19
         },
         {
           "line": "2025.1",
           "latest": "2025.1.3706.2951857",
+          "latestDate": "2026-10-25T03:13:02Z",
           "latestIsPreRelease": false,
           "total": 120,
-          "stable": 120,
-          "latestDate": "2026-10-25T03:13:02Z"
+          "stable": 120
         },
         {
           "line": "2024.3",
@@ -304,26 +304,26 @@
         {
           "line": "9999.9",
           "latest": "9999.9.26669.32c3bec",
+          "latestDate": "2026-10-25T03:26:13Z",
           "latestIsPreRelease": false,
           "total": 419,
-          "stable": 419,
-          "latestDate": "2026-10-25T03:26:13Z"
+          "stable": 419
         },
         {
           "line": "2026.1",
           "latest": "2026.1.26668.d156123",
+          "latestDate": "2026-10-25T03:22:39Z",
           "latestIsPreRelease": false,
           "total": 35,
-          "stable": 35,
-          "latestDate": "2026-10-25T03:22:39Z"
+          "stable": 35
         },
         {
           "line": "2025.1",
           "latest": "2025.1.26667.c5d588e",
+          "latestDate": "2026-10-25T03:22:29Z",
           "latestIsPreRelease": false,
           "total": 264,
-          "stable": 264,
-          "latestDate": "2026-10-25T03:22:29Z"
+          "stable": 264
         },
         {
           "line": "2024.3",
@@ -450,26 +450,26 @@
         {
           "line": "9999.9",
           "latest": "9999.9.26669.32c3bec",
+          "latestDate": "2026-10-25T03:50:19Z",
           "latestIsPreRelease": false,
           "total": 403,
-          "stable": 403,
-          "latestDate": "2026-10-25T03:50:19Z"
+          "stable": 403
         },
         {
           "line": "2026.1",
           "latest": "2026.1.26668.d156123",
+          "latestDate": "2026-10-25T03:49:00Z",
           "latestIsPreRelease": false,
           "total": 35,
-          "stable": 35,
-          "latestDate": "2026-10-25T03:49:00Z"
+          "stable": 35
         },
         {
           "line": "2025.1",
           "latest": "2025.1.26667.c5d588e",
+          "latestDate": "2026-10-25T03:36:44Z",
           "latestIsPreRelease": false,
           "total": 262,
-          "stable": 262,
-          "latestDate": "2026-10-25T03:36:44Z"
+          "stable": 262
         },
         {
           "line": "2024.3",
