@@ -5,21 +5,26 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-24T19:11:42.734Z",
-  "total": 1229,
-  "released": 844,
-  "stable": 819,
-  "preRelease": 25,
-  "branchCount": 385,
+  "generatedAt": "2026-10-25T09:37:28.611Z",
+  "total": 1231,
+  "released": 847,
+  "stable": 821,
+  "preRelease": 26,
+  "branchCount": 384,
   "branches": 91,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.3701.d6cb0ed-SNAPSHOT",
+      "latest": "9999.9.3705.4d5f845-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 25,
+      "total": 26,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.3705.4d5f845-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-25T03:14:53Z"
+        },
         {
           "v": "9999.9.3701.d6cb0ed-SNAPSHOT",
           "pre": true,
@@ -146,15 +151,20 @@
           "d": "2025-09-05T03:13:11Z"
         }
       ],
-      "latestDate": "2026-10-24T03:15:02Z"
+      "latestDate": "2026-10-25T03:14:53Z"
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.3704.b382763",
+      "latest": "2026.1.3707.00017d1",
       "latestIsPreRelease": false,
-      "total": 18,
-      "stable": 18,
+      "total": 19,
+      "stable": 19,
       "versions": [
+        {
+          "v": "2026.1.3707.00017d1",
+          "pre": false,
+          "d": "2026-10-25T03:13:11Z"
+        },
         {
           "v": "2026.1.3704.b382763",
           "pre": false,
@@ -246,15 +256,20 @@
           "d": "2026-06-23T13:28:12Z"
         }
       ],
-      "latestDate": "2026-10-24T03:12:57Z"
+      "latestDate": "2026-10-25T03:13:11Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3702.3e93b0d",
+      "latest": "2025.1.3706.2951857",
       "latestIsPreRelease": false,
-      "total": 119,
-      "stable": 119,
+      "total": 120,
+      "stable": 120,
       "versions": [
+        {
+          "v": "2025.1.3706.2951857",
+          "pre": false,
+          "d": "2026-10-25T03:13:02Z"
+        },
         {
           "v": "2025.1.3702.3e93b0d",
           "pre": false,
@@ -851,7 +866,7 @@
           "d": "2025-04-29T14:16:32Z"
         }
       ],
-      "latestDate": "2026-10-24T03:12:42Z"
+      "latestDate": "2026-10-25T03:13:02Z"
     },
     {
       "line": "2024.3",
@@ -4495,19 +4510,19 @@
       "v": "renovate-master-mps.9999.9.2640.fd587e2-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-10-24T16:36:45Z"
+      "d": "2026-10-25T03:14:49Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2639.b36de62-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-10-24T16:19:22Z"
+      "d": "2026-10-25T03:14:48Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2635.835a228-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-10-24T05:12:03Z"
+      "d": "2026-10-25T03:14:47Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2633.836a8c1-SNAPSHOT",
@@ -5048,12 +5063,6 @@
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
       "d": "2026-07-07T02:14:20Z"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2247.da1f298-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
-      "d": "2026-06-26T17:32:19Z"
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2190.15520eb-SNAPSHOT",
@@ -5665,13 +5674,13 @@
       "v": "merge-master.9999.9.2638.6743acc-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
-      "d": "2026-10-24T16:17:29Z"
+      "d": "2026-10-25T03:14:37Z"
     },
     {
       "v": "merge-master.9999.9.2637.c4314ee-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
-      "d": "2026-10-24T14:51:10Z"
+      "d": "2026-10-25T03:14:36Z"
     },
     {
       "v": "merge-master.9999.9.2557.4ee7766-SNAPSHOT",

@@ -3,9 +3,9 @@
     "2026.1": {
       "latest": {
         "com.jetbrains_mps": "2026.1.1",
-        "de.itemis.mps_extensions": "2026.1.3704.b382763",
-        "com.mbeddr_platform": "2026.1.26665.d156123",
-        "com.mbeddr_mbeddr": "2026.1.26665.d156123",
+        "de.itemis.mps_extensions": "2026.1.3707.00017d1",
+        "com.mbeddr_platform": "2026.1.26668.d156123",
+        "com.mbeddr_mbeddr": "2026.1.26668.d156123",
         "org.iets3_opensource": "2026.1.11424.a53a9bd",
         "org.mpsqa_all-in-one": "2026.1.1482.16fad4c"
       },
@@ -23,7 +23,7 @@
         [
           "com.mbeddr_mbeddr",
           "com.mbeddr_platform",
-          "2026.1.26665.d156123"
+          "2026.1.26668.d156123"
         ],
         [
           "org.iets3_opensource",
@@ -57,9 +57,9 @@
     "2025.1": {
       "latest": {
         "com.jetbrains_mps": "2025.1.4",
-        "de.itemis.mps_extensions": "2025.1.3702.3e93b0d",
-        "com.mbeddr_platform": "2025.1.26663.c5d588e",
-        "com.mbeddr_mbeddr": "2025.1.26663.c5d588e",
+        "de.itemis.mps_extensions": "2025.1.3706.2951857",
+        "com.mbeddr_platform": "2025.1.26667.c5d588e",
+        "com.mbeddr_mbeddr": "2025.1.26667.c5d588e",
         "org.iets3_opensource": "2025.1.11435.532e9c8",
         "org.mpsqa_all-in-one": "2025.1.1486.22468db"
       },
@@ -77,7 +77,7 @@
         [
           "com.mbeddr_mbeddr",
           "com.mbeddr_platform",
-          "2025.1.26663.c5d588e"
+          "2025.1.26667.c5d588e"
         ],
         [
           "org.iets3_opensource",
@@ -555,9 +555,9 @@
     },
     "9999.9": {
       "latest": {
-        "de.itemis.mps_extensions": "9999.9.3701.d6cb0ed-SNAPSHOT",
-        "com.mbeddr_platform": "9999.9.26666.32c3bec",
-        "com.mbeddr_mbeddr": "9999.9.26666.32c3bec",
+        "de.itemis.mps_extensions": "9999.9.3705.4d5f845-SNAPSHOT",
+        "com.mbeddr_platform": "9999.9.26669.32c3bec",
+        "com.mbeddr_mbeddr": "9999.9.26669.32c3bec",
         "org.iets3_opensource": "9999.9.10936.1f10368",
         "org.mpsqa_all-in-one": "9999.9.1484.7a37b52"
       },
@@ -570,7 +570,7 @@
         [
           "com.mbeddr_mbeddr",
           "com.mbeddr_platform",
-          "9999.9.26666.32c3bec"
+          "9999.9.26669.32c3bec"
         ],
         [
           "org.iets3_opensource",
