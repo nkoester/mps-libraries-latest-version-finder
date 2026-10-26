@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-26T00:56:34.335Z",
-  "total": 1233,
+  "generatedAt": "2026-10-26T10:49:09.104Z",
+  "total": 1236,
   "released": 847,
   "stable": 821,
   "preRelease": 26,
-  "branchCount": 386,
+  "branchCount": 389,
   "branches": 91,
   "lines": [
     {
@@ -4507,6 +4507,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2645.cee1b68-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-26T10:25:12Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2642.9c56401-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -6683,6 +6689,18 @@
       "pre": false,
       "branch": "bugfix-ThirdPartySolution",
       "d": "2024-03-12T13:41:16Z"
+    },
+    {
+      "v": "artem-module-filesystem.9999.9.2644.187de02-SNAPSHOT",
+      "pre": true,
+      "branch": "artem-module-filesystem",
+      "d": "2026-10-26T09:36:23Z"
+    },
+    {
+      "v": "artem-module-filesystem.9999.9.2643.86d7baa-SNAPSHOT",
+      "pre": true,
+      "branch": "artem-module-filesystem",
+      "d": "2026-10-26T09:16:48Z"
     },
     {
       "v": "artem-module-filesystem.9999.9.2610.56e514e-SNAPSHOT",
