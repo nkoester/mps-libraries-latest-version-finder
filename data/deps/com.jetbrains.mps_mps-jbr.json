@@ -178,6 +178,12 @@
         "17.0.12-b1000.54"
       ]
     ],
+    "263.6259.134": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
     "263.6259.132": [
       [
         "com.jetbrains.jdk_jbr_jcef",
@@ -518,18 +524,6 @@
       [
         "com.jetbrains.jdk_jbr_jcef",
         "25.0.4-b508.27"
-      ]
-    ],
-    "262.9437.478": [
-      [
-        "com.jetbrains.jdk_jbr_jcef",
-        "25.0.3-b508.16"
-      ]
-    ],
-    "262.9437.476": [
-      [
-        "com.jetbrains.jdk_jbr_jcef",
-        "25.0.3-b508.16"
       ]
     ]
   }

@@ -555,9 +555,9 @@
     },
     "9999.9": {
       "latest": {
-        "de.itemis.mps_extensions": "9999.9.3705.4d5f845-SNAPSHOT",
-        "com.mbeddr_platform": "9999.9.26669.32c3bec",
-        "com.mbeddr_mbeddr": "9999.9.26669.32c3bec",
+        "de.itemis.mps_extensions": "9999.9.3708.40397f1-SNAPSHOT",
+        "com.mbeddr_platform": "9999.9.26670.32c3bec",
+        "com.mbeddr_mbeddr": "9999.9.26670.32c3bec",
         "org.iets3_opensource": "9999.9.10936.1f10368",
         "org.mpsqa_all-in-one": "9999.9.1484.7a37b52"
       },
@@ -570,7 +570,7 @@
         [
           "com.mbeddr_mbeddr",
           "com.mbeddr_platform",
-          "9999.9.26669.32c3bec"
+          "9999.9.26670.32c3bec"
         ],
         [
           "org.iets3_opensource",
