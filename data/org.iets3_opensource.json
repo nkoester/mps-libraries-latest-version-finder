@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-27T10:14:57.942Z",
-  "total": 2970,
+  "generatedAt": "2026-10-27T16:09:32.305Z",
+  "total": 2929,
   "released": 1735,
   "stable": 1728,
   "preRelease": 7,
-  "branchCount": 1235,
-  "branches": 256,
+  "branchCount": 1194,
+  "branches": 248,
   "lines": [
     {
       "line": "9999.9",
@@ -8873,52 +8873,10 @@
       "d": "2026-03-11T15:53:06Z"
     },
     {
-      "v": "renovate-reconfigure.9999.9.9952.ce98222-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-reconfigure",
-      "d": "2026-03-13T01:42:17Z"
-    },
-    {
-      "v": "renovate-org.cyclonedx.bom-3.x.9999.9.9852.e909e12-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-org.cyclonedx.bom-3.x",
-      "d": "2026-02-11T09:43:24Z"
-    },
-    {
-      "v": "renovate-mpsversion.9999.9.9860.518a156-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-mpsversion",
-      "d": "2026-02-23T12:34:38Z"
-    },
-    {
-      "v": "renovate-mpsversion.9999.9.9851.98024cd-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-mpsversion",
-      "d": "2026-02-11T09:42:11Z"
-    },
-    {
-      "v": "renovate-mpsversion.9999.9.9831.bf5eaed-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-mpsversion",
-      "d": "2026-02-10T09:38:49Z"
-    },
-    {
       "v": "renovate-mpsversion.9999.9.9709.75ee5cd-SNAPSHOT",
       "pre": true,
       "branch": "renovate-mpsversion",
       "d": "2026-01-23T17:44:48Z"
-    },
-    {
-      "v": "renovate-mpsversion.9999.9.9683.b26541b-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-mpsversion",
-      "d": "2026-01-15T21:31:26Z"
-    },
-    {
-      "v": "renovate-mpsversion.9999.9.9675.3d293a3-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-mpsversion",
-      "d": "2026-01-15T12:09:05Z"
     },
     {
       "v": "renovate-mpsversion.9999.9.9604.ba5d17a-SNAPSHOT",
@@ -9077,28 +9035,10 @@
       "d": "2026-05-11T08:03:40Z"
     },
     {
-      "v": "renovate-major-mpsversion.9999.9.9527.75ab7af-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-major-mpsversion",
-      "d": "2025-12-11T08:32:57Z"
-    },
-    {
-      "v": "renovate-major-mpsversion.9999.9.9525.75ab7af-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-major-mpsversion",
-      "d": "2025-12-10T08:19:51Z"
-    },
-    {
       "v": "renovate-major-github-artifact-actions.9999.9.9938.d5cd5f3-SNAPSHOT",
       "pre": true,
       "branch": "renovate-major-github-artifact-actions",
       "d": "2026-03-04T14:02:10Z"
-    },
-    {
-      "v": "renovate-major-github-artifact-actions.9999.9.9535.397b3ef-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-major-github-artifact-actions",
-      "d": "2025-12-10T10:27:38Z"
     },
     {
       "v": "renovate-maintenance-mps20261-patch-third-party-minor.2026.1.10935.e648822-SNAPSHOT",
@@ -9599,18 +9539,6 @@
       "d": "2026-03-26T01:43:18Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-modelcheck-2.x.2024.1.10019.a950ce3-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-modelcheck-2.x",
-      "d": "2026-03-13T01:42:07Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-modelcheck-2.x.2024.1.9994.ad9da30-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-modelcheck-2.x",
-      "d": "2026-03-12T07:58:46Z"
-    },
-    {
       "v": "renovate-maintenance-mps20241-major-github-actions.2024.1.11184.b88b45f-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-major-github-actions",
@@ -9693,12 +9621,6 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-major-github-actions",
       "d": "2026-03-13T01:42:05Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-major-github-actions.2024.1.10051.4f861ea-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-major-github-actions",
-      "d": "2026-03-12T13:17:56Z"
     },
     {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11408.58186f6-SNAPSHOT",
@@ -9801,12 +9723,6 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-9.x",
       "d": "2026-03-23T07:35:43Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.9981.fe2e609-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-gradle-9.x",
-      "d": "2026-03-13T01:42:02Z"
     },
     {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.11391.9d0aea5-SNAPSHOT",
@@ -10223,36 +10139,6 @@
       "d": "2026-03-04T14:02:05Z"
     },
     {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9856.040b937-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
-      "d": "2026-02-12T09:15:27Z"
-    },
-    {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9769.0bd4176-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
-      "d": "2026-02-05T07:16:00Z"
-    },
-    {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9742.747e3cc-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
-      "d": "2026-01-30T13:13:10Z"
-    },
-    {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9724.da83211-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
-      "d": "2026-01-29T01:44:06Z"
-    },
-    {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9565.b3393de-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
-      "d": "2025-12-11T08:51:55Z"
-    },
-    {
       "v": "pull-589.2021.1.5585.ca76a9d",
       "pre": false,
       "branch": "pull-589",
@@ -10661,18 +10547,6 @@
       "d": "2026-03-13T01:41:51Z"
     },
     {
-      "v": "merge-mps20251.9999.9.9965.2e998dc-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-03-13T01:41:50Z"
-    },
-    {
-      "v": "merge-mps20251.9999.9.9848.871e823-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-02-10T15:09:28Z"
-    },
-    {
       "v": "merge-mps20251.9999.9.9681.eaff690-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -10965,12 +10839,6 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-03-24T08:44:38Z"
-    },
-    {
-      "v": "merge-mps20251.2025.1.10114.4410c24-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-03-18T14:39:44Z"
     },
     {
       "v": "merge-mps20251.2025.1.10082.a2edfe6-SNAPSHOT",
@@ -11295,30 +11163,6 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-03-25T03:19:21Z"
-    },
-    {
-      "v": "merge-mps20251.2024.1.10107.30c5a09-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-03-18T10:01:38Z"
-    },
-    {
-      "v": "merge-mps20241.2025.1.10008.f229e39-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241",
-      "d": "2026-03-13T01:41:44Z"
-    },
-    {
-      "v": "merge-mps20241.2025.1.9773.376533b-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241",
-      "d": "2026-02-06T07:44:14Z"
-    },
-    {
-      "v": "merge-mps20241.2024.1.10061.f460399-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241",
-      "d": "2026-03-12T15:07:58Z"
     },
     {
       "v": "merge-mps20241.2024.1.9902.4daad99-SNAPSHOT",
@@ -12233,12 +12077,6 @@
       "d": "2022-11-09T10:32:44Z"
     },
     {
-      "v": "feature-visible_elements_provider_customization.2025.1.9684.95277c0-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-visible_elements_provider_customization",
-      "d": "2026-01-16T09:25:36Z"
-    },
-    {
       "v": "feature-visible_elements_provider_customization.2025.1.9579.47a4469-SNAPSHOT",
       "pre": true,
       "branch": "feature-visible_elements_provider_customization",
@@ -12839,18 +12677,6 @@
       "d": "2026-09-15T08:30:58Z"
     },
     {
-      "v": "feature-remove_deprecated_concepts_related_to_configurations_1631.2024.1.9793.6643b37-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-remove_deprecated_concepts_related_to_configurations_1631",
-      "d": "2026-02-09T13:28:31Z"
-    },
-    {
-      "v": "feature-remove_deprecated_concepts_related_to_configurations_1631.2024.1.9792.db74b91-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-remove_deprecated_concepts_related_to_configurations_1631",
-      "d": "2026-02-11T07:51:35Z"
-    },
-    {
       "v": "feature-refactor_physunits_language_1647.2024.1.9892.c7ed1d0-SNAPSHOT",
       "pre": true,
       "branch": "feature-refactor_physunits_language_1647",
@@ -13277,12 +13103,6 @@
       "d": "2022-07-07T05:16:26Z"
     },
     {
-      "v": "feature-improve_update_all_configs_intention_1530.2024.1.9465.e471b0d-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-improve_update_all_configs_intention_1530",
-      "d": "2025-12-01T17:30:52Z"
-    },
-    {
       "v": "feature-improve_update_all_configs_intention_1530.2024.1.9458.0efab3a-SNAPSHOT",
       "pre": true,
       "branch": "feature-improve_update_all_configs_intention_1530",
@@ -13299,12 +13119,6 @@
       "pre": false,
       "branch": "feature-improve-types-code-completion",
       "d": "2023-11-16T11:28:35Z"
-    },
-    {
-      "v": "feature-improve_IRenamer_hierarchy_1625.2024.1.9760.ea45370-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-improve_IRenamer_hierarchy_1625",
-      "d": "2026-02-04T06:45:40Z"
     },
     {
       "v": "feature-helper_for_transitively_included_fm_1970.2024.1.11209.0bb093c-SNAPSHOT",
@@ -13749,18 +13563,6 @@
       "pre": false,
       "branch": "feature-bt_language",
       "d": "2023-07-21T13:32:23Z"
-    },
-    {
-      "v": "feature-arimer-removeStaticVersions20241.2024.1.10003.021cf8a-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-arimer-removeStaticVersions20241",
-      "d": "2026-03-13T01:41:33Z"
-    },
-    {
-      "v": "feature-arimer-removeStaticVersions20241.2024.1.9949.4dd1f92-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-arimer-removeStaticVersions20241",
-      "d": "2026-03-13T01:41:32Z"
     },
     {
       "v": "feature-arimer-patch-1.9999.9.10820.224b0b2-SNAPSHOT",
@@ -15059,6 +14861,12 @@
       "d": "2024-02-29T22:32:29Z"
     },
     {
+      "v": "bugfix-run-manually-progress.2025.1.11444.8f344f1-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-run-manually-progress",
+      "d": "2026-10-27T14:38:11Z"
+    },
+    {
       "v": "bugfix-repair_artifact_publish.2022.2.6119.d522821",
       "pre": false,
       "branch": "bugfix-repair_artifact_publish",
@@ -15279,12 +15087,6 @@
       "pre": true,
       "branch": "bugfix-missing-configs-in-sbom",
       "d": "2026-01-12T09:33:22Z"
-    },
-    {
-      "v": "bugfix-misisngDependencies.2024.1.9757.233fca0-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-misisngDependencies",
-      "d": "2026-02-03T15:59:09Z"
     },
     {
       "v": "bugfix-minor_fixes_nov_2021_3.2021.3.6353.2eeda99",
@@ -15665,28 +15467,10 @@
       "d": "2023-04-03T09:10:59Z"
     },
     {
-      "v": "bugfix-avoid_error_for_name_of_new_featuremodel_1713.2024.1.10226.5e68b40-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713",
-      "d": "2026-04-16T06:15:01Z"
-    },
-    {
       "v": "bugfix-avoid_error_for_name_of_new_featuremodel_1713.2024.1.10225.cd9579a-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713",
       "d": "2026-04-13T07:51:32Z"
-    },
-    {
-      "v": "bugfix-avoid_error_for_name_of_new_featuremodel_1713.2024.1.10135.88e6df0-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713",
-      "d": "2026-03-23T14:58:33Z"
-    },
-    {
-      "v": "bugfix-avoid_error_for_name_of_new_featuremodel_1713.2024.1.10134.b523316-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713",
-      "d": "2026-03-23T14:55:26Z"
     },
     {
       "v": "bugfix-assert_missing_spaces.2021.3.6831.151b8f6",
@@ -15717,12 +15501,6 @@
       "pre": true,
       "branch": "bugfix-arimer-InterpreterCoverageAssResultNonUnique",
       "d": "2026-02-02T13:08:27Z"
-    },
-    {
-      "v": "bugfix-all-provided-deps.2024.1.9526.45e3a8d-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-all-provided-deps",
-      "d": "2025-12-11T08:32:26Z"
     },
     {
       "v": "bugfix-Unique-name-check-missing-for-arguments-and-local-vars-#1828.2024.1.10736.274e0f0-SNAPSHOT",
@@ -15959,28 +15737,10 @@
       "d": "2026-01-23T02:45:06Z"
     },
     {
-      "v": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590.2024.1.9700.1b94925-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590",
-      "d": "2026-01-22T08:02:09Z"
-    },
-    {
       "v": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590.2024.1.9658.25d213f-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590",
       "d": "2026-01-13T15:35:35Z"
-    },
-    {
-      "v": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590.2024.1.9656.25fd8ac-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590",
-      "d": "2026-01-13T10:39:09Z"
-    },
-    {
-      "v": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590.2024.1.9655.c78793e-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-Fix-Diamond-Problem-&-Refactoring-#1590",
-      "d": "2026-01-13T10:11:08Z"
     },
     {
       "v": "bugfix-EnumIsTarget-backwards-compatibility.2025.1.11064.8b880fb-SNAPSHOT",
@@ -16077,12 +15837,6 @@
       "pre": true,
       "branch": "bugfix-Confusing-solver-warning#1521-Open-",
       "d": "2025-12-01T15:49:48Z"
-    },
-    {
-      "v": "bugfix-AddSbomDeps.2024.1.9770.057d9ea-SNAPSHOT",
-      "pre": true,
-      "branch": "bugfix-AddSbomDeps",
-      "d": "2026-02-06T07:43:50Z"
     },
     {
       "v": "bugfix-Adapt-to-extended-configuration-ignores-unspecified-content#1953.2024.1.11170.b1f19d7-SNAPSHOT",
