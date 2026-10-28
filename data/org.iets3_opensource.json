@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-28T11:03:46.837Z",
-  "total": 2929,
+  "generatedAt": "2026-10-28T16:56:37.702Z",
+  "total": 2932,
   "released": 1735,
   "stable": 1728,
   "preRelease": 7,
-  "branchCount": 1194,
+  "branchCount": 1197,
   "branches": 249,
   "lines": [
     {
@@ -14859,6 +14859,24 @@
       "pre": false,
       "branch": "bugfix-section_marker_nullpointer",
       "d": "2024-02-29T22:32:29Z"
+    },
+    {
+      "v": "bugfix-run-manually-progress.2025.1.11448.7928fbd-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-run-manually-progress",
+      "d": "2026-10-28T16:06:50Z"
+    },
+    {
+      "v": "bugfix-run-manually-progress.2025.1.11447.7d23f2d-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-run-manually-progress",
+      "d": "2026-10-28T16:04:46Z"
+    },
+    {
+      "v": "bugfix-run-manually-progress.2025.1.11446.d2aa88f-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-run-manually-progress",
+      "d": "2026-10-28T15:37:17Z"
     },
     {
       "v": "bugfix-run-manually-progress.2025.1.11444.8f344f1-SNAPSHOT",
