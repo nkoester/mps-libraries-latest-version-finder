@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-10-27T16:09:32.305Z",
+  "generatedAt": "2026-10-28T11:03:46.837Z",
   "total": 2929,
   "released": 1735,
   "stable": 1728,
   "preRelease": 7,
   "branchCount": 1194,
-  "branches": 248,
+  "branches": 249,
   "lines": [
     {
       "line": "9999.9",
@@ -9701,12 +9701,6 @@
       "d": "2026-06-30T10:53:43Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.10695.a68e4ed-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-gradle-9.x",
-      "d": "2026-06-29T08:08:15Z"
-    },
-    {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.10652.1b3a7c3-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-9.x",
@@ -13131,6 +13125,12 @@
       "pre": false,
       "branch": "feature-getter_for_NixValueList",
       "d": "2023-02-07T15:50:18Z"
+    },
+    {
+      "v": "feature-generated-test-node-urls.2025.1.11445.c8e2704-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-generated-test-node-urls",
+      "d": "2026-10-28T10:18:46Z"
     },
     {
       "v": "feature-generated-java-readability.2025.1.11194.df7d6bc-SNAPSHOT",
