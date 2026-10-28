@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-28T16:56:37.702Z",
-  "total": 1239,
+  "generatedAt": "2026-10-28T21:30:04.023Z",
+  "total": 1240,
   "released": 848,
   "stable": 821,
   "preRelease": 27,
-  "branchCount": 391,
+  "branchCount": 392,
   "branches": 91,
   "lines": [
     {
@@ -4510,6 +4510,12 @@
       "pre": true,
       "branch": "renovate-mps-jbr",
       "d": "2026-08-07T13:43:47Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2648.36d3168-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-28T20:07:05Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2647.559d936-SNAPSHOT",
