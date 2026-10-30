@@ -23,6 +23,7 @@ import {
   isDevelopmentLine,
   isMpsLibrary,
   isMarker,
+  isSnapshot,
   isTool,
   lineSchemeOf,
   lineOf,
@@ -136,7 +137,9 @@ async function main() {
     const modelcheck = data.get('de.itemis.mps.build-backends_modelcheck');
     const latestPlugin = line?.latest;
     const range = compat.extracted?.plugin?.[latestPlugin]?.backendsRange;
-    const resolved = range && releasesOf(modelcheck ?? { lines: [] }).map((e) => e.v).find((v) => inVersionRange(v, range));
+    // The plugin resolves backends as `latest.release`: never a SNAPSHOT.
+    const resolved = range && releasesOf(modelcheck ?? { lines: [] }).map((e) => e.v)
+      .find((v) => !isSnapshot(v) && inVersionRange(v, range));
     const commit = resolved && compat.extracted?.backends?.modelcheck?.[resolved];
     if (resolved && !compat.extracted?.testedMps?.[commit]) {
       add('warn', 'compat', `backends ${resolved} (resolved by plugin ${latestPlugin}) has no tested MPS list: the test matrix may have moved, see docs/gradle-plugin-compat.md step 2`);

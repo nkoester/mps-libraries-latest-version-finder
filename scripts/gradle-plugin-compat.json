@@ -492,10 +492,10 @@
         "launcher": "2.8.0.167.c51149b"
       },
       "1.32.0": {
-        "commit": null,
-        "backendsRange": null,
-        "gradle": null,
-        "java": null,
+        "commit": "ad8fb003e89c",
+        "backendsRange": "[1.26,2)",
+        "gradle": "8.14.3",
+        "java": "11",
         "launcher": "2.8.0.167.c51149b"
       },
       "1.32.1-SNAPSHOT": {
@@ -1803,8 +1803,8 @@
   },
   "curated": {
     "$comment": "CURATED from mps-gradle-plugin CHANGELOG.md prose -- there is no machine-readable source for these. Maintained by hand (or an agent) following docs/gradle-plugin-compat.md, section \"Curated facts\". The extractor keeps this section as it is.",
-    "reviewedUpTo": "1.31.0",
-    "reviewedAt": "2026-10-20",
+    "reviewedUpTo": "1.32.0",
+    "reviewedAt": "2026-10-30",
     "pluginMinimumForMps": [
       {
         "mps": "2022.2",
@@ -1830,6 +1830,11 @@
         "mps": "2025.3",
         "plugin": "1.30.0",
         "source": "CHANGELOG 1.30.0: latest launcher, supporting the MPS master of the time (2025.3/2026.1 prerelease)"
+      },
+      {
+        "mps": "2026.3",
+        "plugin": "1.32.0",
+        "source": "CHANGELOG 1.32.0: excludes intellij.libraries.kotlin.metadata.jar, which conflicts with MPS 2026.3's own kotlin-metadata (NoSuchMethodError loading Kotlin stub models)"
       }
     ],
     "pluginMpsDropped": [
@@ -1837,6 +1842,11 @@
         "mps": "2019.3",
         "plugin": "1.5",
         "source": "CHANGELOG 1.5: no longer compatible with MPS 2019.3 and below"
+      },
+      {
+        "mps": "2023.1",
+        "plugin": "1.32.0",
+        "source": "CHANGELOG 1.32.0: minimum supported MPS raised to 2023.2; generate-models and modelcheck fail for older versions"
       }
     ],
     "pluginGradle": [

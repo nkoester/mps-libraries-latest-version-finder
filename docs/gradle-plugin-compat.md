@@ -34,13 +34,17 @@ changelog. No source states a maximum Gradle version.
 
 ## Sources
 
-Every published version ends in the short hash of the commit it was built
+Published versions end in the short hash of the commit they were built
 from: `1.31.0.1.1243113` -> plugin commit `1243113`, `1.27.4.239.aeb5185` ->
-backends commit `aeb5185`. All extracted facts are read at that commit.
+backends commit `aeb5185`. Versions without one (plugin `1.32.0` onwards)
+are found by their release tag, tried as `<artifactId>-<version>`
+(`mps-gradle-plugin-1.32.0`), `v<version>`, `<version>`. All extracted facts
+are read at that commit.
 
 | Fact | Repository | Location at the commit | Since |
 | --- | --- | --- | --- |
-| Backend range | `mbeddr/mps-gradle-plugin` | `MPS_BUILD_BACKENDS_VERSION = "..."` in a `*.kt` file (today `src/main/kotlin/de/itemis/mps/gradle/Common.kt`) | 2022-07 (`1.+` before) |
+| Backend range | `mbeddr/mps-gradle-plugin` | `MPS_BUILD_BACKENDS_VERSION = "..."` in a `*.kt` file (`src/main/kotlin/de/itemis/mps/gradle/Common.kt`) | 2022-07 (`1.+` before), removed in 1.32.0 |
+| Backend range (1.32.0+) | `mbeddr/mps-gradle-plugin` | `BACKENDS_MIN_RELEASE` / `BACKENDS_MAX_RELEASE` in a `*.kt` file (`src/main/kotlin/de/itemis/mps/gradle/BuildBackend.kt`), recorded as `[min,max)`; `latest.release`, so SNAPSHOTs and prereleases are excluded | 1.32.0 |
 | Gradle built with | `mbeddr/mps-gradle-plugin` | `gradle/wrapper/gradle-wrapper.properties`, `distributionUrl` | always |
 | Java target | `mbeddr/mps-gradle-plugin` | `build.gradle(.kts)`: `JavaVersion.VERSION_*`, else `jvmTarget`, else `.java-version` | always |
 | Pinned launcher | Nexus | plugin POM dependency `de.itemis.mps.build-backends:launcher` (`data/deps/de.itemis.mps_mps-gradle-plugin.json`) | plugin 1.24 |

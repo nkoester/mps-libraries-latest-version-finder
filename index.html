@@ -2560,10 +2560,15 @@
 
       /* ------------------------------------------------------------- tooling */
 
-      /** Released versions of one library, newest first (full data). */
+      /**
+       * Released versions of one library, newest first (full data). SNAPSHOTs
+       * are left out: the plugin resolves backends as `latest.release`.
+       */
       const releasedVersions = (slug) =>
         (state.fullData.get(slug)?.lines ?? []).flatMap((line) =>
-          line.versions.map((entry) => entry.v),
+          line.versions
+            .map((entry) => entry.v)
+            .filter((v) => !isSnapshot(v)),
         );
 
       /** Tested-against status of one backend release for one MPS line. */

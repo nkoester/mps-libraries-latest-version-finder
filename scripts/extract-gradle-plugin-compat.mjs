@@ -7,10 +7,13 @@
  *
  * Method, sources and the re-assessment runbook: docs/gradle-plugin-compat.md.
  *
- * Every published version carries its source commit as the last segment
- * (`1.31.0.1.1243113`, `1.27.4.239.aeb5185`). At that commit:
+ * Published versions carry their source commit as the last segment
+ * (`1.31.0.1.1243113`, `1.27.4.239.aeb5185`); versions without one
+ * (`1.32.0`) are found by their release tag (`mps-gradle-plugin-1.32.0`).
+ * At that commit:
  *
  *   plugin    MPS_BUILD_BACKENDS_VERSION   backend range it resolves at build time
+ *             BACKENDS_MIN/MAX_RELEASE     same, since 1.32.0 (BuildBackend.kt)
  *             gradle-wrapper.properties    Gradle it was built with
  *             build.gradle(.kts)           Java target
  *   backends  supportedMpsVersions         tested-against MPS list (gradle.properties,
@@ -33,7 +36,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { compareVersions, isTool } from '../versions-lib.js';
+import { compareVersions, isSnapshot, isTool } from '../versions-lib.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUTPUT = join(ROOT, 'scripts', 'gradle-plugin-compat.json');
@@ -67,7 +70,7 @@ function git(dir, ...args) {
  */
 function syncRepo(url, dir) {
   if (existsSync(join(dir, '.git')) || existsSync(join(dir, 'HEAD'))) {
-    git(dir, 'fetch', '--quiet', '--prune', 'origin', '+refs/heads/*:refs/remotes/origin/*');
+    git(dir, 'fetch', '--quiet', '--prune', 'origin', '+refs/heads/*:refs/remotes/origin/*', '+refs/tags/*:refs/tags/*');
   } else {
     execFileSync('git', ['clone', '--quiet', '--no-checkout', url, dir], { stdio: 'ignore' });
   }
@@ -75,12 +78,27 @@ function syncRepo(url, dir) {
 
 const commitOf = (version) => version.split('.').at(-1).match(/^[0-9a-f]{7,40}$/)?.[0] ?? null;
 
-function resolve(dir, hash) {
+function resolve(dir, ref) {
   try {
-    return git(dir, 'rev-parse', '--verify', '--quiet', `${hash}^{commit}`).trim();
+    return git(dir, 'rev-parse', '--verify', '--quiet', `${ref}^{commit}`).trim();
   } catch {
     return null;
   }
+}
+
+/**
+ * Source commit of a published version: the hash it carries, else its
+ * release tag. SNAPSHOTs have neither.
+ */
+function sourceCommit(dir, artifactId, version) {
+  const hash = commitOf(version);
+  if (hash) return resolve(dir, hash);
+  if (isSnapshot(version)) return null;
+  for (const tag of [`${artifactId}-${version}`, `v${version}`, version]) {
+    const commit = resolve(dir, `refs/tags/${tag}`);
+    if (commit) return commit;
+  }
+  return null;
 }
 
 function show(dir, commit, path) {
@@ -110,9 +128,23 @@ function testedMps(dir, commit) {
   return null;
 }
 
+/**
+ * Backend range at one plugin commit: the `MPS_BUILD_BACKENDS_VERSION` range,
+ * or since 1.32.0 `latest.release` bounded by BACKENDS_MIN_RELEASE (inclusive)
+ * and BACKENDS_MAX_RELEASE (exclusive, prereleases rejected), as `[min,max)`.
+ */
+function backendsRange(dir, commit) {
+  const legacy = grepAt(dir, commit, 'MPS_BUILD_BACKENDS_VERSION *=', '*.kt')
+    .match(/MPS_BUILD_BACKENDS_VERSION\s*=\s*"([^"]+)"/)?.[1];
+  if (legacy) return legacy;
+  const bounds = grepAt(dir, commit, 'BACKENDS_(MIN|MAX)_RELEASE *=', '*.kt');
+  const min = bounds.match(/BACKENDS_MIN_RELEASE\s*=\s*"([^"]+)"/)?.[1];
+  const max = bounds.match(/BACKENDS_MAX_RELEASE\s*=\s*"([^"]+)"/)?.[1];
+  return min && max ? `[${min},${max})` : null;
+}
+
 function pluginFacts(dir, commit) {
-  const range = grepAt(dir, commit, 'MPS_BUILD_BACKENDS_VERSION *=', '*.kt')
-    .match(/MPS_BUILD_BACKENDS_VERSION\s*=\s*"([^"]+)"/)?.[1] ?? null;
+  const range = backendsRange(dir, commit);
   const gradle = show(dir, commit, 'gradle/wrapper/gradle-wrapper.properties')
     ?.match(/gradle-([0-9][0-9A-Za-z.\-]*?)-(?:bin|all)\.zip/)?.[1] ?? null;
   const build = (show(dir, commit, 'build.gradle.kts') ?? '') + (show(dir, commit, 'build.gradle') ?? '');
@@ -144,8 +176,7 @@ async function main() {
   const plugin = {};
   const pluginData = await readJson(join(ROOT, 'data', `${PLUGIN_SLUG}.json`));
   for (const version of releases(pluginData).sort(compareVersions)) {
-    const hash = commitOf(version);
-    const commit = hash && resolve(dirs.plugin, hash);
+    const commit = sourceCommit(dirs.plugin, 'mps-gradle-plugin', version);
     if (!commit) unresolved.push(`mps-gradle-plugin ${version}`);
     const launcher = (pins[version] ?? []).find(([slug]) => slug === 'de.itemis.mps.build-backends_launcher')?.[1] ?? null;
     plugin[version] = {
@@ -163,8 +194,7 @@ async function main() {
     if (!data) continue;
     const versions = {};
     for (const version of releases(data).sort(compareVersions)) {
-      const hash = commitOf(version);
-      const commit = hash && resolve(dirs.backends, hash);
+      const commit = sourceCommit(dirs.backends, library.artifactId, version);
       if (!commit) unresolved.push(`${library.artifactId} ${version}`);
       if (commit && !testedCache.has(commit.slice(0, 12))) testedCache.set(commit.slice(0, 12), testedMps(dirs.backends, commit));
       versions[version] = commit?.slice(0, 12) ?? null;
