@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-30T10:38:58.476Z",
-  "total": 1240,
+  "generatedAt": "2026-10-30T21:20:57.227Z",
+  "total": 1239,
   "released": 848,
   "stable": 821,
   "preRelease": 27,
-  "branchCount": 392,
-  "branches": 91,
+  "branchCount": 391,
+  "branches": 90,
   "lines": [
     {
       "line": "9999.9",
@@ -4512,6 +4512,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2649.458abb2-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-10-30T19:01:31Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2648.36d3168-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5212,12 +5218,6 @@
       "pre": true,
       "branch": "premerge-385099",
       "d": "2025-09-26T03:16:06Z"
-    },
-    {
-      "v": "premerge-384611.2023.2.1568.f77737d-SNAPSHOT",
-      "pre": true,
-      "branch": "premerge-384611",
-      "d": "2025-09-17T03:16:14Z"
     },
     {
       "v": "premerge-383826.2024.1.1472.b20346c-SNAPSHOT",
@@ -6022,12 +6022,6 @@
       "pre": true,
       "branch": "fix-navigation-deadlocks",
       "d": "2026-07-07T02:13:53Z"
-    },
-    {
-      "v": "fix-navigation-deadlocks.2025.1.2249.12e0a48-SNAPSHOT",
-      "pre": true,
-      "branch": "fix-navigation-deadlocks",
-      "d": "2026-07-07T02:13:52Z"
     },
     {
       "v": "fix-celllayout-regressions.2025.1.2614.16752e0-SNAPSHOT",
