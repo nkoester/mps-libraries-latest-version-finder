@@ -614,6 +614,39 @@
         display: flex;
         flex-direction: column;
       }
+      .chain-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      /* libraries | build tooling: two halves of one small switch. */
+      .chain-view {
+        display: inline-flex;
+        border: 1px solid var(--rule-strong);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+      .chain-view button {
+        font: inherit;
+        font-size: 11.5px;
+        padding: 2px 10px;
+        border: 0;
+        background: none;
+        color: var(--ink-3);
+        cursor: pointer;
+      }
+      .chain-view button + button {
+        border-left: 1px solid var(--rule-strong);
+      }
+      .chain-view button[aria-pressed="true"] {
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+      .chain-view button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: -2px;
+      }
       .chain h3 {
         margin: 0;
         font-size: 10px;
@@ -701,6 +734,10 @@
       }
       .chain .ce.tooling.untested {
         stroke-dasharray: 4 3;
+      }
+      /* mps-gradle-plugin -> a backend its tasks resolve, not in its POM. */
+      .chain .ce.tooling.backend {
+        stroke-dasharray: 1.5 3;
       }
       .chain .cn.tool > rect {
         stroke: var(--need);
@@ -1956,6 +1993,9 @@
 
       const MPS_SLUG = "com.jetbrains_mps";
       const PLUGIN_SLUG = "de.itemis.mps_mps-gradle-plugin";
+      /** Plugin marker of `id("de.itemis.mps.gradle.common")`. */
+      const PLUGIN_MARKER_SLUG =
+        "de.itemis.mps.gradle.common_de.itemis.mps.gradle.common.gradle.plugin";
       const BACKENDS = "de.itemis.mps.build-backends";
       const COMPAT_DOC =
         "https://github.com/nkoester/mps-libraries-latest-version-finder/blob/main/docs/gradle-plugin-compat.md";
@@ -1978,6 +2018,12 @@
         compat: null,
         // slug -> Map(version -> date), filled as full data files load.
         dates: new Map(),
+        // The chain shows the build tooling view instead of the libraries;
+        // every page load starts with the libraries.
+        chainTooling: false,
+        // Tooling slug -> version -> [[depSlug, depVersion], ...], loaded
+        // before the chain draws the tooling (see loadToolingDeps).
+        toolingDeps: new Map(),
       };
 
       const copyRegistry = [];
@@ -2615,6 +2661,53 @@
       };
 
       /**
+       * The backends one plugin version runs, from its contract: the launcher
+       * it pins and the newest releases inside its backend range (remigrate:
+       * below 2). None before the plugin had a backend range.
+       */
+      function pluginBackends(contract) {
+        const range = contract.backendsRange;
+        const newestIn = (artifact, within) =>
+          releasedVersions(`${BACKENDS}_${artifact}`).find((v) =>
+            inVersionRange(v, within),
+          ) ?? null;
+        return [
+          ["launcher", contract.launcher, "pinned by the plugin"],
+          ["modelcheck", contract.resolvedBackends, `newest in ${range}`],
+          [
+            "execute-generators",
+            range && newestIn("execute-generators", range),
+            `newest in ${range}`,
+          ],
+          ["execute", range && newestIn("execute", range), `newest in ${range}`],
+          [
+            "remigrate",
+            range && newestIn("remigrate", "[0,2)"),
+            "newest in [0,2)",
+          ],
+        ]
+          .filter(([, version]) => version)
+          .map(([artifact, version, why]) => ({
+            artifact,
+            library: bySlug(`${BACKENDS}_${artifact}`),
+            v: version,
+            why,
+          }))
+          .filter((row) => row.library);
+      }
+
+      /** Contract of one plugin version for one MPS line, or null. */
+      const contractOf = (pluginVersion, mpsLine) =>
+        state.compat
+          ? pluginContract(
+              state.compat,
+              pluginVersion,
+              { modelcheck: releasedVersions(`${BACKENDS}_modelcheck`) },
+              mpsLine,
+            )
+          : null;
+
+      /**
        * What mps-gradle-plugin (recommended line) runs for one MPS line: the
        * plugin, the launcher it pins and the newest backends in its range.
        */
@@ -2623,49 +2716,12 @@
         if (!plugin?.ok || !state.compat) return null;
         const line = recommendedLine(plugin.lines);
         if (!line) return null;
-        const available = {
-          modelcheck: releasedVersions(`${BACKENDS}_modelcheck`),
-        };
-        const contract = pluginContract(
-          state.compat,
-          line.latest,
-          available,
-          mpsLine,
-        );
+        const contract = contractOf(line.latest, mpsLine);
         if (!contract) return null;
-        const newestIn = (artifact, range) =>
-          releasedVersions(`${BACKENDS}_${artifact}`).find((v) =>
-            inVersionRange(v, range),
-          ) ?? null;
-        const backends = [
-          ["launcher", contract.launcher, "pinned by the plugin"],
-          [
-            "modelcheck",
-            contract.resolvedBackends,
-            `newest in ${contract.backendsRange}`,
-          ],
-          [
-            "execute-generators",
-            contract.backendsRange &&
-              newestIn("execute-generators", contract.backendsRange),
-            `newest in ${contract.backendsRange}`,
-          ],
-          [
-            "execute",
-            contract.backendsRange &&
-              newestIn("execute", contract.backendsRange),
-            `newest in ${contract.backendsRange}`,
-          ],
-          ["remigrate", newestIn("remigrate", "[0,2)"), "newest in [0,2)"],
-        ]
-          .filter(([, version]) => version)
-          .map(([artifact, version, why]) => ({
-            library: bySlug(`${BACKENDS}_${artifact}`),
-            v: version,
-            why,
-            ...backendStatus(artifact, version, mpsLine),
-          }))
-          .filter((row) => row.library);
+        const backends = pluginBackends(contract).map((row) => ({
+          ...row,
+          ...backendStatus(row.artifact, row.v, mpsLine),
+        }));
         return { plugin, line, contract, backends };
       }
 
@@ -2742,6 +2798,8 @@
           .get(library.slug)
           ?.lines.find((l) => l.versions.some((e) => e.v === version));
         const isPlugin = library.slug === PLUGIN_SLUG;
+        const closure = toolingClosure(library, version);
+        const around = toolingFree(closure);
         $("ins-sub").textContent =
           `${line ? lineLabel(line.line) : "branch build"} · build tooling` +
           (line?.discouraged ? " · discouraged" : "");
@@ -2753,7 +2811,10 @@
               (line?.discouraged
                 ? `<span class="bad">${esc(line.discouraged)}</span> · `
                 : "") + published(library.slug, version).replace(/^ · /, ""),
-          });
+          }) +
+          (inspectView === "graph"
+            ? toolingInspectGraph(library, version, closure, around)
+            : "");
         const fact = (label, value) =>
           `<div class="fact"><span>${label}</span><span>${value}</span></div>`;
         const set = [{ library, v: version }];
@@ -2817,16 +2878,7 @@
                   : "not found",
               ) +
               "</div>";
-            const runs = [
-              ["launcher", contract.launcher],
-              ["modelcheck", contract.resolvedBackends],
-            ]
-              .filter(([, v]) => v)
-              .map(([artifact, v]) => ({
-                library: bySlug(`${BACKENDS}_${artifact}`),
-                v,
-              }))
-              .filter((row) => row.library);
+            const runs = pluginBackends(contract);
             if (runs.length) {
               html +=
                 '<h3 class="need">Runs these backends</h3>' +
@@ -2834,15 +2886,12 @@
                   .map((row) =>
                     reqRow(row.library, row.v, {
                       kind: "need",
-                      meta: mpsLine
-                        ? STATUS_TAG[
-                            backendStatus(
-                              row.library.artifactId,
-                              row.v,
-                              mpsLine,
-                            ).status
-                          ](mpsLine)
-                        : "",
+                      meta:
+                        (mpsLine
+                          ? STATUS_TAG[
+                              backendStatus(row.artifact, row.v, mpsLine).status
+                            ](mpsLine) + " · "
+                          : "") + esc(row.why),
                     }),
                   )
                   .join("");
@@ -2868,6 +2917,52 @@
               ? fact(`MPS ${esc(mpsLine)}`, STATUS_TAG[status.status](mpsLine))
               : "") +
             "</div>";
+        }
+
+        // The rest of the graph: tooling the POMs declare, transitively.
+        const listed = new Set(set.map((entry) => entry.library.slug));
+        const required = state.libraries.filter(
+          (l) => closure.latest[l.slug] && !listed.has(l.slug),
+        );
+        if (required.length) {
+          const declaredBy = (slug) =>
+            [
+              ...new Set(
+                closure.edges
+                  .filter(([, to, , kind]) => to === slug && !kind)
+                  .map(([from]) => bySlug(from).artifactId),
+              ),
+            ]
+              .map((name) => `<code>${esc(name)}</code>`)
+              .join(", ");
+          html +=
+            '<h3 class="need">Requires at least</h3>' +
+            required
+              .map((l) =>
+                reqRow(l, closure.latest[l.slug], {
+                  kind: "need",
+                  prefix: '<span class="ge">≥</span>',
+                  meta: `POM of ${declaredBy(l.slug)}${published(l.slug, closure.latest[l.slug])}`,
+                }),
+              )
+              .join("");
+          set.push(
+            ...required.map((l) => ({ library: l, v: closure.latest[l.slug] })),
+          );
+        }
+        // The faded rest of the graph; not copied with this build.
+        const rest = state.libraries.filter((l) => around.free.has(l.slug));
+        if (rest.length) {
+          html +=
+            '<h3 class="free">Not part of this build</h3>' +
+            rest
+              .map((l) =>
+                reqRow(l, around.free.get(l.slug), {
+                  kind: "free",
+                  meta: `${esc(lineLabel(state.selected))} build tooling; latest shown${published(l.slug, around.free.get(l.slug))}`,
+                }),
+              )
+              .join("");
         }
         $("ins-body").innerHTML = html;
         setInspectCopy(set);
@@ -2986,6 +3081,13 @@
        *   runtime   MPS -> the JBR it is made for, from the MPS -> JBR map.
        *             Only the primary artifact is drawn, as that is the one
        *             MPS names.
+       *   tooling   mps-gradle-plugin -> MPS, carrying the extracted
+       *             tested-against status for this line.
+       *
+       * Build tooling has its own view (toolingGraph), with one more kind:
+       *
+       *   backend   mps-gradle-plugin -> a backend its tasks resolve at
+       *             build time.
        */
       function augmentGraph(declared) {
         const mpsVersion = declared.latest[MPS_SLUG];
@@ -3011,6 +3113,89 @@
         return { graph: { latest, edges }, row };
       }
 
+      /**
+       * The chain's build tooling view of one line: the plugin marker, the
+       * recommended mps-gradle-plugin with its tested-against edge to the
+       * line's MPS, and everything addToolingEdges adds below the plugin.
+       * Null when the line has no tooling contract.
+       */
+      function toolingGraph(line, mpsVersion) {
+        const tooling = toolingRows(line);
+        if (!tooling) return null;
+        const pluginVersion = tooling.line.latest;
+        const latest = { [PLUGIN_SLUG]: pluginVersion };
+        const edges = [];
+        if (mpsVersion) {
+          latest[MPS_SLUG] = mpsVersion;
+          edges.push([PLUGIN_SLUG, MPS_SLUG, line, "tooling", tooling.contract.status]);
+        }
+        // The plugin marker (`id("de.itemis.mps.gradle.common")`) on top.
+        if (state.toolingDeps.get(PLUGIN_MARKER_SLUG)?.[pluginVersion])
+          latest[PLUGIN_MARKER_SLUG] = pluginVersion;
+        addToolingEdges(latest, edges);
+        return { latest, edges };
+      }
+
+      /**
+       * Completes a graph of build tooling builds already in `latest`: what
+       * their POMs declare, transitively, and for mps-gradle-plugin the
+       * backends its tasks resolve at build time (`backend` edges, as on the
+       * board's tooling rows). Only tooling is followed. A library required
+       * in several versions is drawn in the highest. Needs loadToolingDeps.
+       */
+      function addToolingEdges(latest, edges) {
+        const declaredBy = (slug, version) =>
+          state.toolingDeps.get(slug)?.[version] ?? [];
+        const seen = new Set(edges.map(([from, to]) => `${from}>${to}`));
+        const walk = (slugs) => {
+          const queue = slugs.flatMap((slug) =>
+            declaredBy(slug, latest[slug]).map(([to, v]) => [slug, to, v]),
+          );
+          while (queue.length) {
+            const [from, to, version] = queue.shift();
+            const key = `${from}>${to}`;
+            if (seen.has(key) || !isTool(bySlug(to))) continue;
+            seen.add(key);
+            edges.push([from, to, version]);
+            if (!latest[to] || compareVersions(version, latest[to]) > 0) {
+              latest[to] = version;
+              queue.push(
+                ...declaredBy(to, version).map(([dep, v]) => [to, dep, v]),
+              );
+            }
+          }
+        };
+        walk(Object.keys(latest).filter((slug) => isTool(bySlug(slug))));
+
+        const pluginVersion = latest[PLUGIN_SLUG];
+        const contract = pluginVersion && contractOf(pluginVersion, "0.0");
+        if (!contract) return;
+        const added = [];
+        for (const backend of pluginBackends(contract)) {
+          const slug = backend.library.slug;
+          // Pinned in the POM (the launcher): already a POM edge.
+          if (seen.has(`${PLUGIN_SLUG}>${slug}`)) continue;
+          seen.add(`${PLUGIN_SLUG}>${slug}`);
+          edges.push([PLUGIN_SLUG, slug, backend.v, "backend", backend.why]);
+          if (!latest[slug] || compareVersions(backend.v, latest[slug]) > 0) {
+            latest[slug] = backend.v;
+            added.push(slug);
+          }
+        }
+        walk(added);
+      }
+
+      /** POM dependencies of every tooling library, for tooling graphs. */
+      async function loadToolingDeps() {
+        await Promise.all(
+          state.libraries.filter(isTool).map(async (library) => {
+            if (state.toolingDeps.has(library.slug)) return;
+            const versions = await loadDeps(library.slug).catch(() => null);
+            if (versions) state.toolingDeps.set(library.slug, versions);
+          }),
+        );
+      }
+
       const STATUS_TEXT = {
         tested: "tested against",
         pre: "only a prerelease build tested against",
@@ -3023,6 +3208,8 @@
         const b = bySlug(to).artifactId;
         if (kind === "tooling")
           return `${a}: ${STATUS_TEXT[status]} MPS ${version} (extracted contract)`;
+        if (kind === "backend")
+          return `${a} resolves ${b} ${version} at build time (${status}); not declared in its POM`;
         if (kind === "implicit")
           return `${a} is built against MPS ${version}; not declared in its POM`;
         if (kind !== "runtime") return `${a} needs ${b} ≥ ${version}`;
@@ -3050,6 +3237,10 @@
               ? '<span class="lg lg-tool">tested-against contract</span>'
               : '<span class="lg lg-tool lg-untested">untested (contract)</span>',
           );
+        if (kinds.has("backend"))
+          parts.push(
+            '<span class="lg lg-tool lg-dotted">resolved at build time</span>',
+          );
         return parts.length
           ? `<p class="chain-note">${parts.join(" ")}</p>`
           : "";
@@ -3059,6 +3250,7 @@
         if (kind === "implicit") return "ce implicit";
         if (kind === "tooling")
           return status === "tested" ? "ce tooling" : "ce tooling untested";
+        if (kind === "backend") return "ce tooling backend";
         if (kind === "runtime" && !runtime.exact) return "ce fallback";
         return "ce";
       }
@@ -3105,6 +3297,20 @@
           return value;
         };
         present.forEach((library) => depthOf(library.slug));
+        // A library without dependencies sits right below its lowest
+        // dependent, not on the bottom row: short edges for the plugin's
+        // git-based-versioning and launcher.
+        for (const library of present) {
+          const slug = library.slug;
+          if (needs.get(slug).length || !neededBy.get(slug).length) continue;
+          depth.set(
+            slug,
+            Math.min(...neededBy.get(slug).map((from) => depth.get(from))) - 1,
+          );
+        }
+        // Rows left empty by that close up.
+        const used = [...new Set(depth.values())].sort((a, b) => a - b);
+        for (const [slug, d] of depth) depth.set(slug, used.indexOf(d));
 
         const layers = [];
         for (const library of present) {
@@ -3150,9 +3356,10 @@
                   (rest) => [item, ...rest],
                 ),
               );
-        const options = layers.map(permutations);
+        const factorial = (n) => (n <= 1 ? 1 : n * factorial(n - 1));
         let best = layers;
-        if (options.reduce((n, list) => n * list.length, 1) <= 5000) {
+        if (layers.reduce((n, layer) => n * factorial(layer.length), 1) <= 5000) {
+          const options = layers.map(permutations);
           let bestScore = Infinity;
           const walk = (d, chosen) => {
             if (d === options.length) {
@@ -3167,6 +3374,54 @@
             for (const option of options[d]) walk(d + 1, [...chosen, option]);
           };
           walk(0, []);
+        } else {
+          // Too many orderings to try them all (the chain with all build
+          // tooling): sweep the layers up and down, ordering each by the mean
+          // position of its neighbours, then swap neighbours in a layer while
+          // that lowers the score. The best ordering seen wins.
+          const order = layers.map((layer) => [...layer]);
+          place(order);
+          let bestScore = score();
+          best = order.map((layer) => [...layer]);
+          const keep = () => {
+            const value = score();
+            if (value >= bestScore) return false;
+            bestScore = value;
+            best = order.map((layer) => [...layer]);
+            return true;
+          };
+          const barycentre = (slug) => {
+            const around = [...needs.get(slug), ...neededBy.get(slug)];
+            return around.length
+              ? around.reduce((sum, other) => sum + position.get(other), 0) /
+                  around.length
+              : position.get(slug);
+          };
+          for (let sweep = 0; sweep < 8; sweep++) {
+            const depths = [...order.keys()];
+            if (sweep % 2 === 0) depths.reverse();
+            for (const d of depths) {
+              order[d].sort(
+                (a, b) =>
+                  barycentre(a) - barycentre(b) ||
+                  position.get(a) - position.get(b),
+              );
+              place(order);
+            }
+            keep();
+          }
+          order.splice(0, order.length, ...best.map((layer) => [...layer]));
+          for (let improved = true; improved; ) {
+            improved = false;
+            for (const layer of order) {
+              for (let i = 0; i + 1 < layer.length; i++) {
+                [layer[i], layer[i + 1]] = [layer[i + 1], layer[i]];
+                place(order);
+                if (keep()) improved = true;
+                else [layer[i], layer[i + 1]] = [layer[i + 1], layer[i]];
+              }
+            }
+          }
         }
         place(best);
 
@@ -3181,9 +3436,35 @@
           rowTop[d] = at;
           if (d > 0) at += box.h + gapAbove(d - 1);
         }
-        const x = (slug) => position.get(slug) * (box.w + box.gx);
+        // A box grows with its artifact name, up to two columns
+        // (de.itemis.mps.gradle.common.gradle.plugin); each row is centred
+        // on its own width. With every box at box.w this is the plain grid.
+        const boxWidth = new Map(
+          present.map((library) => [
+            library.slug,
+            Math.min(
+              Math.max(box.w, Math.ceil(library.artifactId.length * 7.9) + 20),
+              2 * box.w + box.gx,
+            ),
+          ]),
+        );
+        const w = (slug) => boxWidth.get(slug);
+        const rowWidth = (layer) =>
+          layer.reduce((sum, slug) => sum + w(slug), 0) +
+          Math.max(0, layer.length - 1) * box.gx;
+        const width = Math.max(...best.map(rowWidth));
+        const left0 = new Map();
+        for (const layer of best) {
+          let at = (width - rowWidth(layer)) / 2;
+          for (const slug of [...layer].sort(
+            (a, b) => position.get(a) - position.get(b),
+          )) {
+            left0.set(slug, at);
+            at += w(slug) + box.gx;
+          }
+        }
+        const x = (slug) => left0.get(slug);
         const y = (slug) => rowTop[depth.get(slug)];
-        const width = widest * box.w + (widest - 1) * box.gx;
         const height = rowTop[0] + box.h;
 
         // An edge that skips a layer would run behind the boxes in between,
@@ -3195,7 +3476,7 @@
         const STUB = 14;
         const BAND = 6;
         const lanes = { left: 0, right: 0 };
-        const centre = (slug) => x(slug) + box.w / 2;
+        const centre = (slug) => x(slug) + w(slug) / 2;
         const skips = ([from, to]) => depth.get(from) - depth.get(to) > 1;
         // Each lane edge takes the side with fewer lanes so far -- two on one
         // side would have to cross -- the most off-centre edges first, ties
@@ -3241,7 +3522,7 @@
             list.forEach((edge, i) =>
               ports.set(
                 `${end}:${edge[0]}>${edge[1]}`,
-                x(slug) + (box.w * (i + 1)) / (list.length + 1),
+                x(slug) + (w(slug) * (i + 1)) / (list.length + 1),
               ),
             );
           }
@@ -3304,22 +3585,23 @@
           .join("");
 
         // One label line, squeezed to the box when it would overflow.
-        const fitWidth = (text, charWidth) =>
-          Math.min(text.length * charWidth, box.w - 20);
-        const fitText = (cls, y, text, charWidth) =>
-          `<text class="${cls}" x="10" y="${y}"${text.length * charWidth > box.w - 20 ? ` textLength="${box.w - 20}" lengthAdjust="spacingAndGlyphs"` : ""}>${esc(text)}</text>`;
+        const fitWidth = (text, charWidth, room) =>
+          Math.min(text.length * charWidth, room - 20);
+        const fitText = (cls, y, text, charWidth, room) =>
+          `<text class="${cls}" x="10" y="${y}"${text.length * charWidth > room - 20 ? ` textLength="${room - 20}" lengthAdjust="spacingAndGlyphs"` : ""}>${esc(text)}</text>`;
         // The version line as a copy cell, like copyCell() in the lists: the
         // page-wide click handler copies the plain version (no "≥"). The
         // rect behind the text takes the lists' hover tint and copy flash.
-        const versionCell = (y, text, version) => `
+        const versionCell = (y, text, version, room) => `
                     <g class="cp" role="button" tabindex="0" data-copy="${copyRef(version)}">
                         <title>Copy version ${esc(version)}</title>
-                        <rect class="cp-bg" x="6" y="${y - 11}" width="${fitWidth(text, 6.4) + 8}" height="15" rx="2"/>
-                        ${fitText("g", y, text, 6.4)}
+                        <rect class="cp-bg" x="6" y="${y - 11}" width="${fitWidth(text, 6.4, room) + 8}" height="15" rx="2"/>
+                        ${fitText("g", y, text, 6.4, room)}
                     </g>`;
         const nodeSvg = present
           .map((library) => {
             const latest = graph.latest[library.slug];
+            const room = w(library.slug);
             const act = nodeAct(library)
               ? ` data-act="inspect" data-v="${esc(latest)}"`
               : "";
@@ -3328,10 +3610,10 @@
                    tabindex="0" role="button" transform="translate(${x(library.slug)} ${y(library.slug)})"
                    aria-label="${esc(verb[0].toUpperCase() + verb.slice(1))} ${esc(mavenCoordinate(library, latest))}">
                     <title>${esc(mavenCoordinate(library, latest))}: ${esc(verb)}</title>
-                    <rect width="${box.w}" height="${box.h}" rx="3"/>
-                    ${over ? fitText("g", 14, over(library), 6.4) : ""}
-                    <text class="a" x="10" y="${over ? 30 : 16}"${library.artifactId.length * 7.9 > box.w - 20 ? ` textLength="${box.w - 20}" lengthAdjust="spacingAndGlyphs"` : ""}>${esc(library.artifactId)}</text>
-                    ${!sub ? "" : copyVersion ? versionCell(over ? 44 : 30, sub(library, latest), latest) : fitSub ? fitText("g", over ? 44 : 30, sub(library, latest), 6.4) : `<text class="g" x="10" y="30">${esc(sub(library, latest))}</text>`}
+                    <rect width="${room}" height="${box.h}" rx="3"/>
+                    ${over ? fitText("g", 14, over(library), 6.4, room) : ""}
+                    <text class="a" x="10" y="${over ? 30 : 16}"${library.artifactId.length * 7.9 > room - 20 ? ` textLength="${room - 20}" lengthAdjust="spacingAndGlyphs"` : ""}>${esc(library.artifactId)}</text>
+                    ${!sub ? "" : copyVersion ? versionCell(over ? 44 : 30, sub(library, latest), latest, room) : fitSub ? fitText("g", over ? 44 : 30, sub(library, latest), 6.4, room) : `<text class="g" x="10" y="30">${esc(sub(library, latest))}</text>`}
                 </g>`;
           })
           .join("");
@@ -3357,34 +3639,56 @@
           panel.hidden = true;
           return;
         }
-        const { graph, row: runtime } = augmentGraph(declared);
         const line = state.selected;
+        const tooling = state.chainTooling
+          ? toolingGraph(line, declared.latest[MPS_SLUG])
+          : null;
+        const { graph, row: runtime } = state.chainTooling
+          ? { graph: tooling ?? { latest: {}, edges: [] }, row: null }
+          : augmentGraph(declared);
         const present = state.libraries.filter(
           (library) => graph.latest[library.slug],
         );
-        const absent = state.libraries.filter(
-          (library) =>
-            library.ok && isMpsLibrary(library) && !graph.latest[library.slug],
-        );
+        const absent = state.chainTooling
+          ? []
+          : state.libraries.filter(
+              (library) =>
+                library.ok &&
+                isMpsLibrary(library) &&
+                !graph.latest[library.slug],
+            );
+        const view = (value, text, title) =>
+          `<button type="button" data-chain-view="${value}" aria-pressed="${state.chainTooling === (value === "tooling")}" title="${title}">${text}</button>`;
         const edges = graph.edges.filter(
           ([from, to]) => graph.latest[from] && graph.latest[to],
         );
 
         panel.innerHTML = `
-            <h3>Dependency chain</h3>
+            <div class="chain-head">
+                <h3>Dependency chain</h3>
+                <div class="chain-view" role="group" aria-label="Chain view">
+                    ${view("libraries", "libraries", "The MPS libraries of this line and mps-gradle-plugin, down to MPS and its runtime")}${view("tooling", "build tooling", "mps-gradle-plugin with its marker, the backends its tasks resolve and their POM dependencies, down to MPS")}
+                </div>
+            </div>
             ${chainNote(edges)}
-            ${chainSvg({
-              graph,
-              present,
-              edges,
-              runtime,
-              markerId: "chain-arrow",
-              label: `Dependencies between the latest ${line} builds`,
-              over: (l) => l.groupId,
-              sub: (l, v) => v,
-              fitSub: true,
-              copyVersion: true,
-            })}
+            ${
+              state.chainTooling && !tooling
+                ? `<p class="chain-foot">No build tooling contract for ${esc(lineLabel(line))}.</p>`
+                : chainSvg({
+                    graph,
+                    present,
+                    edges,
+                    runtime,
+                    markerId: "chain-arrow",
+                    label: state.chainTooling
+                      ? `Build tooling for the ${line} line`
+                      : `Dependencies between the latest ${line} builds`,
+                    over: (l) => l.groupId,
+                    sub: (l, v) => v,
+                    fitSub: true,
+                    copyVersion: true,
+                  })
+            }
             ${absent.length ? `<p class="chain-foot">No ${esc(line)} build: ${absent.map((l) => `<b>${esc(l.artifactId)}</b>`).join(", ")}</p>` : ""}`;
         panel.hidden = false;
       }
@@ -3410,6 +3714,20 @@
         highlightChain(event.target.closest(".cn")?.dataset.slug ?? null),
       );
       $("chain").addEventListener("focusout", () => highlightChain(null));
+      $("chain").addEventListener("click", async (event) => {
+        const button = event.target.closest("[data-chain-view]");
+        if (!button) return;
+        const tooling = button.dataset.chainView === "tooling";
+        if (tooling === state.chainTooling) return;
+        state.chainTooling = tooling;
+        if (tooling) await loadToolingDeps();
+        // The tallest line changes with the view; re-measure, which also
+        // redraws the board. Focus returns to the redrawn button.
+        reserveChainHeight();
+        $("chain")
+          .querySelector(`[data-chain-view="${button.dataset.chainView}"]`)
+          ?.focus();
+      });
       $("chain").addEventListener("keydown", (event) => {
         const node = event.target.closest(".cn");
         if (
@@ -3600,6 +3918,93 @@
             </section>`;
       }
 
+      /**
+       * A tooling build and the tooling it brings in: its POM dependencies
+       * and, for the plugin, the backends its tasks resolve. MPS and the
+       * libraries stay out: tooling has no POM dependency on them.
+       */
+      function toolingClosure(library, version) {
+        const latest = { [library.slug]: version };
+        const edges = [];
+        addToolingEdges(latest, edges);
+        return { latest, edges };
+      }
+
+      /**
+       * The rest of the line's build tooling view (toolingGraph, without
+       * MPS) around one tooling build: every node not in its closure, at the
+       * line's version, with its own edges -- drawn faded, like the libraries
+       * a library build does not require.
+       */
+      function toolingFree(closure) {
+        const full = toolingGraph(state.selected, null);
+        const free = new Map();
+        const edges = [];
+        if (!full) return { free, edges };
+        for (const [slug, v] of Object.entries(full.latest)) {
+          if (!closure.latest[slug]) free.set(slug, v);
+        }
+        const own = new Set(closure.edges.map(([from, to]) => `${from}>${to}`));
+        for (const edge of full.edges) {
+          if (free.has(edge[0]) && !own.has(`${edge[0]}>${edge[1]}`))
+            edges.push(edge);
+        }
+        return { free, edges };
+      }
+
+      function toolingInspectGraph(library, version, closure, around) {
+        const latest = {
+          ...Object.fromEntries(around.free),
+          ...closure.latest,
+        };
+        const edges = [...closure.edges, ...around.edges];
+        const present = state.libraries.filter((l) => latest[l.slug]);
+        if (present.length < 2) return "";
+        const free = around.free;
+        // POM edges state minimums; resolved backends are exact.
+        const resolved = new Set(
+          closure.edges
+            .filter(([, , , kind]) => kind === "backend")
+            .map(([, to]) => to),
+        );
+        return `
+            <section class="chain ins-graph" aria-label="Build tooling of this build">
+                <h3>Build tooling of this build</h3>
+                ${chainNote(edges).replace(
+                  "</p>",
+                  free.size
+                    ? ' <span class="lg lg-free">not part of this build</span></p>'
+                    : "</p>",
+                )}
+                ${chainSvg({
+                  graph: { latest, edges },
+                  present,
+                  edges,
+                  runtime: null,
+                  markerId: "ins-arrow",
+                  label: `Build tooling of ${mavenCoordinate(library, version)}`,
+                  over: (l) => l.groupId,
+                  fitSub: true,
+                  sub: (l, v) =>
+                    l.slug === library.slug ||
+                    resolved.has(l.slug) ||
+                    free.has(l.slug)
+                      ? v
+                      : `≥ ${v}`,
+                  nodeClass: (l) =>
+                    l.slug === library.slug
+                      ? " root"
+                      : free.has(l.slug)
+                        ? " free"
+                        : "",
+                  edgeExtra: ([from]) => (free.has(from) ? " free" : ""),
+                  nodeAct: () => false,
+                  verb: "show in the list",
+                  copyVersion: true,
+                })}
+            </section>`;
+      }
+
       /** Graph node <-> list row: hovering either lights up both. */
       function highlightInspect(slug) {
         const body = $("ins-body");
@@ -3651,13 +4056,26 @@
         if (!library) return;
         const token = {};
         inspecting = token;
+        // Another build inspected from inside the open dialog: the old one
+        // stays until the new one is drawn, then reveal() scrolls up to it.
+        const reinspect =
+          ins.open &&
+          !(inspected?.slug === slug && inspected?.version === version);
+        const scrolled = $("ins-body").scrollTop;
+        const reveal = () => {
+          if (!reinspect || inspecting !== token) return;
+          const body = $("ins-body");
+          body.scrollTop = scrolled;
+          body.scrollTo({ top: 0, behavior: "smooth" });
+          body.querySelector(".req.root")?.classList.add("flash");
+        };
         inspected = { slug, version };
         setDialogHead("ins", library, mavenCoordinate(library, version));
         $("ins-note").textContent = isTool(library)
           ? "Compatibility as extracted from the upstream sources: the tested-against contract."
           : "Minimum versions, as listed in the POMs.";
         $("ins-sub").textContent = "Resolving dependencies…";
-        $("ins-body").innerHTML = "";
+        if (!reinspect) $("ins-body").innerHTML = "";
         for (const id of ["ins-copy-versions", "ins-copy-coords"])
           $(id).disabled = true;
         if (!ins.open) ins.showModal();
@@ -3666,12 +4084,17 @@
           await ensureData(slug).catch(() => null);
           if (inspecting !== token) return;
           inspectRuntime(library, version);
+          reveal();
           return;
         }
         if (isTool(library)) {
-          await ensureData(slug).catch(() => null);
+          await Promise.all([
+            ensureData(slug).catch(() => null),
+            loadToolingDeps(),
+          ]);
           if (inspecting !== token) return;
           inspectTool(library, version);
+          reveal();
           return;
         }
 
@@ -3807,6 +4230,7 @@
             .map((row) => ({ library: row.library, v: row.v })),
         ];
         setInspectCopy(set);
+        reveal();
       }
 
       /** A runtime build: which MPS versions it serves. */

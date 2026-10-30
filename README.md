@@ -7,8 +7,9 @@ Shows the newest version of each core MPS ecosystem library, grouped by MPS rele
 Tracks `de.itemis.mps:extensions`, `com.mbeddr:mbeddr`, `com.mbeddr:platform`,
 `org.iets3:opensource`, `org.mpsqa:all-in-one` and `com.jetbrains:mps`, plus the
 JetBrains Runtime artifacts `com.jetbrains.jdk:jbr_jcef`, `jbr`, `jbrsdk` and
-`jbr_nomod`, and the build tooling `de.itemis.mps:mps-gradle-plugin` with the
-`de.itemis.mps.build-backends` it runs, from
+`jbr_nomod`, and the build tooling `de.itemis.mps:mps-gradle-plugin` with its
+plugin marker `de.itemis.mps.gradle.common`, `de.itemis.mps.gradle:git-based-versioning`
+and the `de.itemis.mps.build-backends` it runs, from
 [artifacts.itemis.cloud](https://artifacts.itemis.cloud/repository/maven-mps/).
 
 ## How it works
@@ -156,6 +157,15 @@ The **Build tooling** section of the board shows the recommended
 `mps-build-backends` it runs: the launcher it pins, and the newest
 `modelcheck`, `execute-generators`, `execute` and `remigrate` inside its backend
 range. Each row is tagged with the selected MPS line's status.
+
+The dependency chain switches between **libraries** and **build tooling**
+(top right; libraries on every page load); `mps` and `mps-gradle-plugin` are in
+both. The tooling view draws
+the plugin marker, the plugin with its contract edge to `mps`, the backends
+its tasks resolve (dotted, in the tooling colour: not in the POM) and the POM
+dependencies of all of these. **Inspect** on a tooling build draws that whole
+view without MPS, with what is not part of the inspected build faded (as for
+libraries).
 
 That status is an **extracted contract**: no POM or Gradle metadata declares
 MPS compatibility, so the page uses the strongest statement that exists, the
