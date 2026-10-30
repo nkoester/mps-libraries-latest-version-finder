@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T17:16:32.524Z",
+  "generatedAt": "2026-10-30T02:20:12.373Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -717,10 +717,10 @@
         {
           "line": "2026.1",
           "latest": "2026.1.1488.8a2da34",
+          "latestDate": "2026-10-29T11:27:27Z",
           "latestIsPreRelease": false,
           "total": 5,
-          "stable": 5,
-          "latestDate": "2026-10-29T11:27:27Z"
+          "stable": 5
         },
         {
           "line": "2025.1",
