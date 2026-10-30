@@ -1,0 +1,10 @@
+{
+  "groupId": "de.itemis.mps.gradle",
+  "artifactId": "git-based-versioning",
+  "slug": "de.itemis.mps.gradle_git-based-versioning",
+  "snapshotLookup": "timestamped",
+  "versions": {
+    "1.1.0": [],
+    "1.0": []
+  }
+}

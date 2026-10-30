@@ -1,0 +1,374 @@
+{
+  "groupId": "de.itemis.mps.gradle.common",
+  "artifactId": "de.itemis.mps.gradle.common.gradle.plugin",
+  "slug": "de.itemis.mps.gradle.common_de.itemis.mps.gradle.common.gradle.plugin",
+  "snapshotLookup": "timestamped",
+  "versions": {
+    "1.32.1-SNAPSHOT": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.32.1-SNAPSHOT"
+      ]
+    ],
+    "1.32.0": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.32.0"
+      ]
+    ],
+    "1.32.0-SNAPSHOT": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.32.0-SNAPSHOT"
+      ]
+    ],
+    "1.31.0.1.1243113": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.31.0.1.1243113"
+      ]
+    ],
+    "1.31.0.1.6b32025": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.31.0.1.6b32025"
+      ]
+    ],
+    "1.30.2.1.649c88d": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.30.2.1.649c88d"
+      ]
+    ],
+    "1.30.1.1.bc0f59d": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.30.1.1.bc0f59d"
+      ]
+    ],
+    "1.30.0.1.f7dd918": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.30.0.1.f7dd918"
+      ]
+    ],
+    "1.29.3.1.19b70ba": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.29.3.1.19b70ba"
+      ]
+    ],
+    "1.29.2.1.fd9c9f8": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.29.2.1.fd9c9f8"
+      ]
+    ],
+    "1.29.2.1.b23a7fe": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.29.2.1.b23a7fe"
+      ]
+    ],
+    "1.29.2.1.6d8e0a7": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.29.2.1.6d8e0a7"
+      ]
+    ],
+    "1.29.1.1.d7f2744": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.29.1.1.d7f2744"
+      ]
+    ],
+    "1.29.0.1.811916e": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.29.0.1.811916e"
+      ]
+    ],
+    "1.28.0.441.896925d": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.28.0.441.896925d"
+      ]
+    ],
+    "1.28.0.1.f8ee996": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.28.0.1.f8ee996"
+      ]
+    ],
+    "1.28.0.1.eee9d0f": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.28.0.1.eee9d0f"
+      ]
+    ],
+    "1.28.0.1.d6256d2": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.28.0.1.d6256d2"
+      ]
+    ],
+    "1.28.0.1.2983fc1": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.28.0.1.2983fc1"
+      ]
+    ],
+    "1.27.0.440.389ea32": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.27.0.440.389ea32"
+      ]
+    ],
+    "1.26.0.437.20464ee": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.26.0.437.20464ee"
+      ]
+    ],
+    "1.25.2.435.a1000fe": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.25.2.435.a1000fe"
+      ]
+    ],
+    "1.25.2.434.f74c02c": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.25.2.434.f74c02c"
+      ]
+    ],
+    "1.25.1.433.0675e56": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.25.1.433.0675e56"
+      ]
+    ],
+    "1.25.0.432.2d9315f": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.25.0.432.2d9315f"
+      ]
+    ],
+    "1.24.0.424.410b57d": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.24.0.424.410b57d"
+      ]
+    ],
+    "1.24.0.422.bc47810": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.24.0.422.bc47810"
+      ]
+    ],
+    "1.23.1.421.614437e": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.23.1.421.614437e"
+      ]
+    ],
+    "1.23.1.419.df49b26": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.23.1.419.df49b26"
+      ]
+    ],
+    "1.23.1.417.ba7f83e": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.23.1.417.ba7f83e"
+      ]
+    ],
+    "1.23.1.416.dae2796": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.23.1.416.dae2796"
+      ]
+    ],
+    "1.23.1.412.a54f29f": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.23.1.412.a54f29f"
+      ]
+    ],
+    "1.23.0.411.f28e9fc": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.23.0.411.f28e9fc"
+      ]
+    ],
+    "1.22.2.410.1a5f477": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.22.2.410.1a5f477"
+      ]
+    ],
+    "1.22.1.409.6d52c83": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.22.1.409.6d52c83"
+      ]
+    ],
+    "1.22.0.408.0a05207": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.22.0.408.0a05207"
+      ]
+    ],
+    "1.21.2.403.32fc09e": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.21.2.403.32fc09e"
+      ]
+    ],
+    "1.21.1.398.c3cb3cf": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.21.1.398.c3cb3cf"
+      ]
+    ],
+    "1.21.0.392.f359ee2": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.21.0.392.f359ee2"
+      ]
+    ],
+    "1.20.0.389.390e059": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.20.0.389.390e059"
+      ]
+    ],
+    "1.20.0.388.90f255b": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.20.0.388.90f255b"
+      ]
+    ],
+    "1.19.374.d67a4c3": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.19.374.d67a4c3"
+      ]
+    ],
+    "1.19.371.56feaf7": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.19.371.56feaf7"
+      ]
+    ],
+    "1.19.370.442aa52": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.19.370.442aa52"
+      ]
+    ],
+    "1.19.367.d76ef9a": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.19.367.d76ef9a"
+      ]
+    ],
+    "1.19.366.6478154": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.19.366.6478154"
+      ]
+    ],
+    "1.19.3.386.ed225b9": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.19.3.386.ed225b9"
+      ]
+    ],
+    "1.19.2.385.72424d4": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.19.2.385.72424d4"
+      ]
+    ],
+    "1.19.1.376.5808514": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.19.1.376.5808514"
+      ]
+    ],
+    "1.18.362.bdbe954": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.18.362.bdbe954"
+      ]
+    ],
+    "1.18.356.90f1a8c": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.18.356.90f1a8c"
+      ]
+    ],
+    "1.17.354.e921726": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.17.354.e921726"
+      ]
+    ],
+    "1.16.352.17eae3e": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.16.352.17eae3e"
+      ]
+    ],
+    "1.16.351.9984588": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.16.351.9984588"
+      ]
+    ],
+    "1.15.348.cb26115": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.15.348.cb26115"
+      ]
+    ],
+    "1.15.347.43645bc": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.15.347.43645bc"
+      ]
+    ],
+    "1.15.346.03fb1f0": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.15.346.03fb1f0"
+      ]
+    ],
+    "1.14.345.5cd1622": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.14.345.5cd1622"
+      ]
+    ],
+    "1.14.344.6d9e5b0": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.14.344.6d9e5b0"
+      ]
+    ],
+    "1.14.343.ceb5743": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.14.343.ceb5743"
+      ]
+    ],
+    "1.13.339.83060f8": [
+      [
+        "de.itemis.mps_mps-gradle-plugin",
+        "1.13.339.83060f8"
+      ]
+    ]
+  }
+}

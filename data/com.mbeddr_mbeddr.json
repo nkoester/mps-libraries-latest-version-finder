@@ -5,13 +5,13 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-10-30T02:20:12.373Z",
-  "total": 2631,
+  "generatedAt": "2026-10-30T10:38:58.476Z",
+  "total": 2624,
   "released": 1879,
   "stable": 1879,
   "preRelease": 0,
-  "branchCount": 752,
-  "branches": 180,
+  "branchCount": 745,
+  "branches": 178,
   "lines": [
     {
       "line": "9999.9",
@@ -9575,12 +9575,6 @@
       "d": "2026-03-26T17:16:08Z"
     },
     {
-      "v": "renovate-master-patch-mpsextensionsversion.9999.9.24888.a8ba37c-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsversion",
-      "d": "2026-01-31T09:32:49Z"
-    },
-    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25382.dec8d90-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
@@ -9591,6 +9585,12 @@
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
       "d": "2026-10-24T05:05:05Z"
+    },
+    {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25382.70caa2d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster",
+      "d": "2026-10-30T03:34:49Z"
     },
     {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25379.e175452-SNAPSHOT",
@@ -9717,12 +9717,6 @@
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
       "d": "2026-07-02T13:21:24Z"
-    },
-    {
-      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25196.2cfb7e7-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsmaster",
-      "d": "2026-06-29T15:24:46Z"
     },
     {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25193.2afcf9f-SNAPSHOT",
@@ -9971,18 +9965,6 @@
       "d": "2026-06-14T11:14:14Z"
     },
     {
-      "v": "renovate-master-mpsbuild.9999.9.24870.ddd2f7e-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsbuild",
-      "d": "2026-01-14T06:30:11Z"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25063.de6b7cd-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x",
-      "d": "2026-04-08T05:36:47Z"
-    },
-    {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x.9999.9.25048.fe74dd2-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-253.x",
@@ -10011,6 +9993,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mpsextensions261",
       "d": "2026-10-24T05:26:37Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25331.911108f-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mpsextensions261",
+      "d": "2026-10-30T03:34:47Z"
     },
     {
       "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25331.646e07b-SNAPSHOT",
@@ -10191,6 +10179,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-third-party-minor",
       "d": "2026-09-03T20:10:27Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24937.ad3080d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251",
+      "d": "2026-10-30T03:35:01Z"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24937.63b7757-SNAPSHOT",
@@ -10817,22 +10811,10 @@
       "d": "2023-08-11T17:32:23Z"
     },
     {
-      "v": "pre-commit-hooks.2024.1.24187.1e8c0f6-SNAPSHOT",
-      "pre": true,
-      "branch": "pre-commit-hooks",
-      "d": "2026-06-29T13:05:46Z"
-    },
-    {
       "v": "pre-commit-hooks.2024.1.24186.d000aa6-SNAPSHOT",
       "pre": true,
       "branch": "pre-commit-hooks",
       "d": "2026-07-05T13:52:39Z"
-    },
-    {
-      "v": "pre-commit-hooks.2024.1.24186.9814aa5-SNAPSHOT",
-      "pre": true,
-      "branch": "pre-commit-hooks",
-      "d": "2026-06-29T13:40:30Z"
     },
     {
       "v": "mps-2026.2.9999.9.25259.024aa86-SNAPSHOT",
@@ -11181,12 +11163,6 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-04-07T08:41:49Z"
-    },
-    {
-      "v": "merge-mps20251.2025.1.24678.4a153df-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-02-09T16:52:29Z"
     },
     {
       "v": "merge-mps20223.2023.2.24794.07b9764",
@@ -12089,12 +12065,6 @@
       "d": "2026-07-05T13:52:32Z"
     },
     {
-      "v": "merge-master.9999.9.25194.3fb6646-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-07-05T13:52:31Z"
-    },
-    {
       "v": "merge-master.9999.9.25188.e3de0df-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -12111,12 +12081,6 @@
       "pre": true,
       "branch": "merge-master",
       "d": "2026-07-05T13:52:23Z"
-    },
-    {
-      "v": "merge-master.9999.9.25018.730debf-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-03-20T07:53:29Z"
     },
     {
       "v": "jbr25.2026.1.25206.c7d85df-SNAPSHOT",
@@ -12705,12 +12669,6 @@
       "pre": false,
       "branch": "feature-gradle-8",
       "d": "2024-07-26T15:16:15Z"
-    },
-    {
-      "v": "feature-genplandiagram.2025.1.24699.56c5130-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-genplandiagram",
-      "d": "2026-02-25T13:53:19Z"
     },
     {
       "v": "feature-fix-doc-ref-in-doc-view.2021.3.23880.a06db26",

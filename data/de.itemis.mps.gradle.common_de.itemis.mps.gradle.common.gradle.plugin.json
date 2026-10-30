@@ -1,0 +1,432 @@
+{
+  "groupId": "de.itemis.mps.gradle.common",
+  "artifactId": "de.itemis.mps.gradle.common.gradle.plugin",
+  "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/gradle/common/de.itemis.mps.gradle.common.gradle.plugin/maven-metadata.xml",
+  "repo": "mbeddr/mps-gradle-plugin",
+  "changelog": "https://github.com/mbeddr/mps-gradle-plugin/blob/HEAD/CHANGELOG.md",
+  "kind": "tool",
+  "lineScheme": "major",
+  "slug": "de.itemis.mps.gradle.common_de.itemis.mps.gradle.common.gradle.plugin",
+  "generatedAt": "2026-10-30T10:38:58.476Z",
+  "total": 77,
+  "released": 61,
+  "stable": 59,
+  "preRelease": 2,
+  "branchCount": 16,
+  "branches": 7,
+  "lines": [
+    {
+      "line": "1.x",
+      "latest": "1.32.0",
+      "latestIsPreRelease": false,
+      "total": 61,
+      "stable": 59,
+      "versions": [
+        {
+          "v": "1.32.1-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-23T14:28:38Z"
+        },
+        {
+          "v": "1.32.0",
+          "pre": false,
+          "d": "2026-10-23T13:38:30Z"
+        },
+        {
+          "v": "1.32.0-SNAPSHOT",
+          "pre": true,
+          "d": "2026-10-23T11:50:37Z"
+        },
+        {
+          "v": "1.31.0.1.1243113",
+          "pre": false,
+          "d": "2026-08-20T09:36:59Z"
+        },
+        {
+          "v": "1.31.0.1.6b32025",
+          "pre": false,
+          "d": "2026-09-15T11:09:20Z"
+        },
+        {
+          "v": "1.30.2.1.649c88d",
+          "pre": false,
+          "d": "2026-08-11T21:19:19Z"
+        },
+        {
+          "v": "1.30.1.1.bc0f59d",
+          "pre": false,
+          "d": "2026-03-23T17:06:06Z"
+        },
+        {
+          "v": "1.30.0.1.f7dd918",
+          "pre": false,
+          "d": "2026-02-07T18:22:34Z"
+        },
+        {
+          "v": "1.29.3.1.19b70ba",
+          "pre": false,
+          "d": "2025-07-22T12:14:20Z"
+        },
+        {
+          "v": "1.29.2.1.fd9c9f8",
+          "pre": false,
+          "d": "2025-06-05T07:34:34Z"
+        },
+        {
+          "v": "1.29.2.1.b23a7fe",
+          "pre": false,
+          "d": "2025-07-21T18:04:10Z"
+        },
+        {
+          "v": "1.29.2.1.6d8e0a7",
+          "pre": false,
+          "d": "2025-05-07T17:49:19Z"
+        },
+        {
+          "v": "1.29.1.1.d7f2744",
+          "pre": false,
+          "d": "2025-02-25T17:00:16Z"
+        },
+        {
+          "v": "1.29.0.1.811916e",
+          "pre": false,
+          "d": "2025-01-22T18:18:53Z"
+        },
+        {
+          "v": "1.28.0.441.896925d",
+          "pre": false,
+          "d": "2024-07-09T17:22:38Z"
+        },
+        {
+          "v": "1.28.0.1.f8ee996",
+          "pre": false,
+          "d": "2024-10-22T13:08:31Z"
+        },
+        {
+          "v": "1.28.0.1.eee9d0f",
+          "pre": false,
+          "d": "2024-09-10T08:00:09Z"
+        },
+        {
+          "v": "1.28.0.1.d6256d2",
+          "pre": false,
+          "d": "2024-09-10T08:28:01Z"
+        },
+        {
+          "v": "1.28.0.1.2983fc1",
+          "pre": false,
+          "d": "2024-09-10T09:21:10Z"
+        },
+        {
+          "v": "1.27.0.440.389ea32",
+          "pre": false,
+          "d": "2024-06-28T19:43:27Z"
+        },
+        {
+          "v": "1.26.0.437.20464ee",
+          "pre": false,
+          "d": "2024-06-26T11:38:29Z"
+        },
+        {
+          "v": "1.25.2.435.a1000fe",
+          "pre": false,
+          "d": "2024-06-26T07:57:35Z"
+        },
+        {
+          "v": "1.25.2.434.f74c02c",
+          "pre": false,
+          "d": "2024-06-14T09:27:04Z"
+        },
+        {
+          "v": "1.25.1.433.0675e56",
+          "pre": false,
+          "d": "2024-05-17T15:47:17Z"
+        },
+        {
+          "v": "1.25.0.432.2d9315f",
+          "pre": false,
+          "d": "2024-05-17T14:19:36Z"
+        },
+        {
+          "v": "1.24.0.424.410b57d",
+          "pre": false,
+          "d": "2024-04-18T10:08:09Z"
+        },
+        {
+          "v": "1.24.0.422.bc47810",
+          "pre": false,
+          "d": "2024-04-16T14:08:57Z"
+        },
+        {
+          "v": "1.23.1.421.614437e",
+          "pre": false,
+          "d": "2024-04-11T15:17:03Z"
+        },
+        {
+          "v": "1.23.1.419.df49b26",
+          "pre": false,
+          "d": "2024-04-11T13:53:13Z"
+        },
+        {
+          "v": "1.23.1.417.ba7f83e",
+          "pre": false,
+          "d": "2024-04-11T10:41:19Z"
+        },
+        {
+          "v": "1.23.1.416.dae2796",
+          "pre": false,
+          "d": "2024-04-11T07:15:20Z"
+        },
+        {
+          "v": "1.23.1.412.a54f29f",
+          "pre": false,
+          "d": "2024-03-20T19:27:36Z"
+        },
+        {
+          "v": "1.23.0.411.f28e9fc",
+          "pre": false,
+          "d": "2024-02-14T12:16:46Z"
+        },
+        {
+          "v": "1.22.2.410.1a5f477",
+          "pre": false,
+          "d": "2024-02-09T15:59:13Z"
+        },
+        {
+          "v": "1.22.1.409.6d52c83",
+          "pre": false,
+          "d": "2024-01-22T14:36:48Z"
+        },
+        {
+          "v": "1.22.0.408.0a05207",
+          "pre": false,
+          "d": "2023-12-20T17:01:06Z"
+        },
+        {
+          "v": "1.21.2.403.32fc09e",
+          "pre": false,
+          "d": "2023-12-06T08:25:01Z"
+        },
+        {
+          "v": "1.21.1.398.c3cb3cf",
+          "pre": false,
+          "d": "2023-12-05T12:28:03Z"
+        },
+        {
+          "v": "1.21.0.392.f359ee2",
+          "pre": false,
+          "d": "2023-11-23T12:34:33Z"
+        },
+        {
+          "v": "1.20.0.389.390e059",
+          "pre": false,
+          "d": "2023-11-06T10:10:39Z"
+        },
+        {
+          "v": "1.20.0.388.90f255b",
+          "pre": false,
+          "d": "2023-11-06T10:05:06Z"
+        },
+        {
+          "v": "1.19.374.d67a4c3",
+          "pre": false,
+          "d": "2023-10-10T05:12:24Z"
+        },
+        {
+          "v": "1.19.371.56feaf7",
+          "pre": false,
+          "d": "2023-09-26T08:53:23Z"
+        },
+        {
+          "v": "1.19.370.442aa52",
+          "pre": false,
+          "d": "2023-09-26T08:33:00Z"
+        },
+        {
+          "v": "1.19.367.d76ef9a",
+          "pre": false,
+          "d": "2023-09-25T15:14:58Z"
+        },
+        {
+          "v": "1.19.366.6478154",
+          "pre": false,
+          "d": "2023-09-25T15:01:08Z"
+        },
+        {
+          "v": "1.19.3.386.ed225b9",
+          "pre": false,
+          "d": "2023-10-27T15:00:13Z"
+        },
+        {
+          "v": "1.19.2.385.72424d4",
+          "pre": false,
+          "d": "2023-10-26T13:18:15Z"
+        },
+        {
+          "v": "1.19.1.376.5808514",
+          "pre": false,
+          "d": "2023-10-24T13:15:34Z"
+        },
+        {
+          "v": "1.18.362.bdbe954",
+          "pre": false,
+          "d": "2023-09-21T10:00:44Z"
+        },
+        {
+          "v": "1.18.356.90f1a8c",
+          "pre": false,
+          "d": "2023-08-07T20:28:19Z"
+        },
+        {
+          "v": "1.17.354.e921726",
+          "pre": false,
+          "d": "2023-06-30T14:44:43Z"
+        },
+        {
+          "v": "1.16.352.17eae3e",
+          "pre": false,
+          "d": "2023-04-25T09:14:08Z"
+        },
+        {
+          "v": "1.16.351.9984588",
+          "pre": false,
+          "d": "2023-04-25T08:51:45Z"
+        },
+        {
+          "v": "1.15.348.cb26115",
+          "pre": false,
+          "d": "2023-04-24T07:00:40Z"
+        },
+        {
+          "v": "1.15.347.43645bc",
+          "pre": false,
+          "d": "2023-04-14T09:00:02Z"
+        },
+        {
+          "v": "1.15.346.03fb1f0",
+          "pre": false,
+          "d": "2023-04-14T08:29:44Z"
+        },
+        {
+          "v": "1.14.345.5cd1622",
+          "pre": false,
+          "d": "2023-04-12T15:12:11Z"
+        },
+        {
+          "v": "1.14.344.6d9e5b0",
+          "pre": false,
+          "d": "2023-04-12T15:08:37Z"
+        },
+        {
+          "v": "1.14.343.ceb5743",
+          "pre": false,
+          "d": "2023-04-12T15:06:38Z"
+        },
+        {
+          "v": "1.13.339.83060f8",
+          "pre": false,
+          "d": "2023-02-27T16:58:45Z"
+        }
+      ],
+      "latestDate": "2026-10-23T13:38:30Z"
+    }
+  ],
+  "branchBuilds": [
+    {
+      "v": "pull-155.1.23.1.420.017fc49",
+      "pre": false,
+      "branch": "pull-155",
+      "d": "2024-04-11T14:40:08Z"
+    },
+    {
+      "v": "pull-150.1.21.0.391.026105d",
+      "pre": false,
+      "branch": "pull-150",
+      "d": "2023-11-23T09:03:36Z"
+    },
+    {
+      "v": "pull-143.1.17.353.a02c8ae",
+      "pre": false,
+      "branch": "pull-143",
+      "d": "2023-06-30T14:37:44Z"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.384.13af452",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-26T12:50:33Z"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.383.8ffb42e",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-25T13:15:19Z"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.382.49cd15b",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-24T21:11:05Z"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.381.6211115",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-24T16:01:05Z"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.380.ed322bf",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-24T15:40:04Z"
+    },
+    {
+      "v": "experiment-github-build.1.19.1.380.9c5aeec",
+      "pre": false,
+      "branch": "experiment-github-build",
+      "d": "2023-10-24T15:24:02Z"
+    },
+    {
+      "v": "bugfix-fix_jbr_version_download.1.22.0.395.9c09f23",
+      "pre": false,
+      "branch": "bugfix-fix_jbr_version_download",
+      "d": "2023-12-05T12:03:11Z"
+    },
+    {
+      "v": "bugfix-fix_jbr_version_download.1.22.0.394.19e7a33",
+      "pre": false,
+      "branch": "bugfix-fix_jbr_version_download",
+      "d": "2023-12-05T12:03:36Z"
+    },
+    {
+      "v": "bugfix-fix_jbr_version_download.1.21.0.393.fc78c22",
+      "pre": false,
+      "branch": "bugfix-fix_jbr_version_download",
+      "d": "2023-12-05T11:37:17Z"
+    },
+    {
+      "v": "bugfix-copy_jbr_dash.1.21.2.402.144ccfe",
+      "pre": false,
+      "branch": "bugfix-copy_jbr_dash",
+      "d": "2023-12-06T08:06:00Z"
+    },
+    {
+      "v": "bugfix-copy_jbr_dash.1.21.2.401.0ed20dc",
+      "pre": false,
+      "branch": "bugfix-copy_jbr_dash",
+      "d": "2023-12-06T07:07:00Z"
+    },
+    {
+      "v": "bugfix-copy_jbr_dash.1.21.1.399.9994955",
+      "pre": false,
+      "branch": "bugfix-copy_jbr_dash",
+      "d": "2023-12-06T07:05:21Z"
+    },
+    {
+      "v": "alexei-testing-tc.1.19.371.56feaf7",
+      "pre": false,
+      "branch": "alexei-testing-tc",
+      "d": "2023-09-26T21:18:47Z"
+    }
+  ]
+}

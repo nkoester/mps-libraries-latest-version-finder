@@ -85,6 +85,24 @@
     }
   },
   {
+    "groupId": "de.itemis.mps.gradle.common",
+    "artifactId": "de.itemis.mps.gradle.common.gradle.plugin",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/gradle/common/de.itemis.mps.gradle.common.gradle.plugin/maven-metadata.xml",
+    "repo": "mbeddr/mps-gradle-plugin",
+    "changelog": "https://github.com/mbeddr/mps-gradle-plugin/blob/HEAD/CHANGELOG.md",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
+    "groupId": "de.itemis.mps.gradle",
+    "artifactId": "git-based-versioning",
+    "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/gradle/git-based-versioning/maven-metadata.xml",
+    "repo": "mbeddr/mps-gradle-plugin",
+    "changelog": "https://github.com/mbeddr/mps-gradle-plugin/blob/HEAD/git-based-versioning/CHANGELOG.md",
+    "kind": "tool",
+    "lineScheme": "major"
+  },
+  {
     "groupId": "de.itemis.mps.build-backends",
     "artifactId": "launcher",
     "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/build-backends/launcher/maven-metadata.xml",

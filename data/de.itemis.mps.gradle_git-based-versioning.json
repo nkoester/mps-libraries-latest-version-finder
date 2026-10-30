@@ -1,0 +1,40 @@
+{
+  "groupId": "de.itemis.mps.gradle",
+  "artifactId": "git-based-versioning",
+  "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/gradle/git-based-versioning/maven-metadata.xml",
+  "repo": "mbeddr/mps-gradle-plugin",
+  "changelog": "https://github.com/mbeddr/mps-gradle-plugin/blob/HEAD/git-based-versioning/CHANGELOG.md",
+  "kind": "tool",
+  "lineScheme": "major",
+  "slug": "de.itemis.mps.gradle_git-based-versioning",
+  "generatedAt": "2026-10-30T10:38:58.476Z",
+  "total": 2,
+  "released": 2,
+  "stable": 2,
+  "preRelease": 0,
+  "branchCount": 0,
+  "branches": 0,
+  "lines": [
+    {
+      "line": "1.x",
+      "latest": "1.1.0",
+      "latestIsPreRelease": false,
+      "total": 2,
+      "stable": 2,
+      "versions": [
+        {
+          "v": "1.1.0",
+          "pre": false,
+          "d": "2024-09-10T08:16:43Z"
+        },
+        {
+          "v": "1.0",
+          "pre": false,
+          "d": "2023-04-25T08:44:00Z"
+        }
+      ],
+      "latestDate": "2024-09-10T08:16:43Z"
+    }
+  ],
+  "branchBuilds": []
+}

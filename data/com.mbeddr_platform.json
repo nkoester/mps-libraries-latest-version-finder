@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-10-30T02:20:12.373Z",
-  "total": 3108,
+  "generatedAt": "2026-10-30T10:38:58.476Z",
+  "total": 3111,
   "released": 2061,
   "stable": 2061,
   "preRelease": 0,
-  "branchCount": 1047,
+  "branchCount": 1050,
   "branches": 243,
   "lines": [
     {
@@ -10673,6 +10673,12 @@
       "d": "2026-10-24T05:05:05Z"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25382.70caa2d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster",
+      "d": "2026-10-30T03:34:49Z"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25379.e175452-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
@@ -11489,6 +11495,12 @@
       "d": "2026-10-24T04:24:22Z"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25331.911108f-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mpsextensions261",
+      "d": "2026-10-30T03:34:47Z"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25331.646e07b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mpsextensions261",
@@ -11763,6 +11775,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion",
       "d": "2025-10-16T09:40:11Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24937.ad3080d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251",
+      "d": "2026-10-30T03:35:01Z"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24937.63b7757-SNAPSHOT",

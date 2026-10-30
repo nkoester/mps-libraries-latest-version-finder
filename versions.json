@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T02:20:12.373Z",
+  "generatedAt": "2026-10-30T10:38:58.476Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -293,11 +293,11 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3108,
+      "total": 3111,
       "released": 2061,
       "stable": 2061,
       "preRelease": 0,
-      "branchCount": 1047,
+      "branchCount": 1050,
       "branches": 243,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
@@ -439,12 +439,12 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2631,
+      "total": 2624,
       "released": 1879,
       "stable": 1879,
       "preRelease": 0,
-      "branchCount": 752,
-      "branches": 180,
+      "branchCount": 745,
+      "branches": 178,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
         {
@@ -1037,6 +1037,62 @@
           "latestIsPreRelease": false,
           "total": 71,
           "stable": 69
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.gradle.common",
+      "artifactId": "de.itemis.mps.gradle.common.gradle.plugin",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/gradle/common/de.itemis.mps.gradle.common.gradle.plugin/maven-metadata.xml",
+      "repo": "mbeddr/mps-gradle-plugin",
+      "changelog": "https://github.com/mbeddr/mps-gradle-plugin/blob/HEAD/CHANGELOG.md",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.gradle.common_de.itemis.mps.gradle.common.gradle.plugin",
+      "ok": true,
+      "total": 77,
+      "released": 61,
+      "stable": 59,
+      "preRelease": 2,
+      "branchCount": 16,
+      "branches": 7,
+      "dataFile": "data/de.itemis.mps.gradle.common_de.itemis.mps.gradle.common.gradle.plugin.json",
+      "lines": [
+        {
+          "line": "1.x",
+          "latest": "1.32.0",
+          "latestDate": "2026-10-23T13:38:30Z",
+          "latestIsPreRelease": false,
+          "total": 61,
+          "stable": 59
+        }
+      ]
+    },
+    {
+      "groupId": "de.itemis.mps.gradle",
+      "artifactId": "git-based-versioning",
+      "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/de/itemis/mps/gradle/git-based-versioning/maven-metadata.xml",
+      "repo": "mbeddr/mps-gradle-plugin",
+      "changelog": "https://github.com/mbeddr/mps-gradle-plugin/blob/HEAD/git-based-versioning/CHANGELOG.md",
+      "kind": "tool",
+      "lineScheme": "major",
+      "slug": "de.itemis.mps.gradle_git-based-versioning",
+      "ok": true,
+      "total": 2,
+      "released": 2,
+      "stable": 2,
+      "preRelease": 0,
+      "branchCount": 0,
+      "branches": 0,
+      "dataFile": "data/de.itemis.mps.gradle_git-based-versioning.json",
+      "lines": [
+        {
+          "line": "1.x",
+          "latest": "1.1.0",
+          "latestDate": "2024-09-10T08:16:43Z",
+          "latestIsPreRelease": false,
+          "total": 2,
+          "stable": 2
         }
       ]
     },
