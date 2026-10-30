@@ -2943,6 +2943,38 @@
        * line declares: dependents on top, their dependencies below.
        */
       /**
+       * Every drawn library that declares no tracked dependency is still
+       * built against MPS: a dotted "implicit" edge to it. Drawn only from
+       * the bottom of each chain, as the rest reach MPS through them.
+       * Shared by the board's chain and Inspect's graph.
+       */
+      function addImplicitEdges(latest, edges) {
+        const mpsVersion = latest[MPS_SLUG];
+        if (!mpsVersion) return;
+        const declares = new Set(
+          edges
+            .filter(([from, to]) => latest[from] && latest[to])
+            .map(([from]) => from),
+        );
+        for (const slug of Object.keys(latest)) {
+          if (slug === MPS_SLUG || declares.has(slug)) continue;
+          if (isRuntime(bySlug(slug))) continue;
+          edges.push([slug, MPS_SLUG, lineOf(mpsVersion), "implicit"]);
+        }
+      }
+
+      /** The primary JBR row MPS names, if it is in the repository. */
+      const primaryRuntime = (rows) =>
+        rows.find((row) => row.library.slug === JBR_PRIMARY && row.v) ?? null;
+
+      /** MPS -> the primary JBR it is made for, when both are drawn. */
+      function addRuntimeEdge(latest, edges, row) {
+        if (!row || !latest[MPS_SLUG]) return;
+        latest[JBR_PRIMARY] = row.v;
+        edges.push([MPS_SLUG, JBR_PRIMARY, row.v, "runtime"]);
+      }
+
+      /**
        * The declared graph plus what the POMs leave out. Edges are
        * [from, to, version, kind]; kind is undefined for declared edges.
        *
@@ -2960,26 +2992,9 @@
         if (!mpsVersion) return { graph: declared, row: null };
         const latest = { ...declared.latest };
         const edges = [...declared.edges];
-        const declaresAny = new Set(
-          declared.edges
-            .filter(
-              ([from, to]) => declared.latest[from] && declared.latest[to],
-            )
-            .map(([from]) => from),
-        );
-        for (const slug of Object.keys(declared.latest)) {
-          if (slug === MPS_SLUG || declaresAny.has(slug)) continue;
-          if (isRuntime(bySlug(slug))) continue;
-          edges.push([slug, MPS_SLUG, lineOf(mpsVersion), "implicit"]);
-        }
-        const row =
-          runtimeRows(mpsVersion).find(
-            (r) => r.library.slug === JBR_PRIMARY && r.v,
-          ) ?? null;
-        if (row) {
-          latest[JBR_PRIMARY] = row.v;
-          edges.push([MPS_SLUG, JBR_PRIMARY, row.v, "runtime"]);
-        }
+        addImplicitEdges(latest, edges);
+        const row = primaryRuntime(runtimeRows(mpsVersion));
+        addRuntimeEdge(latest, edges, row);
         // The Gradle plugin builds against MPS; its edge carries the
         // extracted tested-against status for this line.
         const tooling = toolingRows(lineOf(mpsVersion));
@@ -3374,9 +3389,9 @@
         panel.hidden = false;
       }
 
-      /** Hovering a library lights up the edges it takes part in. */
-      function highlightChain(slug) {
-        for (const edge of $("chain").querySelectorAll(".ce")) {
+      /** Lights up the edges one library takes part in; null clears. */
+      function lightEdges(container, slug) {
+        for (const edge of container.querySelectorAll(".ce")) {
           edge.classList.toggle(
             "hot",
             slug !== null &&
@@ -3384,6 +3399,9 @@
           );
         }
       }
+
+      /** Hovering a library lights up the edges it takes part in. */
+      const highlightChain = (slug) => lightEdges($("chain"), slug);
       $("chain").addEventListener("mouseover", (event) =>
         highlightChain(event.target.closest(".cn")?.dataset.slug ?? null),
       );
@@ -3539,22 +3557,9 @@
             if (latest[dep] && dep !== slug) edges.push([slug, dep, min]);
           }
         }
-        // As on the board: a library that declares no tracked dependency is
-        // still built against MPS; drawn dotted, not in the POM.
-        if (latest[MPS_SLUG]) {
-          const declares = new Set(edges.map(([from]) => from));
-          for (const slug of Object.keys(latest)) {
-            if (slug === MPS_SLUG || declares.has(slug)) continue;
-            edges.push([slug, MPS_SLUG, lineOf(latest[MPS_SLUG]), "implicit"]);
-          }
-        }
-        const jbr =
-          runtime.find((row) => row.library.slug === JBR_PRIMARY && row.v) ??
-          null;
-        if (jbr && latest[MPS_SLUG]) {
-          latest[JBR_PRIMARY] = jbr.v;
-          edges.push([MPS_SLUG, JBR_PRIMARY, jbr.v, "runtime"]);
-        }
+        addImplicitEdges(latest, edges);
+        const jbr = primaryRuntime(runtime);
+        addRuntimeEdge(latest, edges, jbr);
         const present = state.libraries.filter((l) => latest[l.slug]);
         if (present.length < 2) return "";
         return `
@@ -3598,12 +3603,7 @@
       /** Graph node <-> list row: hovering either lights up both. */
       function highlightInspect(slug) {
         const body = $("ins-body");
-        for (const edge of body.querySelectorAll(".ce"))
-          edge.classList.toggle(
-            "hot",
-            slug !== null &&
-              (edge.dataset.from === slug || edge.dataset.to === slug),
-          );
+        lightEdges(body, slug);
         for (const node of body.querySelectorAll(".cn"))
           node.classList.toggle("hot", node.dataset.slug === slug);
         for (const row of body.querySelectorAll(".req[data-slug]"))
