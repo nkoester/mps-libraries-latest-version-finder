@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T11:43:57.975Z",
+  "generatedAt": "2026-11-01T12:16:55.365Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -20,10 +20,10 @@
         {
           "line": "2026.1",
           "latest": "2026.1.2",
+          "latestDate": "2026-11-01T10:38:49Z",
           "latestIsPreRelease": false,
           "total": 4,
-          "stable": 3,
-          "latestDate": "2026-11-01T10:38:49Z"
+          "stable": 3
         },
         {
           "line": "2025.3",
@@ -44,10 +44,10 @@
         {
           "line": "2025.1",
           "latest": "2025.1.5",
+          "latestDate": "2026-11-01T10:40:10Z",
           "latestIsPreRelease": false,
           "total": 7,
-          "stable": 6,
-          "latestDate": "2026-11-01T10:40:10Z"
+          "stable": 6
         },
         {
           "line": "2024.3",
@@ -942,10 +942,10 @@
         {
           "line": "21",
           "latest": "21.0.9-b1038.91",
+          "latestDate": "2026-11-01T10:54:18Z",
           "latestIsPreRelease": false,
           "total": 11,
-          "stable": 11,
-          "latestDate": "2026-11-01T10:54:18Z"
+          "stable": 11
         },
         {
           "line": "17",
