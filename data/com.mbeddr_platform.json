@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-01T12:16:55.365Z",
-  "total": 3111,
+  "generatedAt": "2026-11-01T16:58:41.444Z",
+  "total": 3113,
   "released": 2061,
   "stable": 2061,
   "preRelease": 0,
-  "branchCount": 1050,
+  "branchCount": 1052,
   "branches": 243,
   "lines": [
     {
@@ -11663,6 +11663,12 @@
       "d": "2026-07-29T11:19:19Z"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25331.2fd3737-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mps261",
+      "d": "2026-11-01T13:56:56Z"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25263.2a46776-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mps261",
@@ -12021,6 +12027,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsbuild",
       "d": "2026-01-14T11:32:59Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mps251.2025.1.24937.592f7bc-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mps251",
+      "d": "2026-11-01T13:56:55Z"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mps251.2025.1.24886.f9a38e9-SNAPSHOT",

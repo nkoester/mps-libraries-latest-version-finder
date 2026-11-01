@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-01T12:16:55.365Z",
-  "total": 2624,
+  "generatedAt": "2026-11-01T16:58:41.444Z",
+  "total": 2623,
   "released": 1879,
   "stable": 1879,
   "preRelease": 0,
-  "branchCount": 745,
+  "branchCount": 744,
   "branches": 178,
   "lines": [
     {
@@ -9713,12 +9713,6 @@
       "d": "2026-07-27T06:01:04Z"
     },
     {
-      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25200.302b305-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-patch-mpsextensionsmaster",
-      "d": "2026-07-02T13:21:24Z"
-    },
-    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25193.2afcf9f-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
@@ -9873,12 +9867,6 @@
       "pre": true,
       "branch": "renovate-master-mpsmaster",
       "d": "2026-09-03T20:10:35Z"
-    },
-    {
-      "v": "renovate-master-mpsmaster.9999.9.25200.dd9ff57-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsmaster",
-      "d": "2026-07-05T13:53:18Z"
     },
     {
       "v": "renovate-master-mpsmaster.9999.9.25200.9ead6a1-SNAPSHOT",
@@ -10163,6 +10151,12 @@
       "d": "2026-07-29T11:19:19Z"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25331.2fd3737-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mps261",
+      "d": "2026-11-01T13:56:56Z"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25263.2a46776-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mps261",
@@ -10407,6 +10401,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensions251",
       "d": "2026-07-05T13:52:50Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mps251.2025.1.24937.592f7bc-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mps251",
+      "d": "2026-11-01T13:56:55Z"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mps251.2025.1.24886.f9a38e9-SNAPSHOT",
@@ -12057,12 +12057,6 @@
       "pre": true,
       "branch": "merge-master",
       "d": "2026-08-03T08:48:15Z"
-    },
-    {
-      "v": "merge-master.9999.9.25199.75e9228-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-07-05T13:52:32Z"
     },
     {
       "v": "merge-master.9999.9.25188.e3de0df-SNAPSHOT",
