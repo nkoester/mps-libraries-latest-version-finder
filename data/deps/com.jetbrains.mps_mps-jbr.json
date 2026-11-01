@@ -4,6 +4,12 @@
   "slug": "com.jetbrains.mps_mps-jbr",
   "snapshotLookup": "timestamped",
   "versions": {
+    "2026.1.2": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b329.142"
+      ]
+    ],
     "2026.1.1": [
       [
         "com.jetbrains.jdk_jbr_jcef",
@@ -38,6 +44,12 @@
       [
         "com.jetbrains.jdk_jbr_jcef",
         "21.0.8-b1038.71"
+      ]
+    ],
+    "2025.1.5": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "21.0.9-b1038.91"
       ]
     ],
     "2025.1.4": [
@@ -503,30 +515,6 @@
       ]
     ],
     "262.10968.516": [
-      [
-        "com.jetbrains.jdk_jbr_jcef",
-        "25.0.4-b508.27"
-      ]
-    ],
-    "262.10968.515": [
-      [
-        "com.jetbrains.jdk_jbr_jcef",
-        "25.0.4-b508.27"
-      ]
-    ],
-    "262.10968.512": [
-      [
-        "com.jetbrains.jdk_jbr_jcef",
-        "25.0.4-b508.27"
-      ]
-    ],
-    "262.10968.509": [
-      [
-        "com.jetbrains.jdk_jbr_jcef",
-        "25.0.4-b508.27"
-      ]
-    ],
-    "262.10968.505": [
       [
         "com.jetbrains.jdk_jbr_jcef",
         "25.0.4-b508.27"

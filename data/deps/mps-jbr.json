@@ -1,5 +1,27 @@
 {
   "versions": {
+    "2026.1.2": {
+      "jbr": "25.0.4.1-b329.142",
+      "source": "marker",
+      "artifacts": {
+        "com.jetbrains.jdk_jbr_jcef": {
+          "v": "25.0.4.1-b329.142",
+          "exact": true
+        },
+        "com.jetbrains.jdk_jbr": {
+          "v": "25.0.4.1-b329.142",
+          "exact": true
+        },
+        "com.jetbrains.jdk_jbrsdk": {
+          "v": "25.0.4.1-b329.142",
+          "exact": true
+        },
+        "com.jetbrains.jdk_jbr_nomod": {
+          "v": null,
+          "exact": false
+        }
+      }
+    },
     "2026.1.1": {
       "jbr": "25.0.3-b329.124",
       "source": "marker",
@@ -125,6 +147,28 @@
         "com.jetbrains.jdk_jbrsdk": {
           "v": "21.0.8-b1138.52",
           "exact": false
+        },
+        "com.jetbrains.jdk_jbr_nomod": {
+          "v": null,
+          "exact": false
+        }
+      }
+    },
+    "2025.1.5": {
+      "jbr": "21.0.9-b1038.91",
+      "source": "marker",
+      "artifacts": {
+        "com.jetbrains.jdk_jbr_jcef": {
+          "v": "21.0.9-b1038.91",
+          "exact": true
+        },
+        "com.jetbrains.jdk_jbr": {
+          "v": "21.0.9-b1038.91",
+          "exact": true
+        },
+        "com.jetbrains.jdk_jbrsdk": {
+          "v": "21.0.9-b1038.91",
+          "exact": true
         },
         "com.jetbrains.jdk_jbr_nomod": {
           "v": null,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T01:46:48.938Z",
+  "generatedAt": "2026-11-01T11:43:57.975Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -9,9 +9,9 @@
       "changelog": "https://www.jetbrains.com/mps/whatsnew/",
       "slug": "com.jetbrains_mps",
       "ok": true,
-      "total": 60,
-      "released": 60,
-      "stable": 52,
+      "total": 62,
+      "released": 62,
+      "stable": 54,
       "preRelease": 8,
       "branchCount": 0,
       "branches": 0,
@@ -19,11 +19,11 @@
       "lines": [
         {
           "line": "2026.1",
-          "latest": "2026.1.1",
-          "latestDate": "2026-09-17T13:35:19Z",
+          "latest": "2026.1.2",
           "latestIsPreRelease": false,
-          "total": 3,
-          "stable": 2
+          "total": 4,
+          "stable": 3,
+          "latestDate": "2026-11-01T10:38:49Z"
         },
         {
           "line": "2025.3",
@@ -43,11 +43,11 @@
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.4",
-          "latestDate": "2026-09-17T09:49:04Z",
+          "latest": "2025.1.5",
           "latestIsPreRelease": false,
-          "total": 6,
-          "stable": 5
+          "total": 7,
+          "stable": 6,
+          "latestDate": "2026-11-01T10:40:10Z"
         },
         {
           "line": "2024.3",
@@ -821,9 +821,9 @@
       "kind": "runtime",
       "slug": "com.jetbrains.jdk_jbr_jcef",
       "ok": true,
-      "total": 33,
-      "released": 33,
-      "stable": 33,
+      "total": 35,
+      "released": 35,
+      "stable": 35,
       "preRelease": 0,
       "branchCount": 0,
       "branches": 0,
@@ -834,16 +834,16 @@
           "latest": "25.0.4.1-b623.69",
           "latestDate": "2026-10-14T07:57:16Z",
           "latestIsPreRelease": false,
-          "total": 5,
-          "stable": 5
+          "total": 6,
+          "stable": 6
         },
         {
           "line": "21",
           "latest": "21.0.11-b1163.116",
           "latestDate": "2026-06-18T08:08:27Z",
           "latestIsPreRelease": false,
-          "total": 11,
-          "stable": 11
+          "total": 12,
+          "stable": 12
         },
         {
           "line": "17",
@@ -872,9 +872,9 @@
       "kind": "runtime",
       "slug": "com.jetbrains.jdk_jbr",
       "ok": true,
-      "total": 31,
-      "released": 31,
-      "stable": 31,
+      "total": 33,
+      "released": 33,
+      "stable": 33,
       "preRelease": 0,
       "branchCount": 0,
       "branches": 0,
@@ -885,16 +885,16 @@
           "latest": "25.0.4.1-b623.69",
           "latestDate": "2026-10-14T07:54:33Z",
           "latestIsPreRelease": false,
-          "total": 5,
-          "stable": 5
+          "total": 6,
+          "stable": 6
         },
         {
           "line": "21",
           "latest": "21.0.11-b1163.116",
           "latestDate": "2026-06-17T19:23:56Z",
           "latestIsPreRelease": false,
-          "total": 11,
-          "stable": 11
+          "total": 12,
+          "stable": 12
         },
         {
           "line": "17",
@@ -923,9 +923,9 @@
       "kind": "runtime",
       "slug": "com.jetbrains.jdk_jbrsdk",
       "ok": true,
-      "total": 32,
-      "released": 32,
-      "stable": 32,
+      "total": 34,
+      "released": 34,
+      "stable": 34,
       "preRelease": 0,
       "branchCount": 0,
       "branches": 0,
@@ -936,16 +936,16 @@
           "latest": "25.0.4.1-b623.69",
           "latestDate": "2026-10-14T08:00:39Z",
           "latestIsPreRelease": false,
-          "total": 5,
-          "stable": 5
+          "total": 6,
+          "stable": 6
         },
         {
           "line": "21",
-          "latest": "21.0.9-b895.147",
-          "latestDate": "2025-11-05T12:54:04Z",
+          "latest": "21.0.9-b1038.91",
           "latestIsPreRelease": false,
-          "total": 10,
-          "stable": 10
+          "total": 11,
+          "stable": 11,
+          "latestDate": "2026-11-01T10:54:18Z"
         },
         {
           "line": "17",
@@ -1383,9 +1383,9 @@
       "kind": "marker",
       "slug": "com.jetbrains.mps_mps-jbr",
       "ok": true,
-      "total": 88,
-      "released": 88,
-      "stable": 81,
+      "total": 86,
+      "released": 86,
+      "stable": 79,
       "preRelease": 7,
       "branchCount": 0,
       "branches": 0,
@@ -1393,10 +1393,10 @@
       "lines": [
         {
           "line": "2026.1",
-          "latest": "2026.1.1",
+          "latest": "2026.1.2",
           "latestIsPreRelease": false,
-          "total": 3,
-          "stable": 2
+          "total": 4,
+          "stable": 3
         },
         {
           "line": "2025.3",
@@ -1414,10 +1414,10 @@
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.4",
+          "latest": "2025.1.5",
           "latestIsPreRelease": false,
-          "total": 6,
-          "stable": 5
+          "total": 7,
+          "stable": 6
         },
         {
           "line": "2024.3",
@@ -1458,8 +1458,8 @@
           "line": "262.10968",
           "latest": "262.10968.10021",
           "latestIsPreRelease": false,
-          "total": 23,
-          "stable": 23
+          "total": 19,
+          "stable": 19
         }
       ]
     }

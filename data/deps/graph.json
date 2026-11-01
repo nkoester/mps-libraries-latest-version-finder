@@ -2,7 +2,7 @@
   "lines": {
     "2026.1": {
       "latest": {
-        "com.jetbrains_mps": "2026.1.1",
+        "com.jetbrains_mps": "2026.1.2",
         "de.itemis.mps_extensions": "2026.1.3707.00017d1",
         "com.mbeddr_platform": "2026.1.26668.d156123",
         "com.mbeddr_mbeddr": "2026.1.26668.d156123",
@@ -56,7 +56,7 @@
     },
     "2025.1": {
       "latest": {
-        "com.jetbrains_mps": "2025.1.4",
+        "com.jetbrains_mps": "2025.1.5",
         "de.itemis.mps_extensions": "2025.1.3706.2951857",
         "com.mbeddr_platform": "2025.1.26667.c5d588e",
         "com.mbeddr_mbeddr": "2025.1.26667.c5d588e",

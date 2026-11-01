@@ -5,21 +5,26 @@
   "repo": "JetBrains/MPS",
   "changelog": "https://www.jetbrains.com/mps/whatsnew/",
   "slug": "com.jetbrains_mps",
-  "generatedAt": "2026-11-01T01:46:48.938Z",
-  "total": 60,
-  "released": 60,
-  "stable": 52,
+  "generatedAt": "2026-11-01T11:43:57.975Z",
+  "total": 62,
+  "released": 62,
+  "stable": 54,
   "preRelease": 8,
   "branchCount": 0,
   "branches": 0,
   "lines": [
     {
       "line": "2026.1",
-      "latest": "2026.1.1",
+      "latest": "2026.1.2",
       "latestIsPreRelease": false,
-      "total": 3,
-      "stable": 2,
+      "total": 4,
+      "stable": 3,
       "versions": [
+        {
+          "v": "2026.1.2",
+          "pre": false,
+          "d": "2026-11-01T10:38:49Z"
+        },
         {
           "v": "2026.1.1",
           "pre": false,
@@ -36,7 +41,7 @@
           "d": "2026-06-23T09:52:46Z"
         }
       ],
-      "latestDate": "2026-09-17T13:35:19Z"
+      "latestDate": "2026-11-01T10:38:49Z"
     },
     {
       "line": "2025.3",
@@ -75,11 +80,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.4",
+      "latest": "2025.1.5",
       "latestIsPreRelease": false,
-      "total": 6,
-      "stable": 5,
+      "total": 7,
+      "stable": 6,
       "versions": [
+        {
+          "v": "2025.1.5",
+          "pre": false,
+          "d": "2026-11-01T10:40:10Z"
+        },
         {
           "v": "2025.1.4",
           "pre": false,
@@ -111,7 +121,7 @@
           "d": "2025-04-29T12:22:58Z"
         }
       ],
-      "latestDate": "2026-09-17T09:49:04Z"
+      "latestDate": "2026-11-01T10:40:10Z"
     },
     {
       "line": "2024.3",
