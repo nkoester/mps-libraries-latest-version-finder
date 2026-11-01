@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-10-30T21:20:57.227Z",
-  "total": 1239,
+  "generatedAt": "2026-11-01T01:46:48.938Z",
+  "total": 1233,
   "released": 848,
   "stable": 821,
   "preRelease": 27,
-  "branchCount": 391,
-  "branches": 90,
+  "branchCount": 385,
+  "branches": 83,
   "lines": [
     {
       "line": "9999.9",
@@ -5166,10 +5166,22 @@
       "d": "2026-07-31T20:51:11Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.2650.174d928-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-third-party-minor",
+      "d": "2026-11-01T01:39:35Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.2341.6e8c341-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-third-party-minor",
       "d": "2026-09-02T03:13:06Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.2651.7466266-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-11-01T01:39:34Z"
     },
     {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.2342.8253af3-SNAPSHOT",
@@ -5196,40 +5208,16 @@
       "d": "2023-11-03T10:34:39Z"
     },
     {
-      "v": "premerge-385159.9999.9.1630.12c4098-SNAPSHOT",
-      "pre": true,
-      "branch": "premerge-385159",
-      "d": "2025-09-27T03:13:03Z"
-    },
-    {
       "v": "premerge-385131.9999.9.1624.0b2f957-SNAPSHOT",
       "pre": true,
       "branch": "premerge-385131",
       "d": "2025-09-27T03:13:00Z"
     },
     {
-      "v": "premerge-385128.2025.1.1621.51a3c82-SNAPSHOT",
-      "pre": true,
-      "branch": "premerge-385128",
-      "d": "2025-09-27T03:12:58Z"
-    },
-    {
-      "v": "premerge-385099.9999.9.1610.ed8a571-SNAPSHOT",
-      "pre": true,
-      "branch": "premerge-385099",
-      "d": "2025-09-26T03:16:06Z"
-    },
-    {
       "v": "premerge-383826.2024.1.1472.b20346c-SNAPSHOT",
       "pre": true,
       "branch": "premerge-383826",
       "d": "2025-08-29T03:15:58Z"
-    },
-    {
-      "v": "premerge-383760.2024.1.1464.8edbc02-SNAPSHOT",
-      "pre": true,
-      "branch": "premerge-383760",
-      "d": "2025-08-28T03:13:20Z"
     },
     {
       "v": "premerge-383700.2023.2.1450.2067ef9-SNAPSHOT",
@@ -6018,12 +6006,6 @@
       "d": "2026-10-22T07:24:02Z"
     },
     {
-      "v": "fix-navigation-deadlocks.2025.1.2250.ba12bac-SNAPSHOT",
-      "pre": true,
-      "branch": "fix-navigation-deadlocks",
-      "d": "2026-07-07T02:13:53Z"
-    },
-    {
       "v": "fix-celllayout-regressions.2025.1.2614.16752e0-SNAPSHOT",
       "pre": true,
       "branch": "fix-celllayout-regressions",
@@ -6174,18 +6156,6 @@
       "d": "2023-12-18T12:06:27Z"
     },
     {
-      "v": "feature-test_everything.2023.2.1677.0136b85-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-test_everything",
-      "d": "2025-10-16T15:07:55Z"
-    },
-    {
-      "v": "feature-test_everything.2023.2.1658.e3a4a63-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-test_everything",
-      "d": "2025-10-13T19:08:49Z"
-    },
-    {
       "v": "feature-teamcity-kotlin-dsl.2024.1.2308.b5c73bb-SNAPSHOT",
       "pre": true,
       "branch": "feature-teamcity-kotlin-dsl",
@@ -6196,12 +6166,6 @@
       "pre": true,
       "branch": "feature-tables-cross-table",
       "d": "2026-10-21T18:01:59Z"
-    },
-    {
-      "v": "feature-table_selection_copy_cut_paste.2023.2.1651.8d41a6b-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-table_selection_copy_cut_paste",
-      "d": "2025-10-08T12:41:05Z"
     },
     {
       "v": "feature-slisson-word-formatting-2025.2025.1.2260.d520ea9-SNAPSHOT",
