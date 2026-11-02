@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-02T02:02:17.069Z",
-  "total": 2933,
-  "released": 1735,
-  "stable": 1728,
+  "generatedAt": "2026-11-02T13:12:38.881Z",
+  "total": 2929,
+  "released": 1737,
+  "stable": 1730,
   "preRelease": 7,
-  "branchCount": 1198,
+  "branchCount": 1192,
   "branches": 249,
   "lines": [
     {
@@ -1815,11 +1815,21 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11417.7d8a03d",
+      "latest": "2024.1.11458.db398ce",
       "latestIsPreRelease": false,
-      "total": 270,
-      "stable": 269,
+      "total": 272,
+      "stable": 271,
       "versions": [
+        {
+          "v": "2024.1.11458.db398ce",
+          "pre": false,
+          "d": "2026-11-02T08:12:29Z"
+        },
+        {
+          "v": "2024.1.11455.07e6620",
+          "pre": false,
+          "d": "2026-11-02T07:50:33Z"
+        },
         {
           "v": "2024.1.11417.7d8a03d",
           "pre": false,
@@ -3171,7 +3181,7 @@
           "d": "2024-11-19T14:58:20Z"
         }
       ],
-      "latestDate": "2026-10-21T11:08:41Z"
+      "latestDate": "2026-11-02T08:12:29Z"
     },
     {
       "line": "2023.2",
@@ -9347,6 +9357,12 @@
       "d": "2026-06-03T08:57:04Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11456.70149bb-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
+      "d": "2026-11-02T07:32:10Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11439.aeea5b9-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
@@ -9677,22 +9693,10 @@
       "d": "2026-08-12T06:33:20Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.10717.3f9a217-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-gradle-9.x",
-      "d": "2026-07-09T12:54:26Z"
-    },
-    {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.10716.d8507d5-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-9.x",
       "d": "2026-07-09T12:54:25Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.10707.0a9a451-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-gradle-9.x",
-      "d": "2026-06-30T11:53:45Z"
     },
     {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.10700.0a00b11-SNAPSHOT",
@@ -10041,6 +10045,12 @@
       "pre": true,
       "branch": "refactor-UmlautHandlingIdentifiers_20241",
       "d": "2026-02-24T12:32:16Z"
+    },
+    {
+      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.11459.2d2f257-SNAPSHOT",
+      "pre": true,
+      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
+      "d": "2026-11-02T08:19:03Z"
     },
     {
       "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.11363.3422d66-SNAPSHOT",
@@ -10535,12 +10545,6 @@
       "d": "2026-07-16T07:47:40Z"
     },
     {
-      "v": "merge-mps20251.9999.9.10064.87aca8f-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-03-13T01:41:53Z"
-    },
-    {
       "v": "merge-mps20251.9999.9.10007.0a9d07e-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -10859,6 +10863,18 @@
       "d": "2026-02-02T14:00:30Z"
     },
     {
+      "v": "merge-mps20251.2024.1.11457.db398ce-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-02T07:56:40Z"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11453.07e6620-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-02T07:32:04Z"
+    },
+    {
       "v": "merge-mps20251.2024.1.11406.ee845c4-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -11039,30 +11055,6 @@
       "d": "2026-07-14T09:27:25Z"
     },
     {
-      "v": "merge-mps20251.2024.1.10737.7762865-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-07-02T19:16:55Z"
-    },
-    {
-      "v": "merge-mps20251.2024.1.10727.07ab92b-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-07-09T12:54:09Z"
-    },
-    {
-      "v": "merge-mps20251.2024.1.10718.f3f5e6e-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-06-30T20:36:35Z"
-    },
-    {
-      "v": "merge-mps20251.2024.1.10715.28c20d1-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-06-30T20:17:21Z"
-    },
-    {
       "v": "merge-mps20251.2024.1.10705.0c90b6b-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -11169,12 +11161,6 @@
       "pre": true,
       "branch": "merge-mps20241",
       "d": "2026-02-25T14:19:55Z"
-    },
-    {
-      "v": "merge-mps20241.2024.1.9811.8a66fb6-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20241",
-      "d": "2026-02-11T07:51:41Z"
     },
     {
       "v": "merge-mps20223.2023.2.6880.6f81812",
@@ -13895,18 +13881,6 @@
       "d": "2026-07-09T12:53:48Z"
     },
     {
-      "v": "feature-Create-new-IDotTargets-for-enumerations-#1827.2024.1.10712.8bf035e-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-Create-new-IDotTargets-for-enumerations-#1827",
-      "d": "2026-07-09T12:53:47Z"
-    },
-    {
-      "v": "feature-Create-new-IDotTargets-for-enumerations-#1827.2024.1.10711.20671fe-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-Create-new-IDotTargets-for-enumerations-#1827",
-      "d": "2026-07-09T12:53:46Z"
-    },
-    {
       "v": "feature-Create-new-IDotTargets-for-enumerations-#1827.2024.1.10709.51a2ec1-SNAPSHOT",
       "pre": true,
       "branch": "feature-Create-new-IDotTargets-for-enumerations-#1827",
@@ -14876,7 +14850,7 @@
       "v": "bugfix-run-manually-progress.2025.1.11447.7d23f2d-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-run-manually-progress",
-      "d": "2026-10-28T16:04:46Z"
+      "d": "2026-11-02T07:50:13Z"
     },
     {
       "v": "bugfix-run-manually-progress.2025.1.11446.d2aa88f-SNAPSHOT",
