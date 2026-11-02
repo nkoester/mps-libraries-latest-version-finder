@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T16:58:41.444Z",
+  "generatedAt": "2026-11-02T02:02:17.069Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -698,9 +698,9 @@
       "repo": "mbeddr/mps-qa",
       "slug": "org.mpsqa_all-in-one",
       "ok": true,
-      "total": 435,
-      "released": 406,
-      "stable": 406,
+      "total": 436,
+      "released": 407,
+      "stable": 407,
       "preRelease": 0,
       "branchCount": 29,
       "branches": 13,
@@ -716,11 +716,11 @@
         },
         {
           "line": "2026.1",
-          "latest": "2026.1.1488.8a2da34",
-          "latestDate": "2026-10-29T11:27:27Z",
+          "latest": "2026.1.1492.41d17ca",
           "latestIsPreRelease": false,
-          "total": 5,
-          "stable": 5
+          "total": 6,
+          "stable": 6,
+          "latestDate": "2026-11-01T22:46:55Z"
         },
         {
           "line": "2025.1",
