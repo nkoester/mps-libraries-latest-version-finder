@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-02T13:12:38.881Z",
-  "total": 2929,
-  "released": 1737,
-  "stable": 1730,
+  "generatedAt": "2026-11-02T20:36:54.380Z",
+  "total": 2933,
+  "released": 1738,
+  "stable": 1731,
   "preRelease": 7,
-  "branchCount": 1192,
-  "branches": 249,
+  "branchCount": 1195,
+  "branches": 250,
   "lines": [
     {
       "line": "9999.9",
@@ -1815,11 +1815,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11458.db398ce",
+      "latest": "2024.1.11465.60173bc",
       "latestIsPreRelease": false,
-      "total": 272,
-      "stable": 271,
+      "total": 273,
+      "stable": 272,
       "versions": [
+        {
+          "v": "2024.1.11465.60173bc",
+          "pre": false,
+          "d": "2026-11-02T16:27:03Z"
+        },
         {
           "v": "2024.1.11458.db398ce",
           "pre": false,
@@ -3181,7 +3186,7 @@
           "d": "2024-11-19T14:58:20Z"
         }
       ],
-      "latestDate": "2026-11-02T08:12:29Z"
+      "latestDate": "2026-11-02T16:27:03Z"
     },
     {
       "line": "2023.2",
@@ -9165,6 +9170,12 @@
       "d": "2026-04-13T10:49:35Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11462.633c795-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-third-party-minor",
+      "d": "2026-11-02T15:38:12Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11384.ed809c7-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-third-party-minor",
@@ -10863,6 +10874,12 @@
       "d": "2026-02-02T14:00:30Z"
     },
     {
+      "v": "merge-mps20251.2024.1.11464.60173bc-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-02T16:04:11Z"
+    },
+    {
       "v": "merge-mps20251.2024.1.11457.db398ce-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -12013,6 +12030,12 @@
       "pre": true,
       "branch": "features-arimer-enableCIModelchecker",
       "d": "2026-10-01T07:37:25Z"
+    },
+    {
+      "v": "feature-2018-type-to-create-first-dectab-row.2024.1.11463.755d07c-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-2018-type-to-create-first-dectab-row",
+      "d": "2026-11-02T15:51:16Z"
     },
     {
       "v": "feature-732-introduce-extension-point-for-showtrace.2021.3.6389.fe9facd",

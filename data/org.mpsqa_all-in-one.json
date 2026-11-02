@@ -4,21 +4,31 @@
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/org/mpsqa/all-in-one/maven-metadata.xml",
   "repo": "mbeddr/mps-qa",
   "slug": "org.mpsqa_all-in-one",
-  "generatedAt": "2026-11-02T13:12:38.881Z",
-  "total": 437,
-  "released": 408,
-  "stable": 408,
+  "generatedAt": "2026-11-02T20:36:54.380Z",
+  "total": 439,
+  "released": 410,
+  "stable": 410,
   "preRelease": 0,
   "branchCount": 29,
   "branches": 13,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.1484.7a37b52",
+      "latest": "9999.9.1502.30a4283",
       "latestIsPreRelease": false,
-      "total": 25,
-      "stable": 25,
+      "total": 27,
+      "stable": 27,
       "versions": [
+        {
+          "v": "9999.9.1502.30a4283",
+          "pre": false,
+          "d": "2026-11-02T15:11:59Z"
+        },
+        {
+          "v": "9999.9.1500.dd15601",
+          "pre": false,
+          "d": "2026-11-02T14:53:51Z"
+        },
         {
           "v": "9999.9.1484.7a37b52",
           "pre": false,
@@ -145,7 +155,7 @@
           "d": "2025-05-05T11:43:08Z"
         }
       ],
-      "latestDate": "2026-10-14T18:47:21Z"
+      "latestDate": "2026-11-02T15:11:59Z"
     },
     {
       "line": "2026.1",
