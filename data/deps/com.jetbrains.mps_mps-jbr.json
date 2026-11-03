@@ -190,6 +190,12 @@
         "17.0.12-b1000.54"
       ]
     ],
+    "263.6259.164": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b623.69"
+      ]
+    ],
     "263.6259.161": [
       [
         "com.jetbrains.jdk_jbr_jcef",
@@ -491,24 +497,6 @@
       ]
     ],
     "262.10968.531": [
-      [
-        "com.jetbrains.jdk_jbr_jcef",
-        "25.0.4-b508.27"
-      ]
-    ],
-    "262.10968.530": [
-      [
-        "com.jetbrains.jdk_jbr_jcef",
-        "25.0.4-b508.27"
-      ]
-    ],
-    "262.10968.528": [
-      [
-        "com.jetbrains.jdk_jbr_jcef",
-        "25.0.4-b508.27"
-      ]
-    ],
-    "262.10968.526": [
       [
         "com.jetbrains.jdk_jbr_jcef",
         "25.0.4-b508.27"

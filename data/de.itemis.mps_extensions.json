@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-02T20:36:54.380Z",
-  "total": 1235,
-  "released": 848,
-  "stable": 821,
+  "generatedAt": "2026-11-03T03:48:03.486Z",
+  "total": 1241,
+  "released": 850,
+  "stable": 823,
   "preRelease": 27,
-  "branchCount": 387,
+  "branchCount": 391,
   "branches": 83,
   "lines": [
     {
@@ -265,11 +265,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3706.2951857",
+      "latest": "2025.1.3709.9f8bdb3",
       "latestIsPreRelease": false,
-      "total": 120,
-      "stable": 120,
+      "total": 121,
+      "stable": 121,
       "versions": [
+        {
+          "v": "2025.1.3709.9f8bdb3",
+          "pre": false,
+          "d": "2026-11-03T03:15:37Z"
+        },
         {
           "v": "2025.1.3706.2951857",
           "pre": false,
@@ -871,7 +876,7 @@
           "d": "2025-04-29T14:16:32Z"
         }
       ],
-      "latestDate": "2026-10-25T03:13:02Z"
+      "latestDate": "2026-11-03T03:15:37Z"
     },
     {
       "line": "2024.3",
@@ -1055,11 +1060,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.3703.7b6c0fe",
+      "latest": "2024.1.3710.380b7d0",
       "latestIsPreRelease": false,
-      "total": 128,
-      "stable": 128,
+      "total": 129,
+      "stable": 129,
       "versions": [
+        {
+          "v": "2024.1.3710.380b7d0",
+          "pre": false,
+          "d": "2026-11-03T03:15:29Z"
+        },
         {
           "v": "2024.1.3703.7b6c0fe",
           "pre": false,
@@ -1701,7 +1711,7 @@
           "d": "2024-11-09T19:39:20Z"
         }
       ],
-      "latestDate": "2026-10-24T03:12:40Z"
+      "latestDate": "2026-11-03T03:15:29Z"
     },
     {
       "line": "2023.2",
@@ -4512,6 +4522,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2659.c264e0d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-03T02:13:35Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2649.458abb2-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5142,6 +5158,12 @@
       "d": "2026-09-02T03:13:09Z"
     },
     {
+      "v": "renovate-maintenance-mps20251-patch-mps.2025.1.2658.8450655-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mps",
+      "d": "2026-11-02T20:57:53Z"
+    },
+    {
       "v": "renovate-maintenance-mps20251-patch-mps.2025.1.2652.7f2d277-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mps",
@@ -5316,6 +5338,12 @@
       "d": "2026-10-23T02:01:24Z"
     },
     {
+      "v": "merge-mps20261.2026.1.2657.23c55ad-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-02T20:52:45Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.2636.92962e2-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -5476,6 +5504,12 @@
       "pre": true,
       "branch": "merge-mps20261",
       "d": "2026-07-08T03:12:21Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.2656.ae951a4-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-02T20:33:04Z"
     },
     {
       "v": "merge-mps20251.2025.1.2655.57cd1af-SNAPSHOT",

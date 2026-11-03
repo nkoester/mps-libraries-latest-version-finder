@@ -1709,6 +1709,16 @@
         "2026.1.3628.51e7c81"
       ]
     ],
+    "2025.1.26671.c5d588e": [
+      [
+        "de.itemis.mps_extensions",
+        "2025.1.3696.3b88dd4"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2025.1.4"
+      ]
+    ],
     "2025.1.26667.c5d588e": [
       [
         "de.itemis.mps_extensions",
@@ -4115,6 +4125,16 @@
       [
         "com.jetbrains_mps",
         "2024.3-EAP1"
+      ]
+    ],
+    "2024.1.26672.52a92d2": [
+      [
+        "de.itemis.mps_extensions",
+        "2024.1.3695.bac07ab"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2024.1.6"
       ]
     ],
     "2024.1.26664.52a92d2": [
