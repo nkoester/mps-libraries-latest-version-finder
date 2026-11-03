@@ -5,7 +5,7 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-03T03:48:03.486Z",
+  "generatedAt": "2026-11-03T12:39:37.118Z",
   "total": 2624,
   "released": 1881,
   "stable": 1881,
@@ -10158,7 +10158,7 @@
       "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25331.2fd3737-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mps261",
-      "d": "2026-11-01T13:56:56Z"
+      "d": "2026-11-03T03:48:09Z"
     },
     {
       "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25263.2a46776-SNAPSHOT",

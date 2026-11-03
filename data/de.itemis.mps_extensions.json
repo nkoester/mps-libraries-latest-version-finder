@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-03T03:48:03.486Z",
-  "total": 1241,
+  "generatedAt": "2026-11-03T12:39:37.118Z",
+  "total": 1243,
   "released": 850,
   "stable": 823,
   "preRelease": 27,
-  "branchCount": 391,
+  "branchCount": 393,
   "branches": 83,
   "lines": [
     {
@@ -4522,6 +4522,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2660.8a03b83-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-03T10:16:26Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2659.c264e0d-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5137,7 +5143,7 @@
       "v": "renovate-maintenance-mps20261-patch-mps.2026.1.2653.e5414ed-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mps",
-      "d": "2026-11-01T13:43:55Z"
+      "d": "2026-11-02T20:28:11Z"
     },
     {
       "v": "renovate-maintenance-mps20261-patch-mps.2026.1.2370.8fd4d9e-SNAPSHOT",
@@ -5167,7 +5173,7 @@
       "v": "renovate-maintenance-mps20251-patch-mps.2025.1.2652.7f2d277-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mps",
-      "d": "2026-11-01T13:43:47Z"
+      "d": "2026-11-02T20:28:10Z"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mps.2025.1.2369.0769041-SNAPSHOT",
@@ -5180,6 +5186,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-major-github-actions",
       "d": "2026-09-02T03:13:08Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-github-actions.2025.1.2661.4ad2fa8-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-github-actions",
+      "d": "2026-11-03T11:07:40Z"
     },
     {
       "v": "renovate-maintenance-mps20251-github-actions.2025.1.2350.5061e6c-SNAPSHOT",
