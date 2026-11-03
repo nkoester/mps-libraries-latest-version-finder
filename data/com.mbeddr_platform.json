@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-03T13:45:01.648Z",
-  "total": 3116,
-  "released": 2064,
-  "stable": 2064,
+  "generatedAt": "2026-11-03T18:12:00.821Z",
+  "total": 3122,
+  "released": 2065,
+  "stable": 2065,
   "preRelease": 0,
-  "branchCount": 1052,
+  "branchCount": 1057,
   "branches": 243,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26670.32c3bec",
+      "latest": "9999.9.26674.91d30b4",
       "latestIsPreRelease": false,
-      "total": 420,
-      "stable": 420,
+      "total": 421,
+      "stable": 421,
       "versions": [
+        {
+          "v": "9999.9.26674.91d30b4",
+          "pre": false,
+          "d": "2026-11-03T14:26:12Z"
+        },
         {
           "v": "9999.9.26670.32c3bec",
           "pre": false,
@@ -2121,7 +2126,7 @@
           "d": "2025-11-04T16:14:17Z"
         }
       ],
-      "latestDate": "2026-10-27T03:26:51Z"
+      "latestDate": "2026-11-03T14:26:12Z"
     },
     {
       "line": "2026.1",
@@ -10676,6 +10681,12 @@
       "d": "2025-11-26T06:42:47Z"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25385.ffb452f-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster",
+      "d": "2026-11-03T14:13:59Z"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25382.dec8d90-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
@@ -11678,6 +11689,12 @@
       "d": "2026-07-29T11:19:19Z"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25333.0e89eef-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mps261",
+      "d": "2026-11-03T13:25:23Z"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25331.2fd3737-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mps261",
@@ -11796,6 +11813,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensionsversion",
       "d": "2025-10-16T09:40:11Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24937.7015398-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mpsextensions251",
+      "d": "2026-11-03T13:25:43Z"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mpsextensions251.2025.1.24937.ad3080d-SNAPSHOT",
@@ -12174,6 +12197,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-mpsextensions241",
       "d": "2026-10-24T05:05:16Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24233.2cfae01-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-mpsextensions241",
+      "d": "2026-11-03T13:25:39Z"
     },
     {
       "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24231.d26aa7d-SNAPSHOT",
@@ -14376,6 +14405,12 @@
       "pre": false,
       "branch": "merge-mps20213-secure",
       "d": "2023-11-29T17:09:33Z"
+    },
+    {
+      "v": "merge-master.9999.9.25386.a3348d3-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-03T13:19:53Z"
     },
     {
       "v": "merge-master.9999.9.25381.604f11c-SNAPSHOT",

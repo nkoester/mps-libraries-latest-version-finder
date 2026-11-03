@@ -5,9 +5,9 @@
         "com.jetbrains_mps": "2026.1.2",
         "de.itemis.mps_extensions": "2026.1.3707.00017d1",
         "com.mbeddr_platform": "2026.1.26673.a537868",
-        "com.mbeddr_mbeddr": "2026.1.26668.d156123",
-        "org.iets3_opensource": "2026.1.11424.a53a9bd",
-        "org.mpsqa_all-in-one": "2026.1.1496.589571e"
+        "com.mbeddr_mbeddr": "2026.1.26673.a537868",
+        "org.iets3_opensource": "2026.1.11486.56dc227",
+        "org.mpsqa_all-in-one": "2026.1.1504.a5f09a5"
       },
       "edges": [
         [
@@ -23,7 +23,7 @@
         [
           "com.mbeddr_mbeddr",
           "com.mbeddr_platform",
-          "2026.1.26668.d156123"
+          "2026.1.26673.a537868"
         ],
         [
           "org.iets3_opensource",
@@ -33,7 +33,7 @@
         [
           "org.iets3_opensource",
           "com.mbeddr_platform",
-          "2026.1.26592.4611389"
+          "2026.1.26673.a537868"
         ],
         [
           "org.mpsqa_all-in-one",
@@ -133,7 +133,7 @@
         "de.itemis.mps_extensions": "2024.1.3710.380b7d0",
         "com.mbeddr_platform": "2024.1.26672.52a92d2",
         "com.mbeddr_mbeddr": "2024.1.26672.52a92d2",
-        "org.iets3_opensource": "2024.1.11468.6c26f5f",
+        "org.iets3_opensource": "2024.1.11483.a15724f",
         "org.mpsqa_all-in-one": "2024.1.1436.3cd3456"
       },
       "edges": [
@@ -556,10 +556,10 @@
     "9999.9": {
       "latest": {
         "de.itemis.mps_extensions": "9999.9.3708.40397f1-SNAPSHOT",
-        "com.mbeddr_platform": "9999.9.26670.32c3bec",
-        "com.mbeddr_mbeddr": "9999.9.26670.32c3bec",
+        "com.mbeddr_platform": "9999.9.26674.91d30b4",
+        "com.mbeddr_mbeddr": "9999.9.26674.91d30b4",
         "org.iets3_opensource": "9999.9.10936.1f10368",
-        "org.mpsqa_all-in-one": "9999.9.1502.30a4283"
+        "org.mpsqa_all-in-one": "9999.9.1506.ed63b25"
       },
       "edges": [
         [
@@ -570,7 +570,7 @@
         [
           "com.mbeddr_mbeddr",
           "com.mbeddr_platform",
-          "9999.9.26670.32c3bec"
+          "9999.9.26674.91d30b4"
         ],
         [
           "org.iets3_opensource",

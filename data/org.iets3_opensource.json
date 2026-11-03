@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-03T13:45:01.648Z",
-  "total": 2943,
-  "released": 1741,
-  "stable": 1734,
+  "generatedAt": "2026-11-03T18:12:00.821Z",
+  "total": 2949,
+  "released": 1743,
+  "stable": 1736,
   "preRelease": 7,
-  "branchCount": 1202,
+  "branchCount": 1206,
   "branches": 250,
   "lines": [
     {
@@ -975,11 +975,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11424.a53a9bd",
+      "latest": "2026.1.11486.56dc227",
       "latestIsPreRelease": false,
-      "total": 25,
-      "stable": 25,
+      "total": 26,
+      "stable": 26,
       "versions": [
+        {
+          "v": "2026.1.11486.56dc227",
+          "pre": false,
+          "d": "2026-11-03T15:24:26Z"
+        },
         {
           "v": "2026.1.11424.a53a9bd",
           "pre": false,
@@ -1106,7 +1111,7 @@
           "d": "2026-07-15T12:14:32Z"
         }
       ],
-      "latestDate": "2026-10-21T20:58:22Z"
+      "latestDate": "2026-11-03T15:24:26Z"
     },
     {
       "line": "2025.1",
@@ -1825,11 +1830,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11468.6c26f5f",
+      "latest": "2024.1.11483.a15724f",
       "latestIsPreRelease": false,
-      "total": 274,
-      "stable": 273,
+      "total": 275,
+      "stable": 274,
       "versions": [
+        {
+          "v": "2024.1.11483.a15724f",
+          "pre": false,
+          "d": "2026-11-03T14:35:51Z"
+        },
         {
           "v": "2024.1.11468.6c26f5f",
           "pre": false,
@@ -3201,7 +3211,7 @@
           "d": "2024-11-19T14:58:20Z"
         }
       ],
-      "latestDate": "2026-11-03T08:26:25Z"
+      "latestDate": "2026-11-03T14:35:51Z"
     },
     {
       "line": "2023.2",
@@ -10217,6 +10227,18 @@
       "d": "2024-02-12T12:33:47Z"
     },
     {
+      "v": "merge-mps20261.2026.1.11485.f4c87c3-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-03T14:36:39Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11480.2293aa9-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-03T13:39:13Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.11423.048ee82-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -10905,6 +10927,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-02-02T14:00:30Z"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11484.a15724f-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-03T14:14:47Z"
     },
     {
       "v": "merge-mps20251.2024.1.11464.60173bc-SNAPSHOT",
@@ -12063,6 +12091,12 @@
       "pre": true,
       "branch": "features-arimer-enableCIModelchecker",
       "d": "2026-10-01T07:37:25Z"
+    },
+    {
+      "v": "feature-2018-type-to-create-first-dectab-row.2024.1.11481.8ef3b9d-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-2018-type-to-create-first-dectab-row",
+      "d": "2026-11-03T13:43:45Z"
     },
     {
       "v": "feature-2018-type-to-create-first-dectab-row.2024.1.11472.7f89778-SNAPSHOT",
