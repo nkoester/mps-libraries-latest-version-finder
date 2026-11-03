@@ -5,10 +5,10 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-03T12:39:37.118Z",
-  "total": 3115,
-  "released": 2063,
-  "stable": 2063,
+  "generatedAt": "2026-11-03T13:45:01.648Z",
+  "total": 3116,
+  "released": 2064,
+  "stable": 2064,
   "preRelease": 0,
   "branchCount": 1052,
   "branches": 243,
@@ -2125,11 +2125,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.26668.d156123",
+      "latest": "2026.1.26673.a537868",
       "latestIsPreRelease": false,
-      "total": 35,
-      "stable": 35,
+      "total": 36,
+      "stable": 36,
       "versions": [
+        {
+          "v": "2026.1.26673.a537868",
+          "pre": false,
+          "d": "2026-11-03T13:29:49Z"
+        },
         {
           "v": "2026.1.26668.d156123",
           "pre": false,
@@ -2306,7 +2311,7 @@
           "d": "2026-06-29T14:48:04Z"
         }
       ],
-      "latestDate": "2026-10-25T03:22:39Z"
+      "latestDate": "2026-11-03T13:29:49Z"
     },
     {
       "line": "2025.1",

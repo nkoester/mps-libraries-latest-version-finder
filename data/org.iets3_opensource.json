@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-03T12:39:37.118Z",
-  "total": 2941,
-  "released": 1740,
-  "stable": 1733,
+  "generatedAt": "2026-11-03T13:45:01.648Z",
+  "total": 2943,
+  "released": 1741,
+  "stable": 1734,
   "preRelease": 7,
-  "branchCount": 1201,
+  "branchCount": 1202,
   "branches": 250,
   "lines": [
     {
@@ -1110,11 +1110,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11471.6c35349",
+      "latest": "2025.1.11478.4209985",
       "latestIsPreRelease": false,
-      "total": 140,
-      "stable": 134,
+      "total": 141,
+      "stable": 135,
       "versions": [
+        {
+          "v": "2025.1.11478.4209985",
+          "pre": false,
+          "d": "2026-11-03T13:21:22Z"
+        },
         {
           "v": "2025.1.11471.6c35349",
           "pre": false,
@@ -1816,7 +1821,7 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-11-03T08:55:37Z"
+      "latestDate": "2026-11-03T13:21:22Z"
     },
     {
       "line": "2024.1",
@@ -13174,6 +13179,12 @@
       "pre": false,
       "branch": "feature-getter_for_NixValueList",
       "d": "2023-02-07T15:50:18Z"
+    },
+    {
+      "v": "feature-generated-test-node-urls.2025.1.11477.01714b9-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-generated-test-node-urls",
+      "d": "2026-11-03T12:25:18Z"
     },
     {
       "v": "feature-generated-test-node-urls.2025.1.11474.8a6edc7-SNAPSHOT",

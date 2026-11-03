@@ -4,7 +4,7 @@
       "latest": {
         "com.jetbrains_mps": "2026.1.2",
         "de.itemis.mps_extensions": "2026.1.3707.00017d1",
-        "com.mbeddr_platform": "2026.1.26668.d156123",
+        "com.mbeddr_platform": "2026.1.26673.a537868",
         "com.mbeddr_mbeddr": "2026.1.26668.d156123",
         "org.iets3_opensource": "2026.1.11424.a53a9bd",
         "org.mpsqa_all-in-one": "2026.1.1496.589571e"
@@ -13,7 +13,7 @@
         [
           "com.mbeddr_platform",
           "de.itemis.mps_extensions",
-          "2026.1.3688.0c1ad7a"
+          "2026.1.3707.00017d1"
         ],
         [
           "com.mbeddr_platform",
@@ -60,7 +60,7 @@
         "de.itemis.mps_extensions": "2025.1.3709.9f8bdb3",
         "com.mbeddr_platform": "2025.1.26671.c5d588e",
         "com.mbeddr_mbeddr": "2025.1.26671.c5d588e",
-        "org.iets3_opensource": "2025.1.11471.6c35349",
+        "org.iets3_opensource": "2025.1.11478.4209985",
         "org.mpsqa_all-in-one": "2025.1.1486.22468db"
       },
       "edges": [

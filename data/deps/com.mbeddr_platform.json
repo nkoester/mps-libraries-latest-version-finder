@@ -1459,6 +1459,16 @@
         "9999.9.3492.79ad834-SNAPSHOT"
       ]
     ],
+    "2026.1.26673.a537868": [
+      [
+        "de.itemis.mps_extensions",
+        "2026.1.3707.00017d1"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2026.1.1"
+      ]
+    ],
     "2026.1.26668.d156123": [
       [
         "de.itemis.mps_extensions",
