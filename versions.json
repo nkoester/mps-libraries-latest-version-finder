@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T12:48:43.807Z",
+  "generatedAt": "2026-11-04T18:22:57.102Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -171,11 +171,11 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1248,
+      "total": 1250,
       "released": 852,
       "stable": 825,
       "preRelease": 27,
-      "branchCount": 396,
+      "branchCount": 398,
       "branches": 83,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
@@ -190,18 +190,18 @@
         {
           "line": "2026.1",
           "latest": "2026.1.3712.45fabf4",
+          "latestDate": "2026-11-04T03:14:32Z",
           "latestIsPreRelease": false,
           "total": 20,
-          "stable": 20,
-          "latestDate": "2026-11-04T03:14:32Z"
+          "stable": 20
         },
         {
           "line": "2025.1",
           "latest": "2025.1.3711.dbe9669",
+          "latestDate": "2026-11-04T03:13:41Z",
           "latestIsPreRelease": false,
           "total": 122,
-          "stable": 122,
-          "latestDate": "2026-11-04T03:13:41Z"
+          "stable": 122
         },
         {
           "line": "2024.3",
@@ -312,18 +312,18 @@
         {
           "line": "2026.1",
           "latest": "2026.1.26676.a537868",
+          "latestDate": "2026-11-04T03:26:50Z",
           "latestIsPreRelease": false,
           "total": 37,
-          "stable": 37,
-          "latestDate": "2026-11-04T03:26:50Z"
+          "stable": 37
         },
         {
           "line": "2025.1",
           "latest": "2025.1.26675.c5d588e",
+          "latestDate": "2026-11-04T03:26:14Z",
           "latestIsPreRelease": false,
           "total": 266,
-          "stable": 266,
-          "latestDate": "2026-11-04T03:26:14Z"
+          "stable": 266
         },
         {
           "line": "2024.3",
@@ -458,18 +458,18 @@
         {
           "line": "2026.1",
           "latest": "2026.1.26676.a537868",
+          "latestDate": "2026-11-04T03:44:49Z",
           "latestIsPreRelease": false,
           "total": 37,
-          "stable": 37,
-          "latestDate": "2026-11-04T03:44:49Z"
+          "stable": 37
         },
         {
           "line": "2025.1",
           "latest": "2025.1.26675.c5d588e",
+          "latestDate": "2026-11-04T03:43:49Z",
           "latestIsPreRelease": false,
           "total": 264,
-          "stable": 264,
-          "latestDate": "2026-11-04T03:43:49Z"
+          "stable": 264
         },
         {
           "line": "2024.3",
@@ -569,9 +569,9 @@
       "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 2952,
-      "released": 1743,
-      "stable": 1736,
+      "total": 2953,
+      "released": 1744,
+      "stable": 1737,
       "preRelease": 7,
       "branchCount": 1209,
       "branches": 250,
@@ -587,11 +587,11 @@
         },
         {
           "line": "2026.1",
-          "latest": "2026.1.11486.56dc227",
-          "latestDate": "2026-11-03T15:24:26Z",
+          "latest": "2026.1.11498.3357537",
           "latestIsPreRelease": false,
-          "total": 26,
-          "stable": 26
+          "total": 27,
+          "stable": 27,
+          "latestDate": "2026-11-04T13:50:28Z"
         },
         {
           "line": "2025.1",
@@ -1383,9 +1383,9 @@
       "kind": "marker",
       "slug": "com.jetbrains.mps_mps-jbr",
       "ok": true,
-      "total": 87,
-      "released": 87,
-      "stable": 80,
+      "total": 89,
+      "released": 89,
+      "stable": 82,
       "preRelease": 7,
       "branchCount": 0,
       "branches": 0,
@@ -1449,10 +1449,10 @@
         },
         {
           "line": "263.7307",
-          "latest": "263.7307.190",
+          "latest": "263.7307.197",
           "latestIsPreRelease": false,
-          "total": 3,
-          "stable": 3
+          "total": 5,
+          "stable": 5
         },
         {
           "line": "263.6259",
