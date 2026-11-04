@@ -5,10 +5,10 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-04T02:51:43.061Z",
-  "total": 1246,
-  "released": 850,
-  "stable": 823,
+  "generatedAt": "2026-11-04T12:48:43.807Z",
+  "total": 1248,
+  "released": 852,
+  "stable": 825,
   "preRelease": 27,
   "branchCount": 396,
   "branches": 83,
@@ -160,11 +160,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.3707.00017d1",
+      "latest": "2026.1.3712.45fabf4",
       "latestIsPreRelease": false,
-      "total": 19,
-      "stable": 19,
+      "total": 20,
+      "stable": 20,
       "versions": [
+        {
+          "v": "2026.1.3712.45fabf4",
+          "pre": false,
+          "d": "2026-11-04T03:14:32Z"
+        },
         {
           "v": "2026.1.3707.00017d1",
           "pre": false,
@@ -261,15 +266,20 @@
           "d": "2026-06-23T13:28:12Z"
         }
       ],
-      "latestDate": "2026-10-25T03:13:11Z"
+      "latestDate": "2026-11-04T03:14:32Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3709.9f8bdb3",
+      "latest": "2025.1.3711.dbe9669",
       "latestIsPreRelease": false,
-      "total": 121,
-      "stable": 121,
+      "total": 122,
+      "stable": 122,
       "versions": [
+        {
+          "v": "2025.1.3711.dbe9669",
+          "pre": false,
+          "d": "2026-11-04T03:13:41Z"
+        },
         {
           "v": "2025.1.3709.9f8bdb3",
           "pre": false,
@@ -876,7 +886,7 @@
           "d": "2025-04-29T14:16:32Z"
         }
       ],
-      "latestDate": "2026-11-03T03:15:37Z"
+      "latestDate": "2026-11-04T03:13:41Z"
     },
     {
       "line": "2024.3",

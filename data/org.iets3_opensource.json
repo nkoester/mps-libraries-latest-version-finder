@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-04T02:51:43.061Z",
-  "total": 2949,
+  "generatedAt": "2026-11-04T12:48:43.807Z",
+  "total": 2952,
   "released": 1743,
   "stable": 1736,
   "preRelease": 7,
-  "branchCount": 1206,
+  "branchCount": 1209,
   "branches": 250,
   "lines": [
     {
@@ -9402,7 +9402,7 @@
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11456.70149bb-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
-      "d": "2026-11-02T07:32:10Z"
+      "d": "2026-11-04T08:19:53Z"
     },
     {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11439.aeea5b9-SNAPSHOT",
@@ -10131,12 +10131,6 @@
       "d": "2026-07-22T07:08:57Z"
     },
     {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.10741.7330afa-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
-      "d": "2026-07-06T06:24:35Z"
-    },
-    {
       "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.10725.03f8b9c-SNAPSHOT",
       "pre": true,
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
@@ -10227,10 +10221,16 @@
       "d": "2024-02-12T12:33:47Z"
     },
     {
+      "v": "merge-mps20261.2026.1.11496.e937db3-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-04T10:31:07Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.11485.f4c87c3-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
-      "d": "2026-11-03T14:36:39Z"
+      "d": "2026-11-04T08:19:46Z"
     },
     {
       "v": "merge-mps20261.2026.1.11480.2293aa9-SNAPSHOT",
@@ -10431,6 +10431,12 @@
       "d": "2026-07-16T07:49:03Z"
     },
     {
+      "v": "merge-mps20261.2025.1.11494.fdcdb4e-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-04T10:18:06Z"
+    },
+    {
       "v": "merge-mps20261.2025.1.11470.6c35349-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -10615,6 +10621,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-01-16T02:44:52Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.11493.5ef65a1-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-04T09:34:36Z"
     },
     {
       "v": "merge-mps20251.2025.1.11469.23a020c-SNAPSHOT",
@@ -10815,12 +10827,6 @@
       "d": "2026-07-14T09:32:48Z"
     },
     {
-      "v": "merge-mps20251.2025.1.10745.a167c50-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-07-06T11:35:37Z"
-    },
-    {
       "v": "merge-mps20251.2025.1.10744.555e07a-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -10831,12 +10837,6 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-07-06T09:01:07Z"
-    },
-    {
-      "v": "merge-mps20251.2025.1.10742.555e07a-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-07-09T12:54:15Z"
     },
     {
       "v": "merge-mps20251.2025.1.10577.c0330bc-SNAPSHOT",
@@ -10932,7 +10932,7 @@
       "v": "merge-mps20251.2024.1.11484.a15724f-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
-      "d": "2026-11-03T14:14:47Z"
+      "d": "2026-11-04T08:19:40Z"
     },
     {
       "v": "merge-mps20251.2024.1.11464.60173bc-SNAPSHOT",
@@ -12108,7 +12108,7 @@
       "v": "feature-2018-type-to-create-first-dectab-row.2024.1.11463.755d07c-SNAPSHOT",
       "pre": true,
       "branch": "feature-2018-type-to-create-first-dectab-row",
-      "d": "2026-11-02T15:51:16Z"
+      "d": "2026-11-04T08:19:24Z"
     },
     {
       "v": "feature-732-introduce-extension-point-for-showtrace.2021.3.6389.fe9facd",
@@ -13218,13 +13218,13 @@
       "v": "feature-generated-test-node-urls.2025.1.11477.01714b9-SNAPSHOT",
       "pre": true,
       "branch": "feature-generated-test-node-urls",
-      "d": "2026-11-03T12:25:18Z"
+      "d": "2026-11-04T08:19:30Z"
     },
     {
       "v": "feature-generated-test-node-urls.2025.1.11474.8a6edc7-SNAPSHOT",
       "pre": true,
       "branch": "feature-generated-test-node-urls",
-      "d": "2026-11-03T10:44:45Z"
+      "d": "2026-11-04T08:19:29Z"
     },
     {
       "v": "feature-generated-test-node-urls.2025.1.11473.486f7fc-SNAPSHOT",
@@ -14953,6 +14953,24 @@
       "pre": false,
       "branch": "bugfix-section_marker_nullpointer",
       "d": "2024-02-29T22:32:29Z"
+    },
+    {
+      "v": "bugfix-run-manually-progress.2025.1.11497.c8d3628-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-run-manually-progress",
+      "d": "2026-11-04T11:04:22Z"
+    },
+    {
+      "v": "bugfix-run-manually-progress.2025.1.11492.63f5822-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-run-manually-progress",
+      "d": "2026-11-04T08:27:57Z"
+    },
+    {
+      "v": "bugfix-run-manually-progress.2025.1.11491.8bced8d-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-run-manually-progress",
+      "d": "2026-11-04T08:03:14Z"
     },
     {
       "v": "bugfix-run-manually-progress.2025.1.11448.7928fbd-SNAPSHOT",
