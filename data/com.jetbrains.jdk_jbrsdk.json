@@ -6,21 +6,26 @@
   "changelog": "https://github.com/JetBrains/JetBrainsRuntime/releases",
   "kind": "runtime",
   "slug": "com.jetbrains.jdk_jbrsdk",
-  "generatedAt": "2026-11-03T18:12:00.821Z",
-  "total": 34,
-  "released": 34,
-  "stable": 34,
+  "generatedAt": "2026-11-04T02:51:43.061Z",
+  "total": 35,
+  "released": 35,
+  "stable": 35,
   "preRelease": 0,
   "branchCount": 0,
   "branches": 0,
   "lines": [
     {
       "line": "25",
-      "latest": "25.0.4.1-b623.69",
+      "latest": "25.0.4.1-b635.79",
       "latestIsPreRelease": false,
-      "total": 6,
-      "stable": 6,
+      "total": 7,
+      "stable": 7,
       "versions": [
+        {
+          "v": "25.0.4.1-b635.79",
+          "pre": false,
+          "d": "2026-11-03T19:57:50Z"
+        },
         {
           "v": "25.0.4.1-b623.69",
           "pre": false,
@@ -52,7 +57,7 @@
           "d": "2026-04-30T18:32:35Z"
         }
       ],
-      "latestDate": "2026-10-14T08:00:39Z"
+      "latestDate": "2026-11-03T19:57:50Z"
     },
     {
       "line": "21",
