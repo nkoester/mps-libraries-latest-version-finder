@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-05T03:01:47.230Z",
-  "total": 2953,
+  "generatedAt": "2026-11-05T12:57:44.573Z",
+  "total": 2952,
   "released": 1744,
   "stable": 1737,
   "preRelease": 7,
-  "branchCount": 1209,
-  "branches": 250,
+  "branchCount": 1208,
+  "branches": 251,
   "lines": [
     {
       "line": "9999.9",
@@ -9032,12 +9032,6 @@
       "d": "2026-07-08T07:00:12Z"
     },
     {
-      "v": "renovate-master-mpsversion.9999.9.10749.8040e5b-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsversion",
-      "d": "2026-07-07T18:46:29Z"
-    },
-    {
       "v": "renovate-master-mpsversion.9999.9.10634.e68d226-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsversion",
@@ -9866,12 +9860,6 @@
       "d": "2026-07-14T09:31:27Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-github-actions.2024.1.10750.a6ed357-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-github-actions",
-      "d": "2026-07-07T22:58:11Z"
-    },
-    {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.10621.c7aa727-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions",
@@ -10631,7 +10619,7 @@
       "v": "merge-mps20251.2025.1.11493.5ef65a1-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
-      "d": "2026-11-04T09:34:36Z"
+      "d": "2026-11-05T10:36:05Z"
     },
     {
       "v": "merge-mps20251.2025.1.11469.23a020c-SNAPSHOT",
@@ -14963,7 +14951,7 @@
       "v": "bugfix-run-manually-progress.2025.1.11497.c8d3628-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-run-manually-progress",
-      "d": "2026-11-04T11:04:22Z"
+      "d": "2026-11-05T10:35:50Z"
     },
     {
       "v": "bugfix-run-manually-progress.2025.1.11492.63f5822-SNAPSHOT",
@@ -15606,6 +15594,12 @@
       "pre": true,
       "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713",
       "d": "2026-04-13T07:51:32Z"
+    },
+    {
+      "v": "bugfix-attribute_assignment_with_extends_2023.2025.1.11504.33b99bb-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-attribute_assignment_with_extends_2023",
+      "d": "2026-11-05T10:13:46Z"
     },
     {
       "v": "bugfix-assert_missing_spaces.2021.3.6831.151b8f6",

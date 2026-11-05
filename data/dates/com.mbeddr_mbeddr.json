@@ -3,6 +3,7 @@
   "artifactId": "mbeddr",
   "slug": "com.mbeddr_mbeddr",
   "versions": {
+    "9999.9.26677.91d30b4": "2026-11-05T03:48:54Z",
     "9999.9.26674.91d30b4": "2026-11-03T14:50:46Z",
     "9999.9.26670.32c3bec": "2026-10-27T03:50:40Z",
     "9999.9.26669.32c3bec": "2026-10-25T03:50:19Z",
@@ -2476,6 +2477,8 @@
     "feature-AssertNodeEqualsWithDiffs.2021.1.23885.6bb0063": "2023-07-04T09:54:51Z",
     "feature-AssertNodeEqualsWithDiffs.2021.1.23884.6e1abbd": "2023-07-03T19:57:29Z",
     "feature-AssertNodeEqualsWithDiffs.2021.1.23881.d97bc57": "2023-07-03T13:18:45Z",
+    "feature-Add-tests-for-the-review-intention-#3584.2024.1.24236.7329288-SNAPSHOT": "2026-11-05T11:32:05Z",
+    "feature-Add-tests-for-the-review-intention-#3584.2024.1.24235.4c45127-SNAPSHOT": "2026-11-05T09:57:58Z",
     "cleanup.2022.3.24775.b780aec": "2024-07-27T17:31:05Z",
     "build-versioning-convention.2024.1.24212.70b7d82-SNAPSHOT": "2026-09-30T03:49:04Z",
     "build-unified-version.2024.1.24213.068806b-SNAPSHOT": "2026-09-28T07:02:38Z",

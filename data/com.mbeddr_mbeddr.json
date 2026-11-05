@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-05T03:01:47.230Z",
-  "total": 2632,
-  "released": 1885,
-  "stable": 1885,
+  "generatedAt": "2026-11-05T12:57:44.573Z",
+  "total": 2635,
+  "released": 1886,
+  "stable": 1886,
   "preRelease": 0,
-  "branchCount": 747,
-  "branches": 178,
+  "branchCount": 749,
+  "branches": 179,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26674.91d30b4",
+      "latest": "9999.9.26677.91d30b4",
       "latestIsPreRelease": false,
-      "total": 405,
-      "stable": 405,
+      "total": 406,
+      "stable": 406,
       "versions": [
+        {
+          "v": "9999.9.26677.91d30b4",
+          "pre": false,
+          "d": "2026-11-05T03:48:54Z"
+        },
         {
           "v": "9999.9.26674.91d30b4",
           "pre": false,
@@ -2046,7 +2051,7 @@
           "d": "2025-11-04T16:13:32Z"
         }
       ],
-      "latestDate": "2026-11-03T14:50:46Z"
+      "latestDate": "2026-11-05T03:48:54Z"
     },
     {
       "line": "2026.1",
@@ -13107,6 +13112,18 @@
       "pre": false,
       "branch": "feature-AssertNodeEqualsWithDiffs",
       "d": "2023-07-03T13:18:45Z"
+    },
+    {
+      "v": "feature-Add-tests-for-the-review-intention-#3584.2024.1.24236.7329288-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Add-tests-for-the-review-intention-#3584",
+      "d": "2026-11-05T11:32:05Z"
+    },
+    {
+      "v": "feature-Add-tests-for-the-review-intention-#3584.2024.1.24235.4c45127-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Add-tests-for-the-review-intention-#3584",
+      "d": "2026-11-05T09:57:58Z"
     },
     {
       "v": "cleanup.2022.3.24775.b780aec",
