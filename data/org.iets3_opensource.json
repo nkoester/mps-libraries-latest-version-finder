@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-05T12:57:44.573Z",
-  "total": 2952,
+  "generatedAt": "2026-11-05T18:27:49.161Z",
+  "total": 2955,
   "released": 1744,
   "stable": 1737,
   "preRelease": 7,
-  "branchCount": 1208,
-  "branches": 251,
+  "branchCount": 1211,
+  "branches": 252,
   "lines": [
     {
       "line": "9999.9",
@@ -13088,6 +13088,12 @@
       "d": "2023-11-16T14:10:11Z"
     },
     {
+      "v": "feature-list-improvements.2025.1.11507.98d35cb-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-list-improvements",
+      "d": "2026-11-05T13:27:34Z"
+    },
+    {
       "v": "feature-know_how_skills_update_round2.2024.1.10850.f26a22e-SNAPSHOT",
       "pre": true,
       "branch": "feature-know_how_skills_update_round2",
@@ -15594,6 +15600,18 @@
       "pre": true,
       "branch": "bugfix-avoid_error_for_name_of_new_featuremodel_1713",
       "d": "2026-04-13T07:51:32Z"
+    },
+    {
+      "v": "bugfix-attribute_assignment_with_extends_2023.2025.1.11509.02dd2d8-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-attribute_assignment_with_extends_2023",
+      "d": "2026-11-05T15:29:57Z"
+    },
+    {
+      "v": "bugfix-attribute_assignment_with_extends_2023.2025.1.11506.c06c310-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-attribute_assignment_with_extends_2023",
+      "d": "2026-11-05T12:54:34Z"
     },
     {
       "v": "bugfix-attribute_assignment_with_extends_2023.2025.1.11504.33b99bb-SNAPSHOT",
