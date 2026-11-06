@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-06T12:45:57.940Z",
-  "total": 3129,
+  "generatedAt": "2026-11-06T17:47:45.612Z",
+  "total": 3131,
   "released": 2068,
   "stable": 2068,
   "preRelease": 0,
-  "branchCount": 1061,
+  "branchCount": 1063,
   "branches": 244,
   "lines": [
     {
@@ -15818,6 +15818,18 @@
       "pre": false,
       "branch": "feature-AssertNodeEqualsWithDiffs",
       "d": "2023-07-03T12:54:29Z"
+    },
+    {
+      "v": "feature-Add-tests-for-the-review-intention-#3584.2024.1.24243.0ae8d5f-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Add-tests-for-the-review-intention-#3584",
+      "d": "2026-11-06T15:23:22Z"
+    },
+    {
+      "v": "feature-Add-tests-for-the-review-intention-#3584.2024.1.24242.3cc8e07-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Add-tests-for-the-review-intention-#3584",
+      "d": "2026-11-06T12:51:56Z"
     },
     {
       "v": "feature-Add-tests-for-the-review-intention-#3584.2024.1.24241.0493520-SNAPSHOT",

@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-06T12:45:57.940Z",
-  "total": 2956,
-  "released": 1745,
-  "stable": 1738,
+  "generatedAt": "2026-11-06T17:47:45.612Z",
+  "total": 2958,
+  "released": 1746,
+  "stable": 1739,
   "preRelease": 7,
-  "branchCount": 1211,
+  "branchCount": 1212,
   "branches": 252,
   "lines": [
     {
@@ -975,11 +975,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11498.3357537",
+      "latest": "2026.1.11517.6a6a935",
       "latestIsPreRelease": false,
-      "total": 27,
-      "stable": 27,
+      "total": 28,
+      "stable": 28,
       "versions": [
+        {
+          "v": "2026.1.11517.6a6a935",
+          "pre": false,
+          "d": "2026-11-06T13:35:25Z"
+        },
         {
           "v": "2026.1.11498.3357537",
           "pre": false,
@@ -1116,7 +1121,7 @@
           "d": "2026-07-15T12:14:32Z"
         }
       ],
-      "latestDate": "2026-11-04T13:50:28Z"
+      "latestDate": "2026-11-06T13:35:25Z"
     },
     {
       "line": "2025.1",
@@ -10205,6 +10210,12 @@
       "pre": false,
       "branch": "merge-20213",
       "d": "2024-02-12T12:33:47Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11516.7ca8198-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-06T12:53:54Z"
     },
     {
       "v": "merge-mps20261.2026.1.11514.1acb9f9-SNAPSHOT",
