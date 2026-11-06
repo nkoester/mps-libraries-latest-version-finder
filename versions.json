@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T18:27:49.161Z",
+  "generatedAt": "2026-11-06T03:02:33.481Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -709,10 +709,10 @@
         {
           "line": "9999.9",
           "latest": "9999.9.1517.b568f67",
+          "latestDate": "2026-11-05T13:08:57Z",
           "latestIsPreRelease": false,
           "total": 30,
-          "stable": 30,
-          "latestDate": "2026-11-05T13:08:57Z"
+          "stable": 30
         },
         {
           "line": "2026.1",
@@ -1383,9 +1383,9 @@
       "kind": "marker",
       "slug": "com.jetbrains.mps_mps-jbr",
       "ok": true,
-      "total": 91,
-      "released": 91,
-      "stable": 84,
+      "total": 92,
+      "released": 92,
+      "stable": 85,
       "preRelease": 7,
       "branchCount": 0,
       "branches": 0,
@@ -1449,10 +1449,10 @@
         },
         {
           "line": "263.7307",
-          "latest": "263.7307.218",
+          "latest": "263.7307.221",
           "latestIsPreRelease": false,
-          "total": 9,
-          "stable": 9
+          "total": 10,
+          "stable": 10
         },
         {
           "line": "263.6259",
