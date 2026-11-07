@@ -5,7 +5,7 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-07T02:30:07.725Z",
+  "generatedAt": "2026-11-07T16:42:36.782Z",
   "total": 1249,
   "released": 853,
   "stable": 825,
@@ -4537,6 +4537,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2678.07f239d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-07T13:26:57Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2677.9624519-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5153,12 +5159,6 @@
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
       "d": "2026-07-13T15:01:01Z"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2259.e4fc0de-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
-      "d": "2026-07-09T16:58:57Z"
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2190.15520eb-SNAPSHOT",
