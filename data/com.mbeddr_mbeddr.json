@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-07T20:38:06.036Z",
-  "total": 2642,
-  "released": 1886,
-  "stable": 1886,
+  "generatedAt": "2026-11-09T13:40:15.697Z",
+  "total": 2644,
+  "released": 1887,
+  "stable": 1887,
   "preRelease": 0,
-  "branchCount": 756,
+  "branchCount": 757,
   "branches": 179,
   "lines": [
     {
@@ -3925,11 +3925,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.26672.52a92d2",
+      "latest": "2024.1.26678.ec95b8f",
       "latestIsPreRelease": false,
-      "total": 249,
-      "stable": 249,
+      "total": 250,
+      "stable": 250,
       "versions": [
+        {
+          "v": "2024.1.26678.ec95b8f",
+          "pre": false,
+          "d": "2026-11-09T07:36:39Z"
+        },
         {
           "v": "2024.1.26672.52a92d2",
           "pre": false,
@@ -5176,7 +5181,7 @@
           "d": "2024-11-13T12:32:19Z"
         }
       ],
-      "latestDate": "2026-11-03T03:46:28Z"
+      "latestDate": "2026-11-09T07:36:39Z"
     },
     {
       "line": "2023.2",
@@ -10514,6 +10519,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-prek-0.x",
       "d": "2026-09-03T20:10:19Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24245.2ab62b9-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-mpsextensions241",
+      "d": "2026-11-09T07:09:47Z"
     },
     {
       "v": "renovate-maintenance-mps20241-patch-mpsextensions241.2024.1.24233.737ce74-SNAPSHOT",

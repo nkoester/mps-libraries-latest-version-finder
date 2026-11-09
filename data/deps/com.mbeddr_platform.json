@@ -4169,6 +4169,16 @@
         "2024.3-EAP1"
       ]
     ],
+    "2024.1.26678.ec95b8f": [
+      [
+        "de.itemis.mps_extensions",
+        "2024.1.3695.bac07ab"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2024.1.6"
+      ]
+    ],
     "2024.1.26672.52a92d2": [
       [
         "de.itemis.mps_extensions",
