@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-09T13:40:15.697Z",
-  "total": 2959,
+  "generatedAt": "2026-11-09T21:15:04.478Z",
+  "total": 2962,
   "released": 1746,
   "stable": 1739,
   "preRelease": 7,
-  "branchCount": 1213,
-  "branches": 252,
+  "branchCount": 1216,
+  "branches": 253,
   "lines": [
     {
       "line": "9999.9",
@@ -9030,12 +9030,6 @@
       "d": "2026-07-13T13:47:02Z"
     },
     {
-      "v": "renovate-master-mpsversion.9999.9.10754.5874d50-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsversion",
-      "d": "2026-07-09T12:54:38Z"
-    },
-    {
       "v": "renovate-master-mpsversion.9999.9.10634.e68d226-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsversion",
@@ -12730,6 +12724,30 @@
       "pre": true,
       "branch": "feature-simplify_skeltree_graph_builder_1645",
       "d": "2026-02-17T15:31:23Z"
+    },
+    {
+      "v": "feature-shared-interpreter-scopes.2025.1.11533.52a7b61-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-shared-interpreter-scopes",
+      "d": "2026-11-09T16:55:48Z"
+    },
+    {
+      "v": "feature-shared-interpreter-scopes.2025.1.11532.f9ee84e-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-shared-interpreter-scopes",
+      "d": "2026-11-09T16:21:50Z"
+    },
+    {
+      "v": "feature-shared-interpreter-scopes.2025.1.11530.2272588-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-shared-interpreter-scopes",
+      "d": "2026-11-09T15:43:05Z"
+    },
+    {
+      "v": "feature-shared-interpreter-scopes.2025.1.11529.e7f419e-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-shared-interpreter-scopes",
+      "d": "2026-11-09T15:51:52Z"
     },
     {
       "v": "feature-runSolverAsync_virtual.2021.1.5961.8d657aa",
