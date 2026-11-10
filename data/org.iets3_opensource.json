@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-10T13:17:32.679Z",
-  "total": 2974,
-  "released": 1748,
-  "stable": 1741,
+  "generatedAt": "2026-11-10T18:24:56.579Z",
+  "total": 2982,
+  "released": 1749,
+  "stable": 1742,
   "preRelease": 7,
-  "branchCount": 1226,
+  "branchCount": 1233,
   "branches": 255,
   "lines": [
     {
@@ -1855,11 +1855,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11483.a15724f",
+      "latest": "2024.1.11555.833fe99",
       "latestIsPreRelease": false,
-      "total": 275,
-      "stable": 274,
+      "total": 276,
+      "stable": 275,
       "versions": [
+        {
+          "v": "2024.1.11555.833fe99",
+          "pre": false,
+          "d": "2026-11-10T17:03:34Z"
+        },
         {
           "v": "2024.1.11483.a15724f",
           "pre": false,
@@ -3236,7 +3241,7 @@
           "d": "2024-11-19T14:58:20Z"
         }
       ],
-      "latestDate": "2026-11-03T14:35:51Z"
+      "latestDate": "2026-11-10T17:03:34Z"
     },
     {
       "line": "2023.2",
@@ -9394,6 +9399,12 @@
       "d": "2026-06-03T08:57:04Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11557.6ba3b9b-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
+      "d": "2026-11-10T16:45:07Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11538.becc474-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
@@ -10970,6 +10981,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-02-02T14:00:30Z"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11554.833fe99-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-10T16:41:36Z"
     },
     {
       "v": "merge-mps20251.2024.1.11484.a15724f-SNAPSHOT",
@@ -12760,6 +12777,12 @@
       "d": "2026-02-17T15:31:23Z"
     },
     {
+      "v": "feature-shared-interpreter-scopes.2025.1.11552.bc5dd76-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-shared-interpreter-scopes",
+      "d": "2026-11-10T14:36:57Z"
+    },
+    {
       "v": "feature-shared-interpreter-scopes.2025.1.11549.3ebd4ea-SNAPSHOT",
       "pre": true,
       "branch": "feature-shared-interpreter-scopes",
@@ -13172,6 +13195,18 @@
       "pre": false,
       "branch": "feature-list_sorting_2021_3",
       "d": "2023-11-16T14:10:11Z"
+    },
+    {
+      "v": "feature-list-improvements.2025.1.11558.8c5dedc-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-list-improvements",
+      "d": "2026-11-10T17:21:23Z"
+    },
+    {
+      "v": "feature-list-improvements.2025.1.11553.0ec1ab0-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-list-improvements",
+      "d": "2026-11-10T14:49:53Z"
     },
     {
       "v": "feature-list-improvements.2025.1.11507.98d35cb-SNAPSHOT",
@@ -13880,6 +13915,12 @@
       "pre": false,
       "branch": "feature-NixSupport_with_lists",
       "d": "2023-01-26T07:24:35Z"
+    },
+    {
+      "v": "feature-Keep-empty-content-lines-available-after-#2032.2024.1.11551.045a52a-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-Keep-empty-content-lines-available-after-#2032",
+      "d": "2026-11-10T13:59:05Z"
     },
     {
       "v": "feature-Keep-empty-content-lines-available-after-#2032.2024.1.11546.bf73c73-SNAPSHOT",
@@ -15698,6 +15739,12 @@
       "pre": false,
       "branch": "bugfix-collection_types",
       "d": "2023-04-03T09:10:59Z"
+    },
+    {
+      "v": "bugfix-binary_expression_vertical_layout_2030.2025.1.11550.5ffc15e-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-binary_expression_vertical_layout_2030",
+      "d": "2026-11-10T13:22:55Z"
     },
     {
       "v": "bugfix-binary_expression_vertical_layout_2030.2025.1.11537.b52ad88-SNAPSHOT",
