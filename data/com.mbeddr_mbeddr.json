@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-09T21:15:04.478Z",
-  "total": 2644,
-  "released": 1887,
-  "stable": 1887,
+  "generatedAt": "2026-11-10T13:17:32.679Z",
+  "total": 2651,
+  "released": 1890,
+  "stable": 1890,
   "preRelease": 0,
-  "branchCount": 757,
+  "branchCount": 761,
   "branches": 179,
   "lines": [
     {
@@ -2055,11 +2055,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.26676.a537868",
+      "latest": "2026.1.26680.fe18fa1",
       "latestIsPreRelease": false,
-      "total": 37,
-      "stable": 37,
+      "total": 38,
+      "stable": 38,
       "versions": [
+        {
+          "v": "2026.1.26680.fe18fa1",
+          "pre": false,
+          "d": "2026-11-10T13:08:41Z"
+        },
         {
           "v": "2026.1.26676.a537868",
           "pre": false,
@@ -2246,15 +2251,20 @@
           "d": "2026-06-29T15:03:08Z"
         }
       ],
-      "latestDate": "2026-11-04T03:44:49Z"
+      "latestDate": "2026-11-10T13:08:41Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26675.c5d588e",
+      "latest": "2025.1.26681.7a0bef0",
       "latestIsPreRelease": false,
-      "total": 264,
-      "stable": 264,
+      "total": 265,
+      "stable": 265,
       "versions": [
+        {
+          "v": "2025.1.26681.7a0bef0",
+          "pre": false,
+          "d": "2026-11-10T13:12:37Z"
+        },
         {
           "v": "2025.1.26675.c5d588e",
           "pre": false,
@@ -3576,7 +3586,7 @@
           "d": "2025-04-29T17:43:40Z"
         }
       ],
-      "latestDate": "2026-11-04T03:43:49Z"
+      "latestDate": "2026-11-10T13:12:37Z"
     },
     {
       "line": "2024.3",
@@ -3925,11 +3935,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.26678.ec95b8f",
+      "latest": "2024.1.26679.458d9cc",
       "latestIsPreRelease": false,
-      "total": 250,
-      "stable": 250,
+      "total": 251,
+      "stable": 251,
       "versions": [
+        {
+          "v": "2024.1.26679.458d9cc",
+          "pre": false,
+          "d": "2026-11-10T13:03:36Z"
+        },
         {
           "v": "2024.1.26678.ec95b8f",
           "pre": false,
@@ -5181,7 +5196,7 @@
           "d": "2024-11-13T12:32:19Z"
         }
       ],
-      "latestDate": "2026-11-09T07:36:39Z"
+      "latestDate": "2026-11-10T13:03:36Z"
     },
     {
       "line": "2023.2",
@@ -10197,6 +10212,12 @@
       "d": "2026-07-29T11:19:19Z"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25335.8ddef15-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mps261",
+      "d": "2026-11-10T12:44:47Z"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-mps261.2026.1.25333.0e89eef-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mps261",
@@ -10465,6 +10486,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-mpsextensions251",
       "d": "2026-07-05T13:52:50Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-mps251.2025.1.24939.7fb3053-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-mps251",
+      "d": "2026-11-10T12:40:37Z"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-mps251.2025.1.24937.592f7bc-SNAPSHOT",
@@ -10963,6 +10990,12 @@
       "pre": false,
       "branch": "merge-2021",
       "d": "2022-08-29T09:02:40Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.25341.88bd78f-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-10T12:32:12Z"
     },
     {
       "v": "merge-mps20261.2026.1.25335.01a9f32-SNAPSHOT",
@@ -11983,6 +12016,12 @@
       "pre": false,
       "branch": "merge-mps20213-secure",
       "d": "2023-11-29T17:55:39Z"
+    },
+    {
+      "v": "merge-master.9999.9.25391.098d6be-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-10T12:31:57Z"
     },
     {
       "v": "merge-master.9999.9.25386.a3348d3-SNAPSHOT",

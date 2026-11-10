@@ -1471,6 +1471,16 @@
         "9999.9.3492.79ad834-SNAPSHOT"
       ]
     ],
+    "2026.1.26680.fe18fa1": [
+      [
+        "de.itemis.mps_extensions",
+        "2026.1.3712.45fabf4"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2026.1.1"
+      ]
+    ],
     "2026.1.26676.a537868": [
       [
         "de.itemis.mps_extensions",
@@ -1739,6 +1749,16 @@
       [
         "de.itemis.mps_extensions",
         "2026.1.3628.51e7c81"
+      ]
+    ],
+    "2025.1.26681.7a0bef0": [
+      [
+        "de.itemis.mps_extensions",
+        "2025.1.3711.dbe9669"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2025.1.4"
       ]
     ],
     "2025.1.26675.c5d588e": [
@@ -4167,6 +4187,16 @@
       [
         "com.jetbrains_mps",
         "2024.3-EAP1"
+      ]
+    ],
+    "2024.1.26679.458d9cc": [
+      [
+        "de.itemis.mps_extensions",
+        "2024.1.3710.380b7d0"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2024.1.6"
       ]
     ],
     "2024.1.26678.ec95b8f": [
