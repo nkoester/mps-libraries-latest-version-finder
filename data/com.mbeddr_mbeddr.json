@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-11T02:28:10.722Z",
-  "total": 2653,
-  "released": 1890,
-  "stable": 1890,
+  "generatedAt": "2026-11-11T12:29:42.202Z",
+  "total": 2660,
+  "released": 1893,
+  "stable": 1893,
   "preRelease": 0,
-  "branchCount": 763,
+  "branchCount": 767,
   "branches": 180,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26677.91d30b4",
+      "latest": "9999.9.26682.823eb7c",
       "latestIsPreRelease": false,
-      "total": 406,
-      "stable": 406,
+      "total": 407,
+      "stable": 407,
       "versions": [
+        {
+          "v": "9999.9.26682.823eb7c",
+          "pre": false,
+          "d": "2026-11-11T06:53:34Z"
+        },
         {
           "v": "9999.9.26677.91d30b4",
           "pre": false,
@@ -2051,15 +2056,20 @@
           "d": "2025-11-04T16:13:32Z"
         }
       ],
-      "latestDate": "2026-11-05T03:48:54Z"
+      "latestDate": "2026-11-11T06:53:34Z"
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.26680.fe18fa1",
+      "latest": "2026.1.26684.d29a303",
       "latestIsPreRelease": false,
-      "total": 38,
-      "stable": 38,
+      "total": 39,
+      "stable": 39,
       "versions": [
+        {
+          "v": "2026.1.26684.d29a303",
+          "pre": false,
+          "d": "2026-11-11T06:54:07Z"
+        },
         {
           "v": "2026.1.26680.fe18fa1",
           "pre": false,
@@ -2251,15 +2261,20 @@
           "d": "2026-06-29T15:03:08Z"
         }
       ],
-      "latestDate": "2026-11-10T13:08:41Z"
+      "latestDate": "2026-11-11T06:54:07Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26681.7a0bef0",
+      "latest": "2025.1.26683.89ea20c",
       "latestIsPreRelease": false,
-      "total": 265,
-      "stable": 265,
+      "total": 266,
+      "stable": 266,
       "versions": [
+        {
+          "v": "2025.1.26683.89ea20c",
+          "pre": false,
+          "d": "2026-11-11T06:53:07Z"
+        },
         {
           "v": "2025.1.26681.7a0bef0",
           "pre": false,
@@ -3586,7 +3601,7 @@
           "d": "2025-04-29T17:43:40Z"
         }
       ],
-      "latestDate": "2026-11-10T13:12:37Z"
+      "latestDate": "2026-11-11T06:53:07Z"
     },
     {
       "line": "2024.3",
@@ -10992,6 +11007,12 @@
       "d": "2022-08-29T09:02:40Z"
     },
     {
+      "v": "merge-mps20261.2026.1.25345.3e49315-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-11T06:22:24Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.25341.88bd78f-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -12018,6 +12039,12 @@
       "d": "2023-11-29T17:55:39Z"
     },
     {
+      "v": "merge-master.9999.9.25395.de31771-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-11T06:20:30Z"
+    },
+    {
       "v": "merge-master.9999.9.25391.098d6be-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -12772,6 +12799,18 @@
       "pre": false,
       "branch": "feature-json_import_action",
       "d": "2023-02-15T14:34:25Z"
+    },
+    {
+      "v": "feature-interpreter-performance.2025.1.24942.dd68ef9-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-interpreter-performance",
+      "d": "2026-11-11T09:53:13Z"
+    },
+    {
+      "v": "feature-interpreter-performance.2025.1.24942.c267d3c-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-interpreter-performance",
+      "d": "2026-11-11T08:38:55Z"
     },
     {
       "v": "feature-interpreter-performance.2025.1.24941.f2fc11e-SNAPSHOT",

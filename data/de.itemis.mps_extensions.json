@@ -5,7 +5,7 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-11T02:28:10.722Z",
+  "generatedAt": "2026-11-11T12:29:42.202Z",
   "total": 1250,
   "released": 853,
   "stable": 825,
@@ -4546,7 +4546,7 @@
       "v": "renovate-master-mps.9999.9.2679.00b3b50-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-07T18:11:05Z"
+      "d": "2026-11-10T19:04:03Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2678.07f239d-SNAPSHOT",

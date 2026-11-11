@@ -4,10 +4,10 @@
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/mps-jbr/maven-metadata.xml",
   "kind": "marker",
   "slug": "com.jetbrains.mps_mps-jbr",
-  "generatedAt": "2026-11-11T02:28:10.722Z",
-  "total": 97,
-  "released": 97,
-  "stable": 90,
+  "generatedAt": "2026-11-11T12:29:42.202Z",
+  "total": 98,
+  "released": 98,
+  "stable": 91,
   "preRelease": 7,
   "branchCount": 0,
   "branches": 0,
@@ -210,11 +210,15 @@
     },
     {
       "line": "263.7307",
-      "latest": "263.7307.269",
+      "latest": "263.7307.273",
       "latestIsPreRelease": false,
-      "total": 23,
-      "stable": 23,
+      "total": 24,
+      "stable": 24,
       "versions": [
+        {
+          "v": "263.7307.273",
+          "pre": false
+        },
         {
           "v": "263.7307.269",
           "pre": false
