@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-11T12:29:42.202Z",
-  "total": 2987,
+  "generatedAt": "2026-11-11T18:17:51.408Z",
+  "total": 2989,
   "released": 1750,
   "stable": 1743,
   "preRelease": 7,
-  "branchCount": 1237,
+  "branchCount": 1239,
   "branches": 256,
   "lines": [
     {
@@ -10682,6 +10682,12 @@
       "d": "2026-01-16T02:44:52Z"
     },
     {
+      "v": "merge-mps20251.2025.1.11569.55fe3d4-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-11T16:06:40Z"
+    },
+    {
       "v": "merge-mps20251.2025.1.11539.39842d5-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -13212,6 +13218,12 @@
       "pre": false,
       "branch": "feature-list_sorting_2021_3",
       "d": "2023-11-16T14:10:11Z"
+    },
+    {
+      "v": "feature-list-improvements.2025.1.11568.8a03b3f-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-list-improvements",
+      "d": "2026-11-11T14:35:14Z"
     },
     {
       "v": "feature-list-improvements.2025.1.11565.89afacb-SNAPSHOT",

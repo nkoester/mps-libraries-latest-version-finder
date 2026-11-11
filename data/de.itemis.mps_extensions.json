@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-11T12:29:42.202Z",
+  "generatedAt": "2026-11-11T18:17:51.408Z",
   "total": 1250,
   "released": 853,
   "stable": 825,
   "preRelease": 28,
   "branchCount": 397,
-  "branches": 82,
+  "branches": 83,
   "lines": [
     {
       "line": "9999.9",
@@ -4537,6 +4537,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2683.bbb3a7b-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-11T13:46:52Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2681.5775909-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5159,18 +5165,6 @@
       "pre": true,
       "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
       "d": "2026-07-23T14:04:57Z"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2262.577282e-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
-      "d": "2026-07-15T13:06:54Z"
-    },
-    {
-      "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2261.1e41f61-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x",
-      "d": "2026-07-13T15:01:01Z"
     },
     {
       "v": "renovate-master-com.jetbrains.mps-mps-prerelease-261.x.9999.9.2190.15520eb-SNAPSHOT",
@@ -6143,6 +6137,12 @@
       "pre": true,
       "branch": "fix-celllayout-regressions",
       "d": "2026-10-15T06:17:27Z"
+    },
+    {
+      "v": "feature-viewmodel-root-dependencies.2025.1.2682.621e3dc-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-viewmodel-root-dependencies",
+      "d": "2026-11-11T12:47:02Z"
     },
     {
       "v": "feature-view-model.2025.1.2508.769380b-SNAPSHOT",
