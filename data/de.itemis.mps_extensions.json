@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-10T18:24:56.579Z",
+  "generatedAt": "2026-11-11T02:28:10.722Z",
   "total": 1250,
   "released": 853,
   "stable": 825,
   "preRelease": 28,
   "branchCount": 397,
-  "branches": 83,
+  "branches": 82,
   "lines": [
     {
       "line": "9999.9",
@@ -4537,6 +4537,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2681.5775909-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-10T19:04:03Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2679.00b3b50-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -6263,12 +6269,6 @@
       "pre": true,
       "branch": "feature-tables-cross-table",
       "d": "2026-10-21T18:01:59Z"
-    },
-    {
-      "v": "feature-slisson-word-formatting-2025.2025.1.2260.d520ea9-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-slisson-word-formatting-2025",
-      "d": "2026-07-10T06:25:35Z"
     },
     {
       "v": "feature-richtext-styles.2025.1.2501.1427370-SNAPSHOT",

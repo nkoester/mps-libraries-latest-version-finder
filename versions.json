@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T18:24:56.579Z",
+  "generatedAt": "2026-11-11T02:28:10.722Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -176,7 +176,7 @@
       "stable": 825,
       "preRelease": 28,
       "branchCount": 397,
-      "branches": 83,
+      "branches": 82,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
         {
@@ -569,11 +569,11 @@
       "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 2982,
+      "total": 2979,
       "released": 1749,
       "stable": 1742,
       "preRelease": 7,
-      "branchCount": 1233,
+      "branchCount": 1230,
       "branches": 255,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [
@@ -604,10 +604,10 @@
         {
           "line": "2024.1",
           "latest": "2024.1.11555.833fe99",
+          "latestDate": "2026-11-10T17:03:34Z",
           "latestIsPreRelease": false,
           "total": 276,
-          "stable": 275,
-          "latestDate": "2026-11-10T17:03:34Z"
+          "stable": 275
         },
         {
           "line": "2023.2",
