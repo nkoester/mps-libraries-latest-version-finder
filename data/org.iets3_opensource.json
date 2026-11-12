@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-12T13:34:33.641Z",
-  "total": 2989,
-  "released": 1750,
-  "stable": 1743,
+  "generatedAt": "2026-11-12T18:40:07.447Z",
+  "total": 2985,
+  "released": 1751,
+  "stable": 1744,
   "preRelease": 7,
-  "branchCount": 1239,
+  "branchCount": 1234,
   "branches": 256,
   "lines": [
     {
@@ -1125,11 +1125,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11544.57e5d20",
+      "latest": "2025.1.11574.9ff775e",
       "latestIsPreRelease": false,
-      "total": 144,
-      "stable": 138,
+      "total": 145,
+      "stable": 139,
       "versions": [
+        {
+          "v": "2025.1.11574.9ff775e",
+          "pre": false,
+          "d": "2026-11-12T17:17:48Z"
+        },
         {
           "v": "2025.1.11544.57e5d20",
           "pre": false,
@@ -1851,7 +1856,7 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-11-10T11:53:41Z"
+      "latestDate": "2026-11-12T17:17:48Z"
     },
     {
       "line": "2024.1",
@@ -9038,12 +9043,6 @@
       "d": "2026-07-13T13:47:02Z"
     },
     {
-      "v": "renovate-master-mpsversion.9999.9.10634.e68d226-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsversion",
-      "d": "2026-06-18T12:40:43Z"
-    },
-    {
       "v": "renovate-master-mpsversion.9999.9.10624.7dfb943-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsversion",
@@ -9890,12 +9889,6 @@
       "d": "2026-07-15T07:31:20Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-github-actions.2024.1.10769.bf29cee-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-github-actions",
-      "d": "2026-07-14T09:31:27Z"
-    },
-    {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.10621.c7aa727-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions",
@@ -9924,12 +9917,6 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions",
       "d": "2026-04-03T18:00:05Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-github-actions.2024.1.10151.434797d-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-github-actions",
-      "d": "2026-03-24T17:55:48Z"
     },
     {
       "v": "renovate-actions-setup-java-digest.9999.9.9699.f04c7d3-SNAPSHOT",
@@ -10472,6 +10459,12 @@
       "d": "2026-07-16T07:49:03Z"
     },
     {
+      "v": "merge-mps20261.2025.1.11573.9ff775e-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-12T16:56:30Z"
+    },
+    {
       "v": "merge-mps20261.2025.1.11545.57e5d20-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -10970,12 +10963,6 @@
       "d": "2026-04-16T06:15:20Z"
     },
     {
-      "v": "merge-mps20251.2025.1.10142.05d1afe-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-03-24T08:44:38Z"
-    },
-    {
       "v": "merge-mps20251.2025.1.10082.a2edfe6-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -11298,18 +11285,6 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-04-14T06:49:45Z"
-    },
-    {
-      "v": "merge-mps20251.2024.1.10190.bc045f6-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-04-01T20:53:50Z"
-    },
-    {
-      "v": "merge-mps20251.2024.1.10132.c0da900-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-03-25T03:19:21Z"
     },
     {
       "v": "merge-mps20241.2024.1.9902.4daad99-SNAPSHOT",
@@ -11886,12 +11861,6 @@
       "pre": true,
       "branch": "merge-master",
       "d": "2026-07-06T12:01:43Z"
-    },
-    {
-      "v": "merge-master.2025.1.10684.d9979e1-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-06-23T18:52:08Z"
     },
     {
       "v": "merge-master.2025.1.10667.8fbab8d-SNAPSHOT",
@@ -12792,6 +12761,12 @@
       "pre": true,
       "branch": "feature-simplify_skeltree_graph_builder_1645",
       "d": "2026-02-17T15:31:23Z"
+    },
+    {
+      "v": "feature-shared-interpreter-scopes.2025.1.11572.10487dc-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-shared-interpreter-scopes",
+      "d": "2026-11-12T13:46:29Z"
     },
     {
       "v": "feature-shared-interpreter-scopes.2025.1.11567.481aaa7-SNAPSHOT",
