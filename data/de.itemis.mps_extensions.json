@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-12T03:33:28.391Z",
-  "total": 1251,
+  "generatedAt": "2026-11-12T13:34:33.641Z",
+  "total": 1252,
   "released": 853,
   "stable": 825,
   "preRelease": 28,
-  "branchCount": 398,
-  "branches": 83,
+  "branchCount": 399,
+  "branches": 82,
   "lines": [
     {
       "line": "9999.9",
@@ -4540,13 +4540,13 @@
       "v": "renovate-master-mps.9999.9.2684.855b51d-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-11T22:06:23Z"
+      "d": "2026-11-12T09:27:14Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2683.bbb3a7b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-11T13:46:52Z"
+      "d": "2026-11-12T09:27:13Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2681.5775909-SNAPSHOT",
@@ -5195,12 +5195,6 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-mps",
       "d": "2026-09-18T01:00:38Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20261-com.jetbrains-mps-2026.1.x.2026.1.2264.ae1fd80-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20261-com.jetbrains-mps-2026",
-      "d": "2026-07-15T13:06:47Z"
     },
     {
       "v": "renovate-maintenance-mps20251-third-party-minor.2025.1.2351.1d6fa87-SNAPSHOT",
@@ -6143,6 +6137,18 @@
       "pre": true,
       "branch": "fix-celllayout-regressions",
       "d": "2026-10-15T06:17:27Z"
+    },
+    {
+      "v": "feature-viewmodel-root-dependencies.2025.1.2687.047971a-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-viewmodel-root-dependencies",
+      "d": "2026-11-12T12:19:04Z"
+    },
+    {
+      "v": "feature-viewmodel-root-dependencies.2025.1.2685.5201add-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-viewmodel-root-dependencies",
+      "d": "2026-11-12T09:27:01Z"
     },
     {
       "v": "feature-viewmodel-root-dependencies.2025.1.2682.621e3dc-SNAPSHOT",
