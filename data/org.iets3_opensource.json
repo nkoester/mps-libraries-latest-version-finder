@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-13T12:53:47.811Z",
-  "total": 2988,
-  "released": 1752,
-  "stable": 1745,
+  "generatedAt": "2026-11-13T18:20:18.426Z",
+  "total": 2993,
+  "released": 1753,
+  "stable": 1746,
   "preRelease": 7,
-  "branchCount": 1236,
+  "branchCount": 1240,
   "branches": 256,
   "lines": [
     {
@@ -1865,11 +1865,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11562.6c41a30",
+      "latest": "2024.1.11583.033e1f0",
       "latestIsPreRelease": false,
-      "total": 277,
-      "stable": 276,
+      "total": 278,
+      "stable": 277,
       "versions": [
+        {
+          "v": "2024.1.11583.033e1f0",
+          "pre": false,
+          "d": "2026-11-13T18:16:13Z"
+        },
         {
           "v": "2024.1.11562.6c41a30",
           "pre": false,
@@ -3256,7 +3261,7 @@
           "d": "2024-11-19T14:58:20Z"
         }
       ],
-      "latestDate": "2026-11-11T08:07:04Z"
+      "latestDate": "2026-11-13T18:16:13Z"
     },
     {
       "line": "2023.2",
@@ -9204,6 +9209,12 @@
       "d": "2026-04-13T10:49:35Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11581.19e2157-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-third-party-minor",
+      "d": "2026-11-13T16:32:49Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11576.7cf0a7b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-third-party-minor",
@@ -9700,6 +9711,18 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-major-github-actions",
       "d": "2026-03-13T01:42:05Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11586.b431dc3-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-11-13T17:58:21Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11584.6b34a32-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-11-13T17:54:51Z"
     },
     {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11564.9d8216a-SNAPSHOT",
@@ -10990,6 +11013,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-02-02T14:00:30Z"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11582.033e1f0-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-13T17:53:41Z"
     },
     {
       "v": "merge-mps20251.2024.1.11561.6c41a30-SNAPSHOT",

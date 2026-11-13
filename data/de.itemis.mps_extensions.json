@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-13T12:53:47.811Z",
-  "total": 1253,
+  "generatedAt": "2026-11-13T18:20:18.426Z",
+  "total": 1254,
   "released": 853,
   "stable": 825,
   "preRelease": 28,
-  "branchCount": 400,
-  "branches": 83,
+  "branchCount": 401,
+  "branches": 84,
   "lines": [
     {
       "line": "9999.9",
@@ -6779,6 +6779,12 @@
       "pre": true,
       "branch": "bugfix-ovrlapping-line-numbers",
       "d": "2026-09-25T14:20:42Z"
+    },
+    {
+      "v": "bugfix-arimer-addMissingStubs.9999.9.2690.f7892bb-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-arimer-addMissingStubs",
+      "d": "2026-11-13T17:15:50Z"
     },
     {
       "v": "bugfix-ThirdPartySolution.2022.2.2788.406b827",
