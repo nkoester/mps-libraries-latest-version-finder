@@ -5,7 +5,7 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-12T18:40:07.447Z",
+  "generatedAt": "2026-11-13T03:05:43.481Z",
   "total": 2985,
   "released": 1751,
   "stable": 1744,
@@ -9199,6 +9199,12 @@
       "d": "2026-04-13T10:49:35Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11576.7cf0a7b-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-third-party-minor",
+      "d": "2026-11-13T00:01:05Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11462.633c795-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-third-party-minor",
@@ -9551,12 +9557,6 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
       "d": "2026-06-18T13:19:26Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.10632.8d26684-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
-      "d": "2026-07-09T12:54:32Z"
     },
     {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.10580.703e9d4-SNAPSHOT",

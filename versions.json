@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T18:40:07.447Z",
+  "generatedAt": "2026-11-13T03:05:43.481Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -171,11 +171,11 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1252,
+      "total": 1253,
       "released": 853,
       "stable": 825,
       "preRelease": 28,
-      "branchCount": 399,
+      "branchCount": 400,
       "branches": 82,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
@@ -596,10 +596,10 @@
         {
           "line": "2025.1",
           "latest": "2025.1.11574.9ff775e",
+          "latestDate": "2026-11-12T17:17:48Z",
           "latestIsPreRelease": false,
           "total": 145,
-          "stable": 139,
-          "latestDate": "2026-11-12T17:17:48Z"
+          "stable": 139
         },
         {
           "line": "2024.1",
