@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-13T03:05:43.481Z",
+  "generatedAt": "2026-11-13T12:53:47.811Z",
   "total": 1253,
   "released": 853,
   "stable": 825,
   "preRelease": 28,
   "branchCount": 400,
-  "branches": 82,
+  "branches": 83,
   "lines": [
     {
       "line": "9999.9",
@@ -4540,7 +4540,7 @@
       "v": "renovate-master-mps.9999.9.2688.a929838-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-12T20:53:05Z"
+      "d": "2026-11-13T06:58:48Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2684.855b51d-SNAPSHOT",
@@ -5317,12 +5317,6 @@
       "d": "2026-07-26T06:17:36Z"
     },
     {
-      "v": "performance-tables-caching.2025.1.2265.8b63dd9-SNAPSHOT",
-      "pre": true,
-      "branch": "performance-tables-caching",
-      "d": "2026-07-15T13:06:43Z"
-    },
-    {
       "v": "perf-grammarcells-chart-parser.2026.1.2285.b082c7e-SNAPSHOT",
       "pre": true,
       "branch": "perf-grammarcells-chart-parser",
@@ -5959,6 +5953,12 @@
       "d": "2026-10-19T01:32:33Z"
     },
     {
+      "v": "fix-viewmodel-headless-writes.2025.1.2689.6c62dca-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-viewmodel-headless-writes",
+      "d": "2026-11-13T06:58:38Z"
+    },
+    {
       "v": "fix-teamcity-kotlin-dsl.2024.1.2314.321a148-SNAPSHOT",
       "pre": true,
       "branch": "fix-teamcity-kotlin-dsl",
@@ -6148,7 +6148,7 @@
       "v": "feature-viewmodel-root-dependencies.2025.1.2687.047971a-SNAPSHOT",
       "pre": true,
       "branch": "feature-viewmodel-root-dependencies",
-      "d": "2026-11-12T12:19:04Z"
+      "d": "2026-11-13T06:58:36Z"
     },
     {
       "v": "feature-viewmodel-root-dependencies.2025.1.2685.5201add-SNAPSHOT",
