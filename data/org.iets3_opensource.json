@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-14T02:52:25.507Z",
-  "total": 2993,
+  "generatedAt": "2026-11-14T11:58:05.119Z",
+  "total": 2994,
   "released": 1753,
   "stable": 1746,
   "preRelease": 7,
-  "branchCount": 1240,
+  "branchCount": 1241,
   "branches": 256,
   "lines": [
     {
@@ -9212,7 +9212,7 @@
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11581.19e2157-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-third-party-minor",
-      "d": "2026-11-13T16:32:49Z"
+      "d": "2026-11-14T05:16:56Z"
     },
     {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.11576.7cf0a7b-SNAPSHOT",
@@ -9825,6 +9825,18 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-9.x",
       "d": "2026-03-23T07:35:43Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-github-actions.2024.1.11589.9fc68b5-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-github-actions",
+      "d": "2026-11-14T10:55:15Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-github-actions.2024.1.11588.b1c0342-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-github-actions",
+      "d": "2026-11-14T05:16:50Z"
     },
     {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.11450.d06d43d-SNAPSHOT",
@@ -10683,12 +10695,6 @@
       "pre": true,
       "branch": "merge-mps20261",
       "d": "2026-08-06T07:04:56Z"
-    },
-    {
-      "v": "merge-mps20261.2025.1.10824.856c80e-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20261",
-      "d": "2026-07-22T07:08:52Z"
     },
     {
       "v": "merge-mps20261.2025.1.10813.f7e1bb8-SNAPSHOT",
@@ -12068,7 +12074,7 @@
       "v": "fix-2025-latest-patch-version-5.2025.1.11577.b7de5a4-SNAPSHOT",
       "pre": true,
       "branch": "fix-2025-latest-patch-version-5",
-      "d": "2026-11-13T09:15:47Z"
+      "d": "2026-11-14T05:16:36Z"
     },
     {
       "v": "fix-2025-latest-patch-version-5.2025.1.11566.446d657-SNAPSHOT",
