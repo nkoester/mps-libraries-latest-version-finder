@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-16T13:24:17.901Z",
-  "total": 3003,
-  "released": 1755,
-  "stable": 1748,
+  "generatedAt": "2026-11-16T20:46:23.584Z",
+  "total": 3011,
+  "released": 1757,
+  "stable": 1750,
   "preRelease": 7,
-  "branchCount": 1248,
-  "branches": 256,
+  "branchCount": 1254,
+  "branches": 258,
   "lines": [
     {
       "line": "9999.9",
@@ -975,11 +975,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11517.6a6a935",
+      "latest": "2026.1.11604.bdba334",
       "latestIsPreRelease": false,
-      "total": 28,
-      "stable": 28,
+      "total": 29,
+      "stable": 29,
       "versions": [
+        {
+          "v": "2026.1.11604.bdba334",
+          "pre": false,
+          "d": "2026-11-16T15:09:11Z"
+        },
         {
           "v": "2026.1.11517.6a6a935",
           "pre": false,
@@ -1121,15 +1126,20 @@
           "d": "2026-07-15T12:14:32Z"
         }
       ],
-      "latestDate": "2026-11-06T13:35:25Z"
+      "latestDate": "2026-11-16T15:09:11Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11579.1881cde",
+      "latest": "2025.1.11603.f1dcc03",
       "latestIsPreRelease": false,
-      "total": 146,
-      "stable": 140,
+      "total": 147,
+      "stable": 141,
       "versions": [
+        {
+          "v": "2025.1.11603.f1dcc03",
+          "pre": false,
+          "d": "2026-11-16T14:29:18Z"
+        },
         {
           "v": "2025.1.11579.1881cde",
           "pre": false,
@@ -1861,7 +1871,7 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-11-13T10:11:33Z"
+      "latestDate": "2026-11-16T14:29:18Z"
     },
     {
       "line": "2024.1",
@@ -10305,6 +10315,18 @@
       "d": "2024-02-12T12:33:47Z"
     },
     {
+      "v": "merge-mps20261.2026.1.11602.0387975-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-16T14:09:10Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11601.93f02c0-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-16T13:57:32Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.11598.5b59d8e-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -10747,6 +10769,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-01-16T02:44:52Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.11599.ac1e4c3-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-16T13:42:01Z"
     },
     {
       "v": "merge-mps20251.2025.1.11569.55fe3d4-SNAPSHOT",
@@ -13731,6 +13759,18 @@
       "d": "2026-02-25T14:19:50Z"
     },
     {
+      "v": "feature-detect_duplicate_attribute_assignments_2046.2024.1.11607.2f571f1-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-detect_duplicate_attribute_assignments_2046",
+      "d": "2026-11-16T19:40:28Z"
+    },
+    {
+      "v": "feature-detect_duplicate_attribute_assignments_2046.2024.1.11606.93c6e8f-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-detect_duplicate_attribute_assignments_2046",
+      "d": "2026-11-16T19:30:01Z"
+    },
+    {
       "v": "feature-dataflow.2022.2.6176.10a2114",
       "pre": false,
       "branch": "feature-dataflow",
@@ -15085,6 +15125,12 @@
       "pre": false,
       "branch": "bugfix-702",
       "d": "2024-03-02T00:16:20Z"
+    },
+    {
+      "v": "bugfix-variability_cyclic_dependency_2044.2024.1.11605.2b14934-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-variability_cyclic_dependency_2044",
+      "d": "2026-11-16T15:29:53Z"
     },
     {
       "v": "bugfix-unit_definition_cycle_check_2022_2.2022.2.6393.87981ea",

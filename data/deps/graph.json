@@ -6,7 +6,7 @@
         "de.itemis.mps_extensions": "2026.1.3712.45fabf4",
         "com.mbeddr_platform": "2026.1.26684.d29a303",
         "com.mbeddr_mbeddr": "2026.1.26684.d29a303",
-        "org.iets3_opensource": "2026.1.11517.6a6a935",
+        "org.iets3_opensource": "2026.1.11604.bdba334",
         "org.mpsqa_all-in-one": "2026.1.1519.a63cf82"
       },
       "edges": [
@@ -60,7 +60,7 @@
         "de.itemis.mps_extensions": "2025.1.3711.dbe9669",
         "com.mbeddr_platform": "2025.1.26683.89ea20c",
         "com.mbeddr_mbeddr": "2025.1.26683.89ea20c",
-        "org.iets3_opensource": "2025.1.11579.1881cde",
+        "org.iets3_opensource": "2025.1.11603.f1dcc03",
         "org.mpsqa_all-in-one": "2025.1.1486.22468db"
       },
       "edges": [
