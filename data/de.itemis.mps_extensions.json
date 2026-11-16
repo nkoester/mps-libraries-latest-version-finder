@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-16T02:31:15.723Z",
-  "total": 1257,
+  "generatedAt": "2026-11-16T13:24:17.901Z",
+  "total": 1259,
   "released": 853,
   "stable": 825,
   "preRelease": 28,
-  "branchCount": 404,
+  "branchCount": 406,
   "branches": 84,
   "lines": [
     {
@@ -6145,6 +6145,12 @@
       "d": "2026-10-15T06:17:27Z"
     },
     {
+      "v": "feature-viewmodel-root-dependencies.2025.1.2697.d50eef7-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-viewmodel-root-dependencies",
+      "d": "2026-11-16T10:33:30Z"
+    },
+    {
       "v": "feature-viewmodel-root-dependencies.2025.1.2687.047971a-SNAPSHOT",
       "pre": true,
       "branch": "feature-viewmodel-root-dependencies",
@@ -6779,6 +6785,12 @@
       "pre": true,
       "branch": "bugfix-ovrlapping-line-numbers",
       "d": "2026-09-25T14:20:42Z"
+    },
+    {
+      "v": "bugfix-arimer-addMissingStubs.9999.9.2696.a976107-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-arimer-addMissingStubs",
+      "d": "2026-11-16T09:57:39Z"
     },
     {
       "v": "bugfix-arimer-addMissingStubs.9999.9.2695.c7acb3b-SNAPSHOT",

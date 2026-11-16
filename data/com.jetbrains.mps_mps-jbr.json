@@ -4,10 +4,10 @@
   "metadataUrl": "https://artifacts.itemis.cloud/repository/maven-mps/com/jetbrains/mps/mps-jbr/maven-metadata.xml",
   "kind": "marker",
   "slug": "com.jetbrains.mps_mps-jbr",
-  "generatedAt": "2026-11-16T02:31:15.723Z",
-  "total": 99,
-  "released": 99,
-  "stable": 92,
+  "generatedAt": "2026-11-16T13:24:17.901Z",
+  "total": 89,
+  "released": 89,
+  "stable": 82,
   "preRelease": 7,
   "branchCount": 0,
   "branches": 0,
@@ -210,11 +210,15 @@
     },
     {
       "line": "263.7307",
-      "latest": "263.7307.320",
+      "latest": "263.7307.325",
       "latestIsPreRelease": false,
-      "total": 30,
-      "stable": 30,
+      "total": 31,
+      "stable": 31,
       "versions": [
+        {
+          "v": "263.7307.325",
+          "pre": false
+        },
         {
           "v": "263.7307.320",
           "pre": false
@@ -341,8 +345,8 @@
       "line": "263.6259",
       "latest": "263.6259.166",
       "latestIsPreRelease": false,
-      "total": 38,
-      "stable": 38,
+      "total": 27,
+      "stable": 27,
       "versions": [
         {
           "v": "263.6259.166",
@@ -450,50 +454,6 @@
         },
         {
           "v": "263.6259.69",
-          "pre": false
-        },
-        {
-          "v": "263.6259.64",
-          "pre": false
-        },
-        {
-          "v": "263.6259.58",
-          "pre": false
-        },
-        {
-          "v": "263.6259.55",
-          "pre": false
-        },
-        {
-          "v": "263.6259.54",
-          "pre": false
-        },
-        {
-          "v": "263.6259.53",
-          "pre": false
-        },
-        {
-          "v": "263.6259.49",
-          "pre": false
-        },
-        {
-          "v": "263.6259.45",
-          "pre": false
-        },
-        {
-          "v": "263.6259.43",
-          "pre": false
-        },
-        {
-          "v": "263.6259.42",
-          "pre": false
-        },
-        {
-          "v": "263.6259.28",
-          "pre": false
-        },
-        {
-          "v": "263.6259.27",
           "pre": false
         }
       ]
