@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-17T04:55:29.622Z",
-  "total": 1260,
+  "generatedAt": "2026-11-17T14:10:25.871Z",
+  "total": 1264,
   "released": 853,
   "stable": 825,
   "preRelease": 28,
-  "branchCount": 407,
+  "branchCount": 411,
   "branches": 84,
   "lines": [
     {
@@ -6151,6 +6151,24 @@
       "d": "2026-10-15T06:17:27Z"
     },
     {
+      "v": "feature-viewmodel-root-dependencies.2025.1.2704.7c3406f-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-viewmodel-root-dependencies",
+      "d": "2026-11-17T13:44:31Z"
+    },
+    {
+      "v": "feature-viewmodel-root-dependencies.2025.1.2701.2635601-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-viewmodel-root-dependencies",
+      "d": "2026-11-17T12:39:49Z"
+    },
+    {
+      "v": "feature-viewmodel-root-dependencies.2025.1.2700.75215e2-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-viewmodel-root-dependencies",
+      "d": "2026-11-17T08:17:58Z"
+    },
+    {
       "v": "feature-viewmodel-root-dependencies.2025.1.2697.d50eef7-SNAPSHOT",
       "pre": true,
       "branch": "feature-viewmodel-root-dependencies",
@@ -6791,6 +6809,12 @@
       "pre": true,
       "branch": "bugfix-ovrlapping-line-numbers",
       "d": "2026-09-25T14:20:42Z"
+    },
+    {
+      "v": "bugfix-arimer-addMissingStubs.9999.9.2699.ececa2a-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-arimer-addMissingStubs",
+      "d": "2026-11-17T08:10:28Z"
     },
     {
       "v": "bugfix-arimer-addMissingStubs.9999.9.2696.a976107-SNAPSHOT",

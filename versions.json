@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T04:55:29.622Z",
+  "generatedAt": "2026-11-17T14:10:25.871Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -171,11 +171,11 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1260,
+      "total": 1264,
       "released": 853,
       "stable": 825,
       "preRelease": 28,
-      "branchCount": 407,
+      "branchCount": 411,
       "branches": 84,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
@@ -293,11 +293,11 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3155,
-      "released": 2075,
-      "stable": 2075,
+      "total": 3164,
+      "released": 2076,
+      "stable": 2076,
       "preRelease": 0,
-      "branchCount": 1080,
+      "branchCount": 1088,
       "branches": 245,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
@@ -335,11 +335,11 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.26679.458d9cc",
-          "latestDate": "2026-11-10T12:40:30Z",
+          "latest": "2024.1.26685.da0530e",
           "latestIsPreRelease": false,
-          "total": 253,
-          "stable": 253
+          "total": 254,
+          "stable": 254,
+          "latestDate": "2026-11-17T10:07:47Z"
         },
         {
           "line": "2023.2",
@@ -439,12 +439,12 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2663,
-      "released": 1893,
-      "stable": 1893,
+      "total": 2672,
+      "released": 1894,
+      "stable": 1894,
       "preRelease": 0,
-      "branchCount": 770,
-      "branches": 180,
+      "branchCount": 778,
+      "branches": 181,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
         {
@@ -481,11 +481,11 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.26679.458d9cc",
-          "latestDate": "2026-11-10T13:03:36Z",
+          "latest": "2024.1.26685.da0530e",
           "latestIsPreRelease": false,
-          "total": 251,
-          "stable": 251
+          "total": 252,
+          "stable": 252,
+          "latestDate": "2026-11-17T10:31:58Z"
         },
         {
           "line": "2023.2",
@@ -569,11 +569,11 @@
       "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 3011,
-      "released": 1757,
-      "stable": 1750,
+      "total": 3016,
+      "released": 1758,
+      "stable": 1751,
       "preRelease": 7,
-      "branchCount": 1254,
+      "branchCount": 1258,
       "branches": 258,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [
@@ -603,11 +603,11 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.11597.896124d",
-          "latestDate": "2026-11-16T12:26:57Z",
+          "latest": "2024.1.11610.6f096fe",
           "latestIsPreRelease": false,
-          "total": 280,
-          "stable": 279
+          "total": 281,
+          "stable": 280,
+          "latestDate": "2026-11-17T08:00:20Z"
         },
         {
           "line": "2023.2",
@@ -1383,9 +1383,9 @@
       "kind": "marker",
       "slug": "com.jetbrains.mps_mps-jbr",
       "ok": true,
-      "total": 92,
-      "released": 92,
-      "stable": 85,
+      "total": 90,
+      "released": 90,
+      "stable": 83,
       "preRelease": 7,
       "branchCount": 0,
       "branches": 0,
@@ -1458,8 +1458,15 @@
           "line": "263.6259",
           "latest": "263.6259.166",
           "latestIsPreRelease": false,
-          "total": 27,
-          "stable": 27
+          "total": 24,
+          "stable": 24
+        },
+        {
+          "line": "261.27258",
+          "latest": "261.27258.1164",
+          "latestIsPreRelease": false,
+          "total": 1,
+          "stable": 1
         }
       ]
     }

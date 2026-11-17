@@ -131,9 +131,9 @@
       "latest": {
         "com.jetbrains_mps": "2024.1.6",
         "de.itemis.mps_extensions": "2024.1.3710.380b7d0",
-        "com.mbeddr_platform": "2024.1.26679.458d9cc",
-        "com.mbeddr_mbeddr": "2024.1.26679.458d9cc",
-        "org.iets3_opensource": "2024.1.11597.896124d",
+        "com.mbeddr_platform": "2024.1.26685.da0530e",
+        "com.mbeddr_mbeddr": "2024.1.26685.da0530e",
+        "org.iets3_opensource": "2024.1.11610.6f096fe",
         "org.mpsqa_all-in-one": "2024.1.1436.3cd3456"
       },
       "edges": [
@@ -150,7 +150,7 @@
         [
           "com.mbeddr_mbeddr",
           "com.mbeddr_platform",
-          "2024.1.26679.458d9cc"
+          "2024.1.26685.da0530e"
         ],
         [
           "org.iets3_opensource",
