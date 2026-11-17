@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T14:10:25.871Z",
+  "generatedAt": "2026-11-17T19:30:34.343Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -171,21 +171,21 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1264,
-      "released": 853,
+      "total": 1266,
+      "released": 854,
       "stable": 825,
-      "preRelease": 28,
-      "branchCount": 411,
+      "preRelease": 29,
+      "branchCount": 412,
       "branches": 84,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
         {
           "line": "9999.9",
-          "latest": "9999.9.3713.c5fa76b-SNAPSHOT",
-          "latestDate": "2026-11-05T03:15:11Z",
+          "latest": "9999.9.3714.94c881d-SNAPSHOT",
           "latestIsPreRelease": true,
-          "total": 28,
-          "stable": 0
+          "total": 29,
+          "stable": 0,
+          "latestDate": "2026-11-17T14:39:34Z"
         },
         {
           "line": "2026.1",
@@ -293,37 +293,37 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3164,
-      "released": 2076,
-      "stable": 2076,
+      "total": 3177,
+      "released": 2080,
+      "stable": 2080,
       "preRelease": 0,
-      "branchCount": 1088,
+      "branchCount": 1097,
       "branches": 245,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
         {
           "line": "9999.9",
-          "latest": "9999.9.26682.823eb7c",
-          "latestDate": "2026-11-11T06:29:12Z",
+          "latest": "9999.9.26688.a920ba9",
           "latestIsPreRelease": false,
-          "total": 423,
-          "stable": 423
+          "total": 424,
+          "stable": 424,
+          "latestDate": "2026-11-17T15:14:09Z"
         },
         {
           "line": "2026.1",
-          "latest": "2026.1.26684.d29a303",
-          "latestDate": "2026-11-11T06:31:39Z",
+          "latest": "2026.1.26690.6a64f68",
           "latestIsPreRelease": false,
-          "total": 39,
-          "stable": 39
+          "total": 40,
+          "stable": 40,
+          "latestDate": "2026-11-17T18:35:10Z"
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.26683.89ea20c",
-          "latestDate": "2026-11-11T06:31:26Z",
+          "latest": "2025.1.26689.3f9a67c",
           "latestIsPreRelease": false,
-          "total": 268,
-          "stable": 268
+          "total": 269,
+          "stable": 269,
+          "latestDate": "2026-11-17T16:39:28Z"
         },
         {
           "line": "2024.3",
@@ -335,11 +335,11 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.26685.da0530e",
+          "latest": "2024.1.26687.78a15ff",
           "latestIsPreRelease": false,
-          "total": 254,
-          "stable": 254,
-          "latestDate": "2026-11-17T10:07:47Z"
+          "total": 255,
+          "stable": 255,
+          "latestDate": "2026-11-17T14:57:59Z"
         },
         {
           "line": "2023.2",
@@ -439,37 +439,37 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2672,
-      "released": 1894,
-      "stable": 1894,
+      "total": 2684,
+      "released": 1898,
+      "stable": 1898,
       "preRelease": 0,
-      "branchCount": 778,
+      "branchCount": 786,
       "branches": 181,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
         {
           "line": "9999.9",
-          "latest": "9999.9.26682.823eb7c",
-          "latestDate": "2026-11-11T06:53:34Z",
+          "latest": "9999.9.26688.a920ba9",
           "latestIsPreRelease": false,
-          "total": 407,
-          "stable": 407
+          "total": 408,
+          "stable": 408,
+          "latestDate": "2026-11-17T15:42:59Z"
         },
         {
           "line": "2026.1",
-          "latest": "2026.1.26684.d29a303",
-          "latestDate": "2026-11-11T06:54:07Z",
+          "latest": "2026.1.26690.6a64f68",
           "latestIsPreRelease": false,
-          "total": 39,
-          "stable": 39
+          "total": 40,
+          "stable": 40,
+          "latestDate": "2026-11-17T18:57:40Z"
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.26683.89ea20c",
-          "latestDate": "2026-11-11T06:53:07Z",
+          "latest": "2025.1.26689.3f9a67c",
           "latestIsPreRelease": false,
-          "total": 266,
-          "stable": 266
+          "total": 267,
+          "stable": 267,
+          "latestDate": "2026-11-17T16:57:43Z"
         },
         {
           "line": "2024.3",
@@ -481,11 +481,11 @@
         },
         {
           "line": "2024.1",
-          "latest": "2024.1.26685.da0530e",
+          "latest": "2024.1.26687.78a15ff",
           "latestIsPreRelease": false,
-          "total": 252,
-          "stable": 252,
-          "latestDate": "2026-11-17T10:31:58Z"
+          "total": 253,
+          "stable": 253,
+          "latestDate": "2026-11-17T15:31:08Z"
         },
         {
           "line": "2023.2",
@@ -569,11 +569,11 @@
       "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 3016,
-      "released": 1758,
-      "stable": 1751,
+      "total": 3020,
+      "released": 1759,
+      "stable": 1752,
       "preRelease": 7,
-      "branchCount": 1258,
+      "branchCount": 1261,
       "branches": 258,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [
@@ -595,19 +595,19 @@
         },
         {
           "line": "2025.1",
-          "latest": "2025.1.11603.f1dcc03",
-          "latestDate": "2026-11-16T14:29:18Z",
+          "latest": "2025.1.11615.8d954e0",
           "latestIsPreRelease": false,
-          "total": 147,
-          "stable": 141
+          "total": 148,
+          "stable": 142,
+          "latestDate": "2026-11-17T14:18:03Z"
         },
         {
           "line": "2024.1",
           "latest": "2024.1.11610.6f096fe",
+          "latestDate": "2026-11-17T08:00:20Z",
           "latestIsPreRelease": false,
           "total": 281,
-          "stable": 280,
-          "latestDate": "2026-11-17T08:00:20Z"
+          "stable": 280
         },
         {
           "line": "2023.2",

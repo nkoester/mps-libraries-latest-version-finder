@@ -5,21 +5,26 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-17T14:10:25.871Z",
-  "total": 1264,
-  "released": 853,
+  "generatedAt": "2026-11-17T19:30:34.343Z",
+  "total": 1266,
+  "released": 854,
   "stable": 825,
-  "preRelease": 28,
-  "branchCount": 411,
+  "preRelease": 29,
+  "branchCount": 412,
   "branches": 84,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.3713.c5fa76b-SNAPSHOT",
+      "latest": "9999.9.3714.94c881d-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 28,
+      "total": 29,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.3714.94c881d-SNAPSHOT",
+          "pre": true,
+          "d": "2026-11-17T14:39:34Z"
+        },
         {
           "v": "9999.9.3713.c5fa76b-SNAPSHOT",
           "pre": true,
@@ -161,7 +166,7 @@
           "d": "2025-09-05T03:13:11Z"
         }
       ],
-      "latestDate": "2026-11-05T03:15:11Z"
+      "latestDate": "2026-11-17T14:39:34Z"
     },
     {
       "line": "2026.1",
@@ -5387,6 +5392,12 @@
       "pre": false,
       "branch": "modelix-extract-core",
       "d": "2022-09-06T16:23:26Z"
+    },
+    {
+      "v": "migration-provisional-platform-20241.2024.1.2707.7393616-SNAPSHOT",
+      "pre": true,
+      "branch": "migration-provisional-platform-20241",
+      "d": "2026-11-17T18:15:40Z"
     },
     {
       "v": "migration-provisional-platform-20241.2024.1.2538.70ceea6-SNAPSHOT",

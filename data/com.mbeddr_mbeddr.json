@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-17T14:10:25.871Z",
-  "total": 2672,
-  "released": 1894,
-  "stable": 1894,
+  "generatedAt": "2026-11-17T19:30:34.343Z",
+  "total": 2684,
+  "released": 1898,
+  "stable": 1898,
   "preRelease": 0,
-  "branchCount": 778,
+  "branchCount": 786,
   "branches": 181,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26682.823eb7c",
+      "latest": "9999.9.26688.a920ba9",
       "latestIsPreRelease": false,
-      "total": 407,
-      "stable": 407,
+      "total": 408,
+      "stable": 408,
       "versions": [
+        {
+          "v": "9999.9.26688.a920ba9",
+          "pre": false,
+          "d": "2026-11-17T15:42:59Z"
+        },
         {
           "v": "9999.9.26682.823eb7c",
           "pre": false,
@@ -2056,15 +2061,20 @@
           "d": "2025-11-04T16:13:32Z"
         }
       ],
-      "latestDate": "2026-11-11T06:53:34Z"
+      "latestDate": "2026-11-17T15:42:59Z"
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.26684.d29a303",
+      "latest": "2026.1.26690.6a64f68",
       "latestIsPreRelease": false,
-      "total": 39,
-      "stable": 39,
+      "total": 40,
+      "stable": 40,
       "versions": [
+        {
+          "v": "2026.1.26690.6a64f68",
+          "pre": false,
+          "d": "2026-11-17T18:57:40Z"
+        },
         {
           "v": "2026.1.26684.d29a303",
           "pre": false,
@@ -2261,15 +2271,20 @@
           "d": "2026-06-29T15:03:08Z"
         }
       ],
-      "latestDate": "2026-11-11T06:54:07Z"
+      "latestDate": "2026-11-17T18:57:40Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26683.89ea20c",
+      "latest": "2025.1.26689.3f9a67c",
       "latestIsPreRelease": false,
-      "total": 266,
-      "stable": 266,
+      "total": 267,
+      "stable": 267,
       "versions": [
+        {
+          "v": "2025.1.26689.3f9a67c",
+          "pre": false,
+          "d": "2026-11-17T16:57:43Z"
+        },
         {
           "v": "2025.1.26683.89ea20c",
           "pre": false,
@@ -3601,7 +3616,7 @@
           "d": "2025-04-29T17:43:40Z"
         }
       ],
-      "latestDate": "2026-11-11T06:53:07Z"
+      "latestDate": "2026-11-17T16:57:43Z"
     },
     {
       "line": "2024.3",
@@ -3950,11 +3965,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.26685.da0530e",
+      "latest": "2024.1.26687.78a15ff",
       "latestIsPreRelease": false,
-      "total": 252,
-      "stable": 252,
+      "total": 253,
+      "stable": 253,
       "versions": [
+        {
+          "v": "2024.1.26687.78a15ff",
+          "pre": false,
+          "d": "2026-11-17T15:31:08Z"
+        },
         {
           "v": "2024.1.26685.da0530e",
           "pre": false,
@@ -5216,7 +5236,7 @@
           "d": "2024-11-13T12:32:19Z"
         }
       ],
-      "latestDate": "2026-11-17T10:31:58Z"
+      "latestDate": "2026-11-17T15:31:08Z"
     },
     {
       "line": "2023.2",
@@ -9650,6 +9670,12 @@
       "d": "2026-03-26T17:16:08Z"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25399.22cc0a0-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster",
+      "d": "2026-11-17T15:16:31Z"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25385.ffb452f-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
@@ -10026,6 +10052,12 @@
       "pre": true,
       "branch": "renovate-master-mpsmaster",
       "d": "2026-06-14T11:14:14Z"
+    },
+    {
+      "v": "renovate-master-major-mpsmaster.9999.9.25397.cb5654d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-major-mpsmaster",
+      "d": "2026-11-17T13:49:51Z"
     },
     {
       "v": "renovate-master-major-mpsmaster.9999.9.25393.364793b-SNAPSHOT",
@@ -10556,6 +10588,12 @@
       "d": "2026-07-05T13:52:45Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.24250.a9b5f45-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-third-party-minor",
+      "d": "2026-11-17T13:50:21Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.24249.7383737-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-third-party-minor",
@@ -11030,6 +11068,18 @@
       "d": "2022-08-29T09:02:40Z"
     },
     {
+      "v": "merge-mps20261.2026.1.25373.6dab3e1-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-17T17:31:49Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.25372.c0b0102-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-17T16:31:29Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.25345.3e49315-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -11202,6 +11252,18 @@
       "pre": true,
       "branch": "merge-mps20261",
       "d": "2026-07-05T13:52:36Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.24966.ada58b6-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-17T15:39:04Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.24965.2bd2f5b-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-17T14:45:25Z"
     },
     {
       "v": "merge-mps20251.2025.1.24961.c398c24-SNAPSHOT",
@@ -12870,6 +12932,12 @@
       "pre": true,
       "branch": "feature-interpreter-performance",
       "d": "2026-11-16T10:39:07Z"
+    },
+    {
+      "v": "feature-interpreter-performance.2025.1.24942.e05ac0f-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-interpreter-performance",
+      "d": "2026-11-17T14:46:21Z"
     },
     {
       "v": "feature-interpreter-performance.2025.1.24942.dd68ef9-SNAPSHOT",
