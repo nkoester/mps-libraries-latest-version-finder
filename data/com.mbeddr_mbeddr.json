@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-18T13:42:04.855Z",
-  "total": 2700,
-  "released": 1903,
-  "stable": 1903,
+  "generatedAt": "2026-11-18T19:12:57.127Z",
+  "total": 2705,
+  "released": 1905,
+  "stable": 1905,
   "preRelease": 0,
-  "branchCount": 797,
-  "branches": 183,
+  "branchCount": 800,
+  "branches": 184,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26692.3083c59",
+      "latest": "9999.9.26695.2b07707",
       "latestIsPreRelease": false,
-      "total": 410,
-      "stable": 410,
+      "total": 411,
+      "stable": 411,
       "versions": [
+        {
+          "v": "9999.9.26695.2b07707",
+          "pre": false,
+          "d": "2026-11-18T18:48:06Z"
+        },
         {
           "v": "9999.9.26692.3083c59",
           "pre": false,
@@ -2071,7 +2076,7 @@
           "d": "2025-11-04T16:13:32Z"
         }
       ],
-      "latestDate": "2026-11-18T05:17:42Z"
+      "latestDate": "2026-11-18T18:48:06Z"
     },
     {
       "line": "2026.1",
@@ -2285,11 +2290,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.26694.3f9a67c",
+      "latest": "2025.1.26713.c295e10",
       "latestIsPreRelease": false,
-      "total": 268,
-      "stable": 268,
+      "total": 269,
+      "stable": 269,
       "versions": [
+        {
+          "v": "2025.1.26713.c295e10",
+          "pre": false,
+          "d": "2026-11-18T14:05:21Z"
+        },
         {
           "v": "2025.1.26694.3f9a67c",
           "pre": false,
@@ -3631,7 +3641,7 @@
           "d": "2025-04-29T17:43:40Z"
         }
       ],
-      "latestDate": "2026-11-18T12:51:58Z"
+      "latestDate": "2026-11-18T14:05:21Z"
     },
     {
       "line": "2024.3",
@@ -9689,6 +9699,12 @@
       "d": "2024-04-16T13:36:59Z"
     },
     {
+      "v": "renovate-mbeddr-platform-versioning.9999.9.25449.112d085-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-mbeddr-platform-versioning",
+      "d": "2026-11-18T14:04:49Z"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsversion.9999.9.25040.c9b6cff-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsversion",
@@ -9863,10 +9879,22 @@
       "d": "2026-07-05T13:53:25Z"
     },
     {
+      "v": "renovate-master-mpsmaster.9999.9.25451.ac24735-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster",
+      "d": "2026-11-18T16:32:49Z"
+    },
+    {
       "v": "renovate-master-mpsmaster.9999.9.25449.fd946a5-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsmaster",
       "d": "2026-11-18T09:09:13Z"
+    },
+    {
+      "v": "renovate-master-mpsmaster.9999.9.25449.1ff1a98-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster",
+      "d": "2026-11-18T13:15:08Z"
     },
     {
       "v": "renovate-master-mpsmaster.9999.9.25357.1e173eb-SNAPSHOT",

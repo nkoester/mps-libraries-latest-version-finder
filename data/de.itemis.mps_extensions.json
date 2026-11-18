@@ -5,21 +5,26 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-18T13:42:04.855Z",
-  "total": 1276,
-  "released": 856,
+  "generatedAt": "2026-11-18T19:12:57.127Z",
+  "total": 1281,
+  "released": 857,
   "stable": 827,
-  "preRelease": 29,
-  "branchCount": 420,
+  "preRelease": 30,
+  "branchCount": 424,
   "branches": 85,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.3714.94c881d-SNAPSHOT",
+      "latest": "9999.9.27002.8f6627c-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 29,
+      "total": 30,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.27002.8f6627c-SNAPSHOT",
+          "pre": true,
+          "d": "2026-11-18T16:24:22Z"
+        },
         {
           "v": "9999.9.3714.94c881d-SNAPSHOT",
           "pre": true,
@@ -166,7 +171,7 @@
           "d": "2025-09-05T03:13:11Z"
         }
       ],
-      "latestDate": "2026-11-18T05:28:31Z"
+      "latestDate": "2026-11-18T16:24:22Z"
     },
     {
       "line": "2026.1",
@@ -4546,6 +4551,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2723.289a182-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-18T16:29:16Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2698.a60a54d-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5416,6 +5427,18 @@
       "d": "2026-10-23T02:01:24Z"
     },
     {
+      "v": "merge-mps20261.2026.1.2725.d883b8f-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-18T17:38:39Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.2722.d883b8f-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-18T16:28:06Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.2666.60562c0-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -5984,6 +6007,12 @@
       "pre": true,
       "branch": "fix-viewmodel-tests-mps20261-compat",
       "d": "2026-10-19T01:32:33Z"
+    },
+    {
+      "v": "fix-viewmodel-headless-writes.2025.1.2721.884602f-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-viewmodel-headless-writes",
+      "d": "2026-11-18T13:46:07Z"
     },
     {
       "v": "fix-viewmodel-headless-writes.2025.1.2716.9336a1f-SNAPSHOT",
