@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-17T19:30:34.343Z",
-  "total": 2684,
-  "released": 1898,
-  "stable": 1898,
+  "generatedAt": "2026-11-18T03:59:23.019Z",
+  "total": 2688,
+  "released": 1899,
+  "stable": 1899,
   "preRelease": 0,
-  "branchCount": 786,
+  "branchCount": 789,
   "branches": 181,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26688.a920ba9",
+      "latest": "9999.9.26691.4e1318b",
       "latestIsPreRelease": false,
-      "total": 408,
-      "stable": 408,
+      "total": 409,
+      "stable": 409,
       "versions": [
+        {
+          "v": "9999.9.26691.4e1318b",
+          "pre": false,
+          "d": "2026-11-17T21:29:55Z"
+        },
         {
           "v": "9999.9.26688.a920ba9",
           "pre": false,
@@ -2061,7 +2066,7 @@
           "d": "2025-11-04T16:13:32Z"
         }
       ],
-      "latestDate": "2026-11-17T15:42:59Z"
+      "latestDate": "2026-11-17T21:29:55Z"
     },
     {
       "line": "2026.1",
@@ -9670,6 +9675,12 @@
       "d": "2026-03-26T17:16:08Z"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25447.056c722-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster",
+      "d": "2026-11-17T20:56:53Z"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25399.22cc0a0-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
@@ -12140,6 +12151,18 @@
       "pre": false,
       "branch": "merge-mps20213-secure",
       "d": "2023-11-29T17:55:39Z"
+    },
+    {
+      "v": "merge-master.9999.9.25445.8e00259-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-17T19:56:35Z"
+    },
+    {
+      "v": "merge-master.9999.9.25444.274e6d8-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-17T19:03:39Z"
     },
     {
       "v": "merge-master.9999.9.25395.de31771-SNAPSHOT",

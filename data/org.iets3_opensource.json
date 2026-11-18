@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-17T19:30:34.343Z",
-  "total": 3020,
+  "generatedAt": "2026-11-18T03:59:23.019Z",
+  "total": 3021,
   "released": 1759,
   "stable": 1752,
   "preRelease": 7,
-  "branchCount": 1261,
+  "branchCount": 1262,
   "branches": 258,
   "lines": [
     {
@@ -9453,6 +9453,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-third-party-minor",
       "d": "2026-06-03T08:57:04Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11619.d7d37ee-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
+      "d": "2026-11-18T02:27:35Z"
     },
     {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11616.1bd079e-SNAPSHOT",
