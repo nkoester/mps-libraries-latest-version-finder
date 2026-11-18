@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-18T03:59:23.019Z",
-  "total": 3021,
-  "released": 1759,
-  "stable": 1752,
+  "generatedAt": "2026-11-18T13:42:04.855Z",
+  "total": 3029,
+  "released": 1761,
+  "stable": 1754,
   "preRelease": 7,
-  "branchCount": 1262,
+  "branchCount": 1268,
   "branches": 258,
   "lines": [
     {
@@ -1130,11 +1130,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11615.8d954e0",
+      "latest": "2025.1.11629.90439c6",
       "latestIsPreRelease": false,
-      "total": 148,
-      "stable": 142,
+      "total": 149,
+      "stable": 143,
       "versions": [
+        {
+          "v": "2025.1.11629.90439c6",
+          "pre": false,
+          "d": "2026-11-18T12:38:06Z"
+        },
         {
           "v": "2025.1.11615.8d954e0",
           "pre": false,
@@ -1876,15 +1881,20 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-11-17T14:18:03Z"
+      "latestDate": "2026-11-18T12:38:06Z"
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11610.6f096fe",
+      "latest": "2024.1.11620.c5e789d",
       "latestIsPreRelease": false,
-      "total": 281,
-      "stable": 280,
+      "total": 282,
+      "stable": 281,
       "versions": [
+        {
+          "v": "2024.1.11620.c5e789d",
+          "pre": false,
+          "d": "2026-11-18T07:49:06Z"
+        },
         {
           "v": "2024.1.11610.6f096fe",
           "pre": false,
@@ -3291,7 +3301,7 @@
           "d": "2024-11-19T14:58:20Z"
         }
       ],
-      "latestDate": "2026-11-17T08:00:20Z"
+      "latestDate": "2026-11-18T07:49:06Z"
     },
     {
       "line": "2023.2",
@@ -9455,6 +9465,12 @@
       "d": "2026-06-03T08:57:04Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11626.3febcaa-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
+      "d": "2026-11-18T11:48:19Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11619.d7d37ee-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
@@ -10337,6 +10353,18 @@
       "d": "2024-02-12T12:33:47Z"
     },
     {
+      "v": "merge-mps20261.2026.1.11627.9c93ae6-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-18T12:15:25Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11622.0bdbf53-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-18T07:29:59Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.11602.0387975-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -10799,6 +10827,12 @@
       "d": "2026-01-16T02:44:52Z"
     },
     {
+      "v": "merge-mps20251.2025.1.11625.b4c8eb0-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-18T11:47:23Z"
+    },
+    {
       "v": "merge-mps20251.2025.1.11611.49fe942-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -11115,6 +11149,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-02-02T14:00:30Z"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11621.c5e789d-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-18T07:29:39Z"
     },
     {
       "v": "merge-mps20251.2024.1.11609.6f096fe-SNAPSHOT",
@@ -12927,6 +12967,12 @@
       "pre": true,
       "branch": "feature-simplify_skeltree_graph_builder_1645",
       "d": "2026-02-17T15:31:23Z"
+    },
+    {
+      "v": "feature-shared-interpreter-scopes.2025.1.11624.cbdc0a1-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-shared-interpreter-scopes",
+      "d": "2026-11-18T07:37:32Z"
     },
     {
       "v": "feature-shared-interpreter-scopes.2025.1.11617.9b32018-SNAPSHOT",

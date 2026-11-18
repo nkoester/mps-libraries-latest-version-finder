@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-18T03:59:23.019Z",
-  "total": 1266,
-  "released": 854,
-  "stable": 825,
+  "generatedAt": "2026-11-18T13:42:04.855Z",
+  "total": 1276,
+  "released": 856,
+  "stable": 827,
   "preRelease": 29,
-  "branchCount": 412,
-  "branches": 84,
+  "branchCount": 420,
+  "branches": 85,
   "lines": [
     {
       "line": "9999.9",
@@ -23,7 +23,7 @@
         {
           "v": "9999.9.3714.94c881d-SNAPSHOT",
           "pre": true,
-          "d": "2026-11-17T14:39:34Z"
+          "d": "2026-11-18T05:28:31Z"
         },
         {
           "v": "9999.9.3713.c5fa76b-SNAPSHOT",
@@ -166,7 +166,7 @@
           "d": "2025-09-05T03:13:11Z"
         }
       ],
-      "latestDate": "2026-11-17T14:39:34Z"
+      "latestDate": "2026-11-18T05:28:31Z"
     },
     {
       "line": "2026.1",
@@ -280,11 +280,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.3711.dbe9669",
+      "latest": "2025.1.27001.ffa7ea4",
       "latestIsPreRelease": false,
-      "total": 122,
-      "stable": 122,
+      "total": 123,
+      "stable": 123,
       "versions": [
+        {
+          "v": "2025.1.27001.ffa7ea4",
+          "pre": false,
+          "d": "2026-11-18T12:12:32Z"
+        },
         {
           "v": "2025.1.3711.dbe9669",
           "pre": false,
@@ -896,7 +901,7 @@
           "d": "2025-04-29T14:16:32Z"
         }
       ],
-      "latestDate": "2026-11-04T03:13:41Z"
+      "latestDate": "2026-11-18T12:12:32Z"
     },
     {
       "line": "2024.3",
@@ -1080,11 +1085,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.3710.380b7d0",
+      "latest": "2024.1.27000.395a392",
       "latestIsPreRelease": false,
-      "total": 129,
-      "stable": 129,
+      "total": 130,
+      "stable": 130,
       "versions": [
+        {
+          "v": "2024.1.27000.395a392",
+          "pre": false,
+          "d": "2026-11-18T09:21:17Z"
+        },
         {
           "v": "2024.1.3710.380b7d0",
           "pre": false,
@@ -1731,7 +1741,7 @@
           "d": "2024-11-09T19:39:20Z"
         }
       ],
-      "latestDate": "2026-11-03T03:15:29Z"
+      "latestDate": "2026-11-18T09:21:17Z"
     },
     {
       "line": "2023.2",
@@ -4428,12 +4438,6 @@
       "d": "2022-07-08T19:38:08Z"
     },
     {
-      "v": "use-jbr-marker.2024.1.2267.4d3df50-SNAPSHOT",
-      "pre": true,
-      "branch": "use-jbr-marker",
-      "d": "2026-07-20T08:35:42Z"
-    },
-    {
       "v": "test-plaintextgen-regression-coverage.9999.9.2631.be9cbc3-SNAPSHOT",
       "pre": true,
       "branch": "test-plaintextgen-regression-coverage",
@@ -4545,7 +4549,7 @@
       "v": "renovate-master-mps.9999.9.2698.a60a54d-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-16T23:36:10Z"
+      "d": "2026-11-18T05:28:28Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2688.a929838-SNAPSHOT",
@@ -5394,10 +5398,16 @@
       "d": "2022-09-06T16:23:26Z"
     },
     {
+      "v": "migration-provisional-platform-20241.2024.1.2709.c2b59ea-SNAPSHOT",
+      "pre": true,
+      "branch": "migration-provisional-platform-20241",
+      "d": "2026-11-18T05:25:35Z"
+    },
+    {
       "v": "migration-provisional-platform-20241.2024.1.2707.7393616-SNAPSHOT",
       "pre": true,
       "branch": "migration-provisional-platform-20241",
-      "d": "2026-11-17T18:15:40Z"
+      "d": "2026-11-18T05:28:21Z"
     },
     {
       "v": "migration-provisional-platform-20241.2024.1.2538.70ceea6-SNAPSHOT",
@@ -5572,6 +5582,12 @@
       "pre": true,
       "branch": "merge-mps20261",
       "d": "2026-07-23T14:04:49Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.2717.01b7949-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-18T10:31:05Z"
     },
     {
       "v": "merge-mps20251.2025.1.2656.ae951a4-SNAPSHOT",
@@ -5970,6 +5986,30 @@
       "d": "2026-10-19T01:32:33Z"
     },
     {
+      "v": "fix-viewmodel-headless-writes.2025.1.2716.9336a1f-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-viewmodel-headless-writes",
+      "d": "2026-11-18T09:50:42Z"
+    },
+    {
+      "v": "fix-viewmodel-headless-writes.2025.1.2715.9112151-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-viewmodel-headless-writes",
+      "d": "2026-11-18T09:23:52Z"
+    },
+    {
+      "v": "fix-viewmodel-headless-writes.2025.1.2714.e2c3c6a-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-viewmodel-headless-writes",
+      "d": "2026-11-18T09:00:19Z"
+    },
+    {
+      "v": "fix-viewmodel-headless-writes.2025.1.2713.d03aa29-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-viewmodel-headless-writes",
+      "d": "2026-11-18T08:07:40Z"
+    },
+    {
       "v": "fix-viewmodel-headless-writes.2025.1.2689.6c62dca-SNAPSHOT",
       "pre": true,
       "branch": "fix-viewmodel-headless-writes",
@@ -6064,6 +6104,12 @@
       "pre": true,
       "branch": "fix-projectview-write-intent-from-read-action",
       "d": "2026-08-01T05:49:45Z"
+    },
+    {
+      "v": "fix-platform-test-report-overwrite.2024.1.2719.f34de03-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-platform-test-report-overwrite",
+      "d": "2026-11-18T12:23:00Z"
     },
     {
       "v": "fix-plaintextgen-tab-edge-cases.9999.9.2584.a3f0a15-SNAPSHOT",
@@ -6165,25 +6211,25 @@
       "v": "feature-viewmodel-root-dependencies.2025.1.2704.7c3406f-SNAPSHOT",
       "pre": true,
       "branch": "feature-viewmodel-root-dependencies",
-      "d": "2026-11-17T13:44:31Z"
+      "d": "2026-11-18T05:28:16Z"
     },
     {
       "v": "feature-viewmodel-root-dependencies.2025.1.2701.2635601-SNAPSHOT",
       "pre": true,
       "branch": "feature-viewmodel-root-dependencies",
-      "d": "2026-11-17T12:39:49Z"
+      "d": "2026-11-18T05:28:15Z"
     },
     {
       "v": "feature-viewmodel-root-dependencies.2025.1.2700.75215e2-SNAPSHOT",
       "pre": true,
       "branch": "feature-viewmodel-root-dependencies",
-      "d": "2026-11-17T08:17:58Z"
+      "d": "2026-11-18T05:28:14Z"
     },
     {
       "v": "feature-viewmodel-root-dependencies.2025.1.2697.d50eef7-SNAPSHOT",
       "pre": true,
       "branch": "feature-viewmodel-root-dependencies",
-      "d": "2026-11-16T10:33:30Z"
+      "d": "2026-11-18T05:28:14Z"
     },
     {
       "v": "feature-viewmodel-root-dependencies.2025.1.2687.047971a-SNAPSHOT",
@@ -6702,6 +6748,18 @@
       "d": "2026-09-30T03:13:24Z"
     },
     {
+      "v": "build-renovate-platform-rules.9999.9.2710.8f6627c-SNAPSHOT",
+      "pre": true,
+      "branch": "build-renovate-platform-rules",
+      "d": "2026-11-18T06:20:58Z"
+    },
+    {
+      "v": "build-renovate-platform-rules.9999.9.2708.e30e401-SNAPSHOT",
+      "pre": true,
+      "branch": "build-renovate-platform-rules",
+      "d": "2026-11-18T05:11:35Z"
+    },
+    {
       "v": "build-publishing-repositories-20241.2024.1.2471.57ebba7-SNAPSHOT",
       "pre": true,
       "branch": "build-publishing-repositories-20241",
@@ -6825,37 +6883,37 @@
       "v": "bugfix-arimer-addMissingStubs.9999.9.2699.ececa2a-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-arimer-addMissingStubs",
-      "d": "2026-11-17T08:10:28Z"
+      "d": "2026-11-18T05:28:08Z"
     },
     {
       "v": "bugfix-arimer-addMissingStubs.9999.9.2696.a976107-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-arimer-addMissingStubs",
-      "d": "2026-11-16T09:57:39Z"
+      "d": "2026-11-18T05:28:07Z"
     },
     {
       "v": "bugfix-arimer-addMissingStubs.9999.9.2695.c7acb3b-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-arimer-addMissingStubs",
-      "d": "2026-11-15T22:19:19Z"
+      "d": "2026-11-18T05:28:07Z"
     },
     {
       "v": "bugfix-arimer-addMissingStubs.9999.9.2694.0806921-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-arimer-addMissingStubs",
-      "d": "2026-11-15T21:57:11Z"
+      "d": "2026-11-18T05:28:06Z"
     },
     {
       "v": "bugfix-arimer-addMissingStubs.9999.9.2691.af0312c-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-arimer-addMissingStubs",
-      "d": "2026-11-13T18:05:15Z"
+      "d": "2026-11-18T05:28:05Z"
     },
     {
       "v": "bugfix-arimer-addMissingStubs.9999.9.2690.f7892bb-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-arimer-addMissingStubs",
-      "d": "2026-11-13T17:15:50Z"
+      "d": "2026-11-18T05:28:05Z"
     },
     {
       "v": "bugfix-ThirdPartySolution.2022.2.2788.406b827",
