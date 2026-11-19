@@ -4,6 +4,18 @@
   "slug": "com.mbeddr_mbeddr",
   "snapshotLookup": "timestamped",
   "versions": {
+    "9999.9.26722.74abe26": [
+      [
+        "com.mbeddr_platform",
+        "9999.9.27007.df5a4e9-SNAPSHOT"
+      ]
+    ],
+    "9999.9.26697.2b07707": [
+      [
+        "com.mbeddr_platform",
+        "9999.9.26697.2b07707"
+      ]
+    ],
     "9999.9.26695.2b07707": [
       [
         "com.mbeddr_platform",
@@ -2470,6 +2482,12 @@
         "unspecified"
       ]
     ],
+    "2026.1.26720.7dcd24d": [
+      [
+        "com.mbeddr_platform",
+        "2026.1.27006.12d0b55"
+      ]
+    ],
     "2026.1.26717.2329e95": [
       [
         "com.mbeddr_platform",
@@ -2720,6 +2738,12 @@
       [
         "com.mbeddr_platform",
         "2026.1.26529.78a4a5d"
+      ]
+    ],
+    "2025.1.26719.dfcaa6a": [
+      [
+        "com.mbeddr_platform",
+        "2025.1.27005.f7346b6"
       ]
     ],
     "2025.1.26713.c295e10": [
@@ -4736,6 +4760,12 @@
       [
         "com.mbeddr_platform",
         "2024.3.25006.6b270d5"
+      ]
+    ],
+    "2024.1.26718.a2b27b8": [
+      [
+        "com.mbeddr_platform",
+        "2024.1.27004.f00fb85"
       ]
     ],
     "2024.1.26712.484525c": [
