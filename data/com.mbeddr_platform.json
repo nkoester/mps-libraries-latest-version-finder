@@ -5,13 +5,13 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-18T19:12:57.127Z",
-  "total": 3198,
-  "released": 2087,
-  "stable": 2087,
+  "generatedAt": "2026-11-19T03:56:14.769Z",
+  "total": 3206,
+  "released": 2089,
+  "stable": 2089,
   "preRelease": 0,
-  "branchCount": 1111,
-  "branches": 247,
+  "branchCount": 1117,
+  "branches": 248,
   "lines": [
     {
       "line": "9999.9",
@@ -2160,11 +2160,21 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.26690.6a64f68",
+      "latest": "2026.1.27003.9281cf8",
       "latestIsPreRelease": false,
-      "total": 40,
-      "stable": 40,
+      "total": 42,
+      "stable": 42,
       "versions": [
+        {
+          "v": "2026.1.27003.9281cf8",
+          "pre": false,
+          "d": "2026-11-18T19:38:26Z"
+        },
+        {
+          "v": "2026.1.26696.6a64f68",
+          "pre": false,
+          "d": "2026-11-18T19:59:52Z"
+        },
         {
           "v": "2026.1.26690.6a64f68",
           "pre": false,
@@ -2366,7 +2376,7 @@
           "d": "2026-06-29T14:48:04Z"
         }
       ],
-      "latestDate": "2026-11-17T18:35:10Z"
+      "latestDate": "2026-11-18T19:38:26Z"
     },
     {
       "line": "2025.1",
@@ -10797,6 +10807,12 @@
       "d": "2025-11-26T06:42:47Z"
     },
     {
+      "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25451.5dc5651-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-mpsextensionsmaster",
+      "d": "2026-11-18T20:05:40Z"
+    },
+    {
       "v": "renovate-master-patch-mpsextensionsmaster.9999.9.25447.056c722-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
@@ -11023,6 +11039,12 @@
       "pre": true,
       "branch": "renovate-master-mpsmaster",
       "d": "2026-11-18T16:32:49Z"
+    },
+    {
+      "v": "renovate-master-mpsmaster.9999.9.25451.20d4e12-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster",
+      "d": "2026-11-18T20:05:38Z"
     },
     {
       "v": "renovate-master-mpsmaster.9999.9.25449.fd946a5-SNAPSHOT",
@@ -11677,6 +11699,12 @@
       "pre": true,
       "branch": "renovate-master-apache-poi-monorepo",
       "d": "2025-12-12T07:41:10Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25374.f9e8f27-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-mpsextensions261",
+      "d": "2026-11-18T20:05:42Z"
     },
     {
       "v": "renovate-maintenance-mps20261-patch-mpsextensions261.2026.1.25333.3dd44f2-SNAPSHOT",
@@ -15109,6 +15137,24 @@
       "pre": true,
       "branch": "fix-evaluator-info-url-241",
       "d": "2026-03-26T05:13:58Z"
+    },
+    {
+      "v": "fix-diagram-layout-race.2024.1.2731.5c5e75e-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-diagram-layout-race",
+      "d": "2026-11-18T21:48:39Z"
+    },
+    {
+      "v": "fix-diagram-layout-race.2024.1.2729.295937d-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-diagram-layout-race",
+      "d": "2026-11-18T21:06:19Z"
+    },
+    {
+      "v": "fix-diagram-layout-race.2024.1.2728.d6f95da-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-diagram-layout-race",
+      "d": "2026-11-18T20:28:33Z"
     },
     {
       "v": "fix-actionsfilter.2025.1.24500.78639ef-SNAPSHOT",

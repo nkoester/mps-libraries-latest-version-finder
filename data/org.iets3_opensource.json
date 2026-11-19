@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-18T19:12:57.127Z",
-  "total": 3045,
-  "released": 1765,
-  "stable": 1758,
+  "generatedAt": "2026-11-19T03:56:14.769Z",
+  "total": 3049,
+  "released": 1767,
+  "stable": 1760,
   "preRelease": 7,
-  "branchCount": 1280,
+  "branchCount": 1282,
   "branches": 260,
   "lines": [
     {
@@ -975,11 +975,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11648.ab47aec",
+      "latest": "2026.1.11652.0e6765a",
       "latestIsPreRelease": false,
-      "total": 31,
-      "stable": 31,
+      "total": 32,
+      "stable": 32,
       "versions": [
+        {
+          "v": "2026.1.11652.0e6765a",
+          "pre": false,
+          "d": "2026-11-18T19:30:14Z"
+        },
         {
           "v": "2026.1.11648.ab47aec",
           "pre": false,
@@ -1136,15 +1141,20 @@
           "d": "2026-07-15T12:14:32Z"
         }
       ],
-      "latestDate": "2026-11-18T19:03:49Z"
+      "latestDate": "2026-11-18T19:30:14Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11644.91bbbbb",
+      "latest": "2025.1.11651.18f9299",
       "latestIsPreRelease": false,
-      "total": 150,
-      "stable": 144,
+      "total": 151,
+      "stable": 145,
       "versions": [
+        {
+          "v": "2025.1.11651.18f9299",
+          "pre": false,
+          "d": "2026-11-18T19:26:54Z"
+        },
         {
           "v": "2025.1.11644.91bbbbb",
           "pre": false,
@@ -1896,7 +1906,7 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-11-18T16:59:54Z"
+      "latestDate": "2026-11-18T19:26:54Z"
     },
     {
       "line": "2024.1",
@@ -10401,6 +10411,18 @@
       "pre": false,
       "branch": "merge-20213",
       "d": "2024-02-12T12:33:47Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11653.cad3b2a-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-18T19:29:56Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11650.00cb1bc-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-18T19:03:47Z"
     },
     {
       "v": "merge-mps20261.2026.1.11645.f716a00-SNAPSHOT",

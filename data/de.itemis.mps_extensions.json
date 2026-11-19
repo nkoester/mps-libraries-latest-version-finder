@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-18T19:12:57.127Z",
-  "total": 1281,
-  "released": 857,
-  "stable": 827,
+  "generatedAt": "2026-11-19T03:56:14.769Z",
+  "total": 1286,
+  "released": 858,
+  "stable": 828,
   "preRelease": 30,
-  "branchCount": 424,
-  "branches": 85,
+  "branchCount": 428,
+  "branches": 87,
   "lines": [
     {
       "line": "9999.9",
@@ -175,11 +175,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.3712.45fabf4",
+      "latest": "2026.1.27003.9281cf8",
       "latestIsPreRelease": false,
-      "total": 20,
-      "stable": 20,
+      "total": 21,
+      "stable": 21,
       "versions": [
+        {
+          "v": "2026.1.27003.9281cf8",
+          "pre": false,
+          "d": "2026-11-18T19:37:42Z"
+        },
         {
           "v": "2026.1.3712.45fabf4",
           "pre": false,
@@ -281,7 +286,7 @@
           "d": "2026-06-23T13:28:12Z"
         }
       ],
-      "latestDate": "2026-11-04T03:14:32Z"
+      "latestDate": "2026-11-18T19:37:42Z"
     },
     {
       "line": "2025.1",
@@ -6201,6 +6206,24 @@
       "d": "2026-10-22T07:24:02Z"
     },
     {
+      "v": "fix-diagram-layout-race.2024.1.2731.5c5e75e-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-diagram-layout-race",
+      "d": "2026-11-18T21:48:39Z"
+    },
+    {
+      "v": "fix-diagram-layout-race.2024.1.2729.295937d-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-diagram-layout-race",
+      "d": "2026-11-18T21:06:19Z"
+    },
+    {
+      "v": "fix-diagram-layout-race.2024.1.2728.d6f95da-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-diagram-layout-race",
+      "d": "2026-11-18T20:28:33Z"
+    },
+    {
       "v": "fix-celllayout-regressions.2025.1.2614.16752e0-SNAPSHOT",
       "pre": true,
       "branch": "fix-celllayout-regressions",
@@ -6841,6 +6864,12 @@
       "pre": true,
       "branch": "build-pre-move-fixes-20241",
       "d": "2026-10-15T06:17:20Z"
+    },
+    {
+      "v": "build-mps-263.7307.246.9999.9.2730.bd30840-SNAPSHOT",
+      "pre": true,
+      "branch": "build-mps-263",
+      "d": "2026-11-18T21:05:46Z"
     },
     {
       "v": "build-extensions-aggregate.2024.1.2394.9a84232-SNAPSHOT",
