@@ -1,5 +1,27 @@
 {
   "versions": {
+    "2026.2": {
+      "jbr": "25.0.4.1-b508.41",
+      "source": "marker",
+      "artifacts": {
+        "com.jetbrains.jdk_jbr_jcef": {
+          "v": "25.0.4.1-b508.41",
+          "exact": true
+        },
+        "com.jetbrains.jdk_jbr": {
+          "v": "25.0.4.1-b508.41",
+          "exact": true
+        },
+        "com.jetbrains.jdk_jbrsdk": {
+          "v": "25.0.4.1-b508.41",
+          "exact": true
+        },
+        "com.jetbrains.jdk_jbr_nomod": {
+          "v": null,
+          "exact": false
+        }
+      }
+    },
     "2026.1.2": {
       "jbr": "25.0.4.1-b329.142",
       "source": "marker",

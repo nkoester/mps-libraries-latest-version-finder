@@ -5,14 +5,29 @@
   "repo": "JetBrains/MPS",
   "changelog": "https://www.jetbrains.com/mps/whatsnew/",
   "slug": "com.jetbrains_mps",
-  "generatedAt": "2026-11-19T14:10:22.554Z",
-  "total": 62,
-  "released": 62,
-  "stable": 54,
+  "generatedAt": "2026-11-19T19:18:06.041Z",
+  "total": 63,
+  "released": 63,
+  "stable": 55,
   "preRelease": 8,
   "branchCount": 0,
   "branches": 0,
   "lines": [
+    {
+      "line": "2026.2",
+      "latest": "2026.2",
+      "latestIsPreRelease": false,
+      "total": 1,
+      "stable": 1,
+      "versions": [
+        {
+          "v": "2026.2",
+          "pre": false,
+          "d": "2026-11-19T14:42:00Z"
+        }
+      ],
+      "latestDate": "2026-11-19T14:42:00Z"
+    },
     {
       "line": "2026.1",
       "latest": "2026.1.2",

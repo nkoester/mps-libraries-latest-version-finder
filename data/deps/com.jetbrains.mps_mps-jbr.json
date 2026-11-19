@@ -4,6 +4,12 @@
   "slug": "com.jetbrains.mps_mps-jbr",
   "snapshotLookup": "timestamped",
   "versions": {
+    "2026.2": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b508.41"
+      ]
+    ],
     "2026.1.2": [
       [
         "com.jetbrains.jdk_jbr_jcef",
@@ -188,6 +194,12 @@
       [
         "com.jetbrains.jdk_jbr_jcef",
         "17.0.12-b1000.54"
+      ]
+    ],
+    "263.7307.366": [
+      [
+        "com.jetbrains.jdk_jbr_jcef",
+        "25.0.4.1-b635.79"
       ]
     ],
     "263.7307.354": [

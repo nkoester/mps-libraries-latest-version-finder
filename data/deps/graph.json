@@ -1,12 +1,18 @@
 {
   "lines": {
+    "2026.2": {
+      "latest": {
+        "com.jetbrains_mps": "2026.2"
+      },
+      "edges": []
+    },
     "2026.1": {
       "latest": {
         "com.jetbrains_mps": "2026.1.2",
         "de.itemis.mps_extensions": "2026.1.27006.12d0b55",
         "com.mbeddr_platform": "2026.1.27006.12d0b55",
         "com.mbeddr_mbeddr": "2026.1.26720.7dcd24d",
-        "org.iets3_opensource": "2026.1.11652.0e6765a",
+        "org.iets3_opensource": "2026.1.11663.1067b41",
         "org.mpsqa_all-in-one": "2026.1.1519.a63cf82"
       },
       "edges": [

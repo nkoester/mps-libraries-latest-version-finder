@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-19T14:10:22.554Z",
-  "total": 3052,
-  "released": 1767,
-  "stable": 1760,
+  "generatedAt": "2026-11-19T19:18:06.041Z",
+  "total": 3054,
+  "released": 1768,
+  "stable": 1761,
   "preRelease": 7,
-  "branchCount": 1285,
+  "branchCount": 1286,
   "branches": 260,
   "lines": [
     {
@@ -975,11 +975,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11652.0e6765a",
+      "latest": "2026.1.11663.1067b41",
       "latestIsPreRelease": false,
-      "total": 32,
-      "stable": 32,
+      "total": 33,
+      "stable": 33,
       "versions": [
+        {
+          "v": "2026.1.11663.1067b41",
+          "pre": false,
+          "d": "2026-11-19T16:57:51Z"
+        },
         {
           "v": "2026.1.11652.0e6765a",
           "pre": false,
@@ -1141,7 +1146,7 @@
           "d": "2026-07-15T12:14:32Z"
         }
       ],
-      "latestDate": "2026-11-18T19:30:14Z"
+      "latestDate": "2026-11-19T16:57:51Z"
     },
     {
       "line": "2025.1",
@@ -13675,6 +13680,12 @@
       "pre": false,
       "branch": "feature-getter_for_NixValueList",
       "d": "2023-02-07T15:50:18Z"
+    },
+    {
+      "v": "feature-genjava_test_node_urls_2054.2025.1.11659.ce7040b-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-genjava_test_node_urls_2054",
+      "d": "2026-11-19T14:10:32Z"
     },
     {
       "v": "feature-genjava_test_node_urls_2054.2025.1.11658.d693c41-SNAPSHOT",
