@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-20T13:51:57.883Z",
-  "total": 3055,
+  "generatedAt": "2026-11-20T18:56:48.646Z",
+  "total": 3058,
   "released": 1770,
   "stable": 1763,
   "preRelease": 7,
-  "branchCount": 1285,
+  "branchCount": 1288,
   "branches": 261,
   "lines": [
     {
@@ -10404,6 +10404,18 @@
       "d": "2024-02-12T12:33:47Z"
     },
     {
+      "v": "merge-mps20261.2026.1.11680.630c24f-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-20T15:03:24Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11678.ce426b3-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-20T13:45:34Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.11677.a5757ed-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -13990,6 +14002,12 @@
       "pre": true,
       "branch": "feature-embellish_config_names_via_extension_1598",
       "d": "2026-02-25T14:19:50Z"
+    },
+    {
+      "v": "feature-detect_duplicate_attribute_assignments_2046.2024.1.11679.efdb9cc-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-detect_duplicate_attribute_assignments_2046",
+      "d": "2026-11-20T14:44:39Z"
     },
     {
       "v": "feature-detect_duplicate_attribute_assignments_2046.2024.1.11674.cec84ee-SNAPSHOT",

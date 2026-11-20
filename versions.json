@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T13:51:57.883Z",
+  "generatedAt": "2026-11-20T18:56:48.646Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -179,11 +179,11 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1297,
+      "total": 1300,
       "released": 862,
       "stable": 831,
       "preRelease": 31,
-      "branchCount": 435,
+      "branchCount": 438,
       "branches": 88,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
@@ -301,11 +301,11 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3222,
+      "total": 3225,
       "released": 2094,
       "stable": 2093,
       "preRelease": 1,
-      "branchCount": 1128,
+      "branchCount": 1131,
       "branches": 250,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
@@ -577,11 +577,11 @@
       "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 3055,
+      "total": 3058,
       "released": 1770,
       "stable": 1763,
       "preRelease": 7,
-      "branchCount": 1285,
+      "branchCount": 1288,
       "branches": 261,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [
@@ -604,18 +604,18 @@
         {
           "line": "2025.1",
           "latest": "2025.1.11676.07fd98d",
+          "latestDate": "2026-11-20T11:58:23Z",
           "latestIsPreRelease": false,
           "total": 152,
-          "stable": 146,
-          "latestDate": "2026-11-20T11:58:23Z"
+          "stable": 146
         },
         {
           "line": "2024.1",
           "latest": "2024.1.11670.ff11ab4",
+          "latestDate": "2026-11-20T11:17:43Z",
           "latestIsPreRelease": false,
           "total": 284,
-          "stable": 283,
-          "latestDate": "2026-11-20T11:17:43Z"
+          "stable": 283
         },
         {
           "line": "2023.2",
