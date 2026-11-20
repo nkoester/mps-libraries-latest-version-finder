@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T19:18:06.041Z",
+  "generatedAt": "2026-11-20T03:50:14.508Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -20,10 +20,10 @@
         {
           "line": "2026.2",
           "latest": "2026.2",
+          "latestDate": "2026-11-19T14:42:00Z",
           "latestIsPreRelease": false,
           "total": 1,
-          "stable": 1,
-          "latestDate": "2026-11-19T14:42:00Z"
+          "stable": 1
         },
         {
           "line": "2026.1",
@@ -179,12 +179,12 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1295,
+      "total": 1293,
       "released": 862,
       "stable": 831,
       "preRelease": 31,
-      "branchCount": 433,
-      "branches": 88,
+      "branchCount": 431,
+      "branches": 87,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
         {
@@ -301,11 +301,11 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3218,
+      "total": 3219,
       "released": 2094,
       "stable": 2093,
       "preRelease": 1,
-      "branchCount": 1124,
+      "branchCount": 1125,
       "branches": 249,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
@@ -447,11 +447,11 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2726,
+      "total": 2727,
       "released": 1912,
       "stable": 1912,
       "preRelease": 0,
-      "branchCount": 814,
+      "branchCount": 815,
       "branches": 188,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
@@ -596,10 +596,10 @@
         {
           "line": "2026.1",
           "latest": "2026.1.11663.1067b41",
+          "latestDate": "2026-11-19T16:57:51Z",
           "latestIsPreRelease": false,
           "total": 33,
-          "stable": 33,
-          "latestDate": "2026-11-19T16:57:51Z"
+          "stable": 33
         },
         {
           "line": "2025.1",
