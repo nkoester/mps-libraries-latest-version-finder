@@ -5,13 +5,13 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-20T03:50:14.508Z",
-  "total": 3219,
+  "generatedAt": "2026-11-20T13:51:57.883Z",
+  "total": 3222,
   "released": 2094,
   "stable": 2093,
   "preRelease": 1,
-  "branchCount": 1125,
-  "branches": 249,
+  "branchCount": 1128,
+  "branches": 250,
   "lines": [
     {
       "line": "9999.9",
@@ -11570,6 +11570,12 @@
       "d": "2025-10-09T05:55:24Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2744.74dbca3-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-20T07:40:06Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2743.081cea1-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -13670,6 +13676,12 @@
       "d": "2025-11-26T05:55:37Z"
     },
     {
+      "v": "merge-mps20251.2025.1.2747.367470e-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-20T12:11:15Z"
+    },
+    {
       "v": "merge-mps20251.2025.1.2734.21c88a2-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -15162,6 +15174,12 @@
       "pre": true,
       "branch": "fix-suspend-contextactions-when-closed",
       "d": "2025-11-19T01:36:46Z"
+    },
+    {
+      "v": "fix-standards-large-nodes.2024.1.2746.213f4f0-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-standards-large-nodes",
+      "d": "2026-11-20T12:01:27Z"
     },
     {
       "v": "fix-show-file-manager.2025.1.24505.96365ad-SNAPSHOT",

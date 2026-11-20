@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-20T03:50:14.508Z",
-  "total": 3054,
-  "released": 1768,
-  "stable": 1761,
+  "generatedAt": "2026-11-20T13:51:57.883Z",
+  "total": 3055,
+  "released": 1770,
+  "stable": 1763,
   "preRelease": 7,
-  "branchCount": 1286,
-  "branches": 260,
+  "branchCount": 1285,
+  "branches": 261,
   "lines": [
     {
       "line": "9999.9",
@@ -1150,11 +1150,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11651.18f9299",
+      "latest": "2025.1.11676.07fd98d",
       "latestIsPreRelease": false,
-      "total": 151,
-      "stable": 145,
+      "total": 152,
+      "stable": 146,
       "versions": [
+        {
+          "v": "2025.1.11676.07fd98d",
+          "pre": false,
+          "d": "2026-11-20T11:58:23Z"
+        },
         {
           "v": "2025.1.11651.18f9299",
           "pre": false,
@@ -1911,15 +1916,20 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-11-18T19:26:54Z"
+      "latestDate": "2026-11-20T11:58:23Z"
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11635.b7e093c",
+      "latest": "2024.1.11670.ff11ab4",
       "latestIsPreRelease": false,
-      "total": 283,
-      "stable": 282,
+      "total": 284,
+      "stable": 283,
       "versions": [
+        {
+          "v": "2024.1.11670.ff11ab4",
+          "pre": false,
+          "d": "2026-11-20T11:17:43Z"
+        },
         {
           "v": "2024.1.11635.b7e093c",
           "pre": false,
@@ -3336,7 +3346,7 @@
           "d": "2024-11-19T14:58:20Z"
         }
       ],
-      "latestDate": "2026-11-18T16:18:05Z"
+      "latestDate": "2026-11-20T11:17:43Z"
     },
     {
       "line": "2023.2",
@@ -9524,10 +9534,10 @@
       "d": "2026-06-03T09:09:23Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.10524.6247a89-SNAPSHOT",
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11671.0de9e6e-SNAPSHOT",
       "pre": true,
-      "branch": "renovate-maintenance-mps20241-third-party-minor",
-      "d": "2026-06-03T08:57:04Z"
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
+      "d": "2026-11-20T11:00:34Z"
     },
     {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11656.fd67ee7-SNAPSHOT",
@@ -9758,18 +9768,6 @@
       "d": "2026-04-17T07:50:54Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.10211.171c218-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
-      "d": "2026-04-09T06:33:18Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.10165.2af5016-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
-      "d": "2026-03-26T01:43:18Z"
-    },
-    {
       "v": "renovate-maintenance-mps20241-major-github-actions.2024.1.11184.b88b45f-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-major-github-actions",
@@ -9852,6 +9850,18 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-major-github-actions",
       "d": "2026-03-13T01:42:05Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11672.96e7d89-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-11-20T11:03:26Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11665.157d287-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-11-20T06:58:37Z"
     },
     {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11593.92b08c1-SNAPSHOT",
@@ -9968,12 +9978,6 @@
       "d": "2026-06-02T06:47:41Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.10129.375b90e-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-gradle-9.x",
-      "d": "2026-03-23T07:35:43Z"
-    },
-    {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.11589.9fc68b5-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions",
@@ -10076,12 +10080,6 @@
       "d": "2026-07-15T07:31:20Z"
     },
     {
-      "v": "renovate-maintenance-mps20241-github-actions.2024.1.10621.c7aa727-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-github-actions",
-      "d": "2026-07-09T12:54:22Z"
-    },
-    {
       "v": "renovate-maintenance-mps20241-github-actions.2024.1.10607.dac560c-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions",
@@ -10098,12 +10096,6 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-github-actions",
       "d": "2026-06-03T13:03:10Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20241-github-actions.2024.1.10193.f34ae20-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20241-github-actions",
-      "d": "2026-04-03T18:00:05Z"
     },
     {
       "v": "renovate-actions-setup-java-digest.9999.9.9699.f04c7d3-SNAPSHOT",
@@ -10370,18 +10362,6 @@
       "d": "2026-05-11T08:03:30Z"
     },
     {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.10148.fe5fdae-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
-      "d": "2026-03-25T03:19:27Z"
-    },
-    {
-      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.10145.23918a7-SNAPSHOT",
-      "pre": true,
-      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
-      "d": "2026-03-25T03:19:26Z"
-    },
-    {
       "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.9922.9fff83e-SNAPSHOT",
       "pre": true,
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
@@ -10422,6 +10402,12 @@
       "pre": false,
       "branch": "merge-20213",
       "d": "2024-02-12T12:33:47Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11677.a5757ed-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-20T12:57:42Z"
     },
     {
       "v": "merge-mps20261.2026.1.11653.cad3b2a-SNAPSHOT",
@@ -10694,6 +10680,12 @@
       "d": "2026-07-16T07:49:03Z"
     },
     {
+      "v": "merge-mps20261.2025.1.11675.07fd98d-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-20T11:36:51Z"
+    },
+    {
       "v": "merge-mps20261.2025.1.11643.91bbbbb-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -10920,6 +10912,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-01-16T02:44:52Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.11673.de70163-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-20T11:10:41Z"
     },
     {
       "v": "merge-mps20251.2025.1.11638.2f6bee5-SNAPSHOT",
@@ -11216,12 +11214,6 @@
       "d": "2026-05-04T16:39:30Z"
     },
     {
-      "v": "merge-mps20251.2025.1.10335.d391bf0-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-mps20251",
-      "d": "2026-04-20T07:09:53Z"
-    },
-    {
       "v": "merge-mps20251.2025.1.10312.a4de034-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
@@ -11250,6 +11242,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-02-02T14:00:30Z"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11669.ff11ab4-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-20T10:55:52Z"
     },
     {
       "v": "merge-mps20251.2024.1.11636.b7e093c-SNAPSHOT",
@@ -12086,12 +12084,6 @@
       "d": "2026-04-17T07:50:41Z"
     },
     {
-      "v": "merge-master.9999.9.10244.b235804-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-04-13T14:38:20Z"
-    },
-    {
       "v": "merge-master.2026.1.10993.9bd2ba8-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -12222,12 +12214,6 @@
       "pre": true,
       "branch": "merge-master",
       "d": "2026-04-16T06:15:14Z"
-    },
-    {
-      "v": "merge-master.2025.1.10235.8cae8fb-SNAPSHOT",
-      "pre": true,
-      "branch": "merge-master",
-      "d": "2026-04-16T06:15:13Z"
     },
     {
       "v": "loop-stading-dryrun.2021.3.6594.b8b93dc",
@@ -12426,6 +12412,12 @@
       "pre": true,
       "branch": "fix-DiscreteDateRangeValue",
       "d": "2026-06-02T06:47:24Z"
+    },
+    {
+      "v": "features-arimer-v263.9999.9.11668.8dcb916-SNAPSHOT",
+      "pre": true,
+      "branch": "features-arimer-v263",
+      "d": "2026-11-20T10:52:14Z"
     },
     {
       "v": "features-arimer-enableCIModelchecker.2024.1.11249.db8215f-SNAPSHOT",
@@ -13685,13 +13677,13 @@
       "v": "feature-genjava_test_node_urls_2054.2025.1.11659.ce7040b-SNAPSHOT",
       "pre": true,
       "branch": "feature-genjava_test_node_urls_2054",
-      "d": "2026-11-19T14:10:32Z"
+      "d": "2026-11-20T06:58:18Z"
     },
     {
       "v": "feature-genjava_test_node_urls_2054.2025.1.11658.d693c41-SNAPSHOT",
       "pre": true,
       "branch": "feature-genjava_test_node_urls_2054",
-      "d": "2026-11-19T13:41:21Z"
+      "d": "2026-11-20T06:58:17Z"
     },
     {
       "v": "feature-genjava_test_node_urls_2054.2025.1.11657.7df597f-SNAPSHOT",
@@ -14000,6 +13992,18 @@
       "d": "2026-02-25T14:19:50Z"
     },
     {
+      "v": "feature-detect_duplicate_attribute_assignments_2046.2024.1.11674.cec84ee-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-detect_duplicate_attribute_assignments_2046",
+      "d": "2026-11-20T11:16:57Z"
+    },
+    {
+      "v": "feature-detect_duplicate_attribute_assignments_2046.2024.1.11666.a75ab05-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-detect_duplicate_attribute_assignments_2046",
+      "d": "2026-11-20T08:18:50Z"
+    },
+    {
       "v": "feature-detect_duplicate_attribute_assignments_2046.2024.1.11607.2f571f1-SNAPSHOT",
       "pre": true,
       "branch": "feature-detect_duplicate_attribute_assignments_2046",
@@ -14046,12 +14050,6 @@
       "pre": true,
       "branch": "feature-config_combination_logic_1794",
       "d": "2026-06-15T10:41:45Z"
-    },
-    {
-      "v": "feature-config_combination_logic_1794.2024.1.10605.800758a-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-config_combination_logic_1794",
-      "d": "2026-06-12T13:35:22Z"
     },
     {
       "v": "feature-config_combination_logic_1794.2024.1.10498.301cff5-SNAPSHOT",
@@ -15366,6 +15364,12 @@
       "pre": false,
       "branch": "bugfix-702",
       "d": "2024-03-02T00:16:20Z"
+    },
+    {
+      "v": "bugfix-variability_cyclic_dependency_2044.2024.1.11667.d0a93b7-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-variability_cyclic_dependency_2044",
+      "d": "2026-11-20T10:29:11Z"
     },
     {
       "v": "bugfix-variability_cyclic_dependency_2044.2024.1.11630.bb0c301-SNAPSHOT",
