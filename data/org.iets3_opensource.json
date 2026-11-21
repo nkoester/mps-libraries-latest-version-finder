@@ -5,7 +5,7 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-21T03:42:30.154Z",
+  "generatedAt": "2026-11-21T13:15:47.258Z",
   "total": 3058,
   "released": 1770,
   "stable": 1763,
@@ -9102,12 +9102,6 @@
       "d": "2026-04-16T14:50:29Z"
     },
     {
-      "v": "renovate-master-mpsversion.9999.9.10846.bb1f0bd-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-master-mpsversion",
-      "d": "2026-07-23T07:23:06Z"
-    },
-    {
       "v": "renovate-master-mpsversion.9999.9.10840.053f99d-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsversion",
@@ -9534,6 +9528,12 @@
       "d": "2026-06-03T09:09:23Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11682.49fd382-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
+      "d": "2026-11-21T04:44:19Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-patch-third-party-minor.2024.1.11671.0de9e6e-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-patch-third-party-minor",
@@ -9855,7 +9855,7 @@
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11672.96e7d89-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-9.x",
-      "d": "2026-11-20T11:03:26Z"
+      "d": "2026-11-21T05:04:27Z"
     },
     {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11665.157d287-SNAPSHOT",
@@ -10407,19 +10407,19 @@
       "v": "merge-mps20261.2026.1.11680.630c24f-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
-      "d": "2026-11-20T15:03:24Z"
+      "d": "2026-11-21T05:04:24Z"
     },
     {
       "v": "merge-mps20261.2026.1.11678.ce426b3-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
-      "d": "2026-11-20T13:45:34Z"
+      "d": "2026-11-21T05:04:23Z"
     },
     {
       "v": "merge-mps20261.2026.1.11677.a5757ed-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
-      "d": "2026-11-20T12:57:42Z"
+      "d": "2026-11-21T05:04:22Z"
     },
     {
       "v": "merge-mps20261.2026.1.11653.cad3b2a-SNAPSHOT",
@@ -11259,7 +11259,7 @@
       "v": "merge-mps20251.2024.1.11669.ff11ab4-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20251",
-      "d": "2026-11-20T10:55:52Z"
+      "d": "2026-11-21T05:04:15Z"
     },
     {
       "v": "merge-mps20251.2024.1.11636.b7e093c-SNAPSHOT",

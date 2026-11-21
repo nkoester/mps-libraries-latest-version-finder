@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-21T03:42:30.154Z",
-  "total": 1304,
+  "generatedAt": "2026-11-21T13:15:47.258Z",
+  "total": 1305,
   "released": 866,
   "stable": 834,
   "preRelease": 32,
-  "branchCount": 438,
-  "branches": 88,
+  "branchCount": 439,
+  "branches": 89,
   "lines": [
     {
       "line": "9999.9",
@@ -4605,7 +4605,7 @@
       "v": "renovate-master-mps.9999.9.2750.87d57e3-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-20T16:26:55Z"
+      "d": "2026-11-21T02:26:30Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2744.74dbca3-SNAPSHOT",
@@ -5382,6 +5382,12 @@
       "d": "2022-03-22T17:28:25Z"
     },
     {
+      "v": "refactor-viewmodel-dependencies.2025.1.2752.50b6670-SNAPSHOT",
+      "pre": true,
+      "branch": "refactor-viewmodel-dependencies",
+      "d": "2026-11-21T07:51:26Z"
+    },
+    {
       "v": "pull-676.2022.3.2655.1c50036",
       "pre": false,
       "branch": "pull-676",
@@ -5499,7 +5505,7 @@
       "v": "merge-mps20261.2026.1.2748.dfd6314-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
-      "d": "2026-11-20T14:37:09Z"
+      "d": "2026-11-21T02:26:23Z"
     },
     {
       "v": "merge-mps20261.2026.1.2737.02d07ca-SNAPSHOT",
@@ -5943,7 +5949,7 @@
       "v": "merge-master.9999.9.2749.d81a84e-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
-      "d": "2026-11-20T15:42:03Z"
+      "d": "2026-11-21T02:26:20Z"
     },
     {
       "v": "merge-master.9999.9.2739.e6d75d9-SNAPSHOT",
@@ -6111,7 +6117,7 @@
       "v": "fix-viewmodel-headless-writes.2025.1.2745.831449c-SNAPSHOT",
       "pre": true,
       "branch": "fix-viewmodel-headless-writes",
-      "d": "2026-11-20T08:25:53Z"
+      "d": "2026-11-21T02:26:18Z"
     },
     {
       "v": "fix-viewmodel-headless-writes.2025.1.2721.884602f-SNAPSHOT",
@@ -6219,7 +6225,7 @@
       "v": "fix-standards-large-nodes.2024.1.2746.213f4f0-SNAPSHOT",
       "pre": true,
       "branch": "fix-standards-large-nodes",
-      "d": "2026-11-20T12:01:27Z"
+      "d": "2026-11-21T02:26:16Z"
     },
     {
       "v": "fix-richtext-Word-empty-string-instead-of-single-space.2025.1.2322.ba2858a-SNAPSHOT",
