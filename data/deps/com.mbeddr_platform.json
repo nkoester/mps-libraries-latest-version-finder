@@ -4,6 +4,12 @@
   "slug": "com.mbeddr_platform",
   "snapshotLookup": "timestamped",
   "versions": {
+    "9999.9.27008.84b2e35-SNAPSHOT": [
+      [
+        "de.itemis.mps_extensions",
+        "9999.9.27008.84b2e35-SNAPSHOT"
+      ]
+    ],
     "9999.9.27007.df5a4e9-SNAPSHOT": [
       [
         "de.itemis.mps_extensions",
@@ -1513,6 +1519,16 @@
         "9999.9.3492.79ad834-SNAPSHOT"
       ]
     ],
+    "2026.1.27011.6c2209e": [
+      [
+        "de.itemis.mps_extensions",
+        "2026.1.27011.6c2209e"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2026.1.2"
+      ]
+    ],
     "2026.1.27006.12d0b55": [
       [
         "de.itemis.mps_extensions",
@@ -1841,6 +1857,16 @@
       [
         "de.itemis.mps_extensions",
         "2026.1.3628.51e7c81"
+      ]
+    ],
+    "2025.1.27009.27999e0": [
+      [
+        "de.itemis.mps_extensions",
+        "2025.1.27009.27999e0"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2025.1.5"
       ]
     ],
     "2025.1.27005.f7346b6": [
@@ -4329,6 +4355,16 @@
       [
         "com.jetbrains_mps",
         "2024.3-EAP1"
+      ]
+    ],
+    "2024.1.27010.a723eb1": [
+      [
+        "de.itemis.mps_extensions",
+        "2024.1.27010.a723eb1"
+      ],
+      [
+        "com.jetbrains_mps",
+        "2024.1.6"
       ]
     ],
     "2024.1.27004.f00fb85": [

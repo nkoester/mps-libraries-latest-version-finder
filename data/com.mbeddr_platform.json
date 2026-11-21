@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-20T18:56:48.646Z",
-  "total": 3225,
-  "released": 2094,
-  "stable": 2093,
-  "preRelease": 1,
-  "branchCount": 1131,
+  "generatedAt": "2026-11-21T03:42:30.154Z",
+  "total": 3230,
+  "released": 2098,
+  "stable": 2096,
+  "preRelease": 2,
+  "branchCount": 1132,
   "branches": 250,
   "lines": [
     {
       "line": "9999.9",
       "latest": "9999.9.26697.2b07707",
       "latestIsPreRelease": false,
-      "total": 429,
+      "total": 430,
       "stable": 428,
       "versions": [
+        {
+          "v": "9999.9.27008.84b2e35-SNAPSHOT",
+          "pre": true,
+          "d": "2026-11-21T03:02:03Z"
+        },
         {
           "v": "9999.9.27007.df5a4e9-SNAPSHOT",
           "pre": true,
@@ -2170,11 +2175,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.27006.12d0b55",
+      "latest": "2026.1.27011.6c2209e",
       "latestIsPreRelease": false,
-      "total": 43,
-      "stable": 43,
+      "total": 44,
+      "stable": 44,
       "versions": [
+        {
+          "v": "2026.1.27011.6c2209e",
+          "pre": false,
+          "d": "2026-11-21T03:28:53Z"
+        },
         {
           "v": "2026.1.27006.12d0b55",
           "pre": false,
@@ -2391,15 +2401,20 @@
           "d": "2026-06-29T14:48:04Z"
         }
       ],
-      "latestDate": "2026-11-19T10:46:48Z"
+      "latestDate": "2026-11-21T03:28:53Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.27005.f7346b6",
+      "latest": "2025.1.27009.27999e0",
       "latestIsPreRelease": false,
-      "total": 272,
-      "stable": 272,
+      "total": 273,
+      "stable": 273,
       "versions": [
+        {
+          "v": "2025.1.27009.27999e0",
+          "pre": false,
+          "d": "2026-11-21T03:28:04Z"
+        },
         {
           "v": "2025.1.27005.f7346b6",
           "pre": false,
@@ -3761,7 +3776,7 @@
           "d": "2025-04-29T17:23:19Z"
         }
       ],
-      "latestDate": "2026-11-19T10:03:01Z"
+      "latestDate": "2026-11-21T03:28:04Z"
     },
     {
       "line": "2024.3",
@@ -4115,11 +4130,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.27004.f00fb85",
+      "latest": "2024.1.27010.a723eb1",
       "latestIsPreRelease": false,
-      "total": 258,
-      "stable": 258,
+      "total": 259,
+      "stable": 259,
       "versions": [
+        {
+          "v": "2024.1.27010.a723eb1",
+          "pre": false,
+          "d": "2026-11-21T03:28:15Z"
+        },
         {
           "v": "2024.1.27004.f00fb85",
           "pre": false,
@@ -5411,7 +5431,7 @@
           "d": "2024-11-13T12:07:34Z"
         }
       ],
-      "latestDate": "2026-11-19T09:26:43Z"
+      "latestDate": "2026-11-21T03:28:15Z"
     },
     {
       "line": "2023.2",
@@ -11568,6 +11588,12 @@
       "pre": true,
       "branch": "renovate-master-mpsbuild",
       "d": "2025-10-09T05:55:24Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2751.cb20bab-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-20T23:42:51Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2750.87d57e3-SNAPSHOT",

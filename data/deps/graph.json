@@ -9,8 +9,8 @@
     "2026.1": {
       "latest": {
         "com.jetbrains_mps": "2026.1.2",
-        "de.itemis.mps_extensions": "2026.1.27006.12d0b55",
-        "com.mbeddr_platform": "2026.1.27006.12d0b55",
+        "de.itemis.mps_extensions": "2026.1.27011.6c2209e",
+        "com.mbeddr_platform": "2026.1.27011.6c2209e",
         "com.mbeddr_mbeddr": "2026.1.26720.7dcd24d",
         "org.iets3_opensource": "2026.1.11663.1067b41",
         "org.mpsqa_all-in-one": "2026.1.1519.a63cf82"
@@ -19,7 +19,7 @@
         [
           "com.mbeddr_platform",
           "de.itemis.mps_extensions",
-          "2026.1.27006.12d0b55"
+          "2026.1.27011.6c2209e"
         ],
         [
           "com.mbeddr_platform",
@@ -63,8 +63,8 @@
     "2025.1": {
       "latest": {
         "com.jetbrains_mps": "2025.1.5",
-        "de.itemis.mps_extensions": "2025.1.27005.f7346b6",
-        "com.mbeddr_platform": "2025.1.27005.f7346b6",
+        "de.itemis.mps_extensions": "2025.1.27009.27999e0",
+        "com.mbeddr_platform": "2025.1.27009.27999e0",
         "com.mbeddr_mbeddr": "2025.1.26719.dfcaa6a",
         "org.iets3_opensource": "2025.1.11676.07fd98d",
         "org.mpsqa_all-in-one": "2025.1.1486.22468db"
@@ -73,7 +73,7 @@
         [
           "com.mbeddr_platform",
           "de.itemis.mps_extensions",
-          "2025.1.27005.f7346b6"
+          "2025.1.27009.27999e0"
         ],
         [
           "com.mbeddr_platform",
@@ -136,8 +136,8 @@
     "2024.1": {
       "latest": {
         "com.jetbrains_mps": "2024.1.6",
-        "de.itemis.mps_extensions": "2024.1.27004.f00fb85",
-        "com.mbeddr_platform": "2024.1.27004.f00fb85",
+        "de.itemis.mps_extensions": "2024.1.27010.a723eb1",
+        "com.mbeddr_platform": "2024.1.27010.a723eb1",
         "com.mbeddr_mbeddr": "2024.1.26718.a2b27b8",
         "org.iets3_opensource": "2024.1.11670.ff11ab4",
         "org.mpsqa_all-in-one": "2024.1.1436.3cd3456"
@@ -146,7 +146,7 @@
         [
           "com.mbeddr_platform",
           "de.itemis.mps_extensions",
-          "2024.1.27004.f00fb85"
+          "2024.1.27010.a723eb1"
         ],
         [
           "com.mbeddr_platform",
@@ -561,7 +561,7 @@
     },
     "9999.9": {
       "latest": {
-        "de.itemis.mps_extensions": "9999.9.27007.df5a4e9-SNAPSHOT",
+        "de.itemis.mps_extensions": "9999.9.27008.84b2e35-SNAPSHOT",
         "com.mbeddr_platform": "9999.9.26697.2b07707",
         "com.mbeddr_mbeddr": "9999.9.26722.74abe26",
         "org.iets3_opensource": "9999.9.10936.1f10368",
