@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-21T17:51:14.626Z",
-  "total": 1305,
+  "generatedAt": "2026-11-23T15:44:18.593Z",
+  "total": 1308,
   "released": 866,
   "stable": 834,
   "preRelease": 32,
-  "branchCount": 439,
+  "branchCount": 442,
   "branches": 89,
   "lines": [
     {
@@ -5382,6 +5382,18 @@
       "d": "2022-03-22T17:28:25Z"
     },
     {
+      "v": "refactor-viewmodel-dependencies.2025.1.2754.7a35c80-SNAPSHOT",
+      "pre": true,
+      "branch": "refactor-viewmodel-dependencies",
+      "d": "2026-11-23T10:10:17Z"
+    },
+    {
+      "v": "refactor-viewmodel-dependencies.2025.1.2753.da74d0a-SNAPSHOT",
+      "pre": true,
+      "branch": "refactor-viewmodel-dependencies",
+      "d": "2026-11-23T07:49:51Z"
+    },
+    {
       "v": "refactor-viewmodel-dependencies.2025.1.2752.50b6670-SNAPSHOT",
       "pre": true,
       "branch": "refactor-viewmodel-dependencies",
@@ -6724,6 +6736,12 @@
       "pre": true,
       "branch": "feature-plaintextgen-diffing-paste",
       "d": "2026-10-23T02:01:02Z"
+    },
+    {
+      "v": "feature-interpreter-performance.2025.1.2755.6bd55ef-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-interpreter-performance",
+      "d": "2026-11-23T13:23:27Z"
     },
     {
       "v": "feature-interpreter-performance.2025.1.2741.3848726-SNAPSHOT",

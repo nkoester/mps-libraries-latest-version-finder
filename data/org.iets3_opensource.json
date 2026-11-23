@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-21T17:51:14.626Z",
-  "total": 3058,
-  "released": 1770,
-  "stable": 1763,
+  "generatedAt": "2026-11-23T15:44:18.593Z",
+  "total": 3072,
+  "released": 1775,
+  "stable": 1768,
   "preRelease": 7,
-  "branchCount": 1288,
-  "branches": 261,
+  "branchCount": 1297,
+  "branches": 260,
   "lines": [
     {
       "line": "9999.9",
@@ -975,11 +975,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11663.1067b41",
+      "latest": "2026.1.11694.1aeb45f",
       "latestIsPreRelease": false,
-      "total": 33,
-      "stable": 33,
+      "total": 34,
+      "stable": 34,
       "versions": [
+        {
+          "v": "2026.1.11694.1aeb45f",
+          "pre": false,
+          "d": "2026-11-23T09:59:44Z"
+        },
         {
           "v": "2026.1.11663.1067b41",
           "pre": false,
@@ -1146,15 +1151,20 @@
           "d": "2026-07-15T12:14:32Z"
         }
       ],
-      "latestDate": "2026-11-19T16:57:51Z"
+      "latestDate": "2026-11-23T09:59:44Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11676.07fd98d",
+      "latest": "2025.1.11696.d89ede0",
       "latestIsPreRelease": false,
-      "total": 152,
-      "stable": 146,
+      "total": 153,
+      "stable": 147,
       "versions": [
+        {
+          "v": "2025.1.11696.d89ede0",
+          "pre": false,
+          "d": "2026-11-23T11:13:21Z"
+        },
         {
           "v": "2025.1.11676.07fd98d",
           "pre": false,
@@ -1916,15 +1926,30 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-11-20T11:58:23Z"
+      "latestDate": "2026-11-23T11:13:21Z"
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.11670.ff11ab4",
+      "latest": "2024.1.11693.e0732dc",
       "latestIsPreRelease": false,
-      "total": 284,
-      "stable": 283,
+      "total": 287,
+      "stable": 286,
       "versions": [
+        {
+          "v": "2024.1.11693.e0732dc",
+          "pre": false,
+          "d": "2026-11-23T09:31:47Z"
+        },
+        {
+          "v": "2024.1.11689.4d5aa9b",
+          "pre": false,
+          "d": "2026-11-23T08:59:03Z"
+        },
+        {
+          "v": "2024.1.11683.40cc3aa",
+          "pre": false,
+          "d": "2026-11-23T08:29:14Z"
+        },
         {
           "v": "2024.1.11670.ff11ab4",
           "pre": false,
@@ -3346,7 +3371,7 @@
           "d": "2024-11-19T14:58:20Z"
         }
       ],
-      "latestDate": "2026-11-20T11:17:43Z"
+      "latestDate": "2026-11-23T09:31:47Z"
     },
     {
       "line": "2023.2",
@@ -9852,6 +9877,24 @@
       "d": "2026-03-13T01:42:05Z"
     },
     {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11691.e1d8a25-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-11-23T08:43:37Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11690.ed458c7-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-11-23T08:42:09Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11687.260f621-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-11-23T08:14:01Z"
+    },
+    {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11672.96e7d89-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20241-gradle-9.x",
@@ -10692,6 +10735,12 @@
       "d": "2026-07-16T07:49:03Z"
     },
     {
+      "v": "merge-mps20261.2025.1.11697.d89ede0-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-23T10:54:47Z"
+    },
+    {
       "v": "merge-mps20261.2025.1.11675.07fd98d-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -10924,6 +10973,12 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-01-16T02:44:52Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.11695.5006d28-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-23T09:39:21Z"
     },
     {
       "v": "merge-mps20251.2025.1.11673.de70163-SNAPSHOT",
@@ -11254,6 +11309,24 @@
       "pre": true,
       "branch": "merge-mps20251",
       "d": "2026-02-02T14:00:30Z"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11692.e0732dc-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-23T09:11:48Z"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11688.4d5aa9b-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-23T08:38:29Z"
+    },
+    {
+      "v": "merge-mps20251.2024.1.11685.40cc3aa-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-23T08:09:52Z"
     },
     {
       "v": "merge-mps20251.2024.1.11669.ff11ab4-SNAPSHOT",
@@ -12426,6 +12499,12 @@
       "d": "2026-06-02T06:47:24Z"
     },
     {
+      "v": "features-arimer-v263.9999.9.11684.7cc8350-SNAPSHOT",
+      "pre": true,
+      "branch": "features-arimer-v263",
+      "d": "2026-11-23T08:09:33Z"
+    },
+    {
       "v": "features-arimer-v263.9999.9.11668.8dcb916-SNAPSHOT",
       "pre": true,
       "branch": "features-arimer-v263",
@@ -12850,12 +12929,6 @@
       "pre": false,
       "branch": "feature-table-dark-themes-support",
       "d": "2022-12-05T17:20:45Z"
-    },
-    {
-      "v": "feature-switch_off_automatic_tabvp_checking_1731.2024.1.10187.ab0b774-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-switch_off_automatic_tabvp_checking_1731",
-      "d": "2026-04-03T18:12:01Z"
     },
     {
       "v": "feature-substitutionMenuCustomization_20213.2021.3.6156.a3562ab",
@@ -14002,6 +14075,12 @@
       "pre": true,
       "branch": "feature-embellish_config_names_via_extension_1598",
       "d": "2026-02-25T14:19:50Z"
+    },
+    {
+      "v": "feature-detect_duplicate_attribute_assignments_2046.2024.1.11686.7bc0f1a-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-detect_duplicate_attribute_assignments_2046",
+      "d": "2026-11-23T08:11:22Z"
     },
     {
       "v": "feature-detect_duplicate_attribute_assignments_2046.2024.1.11679.efdb9cc-SNAPSHOT",
