@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-23T15:44:18.593Z",
-  "total": 3231,
+  "generatedAt": "2026-11-23T22:23:39.715Z",
+  "total": 3233,
   "released": 2098,
   "stable": 2096,
   "preRelease": 2,
-  "branchCount": 1133,
+  "branchCount": 1135,
   "branches": 250,
   "lines": [
     {
@@ -11588,6 +11588,18 @@
       "pre": true,
       "branch": "renovate-master-mpsbuild",
       "d": "2025-10-09T05:55:24Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2757.2460067-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-23T21:42:10Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2756.23a5775-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-23T18:05:05Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2751.cb20bab-SNAPSHOT",
