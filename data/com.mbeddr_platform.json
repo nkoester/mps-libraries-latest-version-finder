@@ -5,13 +5,13 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-24T06:40:51.075Z",
-  "total": 3234,
+  "generatedAt": "2026-11-24T15:35:45.597Z",
+  "total": 3254,
   "released": 2098,
   "stable": 2096,
   "preRelease": 2,
-  "branchCount": 1136,
-  "branches": 250,
+  "branchCount": 1156,
+  "branches": 257,
   "lines": [
     {
       "line": "9999.9",
@@ -11590,6 +11590,18 @@
       "d": "2025-10-09T05:55:24Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2768.b962785-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-24T12:16:09Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2759.a401b2e-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-24T07:53:42Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2758.9f226df-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -12694,6 +12706,24 @@
       "d": "2024-07-31T20:29:46Z"
     },
     {
+      "v": "refactor-viewmodel-dependencies.2025.1.2773.1db6189-SNAPSHOT",
+      "pre": true,
+      "branch": "refactor-viewmodel-dependencies",
+      "d": "2026-11-24T13:04:48Z"
+    },
+    {
+      "v": "refactor-viewmodel-dependencies.2025.1.2769.81774df-SNAPSHOT",
+      "pre": true,
+      "branch": "refactor-viewmodel-dependencies",
+      "d": "2026-11-24T12:16:57Z"
+    },
+    {
+      "v": "refactor-viewmodel-dependencies.2025.1.2762.f55db91-SNAPSHOT",
+      "pre": true,
+      "branch": "refactor-viewmodel-dependencies",
+      "d": "2026-11-24T11:37:18Z"
+    },
+    {
       "v": "refactor-split-changelogs-and-licenses.2024.1.24189.6445283-SNAPSHOT",
       "pre": true,
       "branch": "refactor-split-changelogs-and-licenses",
@@ -13478,6 +13508,12 @@
       "pre": true,
       "branch": "merge-mps20261",
       "d": "2026-07-08T03:43:17Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.2770.315b309-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-24T12:27:08Z"
     },
     {
       "v": "merge-mps20261.2026.1.2748.dfd6314-SNAPSHOT",
@@ -15208,6 +15244,12 @@
       "d": "2025-10-08T18:07:56Z"
     },
     {
+      "v": "merge-master.9999.9.2779.6e7d53d-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-24T14:11:30Z"
+    },
+    {
       "v": "merge-master.9999.9.2749.d81a84e-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -15232,6 +15274,18 @@
       "d": "2026-02-05T09:29:52Z"
     },
     {
+      "v": "fix-viewmodel-headless-writes.2025.1.2766.b065d45-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-viewmodel-headless-writes",
+      "d": "2026-11-24T12:14:28Z"
+    },
+    {
+      "v": "fix-viewmodel-headless-writes.2025.1.2761.1ef95a1-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-viewmodel-headless-writes",
+      "d": "2026-11-24T11:34:47Z"
+    },
+    {
       "v": "fix-suspend-contextactions-when-closed.2023.2.23750.5f571ff-SNAPSHOT",
       "pre": true,
       "branch": "fix-suspend-contextactions-when-closed",
@@ -15248,6 +15302,24 @@
       "pre": true,
       "branch": "fix-show-file-manager",
       "d": "2025-10-08T15:19:34Z"
+    },
+    {
+      "v": "fix-shadowmodels-edt-write-during-make.2025.1.2777.05fb37d-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-shadowmodels-edt-write-during-make",
+      "d": "2026-11-24T14:06:59Z"
+    },
+    {
+      "v": "fix-shadowmodels-edt-write-during-make.2025.1.2774.e1aa270-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-shadowmodels-edt-write-during-make",
+      "d": "2026-11-24T13:25:57Z"
+    },
+    {
+      "v": "fix-shadowmodels-edt-write-during-make.2025.1.2771.444838f-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-shadowmodels-edt-write-during-make",
+      "d": "2026-11-24T12:46:58Z"
     },
     {
       "v": "fix-search-tool-toolwindow-registration.2026.1.25263.aaa41ed-SNAPSHOT",
@@ -15268,6 +15340,24 @@
       "d": "2025-10-07T13:35:15Z"
     },
     {
+      "v": "fix-json-tests-line-endings.2026.1.2781.a7236b4-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-json-tests-line-endings",
+      "d": "2026-11-24T14:49:31Z"
+    },
+    {
+      "v": "fix-json-tests-line-endings.2026.1.2778.2c56a2d-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-json-tests-line-endings",
+      "d": "2026-11-24T14:10:11Z"
+    },
+    {
+      "v": "fix-json-tests-line-endings.2026.1.2775.9f57533-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-json-tests-line-endings",
+      "d": "2026-11-24T13:29:13Z"
+    },
+    {
       "v": "fix-interpreter-evaluator-info-url.2025.1.24722.b511cfd-SNAPSHOT",
       "pre": true,
       "branch": "fix-interpreter-evaluator-info-url",
@@ -15284,6 +15374,24 @@
       "pre": true,
       "branch": "fix-evaluator-info-url-241",
       "d": "2026-03-26T05:13:58Z"
+    },
+    {
+      "v": "fix-doc-windows-paths-newlines.2026.1.2776.ee4ade0-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-doc-windows-paths-newlines",
+      "d": "2026-11-24T13:32:28Z"
+    },
+    {
+      "v": "fix-doc-windows-paths-newlines.2026.1.2772.6504190-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-doc-windows-paths-newlines",
+      "d": "2026-11-24T12:53:07Z"
+    },
+    {
+      "v": "fix-doc-windows-paths-newlines.2026.1.2767.e28a268-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-doc-windows-paths-newlines",
+      "d": "2026-11-24T12:15:29Z"
     },
     {
       "v": "fix-diagram-layout-race.2024.1.2731.5c5e75e-SNAPSHOT",
@@ -15398,6 +15506,12 @@
       "pre": false,
       "branch": "feature-2244_MpsUtil_ICanHide",
       "d": "2022-11-11T12:37:19Z"
+    },
+    {
+      "v": "feature-viewmodel-root-dependencies.2025.1.2760.02078fc-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-viewmodel-root-dependencies",
+      "d": "2026-11-24T11:29:36Z"
     },
     {
       "v": "feature-view-models.2025.1.24924.0338281-SNAPSHOT",
@@ -16934,6 +17048,12 @@
       "pre": false,
       "branch": "bugfix-httpserverReloadingError_20211",
       "d": "2022-10-13T07:19:00Z"
+    },
+    {
+      "v": "bugfix-grammarcells_flag_generator_speedup.2026.1.2780.9ecbf43-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-grammarcells_flag_generator_speedup",
+      "d": "2026-11-24T14:27:21Z"
     },
     {
       "v": "bugfix-fixFileChoosers_20211.2021.1.23567.7e58131",

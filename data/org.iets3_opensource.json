@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-24T06:40:51.075Z",
-  "total": 3072,
-  "released": 1775,
-  "stable": 1768,
+  "generatedAt": "2026-11-24T15:35:45.597Z",
+  "total": 3075,
+  "released": 1776,
+  "stable": 1769,
   "preRelease": 7,
-  "branchCount": 1297,
+  "branchCount": 1299,
   "branches": 260,
   "lines": [
     {
@@ -975,11 +975,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11694.1aeb45f",
+      "latest": "2026.1.11702.02d92fc",
       "latestIsPreRelease": false,
-      "total": 34,
-      "stable": 34,
+      "total": 35,
+      "stable": 35,
       "versions": [
+        {
+          "v": "2026.1.11702.02d92fc",
+          "pre": false,
+          "d": "2026-11-24T10:15:13Z"
+        },
         {
           "v": "2026.1.11694.1aeb45f",
           "pre": false,
@@ -1151,7 +1156,7 @@
           "d": "2026-07-15T12:14:32Z"
         }
       ],
-      "latestDate": "2026-11-23T09:59:44Z"
+      "latestDate": "2026-11-24T10:15:13Z"
     },
     {
       "line": "2025.1",
@@ -10327,6 +10332,12 @@
       "d": "2026-02-24T12:32:16Z"
     },
     {
+      "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.11700.e43cb9b-SNAPSHOT",
+      "pre": true,
+      "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
+      "d": "2026-11-24T09:31:05Z"
+    },
+    {
       "v": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474.2024.1.11459.2d2f257-SNAPSHOT",
       "pre": true,
       "branch": "refactor-SkeletonNode-should-have-more-than-one-Pivot#1474",
@@ -10445,6 +10456,12 @@
       "pre": false,
       "branch": "merge-20213",
       "d": "2024-02-12T12:33:47Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11701.1188ae1-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-24T09:31:00Z"
     },
     {
       "v": "merge-mps20261.2026.1.11680.630c24f-SNAPSHOT",
