@@ -5,13 +5,13 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-24T15:35:45.597Z",
-  "total": 3254,
+  "generatedAt": "2026-11-24T20:57:51.460Z",
+  "total": 3263,
   "released": 2098,
   "stable": 2096,
   "preRelease": 2,
-  "branchCount": 1156,
-  "branches": 257,
+  "branchCount": 1165,
+  "branches": 259,
   "lines": [
     {
       "line": "9999.9",
@@ -11590,6 +11590,12 @@
       "d": "2025-10-09T05:55:24Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2785.196c193-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-24T16:24:35Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2768.b962785-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -15262,6 +15268,18 @@
       "d": "2026-11-19T10:03:30Z"
     },
     {
+      "v": "mcp-dsl.2026.1.2792.98dc386-SNAPSHOT",
+      "pre": true,
+      "branch": "mcp-dsl",
+      "d": "2026-11-24T18:41:37Z"
+    },
+    {
+      "v": "mcp-dsl.2026.1.2789.80a6883-SNAPSHOT",
+      "pre": true,
+      "branch": "mcp-dsl",
+      "d": "2026-11-24T17:45:55Z"
+    },
+    {
       "v": "jbr25.2026.1.25206.c7d85df-SNAPSHOT",
       "pre": true,
       "branch": "jbr25",
@@ -15302,6 +15320,18 @@
       "pre": true,
       "branch": "fix-show-file-manager",
       "d": "2025-10-08T15:19:34Z"
+    },
+    {
+      "v": "fix-shadowmodels-edt-write-during-make.2025.1.2788.9acd848-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-shadowmodels-edt-write-during-make",
+      "d": "2026-11-24T17:25:07Z"
+    },
+    {
+      "v": "fix-shadowmodels-edt-write-during-make.2025.1.2786.cec6415-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-shadowmodels-edt-write-during-make",
+      "d": "2026-11-24T16:49:54Z"
     },
     {
       "v": "fix-shadowmodels-edt-write-during-make.2025.1.2777.05fb37d-SNAPSHOT",
@@ -15410,6 +15440,30 @@
       "pre": true,
       "branch": "fix-diagram-layout-race",
       "d": "2026-11-18T20:28:33Z"
+    },
+    {
+      "v": "fix-celllayout-nested-no-wrap.2025.1.2791.792f009-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-nested-no-wrap",
+      "d": "2026-11-24T18:29:20Z"
+    },
+    {
+      "v": "fix-celllayout-nested-no-wrap.2025.1.2790.61cc07f-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-nested-no-wrap",
+      "d": "2026-11-24T17:47:52Z"
+    },
+    {
+      "v": "fix-celllayout-nested-no-wrap.2025.1.2787.2b57cd1-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-nested-no-wrap",
+      "d": "2026-11-24T17:08:16Z"
+    },
+    {
+      "v": "fix-celllayout-nested-no-wrap.2025.1.2784.0dec1db-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-nested-no-wrap",
+      "d": "2026-11-24T16:24:35Z"
     },
     {
       "v": "fix-actionsfilter.2025.1.24500.78639ef-SNAPSHOT",

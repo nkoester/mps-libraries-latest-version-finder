@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T15:35:45.597Z",
+  "generatedAt": "2026-11-24T20:57:51.460Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -179,12 +179,12 @@
       "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
       "slug": "de.itemis.mps_extensions",
       "ok": true,
-      "total": 1330,
+      "total": 1339,
       "released": 866,
       "stable": 834,
       "preRelease": 32,
-      "branchCount": 464,
-      "branches": 92,
+      "branchCount": 473,
+      "branches": 94,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
         {
@@ -301,12 +301,12 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3254,
+      "total": 3263,
       "released": 2098,
       "stable": 2096,
       "preRelease": 2,
-      "branchCount": 1156,
-      "branches": 257,
+      "branchCount": 1165,
+      "branches": 259,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
         {
@@ -596,10 +596,10 @@
         {
           "line": "2026.1",
           "latest": "2026.1.11702.02d92fc",
+          "latestDate": "2026-11-24T10:15:13Z",
           "latestIsPreRelease": false,
           "total": 35,
-          "stable": 35,
-          "latestDate": "2026-11-24T10:15:13Z"
+          "stable": 35
         },
         {
           "line": "2025.1",
