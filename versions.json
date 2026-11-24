@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T22:23:39.715Z",
+  "generatedAt": "2026-11-24T06:40:51.075Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -184,7 +184,7 @@
       "stable": 834,
       "preRelease": 32,
       "branchCount": 444,
-      "branches": 89,
+      "branches": 88,
       "dataFile": "data/de.itemis.mps_extensions.json",
       "lines": [
         {
@@ -301,11 +301,11 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_platform",
       "ok": true,
-      "total": 3233,
+      "total": 3234,
       "released": 2098,
       "stable": 2096,
       "preRelease": 2,
-      "branchCount": 1135,
+      "branchCount": 1136,
       "branches": 250,
       "dataFile": "data/com.mbeddr_platform.json",
       "lines": [
@@ -447,11 +447,11 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2738,
+      "total": 2740,
       "released": 1916,
       "stable": 1916,
       "preRelease": 0,
-      "branchCount": 822,
+      "branchCount": 824,
       "branches": 189,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
@@ -1391,9 +1391,9 @@
       "kind": "marker",
       "slug": "com.jetbrains.mps_mps-jbr",
       "ok": true,
-      "total": 90,
-      "released": 90,
-      "stable": 83,
+      "total": 91,
+      "released": 91,
+      "stable": 84,
       "preRelease": 7,
       "branchCount": 0,
       "branches": 0,
@@ -1464,10 +1464,10 @@
         },
         {
           "line": "263.8311",
-          "latest": "263.8311.395",
+          "latest": "263.8311.397",
           "latestIsPreRelease": false,
-          "total": 4,
-          "stable": 4
+          "total": 6,
+          "stable": 6
         },
         {
           "line": "263.7307",
@@ -1480,8 +1480,8 @@
           "line": "263.6259",
           "latest": "263.6259.166",
           "latestIsPreRelease": false,
-          "total": 12,
-          "stable": 12
+          "total": 11,
+          "stable": 11
         },
         {
           "line": "261.27258",

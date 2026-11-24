@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-23T22:23:39.715Z",
+  "generatedAt": "2026-11-24T06:40:51.075Z",
   "total": 1310,
   "released": 866,
   "stable": 834,
   "preRelease": 32,
   "branchCount": 444,
-  "branches": 89,
+  "branches": 88,
   "lines": [
     {
       "line": "9999.9",
@@ -4596,6 +4596,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2758.9f226df-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-24T03:20:52Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2757.2460067-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5434,12 +5440,6 @@
       "pre": true,
       "branch": "premerge-383700",
       "d": "2025-08-26T13:47:40Z"
-    },
-    {
-      "v": "performance-tables-caching.2025.1.2276.17b4a67-SNAPSHOT",
-      "pre": true,
-      "branch": "performance-tables-caching",
-      "d": "2026-07-26T06:17:36Z"
     },
     {
       "v": "perf-grammarcells-chart-parser.2026.1.2285.b082c7e-SNAPSHOT",
