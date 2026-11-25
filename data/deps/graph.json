@@ -12,7 +12,7 @@
         "de.itemis.mps_extensions": "2026.1.27013.b72dd19",
         "com.mbeddr_platform": "2026.1.27013.b72dd19",
         "com.mbeddr_mbeddr": "2026.1.26727.7dcd24d",
-        "org.iets3_opensource": "2026.1.11702.02d92fc",
+        "org.iets3_opensource": "2026.1.11713.b576350",
         "org.mpsqa_all-in-one": "2026.1.1519.a63cf82"
       },
       "edges": [
@@ -39,7 +39,7 @@
         [
           "org.iets3_opensource",
           "com.mbeddr_platform",
-          "2026.1.26690.6a64f68"
+          "2026.1.27013.b72dd19"
         ],
         [
           "org.mpsqa_all-in-one",
@@ -138,7 +138,7 @@
         "com.jetbrains_mps": "2024.1.6",
         "de.itemis.mps_extensions": "2024.1.27010.a723eb1",
         "com.mbeddr_platform": "2024.1.27010.a723eb1",
-        "com.mbeddr_mbeddr": "2024.1.26724.a2b27b8",
+        "com.mbeddr_mbeddr": "2024.1.26730.81d9fa9",
         "org.iets3_opensource": "2024.1.11693.e0732dc",
         "org.mpsqa_all-in-one": "2024.1.1436.3cd3456"
       },
@@ -563,8 +563,8 @@
       "latest": {
         "de.itemis.mps_extensions": "9999.9.27008.84b2e35-SNAPSHOT",
         "com.mbeddr_platform": "9999.9.26697.2b07707",
-        "com.mbeddr_mbeddr": "9999.9.26726.74abe26",
-        "org.iets3_opensource": "9999.9.10936.1f10368",
+        "com.mbeddr_mbeddr": "9999.9.26729.f5e6fd9",
+        "org.iets3_opensource": "9999.9.11705.b860dea",
         "org.mpsqa_all-in-one": "9999.9.1521.e2414a6"
       },
       "edges": [
@@ -586,7 +586,7 @@
         [
           "org.iets3_opensource",
           "com.mbeddr_platform",
-          "9999.9.26559.7732e79"
+          "9999.9.27007.df5a4e9-SNAPSHOT"
         ]
       ]
     },

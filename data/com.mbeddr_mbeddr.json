@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-25T05:11:48.954Z",
-  "total": 2744,
-  "released": 1918,
-  "stable": 1918,
+  "generatedAt": "2026-11-25T15:20:38.926Z",
+  "total": 2748,
+  "released": 1920,
+  "stable": 1920,
   "preRelease": 0,
-  "branchCount": 826,
+  "branchCount": 828,
   "branches": 189,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26726.74abe26",
+      "latest": "9999.9.26729.f5e6fd9",
       "latestIsPreRelease": false,
-      "total": 414,
-      "stable": 414,
+      "total": 415,
+      "stable": 415,
       "versions": [
+        {
+          "v": "9999.9.26729.f5e6fd9",
+          "pre": false,
+          "d": "2026-11-25T05:35:44Z"
+        },
         {
           "v": "9999.9.26726.74abe26",
           "pre": false,
@@ -2091,7 +2096,7 @@
           "d": "2025-11-04T16:13:32Z"
         }
       ],
-      "latestDate": "2026-11-21T04:00:49Z"
+      "latestDate": "2026-11-25T05:35:44Z"
     },
     {
       "line": "2026.1",
@@ -4045,11 +4050,16 @@
     },
     {
       "line": "2024.1",
-      "latest": "2024.1.26724.a2b27b8",
+      "latest": "2024.1.26730.81d9fa9",
       "latestIsPreRelease": false,
-      "total": 257,
-      "stable": 257,
+      "total": 258,
+      "stable": 258,
       "versions": [
+        {
+          "v": "2024.1.26730.81d9fa9",
+          "pre": false,
+          "d": "2026-11-25T05:35:04Z"
+        },
         {
           "v": "2024.1.26724.a2b27b8",
           "pre": false,
@@ -5336,7 +5346,7 @@
           "d": "2024-11-13T12:32:19Z"
         }
       ],
-      "latestDate": "2026-11-21T03:50:27Z"
+      "latestDate": "2026-11-25T05:35:04Z"
     },
     {
       "line": "2023.2",
@@ -9962,6 +9972,12 @@
       "d": "2026-07-05T13:53:25Z"
     },
     {
+      "v": "renovate-master-mpsmaster.9999.9.25475.36ea6c9-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster",
+      "d": "2026-11-25T05:14:42Z"
+    },
+    {
       "v": "renovate-master-mpsmaster.9999.9.25473.b8abef7-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mpsmaster",
@@ -11544,6 +11560,12 @@
       "pre": true,
       "branch": "merge-mps20261",
       "d": "2026-07-05T13:52:36Z"
+    },
+    {
+      "v": "merge-mps20251.2025.1.24984.195d05d-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20251",
+      "d": "2026-11-25T05:15:02Z"
     },
     {
       "v": "merge-mps20251.2025.1.24980.ee28dea-SNAPSHOT",

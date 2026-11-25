@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-25T05:11:48.954Z",
-  "total": 1342,
+  "generatedAt": "2026-11-25T15:20:38.926Z",
+  "total": 1351,
   "released": 868,
   "stable": 836,
   "preRelease": 32,
-  "branchCount": 474,
-  "branches": 94,
+  "branchCount": 483,
+  "branches": 95,
   "lines": [
     {
       "line": "9999.9",
@@ -4606,6 +4606,24 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2804.5991d5f-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-25T14:16:05Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2803.181aa28-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-25T12:57:13Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2796.ae06b63-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-25T06:33:56Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2794.20e7bdd-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5578,6 +5596,12 @@
       "d": "2026-10-23T02:01:24Z"
     },
     {
+      "v": "merge-mps20261.2026.1.2799.187bcbe-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-25T08:00:59Z"
+    },
+    {
       "v": "merge-mps20261.2026.1.2770.315b309-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -6028,6 +6052,12 @@
       "d": "2024-01-16T08:47:43Z"
     },
     {
+      "v": "merge-master.9999.9.2801.fb45ae8-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-25T10:40:56Z"
+    },
+    {
       "v": "merge-master.9999.9.2779.6e7d53d-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -6340,6 +6370,12 @@
       "d": "2026-11-21T02:26:16Z"
     },
     {
+      "v": "fix-shadowmodels-flush-under-read-261.2026.1.2805.f19ceec-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-shadowmodels-flush-under-read-261",
+      "d": "2026-11-25T14:39:42Z"
+    },
+    {
       "v": "fix-shadowmodels-edt-write-during-make.2025.1.2788.9acd848-SNAPSHOT",
       "pre": true,
       "branch": "fix-shadowmodels-edt-write-during-make",
@@ -6548,6 +6584,18 @@
       "pre": true,
       "branch": "fix-celllayout-regressions",
       "d": "2026-10-15T06:17:27Z"
+    },
+    {
+      "v": "fix-celllayout-nested-no-wrap.2025.1.2802.ab6a466-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-nested-no-wrap",
+      "d": "2026-11-25T10:49:39Z"
+    },
+    {
+      "v": "fix-celllayout-nested-no-wrap.2025.1.2797.16f51d7-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-celllayout-nested-no-wrap",
+      "d": "2026-11-25T06:35:03Z"
     },
     {
       "v": "fix-celllayout-nested-no-wrap.2025.1.2791.792f009-SNAPSHOT",
@@ -7256,6 +7304,12 @@
       "pre": true,
       "branch": "bugfix-ovrlapping-line-numbers",
       "d": "2026-09-25T14:20:42Z"
+    },
+    {
+      "v": "bugfix-grammarcells_flag_generator_speedup.2026.1.2806.cfece7b-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-grammarcells_flag_generator_speedup",
+      "d": "2026-11-25T14:40:22Z"
     },
     {
       "v": "bugfix-grammarcells_flag_generator_speedup.2026.1.2780.9ecbf43-SNAPSHOT",

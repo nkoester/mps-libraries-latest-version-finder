@@ -4,6 +4,16 @@
   "slug": "org.iets3_opensource",
   "snapshotLookup": "timestamped",
   "versions": {
+    "9999.9.11705.b860dea": [
+      [
+        "org.mpsqa_all-in-one",
+        "9999.9.1454.1955330"
+      ],
+      [
+        "com.mbeddr_platform",
+        "9999.9.27007.df5a4e9-SNAPSHOT"
+      ]
+    ],
     "9999.9.10936.1f10368": [
       [
         "org.mpsqa_all-in-one",
@@ -1902,6 +1912,16 @@
       [
         "com.mbeddr_platform",
         "9999.9.25315.441e38b"
+      ]
+    ],
+    "2026.1.11713.b576350": [
+      [
+        "org.mpsqa_all-in-one",
+        "2026.1.1519.a63cf82"
+      ],
+      [
+        "com.mbeddr_platform",
+        "2026.1.27013.b72dd19"
       ]
     ],
     "2026.1.11702.02d92fc": [

@@ -4,6 +4,12 @@
   "slug": "com.mbeddr_mbeddr",
   "snapshotLookup": "timestamped",
   "versions": {
+    "9999.9.26729.f5e6fd9": [
+      [
+        "com.mbeddr_platform",
+        "9999.9.27008.84b2e35-SNAPSHOT"
+      ]
+    ],
     "9999.9.26726.74abe26": [
       [
         "com.mbeddr_platform",
@@ -4790,6 +4796,12 @@
       [
         "com.mbeddr_platform",
         "2024.3.25006.6b270d5"
+      ]
+    ],
+    "2024.1.26730.81d9fa9": [
+      [
+        "com.mbeddr_platform",
+        "2024.1.27010.a723eb1"
       ]
     ],
     "2024.1.26724.a2b27b8": [
