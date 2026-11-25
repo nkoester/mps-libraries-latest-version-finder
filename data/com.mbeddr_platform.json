@@ -5,13 +5,13 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-25T15:20:38.926Z",
-  "total": 3275,
+  "generatedAt": "2026-11-25T20:20:11.884Z",
+  "total": 3280,
   "released": 2100,
   "stable": 2098,
   "preRelease": 2,
-  "branchCount": 1175,
-  "branches": 260,
+  "branchCount": 1180,
+  "branches": 261,
   "lines": [
     {
       "line": "9999.9",
@@ -11600,6 +11600,12 @@
       "d": "2025-10-09T05:55:24Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2808.40c1dcb-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-25T17:39:45Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2804.5991d5f-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -15290,6 +15296,12 @@
       "d": "2025-10-08T18:07:56Z"
     },
     {
+      "v": "merge-master.9999.9.2810.f491ffe-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-25T17:40:13Z"
+    },
+    {
       "v": "merge-master.9999.9.2801.fb45ae8-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -15312,6 +15324,12 @@
       "pre": true,
       "branch": "merge-master",
       "d": "2026-11-19T10:03:30Z"
+    },
+    {
+      "v": "mcp-dsl.2026.1.2813.fb25635-SNAPSHOT",
+      "pre": true,
+      "branch": "mcp-dsl",
+      "d": "2026-11-25T19:31:27Z"
     },
     {
       "v": "mcp-dsl.2026.1.2792.98dc386-SNAPSHOT",
@@ -15420,6 +15438,18 @@
       "pre": true,
       "branch": "fix-navigation-support-deadlock",
       "d": "2025-10-07T13:35:15Z"
+    },
+    {
+      "v": "fix-langvis-tool-init-261.2026.1.2811.db64727-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-langvis-tool-init-261",
+      "d": "2026-11-25T18:54:19Z"
+    },
+    {
+      "v": "fix-langvis-tool-init-261.2026.1.2809.bf286db-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-langvis-tool-init-261",
+      "d": "2026-11-25T17:39:53Z"
     },
     {
       "v": "fix-json-tests-line-endings.2026.1.2781.a7236b4-SNAPSHOT",
