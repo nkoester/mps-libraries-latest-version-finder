@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-24T20:57:51.460Z",
-  "total": 1339,
-  "released": 866,
-  "stable": 834,
+  "generatedAt": "2026-11-25T05:11:48.954Z",
+  "total": 1342,
+  "released": 868,
+  "stable": 836,
   "preRelease": 32,
-  "branchCount": 473,
+  "branchCount": 474,
   "branches": 94,
   "lines": [
     {
@@ -185,11 +185,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.27011.6c2209e",
+      "latest": "2026.1.27013.b72dd19",
       "latestIsPreRelease": false,
-      "total": 23,
-      "stable": 23,
+      "total": 24,
+      "stable": 24,
       "versions": [
+        {
+          "v": "2026.1.27013.b72dd19",
+          "pre": false,
+          "d": "2026-11-25T03:24:43Z"
+        },
         {
           "v": "2026.1.27011.6c2209e",
           "pre": false,
@@ -306,15 +311,20 @@
           "d": "2026-06-23T13:28:12Z"
         }
       ],
-      "latestDate": "2026-11-21T03:28:11Z"
+      "latestDate": "2026-11-25T03:24:43Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.27009.27999e0",
+      "latest": "2025.1.27012.7624f4f",
       "latestIsPreRelease": false,
-      "total": 125,
-      "stable": 125,
+      "total": 126,
+      "stable": 126,
       "versions": [
+        {
+          "v": "2025.1.27012.7624f4f",
+          "pre": false,
+          "d": "2026-11-25T03:29:34Z"
+        },
         {
           "v": "2025.1.27009.27999e0",
           "pre": false,
@@ -941,7 +951,7 @@
           "d": "2025-04-29T14:16:32Z"
         }
       ],
-      "latestDate": "2026-11-21T03:27:24Z"
+      "latestDate": "2026-11-25T03:29:34Z"
     },
     {
       "line": "2024.3",
@@ -4594,6 +4604,12 @@
       "pre": true,
       "branch": "renovate-mps-jbr",
       "d": "2026-08-07T13:43:47Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2794.20e7bdd-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-25T01:14:22Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2785.196c193-SNAPSHOT",
