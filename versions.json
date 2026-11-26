@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T14:47:27.338Z",
+  "generatedAt": "2026-11-26T19:57:01.310Z",
   "libraries": [
     {
       "groupId": "com.jetbrains",
@@ -447,11 +447,11 @@
       "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
       "slug": "com.mbeddr_mbeddr",
       "ok": true,
-      "total": 2758,
+      "total": 2759,
       "released": 1923,
       "stable": 1923,
       "preRelease": 0,
-      "branchCount": 835,
+      "branchCount": 836,
       "branches": 189,
       "dataFile": "data/com.mbeddr_mbeddr.json",
       "lines": [
@@ -577,11 +577,11 @@
       "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
       "slug": "org.iets3_opensource",
       "ok": true,
-      "total": 3091,
-      "released": 1779,
-      "stable": 1772,
+      "total": 3096,
+      "released": 1780,
+      "stable": 1773,
       "preRelease": 7,
-      "branchCount": 1312,
+      "branchCount": 1316,
       "branches": 262,
       "dataFile": "data/org.iets3_opensource.json",
       "lines": [
@@ -595,19 +595,19 @@
         },
         {
           "line": "2026.1",
-          "latest": "2026.1.11713.b576350",
-          "latestDate": "2026-11-25T12:49:47Z",
+          "latest": "2026.1.11736.b975509",
           "latestIsPreRelease": false,
-          "total": 36,
-          "stable": 36
+          "total": 37,
+          "stable": 37,
+          "latestDate": "2026-11-26T16:53:55Z"
         },
         {
           "line": "2025.1",
           "latest": "2025.1.11722.a6c2d0e",
+          "latestDate": "2026-11-26T11:07:43Z",
           "latestIsPreRelease": false,
           "total": 154,
-          "stable": 148,
-          "latestDate": "2026-11-26T11:07:43Z"
+          "stable": 148
         },
         {
           "line": "2024.1",
@@ -1391,9 +1391,9 @@
       "kind": "marker",
       "slug": "com.jetbrains.mps_mps-jbr",
       "ok": true,
-      "total": 94,
-      "released": 94,
-      "stable": 87,
+      "total": 95,
+      "released": 95,
+      "stable": 88,
       "preRelease": 7,
       "branchCount": 0,
       "branches": 0,
@@ -1464,10 +1464,10 @@
         },
         {
           "line": "263.8311",
-          "latest": "263.8311.421",
+          "latest": "263.8311.427",
           "latestIsPreRelease": false,
-          "total": 12,
-          "stable": 12
+          "total": 13,
+          "stable": 13
         },
         {
           "line": "263.7307",

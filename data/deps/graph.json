@@ -12,7 +12,7 @@
         "de.itemis.mps_extensions": "2026.1.27016.9054434",
         "com.mbeddr_platform": "2026.1.27016.9054434",
         "com.mbeddr_mbeddr": "2026.1.26731.7dcd24d",
-        "org.iets3_opensource": "2026.1.11713.b576350",
+        "org.iets3_opensource": "2026.1.11736.b975509",
         "org.mpsqa_all-in-one": "2026.1.1519.a63cf82"
       },
       "edges": [
@@ -39,7 +39,7 @@
         [
           "org.iets3_opensource",
           "com.mbeddr_platform",
-          "2026.1.27013.b72dd19"
+          "2026.1.27016.9054434"
         ],
         [
           "org.mpsqa_all-in-one",

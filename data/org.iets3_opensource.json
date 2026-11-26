@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-26T14:47:27.338Z",
-  "total": 3091,
-  "released": 1779,
-  "stable": 1772,
+  "generatedAt": "2026-11-26T19:57:01.310Z",
+  "total": 3096,
+  "released": 1780,
+  "stable": 1773,
   "preRelease": 7,
-  "branchCount": 1312,
+  "branchCount": 1316,
   "branches": 262,
   "lines": [
     {
@@ -980,11 +980,16 @@
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.11713.b576350",
+      "latest": "2026.1.11736.b975509",
       "latestIsPreRelease": false,
-      "total": 36,
-      "stable": 36,
+      "total": 37,
+      "stable": 37,
       "versions": [
+        {
+          "v": "2026.1.11736.b975509",
+          "pre": false,
+          "d": "2026-11-26T16:53:55Z"
+        },
         {
           "v": "2026.1.11713.b576350",
           "pre": false,
@@ -1166,7 +1171,7 @@
           "d": "2026-07-15T12:14:32Z"
         }
       ],
-      "latestDate": "2026-11-25T12:49:47Z"
+      "latestDate": "2026-11-26T16:53:55Z"
     },
     {
       "line": "2025.1",
@@ -9219,6 +9224,12 @@
       "d": "2026-03-04T14:02:10Z"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-third-party-minor.2026.1.11735.d99a0f0-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-third-party-minor",
+      "d": "2026-11-26T16:31:36Z"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-third-party-minor.2026.1.11711.f7a1edf-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-third-party-minor",
@@ -10483,6 +10494,12 @@
       "pre": false,
       "branch": "merge-20213",
       "d": "2024-02-12T12:33:47Z"
+    },
+    {
+      "v": "merge-mps20261.2026.1.11733.0623961-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-26T15:48:01Z"
     },
     {
       "v": "merge-mps20261.2026.1.11701.1188ae1-SNAPSHOT",
@@ -12217,6 +12234,12 @@
       "pre": true,
       "branch": "merge-master",
       "d": "2026-04-17T07:50:41Z"
+    },
+    {
+      "v": "merge-master.2026.1.11737.b975509-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-26T16:33:26Z"
     },
     {
       "v": "merge-master.2026.1.10993.9bd2ba8-SNAPSHOT",
@@ -14263,6 +14286,12 @@
       "pre": false,
       "branch": "feature-comment-constraint-support-regular",
       "d": "2023-07-18T15:14:35Z"
+    },
+    {
+      "v": "feature-collection_literal_type_constraint_entry.2025.1.11732.cd68956-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-collection_literal_type_constraint_entry",
+      "d": "2026-11-26T15:16:22Z"
     },
     {
       "v": "feature-collection_literal_type_constraint_entry.2025.1.11729.5882fce-SNAPSHOT",
