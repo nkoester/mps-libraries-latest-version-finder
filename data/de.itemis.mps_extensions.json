@@ -5,21 +5,26 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-25T20:20:11.884Z",
-  "total": 1356,
-  "released": 868,
-  "stable": 836,
-  "preRelease": 32,
-  "branchCount": 488,
-  "branches": 96,
+  "generatedAt": "2026-11-26T04:38:34.425Z",
+  "total": 1362,
+  "released": 871,
+  "stable": 838,
+  "preRelease": 33,
+  "branchCount": 491,
+  "branches": 97,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.27008.84b2e35-SNAPSHOT",
+      "latest": "9999.9.27014.8ec23a3-SNAPSHOT",
       "latestIsPreRelease": true,
-      "total": 32,
+      "total": 33,
       "stable": 0,
       "versions": [
+        {
+          "v": "9999.9.27014.8ec23a3-SNAPSHOT",
+          "pre": true,
+          "d": "2026-11-26T03:02:57Z"
+        },
         {
           "v": "9999.9.27008.84b2e35-SNAPSHOT",
           "pre": true,
@@ -181,15 +186,20 @@
           "d": "2025-09-05T03:13:11Z"
         }
       ],
-      "latestDate": "2026-11-24T03:20:55Z"
+      "latestDate": "2026-11-26T03:02:57Z"
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.27013.b72dd19",
+      "latest": "2026.1.27016.9054434",
       "latestIsPreRelease": false,
-      "total": 24,
-      "stable": 24,
+      "total": 25,
+      "stable": 25,
       "versions": [
+        {
+          "v": "2026.1.27016.9054434",
+          "pre": false,
+          "d": "2026-11-26T03:24:23Z"
+        },
         {
           "v": "2026.1.27013.b72dd19",
           "pre": false,
@@ -311,15 +321,20 @@
           "d": "2026-06-23T13:28:12Z"
         }
       ],
-      "latestDate": "2026-11-25T03:24:43Z"
+      "latestDate": "2026-11-26T03:24:23Z"
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.27012.7624f4f",
+      "latest": "2025.1.27015.960d12a",
       "latestIsPreRelease": false,
-      "total": 126,
-      "stable": 126,
+      "total": 127,
+      "stable": 127,
       "versions": [
+        {
+          "v": "2025.1.27015.960d12a",
+          "pre": false,
+          "d": "2026-11-26T03:24:37Z"
+        },
         {
           "v": "2025.1.27012.7624f4f",
           "pre": false,
@@ -951,7 +966,7 @@
           "d": "2025-04-29T14:16:32Z"
         }
       ],
-      "latestDate": "2026-11-25T03:29:34Z"
+      "latestDate": "2026-11-26T03:24:37Z"
     },
     {
       "line": "2024.3",
@@ -4606,6 +4621,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2815.c3d3057-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-25T21:26:50Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2808.40c1dcb-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -6058,6 +6079,12 @@
       "d": "2024-01-16T08:47:43Z"
     },
     {
+      "v": "merge-master.9999.9.2814.d82212e-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-25T19:53:56Z"
+    },
+    {
       "v": "merge-master.9999.9.2810.f491ffe-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -7334,6 +7361,12 @@
       "pre": true,
       "branch": "bugfix-ovrlapping-line-numbers",
       "d": "2026-09-25T14:20:42Z"
+    },
+    {
+      "v": "bugfix-grammarcells_optionalCell_generator_speedup.2026.1.2816.7dd621f-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-grammarcells_optionalCell_generator_speedup",
+      "d": "2026-11-25T23:22:50Z"
     },
     {
       "v": "bugfix-grammarcells_flag_generator_speedup.2026.1.2806.cfece7b-SNAPSHOT",
