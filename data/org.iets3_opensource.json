@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-26T04:38:34.425Z",
-  "total": 3082,
-  "released": 1778,
-  "stable": 1771,
+  "generatedAt": "2026-11-26T14:47:27.338Z",
+  "total": 3091,
+  "released": 1779,
+  "stable": 1772,
   "preRelease": 7,
-  "branchCount": 1304,
-  "branches": 260,
+  "branchCount": 1312,
+  "branches": 262,
   "lines": [
     {
       "line": "9999.9",
@@ -1170,11 +1170,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11696.d89ede0",
+      "latest": "2025.1.11722.a6c2d0e",
       "latestIsPreRelease": false,
-      "total": 153,
-      "stable": 147,
+      "total": 154,
+      "stable": 148,
       "versions": [
+        {
+          "v": "2025.1.11722.a6c2d0e",
+          "pre": false,
+          "d": "2026-11-26T11:07:43Z"
+        },
         {
           "v": "2025.1.11696.d89ede0",
           "pre": false,
@@ -1941,7 +1946,7 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-11-23T11:13:21Z"
+      "latestDate": "2026-11-26T11:07:43Z"
     },
     {
       "line": "2024.1",
@@ -9262,6 +9267,12 @@
       "d": "2026-10-07T01:43:56Z"
     },
     {
+      "v": "renovate-maintenance-mps20251-patch-third-party-minor.2025.1.11720.0b3d1f1-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-third-party-minor",
+      "d": "2026-11-26T10:06:54Z"
+    },
+    {
       "v": "renovate-maintenance-mps20251-patch-third-party-minor.2025.1.11647.3b4ceb9-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20251-patch-third-party-minor",
@@ -10766,6 +10777,12 @@
       "pre": true,
       "branch": "merge-mps20261",
       "d": "2026-07-16T07:49:03Z"
+    },
+    {
+      "v": "merge-mps20261.2025.1.11721.a6c2d0e-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-26T10:44:37Z"
     },
     {
       "v": "merge-mps20261.2025.1.11697.d89ede0-SNAPSHOT",
@@ -13642,6 +13659,12 @@
       "d": "2023-11-16T14:10:11Z"
     },
     {
+      "v": "feature-list-improvements.2025.1.11730.feaf89c-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-list-improvements",
+      "d": "2026-11-26T13:57:52Z"
+    },
+    {
       "v": "feature-list-improvements.2025.1.11716.8977c47-SNAPSHOT",
       "pre": true,
       "branch": "feature-list-improvements",
@@ -13808,6 +13831,12 @@
       "pre": false,
       "branch": "feature-getter_for_NixValueList",
       "d": "2023-02-07T15:50:18Z"
+    },
+    {
+      "v": "feature-genjava_test_node_urls_2054.2025.1.11731.071a252-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-genjava_test_node_urls_2054",
+      "d": "2026-11-26T13:58:55Z"
     },
     {
       "v": "feature-genjava_test_node_urls_2054.2025.1.11707.4e3b2ee-SNAPSHOT",
@@ -14200,6 +14229,12 @@
       "d": "2023-01-24T11:19:52Z"
     },
     {
+      "v": "feature-conventional_commits_2062.2024.1.11726.53a8edb-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-conventional_commits_2062",
+      "d": "2026-11-26T13:48:06Z"
+    },
+    {
       "v": "feature-config_combination_logic_1794.2024.1.10616.ad4b8c0-SNAPSHOT",
       "pre": true,
       "branch": "feature-config_combination_logic_1794",
@@ -14228,6 +14263,24 @@
       "pre": false,
       "branch": "feature-comment-constraint-support-regular",
       "d": "2023-07-18T15:14:35Z"
+    },
+    {
+      "v": "feature-collection_literal_type_constraint_entry.2025.1.11729.5882fce-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-collection_literal_type_constraint_entry",
+      "d": "2026-11-26T13:55:45Z"
+    },
+    {
+      "v": "feature-collection_literal_type_constraint_entry.2025.1.11728.414a472-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-collection_literal_type_constraint_entry",
+      "d": "2026-11-26T13:49:54Z"
+    },
+    {
+      "v": "feature-collection_literal_type_constraint_entry.2025.1.11725.d9110fe-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-collection_literal_type_constraint_entry",
+      "d": "2026-11-26T13:31:28Z"
     },
     {
       "v": "feature-clean-up-setup.2021.1.5692.53a1c87",

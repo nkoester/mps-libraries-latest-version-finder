@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-26T04:38:34.425Z",
-  "total": 2754,
+  "generatedAt": "2026-11-26T14:47:27.338Z",
+  "total": 2758,
   "released": 1923,
   "stable": 1923,
   "preRelease": 0,
-  "branchCount": 831,
+  "branchCount": 835,
   "branches": 189,
   "lines": [
     {
@@ -9795,6 +9795,12 @@
       "d": "2026-11-18T14:04:49Z"
     },
     {
+      "v": "renovate-master-patch-platformmaster.9999.9.25475.d97ced8-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-patch-platformmaster",
+      "d": "2026-11-26T06:47:36Z"
+    },
+    {
       "v": "renovate-master-patch-platformmaster.9999.9.25473.e21641c-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-patch-platformmaster",
@@ -9985,6 +9991,12 @@
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
       "d": "2026-07-05T13:53:25Z"
+    },
+    {
+      "v": "renovate-master-mpsmaster.9999.9.25475.a696cd9-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster",
+      "d": "2026-11-26T06:48:45Z"
     },
     {
       "v": "renovate-master-mpsmaster.9999.9.25475.61e5187-SNAPSHOT",
@@ -10347,6 +10359,12 @@
       "d": "2026-11-19T11:48:44Z"
     },
     {
+      "v": "renovate-maintenance-mps20261-patch-platform261.2026.1.25393.d8cb216-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20261-patch-platform261",
+      "d": "2026-11-26T06:48:49Z"
+    },
+    {
       "v": "renovate-maintenance-mps20261-patch-platform261.2026.1.25393.c512738-SNAPSHOT",
       "pre": true,
       "branch": "renovate-maintenance-mps20261-patch-platform261",
@@ -10579,6 +10597,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-third-party-minor",
       "d": "2026-09-03T20:10:27Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20251-patch-platform251.2025.1.24982.6e60010-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20251-patch-platform251",
+      "d": "2026-11-26T06:48:32Z"
     },
     {
       "v": "renovate-maintenance-mps20251-patch-platform251.2025.1.24982.472be5e-SNAPSHOT",

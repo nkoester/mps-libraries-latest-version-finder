@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-26T04:38:34.425Z",
-  "total": 3286,
+  "generatedAt": "2026-11-26T14:47:27.338Z",
+  "total": 3290,
   "released": 2103,
   "stable": 2100,
   "preRelease": 3,
-  "branchCount": 1183,
+  "branchCount": 1187,
   "branches": 262,
   "lines": [
     {
@@ -11615,6 +11615,12 @@
       "d": "2025-10-09T05:55:24Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2819.f85f685-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-26T13:10:07Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2815.c3d3057-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -17223,6 +17229,24 @@
       "pre": false,
       "branch": "bugfix-httpserverReloadingError_20211",
       "d": "2022-10-13T07:19:00Z"
+    },
+    {
+      "v": "bugfix-grammarcells_optionalCell_generator_speedup.2026.1.2820.04b652f-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-grammarcells_optionalCell_generator_speedup",
+      "d": "2026-11-26T13:30:02Z"
+    },
+    {
+      "v": "bugfix-grammarcells_optionalCell_generator_speedup.2026.1.2818.f3d68db-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-grammarcells_optionalCell_generator_speedup",
+      "d": "2026-11-26T10:52:27Z"
+    },
+    {
+      "v": "bugfix-grammarcells_optionalCell_generator_speedup.2026.1.2817.b9225b5-SNAPSHOT",
+      "pre": true,
+      "branch": "bugfix-grammarcells_optionalCell_generator_speedup",
+      "d": "2026-11-26T09:44:41Z"
     },
     {
       "v": "bugfix-grammarcells_optionalCell_generator_speedup.2026.1.2816.7dd621f-SNAPSHOT",
