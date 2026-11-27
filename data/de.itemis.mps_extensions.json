@@ -5,13 +5,13 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-26T19:57:01.310Z",
-  "total": 1366,
+  "generatedAt": "2026-11-27T04:43:09.222Z",
+  "total": 1364,
   "released": 871,
   "stable": 838,
   "preRelease": 33,
-  "branchCount": 495,
-  "branches": 97,
+  "branchCount": 493,
+  "branches": 95,
   "lines": [
     {
       "line": "9999.9",
@@ -4621,6 +4621,12 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2821.892905b-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-27T03:51:18Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2819.f85f685-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -5441,12 +5447,6 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20251-github-actions",
       "d": "2026-09-02T03:13:07Z"
-    },
-    {
-      "v": "renovate-maintenance-mps20251-com.jetbrains-mps-2025.1.x.2025.1.2282.b3a9921-SNAPSHOT",
-      "pre": true,
-      "branch": "renovate-maintenance-mps20251-com.jetbrains-mps-2025",
-      "d": "2026-07-31T20:51:11Z"
     },
     {
       "v": "renovate-maintenance-mps20241-third-party-minor.2024.1.2650.174d928-SNAPSHOT",
@@ -7061,18 +7061,6 @@
       "pre": false,
       "branch": "feature-changelog",
       "d": "2023-06-29T19:53:46Z"
-    },
-    {
-      "v": "feature-baseLanguageExtensions-improve-groupBy.2025.1.2280.a7d8966-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-baseLanguageExtensions-improve-groupBy",
-      "d": "2026-07-31T20:51:05Z"
-    },
-    {
-      "v": "feature-baseLanguageExtensions-improve-groupBy.2025.1.2279.ed75f4c-SNAPSHOT",
-      "pre": true,
-      "branch": "feature-baseLanguageExtensions-improve-groupBy",
-      "d": "2026-07-31T20:51:04Z"
     },
     {
       "v": "docs-plaintextgen-user-guide.9999.9.2588.a514155-SNAPSHOT",
