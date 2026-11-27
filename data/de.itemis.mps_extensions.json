@@ -5,12 +5,12 @@
   "repo": "JetBrains/MPS-extensions",
   "changelog": "https://github.com/JetBrains/MPS-extensions/blob/HEAD/CHANGELOG.md",
   "slug": "de.itemis.mps_extensions",
-  "generatedAt": "2026-11-27T04:43:09.222Z",
-  "total": 1364,
+  "generatedAt": "2026-11-27T14:45:42.535Z",
+  "total": 1368,
   "released": 871,
   "stable": 838,
   "preRelease": 33,
-  "branchCount": 493,
+  "branchCount": 497,
   "branches": 95,
   "lines": [
     {
@@ -23,7 +23,7 @@
         {
           "v": "9999.9.27014.8ec23a3-SNAPSHOT",
           "pre": true,
-          "d": "2026-11-26T03:02:57Z"
+          "d": "2026-11-27T03:51:22Z"
         },
         {
           "v": "9999.9.27008.84b2e35-SNAPSHOT",
@@ -186,7 +186,7 @@
           "d": "2025-09-05T03:13:11Z"
         }
       ],
-      "latestDate": "2026-11-26T03:02:57Z"
+      "latestDate": "2026-11-27T03:51:22Z"
     },
     {
       "line": "2026.1",
@@ -4621,6 +4621,18 @@
       "d": "2026-08-07T13:43:47Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2826.3e8d369-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-27T13:30:03Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2823.6b81df1-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-27T09:50:13Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2821.892905b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -4630,19 +4642,19 @@
       "v": "renovate-master-mps.9999.9.2819.f85f685-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-26T13:10:07Z"
+      "d": "2026-11-27T03:51:18Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2815.c3d3057-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-25T21:26:50Z"
+      "d": "2026-11-27T03:51:17Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2808.40c1dcb-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-25T17:39:45Z"
+      "d": "2026-11-27T03:51:16Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2804.5991d5f-SNAPSHOT",
@@ -4654,7 +4666,7 @@
       "v": "renovate-master-mps.9999.9.2803.181aa28-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-25T12:57:13Z"
+      "d": "2026-11-27T03:51:16Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2796.ae06b63-SNAPSHOT",
@@ -4666,25 +4678,25 @@
       "v": "renovate-master-mps.9999.9.2794.20e7bdd-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-25T01:14:22Z"
+      "d": "2026-11-27T03:51:15Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2785.196c193-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-24T16:24:35Z"
+      "d": "2026-11-27T03:51:14Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2768.b962785-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-24T12:16:09Z"
+      "d": "2026-11-27T03:51:14Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2759.a401b2e-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
-      "d": "2026-11-24T07:53:42Z"
+      "d": "2026-11-27T03:51:13Z"
     },
     {
       "v": "renovate-master-mps.9999.9.2758.9f226df-SNAPSHOT",
@@ -5488,19 +5500,19 @@
       "v": "refactor-viewmodel-dependencies.2025.1.2773.1db6189-SNAPSHOT",
       "pre": true,
       "branch": "refactor-viewmodel-dependencies",
-      "d": "2026-11-24T13:04:48Z"
+      "d": "2026-11-27T03:51:05Z"
     },
     {
       "v": "refactor-viewmodel-dependencies.2025.1.2769.81774df-SNAPSHOT",
       "pre": true,
       "branch": "refactor-viewmodel-dependencies",
-      "d": "2026-11-24T12:16:57Z"
+      "d": "2026-11-27T03:51:05Z"
     },
     {
       "v": "refactor-viewmodel-dependencies.2025.1.2762.f55db91-SNAPSHOT",
       "pre": true,
       "branch": "refactor-viewmodel-dependencies",
-      "d": "2026-11-24T11:37:18Z"
+      "d": "2026-11-27T03:51:04Z"
     },
     {
       "v": "refactor-viewmodel-dependencies.2025.1.2754.7a35c80-SNAPSHOT",
@@ -5632,13 +5644,13 @@
       "v": "merge-mps20261.2026.1.2799.187bcbe-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
-      "d": "2026-11-25T08:00:59Z"
+      "d": "2026-11-27T03:51:03Z"
     },
     {
       "v": "merge-mps20261.2026.1.2770.315b309-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
-      "d": "2026-11-24T12:27:08Z"
+      "d": "2026-11-27T03:51:02Z"
     },
     {
       "v": "merge-mps20261.2026.1.2748.dfd6314-SNAPSHOT",
@@ -6085,28 +6097,34 @@
       "d": "2024-01-16T08:47:43Z"
     },
     {
+      "v": "merge-master.9999.9.2825.39a5cd5-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-27T12:41:24Z"
+    },
+    {
       "v": "merge-master.9999.9.2814.d82212e-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
-      "d": "2026-11-25T19:53:56Z"
+      "d": "2026-11-27T03:50:58Z"
     },
     {
       "v": "merge-master.9999.9.2810.f491ffe-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
-      "d": "2026-11-25T17:40:13Z"
+      "d": "2026-11-27T03:50:57Z"
     },
     {
       "v": "merge-master.9999.9.2801.fb45ae8-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
-      "d": "2026-11-25T10:40:56Z"
+      "d": "2026-11-27T03:50:57Z"
     },
     {
       "v": "merge-master.9999.9.2779.6e7d53d-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
-      "d": "2026-11-24T14:11:30Z"
+      "d": "2026-11-27T03:50:56Z"
     },
     {
       "v": "merge-master.9999.9.2749.d81a84e-SNAPSHOT",
@@ -6256,19 +6274,19 @@
       "v": "mcp-dsl.2026.1.2813.fb25635-SNAPSHOT",
       "pre": true,
       "branch": "mcp-dsl",
-      "d": "2026-11-25T19:31:27Z"
+      "d": "2026-11-27T03:50:54Z"
     },
     {
       "v": "mcp-dsl.2026.1.2792.98dc386-SNAPSHOT",
       "pre": true,
       "branch": "mcp-dsl",
-      "d": "2026-11-24T18:41:37Z"
+      "d": "2026-11-27T03:50:53Z"
     },
     {
       "v": "mcp-dsl.2026.1.2789.80a6883-SNAPSHOT",
       "pre": true,
       "branch": "mcp-dsl",
-      "d": "2026-11-24T17:45:55Z"
+      "d": "2026-11-27T03:50:53Z"
     },
     {
       "v": "langvis-structure-fixes.9999.9.2620.964996e-SNAPSHOT",
@@ -6298,13 +6316,13 @@
       "v": "fix-viewmodel-headless-writes.2025.1.2766.b065d45-SNAPSHOT",
       "pre": true,
       "branch": "fix-viewmodel-headless-writes",
-      "d": "2026-11-24T12:14:28Z"
+      "d": "2026-11-27T03:50:52Z"
     },
     {
       "v": "fix-viewmodel-headless-writes.2025.1.2761.1ef95a1-SNAPSHOT",
       "pre": true,
       "branch": "fix-viewmodel-headless-writes",
-      "d": "2026-11-24T11:34:47Z"
+      "d": "2026-11-27T03:50:51Z"
     },
     {
       "v": "fix-viewmodel-headless-writes.2025.1.2745.831449c-SNAPSHOT",
@@ -6424,37 +6442,37 @@
       "v": "fix-shadowmodels-flush-under-read-261.2026.1.2805.f19ceec-SNAPSHOT",
       "pre": true,
       "branch": "fix-shadowmodels-flush-under-read-261",
-      "d": "2026-11-25T14:39:42Z"
+      "d": "2026-11-27T03:50:49Z"
     },
     {
       "v": "fix-shadowmodels-edt-write-during-make.2025.1.2788.9acd848-SNAPSHOT",
       "pre": true,
       "branch": "fix-shadowmodels-edt-write-during-make",
-      "d": "2026-11-24T17:25:07Z"
+      "d": "2026-11-27T03:50:49Z"
     },
     {
       "v": "fix-shadowmodels-edt-write-during-make.2025.1.2786.cec6415-SNAPSHOT",
       "pre": true,
       "branch": "fix-shadowmodels-edt-write-during-make",
-      "d": "2026-11-24T16:49:54Z"
+      "d": "2026-11-27T03:50:48Z"
     },
     {
       "v": "fix-shadowmodels-edt-write-during-make.2025.1.2777.05fb37d-SNAPSHOT",
       "pre": true,
       "branch": "fix-shadowmodels-edt-write-during-make",
-      "d": "2026-11-24T14:06:59Z"
+      "d": "2026-11-27T03:50:47Z"
     },
     {
       "v": "fix-shadowmodels-edt-write-during-make.2025.1.2774.e1aa270-SNAPSHOT",
       "pre": true,
       "branch": "fix-shadowmodels-edt-write-during-make",
-      "d": "2026-11-24T13:25:57Z"
+      "d": "2026-11-27T03:50:46Z"
     },
     {
       "v": "fix-shadowmodels-edt-write-during-make.2025.1.2771.444838f-SNAPSHOT",
       "pre": true,
       "branch": "fix-shadowmodels-edt-write-during-make",
-      "d": "2026-11-24T12:46:58Z"
+      "d": "2026-11-27T03:50:46Z"
     },
     {
       "v": "fix-richtext-Word-empty-string-instead-of-single-space.2025.1.2322.ba2858a-SNAPSHOT",
@@ -6550,49 +6568,49 @@
       "v": "fix-langvis-tool-init-261.2026.1.2811.db64727-SNAPSHOT",
       "pre": true,
       "branch": "fix-langvis-tool-init-261",
-      "d": "2026-11-25T18:54:19Z"
+      "d": "2026-11-27T03:50:44Z"
     },
     {
       "v": "fix-langvis-tool-init-261.2026.1.2809.bf286db-SNAPSHOT",
       "pre": true,
       "branch": "fix-langvis-tool-init-261",
-      "d": "2026-11-25T17:39:53Z"
+      "d": "2026-11-27T03:50:43Z"
     },
     {
       "v": "fix-json-tests-line-endings.2026.1.2781.a7236b4-SNAPSHOT",
       "pre": true,
       "branch": "fix-json-tests-line-endings",
-      "d": "2026-11-24T14:49:31Z"
+      "d": "2026-11-27T03:50:42Z"
     },
     {
       "v": "fix-json-tests-line-endings.2026.1.2778.2c56a2d-SNAPSHOT",
       "pre": true,
       "branch": "fix-json-tests-line-endings",
-      "d": "2026-11-24T14:10:11Z"
+      "d": "2026-11-27T03:50:42Z"
     },
     {
       "v": "fix-json-tests-line-endings.2026.1.2775.9f57533-SNAPSHOT",
       "pre": true,
       "branch": "fix-json-tests-line-endings",
-      "d": "2026-11-24T13:29:13Z"
+      "d": "2026-11-27T03:50:41Z"
     },
     {
       "v": "fix-doc-windows-paths-newlines.2026.1.2776.ee4ade0-SNAPSHOT",
       "pre": true,
       "branch": "fix-doc-windows-paths-newlines",
-      "d": "2026-11-24T13:32:28Z"
+      "d": "2026-11-27T03:50:40Z"
     },
     {
       "v": "fix-doc-windows-paths-newlines.2026.1.2772.6504190-SNAPSHOT",
       "pre": true,
       "branch": "fix-doc-windows-paths-newlines",
-      "d": "2026-11-24T12:53:07Z"
+      "d": "2026-11-27T03:50:39Z"
     },
     {
       "v": "fix-doc-windows-paths-newlines.2026.1.2767.e28a268-SNAPSHOT",
       "pre": true,
       "branch": "fix-doc-windows-paths-newlines",
-      "d": "2026-11-24T12:15:29Z"
+      "d": "2026-11-27T03:50:39Z"
     },
     {
       "v": "fix-diagram-layout-race.2024.1.2731.5c5e75e-SNAPSHOT",
@@ -6652,13 +6670,13 @@
       "v": "fix-celllayout-nested-no-wrap.2025.1.2802.ab6a466-SNAPSHOT",
       "pre": true,
       "branch": "fix-celllayout-nested-no-wrap",
-      "d": "2026-11-25T10:49:39Z"
+      "d": "2026-11-27T03:50:37Z"
     },
     {
       "v": "fix-celllayout-nested-no-wrap.2025.1.2797.16f51d7-SNAPSHOT",
       "pre": true,
       "branch": "fix-celllayout-nested-no-wrap",
-      "d": "2026-11-25T06:35:03Z"
+      "d": "2026-11-27T03:50:37Z"
     },
     {
       "v": "fix-celllayout-nested-no-wrap.2025.1.2791.792f009-SNAPSHOT",
@@ -6676,19 +6694,19 @@
       "v": "fix-celllayout-nested-no-wrap.2025.1.2787.2b57cd1-SNAPSHOT",
       "pre": true,
       "branch": "fix-celllayout-nested-no-wrap",
-      "d": "2026-11-24T17:08:16Z"
+      "d": "2026-11-27T03:50:36Z"
     },
     {
       "v": "fix-celllayout-nested-no-wrap.2025.1.2784.0dec1db-SNAPSHOT",
       "pre": true,
       "branch": "fix-celllayout-nested-no-wrap",
-      "d": "2026-11-24T16:24:35Z"
+      "d": "2026-11-27T03:50:35Z"
     },
     {
       "v": "feature-viewmodel-root-dependencies.2025.1.2760.02078fc-SNAPSHOT",
       "pre": true,
       "branch": "feature-viewmodel-root-dependencies",
-      "d": "2026-11-24T11:29:36Z"
+      "d": "2026-11-27T03:50:34Z"
     },
     {
       "v": "feature-viewmodel-root-dependencies.2025.1.2704.7c3406f-SNAPSHOT",
@@ -7045,6 +7063,12 @@
       "d": "2026-10-23T02:01:02Z"
     },
     {
+      "v": "feature-interpreter-performance.2025.1.2822.31da038-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-interpreter-performance",
+      "d": "2026-11-27T09:48:02Z"
+    },
+    {
       "v": "feature-interpreter-performance.2025.1.2755.6bd55ef-SNAPSHOT",
       "pre": true,
       "branch": "feature-interpreter-performance",
@@ -7360,37 +7384,37 @@
       "v": "bugfix-grammarcells_optionalCell_generator_speedup.2026.1.2820.04b652f-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-grammarcells_optionalCell_generator_speedup",
-      "d": "2026-11-26T13:30:02Z"
+      "d": "2026-11-27T03:50:28Z"
     },
     {
       "v": "bugfix-grammarcells_optionalCell_generator_speedup.2026.1.2818.f3d68db-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-grammarcells_optionalCell_generator_speedup",
-      "d": "2026-11-26T10:52:27Z"
+      "d": "2026-11-27T03:50:27Z"
     },
     {
       "v": "bugfix-grammarcells_optionalCell_generator_speedup.2026.1.2817.b9225b5-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-grammarcells_optionalCell_generator_speedup",
-      "d": "2026-11-26T09:44:41Z"
+      "d": "2026-11-27T03:50:27Z"
     },
     {
       "v": "bugfix-grammarcells_optionalCell_generator_speedup.2026.1.2816.7dd621f-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-grammarcells_optionalCell_generator_speedup",
-      "d": "2026-11-25T23:22:50Z"
+      "d": "2026-11-27T03:50:26Z"
     },
     {
       "v": "bugfix-grammarcells_flag_generator_speedup.2026.1.2806.cfece7b-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-grammarcells_flag_generator_speedup",
-      "d": "2026-11-25T14:40:22Z"
+      "d": "2026-11-27T03:50:25Z"
     },
     {
       "v": "bugfix-grammarcells_flag_generator_speedup.2026.1.2780.9ecbf43-SNAPSHOT",
       "pre": true,
       "branch": "bugfix-grammarcells_flag_generator_speedup",
-      "d": "2026-11-24T14:27:21Z"
+      "d": "2026-11-27T03:50:24Z"
     },
     {
       "v": "bugfix-arimer-addMissingStubs.9999.9.2699.ececa2a-SNAPSHOT",

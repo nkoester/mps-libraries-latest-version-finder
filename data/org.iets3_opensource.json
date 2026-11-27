@@ -5,13 +5,13 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-27T04:43:09.222Z",
-  "total": 3096,
-  "released": 1780,
-  "stable": 1773,
+  "generatedAt": "2026-11-27T14:45:42.535Z",
+  "total": 3103,
+  "released": 1781,
+  "stable": 1774,
   "preRelease": 7,
-  "branchCount": 1316,
-  "branches": 262,
+  "branchCount": 1322,
+  "branches": 263,
   "lines": [
     {
       "line": "9999.9",
@@ -1175,11 +1175,16 @@
     },
     {
       "line": "2025.1",
-      "latest": "2025.1.11722.a6c2d0e",
+      "latest": "2025.1.11747.721a07b",
       "latestIsPreRelease": false,
-      "total": 154,
-      "stable": 148,
+      "total": 155,
+      "stable": 149,
       "versions": [
+        {
+          "v": "2025.1.11747.721a07b",
+          "pre": false,
+          "d": "2026-11-27T13:36:01Z"
+        },
         {
           "v": "2025.1.11722.a6c2d0e",
           "pre": false,
@@ -1951,7 +1956,7 @@
           "d": "2025-06-04T16:21:17Z"
         }
       ],
-      "latestDate": "2026-11-26T11:07:43Z"
+      "latestDate": "2026-11-27T13:36:01Z"
     },
     {
       "line": "2024.1",
@@ -10796,6 +10801,12 @@
       "d": "2026-07-16T07:49:03Z"
     },
     {
+      "v": "merge-mps20261.2025.1.11746.721a07b-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-mps20261",
+      "d": "2026-11-27T13:14:45Z"
+    },
+    {
       "v": "merge-mps20261.2025.1.11721.a6c2d0e-SNAPSHOT",
       "pre": true,
       "branch": "merge-mps20261",
@@ -12542,6 +12553,18 @@
       "d": "2026-09-01T12:01:55Z"
     },
     {
+      "v": "fix-check-result-read-only-models.2025.1.11743.5fc0a1f-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-check-result-read-only-models",
+      "d": "2026-11-27T10:55:07Z"
+    },
+    {
+      "v": "fix-check-result-read-only-models.2025.1.11742.4f5550d-SNAPSHOT",
+      "pre": true,
+      "branch": "fix-check-result-read-only-models",
+      "d": "2026-11-27T10:51:13Z"
+    },
+    {
       "v": "fix-bracket-layout-wrapping.2025.1.11233.ee346ca-SNAPSHOT",
       "pre": true,
       "branch": "fix-bracket-layout-wrapping",
@@ -13218,6 +13241,12 @@
       "pre": true,
       "branch": "feature-simplify_skeltree_graph_builder_1645",
       "d": "2026-02-17T15:31:23Z"
+    },
+    {
+      "v": "feature-shared-interpreter-scopes.2025.1.11745.a32e1fa-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-shared-interpreter-scopes",
+      "d": "2026-11-27T13:06:22Z"
     },
     {
       "v": "feature-shared-interpreter-scopes.2025.1.11624.cbdc0a1-SNAPSHOT",
@@ -14250,6 +14279,18 @@
       "pre": false,
       "branch": "feature-data-table-look-up-with-default-value-squashed",
       "d": "2023-01-24T11:19:52Z"
+    },
+    {
+      "v": "feature-conventional_commits_2062.2024.1.11744.5463781-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-conventional_commits_2062",
+      "d": "2026-11-27T12:01:42Z"
+    },
+    {
+      "v": "feature-conventional_commits_2062.2024.1.11740.5278c84-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-conventional_commits_2062",
+      "d": "2026-11-27T10:15:56Z"
     },
     {
       "v": "feature-conventional_commits_2062.2024.1.11726.53a8edb-SNAPSHOT",

@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-27T04:43:09.222Z",
-  "total": 2760,
+  "generatedAt": "2026-11-27T14:45:42.535Z",
+  "total": 2761,
   "released": 1923,
   "stable": 1923,
   "preRelease": 0,
-  "branchCount": 837,
+  "branchCount": 838,
   "branches": 189,
   "lines": [
     {
@@ -9991,6 +9991,12 @@
       "pre": true,
       "branch": "renovate-master-patch-mpsextensionsmaster",
       "d": "2026-07-05T13:53:25Z"
+    },
+    {
+      "v": "renovate-master-mpsmaster.9999.9.25475.b3274e4-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mpsmaster",
+      "d": "2026-11-27T12:14:11Z"
     },
     {
       "v": "renovate-master-mpsmaster.9999.9.25475.a696cd9-SNAPSHOT",

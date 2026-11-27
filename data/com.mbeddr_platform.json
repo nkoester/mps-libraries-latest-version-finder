@@ -5,12 +5,12 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_platform",
-  "generatedAt": "2026-11-27T04:43:09.222Z",
-  "total": 3291,
+  "generatedAt": "2026-11-27T14:45:42.535Z",
+  "total": 3295,
   "released": 2103,
   "stable": 2100,
   "preRelease": 3,
-  "branchCount": 1188,
+  "branchCount": 1192,
   "branches": 262,
   "lines": [
     {
@@ -11615,6 +11615,18 @@
       "d": "2025-10-09T05:55:24Z"
     },
     {
+      "v": "renovate-master-mps.9999.9.2826.3e8d369-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-27T13:30:03Z"
+    },
+    {
+      "v": "renovate-master-mps.9999.9.2823.6b81df1-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-master-mps",
+      "d": "2026-11-27T09:50:13Z"
+    },
+    {
       "v": "renovate-master-mps.9999.9.2821.892905b-SNAPSHOT",
       "pre": true,
       "branch": "renovate-master-mps",
@@ -15329,6 +15341,12 @@
       "d": "2025-10-08T18:07:56Z"
     },
     {
+      "v": "merge-master.9999.9.2825.39a5cd5-SNAPSHOT",
+      "pre": true,
+      "branch": "merge-master",
+      "d": "2026-11-27T12:41:24Z"
+    },
+    {
       "v": "merge-master.9999.9.2814.d82212e-SNAPSHOT",
       "pre": true,
       "branch": "merge-master",
@@ -16257,6 +16275,12 @@
       "pre": true,
       "branch": "feature-interpreter-performance",
       "d": "2026-11-10T13:06:40Z"
+    },
+    {
+      "v": "feature-interpreter-performance.2025.1.2822.31da038-SNAPSHOT",
+      "pre": true,
+      "branch": "feature-interpreter-performance",
+      "d": "2026-11-27T09:48:02Z"
     },
     {
       "v": "feature-interpreter-performance.2025.1.2755.6bd55ef-SNAPSHOT",
