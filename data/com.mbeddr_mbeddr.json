@@ -5,21 +5,26 @@
   "repo": "mbeddr/mbeddr.core",
   "changelog": "https://github.com/mbeddr/mbeddr.core/blob/HEAD/CHANGELOG.md",
   "slug": "com.mbeddr_mbeddr",
-  "generatedAt": "2026-11-27T19:46:13.327Z",
-  "total": 2761,
-  "released": 1923,
-  "stable": 1923,
+  "generatedAt": "2026-11-28T04:27:31.824Z",
+  "total": 2763,
+  "released": 1925,
+  "stable": 1925,
   "preRelease": 0,
   "branchCount": 838,
   "branches": 189,
   "lines": [
     {
       "line": "9999.9",
-      "latest": "9999.9.26733.f5e6fd9",
+      "latest": "9999.9.26735.f5e6fd9",
       "latestIsPreRelease": false,
-      "total": 416,
-      "stable": 416,
+      "total": 417,
+      "stable": 417,
       "versions": [
+        {
+          "v": "9999.9.26735.f5e6fd9",
+          "pre": false,
+          "d": "2026-11-28T03:58:18Z"
+        },
         {
           "v": "9999.9.26733.f5e6fd9",
           "pre": false,
@@ -2101,15 +2106,20 @@
           "d": "2025-11-04T16:13:32Z"
         }
       ],
-      "latestDate": "2026-11-26T03:58:19Z"
+      "latestDate": "2026-11-28T03:58:18Z"
     },
     {
       "line": "2026.1",
-      "latest": "2026.1.26731.7dcd24d",
+      "latest": "2026.1.26734.7dcd24d",
       "latestIsPreRelease": false,
-      "total": 46,
-      "stable": 46,
+      "total": 47,
+      "stable": 47,
       "versions": [
+        {
+          "v": "2026.1.26734.7dcd24d",
+          "pre": false,
+          "d": "2026-11-28T03:53:54Z"
+        },
         {
           "v": "2026.1.26731.7dcd24d",
           "pre": false,
@@ -2341,7 +2351,7 @@
           "d": "2026-06-29T15:03:08Z"
         }
       ],
-      "latestDate": "2026-11-26T03:44:55Z"
+      "latestDate": "2026-11-28T03:53:54Z"
     },
     {
       "line": "2025.1",

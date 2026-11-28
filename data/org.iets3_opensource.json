@@ -5,12 +5,12 @@
   "repo": "IETS3/iets3.opensource",
   "changelog": "https://github.com/IETS3/iets3.opensource/blob/HEAD/CHANGELOG.md",
   "slug": "org.iets3_opensource",
-  "generatedAt": "2026-11-27T19:46:13.327Z",
-  "total": 3105,
+  "generatedAt": "2026-11-28T04:27:31.824Z",
+  "total": 3106,
   "released": 1781,
   "stable": 1774,
   "preRelease": 7,
-  "branchCount": 1324,
+  "branchCount": 1325,
   "branches": 263,
   "lines": [
     {
@@ -9923,6 +9923,12 @@
       "pre": true,
       "branch": "renovate-maintenance-mps20241-major-github-actions",
       "d": "2026-03-13T01:42:05Z"
+    },
+    {
+      "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11752.49ec76d-SNAPSHOT",
+      "pre": true,
+      "branch": "renovate-maintenance-mps20241-gradle-9.x",
+      "d": "2026-11-28T03:17:34Z"
     },
     {
       "v": "renovate-maintenance-mps20241-gradle-9.x.2024.1.11691.e1d8a25-SNAPSHOT",

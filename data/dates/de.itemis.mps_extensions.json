@@ -3,6 +3,7 @@
   "artifactId": "extensions",
   "slug": "de.itemis.mps_extensions",
   "versions": {
+    "9999.9.27017.0150362-SNAPSHOT": "2026-11-28T03:02:51Z",
     "9999.9.27014.8ec23a3-SNAPSHOT": "2026-11-27T03:51:22Z",
     "9999.9.27008.84b2e35-SNAPSHOT": "2026-11-24T03:20:55Z",
     "9999.9.27007.df5a4e9-SNAPSHOT": "2026-11-20T03:10:06Z",
@@ -36,6 +37,7 @@
     "9999.9.3458.117f0df-SNAPSHOT": "2025-09-27T03:13:10Z",
     "9999.9.3454.4971881-SNAPSHOT": "2025-09-25T01:44:18Z",
     "9999.9.3431.d5ea3b6-SNAPSHOT": "2025-09-05T03:13:11Z",
+    "2026.1.27018.609296e": "2026-11-28T03:29:25Z",
     "2026.1.27016.9054434": "2026-11-26T03:24:23Z",
     "2026.1.27013.b72dd19": "2026-11-25T03:24:43Z",
     "2026.1.27011.6c2209e": "2026-11-21T03:28:11Z",
@@ -894,6 +896,7 @@
     "test-ci-dirty-files-artifacts.9999.9.2537.da413c4-SNAPSHOT": "2026-10-23T02:01:33Z",
     "renovate-mps-jbr.9999.9.2307.fe26f13-SNAPSHOT": "2026-08-10T09:03:16Z",
     "renovate-mps-jbr.9999.9.2306.d0690ef-SNAPSHOT": "2026-08-07T13:43:47Z",
+    "renovate-master-mps.9999.9.2827.e6ee847-SNAPSHOT": "2026-11-28T02:35:36Z",
     "renovate-master-mps.9999.9.2826.3e8d369-SNAPSHOT": "2026-11-27T13:30:03Z",
     "renovate-master-mps.9999.9.2823.6b81df1-SNAPSHOT": "2026-11-27T09:50:13Z",
     "renovate-master-mps.9999.9.2821.892905b-SNAPSHOT": "2026-11-27T03:51:18Z",
